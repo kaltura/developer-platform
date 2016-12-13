@@ -56,7 +56,7 @@ You can define more than one custom CSS files accordingly: ```IframeCustomPlugin
 
 The example below assumes that you have created your custom CSS file under the ```externalResources``` folder and using the ```IframeCustomPluginCss1.css``` filename.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -107,7 +107,7 @@ The example below assumes that you have created your custom CSS file under the `
     }
   ]
 }
--->
+```
 ```html
 <!DOCTYPE html>
 <html>

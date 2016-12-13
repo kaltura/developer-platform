@@ -17,7 +17,7 @@
 ## Checking Permissions
 Use ```permission.list``` with ```nameEqual``` set to ```'EVENTNOTIFICATION_PLUGIN_PERMISSION'``` to check to see if you have permission to use the eventNotification service.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/permission/action/list",
@@ -29,7 +29,7 @@ Use ```permission.list``` with ```nameEqual``` set to ```'EVENTNOTIFICATION_PLUG
     }
   ]
 }
--->
+```
 
 ## Notification Template Types
 Notification Templates can be used to send you an e-mail or call a particular URL under certain conditions, e.g. when a new video is uploaded.
@@ -40,7 +40,7 @@ There are two main types of templates:
 
 Which type would you like to work with?
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
@@ -58,14 +58,14 @@ Which type would you like to work with?
     }
   ]
 }
--->
+```
 
 ## Choosing a Template to Clone
 In order to create a new notification, you must clone one of the pre-made templates below. You can see the available templates using ```eventNotificationTemplate.listTemplates```
 
 Choose a template to clone.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
@@ -90,12 +90,12 @@ Choose a template to clone.
     }
   ]
 }
--->
+```
 
 ## Cloning the Template
 Use the form below to fill in some additional details for your template and create it
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/clone",
@@ -109,17 +109,17 @@ Use the form below to fill in some additional details for your template and crea
     }
   ]
 }
--->
+```
 
 ## Viewing your Notification Templates
 Use ```eventNotificationTemplate.list``` to get a list of your templates.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/list"
 }
--->
+```
 
 ## Handling HTTP Notifications
 If you create an HTTP Notification, you'll need to set up your server to handle incoming notifications

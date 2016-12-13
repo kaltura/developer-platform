@@ -19,7 +19,7 @@ You can use ```report.getTable``` to retrieve tables of usage statistics.
 
 For instance, to find the user who played the most videos, select reportType ```USER_TOP_CONTENT``` and order by ```count_plays```
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/report/action/getTable",
@@ -64,12 +64,12 @@ For instance, to find the user who played the most videos, select reportType ```
     }
   ]
 }
--->
+```
 
 ## Finding Your Top Contributors
 To find the users who contributed the most content, select reportType ```TOP_CONTRIBUTORS``` and order by ```count_total```
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/report/action/getTable",
@@ -112,7 +112,7 @@ To find the users who contributed the most content, select reportType ```TOP_CON
     }
   ]
 }
--->
+```
 
 ## Ranking Videos by Votes/Likes
 Both ‘Votes' and 'Likes' use the same fields in the DB. For a reliable voting experience, you should chose between ‘like' experience where users would click a ‘Like’ button or a 5-points voting scale, where users would be presented an option to cast a vote between 1 to 5.
@@ -125,7 +125,7 @@ You can use ```media.list``` to see which videos are getting the most likes or v
 
 * To see which videos have the most likes, set ```orderBy=KalturaMediaEntryOrderBy.TOTAL_RANK_DESC``` in the filter.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/media/action/list",
@@ -148,4 +148,4 @@ You can use ```media.list``` to see which videos are getting the most likes or v
     }
   ]
 }
--->
+```

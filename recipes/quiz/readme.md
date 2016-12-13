@@ -20,7 +20,7 @@ You can use ```cuePoint.list``` to see what cue points are already attached.
 
 Set `cuePointTypeEqual` to `QUIZ_QUESTION` to only show quizes.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/list",
@@ -43,14 +43,14 @@ Set `cuePointTypeEqual` to `QUIZ_QUESTION` to only show quizes.
     }
   ]
 }
--->
+```
 
 ## Adding a Quiz Cue Point
 Pass a new KalturaQuestionCuePoint to `cuePoint.add` to create a new quiz.
 
 You can use the form below to add a quiz to the video you selected.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/add",
@@ -79,4 +79,4 @@ You can use the form below to add a quiz to the video you selected.
     }
   ]
 }
--->
+```

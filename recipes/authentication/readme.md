@@ -22,7 +22,7 @@ To retrieve these secret keys, visit the "Integration Settings" tab inside the [
 
 To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.kaltura.com)
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/session/action/start",
@@ -43,17 +43,17 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
     }
   ]
 }
--->
+```
 
 ## Checking the KS
 You can validate your Kaltura session by calling ```user.get``` without a User ID, which will return the details of the user associated with the current session
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/user/action/get"
 }
--->
+```
 
 ## Logging in with your Login ID
 You can also log in with your Login ID and password by using `user.loginByLoginId`. This will return a new KS.
@@ -63,7 +63,7 @@ You can then use one of these partnerIds to get a privileged KS.
 
 
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/user/action/loginByLoginId",
@@ -77,17 +77,17 @@ You can then use one of these partnerIds to get a privileged KS.
     }
   ]
 }
--->
+```
 
 ## Log In with a Partner ID
 After using `user.loginByLoginId`, you can get a list of all your Partner IDs for that account using `partner.listPartnersForUser`.
 
 You can then re-use `user.loginById` with a partnerId to login for as that particular partner.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/partner/action/listPartnersForUser",
   "parameters": []
 }
--->
+```

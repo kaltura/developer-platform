@@ -24,7 +24,7 @@ You must specify a date range for your report. There are two options:
 
 You should only specify one of the two options.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/report/action/getTotal",
@@ -48,12 +48,12 @@ You should only specify one of the two options.
     }
   ]
 }
--->
+```
 
 ## Getting other Report Types
 You can set reportType to any of the [KalturaReportTypes](https://github.com/kaltura/server/blob/master/alpha/lib/enums/ReportType.php). Set it to TOP_CONTRIBUTORS to Find out who your top contributors are
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/report/action/getTable",
@@ -129,4 +129,4 @@ You can set reportType to any of the [KalturaReportTypes](https://github.com/kal
     }
   ]
 }
--->
+```

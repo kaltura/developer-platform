@@ -19,13 +19,13 @@ Use the uploadToken service to upload a new video file to the Kaltura API. First
 
 If you're working in JavaScript, the [jQuery File Upload widget](https://github.com/kaltura/jQuery-File-Upload) will take care of this step for you.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/uploadtoken/action/add",
   "parameters": []
 }
--->
+```
 ```javascript
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',
@@ -58,7 +58,7 @@ Or, if you're working in JavaScript, you can simply use the [jQuery File Upload 
 
 If you don't have a video file handy, you can right-click [this link](http://cfvod.kaltura.com/pd/p/811441/sp/81144100/serveFlavor/entryId/1_2bjlk7qb/v/2/flavorId/1_d1ft34uv/fileName/Kaltura_Logo_Animation.flv/name/a.flv) and choose **Save As**.
 
-<!--APICALL
+```apicall
 {
   "method": "post",
   "path": "/service/uploadtoken/action/upload",
@@ -75,7 +75,7 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
     }
   ]
 }
--->
+```
 ```javascript
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',
@@ -105,7 +105,7 @@ auto
 ## Creating a Media Entry
 Now we'll create a Media Entry to hold our video. Use the form below to enter your video's details.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/media/action/add",
@@ -121,7 +121,7 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
     }
   ]
 }
--->
+```
 
 ```demo
 disabled
@@ -130,7 +130,7 @@ disabled
 ## Attach the Video
 Now that you've created a new Media Entry, you need to associate the uploaded video with it.
 
-<!--APICALL
+```apicall
 {
   "method": "post",
   "path": "/service/media/action/addContent",
@@ -155,12 +155,12 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
     }
   ]
 }
--->
+```
 
 ## Viewing your Video
 You can use kWidget to embed your video in HTML. The video may not be ready for a minute, so you can poll its status with `media.get` by hitting 'Send Request'.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -191,4 +191,4 @@ You can use kWidget to embed your video in HTML. The video may not be ready for 
     }
   ]
 }
--->
+```

@@ -21,7 +21,7 @@ to record a live broadcast.
 
 Use `uiConf.add` below to create one.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/uiconf/action/add",
@@ -73,12 +73,12 @@ Use `uiConf.add` below to create one.
     }
   ]
 }
--->
+```
 
 ## Get the LIVE_STREAM Profile
 First you'll need to get the LIVE_STREAM conversion profile using `conversionProfile.list()`.  We'll use this profile to create a new liveStream entry.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/conversionprofile/action/list",
@@ -95,12 +95,12 @@ First you'll need to get the LIVE_STREAM conversion profile using `conversionPro
     }
   ]
 }
--->
+```
 
 ## Creating a Live Stream Entry
 Now we'll use the conversion profile ID to create a new liveStream entry using `liveStream.add()`
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/livestream/action/add",
@@ -149,7 +149,7 @@ Now we'll use the conversion profile ID to create a new liveStream entry using `
     }
   ]
 }
--->
+```
 
 ## Embedding the Broadcast Widget
 You can use the kRecord widget to record your broadcast.

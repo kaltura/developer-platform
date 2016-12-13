@@ -19,7 +19,7 @@ Choose a Media Entry to view code for embedding it's thumbnail
 
 Once the demo loads, try mousing over the thumbnail to see a preview of the video.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -37,7 +37,7 @@ Once the demo loads, try mousing over the thumbnail to see a preview of the vide
     }
   ]
 }
--->
+```
 ```html
 <img src="https://cdnapisec.kaltura.com/p/<%- answers.partnerId %>/thumbnail/entry_id/<%- answers.entryId %>/width/240/height/180"
      width="240" height="180">
@@ -78,7 +78,7 @@ to img_width * frame_number.
 
 
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -106,7 +106,7 @@ to img_width * frame_number.
     }
   ]
 }
--->
+```
 ```html
 <style>
 .img-holder {

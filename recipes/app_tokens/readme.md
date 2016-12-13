@@ -15,27 +15,27 @@
 ## Getting App Tokens
 App Tokens are used for generating Kaltura Sessions, and can control what privileges are granted to the user. Use ```appToken.list``` to see all of your app tokens.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/apptoken/action/list"
 }
--->
+```
 
 ## Adding a new App Token
 Create a new app token by calling ```appToken.add```.  You can choose whether the session should have ADMIN or USER level privileges, and you can specify how long the session should last.
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/apptoken/action/add"
 }
--->
+```
 
 ## Retrieving an App Token
 Use `appToken.get` to get details for a specific App Token
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/apptoken/action/get",
@@ -49,7 +49,7 @@ Use `appToken.get` to get details for a specific App Token
     }
   ]
 }
--->
+```
 
 ## Using the App Token to Start a new Session
 Once you have an app token, you can use `appToken.startSession` to create a new
@@ -83,7 +83,7 @@ expiry);
 ## Deleting an App Token
 Use `appToken.delete` to remove a specific App Token
 
-<!--APICALL
+```apicall
 {
   "method": "get",
   "path": "/service/apptoken/action/delete",
@@ -97,4 +97,4 @@ Use `appToken.delete` to remove a specific App Token
     }
   ]
 }
--->
+```
