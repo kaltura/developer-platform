@@ -17,7 +17,8 @@
 ## Checking Permissions
 Use ```permission.list``` with ```nameEqual``` set to ```'EVENTNOTIFICATION_PLUGIN_PERMISSION'``` to check to see if you have permission to use the eventNotification service.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/permission/action/list",
@@ -40,7 +41,8 @@ There are two main types of templates:
 
 Which type would you like to work with?
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
@@ -65,7 +67,8 @@ In order to create a new notification, you must clone one of the pre-made templa
 
 Choose a template to clone.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
@@ -95,7 +98,8 @@ Choose a template to clone.
 ## Cloning the Template
 Use the form below to fill in some additional details for your template and create it
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/clone",
@@ -114,7 +118,8 @@ Use the form below to fill in some additional details for your template and crea
 ## Viewing your Notification Templates
 Use ```eventNotificationTemplate.list``` to get a list of your templates.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/eventnotification_eventnotificationtemplate/action/list"
@@ -127,10 +132,12 @@ If you create an HTTP Notification, you'll need to set up your server to handle 
 Use the ```KalturaHttpNotificationClientPlugin``` library to parse incoming requests at the URL you specified.
 
 
+### Sample Code
 ```ruby
 puts 'Kaltura Notification:' + params
 
 ```
+### Sample Code
 ```php
 require_once('lib/KalturaClient.php');
 require_once('lib/KalturaPlugins/KalturaHttpNotificationClientPlugin.php');

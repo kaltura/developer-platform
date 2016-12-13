@@ -19,7 +19,8 @@ Choose a Media Entry to view code for embedding it's thumbnail
 
 Once the demo loads, try mousing over the thumbnail to see a preview of the video.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -38,6 +39,7 @@ Once the demo loads, try mousing over the thumbnail to see a preview of the vide
   ]
 }
 ```
+### Sample Code
 ```html
 <img src="https://cdnapisec.kaltura.com/p/<%- answers.partnerId %>/thumbnail/entry_id/<%- answers.entryId %>/width/240/height/180"
      width="240" height="180">
@@ -51,7 +53,8 @@ Once the demo loads, try mousing over the thumbnail to see a preview of the vide
 
 
 ```
-```demo
+### Demo
+```html
 <img src="https://cdnapisec.kaltura.com/p/<%- answers.partnerId %>/thumbnail/entry_id/<%- answers.entryId %>/width/240/height/180"
      width="240" height="180">
 <% if (result) { %>
@@ -78,7 +81,8 @@ to img_width * frame_number.
 
 
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -107,6 +111,7 @@ to img_width * frame_number.
   ]
 }
 ```
+### Sample Code
 ```html
 <style>
 .img-holder {
@@ -134,7 +139,8 @@ to img_width * frame_number.
   });
 </script>
 ```
-```demo
+### Demo
+```html
 <style>
 .img-holder {
   height: 180px;

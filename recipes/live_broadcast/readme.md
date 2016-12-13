@@ -21,7 +21,8 @@ to record a live broadcast.
 
 Use `uiConf.add` below to create one.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/uiconf/action/add",
@@ -78,7 +79,8 @@ Use `uiConf.add` below to create one.
 ## Get the LIVE_STREAM Profile
 First you'll need to get the LIVE_STREAM conversion profile using `conversionProfile.list()`.  We'll use this profile to create a new liveStream entry.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/conversionprofile/action/list",
@@ -100,7 +102,8 @@ First you'll need to get the LIVE_STREAM conversion profile using `conversionPro
 ## Creating a Live Stream Entry
 Now we'll use the conversion profile ID to create a new liveStream entry using `liveStream.add()`
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/livestream/action/add",
@@ -157,6 +160,7 @@ You can use the kRecord widget to record your broadcast.
 **Be sure to choose a `uiConf` that supports kRecord**
 
 
+### Sample Code
 ```html
 
 <!DOCTYPE html>
@@ -570,6 +574,7 @@ streamName = encodeURIComponent(streamName);
 </html>
 
 ```
+### Sample Code
 ```javascript
 var swfURL = "http://cdnapi.kaltura.com/krecord/ui_conf_id/<%-  answers.uiConf  %>";
 var broadcastURL = "<%-  results[2].primaryBroadcastingUrl %>";
@@ -614,7 +619,8 @@ var params = {
 swfobject.embedSWF(swfURL, 'krecordwrapper', '320', '240', '10.0.0', '', flashVars, params, attributes)
 console.log('embedded', streamHost, streamApp, streamName);
 ```
-```demo
+### Demo
+```html
 
 <!DOCTYPE html>
 <html>

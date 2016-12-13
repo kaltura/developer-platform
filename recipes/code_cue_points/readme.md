@@ -17,7 +17,8 @@
 ## Getting Cue Points
 Use `cuePoint.list` to retrieve a list of Cue Points
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/list",
@@ -45,7 +46,8 @@ Use `cuePoint.list` to retrieve a list of Cue Points
 ## Adding a new Cue Point
 Use the controls below to add a new cue point to one of your videos
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/add",
@@ -86,7 +88,8 @@ Use the controls below to add a new cue point to one of your videos
 ## Retrieving an Cue Point
 Use `cuePoint.get` to get details for a specific Cue Point
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/get",
@@ -105,7 +108,8 @@ Use `cuePoint.get` to get details for a specific Cue Point
 ## Viewing your Cue Point
 Now you can see your new Cue Point wherever you embed your video.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -135,7 +139,8 @@ Now you can see your new Cue Point wherever you embed your video.
 ## Deleting an Cue Point
 Use `cuePoint.delete` to remove a specific Cue Point
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/delete",

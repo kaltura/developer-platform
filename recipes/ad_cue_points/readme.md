@@ -19,7 +19,8 @@ Use `cuePoint.list` to retrieve a list of Ad Cue Points
 
 Use a `KalturaAdCuePointBaseFilter` to retrieve only Ad cue points.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/list",
@@ -47,7 +48,8 @@ Use a `KalturaAdCuePointBaseFilter` to retrieve only Ad cue points.
 ## Adding a new Ad Cue Point
 Use the controls below to add a new cue point to one of your videos
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/add",
@@ -106,7 +108,8 @@ Use the controls below to add a new cue point to one of your videos
 ## Retrieving an Ad Cue Point
 Use `cuePoint.get` to get details for a specific Ad Cue Point
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/get",
@@ -125,7 +128,8 @@ Use `cuePoint.get` to get details for a specific Ad Cue Point
 ## Viewing your Advertisement
 Now you can see your new Cue Point wherever you embed your video.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -169,6 +173,7 @@ Now you can see your new Cue Point wherever you embed your video.
 You can use kWidget to listen for when your Cue Points are triggered
 
 
+### Sample Code
 ```javascript
 kWidget.addReadyCallback(function(playerId){
   var kdp = $('#' + playerId)[0]; 
@@ -183,7 +188,8 @@ kWidget.addReadyCallback(function(playerId){
 })
 
 ```
-```demo
+### Demo
+```html
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -248,7 +254,8 @@ kWidget.addReadyCallback(function(playerId){
 ## Deleting an Ad Cue Point
 Use `cuePoint.delete` to remove a specific Ad Cue Point
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/cuepoint_cuepoint/action/delete",

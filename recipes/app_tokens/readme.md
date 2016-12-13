@@ -15,7 +15,8 @@
 ## Getting App Tokens
 App Tokens are used for generating Kaltura Sessions, and can control what privileges are granted to the user. Use ```appToken.list``` to see all of your app tokens.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/apptoken/action/list"
@@ -25,7 +26,8 @@ App Tokens are used for generating Kaltura Sessions, and can control what privil
 ## Adding a new App Token
 Create a new app token by calling ```appToken.add```.  You can choose whether the session should have ADMIN or USER level privileges, and you can specify how long the session should last.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/apptoken/action/add"
@@ -35,7 +37,8 @@ Create a new app token by calling ```appToken.add```.  You can choose whether th
 ## Retrieving an App Token
 Use `appToken.get` to get details for a specific App Token
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/apptoken/action/get",
@@ -59,6 +62,7 @@ To do this, you'll need to compute the SHA1 hash of the current KS concatenated
 with the token.
 
 
+### Sample Code
 ```node
 var crypto = require('crypto')
   , shasum = crypto.createHash('sha1');
@@ -83,7 +87,8 @@ expiry);
 ## Deleting an App Token
 Use `appToken.delete` to remove a specific App Token
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/apptoken/action/delete",

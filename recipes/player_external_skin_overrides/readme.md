@@ -56,7 +56,8 @@ You can define more than one custom CSS files accordingly: ```IframeCustomPlugin
 
 The example below assumes that you have created your custom CSS file under the ```externalResources``` folder and using the ```IframeCustomPluginCss1.css``` filename.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -108,6 +109,7 @@ The example below assumes that you have created your custom CSS file under the `
   ]
 }
 ```
+### Sample Code
 ```html
 <!DOCTYPE html>
 <html>
@@ -179,6 +181,7 @@ The example below assumes that you have created your custom CSS file under the `
 </body>
 </html>
 ```
+### Sample Code
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",
@@ -191,7 +194,8 @@ kWidget.embed({
 	"entry_id": "<%- answers.entryId %>"
 });
 ```
-```demo
+### Demo
+```html
 <!DOCTYPE html>
 <html>
 <head>

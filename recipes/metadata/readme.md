@@ -20,7 +20,8 @@
 ## Create metadata profile
 This recipe will walk you through using custom metadata fields with entries. Custom metadata can also be applied to other objects, such as categories.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/metadata_metadataprofile/action/add",
@@ -61,7 +62,8 @@ This recipe will walk you through using custom metadata fields with entries. Cus
 ## Add metadata to an entry
 To learn how to search through metadata fields, please see the [video_search recipe](https://developer.kaltura.org/recipes/video_search)
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/metadata_metadata/action/add",
@@ -107,7 +109,8 @@ To learn how to search through metadata fields, please see the [video_search rec
 ## Update entry metadata
 Use `metadata.update` to update the metadata for a given item
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/metadata_metadata/action/update",
@@ -131,7 +134,8 @@ Use `metadata.update` to update the metadata for a given item
 ## Delete metadata
 Use the form below to delete the Metadata you created.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/metadata_metadata/action/delete",
@@ -173,7 +177,8 @@ Use the form below to delete the Metadata you created.
 ## Delete metadata profiles
 Use the form below to delete the Metadata Profile you created
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/metadata_metadataprofile/action/delete",

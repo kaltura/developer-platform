@@ -34,7 +34,8 @@ This recipe will walk through some common scenarios of using the media.list acti
 To retrieve a list of media entries, use Media Entry Filters to select which content you want to show.  
 This combination of filter parameters will search through all of the Kaltura Media Entry fields and custom metadata fields, using a free text search and ordered by default using the BM25 algorithm.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/list",
@@ -83,7 +84,8 @@ These blend characters may be used as delimiters or as characters.
 
  
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/list",
@@ -122,7 +124,8 @@ These blend characters may be used as delimiters or as characters.
 ## Video Player
 Here's how to embed the results in HTML. You can select a skin by setting uiconf_id.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/list",
@@ -221,6 +224,7 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
   ]
 }
 ```
+### Sample Code
 ```html
 <div class="row" style="margin-bottom: 10px">
   <div class="col-xs-12 col-md-5">

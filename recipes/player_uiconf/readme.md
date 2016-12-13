@@ -16,7 +16,8 @@
 ## Select a player
 Choose a player to view its configuration
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/uiconf/action/get",
@@ -45,7 +46,8 @@ Choose a player to view its configuration
 ## Updating the UI conf
 You can use the form below to add, change or remove functionality from your player.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/uiconf/action/update",

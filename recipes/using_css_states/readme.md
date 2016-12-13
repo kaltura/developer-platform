@@ -65,7 +65,8 @@ When running on desktop, the regular plarge play button is displayed. However, w
 
 You can use the Chrome dev tools to turn on device mode and chhose a large tablet such as iPad. The hit the "Refresh Demo" button to see the new style applied.
 
-```apicall
+### API Call
+```json
 {
   "method": "get",
   "path": "/service/media/action/get",
@@ -115,6 +116,7 @@ You can use the Chrome dev tools to turn on device mode and chhose a large table
   ]
 }
 ```
+### Sample Code
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",
@@ -126,7 +128,8 @@ kWidget.embed({
 	"entry_id": "<%- answers.entryId %>"
 });
 ```
-```demo
+### Demo
+```html
 <!DOCTYPE html>
 <html>
 <head>
