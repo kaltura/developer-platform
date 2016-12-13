@@ -4,12 +4,13 @@
   "tags": [
     "appToken"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to create, view, and delete App Tokens"
 }
 -->
 
 # App Tokens
-Learn how to create, view, and delete App Tokens
+
 
 ## Getting App Tokens
 App Tokens are used for generating Kaltura Sessions, and can control what privileges are granted to the user. Use ```appToken.list``` to see all of your app tokens.

@@ -7,12 +7,13 @@
     "user",
     "partner"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to pass your credentials to Kaltura's API and create a Kaltura Session"
 }
 -->
 
 # Authentication
-Learn how to pass your credentials to Kaltura's API and create a Kaltura Session
+This recipe will guide you through the steps necessary to create a Kaltura Session (ks), a temporary authentication token that can provide either user-level or admin-level access to your Kaltura account.,,
 
 ## Starting a KalturaSession
 This recipe shows how to work with Kaltura Sessions (aka `KS`).  To generate a KS, you will need your API secret keys.

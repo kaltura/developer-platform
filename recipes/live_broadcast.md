@@ -7,12 +7,13 @@
     "liveStream",
     "uiConf"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to create a new Live+ entry and broadcast a live stream."
 }
 -->
 
 # Live Broadcast
-Learn how to create a new Live+ entry and broadcast a live stream.
+
 
 ## Create a KRecord uiConf
 You'll need a uiConf that supports KRecord in order

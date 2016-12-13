@@ -6,12 +6,13 @@
     "report",
     "media"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to use the API to find your most watched videos and most valuable users"
 }
 -->
 
 # Leaderboard Reports
-Learn how to use the API to find your most watched videos and most valuable users
+
 
 ## Finding Your Most Viewed Videos
 You can use ```report.getTable``` to retrieve tables of usage statistics.

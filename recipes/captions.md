@@ -8,12 +8,13 @@
     "captionAsset",
     "captionAssetItem"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to upload a caption file and perform in-video searches"
 }
 -->
 
 # Captions
-Learn how to upload a caption file and perform in-video searches
+
 
 ## Select a Media Entry
 Choose a video from your library to add captions to.

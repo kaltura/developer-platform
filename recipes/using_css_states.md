@@ -18,12 +18,16 @@
     "mobile",
     "button",
     "style"
-  ]
+  ],
+  "summary": "Set different large play button between mobile and desktop - Using CSS States"
 }
 -->
 
 # Using CSS states
-Set different large play button between mobile and desktop - Using CSS States
+In this recipe, we will learn how to use custom CSS to override the core player layout CSS. 
+In our custom CSS we will use player state classes to create specific look and feel for the large play button in the middel of the player. 
+We will apply this new style only when playing the video on mobile devices like phones and tablets.
+To learn more about player CSS states, look at the [player customization](https://vpaas.kaltura.com/documentation/04_Web-Video-Player/Player-Customization.html) article, under the "CSS States" section.,,
 
 ## Create your player embed code with a custom CSS file
 To begin:

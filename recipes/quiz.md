@@ -5,12 +5,13 @@
   "tags": [
     "cuePoint"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to create a quiz and display it during playback"
 }
 -->
 
 # Quiz
-Learn how to create a quiz and display it during playback
+
 
 ## Select a Media Entry
 Choose a video from your library to add cue points to.

@@ -9,12 +9,13 @@
   "keywords": [],
   "relatedRecipes": [
     "video_search"
-  ]
+  ],
+  "summary": "Learn to work with metadata."
 }
 -->
 
 # Working with metadata
-Learn to work with metadata.
+
 
 ## Create metadata profile
 This recipe will walk you through using custom metadata fields with entries. Custom metadata can also be applied to other objects, such as categories.

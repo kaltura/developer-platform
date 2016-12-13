@@ -6,12 +6,13 @@
     "cuePoint",
     "media"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to create cue points and listen for them during playback"
 }
 -->
 
 # Cue Points
-Learn how to create cue points and listen for them during playback
+
 
 ## Getting Cue Points
 Use `cuePoint.list` to retrieve a list of Cue Points

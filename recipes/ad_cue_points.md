@@ -6,12 +6,13 @@
     "cuePoint",
     "media"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to place advertisements at specific points in your videos"
 }
 -->
 
 # Advertisement Cue Points
-Learn how to place advertisements at specific points in your videos
+
 
 ## Getting Ad Cue Points
 Use `cuePoint.list` to retrieve a list of Ad Cue Points

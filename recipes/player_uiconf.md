@@ -5,12 +5,13 @@
   "tags": [
     "uiConf"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to get and update player configuration"
 }
 -->
 
 # Player UI conf
-Learn how to get and update player configuration
+
 
 ## Select a player
 Choose a player to view its configuration

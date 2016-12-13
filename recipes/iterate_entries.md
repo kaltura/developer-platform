@@ -1,12 +1,13 @@
 <!--METADATA
 {
   "icon": "image",
-  "hidden": true
+  "hidden": true,
+  "summary": "How to list all entries for a given partner"
 }
 -->
 
 # Iterate over all entries
-How to list all entries for a given partner
+
 
 ## Getting a list of entries
 Iterating over all entries is achieved by calling media.list() passing along a pager with an index and size

@@ -6,12 +6,13 @@
     "permission",
     "eventNotificationTemplate"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Set up e-mail alerts and HTTP callbacks that get triggered when your videos become available."
 }
 -->
 
 # Backend and Email Notifications
-Set up e-mail alerts and HTTP callbacks that get triggered when your videos become available.
+
 
 ## Checking Permissions
 Use ```permission.list``` with ```nameEqual``` set to ```'EVENTNOTIFICATION_PLUGIN_PERMISSION'``` to check to see if you have permission to use the eventNotification service.

@@ -7,12 +7,13 @@
   ],
   "keywords": [
     "Kaltura Analytics"
-  ]
+  ],
+  "summary": "Learn how to retrieve usage statistics from the Kaltura API"
 }
 -->
 
 # Analytics Reports
-Learn how to retrieve usage statistics from the Kaltura API
+
 
 ## Getting a Top Content report
 Find out how your viewers are engaging with your content - which content your viewers are watching the most, and which videos are getting little attention

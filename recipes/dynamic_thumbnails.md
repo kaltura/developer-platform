@@ -4,12 +4,13 @@
   "tags": [
     "media"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Create a gallery page with rotating dynamic thumbnails."
 }
 -->
 
 # Animated Thumbnails with CSS Stripes
-Create a gallery page with rotating dynamic thumbnails.
+
 
 ## Embedding Custom Thumbnails
 You can embed thumbnails of your videos using <img> tags with the Thumbnail API.

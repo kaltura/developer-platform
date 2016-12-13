@@ -6,12 +6,13 @@
     "captionAsset",
     "uploadToken"
   ],
-  "keywords": []
+  "keywords": [],
+  "summary": "Learn how to serve a WebVTT caption"
 }
 -->
 
 # Serve WebVTT Captions
-Learn how to serve a WebVTT caption
+
 
 ## Getting Caption Assets
 Use `captionAsset.list` to retrieve a list of Caption Assets
