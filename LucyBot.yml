@@ -1,2 +1,6 @@
 jsIncludes:
   - js/mixpanel.js
+cssIncludes:
+  - css/portal.css
+  - css/navbar.css
+  - css/footer.css
