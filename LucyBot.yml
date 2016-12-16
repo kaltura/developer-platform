@@ -1,6 +1,9 @@
 jsIncludes:
   - js/mixpanel.js
+  - js/check-response.js
 cssIncludes:
   - css/portal.css
   - css/navbar.css
   - css/footer.css
+embedParameters:
+  format: 1

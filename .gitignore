@@ -1,8 +1,6 @@
 www/*
 
 !www/js
-www/js/*
-!www/js/mixpanel.js
 
 !www/css
 www/css/*
