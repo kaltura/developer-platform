@@ -12,7 +12,9 @@
 -->
 
 # Upload a Video
-This recipe will walk you through the process of uploading new videos using the Kaltura API. Video files can be located on disk, or be specified as an HTML file input. If you're working in a web environment, we highly recommend using the [jQuery Chunked File Upload Library](https://github.com/kaltura/chunked-file-upload-jquery). This library handles chunking files in Javascript, automatically determining the optimal chunk size and number of parallel uploaded chunks, as well as handle pause-and-resume and retry in case of temporary network failures. It completely abstracts and simplifies working with the [uploadToken](https://developer.kaltura.com/api-docs/#/uploadToken) service and file upload flow.,
+This recipe will walk you through the process of uploading new videos using the Kaltura API. Video files can be located on disk, or be specified as an HTML file input.
+
+If you're working in a web environment, we highly recommend using the [jQuery Chunked File Upload Library](https://github.com/kaltura/chunked-file-upload-jquery). This library handles chunking files in Javascript, automatically determining the optimal chunk size and number of parallel uploaded chunks, as well as handle pause-and-resume and retry in case of temporary network failures. It completely abstracts and simplifies working with the [uploadToken](https://developer.kaltura.com/api-docs/#/uploadToken) service and file upload flow.
 
 ## Uploading Files - Create an Upload Token
 Use the uploadToken service to upload a new video file to the Kaltura API. First you'll need to use `uploadToken.add` to create a new upload token.
