@@ -1,9 +1,2 @@
 www/*
 
-!www/js
-
-!www/css
-www/css/*
-!www/css/footer.css
-!www/css/navbar.css
-!www/css/portal.css

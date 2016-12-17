@@ -3,7 +3,7 @@ window.checkResponse = function(data, status, xhr) {
   var msg = {type: 'success', message: "Success"};
   if (data === null) return msg;
   if (data instanceof Document) {
-    var $data = $(data);
+    var $data = window.jquery(data);
     if ($data.find('error').length) {
       var code = $data.find('code').text();
       var message = $data.find('error message').text();
@@ -20,7 +20,7 @@ window.checkResponse = function(data, status, xhr) {
     }
   }
   if (msg.message.indexOf('SERVICE_FORBIDDEN') !== -1) {
-    $('#KalturaLogin').modal('show');
+    // FIXME: show login modal
   }
   return msg;
 }
