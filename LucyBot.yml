@@ -1,2 +1,3 @@
 embedParameters:
   format: 1
+codegenURL: '/code/build/request'
