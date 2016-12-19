@@ -1,0 +1,23 @@
+.step-progress-horizontal.bg-primary,
+.step-progress-horizontal .bg-primary {
+  background-color: #fff;
+}
+.step-progress-horizontal .step-progress-circle,
+hr.horizontal-line {
+  border-color: #ccc !important;
+  color: #ccc !important;
+}
+.step-progress-horizontal .step-progress-step.completed .step-progress-circle,
+.step-progress-horizontal .step-progress-step.active .step-progress-circle,
+.step-progress-horizontal .step-progress-step:hover .step-progress-circle {
+  color: #666 !important;
+  border-color: #333 !important;
+  border-width: 2px !important;
+  height: 30px !important;
+  width: 30px !important;
+  margin: 0px !important;
+  box-shadow: none !important;
+}
+
+
+
