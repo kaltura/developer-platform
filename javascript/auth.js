@@ -7,10 +7,20 @@
   var LOGGED_OUT_HTML = '<li class="navbar-link"><a data-toggle="modal" data-target="#KalturaSignInModal">Sign In</a></li>'
         + '<li class="navbar-link"><a href="/?signup=true">Sign Up</a></li>';
 
+  var setCookie = function(creds) {
+    var val = creds ? encodeURIComponent(JSON.stringify(creds)) : '';
+    var now = new Date();
+    var expires = new Date(now.getTime() + COOKIE_TIMEOUT_MS);
+    var cookie = STORAGE_KEY + '=' + val + '; expires=' + expires.toUTCString() + '; Path=/';
+    document.cookie = cookie;
+  }
+
   var setUser = window.setKalturaUser = function(creds) {
     if (!creds) {
       user = {};
+      window.secretService.clearSecrets();
       window.jquery('#KalturaAuthLinks').html(LOGGED_OUT_HTML);
+      setCookie();
       return;
     } else {
       window.jquery('#KalturaAuthLinks').html(LOGGED_IN_HTML);
@@ -18,14 +28,8 @@
     user = creds;
     window.onAuthorization(creds, function(err, ks) {
       user.ks = creds.ks = ks;
-      var now = new Date();
-      var expires = new Date(now.getTime() + COOKIE_TIMEOUT_MS);
-      var cookie = STORAGE_KEY + '=' + encodeURIComponent(JSON.stringify(creds)) + '; expires=' + expires.toUTCString() + '; Path=/';
-      document.cookie = cookie;
-      window.secretService.secrets.ks = creds.ks;
-      window.secretService.secrets.partnerId = creds.partnerId;
-      window.secretService.secrets.userId = creds.userId;
-      window.secretService.secrets.secret = creds.secret;
+      setCookie(creds);
+      window.secretService.setSecrets(creds);
     })
   }
 
@@ -81,7 +85,7 @@
         partnerId: user.partnerId,
       }
       setUser(creds);
-      $('#KalturaPartnerIDModal').modal('hide');
+      window.jquery('#KalturaPartnerIDModal').modal('hide');
     })
     .fail(function(xhr) {
       mixpanel.track('login_error', {
@@ -94,7 +98,6 @@
   }
 
   window.jquery(document).ready(function() {
-    setUser();
     var cookies = document.cookie.split(';').map(function(c) {return c.trim()});
     var credCookie = cookies.filter(function(c) {
       return c.indexOf(STORAGE_KEY) === 0;
@@ -105,7 +108,11 @@
       try {
         user = JSON.parse(decodeURIComponent(stored));
       } catch(e) {}
-      if (user) setUser(user);
+      if (user && typeof user === 'object' && Object.keys(user).length) {
+        setUser(user);
+        return;
+      }
     }
+    setUser();
   });
 })();
