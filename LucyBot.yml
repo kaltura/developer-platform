@@ -3,3 +3,7 @@ embedParameters:
 jsIncludes:
   - '/kaltura_static/minified/js/kaltura.js'
 codegenURL: '/code/build/request'
+routes:
+  recipes: '/workflows'
+  console: '/console'
+  documentation: '/api-docs'
