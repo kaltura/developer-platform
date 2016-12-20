@@ -19,7 +19,7 @@
   var setUser = window.setKalturaUser = function(creds) {
     if (!creds) {
       user = {};
-      window.secretService.clearSecrets();
+      if (window.secretService) window.secretService.clearSecrets();
       window.jquery('#KalturaAuthLinks').html(LOGGED_OUT_HTML);
       setCookie();
       return;
@@ -30,7 +30,7 @@
     window.onAuthorization(creds, function(err, ks) {
       user.ks = creds.ks = ks;
       setCookie(creds);
-      window.secretService.setSecrets(creds);
+      if (window.secretService) window.secretService.setSecrets(creds);
     })
   }
 
