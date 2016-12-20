@@ -1,19 +1,117 @@
-<nav class="navbar navbar-default">
+<style>
+  #KalturaNav {
+    height: 64px;
+  }
+  body {
+    padding-top: 64px;
+  }
+
+  @media (max-width: 305px) {
+    #KalturaNav .navbar-brand img {
+      display: none;
+    }
+  }
+  @media (max-width: 991px) {
+    #KalturaNav .navbar-header {
+      float: none;
+    }
+  }
+
+  #KalturaNav .navbar-brand {
+    padding-right: 20px;
+  }
+  #KalturaNav a {
+    background-color: #fff !important;
+    color: #333 !important;
+  }
+  #KalturaNav.navbar li.navbar-link > a {
+    color: #333 !important;
+    background-color: #fff !important;
+    font-size: 14px;
+    padding: 20px;
+    padding-top: 22px;
+  }
+
+  #KalturaAuthLinks li.navbar-link > a {
+    font-weight: bold;
+  }
+</style>
+
+<div id="KalturaSignInModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Log in to your Kaltura.com account</h3>
+      </div>
+      <form onsubmit="startKalturaLogin(); return false">
+        <div class="modal-body">
+          <label>E-mail</label>
+          <div class="form-group">
+            <input class="form-control" type="text" name="KalturaEmail">
+          </div>
+          <label>Password</label>
+          <div class="form-group">
+            <input class="form-control" type="password" name="KalturaPassword">
+          </div>
+          <p>Need an account? <a href="/?signup=true">Try Kaltura for free!</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Log In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="KalturaPartnerIDModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Choose a Partner ID</h3>
+      </div>
+      <div class="modal-body">
+        <div class="dropdown">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Partner ID <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu"><li><i class="fa fa-spin fa-refresh"></i></li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav id="KalturaNav" class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#NavbarCollapse" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <i class="fa fa-bars"></i>
       </button>
-      <a class="navbar-brand" routerLink="/home">Kaltura</a>
+      <a href="/" class="navbar-brand">
+        <img src="/img/kaltura_dev.png" height="50" width="212"/>
+      </a>
     </div>
     <div id="NavbarCollapse" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li [class.active]="router.isActive('/home')">
-          <a class="nav-link" routerLink="/home">Home</a>
+      <ul class="nav navbar-nav navbar-left">
+        <li class="navbar-link">
+          <a href="https://vpaas.kaltura.com">VPaaS</a>
         </li>
+        <li class="navbar-link">
+          <a href="/api-docs">API Docs</a>
+        </li>
+        <li class="navbar-link">
+          <a href="/console">API Console</a>
+        </li>
+        <li class="navbar-link">
+          <a href="/api-docs/#/Client%20Libraries">Client Libraries</a>
+        </li>
+        <li class="navbar-link">
+          <a href="/workflows">Interactive Workflows</a>
+        </li>
+      </ul>
+      <ul id="KalturaAuthLinks" class="nav navbar-nav navbar-right">
       </ul>
     </div>
   </div>
 </nav>
-
