@@ -4,8 +4,9 @@
   var user = {};
 
   var LOGGED_IN_HTML = '<li class="navbar-link"><a onclick="setKalturaUser()">Sign Out</a></li>';
-  var LOGGED_OUT_HTML = '<li class="navbar-link"><a data-toggle="modal" data-target="#KalturaSignInModal">Sign In</a></li>'
-        + '<li class="navbar-link"><a href="/?signup=true">Sign Up</a></li>';
+  var LOGGED_OUT_HTML =
+        '<li class="navbar-link"><a href="/?signup=true">Sign Up</a></li>'
+        +  '<li class="navbar-link"><a data-toggle="modal" data-target="#KalturaSignInModal">Sign In</a></li>';
 
   var setCookie = function(creds) {
     var val = creds ? encodeURIComponent(JSON.stringify(creds)) : '';
