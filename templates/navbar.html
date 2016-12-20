@@ -1,9 +1,12 @@
 <style>
   #KalturaNav {
-    height: 64px;
+    min-height: 64px;
   }
   body {
     padding-top: 64px;
+  }
+  #KalturaNav.navbar-fixed-top .navbar-collapse {
+    max-height: 500px;
   }
 
   @media (max-width: 305px) {
@@ -24,6 +27,7 @@
     background-color: #fff !important;
     color: #333 !important;
   }
+  #KalturaNav.navbar button.navbar-toggle,
   #KalturaNav.navbar li.navbar-link > a {
     color: #333 !important;
     background-color: #fff !important;
