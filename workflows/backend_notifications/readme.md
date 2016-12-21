@@ -132,12 +132,12 @@ If you create an HTTP Notification, you'll need to set up your server to handle 
 Use the ```KalturaHttpNotificationClientPlugin``` library to parse incoming requests at the URL you specified.
 
 
-### Sample Code
+### Sample Code (ruby)
 ```ruby
 puts 'Kaltura Notification:' + params
 
 ```
-### Sample Code
+### Sample Code (php)
 ```php
 require_once('lib/KalturaClient.php');
 require_once('lib/KalturaPlugins/KalturaHttpNotificationClientPlugin.php');

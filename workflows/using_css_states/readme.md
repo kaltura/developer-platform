@@ -116,7 +116,7 @@ You can use the Chrome dev tools to turn on device mode and chhose a large table
   ]
 }
 ```
-### Sample Code
+### Sample Code (javascript)
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",
@@ -155,7 +155,7 @@ kWidget.embed({
 </html>
 ```
 
-# Finish
+## Finish
 ### Summary
 In this recipe we've learned the following:
 

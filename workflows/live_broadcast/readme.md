@@ -160,7 +160,7 @@ You can use the kRecord widget to record your broadcast.
 **Be sure to choose a `uiConf` that supports kRecord**
 
 
-### Sample Code
+### Sample Code (html)
 ```html
 
 <!DOCTYPE html>
@@ -574,7 +574,7 @@ streamName = encodeURIComponent(streamName);
 </html>
 
 ```
-### Sample Code
+### Sample Code (javascript)
 ```javascript
 var swfURL = "http://cdnapi.kaltura.com/krecord/ui_conf_id/<%-  answers.uiConf  %>";
 var broadcastURL = "<%-  results[2].primaryBroadcastingUrl %>";

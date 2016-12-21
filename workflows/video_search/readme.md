@@ -224,7 +224,7 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
   ]
 }
 ```
-### Sample Code
+### Sample Code (html)
 ```html
 <div class="row" style="margin-bottom: 10px">
   <div class="col-xs-12 col-md-5">
@@ -252,5 +252,5 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
 
 ```
 
-# Finish
+## Finish
 Learn about working with [custom metadata](https://developer.kaltura.com/recipes/metadata)

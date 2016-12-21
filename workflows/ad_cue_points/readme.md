@@ -173,7 +173,7 @@ Now you can see your new Cue Point wherever you embed your video.
 You can use kWidget to listen for when your Cue Points are triggered
 
 
-### Sample Code
+### Sample Code (javascript)
 ```javascript
 kWidget.addReadyCallback(function(playerId){
   var kdp = $('#' + playerId)[0]; 

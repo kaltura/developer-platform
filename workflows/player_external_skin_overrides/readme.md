@@ -109,7 +109,7 @@ The example below assumes that you have created your custom CSS file under the `
   ]
 }
 ```
-### Sample Code
+### Sample Code (html)
 ```html
 <!DOCTYPE html>
 <html>
@@ -181,7 +181,7 @@ The example below assumes that you have created your custom CSS file under the `
 </body>
 </html>
 ```
-### Sample Code
+### Sample Code (javascript)
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",

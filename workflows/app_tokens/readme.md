@@ -62,7 +62,7 @@ To do this, you'll need to compute the SHA1 hash of the current KS concatenated
 with the token.
 
 
-### Sample Code
+### Sample Code (node)
 ```node
 var crypto = require('crypto')
   , shasum = crypto.createHash('sha1');

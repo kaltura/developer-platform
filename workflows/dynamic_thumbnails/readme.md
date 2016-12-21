@@ -39,7 +39,7 @@ Once the demo loads, try mousing over the thumbnail to see a preview of the vide
   ]
 }
 ```
-### Sample Code
+### Sample Code (html)
 ```html
 <img src="https://cdnapisec.kaltura.com/p/<%- answers.partnerId %>/thumbnail/entry_id/<%- answers.entryId %>/width/240/height/180"
      width="240" height="180">
@@ -111,7 +111,7 @@ to img_width * frame_number.
   ]
 }
 ```
-### Sample Code
+### Sample Code (html)
 ```html
 <style>
 .img-holder {
