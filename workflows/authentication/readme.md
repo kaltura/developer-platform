@@ -53,7 +53,10 @@ You can validate your Kaltura session by calling ```user.get``` without a User I
 ```json
 {
   "method": "get",
-  "path": "/service/user/action/get"
+  "path": "/service/user/action/get",
+  "ignoreParameters": [
+    "format"
+  ]
 }
 ```
 
@@ -92,6 +95,9 @@ You can then re-use `user.loginById` with a partnerId to login for as that parti
 {
   "method": "get",
   "path": "/service/partner/action/listPartnersForUser",
-  "parameters": []
+  "parameters": [],
+  "ignoreParameters": [
+    "format"
+  ]
 }
 ```

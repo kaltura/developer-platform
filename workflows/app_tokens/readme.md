@@ -19,7 +19,10 @@ App Tokens are used for generating Kaltura Sessions, and can control what privil
 ```json
 {
   "method": "get",
-  "path": "/service/apptoken/action/list"
+  "path": "/service/apptoken/action/list",
+  "ignoreParameters": [
+    "format"
+  ]
 }
 ```
 
@@ -30,7 +33,10 @@ Create a new app token by calling ```appToken.add```.  You can choose whether th
 ```json
 {
   "method": "get",
-  "path": "/service/apptoken/action/add"
+  "path": "/service/apptoken/action/add",
+  "ignoreParameters": [
+    "format"
+  ]
 }
 ```
 

@@ -122,7 +122,10 @@ Use ```eventNotificationTemplate.list``` to get a list of your templates.
 ```json
 {
   "method": "get",
-  "path": "/service/eventnotification_eventnotificationtemplate/action/list"
+  "path": "/service/eventnotification_eventnotificationtemplate/action/list",
+  "ignoreParameters": [
+    "format"
+  ]
 }
 ```
 
