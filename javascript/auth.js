@@ -34,6 +34,10 @@
     })
   }
 
+  window.lucybot.startLogin = function() {
+    window.jquery('#KalturaSignInModal').modal('show');
+  }
+
   window.startKalturaLogin = function() {
     user.email = window.jquery('input[name="KalturaEmail"]').val();
     user.password = window.jquery('input[name="KalturaPassword"]').val();
