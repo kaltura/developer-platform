@@ -18,5 +18,13 @@ hr.horizontal-line {
   box-shadow: none !important;
 }
 
+.parameters-title:after {
+  content: "Set the values below to try this step";
+}
+.parameters-title {
+  background-color: #f5f5f5 !important;
+}
 
-
+.parameters-title h4, .sample-code-title h4 {
+  text-decoration: underline;
+}
