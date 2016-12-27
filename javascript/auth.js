@@ -39,7 +39,7 @@
       window.jquery('#KalturaAuthLinks').html(LOGGED_IN_HTML);
     }
     user = creds;
-    window.onAuthorization(creds, function(err, ks) {
+    window.setUpKalturaClient(creds, function(err, ks) {
       user.ks = creds.ks = ks;
       setCookie(creds);
       if (window.secretService) window.secretService.setSecrets(creds);
