@@ -3,10 +3,10 @@
 }
 
 @media (min-width: 992px) {
-  app .container-fluid {
-    padding-left: 345px;
-  }
   app .container-fluid, .loading-screen {
+    margin-left: 345px;
+  }
+  app .main-container, .loading-screen {
     min-height: 1000px !important;
   }
 
@@ -44,7 +44,9 @@
     background-color: #999;
   }
 
-  #KalturaSidebar .sidebar-content, #KalturaSidebar .section a {
+  #KalturaSidebar .sidebar-content,
+  #KalturaSidebar .section a,
+  #KalturaSidebar .section h4 {
     color: #fff;
   }
 
