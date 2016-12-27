@@ -52,6 +52,9 @@
       </div>
       <form onsubmit="startKalturaLogin(); return false">
         <div class="modal-body">
+          <div style="display:none" class="alert alert-danger">
+            There was an error signing in. Please check your account details and try again.
+          </div>
           <label>E-mail</label>
           <div class="form-group">
             <input class="form-control" type="text" name="KalturaEmail">
