@@ -6,7 +6,7 @@
   var LOGGED_IN_HTML = '<li class="navbar-link"><a onclick="setKalturaUser()">Sign Out</a></li>';
   var LOGGED_OUT_HTML =
         '<li class="navbar-link"><a href="/?signup=true">Sign Up</a></li>'
-        +  '<li class="navbar-link"><a data-toggle="modal" data-target="#KalturaSignInModal">Sign In</a></li>';
+        +  '<li class="navbar-link"><a onclick="lucybot.startLogin()">Sign In</a></li>';
 
   var setCookie = function(creds) {
     var val = creds ? encodeURIComponent(JSON.stringify(creds)) : '';
@@ -35,10 +35,12 @@
   }
 
   window.lucybot.startLogin = function() {
+    window.jquery('#KalturaSignInModal #KalturaSignInButton').html('Log In').removeAttr('disabled');
     window.jquery('#KalturaSignInModal').modal('show');
   }
 
   window.startKalturaLogin = function() {
+    window.jquery('#KalturaSignInModal #KalturaSignInButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
     user.email = window.jquery('input[name="KalturaEmail"]').val();
     user.password = window.jquery('input[name="KalturaPassword"]').val();
     mixpanel.track('login_submit', {
@@ -52,6 +54,7 @@
     })
     .done(function(response) {
       window.jquery('#KalturaSignInModal').modal('hide');
+      window.jquery('#KalturaPartnerIDModal .kaltura-loading').hide();
       window.jquery('#KalturaPartnerIDModal').modal('show');
       mixpanel.identify(user.email);
       mixpanel.people.set({
@@ -75,8 +78,8 @@
   }
 
   window.setKalturaPartnerID = function(id) {
-    window.jquery('#KalturaPartnerIDModal').modal('hide');
     user.partnerId = id;
+    window.jquery('#KalturaPartnerIDModal .kaltura-loading').show();
     window.jquery.ajax({
       url: '/auth/selectPartner',
       method: 'POST',
