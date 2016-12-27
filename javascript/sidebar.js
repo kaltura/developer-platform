@@ -3,7 +3,7 @@ window.showKalturaSidebar = function() {
   window.jquery('#KalturaSidebar .hide-sidebar').show();
   window.jquery('#KalturaSidebar .show-sidebar').hide();
   window.jquery('#KalturaSidebar').css('width', '300px');
-  window.jquery('app .container-fluid').css('margin-left', '345px')
+  window.jquery('app .container-fluid').css('margin-left', '330px')
 }
 
 window.hideKalturaSidebar = function() {
@@ -11,5 +11,5 @@ window.hideKalturaSidebar = function() {
   window.jquery('#KalturaSidebar .hide-sidebar').hide();
   window.jquery('#KalturaSidebar .show-sidebar').show();
   window.jquery('#KalturaSidebar').css('width', '54px');
-  window.jquery('app .container-fluid').css('margin-left', '94px')
+  window.jquery('app .container-fluid').css('margin-left', '79px')
 }

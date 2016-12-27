@@ -4,7 +4,7 @@
 
 @media (min-width: 992px) {
   app .container-fluid, .loading-screen {
-    margin-left: 345px;
+    margin-left: 330px;
   }
   app .main-container, .loading-screen {
     min-height: 1000px !important;
