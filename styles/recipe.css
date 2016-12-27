@@ -28,3 +28,16 @@ hr.horizontal-line {
 .parameters-title h4, .sample-code-title h4 {
   text-decoration: underline;
 }
+
+/* Move learn more button to the right */
+.step-subtitle .dropdown.learn-more {
+  float: right;
+}
+.step-subtitle .dropdown.learn-more a.dropdown-toggle {
+  padding-top: 0px;
+}
+.step-subtitle .dropdown.learn-more .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
