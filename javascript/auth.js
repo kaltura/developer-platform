@@ -16,11 +16,23 @@
     document.cookie = cookie;
   }
 
+  var updateViewsForLogin = function(loggedIn) {
+    if (!loggedIn) {
+      window.jquery('#KalturaAuthLinks').html(LOGGED_OUT_HTML);
+      window.jquery('#KalturaSidebar .logged-in').hide();
+      window.jquery('#KalturaSidebar .not-logged-in').show();
+    } else {
+      window.jquery('#KalturaAuthLinks').html(LOGGED_IN_HTML);
+      window.jquery('#KalturaSidebar .not-logged-in').hide();
+      window.jquery('#KalturaSidebar .logged-in').show();
+    }
+  }
+
   var setUser = window.setKalturaUser = function(creds) {
+    updateViewsForLogin(!!creds);
     if (!creds) {
       user = {};
       if (window.secretService) window.secretService.clearSecrets();
-      window.jquery('#KalturaAuthLinks').html(LOGGED_OUT_HTML);
       setCookie();
       return;
     } else {

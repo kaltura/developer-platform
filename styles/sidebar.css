@@ -1,0 +1,50 @@
+#KalturaSidebar {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  app .container-fluid {
+    padding-left: 320px;
+  }
+  app .container-fluid, .loading-screen {
+    min-height: 1000px !important;
+  }
+
+  #KalturaSidebar {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 72px;
+    width: 275px;
+    background-color: #999;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  #KalturaSidebar, #KalturaSidebar a {
+    color: #fff;
+  }
+
+  #KalturaSidebar hr {
+    margin-right: -20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #KalturaSidebar h4 {
+    margin-top: 0px;
+    font-size: 16px;
+  }
+
+  #KalturaSidebar .section {
+    margin-bottom: 50px;
+  }
+  #KalturaSidebar .light-section {
+    background-color: rgba(215, 215, 215, .5);
+    color: #333;
+    border: 1px solid #979797;
+    height: 168px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+}

@@ -122,9 +122,38 @@
     </div>
   </div>
 </nav>
+
 <script>
   if (window.lucybot.embed) {
     document.getElementById('KalturaNav').remove();
     document.getElementsByTagName('body')[0].style.padding = '0px'
   }
 </script>
+
+<div id="KalturaSidebar">
+  <div class="section">
+    <h4>Admin</h4>
+    <hr>
+    <div class="not-logged-in">
+      <p><i>Log in to see your account details</i></p>
+    </div>
+    <div class="logged-in" style="display:none">
+      <p><label>Partner ID: </label><span class="partnerId"></span></p>
+      <p><label>User Secret: </label><span class="userSecret"></span></p>
+      <p><label>Admin Secret: </label><span class="adminSecret"></span></p>
+    </div>
+  </div>
+  <div class="section">
+    <h4>Resources</h4>
+    <hr>
+    <p><a target="_blank" href="/api-docs">API Docs</a></p>
+    <p><a target="_blank" href="/console">API Console</a></p>
+  </div>
+
+  <div class="light-section">
+    <h4>News</h4>
+  </div>
+  <div class="light-section">
+    <h4>Tips</h4>
+  </div>
+</div>

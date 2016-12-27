@@ -1,3 +1,10 @@
+#KalturaFooter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 50px;
+}
+
 .footer-section {
   background-color: #333;
   padding-top: 70px;

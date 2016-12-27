@@ -2,6 +2,8 @@ window.KC = null;
 window.onAuthorization = function(creds, cb) {
   if (!creds.partnerId || !creds.secret) return cb();
   if (creds.ks && window.KC) return cb();
+  window.jquery('#KalturaSidebar .partnerId').text(creds.partnerId);
+  window.jquery('#KalturaSidebar .adminSecret').text(creds.secret);
   var config = new KalturaConfiguration(creds.partnerId);
   config.serviceUrl = "https://www.kaltura.com/";
   window.KC = new KalturaClient(config);
