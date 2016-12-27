@@ -101,6 +101,7 @@
     .done(function(data) {
       var creds = {
         secret: data.adminSecret,
+        userSecret: data.secret,
         userId: user.email,
         partnerId: user.partnerId,
       }
