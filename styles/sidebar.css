@@ -4,7 +4,7 @@
 
 @media (min-width: 992px) {
   app .container-fluid {
-    padding-left: 320px;
+    padding-left: 345px;
   }
   app .container-fluid, .loading-screen {
     min-height: 1000px !important;
@@ -15,13 +15,36 @@
     position: absolute;
     left: 20px;
     top: 72px;
-    width: 275px;
-    background-color: #999;
-    padding: 20px;
+    width: 300px;
     font-size: 14px;
   }
 
-  #KalturaSidebar, #KalturaSidebar a {
+  #KalturaSidebar .sidebar-content {
+    background-color: #999;
+    padding: 20px;
+    width: 275px;
+    float: left;
+    border-radius: 4px;
+  }
+
+  #KalturaSidebar .sidebar-button {
+    float: right;
+  }
+  #KalturaSidebar .sidebar-button a {
+    font-size: 22px;
+    color: #999;
+  }
+  #KalturaSidebar .sidebar-button a.show-sidebar {
+    width: 54px;
+    height: 54px;
+    border-radius: 27px;
+    padding-top: 14px;
+    text-align: center;
+    display: inline-block;
+    background-color: #999;
+  }
+
+  #KalturaSidebar .sidebar-content, #KalturaSidebar .section a {
     color: #fff;
   }
 

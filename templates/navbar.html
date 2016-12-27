@@ -131,29 +131,37 @@
 </script>
 
 <div id="KalturaSidebar">
-  <div class="section">
-    <h4>Admin</h4>
-    <hr>
-    <div class="not-logged-in">
-      <p><i>Log in to see your account details</i></p>
+  <div class="sidebar-content">
+    <div class="section">
+      <h4>Admin</h4>
+      <hr>
+      <div class="not-logged-in">
+        <p><i>Log in to see your account details</i></p>
+      </div>
+      <div class="logged-in" style="display:none">
+        <p><label>Partner ID: </label><span class="partnerId"></span></p>
+        <p><label>User Secret: </label><span class="userSecret"></span></p>
+        <p><label>Admin Secret: </label><span class="adminSecret"></span></p>
+      </div>
     </div>
-    <div class="logged-in" style="display:none">
-      <p><label>Partner ID: </label><span class="partnerId"></span></p>
-      <p><label>User Secret: </label><span class="userSecret"></span></p>
-      <p><label>Admin Secret: </label><span class="adminSecret"></span></p>
+    <div class="section">
+      <h4>Resources</h4>
+      <hr>
+      <p><a target="_blank" href="/api-docs">API Docs</a></p>
+      <p><a target="_blank" href="/console">API Console</a></p>
     </div>
-  </div>
-  <div class="section">
-    <h4>Resources</h4>
-    <hr>
-    <p><a target="_blank" href="/api-docs">API Docs</a></p>
-    <p><a target="_blank" href="/console">API Console</a></p>
-  </div>
 
-  <div class="light-section">
-    <h4>News</h4>
+    <div class="light-section">
+      <h4>News</h4>
+    </div>
+    <div class="light-section">
+      <h4>Tips</h4>
+    </div>
   </div>
-  <div class="light-section">
-    <h4>Tips</h4>
+  <div class="sidebar-button">
+    <a class="hide-sidebar" onclick="hideKalturaSidebar()"><i class="fa fa-times"></i></a>
+    <a class="show-sidebar" style="display: none" onclick="showKalturaSidebar()">
+      <img src="assets/img/notes.svg">
+    </a>
   </div>
 </div>
