@@ -1,48 +1,3 @@
-<style>
-  #KalturaNav {
-    min-height: 46px;
-  }
-  body {
-    padding-top: 46px;
-  }
-  #KalturaNav.navbar-fixed-top .navbar-collapse {
-    max-height: 500px;
-  }
-
-  #KalturaNav .navbar-brand {
-    padding-top: 0px;
-  }
-
-  @media (max-width: 305px) {
-    #KalturaNav .navbar-brand img {
-      display: none;
-    }
-  }
-  @media (max-width: 991px) {
-    #KalturaNav .navbar-header {
-      float: none;
-    }
-  }
-
-  #KalturaNav .navbar-brand {
-    padding-right: 20px;
-  }
-  #KalturaNav a {
-    background-color: #fff !important;
-    color: #333 !important;
-  }
-  #KalturaNav.navbar button.navbar-toggle,
-  #KalturaNav.navbar li.navbar-link > a {
-    color: #333 !important;
-    background-color: #fff !important;
-    font-size: 14px;
-  }
-
-  #KalturaAuthLinks li.navbar-link > a {
-    font-weight: bold;
-  }
-</style>
-
 <div id="KalturaSignInModal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -126,13 +81,6 @@
   </div>
 </nav>
 
-<script>
-  if (window.lucybot.embed) {
-    document.getElementById('KalturaNav').remove();
-    document.getElementsByTagName('body')[0].style.padding = '0px'
-  }
-</script>
-
 <div id="KalturaSidebar">
   <div class="sidebar-content">
     <div class="section">
@@ -168,3 +116,13 @@
     </a>
   </div>
 </div>
+
+<script>
+if (window.lucybot.embed) {
+  document.getElementById('KalturaNav').remove();
+  document.getElementById('KalturaSidebar').remove();
+} else {
+  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-nav';
+}
+</script>
+

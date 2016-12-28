@@ -1,0 +1,43 @@
+body.spaced-for-kaltura-nav {
+  padding-top: 46px;
+}
+#KalturaNav {
+  min-height: 46px;
+}
+#KalturaNav.navbar-fixed-top .navbar-collapse {
+  max-height: 500px;
+}
+
+#KalturaNav .navbar-brand {
+  padding-top: 0px;
+}
+
+@media (max-width: 305px) {
+  #KalturaNav .navbar-brand img {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  #KalturaNav .navbar-header {
+    float: none;
+  }
+}
+
+#KalturaNav .navbar-brand {
+  padding-right: 20px;
+}
+#KalturaNav a {
+  background-color: #fff !important;
+  color: #333 !important;
+}
+#KalturaNav.navbar button.navbar-toggle,
+#KalturaNav.navbar li.navbar-link > a {
+  color: #333 !important;
+  background-color: #fff !important;
+  font-size: 14px;
+}
+
+#KalturaAuthLinks li.navbar-link > a {
+  font-weight: bold;
+}
+
