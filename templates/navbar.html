@@ -121,9 +121,13 @@
 <script>
 if (window.lucybot.embed) {
   document.getElementById('KalturaNav').remove();
-  document.getElementById('KalturaSidebar').remove();
+  if (!window.lucybot.showNavigation) {
+    document.getElementById('KalturaSidebar').remove();
+  } else {
+    document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-sidebar';
+  }
 } else {
-  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-nav';
+  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-nav spaced-for-kaltura-sidebar';
 }
 </script>
 
