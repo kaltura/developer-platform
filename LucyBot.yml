@@ -2,7 +2,7 @@ basePath: '/workflows/'
 embedParameters:
   format: 1
 jsIncludes:
-  - '/kaltura_static/minified/js/kaltura.js'
+  - 'assets/kaltura.js'
 codegenURL: '/code/build/request'
 routes:
   recipes:
