@@ -3,10 +3,12 @@
 }
 
 @media (min-width: 992px) {
-  app .container-fluid.spaced-for-kaltura-nav, .loading-screen.spaced-for-kaltura-nav {
+  body.spaced-for-kaltura-nav app .container-fluid,
+  body.spaced-for-kaltura-nav .loading-screen {
     margin-left: 330px;
   }
-  app .main-container.spaced-for-kaltura-nav, .loading-screen.spaced-for-kaltura-nav {
+  body.spaced-for-kaltura-nav app .main-container,
+  body.spaced-for-kaltura-nav .loading-screen {
     min-height: 1000px !important;
   }
 
