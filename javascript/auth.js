@@ -126,6 +126,8 @@
     })
   }
 
+  let ksMatch = window.location.href.substring(window.location.href.indexOf('?')).match(new RegExp('[?&]ks=([^&]+)'));
+  if (ksMatch) ksMatch = window.decodeURIComponent(ksMatch[1]);
   window.jquery(document).ready(function() {
     var cookies = document.cookie.split(';').map(function(c) {return c.trim()});
     var credCookie = cookies.filter(function(c) {
@@ -138,10 +140,15 @@
         user = JSON.parse(decodeURIComponent(stored));
       } catch(e) {}
       if (user && typeof user === 'object' && Object.keys(user).length) {
+        if (ksMatch) user.ks = ksMatch;
         setUser(user);
         return;
       }
     }
-    setUser();
+    if (ksMatch) {
+      setUser({ks: ksMatch});
+    } else {
+      setUser();
+    }
   });
 })();
