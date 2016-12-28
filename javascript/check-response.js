@@ -1,4 +1,4 @@
-window.checkResponse = function(data, status, xhr) {
+window.checkResponse = function(data, status) {
   var msg = {type: 'success', message: "Success"};
   if (data === null) return msg;
   if (data instanceof Document) {
