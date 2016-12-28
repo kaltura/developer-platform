@@ -159,7 +159,59 @@ You can use the kRecord widget to record your broadcast.
 
 **Be sure to choose a `uiConf` that supports kRecord**
 
-
+### API Call
+```json
+{
+  "parameters": [
+    {
+      "name": "uiConf",
+      "dynamicEnum": {
+        "path": "/service/uiconf/action/list",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "filter[orderBy]",
+            "value": "-updatedAt"
+          },
+          {
+            "name": "filter[objTypeEqual]",
+            "value": 7
+          }
+        ],
+        "array": "objects",
+        "label": "name",
+        "value": "id"
+      },
+      "dynamicValue": {
+        "fromStep": 0,
+        "value": "id"
+      }
+    },
+    {
+      "custom": true,
+      "name": "playerUiConf",
+      "type": "string",
+      "dynamicEnum": {
+        "parameters": [
+          {
+            "name": "pager[pageSize]",
+            "value": 500
+          },
+          {
+            "name": "filter[objTypeEqual]",
+            "value": 1
+          }
+        ],
+        "path": "/service/uiconf/action/list",
+        "method": "get",
+        "array": "objects",
+        "value": "id",
+        "label": "name"
+      }
+    }
+  ]
+}
+```
 ### Sample Code (html)
 ```html
 

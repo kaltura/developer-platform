@@ -172,7 +172,44 @@ Now you can see your new Cue Point wherever you embed your video.
 ## Listening for Cue Points
 You can use kWidget to listen for when your Cue Points are triggered
 
-
+### API Call
+```json
+{
+  "parameters": [
+    {
+      "name": "entryId",
+      "dynamicValue": {
+        "fromStep": 0,
+        "answer": "filter[entryIdEqual]"
+      },
+      "dynamicEnum": {
+        "path": "/service/media/action/list",
+        "method": "get",
+        "array": "objects",
+        "value": "id",
+        "label": "name"
+      }
+    },
+    {
+      "name": "uiConf",
+      "type": "string",
+      "dynamicEnum": {
+        "path": "/service/uiconf/action/list",
+        "method": "get",
+        "array": "objects",
+        "value": "id",
+        "label": "name",
+        "parameters": [
+          {
+            "name": "filter[objTypeEqual]",
+            "value": 1
+          }
+        ]
+      }
+    }
+  ]
+}
+```
 ### Sample Code (javascript)
 ```javascript
 kWidget.addReadyCallback(function(playerId){

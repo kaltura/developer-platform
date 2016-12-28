@@ -67,7 +67,12 @@ Kaltura Session.
 To do this, you'll need to compute the SHA1 hash of the current KS concatenated
 with the token.
 
-
+### API Call
+```json
+{
+  "parameters": []
+}
+```
 ### Sample Code (node)
 ```node
 var crypto = require('crypto')
