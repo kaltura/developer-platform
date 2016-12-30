@@ -126,7 +126,7 @@
     })
   }
 
-  let ksMatch = window.location.href.substring(window.location.href.indexOf('?')).match(new RegExp('[?&]ks=([^&]+)'));
+  var ksMatch = window.location.href.substring(window.location.href.indexOf('?')).match(new RegExp('[?&]ks=([^&]+)'));
   if (ksMatch) ksMatch = window.decodeURIComponent(ksMatch[1]);
   window.jquery(document).ready(function() {
     var cookies = document.cookie.split(';').map(function(c) {return c.trim()});
