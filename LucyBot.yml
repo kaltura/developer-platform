@@ -1,10 +1,13 @@
 basePath: '/workflows/'
 embedParameters:
   format: 1
+hljsTheme: 'atom-one-light'
 jsIncludes:
   - 'assets/kaltura.js'
 codegenURL: '/code/build/request'
 routes:
+  default:
+    title: Kaltura VPaaS API
   recipes:
     path: '/workflows'
     title: Kaltura API Workflows
