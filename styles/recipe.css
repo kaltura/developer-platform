@@ -3,7 +3,7 @@
   background-color: #fff;
 }
 .step-progress-horizontal .step-progress-circle,
-hr.horizontal-line {
+.horizontal-line {
   border-color: #ccc !important;
   color: #ccc !important;
 }
