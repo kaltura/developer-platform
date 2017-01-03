@@ -20,6 +20,9 @@
   border-width: 2px;
   border-color: #1ac1fc;
 }
+.contact-box .panel-heading .heading-underline[class] {
+  border-color: #fdd830;
+}
 
 .step-progress-horizontal.bg-primary,
 .step-progress-horizontal .bg-primary {
