@@ -61,3 +61,6 @@ workflowCategories:
     icon: assets/img/icons/manage.png
     workflows:
       - app_tokens
+  - title: Contact Us
+    icon: assets/img/icons/contact.png
+    isContact: true
