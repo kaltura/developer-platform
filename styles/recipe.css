@@ -1,3 +1,26 @@
+.panel-heading[class] {
+  height: 68px;
+  border-bottom: none;
+}
+.panel-heading .heading-icon[class] {
+  top: 40px;
+  left: 11px;
+  width: 50px;
+}
+.panel-heading .heading-title[class] {
+  padding-left: 0px;
+  text-align: center;
+}
+.panel-body[class] {
+  padding-top: 30px;
+}
+.panel-heading .heading-underline[class] {
+  left: 85px;
+  bottom: -2px;
+  border-width: 2px;
+  border-color: #1ac1fc;
+}
+
 .step-progress-horizontal.bg-primary,
 .step-progress-horizontal .bg-primary {
   background-color: #fff;
