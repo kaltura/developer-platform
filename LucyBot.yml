@@ -39,7 +39,7 @@ workflowCategories:
       - captions
       - webvtt_captions
   - title: Search, Discover and Personalize
-    icon: assets/img/icons/other.png
+    icon: assets/img/icons/publish.png
     workflows:
       - video_search
   - title: Engage and Publish
@@ -61,6 +61,9 @@ workflowCategories:
     icon: assets/img/icons/manage.png
     workflows:
       - app_tokens
+  - title: Other
+    icon: assets/img/icons/other.png
+    isMiscellaneous: true
   - title: Contact Us
     icon: assets/img/icons/contact.png
     isContact: true
