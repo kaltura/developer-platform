@@ -31,7 +31,10 @@
   float: right;
 }
 .step-subtitle .dropdown.learn-more a.dropdown-toggle {
-  padding-top: 0px;
+  color: #5e5e5e;
+  background-color: #fff;
+  border-color: #bababa;
+  border-radius: 4px;
 }
 .step-subtitle .dropdown.learn-more .dropdown-menu {
   left: auto;
