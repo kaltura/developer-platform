@@ -5,7 +5,7 @@
 
   var LOGGED_IN_HTML = '<li class="navbar-link"><a onclick="setKalturaUser()">Sign Out</a></li>';
   var LOGGED_OUT_HTML =
-        '<li class="navbar-link"><a href="/?signup=true">Sign Up</a></li>'
+        '<li class="navbar-link"><a data-toggle="modal" data-target="#KalturaSignUpModal">Sign Up</a></li>'
         +  '<li class="navbar-link"><a onclick="lucybot.startLogin()">Sign In</a></li>';
 
   var setCookie = function(creds) {
@@ -29,6 +29,30 @@
     }
   }
 
+  var getOptionsHTML = function(opts) {
+    return opts.map(function(c) {
+      return '<option value="' + c.value + '">' + c.label + '</option>';
+    }).join('\n');
+  }
+
+  var updateStates = function() {
+    var country = window.jquery('#KalturaSignUpModal select[name="country"]').val();
+    if (window.STATES[country]) {
+      window.jquery('#KalturaSignUpModal .state-input').show()
+            .find('select').html(getOptionsHTML(window.STATES[country]))
+    } else {
+      window.jquery('#KalturaSignUpModal .state-input').hide()
+    }
+  }
+
+  var setUpSignupModal = function() {
+    window.jquery('#KalturaSignUpModal select[name="country"]')
+        .html(getOptionsHTML(window.COUNTRIES))
+        .change(updateStates)
+        .val('US');
+    updateStates();
+  }
+
   var setUser = window.setKalturaUser = function(creds) {
     updateViewsForLogin(!!creds);
     if (!creds) {
@@ -47,12 +71,44 @@
     })
   }
 
+  var maybeContinueSession = function() {
+    var ksMatch = window.location.href.substring(window.location.href.indexOf('?')).match(new RegExp('[?&]ks=([^&]+)'));
+    if (ksMatch) ksMatch = window.decodeURIComponent(ksMatch[1]);
+    var cookies = document.cookie.split(';').map(function(c) {return c.trim()});
+    var credCookie = cookies.filter(function(c) {
+      return c.indexOf(STORAGE_KEY) === 0;
+    })[0];
+    if (credCookie) {
+      var stored = credCookie.substring(STORAGE_KEY.length + 1) || '{}';
+      var user;
+      try {
+        user = JSON.parse(decodeURIComponent(stored));
+      } catch(e) {}
+      if (user && typeof user === 'object' && Object.keys(user).length) {
+        if (ksMatch) user.ks = ksMatch;
+        setUser(user);
+        return;
+      }
+    }
+    if (ksMatch) {
+      setUser({ks: ksMatch});
+    } else {
+      setUser();
+    }
+  };
+
   window.lucybot.startLogin = function() {
     window.jquery('#KalturaSignInModal').modal('show');
   }
 
+  window.jquery(document).ready(function() {
+    setUpSignupModal()
+    maybeContinueSession();
+  })
+
   window.startKalturaLogin = function() {
     window.jquery('#KalturaSignInModal #KalturaSignInButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
+    window.jquery('#KalturaSignInModal .alert-danger').hide();
     user.email = window.jquery('input[name="KalturaEmail"]').val();
     user.password = window.jquery('input[name="KalturaPassword"]').val();
     mixpanel.track('login_submit', {
@@ -126,29 +182,61 @@
     })
   }
 
-  var ksMatch = window.location.href.substring(window.location.href.indexOf('?')).match(new RegExp('[?&]ks=([^&]+)'));
-  if (ksMatch) ksMatch = window.decodeURIComponent(ksMatch[1]);
-  window.jquery(document).ready(function() {
-    var cookies = document.cookie.split(';').map(function(c) {return c.trim()});
-    var credCookie = cookies.filter(function(c) {
-      return c.indexOf(STORAGE_KEY) === 0;
-    })[0];
-    if (credCookie) {
-      var stored = credCookie.substring(STORAGE_KEY.length + 1) || '{}';
-      var user;
-      try {
-        user = JSON.parse(decodeURIComponent(stored));
-      } catch(e) {}
-      if (user && typeof user === 'object' && Object.keys(user).length) {
-        if (ksMatch) user.ks = ksMatch;
-        setUser(user);
-        return;
+  window.startKalturaSignup = function() {
+    window.jquery('#KalturaSignUpModal .alert-danger').hide();
+    var inputs = {};
+    window.jquery('#KalturaSignUpModal [name]').each(function() {
+      var e = window.jquery(this);
+      inputs[e.attr('name')] = e.val();
+    });
+    if (!inputs.firstName ||
+        !inputs.lastName ||
+        !inputs.company ||
+        !inputs.email ||
+        !inputs.country) {
+      window.jquery('#KalturaSignUpModal .alert-danger').show().text(
+        "Please be sure to include your Name, Company, Email, and Country"
+      );
+      return;
+    }
+    mixpanel.track('signup_submit', inputs);
+    window.jquery('#KalturaSignUpModal #KalturaSignUpButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
+    window.jquery.ajax({
+      url: '/auth/signup',
+      method: 'POST',
+      data: JSON.stringify(inputs),
+      headers: {'Content-Type': 'application/json'},
+    })
+    .done(function(response) {
+      mixpanel.identify(inputs.email);
+      mixpanel.people.set({
+        '$email': inputs.email,
+        partnerId: response.id,
+        country: inputs.country,
+        state: inputs.state,
+        company: inputs.company,
+        firstName: inputs.firstName,
+        lastName: inputs.lastName,
+      })
+      mixpanel.track('signup_success', {
+        partnerId: response.id,
+        email: inputs.email,
+      })
+      var creds = {
+        partnerId: response.id,
+        userId: response.adminUserId,
+        secret: response.adminSecret,
       }
-    }
-    if (ksMatch) {
-      setUser({ks: ksMatch});
-    } else {
-      setUser();
-    }
-  });
+      window.jquery('#KalturaSignUpModal').modal('hide');
+      setUser(creds);
+    })
+    .fail(function(xhr) {
+      mixpanel.track('signup_error', inputs)
+      var errMessage = xhr.responseText || "There was an error signing up. Please try again.";
+      window.jquery('#KalturaSignUpModal .alert-danger').show().text(errMessage);
+    })
+    .always(function() {
+      window.jquery('#KalturaSignUpModal #KalturaSignUpButton').html('Sign Up').removeAttr('disabled');
+    })
+  }
 })();
