@@ -19,3 +19,45 @@ routes:
   documentation:
     path: '/api-docs'
     title: Kaltura API Documentation
+workflowCategories:
+  - title: Generate API Sessions
+    icon: assets/img/icons/administrative.png
+    workflows:
+      - authentication
+  - title: Ingest and Upload Media
+    icon: assets/img/icons/upload.png
+    workflows:
+      - upload
+  - title: Live Stream and Broadcast
+    icon: assets/img/icons/play-back.png
+    workflows:
+      - live_broadcast
+  - title: Enrich and Organize Metadata
+    icon: assets/img/icons/distribute.png
+    workflows:
+      - metadata
+      - captions
+      - webvtt_captions
+  - title: Search, Discover and Personalize
+    icon: assets/img/icons/other.png
+    workflows:
+      - video_search
+  - title: Engage and Publish
+    icon: assets/img/icons/engage.png
+    workflows:
+      - dynamic_thumbnails
+      - player_uiconf
+      - player_external_skin_overrides
+      - using_css_states
+      - code_cue_points
+      - quiz
+      - ad_cue_points
+  - title: Integration, Scheduling and Hooks
+    icon: assets/img/icons/analytic.png
+    workflows:
+      - backend_notifications
+      - analytics
+  - title: Manage and Deliver Apps and Widgets
+    icon: assets/img/icons/manage.png
+    workflows:
+      - app_tokens
