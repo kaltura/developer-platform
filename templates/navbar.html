@@ -181,15 +181,27 @@
 </div>
 
 <script>
+var keepNav = true;
+var keepSidebar = true;
 if (window.lucybot.embed) {
-  document.getElementById('KalturaNav').remove();
+  keepNav = false;
   if (!window.lucybot.showNavigation) {
-    document.getElementById('KalturaSidebar').remove();
-  } else {
-    document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-sidebar';
+    keepSidebar = false;
   }
+}
+if (!window.location.href.match(/\/workflows/)) {
+  keepSidebar = false;
+}
+
+if (!keepNav) {
+  document.getElementById('KalturaNav').remove();
 } else {
-  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-nav spaced-for-kaltura-sidebar';
+  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-nav';
+}
+if (!keepSidebar) {
+  document.getElementById('KalturaSidebar').remove();
+} else {
+  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-sidebar';
 }
 </script>
 
