@@ -24,6 +24,7 @@ workflowCategories:
     icon: assets/img/icons/administrative.png
     workflows:
       - authentication
+      - app_tokens
   - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
     workflows:
