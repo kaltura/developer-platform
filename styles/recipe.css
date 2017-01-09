@@ -7,6 +7,9 @@
   left: 11px;
   width: 50px;
 }
+.panel-heading .heading-icon[class] .fa {
+  margin-top: 10px;
+}
 .panel-heading .heading-title[class] {
   padding-left: 0px;
   text-align: center;
@@ -15,7 +18,7 @@
   padding-top: 30px;
 }
 .panel-heading .heading-underline[class] {
-  left: 85px;
+  left: 70px;
   bottom: -2px;
   border-width: 2px;
   border-color: #1ac1fc;
