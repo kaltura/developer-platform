@@ -1,3 +1,4 @@
+openapi: ./openapi.json
 basePath: '/workflows/'
 embedParameters:
   format: 1
