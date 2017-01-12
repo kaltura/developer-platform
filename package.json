@@ -1,0 +1,10 @@
+{
+  "name": "kaltura-recipes-v3",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/bobby-brennan/kaltura-recipes-v3#readme",
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.79.0"
+  }
+}

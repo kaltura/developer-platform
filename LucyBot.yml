@@ -1,5 +1,4 @@
 openapi: ./openapi.json
-basePath: '/workflows/'
 embedParameters:
   format: 1
 hljsTheme: 'atom-one-light'
@@ -20,6 +19,222 @@ routes:
   documentation:
     path: '/api-docs'
     title: Kaltura API Documentation
+navigation:
+  - title: "Overview"
+    contents: ./markdown/overview.md
+  - title: "Client Libraries"
+    contents: ./markdown/generated/client_libraries.md
+  - title: "XML Schemas"
+    contents: ./markdown/schemas.md
+    children:
+      - title: 'Syndication Feed'
+        contents: ./markdown/generated/syndication.md
+        prerender: false
+      - title: 'Bulk Upload'
+        contents: ./markdown/generated/bulkUploadXml.bulkUploadXML.md
+        prerender: false
+      - title: 'Bulk Upload Results'
+        contents: ./markdown/generated/bulkUploadXml.bulkUploadResultXML.md
+        prerender: false
+      - title: 'Cue Point Serve'
+        contents: ./markdown/generated/cuePoint.serveAPI.md
+        prerender: false
+      - title: 'Cue Point Ingest'
+        contents: ./markdown/generated/cuePoint.ingestAPI.md
+        prerender: false
+      - title: 'Drop Folder'
+        contents: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
+        prerender: false
+  - title: "Generate API Sessions"
+    prerender: false
+    children:
+      - title: "session"
+        children:
+          - operation: "session.start"
+          - operation: "session.end"
+          - operation: "session.get"
+          - operation: "session.impersonate"
+          - operation: "session.impersonateByKs"
+          - operation: "session.startWidgetSession"
+      - tag: "appToken"
+      - operation: 'user.loginByLoginId'
+  - title: "Ingest and Upload Media"
+    prerender: false
+    children:
+      - tag: "uploadToken"
+      - tag: "media"
+      - tag: "captionAsset"
+      - tag: "captionParams"
+      - tag: "thumbAsset"
+      - tag: "attachmentAsset"
+      - tag: "externalMedia"
+      - tag: "upload"
+        hidden: true
+  - title: "Execute Bulk Ingest and Updates"
+    prerender: false
+    children:
+      - operation: "media.bulkUploadAdd"
+      - operation: "user.addFromBulkUpload"
+      - operation: "category.addFromBulkUpload"
+      - operation: "cuePoint.addFromBulk"
+      - operation: "categoryEntry.addFromBulkUpload"
+      - operation: "categoryUser.addFromBulkUpload"
+      - tag: "bulk"
+      - tag: "schema"
+      - tag: "dropFolder"
+      - tag: "dropFolderFile"
+      - tag: "virusScanProfile"
+        hidden: true
+      - tag: "aspera"
+        hidden: true
+      - tag: "bulkUpload"
+        hidden: true
+  - title: "Convert and Transcode Media"
+    prerender: false
+    children:
+      - tag: "flavorAsset"
+      - tag: "flavorParams"
+      - tag: "flavorParamsOutput"
+      - tag: "conversionProfile"
+      - tag: "conversionProfileAssetParams"
+      - tag: "mediaInfo"
+  - title: "Live Stream and Broadcast"
+    prerender: false
+    children:
+      - tag: "liveStream"
+  - title: "Enrich and Organize Metadata"
+    prerender: false
+    children:
+      - tag: "baseEntry"
+      - tag: "category"
+      - tag: "categoryEntry"
+      - tag: "categoryUser"
+      - tag: "metadata"
+      - tag: "metadataProfile"
+      - tag: "captionAsset"
+      - tag: "captionParams"
+      - tag: "captionAssetItem"
+      - tag: "attachmentAsset"
+      - tag: "thumbAsset"
+      - tag: "thumbParams"
+      - tag: "tag"
+  - title: "Search, Discover and Personalize"
+    prerender: false
+    children:
+      - operation: "baseEntry.list"
+      - tag: "captionAssetItem"
+      - tag: "playlist"
+      - tag: "like"
+      - tag: "shortLink"
+      - tag: "tag"
+      - tag: "user"
+      - tag: "groupUser"
+  - title: "Engage and Publish"
+    prerender: false
+    children:
+      - tag: "playlist"
+      - tag: "thumbnail"
+      - tag: "cuePoint"
+      - tag: "quiz"
+      - tag: "userEntry"
+      - tag: "like"
+      - tag: "uiConf"
+      - tag: "annotation"
+        hidden: true
+  - title: "Review Media Analytics"
+    prerender: false
+    children:
+      - tag: "analytics"
+      - tag: "report"
+      - tag: "liveReports"
+      - tag: "liveStats"
+      - tag: "stats"
+  - title: "Deliver and Distribute Media"
+    prerender: false
+    children:
+      - tag: "playManifest"
+      - tag: "syndicationFeed"
+      - tag: "entryDistribution"
+      - tag: "distributionProfile"
+      - tag: "distributionProvider"
+      - tag: "deliveryProfile"
+        hidden: true
+      - tag: "storageProfile"
+        hidden: true
+  - title: "Secure, Control and Govern"
+    prerender: false
+    children:
+      - tag: "partner"
+      - tag: "user"
+      - tag: "userRole"
+      - tag: "groupUser"
+      - tag: "accessControlProfile"
+      - tag: "categoryEntry"
+      - tag: "categoryUser"
+      - tag: "permission"
+      - tag: "permissionItem"
+      - tag: "accessControl"
+        hidden: true
+      - tag: "adminUser"
+        hidden: true
+      - tag: "auditTrail"
+        hidden: true
+  - title: "Optimize API Requests"
+    prerender: false
+    children:
+      - tag: "multirequest"
+      - tag: "responseProfile"
+  - title: "Integration, Scheduling and Hooks"
+    prerender: false
+    children:
+      - tag: "eventNotificationTemplate"
+      - tag: "scheduledTaskProfile"
+      - title: "Scheduling Triggers using iCal"
+        contents: ./markdown/scheduling.md
+        children:
+          - tag: "scheduleEvent"
+          - tag: "scheduleEventResource"
+          - tag: "scheduleResource"
+      - tag: "integration"
+      - tag: "businessProcessCase"
+      - tag: "notification"
+        hidden: true
+  - title: "Encrypt and License Content"
+    prerender: false
+    children:
+      - tag: "drmLicenseAccess"
+      - tag: "drmPolicy"
+      - tag: "drmProfile"
+      - tag: "playReadyDrm"
+      - tag: "widevineDrm"
+      - tag: "deliveryProfile"
+        hidden: true
+  - title: "Manage Documents and Other Assets"
+    prerender: false
+    children:
+      - tag: "baseEntry"
+      - tag: "data"
+      - tag: "documents"
+  - title: "Manage and Deliver Apps and Widgets"
+    prerender: false
+    children:
+      - tag: "uiConf"
+      - tag: "widget"
+      - tag: "fileAsset"
+      - tag: "captureSpace"
+  - title: "Manage Backend and Storage"
+    prerender: false
+    children:
+      - tag: "system"
+      - tag: "storageProfile"
+        hidden: true
+  - title: "General Objects"
+    prerender: false
+  - title: "Error Codes"
+    prerender: false
+    contents: ./markdown/errors.md
+
+
 workflowCategories:
   - title: Generate API Sessions
     icon: assets/img/icons/administrative.png
