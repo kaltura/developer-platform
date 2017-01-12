@@ -39,7 +39,8 @@
 
 <script>
   if (window.lucybot.embed) {
-    document.getElementById('KalturaFooter').remove();
+    var elem = document.getElementById('KalturaFooter');
+    if (elem) elem.remove();
   }
 </script>
 

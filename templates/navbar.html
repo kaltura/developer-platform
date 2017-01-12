@@ -194,12 +194,14 @@ if (!window.location.href.match(/\/workflows/)) {
 }
 
 if (!keepNav) {
-  document.getElementById('KalturaNav').remove();
+  var elem = document.getElementById('KalturaNav');
+  if (elem) elem.remove();
 } else {
   document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-nav';
 }
 if (!keepSidebar) {
-  document.getElementById('KalturaSidebar').remove();
+  var elem = document.getElementById('KalturaSidebar');
+  if (elem) elem.remove();
 } else {
   document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-sidebar';
 }
