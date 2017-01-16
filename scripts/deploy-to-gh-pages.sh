@@ -1,7 +1,7 @@
 git config user.name "Travis CI"
 git config user.email "bobby.brennan@gmail.com"
 
-git fetch
+git fetch origin gh-pages
 git checkout gh-pages
 
 mv www/* ./
