@@ -4,7 +4,18 @@ embedParameters:
 hljsTheme: 'atom-one-light'
 jsIncludes:
   - 'assets/kaltura.js'
-codegenURL: '/code/build/request'
+codegen:
+  url: '/code/build/request'
+  languages:
+    - php
+    - java
+    - node
+    - id: csharp
+      label: 'C#'
+    - ruby
+    - javascript
+    - html
+
 routes:
   default:
     title: Kaltura VPaaS API
