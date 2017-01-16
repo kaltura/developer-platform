@@ -3,7 +3,7 @@ node_js:
   - "node"
   - "4.2"
 before_install:
-  - "npm install -g https://$GITHUB_ACCESS_TOKEN/bobby-brennan/lucy-v3"
+  - "npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/lucy-v3"
 
 script:
   - "lucybot build"
