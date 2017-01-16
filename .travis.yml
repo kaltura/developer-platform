@@ -7,3 +7,4 @@ before_install:
 
 script:
   - "lucybot build"
+  - ./scripts/deploy-to-gh-pages.sh
