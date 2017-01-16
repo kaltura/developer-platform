@@ -1,7 +1,6 @@
 language: node_js
 node_js:
   - "node"
-  - "4.2"
 before_install:
   - "npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/lucy-v3"
 
