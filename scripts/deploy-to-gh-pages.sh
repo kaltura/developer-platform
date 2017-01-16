@@ -11,6 +11,6 @@ if [ -z `git diff --exit-code` ]; then
 fi
 
 git add .
-git commit -m "Deploy to GitHub Pages: ${SHA}"
+git commit -m "Deploy to GitHub Pages"
 
-
+git push -u https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/kaltura-recipes-v3 gh-pages
