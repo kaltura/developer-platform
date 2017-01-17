@@ -6,6 +6,7 @@ git fetch origin gh-pages:gh-pages
 git checkout gh-pages
 
 rsync -va --delete-after ./www/* ./
+rm -rf node_modules/
 git add .
 git commit -m "Deploy to GitHub Pages"
 
