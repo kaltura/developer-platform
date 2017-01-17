@@ -36,7 +36,6 @@ navigation:
   - title: "Client Libraries"
     contents: ./markdown/generated/client_libraries.md
   - title: "XML Schemas"
-    prerender: false
     contents: ./markdown/schemas.md
     children:
       - title: 'Syndication Feed'
@@ -58,7 +57,6 @@ navigation:
         contents: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         prerender: false
   - title: "Generate API Sessions"
-    prerender: false
     children:
       - title: "session"
         children:
@@ -71,7 +69,6 @@ navigation:
       - tag: "appToken"
       - operation: 'user.loginByLoginId'
   - title: "Ingest and Upload Media"
-    prerender: false
     children:
       - tag: "uploadToken"
       - tag: "media"
@@ -83,7 +80,6 @@ navigation:
       - tag: "upload"
         hidden: true
   - title: "Execute Bulk Ingest and Updates"
-    prerender: false
     children:
       - operation: "media.bulkUploadAdd"
       - operation: "user.addFromBulkUpload"
@@ -102,7 +98,6 @@ navigation:
       - tag: "bulkUpload"
         hidden: true
   - title: "Convert and Transcode Media"
-    prerender: false
     children:
       - tag: "flavorAsset"
       - tag: "flavorParams"
@@ -111,11 +106,9 @@ navigation:
       - tag: "conversionProfileAssetParams"
       - tag: "mediaInfo"
   - title: "Live Stream and Broadcast"
-    prerender: false
     children:
       - tag: "liveStream"
   - title: "Enrich and Organize Metadata"
-    prerender: false
     children:
       - tag: "baseEntry"
       - tag: "category"
@@ -131,7 +124,6 @@ navigation:
       - tag: "thumbParams"
       - tag: "tag"
   - title: "Search, Discover and Personalize"
-    prerender: false
     children:
       - operation: "baseEntry.list"
       - tag: "captionAssetItem"
@@ -142,7 +134,6 @@ navigation:
       - tag: "user"
       - tag: "groupUser"
   - title: "Engage and Publish"
-    prerender: false
     children:
       - tag: "playlist"
       - tag: "thumbnail"
@@ -154,7 +145,6 @@ navigation:
       - tag: "annotation"
         hidden: true
   - title: "Review Media Analytics"
-    prerender: false
     children:
       - tag: "analytics"
       - tag: "report"
@@ -162,7 +152,6 @@ navigation:
       - tag: "liveStats"
       - tag: "stats"
   - title: "Deliver and Distribute Media"
-    prerender: false
     children:
       - tag: "playManifest"
       - tag: "syndicationFeed"
@@ -174,7 +163,6 @@ navigation:
       - tag: "storageProfile"
         hidden: true
   - title: "Secure, Control and Govern"
-    prerender: false
     children:
       - tag: "partner"
       - tag: "user"
@@ -192,12 +180,10 @@ navigation:
       - tag: "auditTrail"
         hidden: true
   - title: "Optimize API Requests"
-    prerender: false
     children:
       - tag: "multirequest"
       - tag: "responseProfile"
   - title: "Integration, Scheduling and Hooks"
-    prerender: false
     children:
       - tag: "eventNotificationTemplate"
       - tag: "scheduledTaskProfile"
@@ -212,7 +198,6 @@ navigation:
       - tag: "notification"
         hidden: true
   - title: "Encrypt and License Content"
-    prerender: false
     children:
       - tag: "drmLicenseAccess"
       - tag: "drmPolicy"
@@ -222,20 +207,17 @@ navigation:
       - tag: "deliveryProfile"
         hidden: true
   - title: "Manage Documents and Other Assets"
-    prerender: false
     children:
       - tag: "baseEntry"
       - tag: "data"
       - tag: "documents"
   - title: "Manage and Deliver Apps and Widgets"
-    prerender: false
     children:
       - tag: "uiConf"
       - tag: "widget"
       - tag: "fileAsset"
       - tag: "captureSpace"
   - title: "Manage Backend and Storage"
-    prerender: false
     children:
       - tag: "system"
       - tag: "storageProfile"
@@ -243,7 +225,6 @@ navigation:
   - title: "General Objects"
     prerender: false
   - title: "Error Codes"
-    prerender: false
     contents: ./markdown/errors.md
 
 
