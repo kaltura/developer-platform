@@ -5,7 +5,7 @@ git config user.email "bobby.brennan@gmail.com"
 git fetch origin gh-pages:gh-pages
 git checkout gh-pages
 
-mv www/* ./
+rsync -va --delete-after ./www/* ./
 git add .
 git commit -m "Deploy to GitHub Pages"
 
