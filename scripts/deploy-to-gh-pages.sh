@@ -5,8 +5,11 @@ git config user.email "bobby.brennan@gmail.com"
 git fetch origin gh-pages:gh-pages
 git checkout gh-pages
 
+echo "Commiting to gh-pages"
+ls -lah ./www
 rsync -va --delete-after ./www/* ./
 rm -rf node_modules/
+git status
 git add .
 git commit -m "Deploy to GitHub Pages"
 
