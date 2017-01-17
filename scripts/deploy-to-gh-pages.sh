@@ -7,7 +7,8 @@ git checkout gh-pages
 
 echo "Commiting to gh-pages"
 ls -lah ./www
-rsync -va --delete-after ./www/* ./
+cp -r ./www/* ./
+rm -rf www/
 rm -rf node_modules/
 git status
 git add .
