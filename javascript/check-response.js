@@ -1,4 +1,5 @@
 window.checkResponse = function(data, status) {
+  if (!status) return {type: 'danger', message: "Unknown Error"};
   var msg = {type: 'success', message: "Success"};
   if (data === null) return msg;
   if (data instanceof Document) {
