@@ -26,7 +26,7 @@ Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use t
 </style>
 {{ client_libraries }}
 <script>
-  $('.client-lib-link').click(function() {
+  window.jquery('.client-lib-link').click(function() {
     var lang = $(this).attr('data-language');
     mixpanel.track('client_library', {language: lang});
   })
