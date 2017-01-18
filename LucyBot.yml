@@ -5,7 +5,7 @@ hljsTheme: 'atom-one-light'
 jsIncludes:
   - 'assets/kaltura.js'
 codegen:
-  url: '/code/build/request'
+  url: 'http://54.203.20.214:3005/code/build/request'
   languages:
     - php
     - java
