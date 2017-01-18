@@ -20,7 +20,7 @@ Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use t
   margin-top: 30px;
   margin-right: 50px;
   display: inline-block;
-  background-image: url(/assets/img/client-libs.png);
+  background-image: url(assets/img/client-libs.png);
   background-position: -70px;
 }
 </style>
