@@ -17,6 +17,9 @@ codegen:
     - javascript
     - html
 
+github:
+  repo: "bobby-brennan/kaltura-api-recipes"
+
 routes:
   default:
     title: Kaltura VPaaS API
@@ -275,6 +278,9 @@ workflowCategories:
   - title: Other
     icon: assets/img/icons/other.png
     isMiscellaneous: true
+  - title: Add a Workflow
+    icon: plus
+    isAdd: true
   - title: Contact Us
     icon: assets/img/icons/contact.png
     isContact: true
