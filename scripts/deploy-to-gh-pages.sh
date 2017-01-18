@@ -6,6 +6,7 @@ git fetch origin gh-pages:gh-pages
 git checkout gh-pages
 
 echo "Commiting to gh-pages"
+rm -rf ./api-docs
 cp -r ./www/* ./
 rm -rf www/
 rm -rf node_modules/
