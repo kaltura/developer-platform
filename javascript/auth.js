@@ -5,8 +5,10 @@
 
   var LOGGED_IN_HTML = '<li class="navbar-link"><a onclick="setKalturaUser()">Sign Out</a></li>';
   var LOGGED_OUT_HTML =
-        '<li class="navbar-link"><a data-toggle="modal" data-target="#KalturaSignUpModal">Sign Up</a></li>'
-        +  '<li class="navbar-link"><a onclick="lucybot.startLogin()">Sign In</a></li>';
+          '<li class="navbar-link">'
+        +   '<a href="https://vpaas.kaltura.com/register?utm_source=developertools&utm_campaign=login&utm_medium=website">Sign Up</a>'
+        + '</li>'
+        + '<li class="navbar-link"><a onclick="lucybot.startLogin()">Sign In</a></li>';
 
   var setCookie = function(creds) {
     var val = creds ? encodeURIComponent(JSON.stringify(creds)) : '';
@@ -27,30 +29,6 @@
       window.jquery('#KalturaSidebar .not-logged-in').hide();
       window.jquery('#KalturaSidebar .logged-in').show();
     }
-  }
-
-  var getOptionsHTML = function(opts) {
-    return opts.map(function(c) {
-      return '<option value="' + c.value + '">' + c.label + '</option>';
-    }).join('\n');
-  }
-
-  var updateStates = function() {
-    var country = window.jquery('#KalturaSignUpModal select[name="country"]').val();
-    if (window.STATES[country]) {
-      window.jquery('#KalturaSignUpModal .state-input').show()
-            .find('select').html(getOptionsHTML(window.STATES[country]))
-    } else {
-      window.jquery('#KalturaSignUpModal .state-input').hide()
-    }
-  }
-
-  var setUpSignupModal = function() {
-    window.jquery('#KalturaSignUpModal select[name="country"]')
-        .html(getOptionsHTML(window.COUNTRIES))
-        .change(updateStates)
-        .val('US');
-    updateStates();
   }
 
   var setUser = window.setKalturaUser = function(creds) {
@@ -102,7 +80,6 @@
   }
 
   window.jquery(document).ready(function() {
-    setUpSignupModal()
     maybeContinueSession();
   })
 
@@ -179,64 +156,6 @@
     })
     .always(function() {
       window.jquery('#KalturaPartnerIDModal .kaltura-loading').hide();
-    })
-  }
-
-  window.startKalturaSignup = function() {
-    window.jquery('#KalturaSignUpModal .alert-danger').hide();
-    var inputs = {};
-    window.jquery('#KalturaSignUpModal [name]').each(function() {
-      var e = window.jquery(this);
-      inputs[e.attr('name')] = e.val();
-    });
-    if (!inputs.firstName ||
-        !inputs.lastName ||
-        !inputs.company ||
-        !inputs.email ||
-        !inputs.country) {
-      window.jquery('#KalturaSignUpModal .alert-danger').show().text(
-        "Please be sure to include your Name, Company, Email, and Country"
-      );
-      return;
-    }
-    mixpanel.track('signup_submit', inputs);
-    window.jquery('#KalturaSignUpModal #KalturaSignUpButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
-    window.jquery.ajax({
-      url: '/auth/signup',
-      method: 'POST',
-      data: JSON.stringify(inputs),
-      headers: {'Content-Type': 'application/json'},
-    })
-    .done(function(response) {
-      mixpanel.identify(inputs.email);
-      mixpanel.people.set({
-        '$email': inputs.email,
-        partnerId: response.id,
-        country: inputs.country,
-        state: inputs.state,
-        company: inputs.company,
-        firstName: inputs.firstName,
-        lastName: inputs.lastName,
-      })
-      mixpanel.track('signup_success', {
-        partnerId: response.id,
-        email: inputs.email,
-      })
-      var creds = {
-        partnerId: response.id,
-        userId: response.adminUserId,
-        secret: response.adminSecret,
-      }
-      window.jquery('#KalturaSignUpModal').modal('hide');
-      setUser(creds);
-    })
-    .fail(function(xhr) {
-      mixpanel.track('signup_error', inputs)
-      var errMessage = xhr.responseText || "There was an error signing up. Please try again.";
-      window.jquery('#KalturaSignUpModal .alert-danger').show().text(errMessage);
-    })
-    .always(function() {
-      window.jquery('#KalturaSignUpModal #KalturaSignUpButton').html('Sign Up').removeAttr('disabled');
     })
   }
 })();
