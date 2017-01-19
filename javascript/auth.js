@@ -6,7 +6,7 @@
   var LOGGED_IN_HTML = '<li class="navbar-link"><a onclick="setKalturaUser()">Sign Out</a></li>';
   var LOGGED_OUT_HTML =
           '<li class="navbar-link">'
-        +   '<a href="https://vpaas.kaltura.com/register?utm_source=developertools&utm_campaign=login&utm_medium=website">Sign Up</a>'
+        +   '<a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Sign Up</a>'
         + '</li>'
         + '<li class="navbar-link"><a onclick="lucybot.startLogin()">Sign In</a></li>';
 
