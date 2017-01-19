@@ -18,7 +18,7 @@ codegen:
     - html
 
 github:
-  repo: "bobby-brennan/kaltura-api-recipes"
+  repo: "bobby-brennan/kaltura-recipes-v3"
 
 routes:
   default:
