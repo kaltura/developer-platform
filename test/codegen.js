@@ -1,6 +1,10 @@
 var fs = require('fs');
 var expect = require('chai').expect;
 
+global.window = {
+  ejs: require('ejs'),
+}
+
 var swagger = require('../openapi.json');
 var CodeTemplate = require('../codegen');
 

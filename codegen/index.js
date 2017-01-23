@@ -1,4 +1,4 @@
-var EJS = require('ejs');
+var EJS = window.ejs;
 
 const RESERVED_NAMES = ['list', 'clone', 'delete'];
 const TMPL_DIR = __dirname + '/templates';
@@ -152,7 +152,7 @@ var language_opts = {
   },
 }
 
-module.exports = CodeTemplate = function(opts) {
+var CodeTemplate = module.exports = function(opts) {
   this.language = opts.language;
   this.swagger = opts.swagger;
   Object.assign(this, language_opts.default, language_opts[this.language]);
@@ -191,9 +191,12 @@ CodeTemplate.prototype.render = function(input) {
   input.parameters = [];
   if (input.operation['x-parameterGroups']) {
     input.parameters = input.parameters.concat(input.operation['x-parameterGroups'].map(g => {
-      let title = g.schema.$ref.substring('#/definitions/'.length);
-      let schema = this.swagger.definitions[title];
-      schema.title = title;
+      let schema = g.schema;
+      if (g.schema.$ref) {
+        let title = g.schema.$ref ? g.schema.$ref.substring('#/definitions/'.length) : g.schema.title;
+        schema = this.swagger.definitions[title];
+        schema.title = title;
+      }
       return {
         schema,
         name: g.name,
@@ -254,7 +257,7 @@ CodeTemplate.prototype.assignment = function(param, answers) {
     let name = isObjectType ? param.name.substring(0, param.name.length - 12) : param.name;
     let subparamRegexp = '^' + name.replace(/\[/g, '\\[').replace(/\]/g, '\\]') + '\\[\\w+\\](\\[objectType\\])?$';
     let subschema = isObjectType ? this.swagger.definitions[answers[param.name]] : param.schema;
-    subsetters = Object.keys(answers)
+    let subsetters = Object.keys(answers)
       .filter(n => n !== param.name && n.match(new RegExp(subparamRegexp)))
       .map(n => ({name: n, schema: findSubschema(n, subschema)}))
     subsetters = subsetters
@@ -309,7 +312,7 @@ CodeTemplate.prototype.rvalue = function(param, answers) {
     enumLabels = param.schema.oneOf.map(sub => sub.title);
     enumType = param.schema.title;
   }
-  answer = answers[param.name];
+  let answer = answers[param.name];
   if (answer === undefined) {
     answer = getDefaultValueForType(param.schema.type);
   }
@@ -322,7 +325,7 @@ CodeTemplate.prototype.rvalue = function(param, answers) {
     }
   } else {
     if (enm && enumLabels) {
-      enumName = enumLabels[enm.indexOf(answer)];
+      let enumName = enumLabels[enm.indexOf(answer)];
       if (enumName) {
         return self.enumPrefix + enumType + (self.enumAccessor || self.accessor) + enumName;
       }
