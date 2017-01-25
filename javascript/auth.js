@@ -44,6 +44,7 @@
     user = creds;
     window.setUpKalturaClient(creds, function(err, ks) {
       user.ks = creds.ks = ks;
+      if (user.userId) window.JacoRecorder.identify(user.userId);
       setCookie(creds);
       if (window.secretService) window.secretService.setSecrets(creds);
     })

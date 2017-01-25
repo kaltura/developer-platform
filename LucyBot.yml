@@ -3,6 +3,7 @@ embedParameters:
   format: 1
 hljsTheme: 'atom-one-light'
 jsIncludes:
+  - 'assets/jaco.js'
   - 'assets/kaltura.js'
 codegen:
   url: 'http://54.203.20.214:3005/code/build/request'
@@ -19,7 +20,6 @@ codegen:
 
 github:
   repo: "bobby-brennan/kaltura-recipes-v3"
-
 routes:
   default:
     title: Kaltura VPaaS API
