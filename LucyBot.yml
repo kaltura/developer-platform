@@ -20,6 +20,8 @@ codegen:
 
 github:
   repo: "bobby-brennan/kaltura-recipes-v3"
+  client_id: "1b76941133d82f454418"
+  access_token_url: "http://54.203.20.214:3005/github/access_token"
 routes:
   default:
     title: Kaltura VPaaS API

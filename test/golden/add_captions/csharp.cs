@@ -1,5 +1,8 @@
-KalturaCaptionAsset captionAsset = new KalturaCaptionAsset();
 string entryId = "";
+CaptionAsset captionAsset = new CaptionAsset();
 
-Object result = client.CaptionAssetService.Add(captionAsset, entryId);
-Console.WriteLine(result);
+OnCompletedHandler<CaptionAsset> handler = new OnCompletedHandler<CaptionAsset>(
+      (CaptionAsset result, Exception e) => Console.WriteLine(result));
+CaptionAssetService.Add(entryId, captionAsset)
+   .SetCompletion(handler)
+   .Execute(client);

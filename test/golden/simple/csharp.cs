@@ -1,5 +1,8 @@
-KalturaMediaEntryFilter filter = new KalturaMediaEntryFilter();
-KalturaFilterPager pager = new KalturaFilterPager();
+MediaEntryFilter filter = new MediaEntryFilter();
+FilterPager pager = new FilterPager();
 
-Object result = client.MediaService.List(filter, pager);
-Console.WriteLine(result);
+OnCompletedHandler<ListResponse<MediaEntry>> handler = new OnCompletedHandler<ListResponse<MediaEntry>>(
+      (ListResponse<MediaEntry> result, Exception e) => Console.WriteLine(result));
+MediaService.List(filter, pager)
+   .SetCompletion(handler)
+   .Execute(client);

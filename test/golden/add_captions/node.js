@@ -1,5 +1,5 @@
-var captionAsset = new Kaltura.kc.objects.KalturaCaptionAsset();
 var entryId = "";
+var captionAsset = new Kaltura.kc.objects.KalturaCaptionAsset();
 
 client.captionAsset.add(function(results) {
   if (results && results.code && results.message) {
@@ -8,5 +8,5 @@ client.captionAsset.add(function(results) {
     console.log('Kaltura Result', results);
   }
 },
-captionAsset,
-entryId);
+entryId,
+captionAsset);

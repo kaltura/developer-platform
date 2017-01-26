@@ -1,10 +1,10 @@
 <?php
 
-  $captionAsset = new KalturaCaptionAsset();
   $entryId = "";
+  $captionAsset = new KalturaCaptionAsset();
 
   try {
-    $result = $client->captionAsset->add($captionAsset, $entryId);
+    $result = $client->captionAsset->add($entryId, $captionAsset);
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();

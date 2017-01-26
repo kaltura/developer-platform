@@ -1,10 +1,13 @@
-KalturaMediaEntryFilter filter = new KalturaMediaEntryFilter();
+MediaEntryFilter filter = new MediaEntryFilter();
 filter.NameLike = "foobar";
-filter.StatusEqual = KalturaEntryStatus.READY;
-filter.AdvancedSearch = new KalturaAttributeCondition();
+filter.StatusEqual = EntryStatus.READY;
+filter.AdvancedSearch = new AttributeCondition();
 filter.AdvancedSearch.Value = "baz";
-KalturaFilterPager pager = new KalturaFilterPager();
+FilterPager pager = new FilterPager();
 pager.PageSize = 3;
 
-Object result = client.MediaService.List(filter, pager);
-Console.WriteLine(result);
+OnCompletedHandler<ListResponse<MediaEntry>> handler = new OnCompletedHandler<ListResponse<MediaEntry>>(
+      (ListResponse<MediaEntry> result, Exception e) => Console.WriteLine(result));
+MediaService.List(filter, pager)
+   .SetCompletion(handler)
+   .Execute(client);

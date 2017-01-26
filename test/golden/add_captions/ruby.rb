@@ -1,6 +1,6 @@
 
-caption_asset = KalturaCaptionAsset.new()
 entry_id = ""
+caption_asset = KalturaCaptionAsset.new()
 
-results = client.caption_asset_service.add(caption_asset, entry_id)
+results = client.caption_asset_service.add(entry_id, caption_asset)
 puts results.inspect

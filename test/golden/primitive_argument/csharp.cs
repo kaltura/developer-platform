@@ -1,5 +1,8 @@
 string entryId = "abcde";
 int version = 0;
 
-Object result = client.MediaService.Get(entryId, version);
-Console.WriteLine(result);
+OnCompletedHandler<MediaEntry> handler = new OnCompletedHandler<MediaEntry>(
+      (MediaEntry result, Exception e) => Console.WriteLine(result));
+MediaService.Get(entryId, version)
+   .SetCompletion(handler)
+   .Execute(client);
