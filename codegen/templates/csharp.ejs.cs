@@ -15,4 +15,3 @@ OnCompletedHandler<<%- handlerType %>> handler = new OnCompletedHandler<<%- hand
    .SetCompletion(handler)
 <% } -%>
    .Execute(client);
-

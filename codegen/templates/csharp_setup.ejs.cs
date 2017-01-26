@@ -21,6 +21,7 @@ namespace Kaltura {
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
+
 <%- codegen.indent(code, 6) %>
     }
   }
