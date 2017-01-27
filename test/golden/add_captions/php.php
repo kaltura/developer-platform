@@ -1,5 +1,4 @@
 <?php
-
   $entryId = "";
   $captionAsset = new KalturaCaptionAsset();
 

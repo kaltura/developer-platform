@@ -13,7 +13,6 @@
   $client->setKS($ks);
 
 <% } -%>
-
 <%- codegen.assignAllParameters(parameters, answers, 2) %>
 
   try {

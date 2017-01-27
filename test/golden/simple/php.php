@@ -1,5 +1,4 @@
 <?php
-
   $filter = new KalturaMediaEntryFilter();
   $pager = new KalturaFilterPager();
 

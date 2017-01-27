@@ -69,6 +69,7 @@ describe('Sample Code', function() {
       answers: {
         'filter[nameLike]': 'foobar',
         'filter[statusEqual]': '2',
+        'filter[orderBy]': '+createdAt',
         'filter[advancedSearch][objectType]': 'KalturaAttributeCondition',
         'filter[advancedSearch][value]': 'baz',
         'pager[pageSize]': 3,

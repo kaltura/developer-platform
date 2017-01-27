@@ -1,6 +1,7 @@
 MediaEntryFilter filter = new MediaEntryFilter();
 filter.NameLike = "foobar";
 filter.StatusEqual = EntryStatus.READY;
+filter.OrderBy = MediaEntryOrderBy.CREATED_AT_ASC;
 filter.AdvancedSearch = new AttributeCondition();
 filter.AdvancedSearch.Value = "baz";
 FilterPager pager = new FilterPager();

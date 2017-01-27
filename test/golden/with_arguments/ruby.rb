@@ -2,6 +2,7 @@
 filter = KalturaMediaEntryFilter.new()
 filter.name_like = "foobar"
 filter.status_equal = KalturaEntryStatus::READY
+filter.order_by = KalturaMediaEntryOrderBy::CREATED_AT_ASC
 filter.advanced_search = KalturaAttributeCondition.new()
 filter.advanced_search.value = "baz"
 pager = KalturaFilterPager.new()

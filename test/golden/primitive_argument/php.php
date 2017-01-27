@@ -1,5 +1,4 @@
 <?php
-
   $entryId = "abcde";
   $version = 0;
 

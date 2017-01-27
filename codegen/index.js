@@ -182,6 +182,7 @@ const getDefName = (ref) => {
 CodeTemplate.prototype.render = function(input) {
   var self = this;
   var pathParts = input.path.match(/(\/service\/(\w+)\/action\/(\w+))$/);
+  this.currentInput = input;
   input.path = pathParts[1];
   input.operation = this.swagger.paths[input.path][input.method];
   let responseSchema = input.operation.responses[200].schema;
@@ -207,7 +208,7 @@ CodeTemplate.prototype.render = function(input) {
   input.parameters = [];
   let addedParameters = [];
   input.operation.parameters.forEach(p => {
-    if (p.$ref) return;
+    if (p.$ref || p.name === 'format') return;
     let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
     if (addedParameters.indexOf(baseName) !== -1) return;
     addedParameters.push(baseName);
@@ -215,7 +216,7 @@ CodeTemplate.prototype.render = function(input) {
       input.parameters.push({name: p.name, schema: p.schema || p})
     } else {
       let group = input.operation['x-parameterGroups'].filter(g => g.name === p['x-group'])[0];
-      let title = getDefName(group.schema.$ref);
+      let title = group.schema.title || getDefName(group.schema.$ref);
       let schema = this.swagger.definitions[title];
       input.parameters.push({name: group.name, schema});
     }
@@ -245,9 +246,9 @@ CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
   return this.indent(params.map(p => this.assignment(p, answers)).join('\n'), indent);
 }
 
-CodeTemplate.prototype.assignment = function(param, answers) {
+CodeTemplate.prototype.assignment = function(param, answers, parentDef) {
   var self = this;
-  let assignment = this.lvalue(param, answers) + ' = ' + this.rvalue(param, answers) + this.statementSuffix;
+  let assignment = this.lvalue(param, answers) + ' = ' + this.rvalue(param, answers, parentDef) + this.statementSuffix;
   const findSubschema = (subParamName, schema) => {
     if (schema.$ref) schema = this.swagger.definitions[schema.$ref.substring('#/definitions/'.length)];
     let propName = subParamName.split(/\[/).map(s => s.replace(/\]/g, '')).pop();
@@ -276,7 +277,7 @@ CodeTemplate.prototype.assignment = function(param, answers) {
     subsetters = subsetters
       .filter(prop => prop.schema)
       .map(function(prop) {
-        return self.assignment(prop, answers);
+        return self.assignment(prop, answers, param.schema.title);
       });
     assignment = ([assignment]).concat(subsetters).join('\n');
   }
@@ -315,7 +316,7 @@ CodeTemplate.prototype.lvalue = function(param, answers) {
   return lvalue;
 }
 
-CodeTemplate.prototype.rvalue = function(param, answers) {
+CodeTemplate.prototype.rvalue = function(param, answers, parentDef) {
   var self = this;
   let enm = param.schema.enum;
   let enumLabels = param.schema['x-enumLabels'];
@@ -324,6 +325,13 @@ CodeTemplate.prototype.rvalue = function(param, answers) {
     enm = param.schema.oneOf.map(sub => sub.enum[0])
     enumLabels = param.schema.oneOf.map(sub => sub.title);
     enumType = param.schema.title;
+  } else if (param.name.match(/\[orderBy\]/) && parentDef) {
+    enumType = parentDef.replace(/Filter$/, 'OrderBy');
+    let enumDef = this.swagger['x-enums'][enumType];
+    if (enumDef) {
+      enm = enumDef.oneOf.map(s => s.enum[0]);
+      enumLabels = enumDef.oneOf.map(s => s.title);
+    }
   }
   let answer = answers[param.name];
   if (answer === undefined) {

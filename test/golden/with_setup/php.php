@@ -11,7 +11,6 @@
     YOUR_PARTNER_ID);
   $client->setKS($ks);
 
-
   $filter = new KalturaMediaEntryFilter();
   $pager = new KalturaFilterPager();
 

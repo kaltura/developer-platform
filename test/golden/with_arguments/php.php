@@ -1,8 +1,8 @@
 <?php
-
   $filter = new KalturaMediaEntryFilter();
   $filter->nameLike = "foobar";
   $filter->statusEqual = KalturaEntryStatus::READY;
+  $filter->orderBy = KalturaMediaEntryOrderBy::CREATED_AT_ASC;
   $filter->advancedSearch = new KalturaAttributeCondition();
   $filter->advancedSearch->value = "baz";
   $pager = new KalturaFilterPager();

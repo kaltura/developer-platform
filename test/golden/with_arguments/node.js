@@ -1,6 +1,7 @@
 var filter = new Kaltura.kc.objects.KalturaMediaEntryFilter();
 filter.nameLike = "foobar";
 filter.statusEqual = Kaltura.kc.enums.KalturaEntryStatus.READY;
+filter.orderBy = Kaltura.kc.enums.KalturaMediaEntryOrderBy.CREATED_AT_ASC;
 filter.advancedSearch = new Kaltura.kc.objects.KalturaAttributeCondition();
 filter.advancedSearch.value = "baz";
 var pager = new Kaltura.kc.objects.KalturaFilterPager();
