@@ -134,11 +134,6 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
 }
 ```
 
-### Demo
-```html
-disabled
-```
-
 ## Attach the Video
 Now that you've created a new Media Entry, you need to associate the uploaded video with it.
 
