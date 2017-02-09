@@ -1,4 +1,5 @@
-openapi: ./openapi.json
+openapi:
+  kaltura: ./openapi.json
 embedParameters:
   format: 1
 hljsTheme: 'atom-one-light'
@@ -17,50 +18,74 @@ codegen:
     - python
     - javascript
     - html
-
+loadOpenAPISynchronous: true
 github:
   repo: "bobby-brennan/kaltura-recipes-v3"
   client_id: "1b76941133d82f454418"
   access_token_url: "http://54.203.20.214:3005/github/access_token"
+
 routes:
-  default:
-    title: Kaltura VPaaS API
-  recipes:
-    path: '/workflows'
-    title: Kaltura API Workflows
-    meta:
-      description: "Learn how to work with the Kaltura API using interactive workflows"
-  console:
-    path: '/console'
-    title: Kaltura API Console
-  documentation:
-    path: '/api-docs'
+  default: '/api-docs'
+
+  /api-docs:
     title: Kaltura API Documentation
-navigation:
+    openapi: kaltura
+    navigation: operationNavigation
+    meta:
+      title: "Kaltura VPaaS API Documentation"
+      description: "Full documentation for the Kaltura VPaaS API"
+
+  /workflows:
+    ui: workflows
+    openapi: kaltura
+    navigation: workflowNavigation
+    intro: |
+      Interactive workflows on this page will help you dive straight
+      into coding the various building blocks of your application.
+
+      Here you will find working code recipes together with detailed
+      explanations and documentation references.
+
+      #### What do you want to do today?
+    title: Workflows
+    meta:
+      title: "Kaltura API Workflows"
+      description: "Learn how to work with the Kaltura API using interactive workflows"
+
+  /console:
+    ui: console
+    openapi: kaltura
+    title: Kaltura API Console
+    navigation: operationNavigation
+    meta:
+      title: "Kaltura VPaaS API Console"
+      description: "Make test calls to the Kaltura VPaaS API"
+
+operationNavigation:
   - title: "Overview"
-    contents: ./markdown/overview.md
+    markdownFile: ./markdown/overview.md
   - title: "Client Libraries"
-    contents: ./markdown/generated/client_libraries.md
+    markdownFile: ./markdown/generated/client_libraries.md
   - title: "XML Schemas"
-    contents: ./markdown/schemas.md
+    markdownFile: ./markdown/schemas.md
     children:
       - title: 'Syndication Feed'
-        contents: ./markdown/generated/syndication.md
+        markdownFile: ./markdown/generated/syndication.md
         prerender: false
       - title: 'Bulk Upload'
-        contents: ./markdown/generated/bulkUploadXml.bulkUploadXML.md
+        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadXML.md
         prerender: false
       - title: 'Bulk Upload Results'
-        contents: ./markdown/generated/bulkUploadXml.bulkUploadResultXML.md
+        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadResultXML.md
         prerender: false
       - title: 'Cue Point Serve'
-        contents: ./markdown/generated/cuePoint.serveAPI.md
+        markdownFile: ./markdown/generated/cuePoint.serveAPI.md
         prerender: false
       - title: 'Cue Point Ingest'
-        contents: ./markdown/generated/cuePoint.ingestAPI.md
+        markdownFile: ./markdown/generated/cuePoint.ingestAPI.md
         prerender: false
       - title: 'Drop Folder'
-        contents: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
+        markdownFile: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         prerender: false
   - title: "Generate API Sessions"
     children:
@@ -194,7 +219,7 @@ navigation:
       - tag: "eventNotificationTemplate"
       - tag: "scheduledTaskProfile"
       - title: "Scheduling Triggers using iCal"
-        contents: ./markdown/scheduling.md
+        markdownFile: ./markdown/scheduling.md
         children:
           - tag: "scheduleEvent"
           - tag: "scheduleEventResource"
@@ -231,55 +256,49 @@ navigation:
   - title: "General Objects"
     prerender: false
   - title: "Error Codes"
-    contents: ./markdown/errors.md
+    markdownFile: ./markdown/errors.md
 
-
-workflowCategories:
+workflowNavigation:
   - title: Generate API Sessions
     icon: assets/img/icons/administrative.png
-    workflows:
-      - authentication
-      - app_tokens
+    children:
+      - workflow: authentication
+      - workflow: app_tokens
   - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
-    workflows:
-      - upload
+    workflow: upload
   - title: Live Stream and Broadcast
     icon: assets/img/icons/play-back.png
-    workflows:
-      - live_broadcast
+    workflow: live_broadcast
   - title: Enrich and Organize Metadata
     icon: assets/img/icons/distribute.png
-    workflows:
-      - metadata
-      - captions
-      - webvtt_captions
+    children:
+      - workflow: metadata
+      - workflow: captions
+      - workflow: webvtt_captions
   - title: Search, Discover and Personalize
     icon: assets/img/icons/publish.png
-    workflows:
-      - video_search
+    children:
+      - workflow: video_search
   - title: Engage and Publish
     icon: assets/img/icons/engage.png
-    workflows:
-      - dynamic_thumbnails
-      - player_uiconf
-      - player_external_skin_overrides
-      - using_css_states
-      - code_cue_points
-      - quiz
-      - ad_cue_points
+    children:
+      - workflow: dynamic_thumbnails
+      - workflow: player_uiconf
+      - workflow: player_external_skin_overrides
+      - workflow: using_css_states
+      - workflow: code_cue_points
+      - workflow: quiz
+      - workflow: ad_cue_points
   - title: Integration, Scheduling and Hooks
     icon: assets/img/icons/analytic.png
-    workflows:
-      - backend_notifications
-      - analytics
+    children:
+      - workflow: backend_notifications
+      - workflow: analytics
   - title: Manage and Deliver Apps and Widgets
     icon: assets/img/icons/manage.png
-    workflows:
-      - app_tokens
-  - title: Other
-    icon: assets/img/icons/other.png
-    isMiscellaneous: true
+    children:
+      - workflow: app_tokens
   - title: Add a Workflow
     icon: plus
     isAdd: true
