@@ -5,5 +5,5 @@ before_install:
   - "npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/lucy-v3"
 
 script:
-  - "lucybot build --prerender --basePath /kaltura-recipes-v3/"
+  - "lucybot build --prerender"
   - ./scripts/deploy-to-gh-pages.sh
