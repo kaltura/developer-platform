@@ -4,6 +4,7 @@ embedParameters:
   format: 1
 hljsTheme: 'atom-one-light'
 jsIncludes:
+  - 'assets/mixpanel.js'
   - 'assets/jaco.js'
   - 'assets/kaltura.js'
 codegen:
