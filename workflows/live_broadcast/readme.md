@@ -386,7 +386,7 @@ You can use the kRecord widget to record your broadcast.
       margin: 10px 0 10px 0;
     }
   </style>
-  <script src="/js/swfobject.js"></script>
+  <script src="assets/swfobject.js"></script>
 </head>
 <body>
     <div id="setupKRecord_msg">
@@ -843,7 +843,7 @@ console.log('embedded', streamHost, streamApp, streamName);
       margin: 10px 0 10px 0;
     }
   </style>
-  <script src="/js/swfobject.js"></script>
+  <script src="assets/swfobject.js"></script>
 </head>
 <body>
     <div id="setupKRecord_msg">
