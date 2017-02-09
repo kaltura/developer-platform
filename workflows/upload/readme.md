@@ -201,3 +201,27 @@ You can use kWidget to embed your video in HTML. The video may not be ready for 
   ]
 }
 ```
+### Demo
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kaltura Player External Skin Overrides</title>
+  <script src="//cdnapisec.kaltura.com/p/<%- answers.partnerId  %>/sp/<%- answers.partnerId  %>00/embedIframeJs/uiconf_id/<%-  answers.uiConf  %>/partner_id/<%- answers.partnerId  %>"></script>
+</head>
+<body>
+
+  <div id="kaltura_player" style="width: 560px; height: 395px;"></div>
+  <script>
+    kWidget.embed({
+          "targetId": "kaltura_player",
+          "wid": "_<%- answers.partnerId  %>",
+          "uiconf_id": <%-  answers.uiConf  %>,
+          "flashvars": {},
+          "entry_id": "<%- answers.entryId %>"
+        });
+  </script>
+
+</body>
+</html>
+```
