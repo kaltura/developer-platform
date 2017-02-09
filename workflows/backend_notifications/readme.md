@@ -138,7 +138,6 @@ Use the ```KalturaHttpNotificationClientPlugin``` library to parse incoming requ
 ### Sample Code (ruby)
 ```ruby
 puts 'Kaltura Notification:' + params
-
 ```
 ### Sample Code (php)
 ```php
@@ -146,5 +145,4 @@ require_once('lib/KalturaClient.php');
 require_once('lib/KalturaPlugins/KalturaHttpNotificationClientPlugin.php');
 
 $object = unserialize($_POST['data']);
-
 ```

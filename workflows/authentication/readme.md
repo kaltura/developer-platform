@@ -66,8 +66,6 @@ You can also log in with your Login ID and password by using `user.loginByLoginI
 Note that this KS can only be used to retrieve a list of partnerIds.
 You can then use one of these partnerIds to get a privileged KS.
 
-
-
 ### API Call
 ```json
 {
@@ -78,8 +76,7 @@ You can then use one of these partnerIds to get a privileged KS.
       "name": "loginId"
     },
     {
-      "name": "password",
-      "x-inputType": "password"
+      "name": "password"
     }
   ]
 }

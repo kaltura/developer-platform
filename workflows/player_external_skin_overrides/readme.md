@@ -64,21 +64,7 @@ The example below assumes that you have created your custom CSS file under the `
   "parameters": [
     {
       "custom": true,
-      "name": "entryId",
-      "type": "string",
-      "dynamicEnum": {
-        "parameters": [
-          {
-            "name": "filter[orderBy]",
-            "value": "-createdAt"
-          }
-        ],
-        "path": "/service/media/action/list",
-        "method": "get",
-        "array": "objects",
-        "value": "id",
-        "label": "name"
-      }
+      "name": "entryId"
     },
     {
       "custom": true,

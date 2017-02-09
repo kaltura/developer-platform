@@ -24,19 +24,6 @@ Choose a player to view its configuration
   "parameters": [
     {
       "name": "id",
-      "dynamicEnum": {
-        "path": "/service/uiconf/action/list",
-        "method": "get",
-        "array": "objects",
-        "value": "id",
-        "label": "name",
-        "parameters": [
-          {
-            "name": "filter[objTypeEqual]",
-            "value": 1
-          }
-        ]
-      },
       "global": true
     }
   ]

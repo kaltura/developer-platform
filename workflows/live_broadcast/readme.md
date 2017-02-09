@@ -214,7 +214,6 @@ You can use the kRecord widget to record your broadcast.
 ```
 ### Sample Code (html)
 ```html
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -624,7 +623,6 @@ streamName = encodeURIComponent(streamName);
     </script>
 </body>
 </html>
-
 ```
 ### Sample Code (javascript)
 ```javascript
@@ -673,7 +671,6 @@ console.log('embedded', streamHost, streamApp, streamName);
 ```
 ### Demo
 ```html
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -1083,5 +1080,4 @@ streamName = encodeURIComponent(streamName);
     </script>
 </body>
 </html>
-
 ```

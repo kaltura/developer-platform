@@ -72,20 +72,7 @@ You can use the Chrome dev tools to turn on device mode and chhose a large table
   "path": "/service/media/action/get",
   "parameters": [
     {
-      "name": "entryId",
-      "dynamicEnum": {
-        "parameters": [
-          {
-            "name": "filter[orderBy]",
-            "value": "-createdAt"
-          }
-        ],
-        "path": "/service/media/action/list",
-        "method": "get",
-        "array": "objects",
-        "value": "id",
-        "label": "name"
-      }
+      "name": "entryId"
     },
     {
       "custom": true,
@@ -156,6 +143,7 @@ kWidget.embed({
 ```
 
 ## Finish
+
 ### Summary
 In this recipe we've learned the following:
 

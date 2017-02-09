@@ -139,13 +139,6 @@ Now you can see your new Cue Point wherever you embed your video.
       "dynamicValue": {
         "fromStep": 0,
         "answer": "filter[entryIdEqual]"
-      },
-      "dynamicEnum": {
-        "path": "/service/media/action/list",
-        "method": "get",
-        "array": "objects",
-        "value": "id",
-        "label": "name"
       }
     },
     {
@@ -223,7 +216,6 @@ kWidget.addReadyCallback(function(playerId){
         qPoint.cuePoint.startTime);
   })
 })
-
 ```
 ### Demo
 ```html
@@ -285,7 +277,6 @@ kWidget.addReadyCallback(function(playerId){
 </pre>
 </body>
 </html>
-
 ```
 
 ## Deleting an Ad Cue Point

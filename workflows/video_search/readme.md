@@ -48,7 +48,6 @@ This combination of filter parameters will search through all of the Kaltura Med
     {
       "name": "filter[advancedSearch][objectType]",
       "default": "KalturaMetadataSearchItem",
-      "hidden": false,
       "x-consoleDefault": "KalturaMetadataSearchItem"
     },
     {
@@ -81,8 +80,6 @@ The following blend chars are configured for the API search.
 These blend characters may be used as delimiters or as characters.
 
 **Note, to treat * and ! as literals, use a backslash. e.g. if name="test!" to search for it, use "test\\!"**
-
- 
 
 ### API Call
 ```json
@@ -249,7 +246,6 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
     </script>
   </div>
 </div>
-
 ```
 
 ## Finish

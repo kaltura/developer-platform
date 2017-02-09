@@ -39,8 +39,7 @@ Set `cuePointTypeEqual` to `QUIZ_QUESTION` to only show quizes.
     },
     {
       "name": "filter[cuePointTypeEqual]",
-      "default": "quiz.QUIZ_QUESTION",
-      "hidden": false
+      "default": "quiz.QUIZ_QUESTION"
     }
   ]
 }

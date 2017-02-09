@@ -30,15 +30,7 @@ Choose a video from your library to add captions to.
       "hidden": true
     },
     {
-      "name": "entryId",
-      "dynamicEnum": {
-        "path": "/service/media/action/list",
-        "method": "get",
-        "parameters": [],
-        "array": "objects",
-        "label": "name",
-        "value": "id"
-      }
+      "name": "entryId"
     }
   ]
 }
