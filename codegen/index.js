@@ -181,6 +181,20 @@ const getDefName = (ref) => {
 
 CodeTemplate.prototype.render = function(input) {
   var self = this;
+  if (input.path) {
+    this.setOperationInputFields(input);
+  }
+  input = Object.assign({codegen: this}, input);
+  var code = EJS.render(this.template, input);
+  if (input.showSetup && this.setupTemplate) {
+    input.code = code;
+    return EJS.render(this.setupTemplate, input).trim();
+  } else {
+    return code;
+  }
+}
+
+CodeTemplate.prototype.setOperationInputFields = function(input) {
   var pathParts = input.path.match(/(\/service\/(\w+)\/action\/(\w+))$/);
   this.currentInput = input;
   input.path = pathParts[1];
@@ -231,14 +245,6 @@ CodeTemplate.prototype.render = function(input) {
       if (val !== undefined) input.answers[p.name] = val;
     }
   })
-  input = Object.assign({codegen: this}, input);
-  var code = EJS.render(this.template, input);
-  if (input.showSetup && this.setupTemplate) {
-    input.code = code;
-    return EJS.render(this.setupTemplate, input).trim();
-  } else {
-    return code;
-  }
 }
 
 CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
