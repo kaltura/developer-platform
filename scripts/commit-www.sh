@@ -7,4 +7,4 @@ git status
 git add .
 git commit -m "Build www/"
 
-git push -u https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/kaltura-recipes-v3 master
+git push --silent -u https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/kaltura-recipes-v3 master
