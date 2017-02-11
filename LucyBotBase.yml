@@ -8,6 +8,7 @@ jsIncludes:
   - 'assets/mixpanel.js'
   - 'assets/jaco.js'
   - 'assets/kaltura.js'
+discussionURL: 'https://vpaas.kaltura.com/'
 codegen:
   url: 'http://54.203.20.214:3005/code/build/request'
   languages:
