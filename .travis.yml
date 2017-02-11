@@ -6,4 +6,4 @@ before_install:
 
 script:
   - "lucybot build --prerender"
-  - ./scripts/deploy-to-gh-pages.sh
+  - ./scripts/commit-www.sh
