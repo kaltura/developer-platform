@@ -2,9 +2,6 @@ set -e
 git config user.name "Travis CI"
 git config user.email "bobby.brennan@gmail.com"
 
-git fetch origin master:master
-git checkout master
-
 lucybot build
 
 echo "Commiting build"
