@@ -2,7 +2,7 @@ set -e
 git config user.name "Travis CI"
 git config user.email "bobby.brennan@gmail.com"
 
-lucybot build
+lucybot build --prerender
 
 echo "Commiting build"
 git status
