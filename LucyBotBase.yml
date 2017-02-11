@@ -1,9 +1,5 @@
 openapi:
-  kaltura:
-    - label: Latest
-      file: ./openapi.json
-    - label: Experimental
-      file: ./openapi-edit.json
+  kaltura: ./openapi.json
 
 embedParameters:
   format: 1
