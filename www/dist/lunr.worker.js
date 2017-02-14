@@ -2070,10 +2070,13 @@ const addItemToIndex = function(item) {
 }
 
 self.addEventListener('message', function (e) {
-  e.data.forEach(item => {
+  e.data.items.forEach(item => {
     addItemToIndex(item);
   });
-  self.postMessage(JSON.stringify(index.toJSON()));
+  self.postMessage(JSON.stringify({
+    requestID: e.data.requestID,
+    index: index.toJSON()
+  }));
 }, false);
 
 
