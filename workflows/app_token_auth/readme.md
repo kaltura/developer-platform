@@ -26,3 +26,14 @@ You'll need to compute a hash for the Kaltura Session and App Token, which will 
 SHA-1 is the default hash function, but others are allowed as well.
 
 See below for an example of how to compute the hash in NodeJS
+
+
+### Sample Code (javascript)
+```javascript
+var crypto = require('crypto')
+  , shasum = crypto.createHash('sha1');
+
+shasum.update(client.ks + appToken.token);
+var hash = client.shasum.digest('hex');
+
+```
