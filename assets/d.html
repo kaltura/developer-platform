@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    </script>
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js">
+    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular-sanitize.js">
+    </script>
+
+    <script>
+      var app = angular.module('app', ['ngSanitize']);
+      app.controller('page', function($scope) {
+        $scope.request = {};
+        $scope.loadSectionData = function(section) {
+          angular.element('#' + section).scope().loadData();
+        }
+      })
+    </script>
+    <style>
+      body { margin-top: 32px; margin-bottom: 32px}
+    </style>
+  </head>
+  <body ng-app="app">
+    <div class="container" ng-controller="page">
+      <script>
+      app.controller('ip_info', function($scope) {
+        $scope.loadData = function() {
+          var request = {};
+          $.ajax({
+            url: "https://www.telize.com/geoip/8.8.8.8",
+          }).done(function(result) {
+            $scope.result = result;
+            $scope.$apply();
+          }).fail(function(err) {
+            throw err;
+          });
+        }
+      })
+      </script>hi 1
+      <div ng-controller="ip_info"
+           ng-init="loadData()">
+        <h2>IP Address 8.8.8.8</h2>
+        <div>
+        <script>
+        app.controller('weather_info', function($scope) {
+          $scope.loadData = function() {
+            var request = {
+              city: $scope.result.city,
+            }
+            $.ajax({
+              url: "http://api.openweathermap.org/data/2.5/weather",
+              data: {
+                'q': request.city,
+                'units': "imperial"
+              },
+            }).done(function(result) {
+              $scope.result = result;
+              $scope.$apply();
+            }).fail(function(err) {
+              throw err;
+            });
+          }
+        })
+        </script>hello
+        <div ng-controller="weather_info"
+             ng-init="loadData()">
+          <h2>Current weather in {{ result.name }}</h2>
+          <img src="http://openweathermap.org/img/w/{{ result.weather[0].icon }}.png">
+          <h4>{{ result.weather[0].main }}</h4>
+          <p>{{ result.weather[0].description }}</p>
+          <p>Temperature: {{ result.main.temp }} &deg;F</p>
+          <p>Wind Speed: {{ result.wind.speed }} m/s</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
