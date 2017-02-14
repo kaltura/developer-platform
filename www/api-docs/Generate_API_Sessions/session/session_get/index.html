@@ -1,14 +1,14 @@
-<!DOCTYPE html><html><head> <base href="/"> <title>Kaltura VPaaS API Documentation</title> <link href="dist/vendor.css" rel="stylesheet"> <link href="css/external.css" rel="stylesheet"> <meta content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no" ,="" name="viewport"> <script>function checkBooleanQueryParam(o){return!!window.location.href.substring(window.location.href.indexOf("?")).match(new RegExp("[?&]"+o+"=[^0f]"))}window.lucybot={},window.lucybot.openapi={},window.lucybot.prerender=checkBooleanQueryParam("prerender"),window.lucybot.embed=checkBooleanQueryParam("embed"),window.lucybot.showNavigation=checkBooleanQueryParam("showNavigation")</script> <style>app.loading,app.loading a,app.loading button{cursor:wait!important}</style> <script src="assets/mixpanel.js"></script>
+<!DOCTYPE html><html><head> <base href="/"> <title>session.get - Kaltura VPaaS API Documentation</title> <link href="dist/vendor.css" rel="stylesheet"> <link href="css/external.css" rel="stylesheet"> <meta content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no" ,="" name="viewport"> <script>function checkBooleanQueryParam(o){return!!window.location.href.substring(window.location.href.indexOf("?")).match(new RegExp("[?&]"+o+"=[^0f]"))}window.lucybot={},window.lucybot.openapi={},window.lucybot.prerender=checkBooleanQueryParam("prerender"),window.lucybot.embed=checkBooleanQueryParam("embed"),window.lucybot.showNavigation=checkBooleanQueryParam("showNavigation")</script> <style>app.loading,app.loading a,app.loading button{cursor:wait!important}</style> <script src="assets/mixpanel.js"></script>
 <script src="assets/jaco.js"></script>
-<script src="assets/kaltura.js"></script> <style>.discussion-frame[_ngcontent-pfo-3] {
+<script src="assets/kaltura.js"></script> <style>.discussion-frame[_ngcontent-mxa-3] {
         border: 1px solid #333;
         width: 100%;
         height: 400px;
-      }</style><style>side-menu-item[_ngcontent-pfo-9] {
+      }</style><style>side-menu-item[_ngcontent-mxa-9] {
   display: block;
 }
 
-.show-menu-button[_ngcontent-pfo-9] {
+.show-menu-button[_ngcontent-mxa-9] {
   height: 50px;
   width: 50px;
   border-radius: 25px;
@@ -16,51 +16,51 @@
   padding-top: 13px;
 }
 
-.menu-heading[_ngcontent-pfo-9] {
+.menu-heading[_ngcontent-mxa-9] {
   margin-top: 0px;
   font-weight: bold;
 }
 
-.close-menu-button[_ngcontent-pfo-9]   a[_ngcontent-pfo-9] {
+.close-menu-button[_ngcontent-mxa-9]   a[_ngcontent-mxa-9] {
   color: #999;
 }
 
-.show-menu-mobile-button[_ngcontent-pfo-9] {
+.show-menu-mobile-button[_ngcontent-mxa-9] {
   margin-top: 15px;
   width: 100%;
 }
 
-.side-menu[_ngcontent-pfo-9] {
+.side-menu[_ngcontent-mxa-9] {
   padding: 15px;
   border: 1px solid #ccc;
 }
 
 @media (min-width: 768px) {
-  .side-menu[_ngcontent-pfo-9], .show-menu-button[_ngcontent-pfo-9] {
+  .side-menu[_ngcontent-mxa-9], .show-menu-button[_ngcontent-mxa-9] {
     margin-top: 21px;
     box-shadow: 2px 2px 5px #888888;
   }
-}</style><meta name="title" content="Kaltura VPaaS API Documentation"><meta name="og:title" content="Kaltura VPaaS API Documentation"><meta name="description" content="Full documentation for the Kaltura VPaaS API"><meta name="og:description" content="Full documentation for the Kaltura VPaaS API"><style>side-menu-item[_ngcontent-pfo-10] {
+}</style><meta name="title" content="session.get - Kaltura VPaaS API Documentation"><meta name="og:title" content="session.get - Kaltura VPaaS API Documentation"><meta name="description" content="Parse session key and return its info"><meta name="og:description" content="Parse session key and return its info"><style>side-menu-item[_ngcontent-mxa-10] {
   display: block;
 }
-.side-menu-item[_ngcontent-pfo-10] {
+.side-menu-item[_ngcontent-mxa-10] {
   display: inline-block;
   width: 100%;
   white-space: nowrap;
   margin-top: 8px;
   position: relative;
 }
-.side-menu-item[_ngcontent-pfo-10], .side-menu-children[_ngcontent-pfo-10] {
+.side-menu-item[_ngcontent-mxa-10], .side-menu-children[_ngcontent-mxa-10] {
   padding-left: 14px;
 }
 
-.fa-ellipsis-v[_ngcontent-pfo-10] {
+.fa-ellipsis-v[_ngcontent-mxa-10] {
   position: absolute;
   left: 0px;
   top: 3px;
 }
 
-.title[_ngcontent-pfo-10] {
+.title[_ngcontent-mxa-10] {
   display: inline-block;
   width: 100%;
   white-space: normal;
@@ -68,20 +68,126 @@
   text-overflow: ellipsis;
   line-height: 18px;
 }
-.title.truncate[_ngcontent-pfo-10] {
+.title.truncate[_ngcontent-mxa-10] {
   white-space: nowrap;
 }
-.title.active[_ngcontent-pfo-10] {
+.title.active[_ngcontent-mxa-10] {
   text-decoration: none;
 }
-.title.inactive[_ngcontent-pfo-10] {
+.title.inactive[_ngcontent-mxa-10] {
   color: inherit;
-}</style><style>.tour-button[_ngcontent-pfo-4] {
+}</style><style>.tour-button[_ngcontent-mxa-4] {
         position: fixed;
         bottom: 0;
         right: 0;
         border-radius: 0px;
         z-index: 10;
+      }</style><style>api-response[_ngcontent-mxa-15] {
+        display: block;
+      }
+      .parameters-title[_ngcontent-mxa-15], .parameters-box[_ngcontent-mxa-15] {
+        border: 1px solid #d9d9d9;
+        padding: 15px;
+        background-color: #f5f5f5;
+      }
+      .parameters-title[_ngcontent-mxa-15] {
+        border-bottom: none;
+        margin-bottom: -2px;
+        background-color: #fff;
+      }
+      .parameters-box[_ngcontent-mxa-15] {
+        border: 1px solid #d9d9d9;
+        border-top: none;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        padding-top: 0px;
+      }</style><style>.sample-code-title[_ngcontent-mxa-16], .sample-code-box[_ngcontent-mxa-16] {
+  border: 1px solid #d9d9d9;
+}
+.sample-code-title[_ngcontent-mxa-16] {
+  padding: 15px;
+  border-bottom: none;
+  margin-bottom: -2px;
+  background-color: #fff;
+}
+.sample-code-box[_ngcontent-mxa-16] {
+  border: 1px solid #d9d9d9;
+  border-top: none;
+  border-radius: 4px;
+}
+.sample-code-box[_ngcontent-mxa-16]   pre.hljs[_ngcontent-mxa-16] {
+  border: none;
+  margin-bottom: 0px;
+}
+.sample-code-box[_ngcontent-mxa-16]   pre[_ngcontent-mxa-16]    > code[_ngcontent-mxa-16] {
+  white-space: pre;
+}
+.show-setup-checkbox[_ngcontent-mxa-16] {
+  display: block;
+}
+.show-setup-checkbox[_ngcontent-mxa-16]   input[_ngcontent-mxa-16] {
+  margin-right: 8px;
+}</style><style>.parameter[_ngcontent-mxa-19] {
+  margin-bottom: 15px;
+}
+
+.dropdown[_ngcontent-mxa-19]    > a[_ngcontent-mxa-19] {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+}
+.dropdown[_ngcontent-mxa-19]    > a[_ngcontent-mxa-19]   i.fa-caret-down[_ngcontent-mxa-19] {
+  float: right;
+}
+
+input[type="file"][_ngcontent-mxa-19] {
+  display: none;
+}
+
+.input-group-btn[_ngcontent-mxa-19]   .btn[_ngcontent-mxa-19] {
+  max-width: 100px;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.description[_ngcontent-mxa-19]   p[_ngcontent-mxa-19] {
+  margin-bottom: 0px;
+}</style><style>.try-it-button[_ngcontent-mxa-8] {
+      margin-bottom: 30px;
+    }
+    .nav-tabs[_ngcontent-mxa-8] {
+      margin-bottom: 15px;
+    }
+    .status-code-tabs[_ngcontent-mxa-8] {
+      font-weight: bold;
+    }
+    .parameter[_ngcontent-mxa-8] {
+      margin-bottom: 20px;
+    }
+    .parameter-details[_ngcontent-mxa-8] {
+      padding-left: 15px;
+    }</style><style>subschema[_ngcontent-mxa-13] {
+      display: block;
+    }</style><style>subschema[_ngcontent-mxa-14] {
+        display: block;
+        margin-left: 10px;
+      }
+      .title-line[_ngcontent-mxa-14] {
+        white-space: nowrap;
+      }
+      .sibling-group[_ngcontent-mxa-14]    > schema[_ngcontent-mxa-14] {
+        margin-left: 0px;
+      }
+      .sibling-group[_ngcontent-mxa-14]   h5[_ngcontent-mxa-14] {
+        font-weight: normal;
+        font-style: italic;
+      }
+      .enum[_ngcontent-mxa-14], .description[_ngcontent-mxa-14] {
+        padding-left: 10px;
+      }
+      [_nghost-mxa-14]     subschema .description p {
+        margin-bottom: 0px;
+        display: inline-block;
       }</style></head> <body class=" spaced-for-kaltura-nav"> <style>#LoadingIndicator{position:fixed;top:0;left:0;right:0;height:4px;z-index:10000}#LoadingIndicator #LoadingIndicatorProgress{height:2px;width:0}</style> <div id="LoadingIndicator"> <div id="LoadingIndicatorProgress" class="bg-primary"></div> </div> <script> if (!window.lucybot.prerender) {
       var totalTime = 5000;
       var curPct = 0;
@@ -206,7 +312,25 @@ if (!keepSidebar) {
 </script>
 
  <app class="loading" ng-version="2.4.7">
-      <router-outlet></router-outlet><documentation _nghost-pfo-3=""><div _ngcontent-pfo-3="" class="container-fluid main-container" id="Documentation"><side-menu _ngcontent-pfo-3="" basepage="documentation" _nghost-pfo-9=""><div _ngcontent-pfo-9="" class="row"><div _ngcontent-pfo-9="" class="col-xs-12 col-sm-4 col-md-3"><a _ngcontent-pfo-9="" class="btn btn-primary visible-xs show-menu-mobile-button"><!--template bindings={}--><span _ngcontent-pfo-9=""><span _ngcontent-pfo-9="">Navigate</span><i _ngcontent-pfo-9="" class="fa fa-right fa-caret-down"></i></span><!--template bindings={}--></a><a _ngcontent-pfo-9="" class="btn btn-default show-menu-button hidden-xs" hidden=""><i _ngcontent-pfo-9="" class="fa fa-bars"></i></a><div _ngcontent-pfo-9="" class="side-menu hidden-xs"><h6 _ngcontent-pfo-9="" class="menu-heading"><!--template bindings={}--><span _ngcontent-pfo-9="">Navigation</span><!--template bindings={}--><!--template bindings={}--><div _ngcontent-pfo-9="" class="close-menu-button pull-right"><a _ngcontent-pfo-9=""><i _ngcontent-pfo-9="" class="fa fa-times"></i></a></div></h6><div _ngcontent-pfo-9="" class="input-group input-group-sm"><input _ngcontent-pfo-9="" class="form-control ng-untouched ng-pristine ng-valid" type="text"><span _ngcontent-pfo-9="" class="input-group-btn"><!--template bindings={}--><a _ngcontent-pfo-9="" class="btn btn-default"><span _ngcontent-pfo-9="">&nbsp;</span><i _ngcontent-pfo-9="" class="fa fa-search"></i><span _ngcontent-pfo-9="">&nbsp;</span></a><!--template bindings={}--></span></div><div _ngcontent-pfo-9="" class="menu-items"><!--template bindings={}--></div></div></div><div _ngcontent-pfo-9="" class="col-xs-12 col-sm-8 col-md-9"><h3 _ngcontent-pfo-3="" class="breadcrumbs"><span _ngcontent-pfo-3="">Documentation</span><!--template bindings={}--><!--template bindings={}--></h3><!--template bindings={}--><!--template bindings={}--><div _ngcontent-pfo-3=""><!--template bindings={}--><!--template bindings={}--></div><!--template bindings={}--></div></div></side-menu></div></documentation>
+      <router-outlet></router-outlet><documentation _nghost-mxa-3=""><div _ngcontent-mxa-3="" class="container-fluid main-container" id="Documentation"><side-menu _ngcontent-mxa-3="" basepage="documentation" _nghost-mxa-9=""><div _ngcontent-mxa-9="" class="row"><div _ngcontent-mxa-9="" class="col-xs-12 col-sm-4 col-md-3"><a _ngcontent-mxa-9="" class="btn btn-primary visible-xs show-menu-mobile-button"><!--template bindings={}--><span _ngcontent-mxa-9=""><span _ngcontent-mxa-9="">Navigate</span><i _ngcontent-mxa-9="" class="fa fa-right fa-caret-down"></i></span><!--template bindings={}--></a><a _ngcontent-mxa-9="" class="btn btn-default show-menu-button hidden-xs" hidden=""><i _ngcontent-mxa-9="" class="fa fa-bars"></i></a><div _ngcontent-mxa-9="" class="side-menu hidden-xs"><h6 _ngcontent-mxa-9="" class="menu-heading"><!--template bindings={}--><span _ngcontent-mxa-9="">Navigation</span><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-9="" class="close-menu-button pull-right"><a _ngcontent-mxa-9=""><i _ngcontent-mxa-9="" class="fa fa-times"></i></a></div></h6><div _ngcontent-mxa-9="" class="input-group input-group-sm"><input _ngcontent-mxa-9="" class="form-control ng-untouched ng-pristine ng-valid" type="text"><span _ngcontent-mxa-9="" class="input-group-btn"><!--template bindings={}--><a _ngcontent-mxa-9="" class="btn btn-default"><span _ngcontent-mxa-9="">&nbsp;</span><i _ngcontent-mxa-9="" class="fa fa-search"></i><span _ngcontent-mxa-9="">&nbsp;</span></a><!--template bindings={}--></span></div><div _ngcontent-mxa-9="" class="menu-items"><!--template bindings={}--><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Overview?prerender=true"><span _ngcontent-mxa-10="">Overview</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Client_Libraries?prerender=true"><span _ngcontent-mxa-10="">Client Libraries</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/XML_Schemas?prerender=true"><span _ngcontent-mxa-10="">XML Schemas</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary"></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions?prerender=true"><span _ngcontent-mxa-10="">Generate API Sessions</span></a></div><!--template bindings={}--><div _ngcontent-mxa-10="" class="side-menu-children"><!--template bindings={}--><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary"></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/session?prerender=true"><span _ngcontent-mxa-10="">session</span></a></div><!--template bindings={}--><div _ngcontent-mxa-10="" class="side-menu-children"><!--template bindings={}--><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title truncate inactive" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/session/session_start?prerender=true"><span _ngcontent-mxa-10="">session.start</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title truncate inactive" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/session/session_end?prerender=true"><span _ngcontent-mxa-10="">session.end</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary"></i><a _ngcontent-mxa-10="" class="title truncate active" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/session/session_get?prerender=true"><span _ngcontent-mxa-10="">session.get</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive truncate" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/session/session_impersonate?prerender=true"><span _ngcontent-mxa-10="">session.impersonate</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive truncate" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/session/session_impersonateByKs?prerender=true"><span _ngcontent-mxa-10="">session.impersonateByKs</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive truncate" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/session/session_startWidgetSession?prerender=true"><span _ngcontent-mxa-10="">session.startWidgetSession</span></a></div><!--template bindings={}--></side-menu-item></div></side-menu-item><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/appToken?prerender=true"><span _ngcontent-mxa-10="">appToken</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-10="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive truncate" preservefragment="" preservequeryparams="" href="/api-docs/Generate_API_Sessions/user_loginByLoginId?prerender=true"><span _ngcontent-mxa-10="">user.loginByLoginId</span></a></div><!--template bindings={}--></side-menu-item></div></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Ingest_and_Upload_Media?prerender=true"><span _ngcontent-mxa-10="">Ingest and Upload Media</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Execute_Bulk_Ingest_and_Updates?prerender=true"><span _ngcontent-mxa-10="">Execute Bulk Ingest and Updates</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Convert_and_Transcode_Media?prerender=true"><span _ngcontent-mxa-10="">Convert and Transcode Media</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Live_Stream_and_Broadcast?prerender=true"><span _ngcontent-mxa-10="">Live Stream and Broadcast</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Enrich_and_Organize_Metadata?prerender=true"><span _ngcontent-mxa-10="">Enrich and Organize Metadata</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Search_Discover_and_Personalize?prerender=true"><span _ngcontent-mxa-10="">Search, Discover and Personalize</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Engage_and_Publish?prerender=true"><span _ngcontent-mxa-10="">Engage and Publish</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Review_Media_Analytics?prerender=true"><span _ngcontent-mxa-10="">Review Media Analytics</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Deliver_and_Distribute_Media?prerender=true"><span _ngcontent-mxa-10="">Deliver and Distribute Media</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Secure_Control_and_Govern?prerender=true"><span _ngcontent-mxa-10="">Secure, Control and Govern</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Optimize_API_Requests?prerender=true"><span _ngcontent-mxa-10="">Optimize API Requests</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Integration_Scheduling_and_Hooks?prerender=true"><span _ngcontent-mxa-10="">Integration, Scheduling and Hooks</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Encrypt_and_License_Content?prerender=true"><span _ngcontent-mxa-10="">Encrypt and License Content</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Manage_Documents_and_Other_Assets?prerender=true"><span _ngcontent-mxa-10="">Manage Documents and Other Assets</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Manage_and_Deliver_Apps_and_Widgets?prerender=true"><span _ngcontent-mxa-10="">Manage and Deliver Apps and Widgets</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Manage_Backend_and_Storage?prerender=true"><span _ngcontent-mxa-10="">Manage Backend and Storage</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/General_Objects?prerender=true"><span _ngcontent-mxa-10="">General Objects</span></a></div><!--template bindings={}--></side-menu-item><side-menu-item _ngcontent-mxa-9="" _nghost-mxa-10=""><div _ngcontent-mxa-10="" class="side-menu-item"><i _ngcontent-mxa-10="" class="fa fa-left fa-ellipsis-v text-primary" hidden=""></i><a _ngcontent-mxa-10="" class="title inactive" preservefragment="" preservequeryparams="" href="/api-docs/Error_Codes?prerender=true"><span _ngcontent-mxa-10="">Error Codes</span></a></div><!--template bindings={}--></side-menu-item></div></div></div><div _ngcontent-mxa-9="" class="col-xs-12 col-sm-8 col-md-9"><h3 _ngcontent-mxa-3="" class="breadcrumbs"><span _ngcontent-mxa-3="">Documentation</span><!--template bindings={}--><span _ngcontent-mxa-3=""><i _ngcontent-mxa-3="" class="fa fa-chevron-right"></i><span _ngcontent-mxa-3="">session.get</span></span><!--template bindings={}--></h3><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-3=""><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-3="" class="docs-body"><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-3="" class="docs-operation"><operation-documentation _ngcontent-mxa-3="" _nghost-mxa-8=""><div _ngcontent-mxa-8="" class="route-description"><p>Parse session key and return its info</p>
+</div><a _ngcontent-mxa-8="" class="btn btn-primary try-it-button">Try it out</a><!--template bindings={}--><div _ngcontent-mxa-8="" class="row"><div _ngcontent-mxa-8="" class="col-xs-12 col-md-6"><h4 _ngcontent-mxa-8="">Parameters</h4><p _ngcontent-mxa-8="" hidden=""><i _ngcontent-mxa-8="">This operation has no parameters.</i></p><ul _ngcontent-mxa-8="" class="nav nav-tabs location-tabs"><!--template bindings={}--><li _ngcontent-mxa-8="" role="presentation" class="active"><a _ngcontent-mxa-8="" class="text-capitalize">query</a></li></ul><parameter-set _ngcontent-mxa-8=""><!--template bindings={}--><div class="global-parameters"><label>Global Parameters</label><a class="btn btn-sm btn-link"><i class="fa fa-left fa-plus-square-o"></i><span>Show</span></a><div class="help-block" hidden="">These parameters are valid for any operation</div><!--template bindings={}--><parameter class="global-parameter" _nghost-mxa-19="" hidden=""><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-19="" class="parameter"><div _ngcontent-mxa-19="" class="parameter-title"><span _ngcontent-mxa-19="" class="parameter-name hljs-attr">format:</span><span _ngcontent-mxa-19="" class="parameter-type hljs-string">integer</span><i _ngcontent-mxa-19="" hidden="">&nbsp;&nbsp;required</i></div><div _ngcontent-mxa-19="" class="parameter-details"><div _ngcontent-mxa-19="" class="description"><p>The format of the response</p>
+</div><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-19="" hidden=""></div><div _ngcontent-mxa-19="">Allowed values are:<div _ngcontent-mxa-19="" class="enum-list"><ul _ngcontent-mxa-19=""><!--template bindings={}--><li _ngcontent-mxa-19=""><span _ngcontent-mxa-19="">1</span><!--template bindings={}--><i _ngcontent-mxa-19=""><span _ngcontent-mxa-19=""> (JSON)</span></i></li><li _ngcontent-mxa-19=""><span _ngcontent-mxa-19="">2</span><!--template bindings={}--><i _ngcontent-mxa-19=""><span _ngcontent-mxa-19=""> (XML)</span></i></li><li _ngcontent-mxa-19=""><span _ngcontent-mxa-19="">3</span><!--template bindings={}--><i _ngcontent-mxa-19=""><span _ngcontent-mxa-19=""> (PHP)</span></i></li></ul></div></div></div></div></parameter><!--template bindings={}--></div><!--template bindings={}--><!--template bindings={}--><parameter class="ungrouped-parameter" _nghost-mxa-19=""><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-19="" class="parameter"><div _ngcontent-mxa-19="" class="parameter-title"><span _ngcontent-mxa-19="" class="parameter-name hljs-attr">session:</span><span _ngcontent-mxa-19="" class="parameter-type hljs-string">string</span><i _ngcontent-mxa-19="" hidden="">&nbsp;&nbsp;required</i></div><div _ngcontent-mxa-19="" class="parameter-details"><div _ngcontent-mxa-19="" class="description"><p>The KS to be parsed, keep it empty to use current session.</p>
+</div><!--template bindings={}--><!--template bindings={}--><div _ngcontent-mxa-19="" hidden=""></div><div _ngcontent-mxa-19="" hidden="">Allowed values are:<div _ngcontent-mxa-19="" class="enum-list"><ul _ngcontent-mxa-19=""><!--template bindings={}--></ul></div></div></div></div></parameter></parameter-set></div><div _ngcontent-mxa-8="" class="col-xs-12 col-md-6"><h4 _ngcontent-mxa-8="">Responses</h4><ul _ngcontent-mxa-8="" class="nav nav-tabs status-code-tabs"><!--template bindings={}--><li _ngcontent-mxa-8="" role="presentation" class="active"><a _ngcontent-mxa-8=""><span _ngcontent-mxa-8="" class="text-success"><span _ngcontent-mxa-8="">200</span></span></a></li><li _ngcontent-mxa-8="" role="presentation"><a _ngcontent-mxa-8=""><span _ngcontent-mxa-8="" class="text-danger"><span _ngcontent-mxa-8="">Errors</span></span></a></li></ul><div _ngcontent-mxa-8=""><p>Success</p>
+</div><!--template bindings={}--><div _ngcontent-mxa-8="" class="response-schema hide-code"><schema _ngcontent-mxa-8="" _nghost-mxa-13=""><div _ngcontent-mxa-13="" class="form-group"><div _ngcontent-mxa-13="" class="btn-group"><a _ngcontent-mxa-13="" class="btn btn-default active">Schema</a><a _ngcontent-mxa-13="" class="btn btn-default">Example</a></div></div><pre _ngcontent-mxa-13="" class="hljs"><code _ngcontent-mxa-13="" hidden="">{
+  <span class="hljs-attr">"expiry"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"ks"</span>: <span class="hljs-string">""</span>,
+  <span class="hljs-attr">"partnerId"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"privileges"</span>: <span class="hljs-string">""</span>,
+  <span class="hljs-attr">"sessionType"</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">"userId"</span>: <span class="hljs-string">""</span>
+}</code><subschema _ngcontent-mxa-13="" _nghost-mxa-14=""><span _ngcontent-mxa-14="" class="title-line"><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-type hljs-string"><span _ngcontent-mxa-14="">object</span><!--template bindings={}--></span><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-title hljs-keyword">:KalturaSessionInfo</span><a _ngcontent-mxa-14=""><i _ngcontent-mxa-14="" class="fa fa-right fa-caret-down"></i></a></span><!--template bindings={}--><div _ngcontent-mxa-14="" class="schema-details"><!--template bindings={}--><div _ngcontent-mxa-14="" class="description" hidden=""></div><!--template bindings={}--><subschema _ngcontent-mxa-14="" _nghost-mxa-14=""><span _ngcontent-mxa-14="" class="title-line"><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-name hljs-attr">expiry:</span><span _ngcontent-mxa-14="" class="schema-type hljs-string"><span _ngcontent-mxa-14="">integer</span><!--template bindings={}--></span><!--template bindings={}--><a _ngcontent-mxa-14="" hidden=""><i _ngcontent-mxa-14="" class="fa fa-right fa-caret-down"></i></a></span><!--template bindings={}--><div _ngcontent-mxa-14="" class="schema-details"><!--template bindings={}--><div _ngcontent-mxa-14="" class="description"><p><code>readOnly</code></p>
+</div><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--></div></subschema><subschema _ngcontent-mxa-14="" _nghost-mxa-14=""><span _ngcontent-mxa-14="" class="title-line"><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-name hljs-attr">ks:</span><span _ngcontent-mxa-14="" class="schema-type hljs-string"><span _ngcontent-mxa-14="">string</span><!--template bindings={}--></span><!--template bindings={}--><a _ngcontent-mxa-14="" hidden=""><i _ngcontent-mxa-14="" class="fa fa-right fa-caret-down"></i></a></span><!--template bindings={}--><div _ngcontent-mxa-14="" class="schema-details"><!--template bindings={}--><div _ngcontent-mxa-14="" class="description"><p><code>readOnly</code></p>
+</div><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--></div></subschema><subschema _ngcontent-mxa-14="" _nghost-mxa-14=""><span _ngcontent-mxa-14="" class="title-line"><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-name hljs-attr">partnerId:</span><span _ngcontent-mxa-14="" class="schema-type hljs-string"><span _ngcontent-mxa-14="">integer</span><!--template bindings={}--></span><!--template bindings={}--><a _ngcontent-mxa-14="" hidden=""><i _ngcontent-mxa-14="" class="fa fa-right fa-caret-down"></i></a></span><!--template bindings={}--><div _ngcontent-mxa-14="" class="schema-details"><!--template bindings={}--><div _ngcontent-mxa-14="" class="description"><p><code>readOnly</code></p>
+</div><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--></div></subschema><subschema _ngcontent-mxa-14="" _nghost-mxa-14=""><span _ngcontent-mxa-14="" class="title-line"><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-name hljs-attr">privileges:</span><span _ngcontent-mxa-14="" class="schema-type hljs-string"><span _ngcontent-mxa-14="">string</span><!--template bindings={}--></span><!--template bindings={}--><a _ngcontent-mxa-14="" hidden=""><i _ngcontent-mxa-14="" class="fa fa-right fa-caret-down"></i></a></span><!--template bindings={}--><div _ngcontent-mxa-14="" class="schema-details"><!--template bindings={}--><div _ngcontent-mxa-14="" class="description"><p><code>readOnly</code></p>
+</div><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--></div></subschema><subschema _ngcontent-mxa-14="" _nghost-mxa-14=""><span _ngcontent-mxa-14="" class="title-line"><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-name hljs-attr">sessionType:</span><span _ngcontent-mxa-14="" class="schema-type hljs-string"><span _ngcontent-mxa-14="">integer</span><!--template bindings={}--></span><!--template bindings={}--><a _ngcontent-mxa-14="" hidden=""><i _ngcontent-mxa-14="" class="fa fa-right fa-caret-down"></i></a></span><!--template bindings={}--><div _ngcontent-mxa-14="" class="schema-details"><!--template bindings={}--><div _ngcontent-mxa-14="" class="enum"><span _ngcontent-mxa-14="">Enum: 0, 2</span></div><div _ngcontent-mxa-14="" class="description"><p><code>readOnly</code></p>
+<p>Enum Type: <code>KalturaSessionType</code></p>
+</div><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--></div></subschema><subschema _ngcontent-mxa-14="" _nghost-mxa-14=""><span _ngcontent-mxa-14="" class="title-line"><!--template bindings={}--><span _ngcontent-mxa-14="" class="schema-name hljs-attr">userId:</span><span _ngcontent-mxa-14="" class="schema-type hljs-string"><span _ngcontent-mxa-14="">string</span><!--template bindings={}--></span><!--template bindings={}--><a _ngcontent-mxa-14="" hidden=""><i _ngcontent-mxa-14="" class="fa fa-right fa-caret-down"></i></a></span><!--template bindings={}--><div _ngcontent-mxa-14="" class="schema-details"><!--template bindings={}--><div _ngcontent-mxa-14="" class="description"><p><code>readOnly</code></p>
+</div><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--></div></subschema><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--><!--template bindings={}--></div></subschema></pre></schema></div></div></div></operation-documentation></div><!--template bindings={}--></div></div><!--template bindings={}--></div></div></side-menu></div></documentation>
       </app> <div id="KalturaFooter" class="w-section footer-section">
   <div class="w-container container footer-container">
     <div class="row">
