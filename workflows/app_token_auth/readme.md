@@ -37,3 +37,14 @@ shasum.update(client.ks + appToken.token);
 var hash = client.shasum.digest('hex');
 
 ```
+
+## Start the App Token Session
+Once you've computed the hash, pass it's value to `appToken.startSession()` to retrieve a new Kaltura Session. You should then use this session to set `client.ks`.
+
+### API Call
+```json
+{
+  "method": "get",
+  "path": "/service/apptoken/action/startSession"
+}
+```
