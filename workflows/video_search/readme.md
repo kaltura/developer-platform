@@ -23,12 +23,15 @@
 
 # Kaltura Media Library Search
 To search for objects in Kaltura, API services expose the list action. For media entries, the list action provides a vast set of filter parameters to allow for granular flexibility in building custom library search experiences, whether it is a free-form search, or a pre-determined gallery.   
-This recipe will walk through some common scenarios of using the media.list action.  ,Search Operators in the media.list API:,* The following special operators can be used in a free text search field in the Kaltura API:
-* Exclamation mark (!) - AND NOT . Note that AND NOT is not a unary NOT operator. A positive search word must appear before the AND phrase. See here for additional information.
+This recipe will walk through some common scenarios of using the media.list action
+
+#### Search Operators in the media.list API:
+The following special operators can be used in a free text search field in the Kaltura API:
+* Exclamation mark (!) - AND NOT.  Note that AND NOT is not a unary NOT operator. A positive search word must appear before the AND phrase. See here for additional information.
 * Double Quotes (\"\") - are treated as an EXACT MATCH search operand.
 * Backslash (\\) - escape. To search for the character ! you have to enter \\! in the search field.
 * Comma (,) - OR
-* Spacebar - AND,We also recommend reading [Kaltura Search Engine for Media, Metadata and Timeline: Search Behavior and Commands](https://knowledge.kaltura.com/node/247) for more details on the search behavior in the KMC and MediaSpace.,
+* Spacebar - AND.  We also recommend reading [Kaltura Search Engine for Media, Metadata and Timeline: Search Behavior and Commands](https://knowledge.kaltura.com/node/247) for more details on the search behavior in the KMC and MediaSpace.
 
 ## Free Text Search
 To retrieve a list of media entries, use Media Entry Filters to select which content you want to show.  
