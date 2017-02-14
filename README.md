@@ -29,3 +29,12 @@ Any changes that are pushed to the master branch will automatically
 trigger a Travis build. Travis will use LucyBot to update the
 `www/` folder with new HTML, CSS, and JS assets. Once Travis is
 finished, simply pull the result and restart the server.
+
+### Trigger a Build
+If Travis fails, or you want to pull in the latest changes to LucyBot,
+you can manually trigger a build on Travis by pushing an empty commit:
+
+```
+git commit --allow-empty -m "Trigger CI"
+git push
+```
