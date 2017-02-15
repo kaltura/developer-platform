@@ -1,7 +1,5 @@
 # Error Codes
 
-[[Edit on GitHub]](https://github.com/kaltura/kaltura-api-recipes/edit/development/swagger/markdown/errors.md)
-
 * `CANNOT_RETRIEVE_ANOTHER_USER_USING_NON_ADMIN_SESSION` - cannot retrieve another user \"@USER_ID@\" using non-admin session
 * `INTERNAL_SERVERL_ERROR` - Internal server error occurred
 * `INTERNAL_SERVERL_ERROR_DEBUG` - Internal server error occurred \"@ERROR@\"
@@ -31,8 +29,12 @@
 * `DATA_CENTER_ID_NOT_FOUND` - There is no data center with id [@DCID@]
 * `PLUGIN_NOT_AVAILABLE_FOR_PARTNER` - Plugin [@PLUGIN@] is not available for partner [@PARTNER@]
 * `SYSTEM_NAME_ALREADY_EXISTS` - System name [@SYS_NAME@] already exists
+* `RESOURCE_PARENT_ID_NOT_FOUND` - Resource parent id [@PARENT_ID@] not found
+* `SCHEDULE_RESOURCE_ID_NOT_FOUND` - Schedule Resource id [@ID@] not found
+* `SCHEDULE_EVENT_ID_NOT_FOUND` - Schedule Event id [@ID@] not found
 * `LOCK_TIMED_OUT` - Timed out while attempting to grab lock
 * `MAX_FILE_SYNCS_FOR_OBJECT_PER_DAY_REACHED` - Max update limit was reached. Object ID \"@OBJECT_ID@\" will not updated with latest chnages
+* `RESOURCE_IS_RESERVED` - Resource with id @RESOURCE_ID@ is already reserved
 * `ENTRY_NOT_READY` - Entry \"@ENTRY_NAME@\" is not ready
 * `INVALID_ENTRY_TYPE` - Entry \"@ENTRY_NAME@\" type is \"@WRONG_ENTRY_TYPE@\", type must be \"@RIGHT_ENTRY_TYPE@\"
 * `INVALID_ENTRY_MEDIA_TYPE` - Entry \"@ENTRY_NAME@\" media type is \"@WRONG_MEDIA_TYPE@\", media type must be \"@RIGHT_MEDIA_TYPE@\"
@@ -56,6 +58,7 @@
 * `INVALID_ENTRY_STATUS` - Invalid entry status
 * `ENTRY_CANNOT_BE_FLAGGED` - Entry cannot be flagged
 * `ENTRY_CANNOT_BE_TRIMMED` - Entry cannot be trimmed
+* `DYNAMIC_SEGMENT_DURATION_DISABLED` - Cannot edit segment duration. Dynamic segment duration feature is disabled
 * `NOTIFICATION_FOR_ENTRY_NOT_FOUND` - Notification for entry id \"@ENTRY@\" not found
 * `BULK_UPLOAD_NOT_FOUND` - Bulk upload id \"@ID@\" not found
 * `SOURCE_WIDGET_OR_UICONF_REQUIRED` - SourceWidgetId or UiConfId id are required
@@ -78,6 +81,7 @@
 * `CANNOT_DELETE_DEFAULT_CONVERSION_PROFILE` - Default conversion profile cannot be deleted
 * `ASSET_PARAMS_INVALID_TYPE` - Asset params id \"@ASSET_PARAMS_ID@\" type \"@TYPE@\" is invalid
 * `CONVERSION_PROFILE_ASSET_PARAMS_NOT_FOUND` - Conversion profile id \"@PROFILE_ID@\" asset params id \"@PARAMS_ID@\" not found
+* `INGEST_NOT_FOUND_IN_CONVERSION_PROFILE` - Ingest \"@STREAM_NAME@\" is not in conversion profile
 * `FLAVOR_PARAMS_ID_NOT_FOUND` - Flavor params id \"@ID@\" not found
 * `FLAVOR_PARAMS_NOT_FOUND` - Flavor params not found
 * `FLAVOR_PARAMS_DUPLICATE` - Flavor params [@PARAMS@] defined more than once
@@ -94,6 +98,7 @@
 * `ORIGINAL_FLAVOR_ASSET_NOT_CREATED` - The original flavor asset could not be created [@DATA@]
 * `NO_FLAVORS_FOUND` - No flavors found
 * `NO_EXTERNAL_CONTENT_EXISTS` - Can't delete local content because no external content exists
+* `GENERATE_TRANSCODING_COMMAND_FAIL` - Failed to create proper transcoding command for asset id \"@ASSET_ID@\" and ffprobe info [@MEDIA_INFO] due to @REASON@
 * `THUMB_ASSET_ID_NOT_FOUND` - The Thumbnail asset id \"@ID@\" not found
 * `THUMB_ASSET_PARAMS_ID_NOT_FOUND` - The Thumbnail asset not found for params id \"@ID@\"
 * `THUMB_ASSET_IS_NOT_READY` - The thumbnail asset is not ready
@@ -146,6 +151,7 @@
 * `UPLOAD_TOKEN_INVALID_STATUS_FOR_ADD_ENTRY` - Upload token is in an invalid status for adding entry, maybe the a file was not uploaded or the token was used
 * `UPLOAD_TOKEN_CANNOT_RESUME` - Cannot resume the upload, original file was not found
 * `UPLOAD_TOKEN_CANNOT_MATCH_EXPECTED_SIZE` - Failed to match expected file size
+* `UPLOAD_TOKEN_FILE_TYPE_RESTRICTED_FOR_UPLOAD` - Upload token is restricted due to the file type
 * `NON_GROUP_PARTNER_ATTEMPTING_TO_ASSIGN_CHILD` - Partner id [@PID@] is not a VAR/GROUP, but is attempting to create child partner
 * `NON_PARENT_PARTNER_ATTEMPTING_TO_COPY_PARTNER` - Partner id [@PID@] is not the parent of template partner [@T_PARTNER@]
 * `INVALID_OBJECT_ID` - Invalid object id [@ID@]
@@ -190,6 +196,7 @@
 * `CANNOT_OVERRIDE_MANUAL_CHANGES` - Cannot override manual changes
 * `CANNOT_UPDATE_CATEGORY_USER_OWNER` - Cannot change CategoryUser object for category Owner
 * `ENTRY_CATEGORY_FIELD_IS_DEPRECATED` - entry->categories and entry->categoriesIds fields are deprecated - user categoryEntry service
+* `ENTRY_DISPLAY_IN_SEARCH_VALUE_NOT_ALLOWED` - Cannot set the value of DISPLAY_IN_SEARCH to [\"@DISPLAY_IN_SEARCH_NEW_VALUE@\"]
 * `CANNOT_ASSIGN_ENTRY_TO_CATEGORY` - Cannot assign entry to category
 * `CANNOT_REMOVE_ENTRY_FROM_CATEGORY` - Cannot remove entry from category
 * `CANNOT_ACTIVATE_CATEGORY_ENTRY` - Cannot activate categoryEntry
@@ -216,6 +223,9 @@
 * `LIVE_STREAM_ALREADY_BROADCASTING` - Entry [@ENTRY_ID@] already broadcasting to server [@MEDIA_SERVER@]
 * `CANNOT_UPDATE_FIELDS_WHILE_ENTRY_BROADCASTING` - Cannot update [@FIELD@] while entry is broadcasting
 * `CANNOT_UPDATE_FIELDS_RECORDED_ENTRY_STILL_NOT_READY` - Cannot update [@FIELD@] while all vod entry flavors are not ready
+* `CANNOT_REGENERATE_STREAM_TOKEN_FOR_EXTERNAL_LIVE_STREAMS` - Cannot regenerate stream token for external type [@TYPE@] live stream
+* `KALTURA_RECORDING_ENABLED` - Kaltura recording is enabled for partner [@PARTNER_ID@] use liveStream->setRecordedContent to set the live recorded content
+* `KALTURA_RECORDING_DISABLED` - Kaltura recording is disabled for partner [@PARTNER_ID@] use liveStream->appendRecording to set the live recorded content
 * `DELIVERY_TYPE_NOT_SPECIFIED` - At least one non auto delivery type must be specified
 * `SPHINX_CRITERIA_EXCEEDED_MAX_MATCHES_ALLOWED` - Unable to generate list. max matches value was reached
 * `ASSIGNING_INFO_TO_ENTRY_WITH_PARENT_IS_FORBIDDEN` - assigning categories|scheduling|access control to entry with parent entry \"@ID@\" is not allowed

@@ -67,6 +67,7 @@ routes:
 operationNavigation:
   - title: "Overview"
     markdownFile: ./markdown/overview.md
+    discussionURL: 'https://forum.kaltura.org/search?q=API'
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
   - title: "XML Schemas"
@@ -259,7 +260,7 @@ operationNavigation:
   - title: "General Objects"
     prerender: false
   - title: "Error Codes"
-    markdownFile: ./markdown/errors.md
+    markdownFile: ./markdown/generated/errors.md
 
 workflowNavigation:
   - title: Generate API Sessions
