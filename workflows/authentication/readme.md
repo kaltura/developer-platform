@@ -41,6 +41,9 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
     {
       "name": "type",
       "default": 2
+    },
+    {
+      "name": "privileges"
     }
   ]
 }
