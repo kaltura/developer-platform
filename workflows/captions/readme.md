@@ -37,7 +37,7 @@ Choose a video from your library to add captions to.
 ```
 
 ## Uploading Captions - Create an Upload Token
-Use the uploadToken service to upload an SRT file to the Kaltura API. If you don't have an SRT file handy, you can [download one here](/sample_captions.srt)
+Use the uploadToken service to upload an SRT file to the Kaltura API.
 
 First you'll need to use `uploadToken.add` to create a new upload token. In the next step we'll use this token to upload the SRT data.
 
@@ -51,7 +51,7 @@ First you'll need to use `uploadToken.add` to create a new upload token. In the 
 ```
 
 ## Uploading Captions - Send the SRT Data
-Now we'll use the newly created Upload Token to upload the SRT. If you don't have an SRT file handy, you can [download one here](/sample_captions.srt)
+Now we'll use the newly created Upload Token to upload the SRT. If you don't have an SRT file handy, you can [download one here](assets/sample_captions.srt)
 
 ### API Call
 ```json
