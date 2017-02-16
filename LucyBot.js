@@ -2,8 +2,12 @@ const YAML = require('js-yaml');
 const fs = require('fs');
 
 const openapi = require('./openapi.json');
+const config = module.exports = YAML.load(fs.readFileSync(__dirname + '/LucyBotBase.yml', 'utf8'));
 
-let config = module.exports = YAML.load(fs.readFileSync(__dirname + '/LucyBotBase.yml', 'utf8'));
+config.operationNavigation.push({
+  title: "Error Codes",
+  markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => '* `' + e.name + '` - ' + e.message).join('\n'),
+});
 
 let objectsItem = config.operationNavigation.filter(i => i.title === 'General Objects')[0];
 var definitions = openapi.definitions;

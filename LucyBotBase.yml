@@ -259,8 +259,6 @@ operationNavigation:
         hidden: true
   - title: "General Objects"
     prerender: false
-  - title: "Error Codes"
-    markdownFile: ./markdown/generated/errors.md
 
 workflowNavigation:
   - title: Generate API Sessions
