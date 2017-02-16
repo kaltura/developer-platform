@@ -25,7 +25,7 @@
 To search for objects in Kaltura, API services expose the list action. For media entries, the list action provides a vast set of filter parameters to allow for granular flexibility in building custom library search experiences, whether it is a free-form search, or a pre-determined gallery.   
 This recipe will walk through some common scenarios of using the media.list action
 
-#### Search Operators in the media.list API:
+## Search Operators in the media.list API:
 The following special operators can be used in a free text search field in the Kaltura API:
 * Exclamation mark (!) - AND NOT.  Note that AND NOT is not a unary NOT operator. A positive search word must appear before the AND phrase. See here for additional information.
 * Double Quotes (\"\") - are treated as an EXACT MATCH search operand.
@@ -252,4 +252,4 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
 ```
 
 ## Finish
-Learn about working with [custom metadata](https://developer.kaltura.com/recipes/metadata)
+Learn about working with [custom metadata](workflows/Enrich_and_Organize_Metadata/Working_with_metadata)
