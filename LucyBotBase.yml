@@ -7,7 +7,9 @@ hljsTheme: 'atom-one-light'
 jsIncludes:
   - 'assets/mixpanel.js'
   - 'assets/jaco.js'
-  - 'assets/kaltura.js'
+  - 'assets/KalturaClient.min.js'
+  - 'assets/KalturaSessionService.min.js'
+  - 'assets/KalturaUiConfService.min.js'
 discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 codegen:
   url: 'http://54.203.20.214:3005/code/build/request'

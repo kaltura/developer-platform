@@ -2,9 +2,10 @@ window.KC = null;
 
 function setKalturaSession(ks, cb) {
   KC.setKs(ks);
-  var filter = new KalturaUiConfFilter();
-  filter.objTypeEqual = KalturaUiConfObjType.PLAYER;
-  KC.uiConf.listAction(function(success, results) {
+  var filter = {
+    objTypeEqual: 1, // KalturaUiConfObjType.PLAYER
+  }
+  KalturaUiConfService.listAction(filter).execute(KC, function(success, results) {
     var uiConfs = results.objects || [];
     if (window.RECIPE_NAME === 'captions') {
       uiConfs = uiConfs.filter(function(uiConf) {
@@ -25,11 +26,11 @@ function setKalturaSession(ks, cb) {
       uiConfs = results.objects || [];
     }
     if (uiConfs.length) {
-      //$('#APICall').scope().globalAnswers['uiConf'] = uiConfs[0].id;
-      // FIXME: set uiConf
+      var answers = window.lucybot.openapiService.globalParameters;
+      answers.uiConf = answers.uiConf || uiConfs[0].id;
     }
     cb(null, ks);
-  }, filter);
+  });
 }
 
 window.setUpKalturaClient = function(creds, cb) {
@@ -68,16 +69,17 @@ window.setUpKalturaClient = function(creds, cb) {
     }, creds.ks)
     */
   } else {
-    KC.session.start(function(success, ks) {
+    KalturaSessionService.start(
+          creds.secret,
+          creds.userId,
+          2, /* KSessionType.ADMIN */
+          creds.partnerId).execute(window.KC, function(success, ks) {
       if (checkFailure(success, ks)) return;
       mixpanel.track('kaltura_session', {
         partnerId: creds.partnerId
       });
       setKalturaSession(ks, cb);
-    }, creds.secret,
-    creds.userId,
-    KalturaSessionType.ADMIN,
-    creds.partnerId);
+    });
   }
 }
 
