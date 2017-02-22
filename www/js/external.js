@@ -31,7 +31,7 @@
     }
   }
 
-  var setUser = window.setKalturaUser = function(creds) {
+  window.setKalturaUser = function(creds) {
     updateViewsForLogin(!!creds);
     if (!creds) {
       user = {};
@@ -65,14 +65,14 @@
       } catch(e) {}
       if (user && typeof user === 'object' && Object.keys(user).length) {
         if (ksMatch) user.ks = ksMatch;
-        setUser(user);
+        setKalturaUser(user);
         return;
       }
     }
     if (ksMatch) {
-      setUser({ks: ksMatch});
+      setKalturaUser({ks: ksMatch});
     } else {
-      setUser();
+      setKalturaUser();
     }
   };
 
@@ -85,38 +85,48 @@
   })
 
   window.startKalturaLogin = function() {
-    window.jquery('#KalturaSignInModal #KalturaSignInButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
     window.jquery('#KalturaSignInModal .alert-danger').hide();
-    user.email = window.jquery('input[name="KalturaEmail"]').val();
-    user.password = window.jquery('input[name="KalturaPassword"]').val();
+    var creds = {}
+    creds.ks = window.jquery('input[name="KalturaSession"]').val();
+    if (creds.ks) {
+      window.jquery('#KalturaSignInModal').modal('hide');
+      setKalturaUser(creds);
+      return;
+    }
+
+    window.jquery('#KalturaSignInModal #KalturaSignInButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
+    creds.email = window.jquery('input[name="KalturaEmail"]').val();
+    creds.password = window.jquery('input[name="KalturaPassword"]').val();
+
     mixpanel.track('login_submit', {
-      email: user.email,
+      email: creds.email,
     });
     window.jquery.ajax({
       url: '/auth/login',
       method: 'POST',
-      data: JSON.stringify({email: user.email, password: user.password}),
+      data: JSON.stringify({email: creds.email, password: creds.password}),
       headers: {'Content-Type': 'application/json'},
     })
     .done(function(response) {
       window.jquery('#KalturaSignInModal').modal('hide');
       window.jquery('#KalturaPartnerIDModal .kaltura-loading').hide();
       window.jquery('#KalturaPartnerIDModal').modal('show');
-      mixpanel.identify(user.email);
+      mixpanel.identify(creds.email);
       mixpanel.people.set({
-        '$email': user.email,
+        '$email': creds.email,
       })
       mixpanel.track('login_success', {
-        email: user.email,
+        email: creds.email,
       });
       var partnerChoicesHTML = response.map(function(partner) {
         return '<li><a onclick="setKalturaPartnerID(' + partner.id + ')">' + partner.name + ' (' + partner.id + ')</a></li>'
       }).join('\n');
       window.jquery('#KalturaPartnerIDModal').find('ul.dropdown-menu').html(partnerChoicesHTML);
+      user = creds;
     })
     .fail(function(xhr) {
       mixpanel.track('login_error', {
-        email: user.email,
+        email: creds.email,
         error: xhr.responseText,
       })
       window.jquery('#KalturaSignInModal .alert-danger').show();
@@ -142,7 +152,7 @@
         userId: user.email,
         partnerId: user.partnerId,
       }
-      setUser(creds);
+      setKalturaUser(creds);
       window.jquery('#KalturaPartnerIDModal').modal('hide');
     })
     .fail(function(xhr) {
@@ -193,11 +203,18 @@ window.checkResponse = function(data, status) {
 ;
 window.KC = null;
 
-function setKalturaSession(ks, cb) {
-  KC.setKs(ks);
-  var filter = new KalturaUiConfFilter();
-  filter.objTypeEqual = KalturaUiConfObjType.PLAYER;
-  KC.uiConf.listAction(function(success, results) {
+function setKalturaSession(creds, cb) {
+  mixpanel.track('kaltura_session', {
+    partnerId: creds.partnerId,
+  });
+  KC.setKs(creds.ks);
+  window.jquery('#KalturaSidebar .partnerId').text(creds.partnerId || '');
+  window.jquery('#KalturaSidebar .userSecret').text(creds.userSecret || '');
+  window.jquery('#KalturaSidebar .adminSecret').text(creds.secret || '');
+  var filter = {
+    objTypeEqual: 1, // KalturaUiConfObjType.PLAYER
+  }
+  KalturaUiConfService.listAction(filter).execute(KC, function(success, results) {
     var uiConfs = results.objects || [];
     if (window.RECIPE_NAME === 'captions') {
       uiConfs = uiConfs.filter(function(uiConf) {
@@ -218,20 +235,18 @@ function setKalturaSession(ks, cb) {
       uiConfs = results.objects || [];
     }
     if (uiConfs.length) {
-      //$('#APICall').scope().globalAnswers['uiConf'] = uiConfs[0].id;
-      // FIXME: set uiConf
+      var answers = window.lucybot.openapiService.globalParameters;
+      answers.uiConf = answers.uiConf || uiConfs[0].id;
     }
-    cb(null, ks);
-  }, filter);
+    cb(null, creds.ks);
+  });
 }
 
 window.setUpKalturaClient = function(creds, cb) {
-  window.jquery('#KalturaSidebar .partnerId').text(creds.partnerId || '');
-  window.jquery('#KalturaSidebar .userSecret').text(creds.userSecret || '');
-  window.jquery('#KalturaSidebar .adminSecret').text(creds.secret || '');
   var config = new KalturaConfiguration(creds.partnerId);
   config.serviceUrl = "https://www.kaltura.com/";
   window.KC = new KalturaClient(config);
+  KC.setKs(creds.ks);
   function checkFailure(success, data) {
     if (!success || (data.code && data.message)) {
       var trackObj = data || {};
@@ -241,36 +256,27 @@ window.setUpKalturaClient = function(creds, cb) {
       return true;
     }
   }
-  if (creds.ks && creds.partnerId) {
-    return setKalturaSession(creds.ks, cb);
-  } else if (creds.ks) {
-    return setKalturaSession(creds.ks, cb);
-    // FIXME: retrieve session details
-    /*
-    KC.setKs(creds.ks);
-    KC.session.get(function(success, sessionDetails) {
+  if (creds.ks) {
+    KalturaSessionService.get(creds.ks).execute(KC, function(success, sessionDetails) {
       if (checkFailure(success, sessionDetails)) return;
       creds.partnerId = sessionDetails.partnerId;
-      KC.partner.getSecrets(function(success, secrets) {
+      KalturaPartnerService.get(creds.partnerId).execute(KC, function(success, secrets) {
         if (checkFailure(success, secrets)) return;
         creds.secret = secrets.adminSecret;
         creds.userSecret = secrets.secret;
-        console.log('gathered', creds);
-        setKalturaSession(creds.ks, cb);
+        setKalturaSession(creds, cb);
       }, creds.partnerId)
-    }, creds.ks)
-    */
+    })
   } else {
-    KC.session.start(function(success, ks) {
+    KalturaSessionService.start(
+          creds.secret,
+          creds.userId,
+          2, /* KSessionType.ADMIN */
+          creds.partnerId).execute(window.KC, function(success, ks) {
       if (checkFailure(success, ks)) return;
-      mixpanel.track('kaltura_session', {
-        partnerId: creds.partnerId
-      });
-      setKalturaSession(ks, cb);
-    }, creds.secret,
-    creds.userId,
-    KalturaSessionType.ADMIN,
-    creds.partnerId);
+      creds.ks = ks;
+      setKalturaSession(creds, cb);
+    });
   }
 }
 

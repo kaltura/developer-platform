@@ -1,6 +1,9 @@
 <!DOCTYPE html> <html> <head> <base href="/"> <title></title> <link href=dist/vendor.css rel=stylesheet> <link href=css/external.css rel=stylesheet> <meta content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=no" , name=viewport> <script>function checkBooleanQueryParam(o){return!!window.location.href.substring(window.location.href.indexOf("?")).match(new RegExp("[?&]"+o+"=[^0f]"))}window.lucybot={},window.lucybot.openapi={},window.lucybot.prerender=checkBooleanQueryParam("prerender"),window.lucybot.embed=checkBooleanQueryParam("embed"),window.lucybot.showNavigation=checkBooleanQueryParam("showNavigation")</script> <style>app.loading,app.loading a,app.loading button{cursor:wait!important}</style> <script src="assets/mixpanel.js"></script>
 <script src="assets/jaco.js"></script>
-<script src="assets/kaltura.js"></script> </head> <body> <style>#LoadingIndicator{position:fixed;top:0;left:0;right:0;height:4px;z-index:10000}#LoadingIndicator #LoadingIndicatorProgress{height:2px;width:0}</style> <div id=LoadingIndicator> <div id=LoadingIndicatorProgress class=bg-primary></div> </div> <script> if (!window.lucybot.prerender) {
+<script src="assets/KalturaClient.min.js"></script>
+<script src="assets/KalturaSessionService.min.js"></script>
+<script src="assets/KalturaPartnerService.min.js"></script>
+<script src="assets/KalturaUiConfService.min.js"></script> </head> <body> <style>#LoadingIndicator{position:fixed;top:0;left:0;right:0;height:4px;z-index:10000}#LoadingIndicator #LoadingIndicatorProgress{height:2px;width:0}</style> <div id=LoadingIndicator> <div id=LoadingIndicatorProgress class=bg-primary></div> </div> <script> if (!window.lucybot.prerender) {
       var totalTime = 5000;
       var curPct = 0;
       var interval = setInterval(function() {
@@ -23,6 +26,7 @@
           <div style="display:none" class="alert alert-danger">
             There was an error signing in. Please check your account details and try again.
           </div>
+          <p>Log into your Kaltura account using your e-mail and password...</p>
           <label>E-mail</label>
           <div class="form-group">
             <input class="form-control" type="text" name="KalturaEmail">
@@ -31,9 +35,15 @@
           <div class="form-group">
             <input class="form-control" type="password" name="KalturaPassword">
           </div>
-          <p>Need an account? <a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Try Kaltura for free!</a></p>
+          <hr>
+          <p>...or using an existing Kaltura Session</p>
+          <label>Kaltura Session ID (ks)</label>
+          <div class="form-group">
+            <input class="form-control" type="text" name="KalturaSession">
+          </div>
         </div>
         <div class="modal-footer">
+          <p class="text-left">Need an account? <a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Try Kaltura for free!</a></p>
           <button id="KalturaSignInButton" type="submit" class="btn btn-primary">Log In</button>
         </div>
       </form>
