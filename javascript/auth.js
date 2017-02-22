@@ -31,7 +31,7 @@
     }
   }
 
-  var setUser = window.setKalturaUser = function(creds) {
+  window.setKalturaUser = function(creds) {
     updateViewsForLogin(!!creds);
     if (!creds) {
       user = {};
@@ -65,14 +65,14 @@
       } catch(e) {}
       if (user && typeof user === 'object' && Object.keys(user).length) {
         if (ksMatch) user.ks = ksMatch;
-        setUser(user);
+        setKalturaUser(user);
         return;
       }
     }
     if (ksMatch) {
-      setUser({ks: ksMatch});
+      setKalturaUser({ks: ksMatch});
     } else {
-      setUser();
+      setKalturaUser();
     }
   };
 
@@ -85,38 +85,48 @@
   })
 
   window.startKalturaLogin = function() {
-    window.jquery('#KalturaSignInModal #KalturaSignInButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
     window.jquery('#KalturaSignInModal .alert-danger').hide();
-    user.email = window.jquery('input[name="KalturaEmail"]').val();
-    user.password = window.jquery('input[name="KalturaPassword"]').val();
+    var creds = {}
+    creds.ks = window.jquery('input[name="KalturaSession"]').val();
+    if (creds.ks) {
+      window.jquery('#KalturaSignInModal').modal('hide');
+      setKalturaUser(creds);
+      return;
+    }
+
+    window.jquery('#KalturaSignInModal #KalturaSignInButton').html('<i class="fa fa-spin fa-refresh"></i>').attr('disabled', 'disabled');
+    creds.email = window.jquery('input[name="KalturaEmail"]').val();
+    creds.password = window.jquery('input[name="KalturaPassword"]').val();
+
     mixpanel.track('login_submit', {
-      email: user.email,
+      email: creds.email,
     });
     window.jquery.ajax({
       url: '/auth/login',
       method: 'POST',
-      data: JSON.stringify({email: user.email, password: user.password}),
+      data: JSON.stringify({email: creds.email, password: creds.password}),
       headers: {'Content-Type': 'application/json'},
     })
     .done(function(response) {
       window.jquery('#KalturaSignInModal').modal('hide');
       window.jquery('#KalturaPartnerIDModal .kaltura-loading').hide();
       window.jquery('#KalturaPartnerIDModal').modal('show');
-      mixpanel.identify(user.email);
+      mixpanel.identify(creds.email);
       mixpanel.people.set({
-        '$email': user.email,
+        '$email': creds.email,
       })
       mixpanel.track('login_success', {
-        email: user.email,
+        email: creds.email,
       });
       var partnerChoicesHTML = response.map(function(partner) {
         return '<li><a onclick="setKalturaPartnerID(' + partner.id + ')">' + partner.name + ' (' + partner.id + ')</a></li>'
       }).join('\n');
       window.jquery('#KalturaPartnerIDModal').find('ul.dropdown-menu').html(partnerChoicesHTML);
+      user = creds;
     })
     .fail(function(xhr) {
       mixpanel.track('login_error', {
-        email: user.email,
+        email: creds.email,
         error: xhr.responseText,
       })
       window.jquery('#KalturaSignInModal .alert-danger').show();
@@ -142,7 +152,7 @@
         userId: user.email,
         partnerId: user.partnerId,
       }
-      setUser(creds);
+      setKalturaUser(creds);
       window.jquery('#KalturaPartnerIDModal').modal('hide');
     })
     .fail(function(xhr) {

@@ -10,6 +10,7 @@
           <div style="display:none" class="alert alert-danger">
             There was an error signing in. Please check your account details and try again.
           </div>
+          <p>Log into your Kaltura account using your e-mail and password...</p>
           <label>E-mail</label>
           <div class="form-group">
             <input class="form-control" type="text" name="KalturaEmail">
@@ -18,9 +19,15 @@
           <div class="form-group">
             <input class="form-control" type="password" name="KalturaPassword">
           </div>
-          <p>Need an account? <a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Try Kaltura for free!</a></p>
+          <hr>
+          <p>...or using an existing Kaltura Session</p>
+          <label>Kaltura Session ID (ks)</label>
+          <div class="form-group">
+            <input class="form-control" type="text" name="KalturaSession">
+          </div>
         </div>
         <div class="modal-footer">
+          <p class="text-left">Need an account? <a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Try Kaltura for free!</a></p>
           <button id="KalturaSignInButton" type="submit" class="btn btn-primary">Log In</button>
         </div>
       </form>

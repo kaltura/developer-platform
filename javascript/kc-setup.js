@@ -1,7 +1,13 @@
 window.KC = null;
 
-function setKalturaSession(ks, cb) {
-  KC.setKs(ks);
+function setKalturaSession(creds, cb) {
+  mixpanel.track('kaltura_session', {
+    partnerId: creds.partnerId,
+  });
+  KC.setKs(creds.ks);
+  window.jquery('#KalturaSidebar .partnerId').text(creds.partnerId || '');
+  window.jquery('#KalturaSidebar .userSecret').text(creds.userSecret || '');
+  window.jquery('#KalturaSidebar .adminSecret').text(creds.secret || '');
   var filter = {
     objTypeEqual: 1, // KalturaUiConfObjType.PLAYER
   }
@@ -29,17 +35,15 @@ function setKalturaSession(ks, cb) {
       var answers = window.lucybot.openapiService.globalParameters;
       answers.uiConf = answers.uiConf || uiConfs[0].id;
     }
-    cb(null, ks);
+    cb(null, creds.ks);
   });
 }
 
 window.setUpKalturaClient = function(creds, cb) {
-  window.jquery('#KalturaSidebar .partnerId').text(creds.partnerId || '');
-  window.jquery('#KalturaSidebar .userSecret').text(creds.userSecret || '');
-  window.jquery('#KalturaSidebar .adminSecret').text(creds.secret || '');
   var config = new KalturaConfiguration(creds.partnerId);
   config.serviceUrl = "https://www.kaltura.com/";
   window.KC = new KalturaClient(config);
+  KC.setKs(creds.ks);
   function checkFailure(success, data) {
     if (!success || (data.code && data.message)) {
       var trackObj = data || {};
@@ -49,25 +53,17 @@ window.setUpKalturaClient = function(creds, cb) {
       return true;
     }
   }
-  if (creds.ks && creds.partnerId) {
-    return setKalturaSession(creds.ks, cb);
-  } else if (creds.ks) {
-    return setKalturaSession(creds.ks, cb);
-    // FIXME: retrieve session details
-    /*
-    KC.setKs(creds.ks);
-    KC.session.get(function(success, sessionDetails) {
+  if (creds.ks) {
+    KalturaSessionService.get(creds.ks).execute(KC, function(success, sessionDetails) {
       if (checkFailure(success, sessionDetails)) return;
       creds.partnerId = sessionDetails.partnerId;
-      KC.partner.getSecrets(function(success, secrets) {
+      KalturaPartnerService.get(creds.partnerId).execute(KC, function(success, secrets) {
         if (checkFailure(success, secrets)) return;
         creds.secret = secrets.adminSecret;
         creds.userSecret = secrets.secret;
-        console.log('gathered', creds);
-        setKalturaSession(creds.ks, cb);
+        setKalturaSession(creds, cb);
       }, creds.partnerId)
-    }, creds.ks)
-    */
+    })
   } else {
     KalturaSessionService.start(
           creds.secret,
@@ -75,10 +71,8 @@ window.setUpKalturaClient = function(creds, cb) {
           2, /* KSessionType.ADMIN */
           creds.partnerId).execute(window.KC, function(success, ks) {
       if (checkFailure(success, ks)) return;
-      mixpanel.track('kaltura_session', {
-        partnerId: creds.partnerId
-      });
-      setKalturaSession(ks, cb);
+      creds.ks = ks;
+      setKalturaSession(creds, cb);
     });
   }
 }

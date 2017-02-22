@@ -9,6 +9,7 @@ jsIncludes:
   - 'assets/jaco.js'
   - 'assets/KalturaClient.min.js'
   - 'assets/KalturaSessionService.min.js'
+  - 'assets/KalturaPartnerService.min.js'
   - 'assets/KalturaUiConfService.min.js'
 discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 codegen:
