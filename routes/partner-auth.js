@@ -3,11 +3,11 @@ var Router = module.exports = require('express').Router();
 var Request = require('request');
 var jwt = require('jsonwebtoken');
 
-//var SSO_SECRET = process.env.KALTURA_SSO_SECRET || 'kalt012!';
-
 var kc = require('../lib/KalturaClient');
 var ktypes = require('../lib/KalturaTypes');
 var vo = require ('../lib/KalturaVO.js');
+
+// Dummy credentials to initialize the client.
 var config = {
   partner_id: 102,
   admin_secret: '92ed864443d6cfadee508167016ea309',
