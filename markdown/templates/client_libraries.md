@@ -1,12 +1,12 @@
 # Kaltura API SDK - Native Client Libraries
-[[Edit on GitHub]](https://github.com/kaltura/kaltura-api-recipes/edit/development/swagger/markdown/client_libraries.md)
+[[Edit on GitHub]](https://github.com/kaltura/developer-platform/edit/master/markdown/templates/client_libraries.md)
 
 When developing applications that interact with the Kaltura API, it is best to use a native Client Library.
 
 Below you can download the Client Library for the programming language of your choice.
 
-To learn how to use the client libraries and see example code implementations, use the [API Test Console](/console) and [Code Recipes](/recipes).
-The Test Console and Recipes automatically generate sample code based on the API actions and parameters you select.
+To learn how to use the client libraries and see example code implementations, use the [API Test Console](/console) and [Interactive Workflows](/workflows).
+The Test Console and Workflows automatically generate sample code based on the API actions and parameters you select.
 
 Please note, the client libraries provided here have been generated for the Kaltura.com API.
 Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use their Kaltura Server Clients Generator for optimal compatibility.

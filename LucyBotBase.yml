@@ -1,5 +1,6 @@
 openapi:
   kaltura: ./openapi.json
+loadOpenAPISynchronous: true
 
 embedParameters:
   format: 1
@@ -13,7 +14,6 @@ jsIncludes:
   - 'assets/KalturaUiConfService.min.js'
 discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 codegen:
-  url: 'http://54.203.20.214:3005/code/build/request'
   languages:
     - php
     - java
@@ -24,11 +24,10 @@ codegen:
     - python
     - javascript
     - html
-loadOpenAPISynchronous: true
 github:
-  repo: "bobby-brennan/kaltura-recipes-v3"
+  repo: "kaltura/developer-platform"
   client_id: "1b76941133d82f454418"
-  access_token_url: "http://54.203.20.214:3005/github/access_token"
+  access_token_url: "/github/access_token"
 
 routes:
   default: '/api-docs'
@@ -49,7 +48,7 @@ routes:
       Interactive workflows on this page will help you dive straight
       into coding the various building blocks of your application.
 
-      Here you will find working code recipes together with detailed
+      Here you will find working code workflows together with detailed
       explanations and documentation references.
 
       #### What do you want to do today?
