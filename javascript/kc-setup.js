@@ -57,6 +57,7 @@ window.setUpKalturaClient = function(creds, cb) {
     KalturaSessionService.get(creds.ks).execute(KC, function(success, sessionDetails) {
       if (checkFailure(success, sessionDetails)) return;
       creds.partnerId = sessionDetails.partnerId;
+      creds.userId = sessionDetails.userId;
       KalturaPartnerService.get(creds.partnerId).execute(KC, function(success, secrets) {
         if (checkFailure(success, secrets)) return;
         creds.secret = secrets.adminSecret;

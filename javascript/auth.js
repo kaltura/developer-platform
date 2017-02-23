@@ -3,7 +3,12 @@
   var STORAGE_KEY = 'LUCYBOT_RECIPE_CREDS';
   var user = {};
 
-  var LOGGED_IN_HTML = '<li class="navbar-link"><a onclick="setKalturaUser()">Sign Out</a></li>';
+  function loggedInTemplate() {
+    return '<li class="navbar-link"><a onclick="setKalturaUser()">' +
+        '<span class="hidden-md">' + (user.userId || '') + '&nbsp;' + '</span>' +
+        '<span class="text-primary">[sign out]</span></a></li>';
+  }
+
   var LOGGED_OUT_HTML =
           '<li class="navbar-link">'
         +   '<a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Sign Up</a>'
@@ -25,26 +30,31 @@
       window.jquery('#KalturaSidebar .logged-in').hide();
       window.jquery('#KalturaSidebar .not-logged-in').show();
     } else {
-      window.jquery('#KalturaAuthLinks').html(LOGGED_IN_HTML);
+      window.jquery('#KalturaAuthLinks').html(loggedInTemplate());
       window.jquery('#KalturaSidebar .not-logged-in').hide();
       window.jquery('#KalturaSidebar .logged-in').show();
     }
   }
 
   window.setKalturaUser = function(creds) {
-    updateViewsForLogin(!!creds);
     if (!creds) {
       user = {};
+      updateViewsForLogin(false);
       if (window.secretService) window.secretService.clearSecrets();
       setCookie();
       return;
-    } else {
-      window.jquery('#KalturaAuthLinks').html(LOGGED_IN_HTML);
     }
     user = creds;
     window.setUpKalturaClient(creds, function(err, ks) {
+      if (err) {
+        setKalturaUser();
+        window.jquery('#KalturaSignInModal').modal('show');
+        window.jquery('#KalturaSignInModal .alert-danger').show();
+        return;
+      }
       user.ks = creds.ks = ks;
       if (user.userId) window.JacoRecorder.identify(user.userId);
+      updateViewsForLogin(true);
       setCookie(creds);
       if (window.secretService) window.secretService.setSecrets(creds);
     })
