@@ -25,7 +25,10 @@
   <div class="w-container container copyright-container">
     <div class="row">
       <div class="col-xs-8 col-md-6 copyright-column">
-        <div class="footer-copyright">Copyright &#xA9; 2016 Kaltura Inc.</div>
+        <div class="footer-copyright">Copyright &#xA9; <span id="KalturaYear"></span> Kaltura Inc.</div>
+        <script>
+          document.getElementById('KalturaYear').innerHTML = (new Date()).getFullYear();
+        </script>
         <div class="footer-copyright-description">All Rights Reserved. Designated trademarks and brands are the property of their respective owners.
           <br>Use of this web site constitutes acceptance of the Terms of Use and Privacy Policy.</div>
       </div>
