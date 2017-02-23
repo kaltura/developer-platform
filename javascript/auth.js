@@ -29,6 +29,9 @@
       window.jquery('#KalturaAuthLinks').html(LOGGED_OUT_HTML);
       window.jquery('#KalturaSidebar .logged-in').hide();
       window.jquery('#KalturaSidebar .not-logged-in').show();
+      window.jquery('input[name="KalturaEmail"]').val('');
+      window.jquery('input[name="KalturaPassword"]').val('');
+      window.jquery('input[name="KalturaSession"]').val('');
     } else {
       window.jquery('#KalturaAuthLinks').html(loggedInTemplate());
       window.jquery('#KalturaSidebar .not-logged-in').hide();
@@ -37,21 +40,24 @@
   }
 
   window.setKalturaUser = function(creds) {
-    if (!creds) {
+    function clearUser() {
       user = {};
-      updateViewsForLogin(false);
       if (window.secretService) window.secretService.clearSecrets();
       setCookie();
+    }
+    if (!creds) {
+      clearUser();
+      updateViewsForLogin(false);
       return;
     }
     user = creds;
     window.setUpKalturaClient(creds, function(err, ks) {
       if (err) {
-        setKalturaUser();
-        window.jquery('#KalturaSignInModal').modal('show');
+        clearUser();
         window.jquery('#KalturaSignInModal .alert-danger').show();
         return;
       }
+      window.jquery('#KalturaSignInModal').modal('hide');
       user.ks = creds.ks = ks;
       if (user.userId) window.JacoRecorder.identify(user.userId);
       updateViewsForLogin(true);
@@ -99,7 +105,6 @@
     var creds = {}
     creds.ks = window.jquery('input[name="KalturaSession"]').val();
     if (creds.ks) {
-      window.jquery('#KalturaSignInModal').modal('hide');
       setKalturaUser(creds);
       return;
     }
