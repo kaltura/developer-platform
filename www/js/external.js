@@ -3,7 +3,12 @@
   var STORAGE_KEY = 'LUCYBOT_RECIPE_CREDS';
   var user = {};
 
-  var LOGGED_IN_HTML = '<li class="navbar-link"><a onclick="setKalturaUser()">Sign Out</a></li>';
+  function loggedInTemplate() {
+    return '<li class="navbar-link"><a onclick="setKalturaUser()">' +
+        '<span class="hidden-md">' + (user.userId || '') + '&nbsp;' + '</span>' +
+        '<span class="text-primary">[sign out]</span></a></li>';
+  }
+
   var LOGGED_OUT_HTML =
           '<li class="navbar-link">'
         +   '<a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Sign Up</a>'
@@ -24,27 +29,38 @@
       window.jquery('#KalturaAuthLinks').html(LOGGED_OUT_HTML);
       window.jquery('#KalturaSidebar .logged-in').hide();
       window.jquery('#KalturaSidebar .not-logged-in').show();
+      window.jquery('input[name="KalturaEmail"]').val('');
+      window.jquery('input[name="KalturaPassword"]').val('');
+      window.jquery('input[name="KalturaSession"]').val('');
     } else {
-      window.jquery('#KalturaAuthLinks').html(LOGGED_IN_HTML);
+      window.jquery('#KalturaAuthLinks').html(loggedInTemplate());
       window.jquery('#KalturaSidebar .not-logged-in').hide();
       window.jquery('#KalturaSidebar .logged-in').show();
     }
   }
 
   window.setKalturaUser = function(creds) {
-    updateViewsForLogin(!!creds);
-    if (!creds) {
+    function clearUser() {
       user = {};
       if (window.secretService) window.secretService.clearSecrets();
       setCookie();
+    }
+    if (!creds) {
+      clearUser();
+      updateViewsForLogin(false);
       return;
-    } else {
-      window.jquery('#KalturaAuthLinks').html(LOGGED_IN_HTML);
     }
     user = creds;
     window.setUpKalturaClient(creds, function(err, ks) {
+      if (err) {
+        clearUser();
+        window.jquery('#KalturaSignInModal .alert-danger').show();
+        return;
+      }
+      window.jquery('#KalturaSignInModal').modal('hide');
       user.ks = creds.ks = ks;
       if (user.userId) window.JacoRecorder.identify(user.userId);
+      updateViewsForLogin(true);
       setCookie(creds);
       if (window.secretService) window.secretService.setSecrets(creds);
     })
@@ -89,7 +105,6 @@
     var creds = {}
     creds.ks = window.jquery('input[name="KalturaSession"]').val();
     if (creds.ks) {
-      window.jquery('#KalturaSignInModal').modal('hide');
       setKalturaUser(creds);
       return;
     }
@@ -260,6 +275,7 @@ window.setUpKalturaClient = function(creds, cb) {
     KalturaSessionService.get(creds.ks).execute(KC, function(success, sessionDetails) {
       if (checkFailure(success, sessionDetails)) return;
       creds.partnerId = sessionDetails.partnerId;
+      creds.userId = sessionDetails.userId;
       KalturaPartnerService.get(creds.partnerId).execute(KC, function(success, secrets) {
         if (checkFailure(success, secrets)) return;
         creds.secret = secrets.adminSecret;
