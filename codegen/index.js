@@ -1,3 +1,5 @@
+"use strict";
+
 var EJS = window.ejs;
 
 const RESERVED_NAMES = ['list', 'clone', 'delete'];
