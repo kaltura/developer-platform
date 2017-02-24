@@ -6,7 +6,7 @@ lucybot build --prerender
 
 echo "Commiting build"
 git status
-git add .
+git add www/*
 git commit -m "Build www/ [skip ci]"
 
 git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform HEAD:master >> /dev/null
