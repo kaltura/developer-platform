@@ -62,6 +62,7 @@ window.setUpKalturaClient = function(creds, cb) {
         if (checkFailure(success, secrets)) return;
         creds.secret = secrets.adminSecret;
         creds.userSecret = secrets.secret;
+        creds.name = secrets.name;
         setKalturaSession(creds, cb);
       }, creds.partnerId)
     })
