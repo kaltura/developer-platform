@@ -5,3 +5,11 @@ before_install:
   - "npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/lucy-v3"
 script:
   - ./scripts/build-and-commit.sh
+notifications:
+ email:
+    recipients:
+      - jess.portnoy@kaltura.com
+      - bobby@lucybot.com
+    on_success: change
+    on_failure: always
+
