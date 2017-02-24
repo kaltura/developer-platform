@@ -254,7 +254,17 @@ CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
 
 CodeTemplate.prototype.assignment = function(param, answers, parentDef) {
   var self = this;
+  let subtype = answers[param.name + '[objectType]'];
+  if (subtype && subtype !== param.schema.title) {
+    let newParam = {
+      name: param.name,
+      schema: this.swagger.definitions[subtype],
+    }
+    return self.assignment(newParam, answers, parentDef);
+  }
+
   let assignment = this.lvalue(param, answers) + ' = ' + this.rvalue(param, answers, parentDef) + this.statementSuffix;
+
   const findSubschema = (subParamName, schema) => {
     if (schema.$ref) schema = this.swagger.definitions[schema.$ref.substring('#/definitions/'.length)];
     let propName = subParamName.split(/\[/).map(s => s.replace(/\]/g, '')).pop();
@@ -272,15 +282,17 @@ CodeTemplate.prototype.assignment = function(param, answers, parentDef) {
     }
     return null;
   }
-  let isObjectType= param.name.match(/\[objectType\]$/);
-  if (isObjectType || !isPrimitiveSchema(param.schema)) {
-    let name = isObjectType ? param.name.substring(0, param.name.length - 12) : param.name;
-    let subparamRegexp = '^' + name.replace(/\[/g, '\\[').replace(/\]/g, '\\]') + '\\[\\w+\\](\\[objectType\\])?$';
-    let subschema = isObjectType ? this.swagger.definitions[answers[param.name]] : param.schema;
+  if (!isPrimitiveSchema(param.schema)) {
+    let subparamRegexp = '^' + param.name.replace(/\[/g, '\\[').replace(/\]/g, '\\]') + '\\[\\w+\\]';
+    let objectSubparamRegexp = new RegExp(subparamRegexp + '\\[objectType\\]$')
+    subparamRegexp = new RegExp(subparamRegexp + '$');
     let subsetters = Object.keys(answers)
-      .filter(n => n !== param.name && n.match(new RegExp(subparamRegexp)))
-      .map(n => ({name: n, schema: findSubschema(n, subschema)}))
-    subsetters = subsetters
+      .filter(n => n !== param.name && n.match(subparamRegexp) && !n.match(/\[objectType\]$/))
+      .map(n => ({name: n, schema: findSubschema(n, param.schema)}))
+    let objSubsetters = Object.keys(answers)
+      .filter(n => n.match(objectSubparamRegexp))
+      .map(n => ({name: n.substring(0, n.length - 12), schema: self.swagger.definitions[answers[n]]}));
+    subsetters = subsetters.concat(objSubsetters)
       .filter(prop => prop.schema)
       .map(function(prop) {
         return self.assignment(prop, answers, param.schema.title);

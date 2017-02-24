@@ -27,6 +27,17 @@ describe('Sample Code', function() {
       answers: {},
     },
   }, {
+    name: 'add_question_cuepoint',
+    service: 'cuepoint_cuepoint',
+    action: 'add',
+    input: {
+      answers: {
+       'cuePoint[objectType]': 'KalturaQuestionCuePoint',
+       'cuePoint[entryId]': '0_mej0it92',
+       'cuePoint[question]': 'hello world',
+      }
+    }
+  }, {
     name: 'add_captions',
     service: 'caption_captionasset',
     action: 'add',
@@ -90,7 +101,7 @@ describe('Sample Code', function() {
 
   testCases.forEach(function(testCase) {
     CodeTemplate.LANGUAGES.forEach(function(language) {
-      it('should generate for ' + language, function() {
+      it('should generate ' + testCase.name + ' for ' + language, function() {
         let opts = {language, swagger};
         let ext = CodeTemplate.LANGUAGE_DETAILS[language].ext;
         let templateDir = __dirname + '/../codegen/templates/';
