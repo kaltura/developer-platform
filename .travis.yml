@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "node"
 before_install:
-  - "npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform"
+  - "npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/bobby-brennan/lucy-v3"
 
 script:
   - ./scripts/build-and-commit.sh
