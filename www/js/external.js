@@ -5,7 +5,8 @@
 
   function loggedInTemplate() {
     return '<li class="navbar-link"><a onclick="setKalturaUser()">' +
-        '<span class="hidden-md">' + (user.userId || '') + '&nbsp;' + '</span>' +
+        '<span class="hidden-md">' + (user.name || '') + ' - </span>' +
+        '<span>' + (user.partnerId || '') + '&nbsp;</span>' +
         '<span class="text-primary">[sign out]</span></a></li>';
   }
 
@@ -166,6 +167,7 @@
         userSecret: data.secret,
         userId: user.email,
         partnerId: user.partnerId,
+        name: data.name,
       }
       setKalturaUser(creds);
       window.jquery('#KalturaPartnerIDModal').modal('hide');
@@ -280,6 +282,7 @@ window.setUpKalturaClient = function(creds, cb) {
         if (checkFailure(success, secrets)) return;
         creds.secret = secrets.adminSecret;
         creds.userSecret = secrets.secret;
+        creds.name = secrets.name;
         setKalturaSession(creds, cb);
       }, creds.partnerId)
     })
