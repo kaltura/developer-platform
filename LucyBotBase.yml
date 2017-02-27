@@ -2,6 +2,7 @@ openapi:
   kaltura: ./openapi.json
 loadOpenAPISynchronous: true
 
+favicon: assets/favicon.ico
 embedParameters:
   format: 1
 hljsTheme: 'atom-one-light'
