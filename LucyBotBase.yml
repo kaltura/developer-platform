@@ -1,11 +1,14 @@
+hostname: https://developer.kaltura.com
+favicon: assets/favicon.ico
+hljsTheme: 'atom-one-light'
+discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
+
 openapi:
   kaltura: ./openapi.json
 loadOpenAPISynchronous: true
 
-favicon: assets/favicon.ico
 embedParameters:
   format: 1
-hljsTheme: 'atom-one-light'
 jsIncludes:
   - 'assets/mixpanel.js'
   - 'assets/jaco.js'
@@ -13,18 +16,17 @@ jsIncludes:
   - 'assets/KalturaSessionService.min.js'
   - 'assets/KalturaPartnerService.min.js'
   - 'assets/KalturaUiConfService.min.js'
-discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 codegen:
   languages:
     - php
     - java
     - node
-    - id: csharp
-      label: 'C#'
+    - csharp
     - ruby
     - python
     - javascript
     - html
+
 github:
   repo: "kaltura/developer-platform"
   client_id: "a5dc854e03c060741218"
