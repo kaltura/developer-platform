@@ -7,6 +7,7 @@ using Kaltura.Enums;
 using Kaltura.Types;
 using Kaltura.Request;
 using Kaltura.Services;
+using System.Threading;
 
 namespace Kaltura {
   class CodeExample {
@@ -21,15 +22,25 @@ namespace Kaltura {
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
+      bool done = false;
 
       MediaEntryFilter filter = new MediaEntryFilter();
       FilterPager pager = new FilterPager();
 
       OnCompletedHandler<ListResponse<MediaEntry>> handler = new OnCompletedHandler<ListResponse<MediaEntry>>(
-            (ListResponse<MediaEntry> result, Exception e) => Console.WriteLine(result));
+            (ListResponse<MediaEntry> result, Exception e) =>
+            {
+              Console.WriteLine(result);
+              done = true;
+            });
       MediaService.List(filter, pager)
          .SetCompletion(handler)
          .Execute(client);
+
+      while (!done) {
+        Thread.Sleep(100);
+      }
+      Console.ReadLine();
     }
   }
 }

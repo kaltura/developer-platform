@@ -7,6 +7,7 @@ using Kaltura.Enums;
 using Kaltura.Types;
 using Kaltura.Request;
 using Kaltura.Services;
+using System.Threading;
 
 namespace Kaltura {
   class CodeExample {
@@ -21,15 +22,25 @@ namespace Kaltura {
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
+      bool done = false;
 
       MetadataProfileFilter filter = new MetadataProfileFilter();
       FilterPager pager = new FilterPager();
 
       OnCompletedHandler<ListResponse<MetadataProfile>> handler = new OnCompletedHandler<ListResponse<MetadataProfile>>(
-            (ListResponse<MetadataProfile> result, Exception e) => Console.WriteLine(result));
+            (ListResponse<MetadataProfile> result, Exception e) =>
+            {
+              Console.WriteLine(result);
+              done = true;
+            });
       MetadataProfileService.List(filter, pager)
          .SetCompletion(handler)
          .Execute(client);
+
+      while (!done) {
+        Thread.Sleep(100);
+      }
+      Console.ReadLine();
     }
   }
 }

@@ -8,7 +8,11 @@
    } -%>
 <% if (handlerType) { -%>
 OnCompletedHandler<<%- handlerType %>> handler = new OnCompletedHandler<<%- handlerType %>>(
-      (<%- handlerType %> result, Exception e) => Console.WriteLine(result));
+      (<%- handlerType %> result, Exception e) =>
+      {
+        Console.WriteLine(result);
+        done = true;
+      });
 <% } -%>
 <%- service %>.<%- action %>(<%- parameterNames.join(', ') %>)
 <% if (handlerType) { -%>

@@ -7,6 +7,7 @@ using Kaltura.Enums;
 using Kaltura.Types;
 using Kaltura.Request;
 using Kaltura.Services;
+using System.Threading;
 
 namespace Kaltura {
   class CodeExample {
@@ -21,8 +22,14 @@ namespace Kaltura {
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
+      bool done = false;
 
 <%- codegen.indent(code, 6) %>
+
+      while (!done) {
+        Thread.Sleep(100);
+      }
+      Console.ReadLine();
     }
   }
 }
