@@ -273,3 +273,8 @@ body.spaced-for-kaltura-nav {
   }
 }
 
+.breadcrumbs .fa-lock,
+.breadcrumbs .fa-unlock {
+  display: none;
+}
+
