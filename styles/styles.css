@@ -1,0 +1,4 @@
+.breadcrumbs .fa-lock,
+.breadcrumbs .fa-unlock {
+  display: none;
+}
