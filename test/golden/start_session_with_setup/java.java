@@ -9,18 +9,22 @@ import com.kaltura.client.KalturaConfiguration;
 class CodeExample {
   public static void main(String[] args) {
     try {
-      KalturaConfiguration config = new KalturaConfiguration();
-      config.setEndpoint("https://www.kaltura.com/");
-      KalturaClient client = new KalturaClient(config);
-      String session = client.getSessionService().start(
-            "secretsauce",
-            "YOUR_USER_ID",
-            KalturaSessionType.ADMIN,
-            1234);
-      client.setKs(session);
-
+      KalturaClient client = CodeExample.generateKalturaClient();
     } catch (KalturaApiException e) {
       e.printStackTrace();
     }
+  }
+
+  public static KalturaClient generateKalturaClient() throws KalturaApiException {
+    KalturaConfiguration config = new KalturaConfiguration();
+    config.setEndpoint("https://www.kaltura.com/");
+    KalturaClient client = new KalturaClient(config);
+    String session = client.getSessionService().start(
+          "secretsauce",
+          "YOUR_USER_ID",
+          KalturaSessionType.ADMIN,
+          1234);
+    client.setKs(session);
+    return client;
   }
 }

@@ -9,16 +9,7 @@ import com.kaltura.client.KalturaConfiguration;
 class CodeExample {
   public static void main(String[] args) {
     try {
-      KalturaConfiguration config = new KalturaConfiguration();
-      config.setEndpoint("https://www.kaltura.com/");
-      KalturaClient client = new KalturaClient(config);
-      String session = client.getSessionService().start(
-            "YOUR_KALTURA_SECRET",
-            "YOUR_USER_ID",
-            KalturaSessionType.ADMIN,
-            YOUR_PARTNER_ID);
-      client.setKs(session);
-
+      KalturaClient client = CodeExample.generateKalturaClient();
       KalturaMetadataProfileFilter filter = new KalturaMetadataProfileFilter();
       KalturaFilterPager pager = new KalturaFilterPager();
 
@@ -27,5 +18,18 @@ class CodeExample {
     } catch (KalturaApiException e) {
       e.printStackTrace();
     }
+  }
+
+  public static KalturaClient generateKalturaClient() throws KalturaApiException {
+    KalturaConfiguration config = new KalturaConfiguration();
+    config.setEndpoint("https://www.kaltura.com/");
+    KalturaClient client = new KalturaClient(config);
+    String session = client.getSessionService().start(
+          "YOUR_KALTURA_SECRET",
+          "YOUR_USER_ID",
+          KalturaSessionType.ADMIN,
+          YOUR_PARTNER_ID);
+    client.setKs(session);
+    return client;
   }
 }
