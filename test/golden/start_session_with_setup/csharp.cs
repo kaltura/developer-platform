@@ -15,22 +15,14 @@ namespace Kaltura {
       Configuration config = new Configuration();
       config.ServiceUrl = "https://www.kaltura.com/";
       Client client = new Client(config);
-      int partnerId = <%- answers.partnerId || 'YOUR_PARTNER_ID' %>;
-      string secret = "<% answers.secret %>";
-      string userId = "<% answers.userId %>";
-      SessionType type = <%- answers.sessionType === 0 ? 'SessionType.USER' : 'SessionType.ADMIN' %>;
+      int partnerId = 1234;
+      string secret = "";
+      string userId = "";
+      SessionType type = SessionType.ADMIN;
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
 
-<% if (serviceID !== 'session' && actionID !== 'start') { -%>
-      bool done = false;
-<%- codegen.indent(code, 6) %>
-
-      while (!done) {
-        Thread.Sleep(100);
-      }
-<% } -%>
     }
   }
 }

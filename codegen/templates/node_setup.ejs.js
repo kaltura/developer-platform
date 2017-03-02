@@ -7,7 +7,9 @@ client.session.start(function(ks) {
     console.log('Error starting session', ks);
   } else {
     client.setKs(ks);
+<% if (serviceID !== 'session' && actionID !== 'start') { -%>
 <%- codegen.indent(code, 4) %>
+<% } -%>
   }
 }, <%- codegen.constant(answers.secret) %>,
 <%- codegen.constant(answers.userId) %>,

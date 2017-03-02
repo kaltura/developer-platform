@@ -7,7 +7,7 @@
 <script src="/js/kaltura/KalturaClient.js"></script>
 
 <script>
-  var config = new KalturaConfiguration(<%- answers.partnerId %>);
+  var config = new KalturaConfiguration(1234);
   config.serviceUrl = 'https://www.kaltura.com';
   var client = new KalturaClient(config);
   client.session.start(function(success, ks) {
@@ -17,17 +17,14 @@
     } else {
       window.ks = ks;
       client.setKs(ks);
-<% if (serviceID !== 'session' && actionID !== 'start') { -%>
-<%- codegen.indent(code, 6) %>
-<% } -%>
     }
     // Note: this is meant only as a sample.
     // You should NEVER generate sessions on the client,
     // as this exposes your Admin Secret to users.
     // Instead, generate a session on the server and pass the
     // KS to the client.
-  }, <%- codegen.constant(answers.secret) %>,
-  <%- codegen.constant(answers.userId) %>,
-  <%- answers.sessionType === 0 ? 'KalturaSessionType.USER' : 'KalturaSessionType.ADMIN' %>,
-  <%- answers.partnerId || 'YOUR_PARTNER_ID' %>)
+  }, "secretsauce",
+  "YOUR_USER_ID",
+  KalturaSessionType.ADMIN,
+  1234)
 </script>

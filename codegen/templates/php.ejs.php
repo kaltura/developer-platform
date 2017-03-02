@@ -13,6 +13,7 @@
   $client->setKS($ks);
 
 <% } -%>
+<% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
 <%- codegen.assignAllParameters(parameters, answers, 2) %>
 
   try {
@@ -21,4 +22,5 @@
   } catch (Exception $e) {
     echo $e->getMessage();
   }
+<% } -%>
 ?>

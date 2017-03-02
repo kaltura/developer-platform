@@ -27,6 +27,17 @@ describe('Sample Code', function() {
     action: 'start',
     input: {
       answers: {},
+    }
+  }, {
+    name: 'start_session_with_setup',
+    service: 'session',
+    action: 'start',
+    input: {
+      answers: {
+        partnerId: 1234,
+        secret: 'secretsauce',
+      },
+      showSetup: true,
     },
   }, {
     name: 'add_question_cuepoint',

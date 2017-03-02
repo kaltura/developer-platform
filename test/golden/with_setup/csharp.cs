@@ -22,8 +22,8 @@ namespace Kaltura {
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
-      bool done = false;
 
+      bool done = false;
       MediaEntryFilter filter = new MediaEntryFilter();
       FilterPager pager = new FilterPager();
 
@@ -40,7 +40,6 @@ namespace Kaltura {
       while (!done) {
         Thread.Sleep(100);
       }
-      Console.ReadLine();
     }
   }
 }

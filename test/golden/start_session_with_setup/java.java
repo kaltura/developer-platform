@@ -13,15 +13,12 @@ class CodeExample {
       config.setEndpoint("https://www.kaltura.com/");
       KalturaClient client = new KalturaClient(config);
       String session = client.getSessionService().start(
-            "<%- answers.secret %>",
-            "<%- answers.userId %>",
+            "secretsauce",
+            "YOUR_USER_ID",
             KalturaSessionType.ADMIN,
-            <%- answers.partnerId || 'YOUR_PARTNER_ID' %>);
+            1234);
       client.setKs(session);
 
-<% if (serviceID !== 'session' && actionID !== 'start') { -%>
-<%- codegen.indent(code, 6) %>
-<% } -%>
     } catch (KalturaApiException e) {
       e.printStackTrace();
     }
