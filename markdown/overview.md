@@ -1,5 +1,5 @@
 # Kaltura API Overview
-[[Edit on GitHub]](https://github.com/kaltura/kaltura-api-recipes/edit/development/swagger/markdown/overview.md)
+[[Edit on GitHub]](https://github.com/kaltura/developer-platform/markdown/overview.md)
 
 Building video experiences consists of ingesting media files, playing back videos, and reviewing usage and engagement analytics. In between, there is a world of nuances required for your unique use-case and application. Kaltura VPaaS is built on the principles of atomic services, SDKs, and tools that allow you full control and flexibility over every element and process in your media’s lifecycle.
 

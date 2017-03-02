@@ -1,5 +1,5 @@
 # Kaltura XML Schema
-[[Edit on GitHub]](https://github.com/kaltura/kaltura-api-recipes/edit/development/swagger/markdown/schemas.md)
+[[Edit on GitHub]](https://github.com/kaltura/developer-platform/edit/master/markdown/schemas.md)
 
 Kaltura XML Schema Definitions (XSDs) are standard W3C XSD version 1.0 formatted documents that define the structure of Kaltura’s XML-formatted integration interfaces.
 
