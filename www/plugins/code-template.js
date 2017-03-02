@@ -212,7 +212,8 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
     }
     input.responseType = this.rewriteType(responseSchema.title);
   }
-  input.action = this.rewriteAction(pathParts[3]);
+  input.actionID = pathParts[3];
+  input.action = this.rewriteAction(input.actionID);
   input.serviceID = pathParts[2];
   input.serviceName = input.operation.tags[0];
   input.service = this.rewriteService(input.serviceName, input.serviceID);
