@@ -5,7 +5,7 @@ cuePoint.Question = "hello world";
 OnCompletedHandler<CuePoint> handler = new OnCompletedHandler<CuePoint>(
       (CuePoint result, Exception e) =>
       {
-        Console.WriteLine(result);
+        CodeExample.PrintObject(result);
         done = true;
       });
 CuePointService.Add(cuePoint)

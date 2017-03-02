@@ -10,7 +10,7 @@
 OnCompletedHandler<<%- handlerType %>> handler = new OnCompletedHandler<<%- handlerType %>>(
       (<%- handlerType %> result, Exception e) =>
       {
-        Console.WriteLine(result);
+        CodeExample.PrintObject(result);
         done = true;
       });
 <% } -%>

@@ -4,7 +4,7 @@ FilterPager pager = new FilterPager();
 OnCompletedHandler<ListResponse<MediaEntry>> handler = new OnCompletedHandler<ListResponse<MediaEntry>>(
       (ListResponse<MediaEntry> result, Exception e) =>
       {
-        Console.WriteLine(result);
+        CodeExample.PrintObject(result);
         done = true;
       });
 MediaService.List(filter, pager)

@@ -4,7 +4,7 @@ int version = 0;
 OnCompletedHandler<MediaEntry> handler = new OnCompletedHandler<MediaEntry>(
       (MediaEntry result, Exception e) =>
       {
-        Console.WriteLine(result);
+        CodeExample.PrintObject(result);
         done = true;
       });
 MediaService.Get(entryId, version)

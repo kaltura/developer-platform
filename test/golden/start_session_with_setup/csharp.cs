@@ -28,5 +28,21 @@ namespace Kaltura {
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
       return client;
     }
+
+    public static void PrintObject<T>(T obj) {
+        var t = typeof(T);
+        var props = t.GetProperties();
+        StringBuilder sb = new StringBuilder();
+        foreach (var item in props)
+        {
+            try {
+              sb.Append(item.Name+ ": " +item.GetValue(obj,null)+"\n");
+            } catch (Exception ex) {
+              Console.WriteLine(ex.ToString());
+            }
+        }
+        sb.AppendLine();
+        Console.WriteLine(sb.ToString());
+    }
   }
 }
