@@ -3,7 +3,7 @@ git config user.name "Travis CI"
 git config user.email "bobby.brennan@gmail.com"
 
 git clone https://github.com/kaltura/developer-platform-generated
-rm -r developer-platform-generated/www
+rm -rf developer-platform-generated/www
 
 lucybot build --prerender --destination ./developer-platform-generated/www
 
