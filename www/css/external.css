@@ -197,16 +197,21 @@ body.spaced-for-kaltura-nav {
 }
 
 @media (min-width: 992px) {
-  body.spaced-for-kaltura-sidebar app .container-fluid,
-  body.spaced-for-kaltura-sidebar .loading-screen {
+  body.ui-workflows.spaced-for-kaltura-sidebar app .container-fluid,
+  body.ui-workflows.spaced-for-kaltura-sidebar .loading-screen,
+  body.ui-workflow.spaced-for-kaltura-sidebar app .container-fluid,
+  body.ui-workflow.spaced-for-kaltura-sidebar .loading-screen {
     margin-left: 330px;
   }
-  body.spaced-for-kaltura-sidebar app .main-container,
-  body.spaced-for-kaltura-sidebar .loading-screen {
+  body.ui-workflows.spaced-for-kaltura-sidebar app .main-container,
+  body.ui-workflows.spaced-for-kaltura-sidebar .loading-screen,
+  body.ui-workflow.spaced-for-kaltura-sidebar app .main-container,
+  body.ui-workflow.spaced-for-kaltura-sidebar .loading-screen {
     min-height: 1000px !important;
   }
 
-  #KalturaSidebar {
+  body.ui-workflows #KalturaSidebar,
+  body.ui-workflow #KalturaSidebar {
     display: block;
     position: absolute;
     left: 20px;
