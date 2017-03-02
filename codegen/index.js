@@ -204,13 +204,12 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   let responseSchema = input.operation.responses[200].schema;
   if (responseSchema) {
     if (responseSchema.$ref) responseSchema = this.swagger.definitions[getDefName(responseSchema.$ref)];
-    input.responseType = this.rewriteType(responseSchema.title);
-    if (responseSchema.title.match(/ListResponse$/)) {
+    input.responseType = this.rewriteType(responseSchema.title || responseSchema.type);
+    if (responseSchema.title && responseSchema.title.match(/ListResponse$/)) {
       let items = responseSchema.properties.objects.items;
       if (items.$ref) items = this.swagger.definitions[getDefName(items.$ref)];
-      input.responseListType = this.rewriteType(items.title);
+      input.responseListType = this.rewriteType(items.title || items.type);
     }
-    input.responseType = this.rewriteType(responseSchema.title);
   }
   input.actionID = pathParts[3];
   input.action = this.rewriteAction(input.actionID);
