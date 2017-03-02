@@ -1,12 +1,12 @@
 set -e
 
-git clone https://github.com/kaltura/developer-platform-generated
-rm -rf developer-platform-generated/www
-lucybot build --prerender --destination ./developer-platform-generated/www
+git clone https://github.com/kaltura/developer-platform-generated ../developer-platform-generated
+rm -rf ../developer-platform-generated/www
+lucybot build --destination ../developer-platform-generated/www
 
-cd developer-platform-generated
-git config user.name "Travis CI"
-git config user.email "bobby.brennan@gmail.com"
+cd ../developer-platform-generated
+git config --global user.name "Travis CI"
+git config --global user.email "bobby.brennan@gmail.com"
 echo "Commiting build"
 git status
 git add www/*
