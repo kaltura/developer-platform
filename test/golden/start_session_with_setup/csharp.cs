@@ -11,7 +11,11 @@ using System.Threading;
 
 namespace Kaltura {
   class CodeExample {
-    static void Main(string[] args){
+    static void Main(string[] args) {
+      Client client = CodeExample.createKalturaClient();
+    }
+
+    static Client createKalturaClient() {
       Configuration config = new Configuration();
       config.ServiceUrl = "https://www.kaltura.com/";
       Client client = new Client(config);
@@ -22,7 +26,7 @@ namespace Kaltura {
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
-
+      return client;
     }
   }
 }

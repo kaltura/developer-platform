@@ -11,18 +11,8 @@ using System.Threading;
 
 namespace Kaltura {
   class CodeExample {
-    static void Main(string[] args){
-      Configuration config = new Configuration();
-      config.ServiceUrl = "https://www.kaltura.com/";
-      Client client = new Client(config);
-      int partnerId = YOUR_PARTNER_ID;
-      string secret = "";
-      string userId = "";
-      SessionType type = SessionType.ADMIN;
-      int expiry = 86400;
-      string privileges = "";
-      client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
-
+    static void Main(string[] args) {
+      Client client = CodeExample.createKalturaClient();
       bool done = false;
       MetadataProfileFilter filter = new MetadataProfileFilter();
       FilterPager pager = new FilterPager();
@@ -40,6 +30,20 @@ namespace Kaltura {
       while (!done) {
         Thread.Sleep(100);
       }
+    }
+
+    static Client createKalturaClient() {
+      Configuration config = new Configuration();
+      config.ServiceUrl = "https://www.kaltura.com/";
+      Client client = new Client(config);
+      int partnerId = YOUR_PARTNER_ID;
+      string secret = "";
+      string userId = "";
+      SessionType type = SessionType.ADMIN;
+      int expiry = 86400;
+      string privileges = "";
+      client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
+      return client;
     }
   }
 }

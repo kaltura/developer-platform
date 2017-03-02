@@ -11,7 +11,19 @@ using System.Threading;
 
 namespace Kaltura {
   class CodeExample {
-    static void Main(string[] args){
+    static void Main(string[] args) {
+      Client client = CodeExample.createKalturaClient();
+<% if (serviceID !== 'session' && actionID !== 'start') { -%>
+      bool done = false;
+<%- codegen.indent(code, 6) %>
+
+      while (!done) {
+        Thread.Sleep(100);
+      }
+<% } -%>
+    }
+
+    static Client createKalturaClient() {
       Configuration config = new Configuration();
       config.ServiceUrl = "https://www.kaltura.com/";
       Client client = new Client(config);
@@ -22,15 +34,7 @@ namespace Kaltura {
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
-
-<% if (serviceID !== 'session' && actionID !== 'start') { -%>
-      bool done = false;
-<%- codegen.indent(code, 6) %>
-
-      while (!done) {
-        Thread.Sleep(100);
-      }
-<% } -%>
+      return client;
     }
   }
 }
