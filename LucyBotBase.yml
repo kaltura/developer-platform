@@ -1,4 +1,3 @@
-hostname: https://developer.kaltura.com
 favicon: assets/favicon.ico
 hljsTheme: 'atom-one-light'
 discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
@@ -6,6 +5,9 @@ discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 openapi:
   kaltura: ./openapi.json
 loadOpenAPISynchronous: true
+
+sitemap:
+  hostname: https://developer.kaltura.com
 
 embedParameters:
   format: 1
