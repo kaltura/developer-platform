@@ -2,7 +2,7 @@
   "name": "kaltura-recipes-v3",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/bobby-brennan/kaltura-recipes-v3#readme",
+  "homepage": "https://github.com/kaltura/developer-platform#readme",
   "scripts": {
     "test": "mocha"
   },
