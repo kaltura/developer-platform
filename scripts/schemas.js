@@ -43,6 +43,14 @@ if (require.main === module) {
         if (err || resp.statusCode !== 200) throw new Error(err || resp.statusCode);
         var $ = cheerio.load(body);
         s.html = $('#doc').html();
+        s.html = s.html.replace(/"xml-attribute-value"/g, '"k-xav"');
+        s.html = s.html.replace(/"xml-attribute"/g, '"k-xa"');
+        s.html = s.html.replace(/"xml-element-value"/g, '"k-xev"');
+        s.html = s.html.replace(/"xml-element"/g, '"k-xe"');
+        s.html = s.html.replace(/"element-example"/g, '"k-ee"');
+        s.html = s.html.replace(/"element-title"/g, '"k-et"');
+        s.html = s.html.replace(/"indent"/g, '"k-i"');
+        s.html = s.html.replace(/ xmlns\:php="http:\/\/php\.net\/xsl"/g, '');
         fs.writeFileSync(OUTPUT_DIR + s.type + '.md', getContents(s));
       })
     })

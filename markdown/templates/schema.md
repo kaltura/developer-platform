@@ -5,22 +5,22 @@
     height: 300px;
     overflow-x: scroll;
 }
-#KalturaSchemaDoc .xml-element {
+#KalturaSchemaDoc .k-xe {
     color: blue;
 }
-#KalturaSchemaDoc .xml-element-value {
+#KalturaSchemaDoc .k-xev  {
     color: gray;
 }
-#KalturaSchemaDoc .xml-attribute {
+#KalturaSchemaDoc .k-xa {
     color: red;
 }
-#KalturaSchemaDoc .xml-attribute-value {
+#KalturaSchemaDoc .k-xav {
     color: gray;
 }
-#KalturaSchemaDoc .indent {
+#KalturaSchemaDoc .k-i {
     padding: 8px;
 }
-#KalturaSchemaDoc .element-title {
+#KalturaSchemaDoc .k-et {
     color: #0606ee;
     font-size: larger;
     font-weight: bold;
@@ -30,7 +30,7 @@
   padding: 2px;
   border: 1px solid #ccc;
 }
-#KalturaSchemaDoc .element-example {
+#KalturaSchemaDoc .k-ee {
   font-size: 12px;
 }
 </style>
