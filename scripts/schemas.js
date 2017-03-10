@@ -1,6 +1,7 @@
 var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
+var pretty = require('pretty-data').pd;
 
 var schemas = [{
   label: 'Syndication Feed',
@@ -42,7 +43,29 @@ if (require.main === module) {
       request.get(s.htmlURL, function(err, resp, body) {
         if (err || resp.statusCode !== 200) throw new Error(err || resp.statusCode);
         var $ = cheerio.load(body);
-        s.html = $('#doc').html();
+        let sections = [];
+        $('#doc').contents().each(function() {
+          let elem = $(this);
+          if (elem.hasClass('code') || elem.hasClass('element-example')) {
+            let xml = pretty.xml(elem.text()).trim();
+            sections.push('```xml\n' + xml + '\n```');
+          } else if (elem.is('table')) {
+            sections.push('<table>' + elem.html() + '</table>');
+          } else if (elem.is('hr')) {
+            sections.push('--------');
+          } else if (elem.is('ol')) {
+            sections.push('<ol>' + elem.html() + '</ol>');
+          } else if (elem.is('span')) {
+            if (elem.hasClass('child-elements') || elem.hasClass('element-example-title') || elem.hasClass('child-attributes')) {
+              sections.push('##### ' + elem.text())
+            } else {
+              sections.push('<span class="' + elem.attr('class') + '">' + elem.text() + '</span>');
+            }
+          } else {
+            sections.push(elem.html());
+          }
+        })
+        s.html = sections.join('\n\n');
         s.html = s.html.replace(/"xml-attribute-value"/g, '"k-xav"');
         s.html = s.html.replace(/"xml-attribute"/g, '"k-xa"');
         s.html = s.html.replace(/"xml-element-value"/g, '"k-xev"');

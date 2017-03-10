@@ -11,6 +11,7 @@
     "cheerio": "^0.22.0",
     "ejs": "^2.5.5",
     "mocha": "^3.2.0",
+    "pretty-data": "^0.40.0",
     "request": "^2.79.0"
   },
   "dependencies": {

@@ -2,3 +2,8 @@
 .breadcrumbs .fa-unlock {
   display: none;
 }
+
+#Documentation pre {
+  max-height: 350px;
+  overflow: scroll;
+}
