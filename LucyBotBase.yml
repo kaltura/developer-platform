@@ -11,7 +11,7 @@ sitemap:
 
 embedParameters:
   format: 1
-jsIncludes:
+javascript:
   - 'assets/mixpanel.js'
   - 'assets/jaco.js'
   - 'assets/KalturaClient.min.js'
