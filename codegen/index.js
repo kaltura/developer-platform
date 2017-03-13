@@ -64,6 +64,23 @@ var language_opts = {
     objSuffix: '()',
     rewriteAction: addActionSuffixIfReserved,
   },
+  ajax: {
+    ext: 'js',
+    declarationPrefix: 'var ',
+    statementSuffix: ';',
+    objPrefix: '',
+    objSuffix: '',
+    rewriteType: function(s) {
+      if (s.indexOf('Kaltura') === 0) return '{}';
+    },
+    rewriteAction: addActionSuffixIfReserved,
+    rewriteService: function(s) {
+      return 'Kaltura' + capitalize(s) + 'Service';
+    },
+    rewriteEnum: function(type, name, value) {
+      return JSON.stringify(value) + " /* " + type + '.' + name + " */";
+    },
+  },
   node: {
     ext: 'js',
     declarationPrefix: 'var ',
@@ -368,6 +385,7 @@ CodeTemplate.prototype.rvalue = function(param, answers, parentDef) {
     if (enm && enumLabels) {
       let enumName = enumLabels[enm.indexOf(answer)];
       if (enumName) {
+        if (self.rewriteEnum) return self.rewriteEnum(enumType, enumName, answer);
         return self.enumPrefix + self.rewriteType(enumType) + (self.enumAccessor || self.accessor) + enumName;
       }
     }
