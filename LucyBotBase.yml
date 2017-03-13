@@ -26,7 +26,12 @@ codegen:
     - csharp
     - ruby
     - python
-    - javascript
+    - id: ajax
+      label: JavaScript (AJAX)
+      hljs: javascript
+    - id: javascript
+      label: JavaScript (legacy)
+      hljs: javascript
     - html
 
 github:
