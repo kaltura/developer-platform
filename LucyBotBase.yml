@@ -40,7 +40,8 @@ github:
   access_token_url: "/github/access_token"
 
 routes:
-  default: '/api-docs'
+  /:
+    redirect: '/api-docs'
 
   /api-docs:
     title: Kaltura API Documentation
@@ -63,6 +64,7 @@ routes:
 
       #### What do you want to do today?
     title: Workflows
+    icons: offset
     meta:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
