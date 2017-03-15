@@ -1,5 +1,4 @@
 favicon: assets/favicon.ico
-hljsTheme: 'atom-one-light'
 discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 
 openapi:
@@ -28,10 +27,10 @@ codegen:
     - python
     - id: ajax
       label: JavaScript (AJAX)
-      hljs: javascript
+      highlight: javascript
     - id: javascript
       label: JavaScript (legacy)
-      hljs: javascript
+      highlight: javascript
     - html
 
 github:
