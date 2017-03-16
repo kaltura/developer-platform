@@ -1,5 +1,4 @@
 # Kaltura API SDK - Native Client Libraries
-[[Edit on GitHub]](https://github.com/kaltura/developer-platform/edit/master/markdown/templates/client_libraries.md)
 
 When developing applications that interact with the Kaltura API, it is best to use a native Client Library.
 
@@ -41,7 +40,7 @@ client libraries as packages that can be installed via the respective package ma
 * PHP `composer require kaltura/api-client-library`
 * Ruby `gem install kaltura-client`
 * Java (via Maven)
-```
+```xml
 <dependency>
   <groupId>com.kaltura</groupId>
   <artifactId>kalturaClient</artifactId>

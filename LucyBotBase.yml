@@ -1,8 +1,10 @@
 favicon: assets/favicon.ico
 discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 
-openapi:
-  kaltura: ./openapi.json
+specifications:
+  kaltura:
+    - openapi: ./openapi.json
+
 loadOpenAPISynchronous: true
 
 sitemap:
