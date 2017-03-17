@@ -41,3 +41,6 @@ body.spaced-for-kaltura-nav {
   font-weight: bold;
 }
 
+#KalturaBlogContent a {
+  color: #fff;
+}
