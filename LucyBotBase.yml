@@ -46,7 +46,7 @@ routes:
 
   /api-docs:
     title: Kaltura API Documentation
-    openapi: kaltura
+    for: kaltura
     navigation: operationNavigation
     meta:
       title: "Kaltura VPaaS API Documentation"
@@ -54,7 +54,7 @@ routes:
 
   /workflows:
     ui: workflows
-    openapi: kaltura
+    for: kaltura
     navigation: workflowNavigation
     intro: |
       Interactive workflows on this page will help you dive straight
@@ -72,7 +72,7 @@ routes:
 
   /console:
     ui: console
-    openapi: kaltura
+    for: kaltura
     title: Kaltura API Console
     navigation: operationNavigation
     meta:
