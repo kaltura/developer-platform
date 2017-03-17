@@ -85,6 +85,9 @@ operationNavigation:
     discussionURL: 'https://forum.kaltura.org/search?q=API'
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
+    children:
+      - title: "Support Matrix"
+        markdownFile: ./markdown/support_matrix.md
   - title: "XML Schemas"
     markdownFile: ./markdown/schemas.md
     children:
