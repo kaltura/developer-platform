@@ -49,13 +49,11 @@ This combination of filter parameters will search through all of the Kaltura Med
       "x-consoleDefault": ""
     },
     {
-      "name": "filter[advancedSearch][objectType]",
-      "default": "KalturaMetadataSearchItem",
-      "x-consoleDefault": "KalturaMetadataSearchItem"
-    },
-    {
       "name": "filter[orderBy]",
       "x-consoleDefault": "-weight"
+    },
+    {
+      "group": "filter[advancedSearch]"
     }
   ]
 }
