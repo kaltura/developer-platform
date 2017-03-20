@@ -1,10 +1,10 @@
-var filter = {};
+var filter = {objectType: "KalturaMediaEntryFilter"};
 filter.nameLike = "foobar";
 filter.statusEqual = "2" /* KalturaEntryStatus.READY */;
 filter.orderBy = "+createdAt" /* KalturaMediaEntryOrderBy.CREATED_AT_ASC */;
-filter.advancedSearch = {};
+filter.advancedSearch = {objectType: "KalturaAttributeCondition"};
 filter.advancedSearch.value = "baz";
-var pager = {};
+var pager = {objectType: "KalturaFilterPager"};
 pager.pageSize = 3;
 
 KalturaMediaService.listAction(filter, pager)

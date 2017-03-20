@@ -1,5 +1,5 @@
 var entryId = "";
-var captionAsset = {};
+var captionAsset = {objectType: "KalturaCaptionAsset"};
 
 KalturaCaptionAssetService.add(entryId, captionAsset)
   .execute(client, function(success, results) {

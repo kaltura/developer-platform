@@ -71,7 +71,7 @@ var language_opts = {
     objPrefix: '',
     objSuffix: '',
     rewriteType: function(s) {
-      if (s.indexOf('Kaltura') === 0) return '{}';
+      if (s.indexOf('Kaltura') === 0) return '{objectType: "' + s + '"}';
     },
     rewriteAction: addActionSuffixIfReserved,
     rewriteService: function(s) {

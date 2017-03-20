@@ -20,8 +20,8 @@
       console.log('Error starting session', success, ks);
     } else {
       client.setKs(ks);
-      var filter = {};
-      var pager = {};
+      var filter = {objectType: "KalturaMetadataProfileFilter"};
+      var pager = {objectType: "KalturaFilterPager"};
 
       KalturaMetadataProfileService.listAction(filter, pager)
         .execute(client, function(success, results) {
