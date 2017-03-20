@@ -4,6 +4,7 @@ node_js:
 before_install:
   - "npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/LucyBot-Inc/documentation-generator#3a72100"
 script:
+  - npm test
   - ./scripts/build-and-commit.sh
 notifications:
  email:

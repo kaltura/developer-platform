@@ -132,8 +132,13 @@ describe('Sample Code', function() {
         testCase.input.action = testCase.action;
         var code = tmpl.render(testCase.input);
         var dir = __dirname + '/golden/' + testCase.name;
-        try {fs.mkdirSync(dir)} catch(e) {}
-        fs.writeFileSync(dir + '/' + language + '.' + ext, code);
+        var filename = dir + '/' + language + '.' + ext;
+        if (process.env.WRITE_GOLDEN) {
+          try {fs.mkdirSync(dir)} catch(e) {}
+          fs.writeFileSync(filename, code);
+        } else {
+          expect(code).to.equal(fs.readFileSync(filename, 'utf8'));
+        }
       });
     });
   });
