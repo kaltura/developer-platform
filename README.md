@@ -38,3 +38,16 @@ you can manually trigger a build on Travis by pushing an empty commit:
 git commit --allow-empty -m "Trigger CI"
 git push
 ```
+
+## Testing
+If you make changes to the codegen logic, you'll need to run the following
+to regenerate the test output:
+
+```
+WRITE_GOLDEN=true npm test
+```
+
+To check that there are no changes to codegen output, you can run:
+```
+npm test
+```

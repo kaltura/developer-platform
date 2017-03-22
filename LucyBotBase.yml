@@ -28,10 +28,7 @@ codegen:
     - ruby
     - python
     - id: ajax
-      label: JavaScript (AJAX)
-      highlight: javascript
-    - id: javascript
-      label: JavaScript (legacy)
+      label: JavaScript
       highlight: javascript
     - html
 
