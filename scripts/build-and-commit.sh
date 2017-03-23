@@ -3,8 +3,7 @@ set -e
 git clone https://github.com/kaltura/developer-platform-generated ../developer-platform-generated
 rm -rf ../developer-platform-generated/www
 mkdir ./markdown/generated
-node ./scripts/schemas.js
-node ./scripts/client_libraries.js
+./scripts/resources/all.sh
 lucybot build --prerender --destination ../developer-platform-generated/www
 
 cd ../developer-platform-generated

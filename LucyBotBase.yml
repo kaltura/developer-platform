@@ -95,7 +95,7 @@ operationNavigation:
     discussionURL: null
     children:
       - title: "Support Matrix"
-        markdownFile: ./markdown/support_matrix.md
+        markdownFile: ./markdown/generated/support_matrix.md
   - title: "XML Schemas"
     markdownFile: ./markdown/schemas.md
     children:

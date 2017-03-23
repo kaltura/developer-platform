@@ -28,8 +28,8 @@ schemas.forEach(function(s) {
   s.htmlURL = 'http://www.kaltura.com/api_v3/xsdDoc/index.php?type=' + s.type;
 })
 
-var SCHEMA_MD = fs.readFileSync(__dirname + '/../markdown/templates/schema.md', 'utf8');
-const OUTPUT_DIR = __dirname + '/../markdown/generated/';
+var SCHEMA_MD = fs.readFileSync(__dirname + '/../../markdown/templates/schema.md', 'utf8');
+const OUTPUT_DIR = __dirname + '/../../markdown/generated/';
 
 function getContents(s) {
   return SCHEMA_MD.replace('{{ label }}', s.label).replace('{{ html }}', s.html);
