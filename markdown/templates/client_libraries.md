@@ -40,6 +40,7 @@ client libraries as packages that can be installed via the respective package ma
 * PHP `composer require kaltura/api-client-library`
 * Ruby `gem install kaltura-client`
 * Java (via Maven)
+
 ```xml
 <dependency>
   <groupId>com.kaltura</groupId>
