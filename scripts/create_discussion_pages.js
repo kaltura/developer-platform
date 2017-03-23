@@ -6,7 +6,7 @@ const PARALLEL_LIMIT = 500;
 
 let createDiscussionPages = function(items, callback) {
   async.series(items.map(item => {
-    let slug = item.title.toLowerCase().replace(/\W+/g, '_');
+    let slug = item.title.replace(/\W+/g, '_');
     return asyncCallback => {
       // TODO: remove setTimeout(), use disqus API to create page at forum.kaltura.com/t/{{slug}}
       setTimeout(() => {
