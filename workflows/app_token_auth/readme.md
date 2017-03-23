@@ -28,7 +28,7 @@ SHA-1 is the default hash function, but others are allowed as well.
 See below for an example of how to compute the hash in NodeJS
 
 
-### Sample Code (javascript)
+### Sample Code (node)
 ```javascript
 var crypto = require('crypto')
   , shasum = crypto.createHash('sha1');

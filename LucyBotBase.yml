@@ -12,6 +12,7 @@ sitemap:
 
 embedParameters:
   format: 1
+
 javascript:
   - 'assets/mixpanel.js'
   - 'assets/jaco.js'
@@ -19,6 +20,7 @@ javascript:
   - 'assets/KalturaSessionService.min.js'
   - 'assets/KalturaPartnerService.min.js'
   - 'assets/KalturaUiConfService.min.js'
+
 codegen:
   languages:
     - php
@@ -280,7 +282,7 @@ workflowNavigation:
     icon: assets/img/icons/administrative.png
     children:
       - workflow: authentication
-      - workflow: app_tokens
+      - workflow: app_token_auth
   - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
     workflow: upload
@@ -315,7 +317,7 @@ workflowNavigation:
   - title: Manage and Deliver Apps and Widgets
     icon: assets/img/icons/manage.png
     children:
-      - workflow: app_tokens
+      - workflow: app_token_auth
   - title: Add a Workflow
     icon: plus
     isAdd: true
