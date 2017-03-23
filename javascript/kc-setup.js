@@ -5,9 +5,6 @@ function setKalturaSession(creds, cb) {
     partnerId: creds.partnerId,
   });
   KC.setKs(creds.ks);
-  window.jquery('#KalturaSidebar .partnerId').text(creds.partnerId || '');
-  window.jquery('#KalturaSidebar .userSecret').text(creds.userSecret || '');
-  window.jquery('#KalturaSidebar .adminSecret').text(creds.secret || '');
   var filter = {
     objTypeEqual: 1, // KalturaUiConfObjType.PLAYER
   }
@@ -35,7 +32,7 @@ function setKalturaSession(creds, cb) {
       var answers = window.lucybot.openapiService.globalParameters;
       answers.uiConf = answers.uiConf || uiConfs[0].id;
     }
-    cb(null, creds.ks);
+    cb(null, creds);
   });
 }
 
