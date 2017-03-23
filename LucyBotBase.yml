@@ -70,6 +70,13 @@ routes:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
+  /new-workflow:
+    ui: workflow
+    for: kaltura
+  /preview-workflow:
+    ui: workflow
+    for: kaltura
+
   /console:
     ui: console
     for: kaltura
