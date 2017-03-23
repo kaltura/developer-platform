@@ -99,8 +99,13 @@
       </div>
       <div class="logged-in" style="display:none">
         <p><label>Partner ID:&nbsp;</label><span class="partnerId"></span></p>
-        <p><label>User Secret:&nbsp;</label><span class="userSecret"></span></p>
-        <p><label>Admin Secret:&nbsp;</label><span class="adminSecret"></span></p>
+        <p id="KalturaShowSecrets">
+          <a onclick="window.jquery('#KalturaSecrets').show(); window.jquery('#KalturaShowSecrets').hide()">Show secrets</a>
+        </p>
+        <div id="KalturaSecrets" style="display:none">
+          <p><label>User Secret:&nbsp;</label><span class="userSecret"></span></p>
+          <p><label>Admin Secret:&nbsp;</label><span class="adminSecret"></span></p>
+        </div>
       </div>
     </div>
     <div class="section">
