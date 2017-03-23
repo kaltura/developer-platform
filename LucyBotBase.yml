@@ -1,5 +1,4 @@
 favicon: assets/favicon.ico
-discussionURL: 'https://forum.kaltura.org/search?q={{title}}'
 
 specifications:
   kaltura:
@@ -9,6 +8,8 @@ loadOpenAPISynchronous: true
 
 sitemap:
   hostname: https://developer.kaltura.com
+
+discussionURL: https://forum.kaltura.org/t/{{slug}}
 
 embedParameters:
   format: 1
@@ -81,9 +82,10 @@ routes:
 operationNavigation:
   - title: "Overview"
     markdownFile: ./markdown/overview.md
-    discussionURL: 'https://forum.kaltura.org/search?q=API'
+    discussionURL: null
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
+    discussionURL: null
     children:
       - title: "Support Matrix"
         markdownFile: ./markdown/support_matrix.md
