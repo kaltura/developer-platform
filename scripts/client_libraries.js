@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var CLIENT_LANGS = ['php53', 'ajax', 'php5Zend', 'java', 'csharp', 'ruby', 'python', 'node', 'js', 'cli', 'objc', 'android'];
+var CLIENT_LANGS = ['php5', 'php53', 'php5Zend', 'java', 'csharp', 'ruby', 'python', 'node', 'ajax', 'cli', 'objc', 'android'];
 
 var clientMD = '';
 /*
