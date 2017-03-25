@@ -41,13 +41,9 @@ import Kaltura from './lib/kaltura'
 client = new Kaltura.client()
 client.session.start(<%- codegen.constant(answers.secret) %>,
                      <%- codegen.constant(answers.partnerId) %>)
+
 <% } // endif -%>
-
-<% parameters.forEach(param => { -%>
-<%- codegen.assignment(param, [], answers) %>
-<% }) // end forEach -%>
-
-<% var parameterNames = parameters.map(p => p.name) -%>
+<%- codegen.assignAllParameters(parameters, answers) -%>
 result = client.<%- service %>.<%- action %>(<%- parameterNames.join(', ') %>)
 print(result)
 ```

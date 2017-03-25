@@ -268,7 +268,8 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
 
 CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
   indent = indent || 0;
-  return this.indent(params.map(p => this.assignment(p, answers)).join('\n'), indent);
+  let assignment = this.indent(params.map(p => this.assignment(p, answers)).join('\n'), indent);
+  return assignment ? assignment + '\n\n': '';
 }
 
 CodeTemplate.prototype.assignment = function(param, answers, parentDef) {

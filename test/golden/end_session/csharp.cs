@@ -1,0 +1,2 @@
+SessionService.End()
+   .Execute(client);

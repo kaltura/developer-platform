@@ -17,8 +17,7 @@ client.setKs(ks)
 <% } -%>
 
 <% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
-<%- codegen.assignAllParameters(parameters, answers) %>
-
+<%- codegen.assignAllParameters(parameters, answers) -%>
 result = client.<%- service %>.<%- action %>(<%- parameterNames.join(', ') %>);
 print(result);
 <% } -%>

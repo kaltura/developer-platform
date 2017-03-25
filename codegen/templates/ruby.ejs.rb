@@ -14,8 +14,7 @@ client.ks = client.session_service.start(
 <% } -%>
 
 <% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
-<%- codegen.assignAllParameters(parameters, answers) %>
-
+<%- codegen.assignAllParameters(parameters, answers) -%>
 results = client.<%- service %>.<%- action %>(<%- parameterNames.join(', ') %>)
 puts results.inspect
 <% } -%>

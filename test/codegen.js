@@ -40,6 +40,11 @@ describe('Sample Code', function() {
       showSetup: true,
     },
   }, {
+    name: 'end_session',
+    service: 'session',
+    action: 'end',
+    input: {}
+  }, {
     name: 'add_question_cuepoint',
     service: 'cuepoint_cuepoint',
     action: 'add',

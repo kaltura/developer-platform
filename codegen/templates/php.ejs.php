@@ -14,8 +14,7 @@
 
 <% } -%>
 <% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
-<%- codegen.assignAllParameters(parameters, answers, 2) %>
-
+<%- codegen.assignAllParameters(parameters, answers, 2) -%>
   try {
     $result = $client-><%- service %>-><%- action %>(<%- parameterNames.join(', ') %>);
     var_dump($result);

@@ -1,5 +1,4 @@
-<%- codegen.assignAllParameters(parameters, answers) %>
-
+<%- codegen.assignAllParameters(parameters, answers) -%>
 <% var handlerType = null;
    if (typeof responseListType !== 'undefined') {
      handlerType = 'ListResponse<' + responseListType + '>';
