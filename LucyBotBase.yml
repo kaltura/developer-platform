@@ -9,8 +9,6 @@ loadOpenAPISynchronous: true
 sitemap:
   hostname: https://developer.kaltura.com
 
-discussionURL: https://forum.kaltura.org/t/{{slug}}
-
 embedParameters:
   format: 1
 
