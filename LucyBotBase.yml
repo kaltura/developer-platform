@@ -55,7 +55,7 @@ routes:
   /recipes/ad_cue_points:
     redirect: '/workflows/Engage_and_Publish/Advertisement_Cue_Points'
   /recipes/analytics:
-    redirect: '/workflows/Integration_Scheduling_and_Hooks/Analytics_Reports'
+    redirect: '/workflows/Review_Media_Analytics/Analytics_Reports'
   /recipes/app_tokens:
     redirect: '/workflows/Generate_API_Sessions/App_Token_Authentication'
   /recipes/authentication:
@@ -356,9 +356,12 @@ workflowNavigation:
       - workflow: quiz
       - workflow: ad_cue_points
   - title: Integration, Scheduling and Hooks
-    icon: assets/img/icons/analytic.png
+    icon: assets/img/icons/other.png
     children:
       - workflow: backend_notifications
+  - title: Review Media Analytics
+    icon: assets/img/icons/analytic.png
+    children:
       - workflow: analytics
       - workflow: leaderboard_reports
   - title: Manage and Deliver Apps and Widgets
