@@ -2,4 +2,9 @@
 .breadcrumbs .fa-unlock {
   display: none;
 }
-
+.discussion-frame {
+  border: none !important;
+}
+.discussion .discussion-link {
+  display: none;
+}
