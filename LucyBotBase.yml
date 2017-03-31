@@ -9,6 +9,7 @@ loadOpenAPISynchronous: true
 sitemap:
   hostname: https://developer.kaltura.com
 
+embedConsoleInDocumentation: true
 embedParameters:
   format: 1
 
