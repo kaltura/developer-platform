@@ -11,8 +11,11 @@ discussionURL: '/discussion/{{slug}}?title={{title}}'
 sitemap:
   hostname: https://developer.kaltura.com
 
-redirectHashURLs: true
-embedConsoleInDocumentation: true
+uiOptions:
+  discussionTitle: 'User contributed notes & discussion'
+  redirectHashURLs: true
+  embedConsoleInDocumentation: true
+
 embedParameters:
   format: 1
 
