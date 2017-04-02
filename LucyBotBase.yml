@@ -6,6 +6,8 @@ specifications:
 
 loadOpenAPISynchronous: true
 
+discussionURL: '/discussion/{{slug}}?title={{title}}'
+
 sitemap:
   hostname: https://developer.kaltura.com
 
