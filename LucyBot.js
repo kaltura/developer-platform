@@ -3,10 +3,21 @@ const fs = require('fs');
 
 const TARGET_API = process.env.TARGET_API || 'vpaas';
 
+const getYAML = function(name) {
+  return YAML.load(fs.readFileSync(__dirname + '/' + name + '.yml', 'utf8'));
+}
+
 const openapi = require('./' + TARGET_API + '.openapi.json');
-const config = module.exports = YAML.load(fs.readFileSync(__dirname + '/base.LucyBot.yml', 'utf8'));
-const apiConfig = YAML.load(fs.readFileSync(__dirname + '/' + TARGET_API + '.LucyBot.yml', 'utf8'));
+const config = module.exports = getYAML('base.LucyBot');
+const apiConfig = getYAML(TARGET_API + '.LucyBot');
+const nav = getYAML('navigation');
 Object.assign(config, apiConfig);
+
+config.operationNavigation = config.operationNavigation.concat(nav.navigation);
+
+nav.navigation.forEach(item => {
+  config.operationNavigation.splice(config.operationNavigation.length - 1, 0, item);
+});
 
 config.operationNavigation.push({
   title: "Error Codes",
@@ -16,7 +27,6 @@ config.operationNavigation.push({
   }).join('\n'),
 });
 
-let objectsItem = config.operationNavigation.filter(i => i.title === 'General Objects')[0];
 var definitions = openapi.definitions;
 var enums = openapi['x-enums'];
 
@@ -36,7 +46,8 @@ function makeEnumItem(name) {
   }
 }
 
-objectsItem.children = [];
+let objectsItem = {title: 'General Objects', children: [], prerender: false};
+config.operationNavigation.push(objectsItem);
 objectsItem.children.push({
   title: "Objects",
   children: Object.keys(definitions).filter(function(d) {
