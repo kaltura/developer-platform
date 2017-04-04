@@ -1,20 +1,29 @@
 set -e
 
+git config --global user.name "Travis CI"
+git config --global user.email "bobby.brennan@gmail.com"
+
 mkdir ./markdown/generated
 ./scripts/resources/all.sh
 
-git clone https://github.com/kaltura/developer-platform-generated ../developer-platform-generated
-rm -rf ../developer-platform-generated/generated
-mkdir ../developer-platform-generated/generated
+echo "Building VPaaS Website..."
+git clone https://github.com/kaltura/developer-platform-generated generated/vpaas
+rm -rf generated/vpaas/*
+TARGET_API=vpaas lucybot build --prerender --destination generated/vpaas
 
-TARGET_API=vpaas lucybot build --prerender --destination ../developer-platform-generated/generated/vpaas
-TARGET_API=ott lucybot build --prerender --destination ../developer-platform-generated/generated/ott
+echo "Building OTT Website..."
+git clone https://github.com/kaltura/ott-developer-platform-generated generated/ott
+rm -rf generated/ott/*
+TARGET_API=ott lucybot build --prerender --destination generated/ott
 
-cd ../developer-platform-generated
-git config --global user.name "Travis CI"
-git config --global user.email "bobby.brennan@gmail.com"
+cd generated/vpaas
 echo "Commiting build"
-git status
-git add generated/*
-git commit -a -m "Build generated/ [skip ci]"
+git add .
+git commit -a -m "Build site"
 git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:master >> /dev/null 2>&1
+
+cd ../ott
+echo "Commiting build"
+git add .
+git commit -a -m "Build site"
+git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/ott-developer-platform-generated HEAD:master >> /dev/null 2>&1
