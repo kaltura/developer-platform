@@ -14,7 +14,7 @@ mkdir ./markdown/generated
 echo "Building OTT Website..."
 git clone https://github.com/kaltura/ott-developer-platform-generated generated/ott
 rm -rf generated/ott/*
-TARGET_API=ott lucybot build --prerender --destination generated/ott
+TARGET_API=ott lucybot build --destination generated/ott
 
 #cd generated/vpaas
 #echo "Commiting build"
@@ -22,7 +22,8 @@ TARGET_API=ott lucybot build --prerender --destination generated/ott
 #git commit -a -m "Build site"
 #git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:master >> /dev/null 2>&1
 
-cd ../ott
+cd generated/ott
+#cd ../ott
 echo "Commiting build"
 git add .
 git commit -a -m "Build site"
