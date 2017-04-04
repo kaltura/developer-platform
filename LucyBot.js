@@ -15,18 +15,6 @@ Object.assign(config, apiConfig);
 
 config.operationNavigation = config.operationNavigation.concat(nav.navigation);
 
-nav.navigation.forEach(item => {
-  config.operationNavigation.splice(config.operationNavigation.length - 1, 0, item);
-});
-
-config.operationNavigation.push({
-  title: "Error Codes",
-  markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => {
-    let str = '* `' + e.name + '`';
-    if (e.message) str += ' - ' + e.message;
-  }).join('\n'),
-});
-
 var definitions = openapi.definitions;
 var enums = openapi['x-enums'];
 
@@ -63,5 +51,13 @@ objectsItem.children.push({
   children: Object.keys(definitions).filter(function(d) {
     return d.indexOf("Filter") !== -1;
   }).map(makeItem),
+});
+
+config.operationNavigation.push({
+  title: "Error Codes",
+  markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => {
+    let str = '* `' + e.name + '`';
+    if (e.message) str += ' - ' + e.message;
+  }).join('\n'),
 });
 
