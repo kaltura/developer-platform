@@ -1,0 +1,32 @@
+specifications:
+  ott:
+    - openapi: ./vpaas.openapi.json
+
+routes:
+  /:
+    redirect: /api-docs
+
+  /api-docs:
+    title: Kaltura OTT API
+    for: ott
+    navigation: operationNavigation
+    meta:
+      title: "Kaltura OTT API Documentation"
+      description: "Full documentation for the Kaltura OTT API"
+
+  /console:
+    ui: console
+    for: ott
+    title: Kaltura OTT API Console
+    navigation: operationNavigation
+    meta:
+      title: "Kaltura OTT API Console"
+      description: "Make test calls to the Kaltura OTT API"
+
+
+operationNavigation:
+  - title: Overview
+    markdownFile: ./markdown/ott.md
+  - title: Operations
+    tags: true
+  - title: General Objects

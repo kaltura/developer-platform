@@ -1,49 +1,9 @@
-favicon: assets/favicon.ico
-
 specifications:
   kaltura:
-    - openapi: ./openapi.json
-
-loadOpenAPISynchronous: true
-
-discussionURL: '/discussion/{{slug}}?title={{title}}'
+    - openapi: ./vpaas.openapi.json
 
 sitemap:
   hostname: https://developer.kaltura.com
-
-uiOptions:
-  discussionTitle: 'User contributed notes & discussion'
-  redirectHashURLs: true
-  embedConsoleInDocumentation: true
-
-embedParameters:
-  format: 1
-
-javascript:
-  - 'assets/mixpanel.js'
-  - 'assets/jaco.js'
-  - 'assets/KalturaClient.min.js'
-  - 'assets/KalturaSessionService.min.js'
-  - 'assets/KalturaPartnerService.min.js'
-  - 'assets/KalturaUiConfService.min.js'
-
-codegen:
-  languages:
-    - php
-    - java
-    - node
-    - csharp
-    - ruby
-    - python
-    - id: ajax
-      label: JavaScript
-      highlight: javascript
-    - html
-
-github:
-  repo: "kaltura/developer-platform"
-  client_id: "a5dc854e03c060741218"
-  access_token_url: "/github/access_token"
 
 routes:
   /:
@@ -56,6 +16,40 @@ routes:
     meta:
       title: "Kaltura VPaaS API Documentation"
       description: "Full documentation for the Kaltura VPaaS API"
+
+  /console:
+    ui: console
+    for: kaltura
+    title: Kaltura API Console
+    navigation: operationNavigation
+    meta:
+      title: "Kaltura VPaaS API Console"
+      description: "Make test calls to the Kaltura VPaaS API"
+
+  /workflows:
+    ui: workflows
+    for: kaltura
+    navigation: workflowNavigation
+    intro: |
+      Interactive workflows on this page will help you dive straight
+      into coding the various building blocks of your application.
+
+      Here you will find working code workflows together with detailed
+      explanations and documentation references.
+
+      #### What do you want to do today?
+    title: Workflows
+    icons: offset
+    meta:
+      title: "Kaltura API Workflows"
+      description: "Learn how to work with the Kaltura API using interactive workflows"
+
+  /new-workflow:
+    ui: workflow
+    for: kaltura
+  /preview-workflow:
+    ui: workflow
+    for: kaltura
 
   /recipes:
     redirect: '/workflows'
@@ -96,39 +90,6 @@ routes:
   /recipes/webvtt_captions:
     redirect: '/workflows/Enrich_and_Organize_Metadata/Serve_WebVTT_Captions'
 
-  /workflows:
-    ui: workflows
-    for: kaltura
-    navigation: workflowNavigation
-    intro: |
-      Interactive workflows on this page will help you dive straight
-      into coding the various building blocks of your application.
-
-      Here you will find working code workflows together with detailed
-      explanations and documentation references.
-
-      #### What do you want to do today?
-    title: Workflows
-    icons: offset
-    meta:
-      title: "Kaltura API Workflows"
-      description: "Learn how to work with the Kaltura API using interactive workflows"
-
-  /new-workflow:
-    ui: workflow
-    for: kaltura
-  /preview-workflow:
-    ui: workflow
-    for: kaltura
-
-  /console:
-    ui: console
-    for: kaltura
-    title: Kaltura API Console
-    navigation: operationNavigation
-    meta:
-      title: "Kaltura VPaaS API Console"
-      description: "Make test calls to the Kaltura VPaaS API"
 
 operationNavigation:
   - title: "Overview"

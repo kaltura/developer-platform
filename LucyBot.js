@@ -1,12 +1,19 @@
 const YAML = require('js-yaml');
 const fs = require('fs');
 
-const openapi = require('./openapi.json');
-const config = module.exports = YAML.load(fs.readFileSync(__dirname + '/LucyBotBase.yml', 'utf8'));
+const TARGET_API = process.env.TARGET_API || 'vpaas';
+
+const openapi = require('./' + TARGET_API + '.openapi.json');
+const config = module.exports = YAML.load(fs.readFileSync(__dirname + '/base.LucyBot.yml', 'utf8'));
+const apiConfig = YAML.load(fs.readFileSync(__dirname + '/' + TARGET_API + '.LucyBot.yml', 'utf8'));
+Object.assign(config, apiConfig);
 
 config.operationNavigation.push({
   title: "Error Codes",
-  markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => '* `' + e.name + '` - ' + e.message).join('\n'),
+  markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => {
+    let str = '* `' + e.name + '`';
+    if (e.message) str += ' - ' + e.message;
+  }).join('\n'),
 });
 
 let objectsItem = config.operationNavigation.filter(i => i.title === 'General Objects')[0];
