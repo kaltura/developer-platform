@@ -1,6 +1,6 @@
 specifications:
   ott:
-    - openapi: ./vpaas.openapi.json
+    - openapi: ./ott.openapi.json
 
 routes:
   /:

@@ -23,6 +23,7 @@ navigation:
   - title: "Generate API Sessions"
     children:
       - title: "session"
+        tag: 'session'
         children:
           - operation: "session.start"
           - operation: "session.end"
