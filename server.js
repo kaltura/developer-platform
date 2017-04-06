@@ -49,7 +49,7 @@ App.use('/recipes/:workflow/embed', (req, res, next) => {
   res.redirect(redirect.redirect + '?embed=true');
 });
 
-const TARGET_API = process.env.TARGET_API || 'vpaas';
+const TARGET_API = process.env.TARGET_API || 'ovp';
 
 const STATIC_DIR = __dirname + '/generated/' + TARGET_API;
 App.use(Express.static(STATIC_DIR));

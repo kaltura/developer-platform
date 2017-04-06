@@ -8,10 +8,21 @@ The generated website is contained in
 Documentation for LucyBot is available at [docs.lucybot.com](http://docs.lucybot.com)
 
 ## Running
+
+There are two target APIs: ovp (the standard Kaltura VPaaS) and ott.
+
+#### ovp
 ```
 npm install
-git clone http://github.com/kaltura/developer-platform-generated generated/vpaas
-TARGET_API=vpaas node server.js
+git clone http://github.com/kaltura/developer-platform-generated generated/ovp
+TARGET_API=ovp node server.js
+```
+
+#### ott
+```
+npm install
+git clone http://github.com/kaltura/developer-platform-generated generated/ott
+TARGET_API=ott node server.js
 ```
 
 ### Environment Options
@@ -26,7 +37,7 @@ Several options can be set using environment variables:
 * DISCOURSE_CATEGORY_ID
 
 #### Required in production
-* TARGET_API - either 'ott' or 'vpaas'
+* TARGET_API - either 'ott' or 'ovp'
 * KALTURA_SSO_SECRET
 * KALTURA_SSO_PAYLOAD
 * GITHUB_CLIENT_ID

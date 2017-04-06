@@ -1,7 +1,7 @@
 const YAML = require('js-yaml');
 const fs = require('fs');
 
-const TARGET_API = process.env.TARGET_API || 'vpaas';
+const TARGET_API = process.env.TARGET_API || 'ovp';
 
 const getYAML = function(name) {
   return YAML.load(fs.readFileSync(__dirname + '/' + name + '.yml', 'utf8'));
