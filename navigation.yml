@@ -1,25 +1,4 @@
 navigation:
-  - title: "XML Schemas"
-    markdownFile: ./markdown/schemas.md
-    children:
-      - title: 'Syndication Feed'
-        markdownFile: ./markdown/generated/syndication.md
-        prerender: false
-      - title: 'Bulk Upload'
-        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadXML.md
-        prerender: false
-      - title: 'Bulk Upload Results'
-        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadResultXML.md
-        prerender: false
-      - title: 'Cue Point Serve'
-        markdownFile: ./markdown/generated/cuePoint.serveAPI.md
-        prerender: false
-      - title: 'Cue Point Ingest'
-        markdownFile: ./markdown/generated/cuePoint.ingestAPI.md
-        prerender: false
-      - title: 'Drop Folder'
-        markdownFile: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
-        prerender: false
   - title: "Generate API Sessions"
     children:
       - title: "session"
