@@ -2,6 +2,9 @@ specifications:
   ott:
     - openapi: ./ott.openapi.json
 
+css:
+  - assets/ott.css
+
 routes:
   /:
     redirect: /api-docs
