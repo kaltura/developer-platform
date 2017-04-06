@@ -10,10 +10,7 @@ const getYAML = function(name) {
 const openapi = require('./' + TARGET_API + '.openapi.json');
 const config = module.exports = getYAML('base.LucyBot');
 const apiConfig = getYAML(TARGET_API + '.LucyBot');
-const nav = getYAML('navigation');
 Object.assign(config, apiConfig);
-
-config.operationNavigation = config.operationNavigation.concat(nav.navigation);
 
 var definitions = openapi.definitions;
 var enums = openapi['x-enums'];
@@ -35,21 +32,8 @@ function makeEnumItem(name) {
 }
 
 if (TARGET_API === 'ott') {
-  let usedTags = [];
-  function addTags(item) {
-    if (item.tag) usedTags.push(item.tag);
-    if (item.children) item.children.forEach(addTags);
-  }
-  config.operationNavigation.forEach(addTags);
-  let unusedTags = openapi.tags.filter(t => {
-    return usedTags.indexOf(t.name) === -1;
-  });
-  if (unusedTags.length) {
-    config.operationNavigation.splice(2, 0, {
-      title: 'OTT Operations',
-      children: unusedTags.map(t => ({tag: t.name})),
-    })
-  }
+  let tagItems = openapi.tags.map(t => ({tag: t.name}));
+  config.operationNavigation = config.operationNavigation.concat(tagItems);
 }
 
 let objectsItem = {title: 'General Objects', children: [], prerender: false};
