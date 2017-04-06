@@ -1,6 +1,6 @@
 specifications:
   kaltura:
-    - openapi: ./vpaas.openapi.json
+    - openapi: ./ovp.openapi.json
 
 sitemap:
   hostname: https://developer.kaltura.com
