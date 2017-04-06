@@ -9,14 +9,14 @@ const LINKS = {
     genDate: '26-02-2017',
     baseURL: 'https://tvpapi-us-preprod.ott.kaltura.com/v4_1/clientlibs/',
   },
-  vpaas: {
+  ovp: {
     genDate: '22-03-2017',
     baseURL: 'https://tvpapi-us-preprod.ott.kaltura.com/v4_1/clientlibs/',
   }
 }
 
 const MARKDOWN_DIR = __dirname + '/../../markdown';
-const LINK = process.env.TARGET_API === 'ott' ? LINKS.ott : LINKS.vpaas;
+const LINK = process.env.TARGET_API === 'ott' ? LINKS.ott : LINKS.ovp;
 
 CLIENT_LANGS.forEach(function(cl, idx) {
   if (!cl) return;
