@@ -7020,10 +7020,10 @@
       "title": "KalturaValue"
     }
   },
-  "host": "www.kaltura.com",
+  "host": "tvpapi-us-preprod.ott.kaltura.com",
   "info": {
-    "description": "The Kaltura API",
-    "title": "Kaltura",
+    "description": "The Kaltura OTT API",
+    "title": "Kaltura OTT",
     "version": "3.6.1542.28904"
   },
   "parameters": {
