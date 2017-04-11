@@ -21,7 +21,7 @@ TARGET_API=ovp node server.js
 #### ott
 ```
 npm install
-git clone http://github.com/kaltura/developer-platform-generated generated/ott
+git clone http://github.com/kaltura/ott-developer-platform-generated generated/ott
 TARGET_API=ott node server.js
 ```
 
