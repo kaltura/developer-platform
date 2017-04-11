@@ -3,9 +3,53 @@ This repository contains everything necessary to build
 documentation for the Kaltura VPaaS API using LucyBot.
 
 The generated website is contained in
-[kaltura/developer-portal-generated](http://github.com/kaltura/developer-portal-generated).
+[kaltura/developer-platform-generated](http://github.com/kaltura/developer-platform-generated).
 
 Documentation for LucyBot is available at [docs.lucybot.com](http://docs.lucybot.com)
+
+## Running
+
+There are two target APIs: ovp (the standard Kaltura VPaaS) and ott.
+
+#### ovp
+```
+npm install
+git clone http://github.com/kaltura/developer-platform-generated generated/ovp
+TARGET_API=ovp node server.js
+```
+
+#### ott
+```
+npm install
+git clone http://github.com/kaltura/ott-developer-platform-generated generated/ott
+TARGET_API=ott node server.js
+```
+
+### Environment Options
+Several options can be set using environment variables:
+
+* DEVELOPMENT - for use in active development, disables SSL and cache
+* NO_SSL
+* USE_CACHE
+* ENABLE_CROSS_ORIGIN
+* KALTURA_RECIPES_PORT
+* DISCOURSE_HOST
+* DISCOURSE_CATEGORY_ID
+
+#### Required in production
+* TARGET_API - either 'ott' or 'ovp'
+* KALTURA_SSO_SECRET
+* KALTURA_SSO_PAYLOAD
+* GITHUB_CLIENT_ID
+* GITHUB_CLIENT_SECRET
+* DISCOURSE_API_KEY - valid for forum.kaltura.org
+
+## Building
+Any changes that are pushed to the master branch of kaltura/developer-platform
+will automatically trigger a Travis build. Travis will use LucyBot to update the
+`generated/` folder with new HTML, CSS, and JS assets. Once Travis is
+finished, simply pull the result and restart the server.
+
 
 ### Trigger a Build
 If Travis fails, or you want to pull in the latest changes to LucyBot,

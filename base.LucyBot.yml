@@ -1,0 +1,41 @@
+favicon: assets/favicon.ico
+
+loadOpenAPISynchronous: true
+
+discussionURL: '/discussion/{{slug}}?title={{title}}'
+
+uiOptions:
+  discussionTitle: 'User contributed notes & discussion'
+  redirectHashURLs: true
+  embedConsoleInDocumentation: true
+
+embedParameters:
+  format: 1
+
+javascript:
+  - 'assets/mixpanel.js'
+  - 'assets/jaco.js'
+  - 'assets/KalturaClient.min.js'
+  - 'assets/KalturaSessionService.min.js'
+  - 'assets/KalturaPartnerService.min.js'
+  - 'assets/KalturaUiConfService.min.js'
+
+codegen:
+  languages:
+    - php
+    - java
+    - node
+    - csharp
+    - ruby
+    - python
+    - id: ajax
+      label: JavaScript
+      highlight: javascript
+    - html
+
+github:
+  repo: "kaltura/developer-platform"
+  client_id: "a5dc854e03c060741218"
+  access_token_url: "/github/access_token"
+
+

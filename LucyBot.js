@@ -1,15 +1,17 @@
 const YAML = require('js-yaml');
 const fs = require('fs');
 
-const openapi = require('./openapi.json');
-const config = module.exports = YAML.load(fs.readFileSync(__dirname + '/LucyBotBase.yml', 'utf8'));
+const TARGET_API = process.env.TARGET_API || 'ovp';
 
-config.operationNavigation.push({
-  title: "Error Codes",
-  markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => '* `' + e.name + '` - ' + e.message).join('\n'),
-});
+const getYAML = function(name) {
+  return YAML.load(fs.readFileSync(__dirname + '/' + name + '.yml', 'utf8'));
+}
 
-let objectsItem = config.operationNavigation.filter(i => i.title === 'General Objects')[0];
+const openapi = require('./' + TARGET_API + '.openapi.json');
+const config = module.exports = getYAML('base.LucyBot');
+const apiConfig = getYAML(TARGET_API + '.LucyBot');
+Object.assign(config, apiConfig);
+
 var definitions = openapi.definitions;
 var enums = openapi['x-enums'];
 
@@ -29,7 +31,13 @@ function makeEnumItem(name) {
   }
 }
 
-objectsItem.children = [];
+if (TARGET_API === 'ott') {
+  let tagItems = openapi.tags.map(t => ({tag: t.name}));
+  config.operationNavigation = config.operationNavigation.concat(tagItems);
+}
+
+let objectsItem = {title: 'General Objects', children: [], prerender: false};
+config.operationNavigation.push(objectsItem);
 objectsItem.children.push({
   title: "Objects",
   children: Object.keys(definitions).filter(function(d) {
@@ -45,5 +53,13 @@ objectsItem.children.push({
   children: Object.keys(definitions).filter(function(d) {
     return d.indexOf("Filter") !== -1;
   }).map(makeItem),
+});
+
+config.operationNavigation.push({
+  title: "Error Codes",
+  markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => {
+    let str = '* `' + e.name + '`';
+    if (e.message) str += ' - ' + e.message;
+  }).join('\n'),
 });
 

@@ -1,0 +1,67 @@
+specifications:
+  ott:
+    - openapi: ./ott.openapi.json
+
+css:
+  - assets/ott.css
+
+routes:
+  /:
+    redirect: /api-docs
+
+  /api-docs:
+    title: Kaltura OTT API
+    for: ott
+    navigation: operationNavigation
+    meta:
+      title: "Kaltura OTT API Documentation"
+      description: "Full documentation for the Kaltura OTT API"
+
+  /console:
+    ui: console
+    for: ott
+    title: Kaltura OTT API Console
+    navigation: operationNavigation
+    meta:
+      title: "Kaltura OTT API Console"
+      description: "Make test calls to the Kaltura OTT API"
+
+  /workflows:
+    ui: workflows
+    for: ott
+    navigation:
+      - title: Add a Workflow
+        icon: plus
+        isAdd: true
+      - title: Contact Us
+        icon: assets/img/icons/contact.png
+        isContact: true
+    intro: |
+      Interactive workflows on this page will help you dive straight
+      into coding the various building blocks of your application.
+
+      Here you will find working code workflows together with detailed
+      explanations and documentation references.
+
+      #### What do you want to do today?
+    title: Workflows
+    icons: offset
+    meta:
+      title: "Kaltura API Workflows"
+      description: "Learn how to work with the Kaltura API using interactive workflows"
+
+  /new-workflow:
+    ui: workflow
+    for: ott
+  /preview-workflow:
+    ui: workflow
+    for: ott
+
+
+operationNavigation:
+  - title: Overview
+    markdownFile: ./markdown/generated/ott.md
+    discussionURL: null
+  - title: "Client Libraries"
+    markdownFile: ./markdown/generated/client_libraries.md
+    discussionURL: null

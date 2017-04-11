@@ -7,7 +7,7 @@ global.window = {
   ejs: require('ejs'),
 }
 
-var swagger = require('../openapi.json');
+var swagger = require('../ovp.openapi.json');
 var CodeTemplate = require('../codegen');
 
 describe('Sample Code', function() {
