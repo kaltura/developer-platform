@@ -241,7 +241,7 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   input.parameters = [];
   let addedParameters = [];
   input.operation.parameters.forEach(p => {
-    if (p.$ref || p.name === 'format') return;
+    if (p.$ref || p['x-global']) return;
     let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
     if (addedParameters.indexOf(baseName) !== -1) return;
     addedParameters.push(baseName);
