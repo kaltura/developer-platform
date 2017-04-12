@@ -121,82 +121,10 @@ operationNavigation:
       - title: 'Drop Folder'
         markdownFile: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         prerender: false
-  - title: "Deliver and Distribute Media"
-    children:
-      - tag: "playManifest"
-      - tag: "syndicationFeed"
-      - tag: "entryDistribution"
-      - tag: "distributionProfile"
-      - tag: "distributionProvider"
-      - tag: "deliveryProfile"
-        hidden: true
-      - tag: "storageProfile"
-        hidden: true
-  - title: "Secure, Control and Govern"
-    children:
-      - tag: "partner"
-      - tag: "user"
-      - tag: "userRole"
-      - tag: "groupUser"
-      - tag: "accessControlProfile"
-      - tag: "categoryEntry"
-      - tag: "categoryUser"
-      - tag: "permission"
-      - tag: "permissionItem"
-      - tag: "accessControl"
-        hidden: true
-      - tag: "adminUser"
-        hidden: true
-      - tag: "auditTrail"
-        hidden: true
-  - title: "Optimize API Requests"
-    children:
-      - tag: "multirequest"
-      - tag: "responseProfile"
-  - title: "Integration, Scheduling and Hooks"
-    children:
-      - tag: "eventNotificationTemplate"
-      - tag: "scheduledTaskProfile"
-      - title: "Scheduling Triggers using iCal"
-        markdownFile: ./markdown/scheduling.md
-        children:
-          - tag: "scheduleEvent"
-          - tag: "scheduleEventResource"
-          - tag: "scheduleResource"
-      - tag: "integration"
-      - tag: "businessProcessCase"
-      - tag: "notification"
-        hidden: true
-  - title: "Encrypt and License Content"
-    children:
-      - tag: "drmLicenseAccess"
-      - tag: "drmPolicy"
-      - tag: "drmProfile"
-      - tag: "playReadyDrm"
-      - tag: "widevineDrm"
-      - tag: "deliveryProfile"
-        hidden: true
-  - title: "Manage Documents and Other Assets"
-    children:
-      - tag: "baseEntry"
-      - tag: "data"
-      - tag: "documents"
-  - title: "Manage and Deliver Apps and Widgets"
-    children:
-      - tag: "uiConf"
-      - tag: "widget"
-      - tag: "fileAsset"
-      - tag: "captureSpace"
-  - title: "Manage Backend and Storage"
-    children:
-      - tag: "system"
-      - tag: "storageProfile"
-        hidden: true
-
   - title: "Generate API Sessions"
     children:
       - title: "session"
-        tag: 'session'
+        tag: "session"
         children:
           - operation: "session.start"
           - operation: "session.end"
@@ -289,6 +217,79 @@ operationNavigation:
       - tag: "liveReports"
       - tag: "liveStats"
       - tag: "stats"
+  - title: "Deliver and Distribute Media"
+    children:
+      - tag: "playManifest"
+      - tag: "syndicationFeed"
+      - tag: "entryDistribution"
+      - tag: "distributionProfile"
+      - tag: "distributionProvider"
+      - tag: "deliveryProfile"
+        hidden: true
+      - tag: "storageProfile"
+        hidden: true
+  - title: "Secure, Control and Govern"
+    children:
+      - tag: "partner"
+      - tag: "user"
+      - tag: "userRole"
+      - tag: "groupUser"
+      - tag: "accessControlProfile"
+      - tag: "categoryEntry"
+      - tag: "categoryUser"
+      - tag: "permission"
+      - tag: "permissionItem"
+      - tag: "accessControl"
+        hidden: true
+      - tag: "adminUser"
+        hidden: true
+      - tag: "auditTrail"
+        hidden: true
+  - title: "Optimize API Requests"
+    children:
+      - tag: "multirequest"
+      - tag: "responseProfile"
+  - title: "Integration, Scheduling and Hooks"
+    children:
+      - tag: "eventNotificationTemplate"
+      - tag: "scheduledTaskProfile"
+      - title: "Scheduling Triggers using iCal"
+        markdownFile: ./markdown/scheduling.md
+        children:
+          - tag: "scheduleEvent"
+          - tag: "scheduleEventResource"
+          - tag: "scheduleResource"
+      - tag: "integration"
+      - tag: "businessProcessCase"
+      - tag: "notification"
+        hidden: true
+  - title: "Encrypt and License Content"
+    children:
+      - tag: "drmLicenseAccess"
+      - tag: "drmPolicy"
+      - tag: "drmProfile"
+      - tag: "playReadyDrm"
+      - tag: "widevineDrm"
+      - tag: "deliveryProfile"
+        hidden: true
+  - title: "Manage Documents and Other Assets"
+    children:
+      - tag: "baseEntry"
+      - tag: "data"
+      - tag: "documents"
+  - title: "Manage and Deliver Apps and Widgets"
+    children:
+      - tag: "uiConf"
+      - tag: "widget"
+      - tag: "fileAsset"
+      - tag: "captureSpace"
+  - title: "Manage Backend and Storage"
+    children:
+      - tag: "system"
+      - tag: "storageProfile"
+        hidden: true
+  - title: "General Objects"
+    prerender: false
 
 workflowNavigation:
   - title: Generate API Sessions
