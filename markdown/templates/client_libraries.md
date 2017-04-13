@@ -4,11 +4,15 @@ When developing applications that interact with the Kaltura API, it is best to u
 
 Below you can download the Client Library for the programming language of your choice.
 
+<% if (target === 'ovp') { -%>
 To learn how to use the client libraries and see example code implementations, use the [API Test Console](/console) and [Interactive Workflows](/workflows).
 The Test Console and Workflows automatically generate sample code based on the API actions and parameters you select.
 
 Please note, the client libraries provided here have been generated for the Kaltura.com API.
 Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use their Kaltura Server Clients Generator for optimal compatibility.
+<% } else { -%>
+Please note, the client libraries provided here have been generated for version <%- version %> of the Kaltura OTT Platform API. Customers are encouraged to verify their platform API version and ensure the use of client libraries that match the version of their platform version for optimal compatibility. If you’re unsure which version to use, please contact your Kaltura Account Manager
+<% } -%>
 
 ## Download Packages
 <style>
@@ -23,7 +27,9 @@ Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use t
   background-position: -70px;
 }
 </style>
-{{ client_libraries }}
+
+<%- clientMD %>
+
 <script>
   window.jquery('.client-lib-link').click(function() {
     var lang = $(this).attr('data-language');
@@ -31,6 +37,7 @@ Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use t
   })
 </script>
 
+<% if (target === 'ovp') { -%>
 ## Install Via Package Managers
 In programming languages that use package managers, Kaltura also provides
 client libraries as packages that can be installed via the respective package manager.
@@ -48,6 +55,7 @@ client libraries as packages that can be installed via the respective package ma
   <version>3.2.1</version>
 </dependency>
 ```
+<% } -%>
 
 ## Missing a Language?
 Tweet [@Kaltura_API pls add sdk for: [lang]](http://twitter.com/?status=@Kaltura_API%20pls%20add%20sdk%20for%3A%20%5Bprogramming_language%5D)
