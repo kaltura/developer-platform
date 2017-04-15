@@ -27,15 +27,41 @@ SHA-1 is the default hash function, but others are allowed as well.
 
 See below for an example of how to compute the hash in NodeJS
 
-
+### API Call
+```json
+{
+  "parameters": [
+    {
+      "name": "hashFunction",
+      "type": "string",
+      "consoleDefault": "sha1",
+      "enum": [
+        "sha1",
+        "sha256"
+      ],
+      "inputType": "text",
+      "default": "sha1"
+    }
+  ]
+}
+```
 ### Sample Code (node)
 ```javascript
 var crypto = require('crypto')
-  , shasum = crypto.createHash('sha1');
+  , shasum = crypto.createHash('<%- answers.hashFunction %>');
 
 shasum.update(client.ks + appToken.token);
 var hash = client.shasum.digest('hex');
-
+```
+### Sample Code (php)
+```php
+<?php
+  <% if (answers.hashFunction === 'sha1') { -%>
+    // sha1 code
+  <% } else if (answers.hashFunction === 'sha256') { -%>
+    // sha256 code
+  <% } -%>
+?>
 ```
 
 ## Start the App Token Session
