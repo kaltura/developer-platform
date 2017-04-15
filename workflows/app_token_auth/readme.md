@@ -10,7 +10,7 @@ An Application Token enables clients to provide their development partners or in
 Developers who are provided with an Application Token use it to create temporary Kaltura Session (KS) tokens, which they will then use to access API functions. These KS tokens will have the restrictions of their originating Application Token.
 
 ## Start a Widget Session
-Start an unprivileged session by calling `session.startWidgetSession`. Once the call completes, set the returned `ks` value as the the KS (Kaltura Session) of the client object.
+Start an unprivileged session by calling `session.startWidgetSession`. Once the call completes, set the returned `ks` value as the KS (Kaltura Session) of the client object.
 
 Do not set a KS on the client before making this call.
 
@@ -28,7 +28,7 @@ Do not set a KS on the client before making this call.
 ```
 
 ## Compute the Hash
-Now, compute a hash of the unprivileged Kaltura Session (from the previous step) and the App Token's value, concatenated. This value will be passed to `appToken.startSession` in the following step.
+Compute a hash of the unprivileged Kaltura Session (from the previous step) and the App Token's value, concatenated. This value will be passed to `appToken.startSession` in the following step.
 
 SHA-256 is the default hash function used with Application Tokens. If your Application Token was created with a different hash function (e.g. SHA-1 or MD5), compute that hash instead.
 
