@@ -10,22 +10,27 @@ An Application Token enables clients to provide their development partners or in
 Developers who are provided with an Application Token use it to create temporary Kaltura Session (KS) tokens, which they will then use to access API functions. These KS tokens will have the restrictions of their originating Application Token.
 
 ## Start a Widget Session
-First we'll start an unprivileged session by calling `session.startWidgetSession`
+Start an unprivileged session by calling `session.startWidgetSession`. Once the call completes, set the returned `ks` value as the KS (Kaltura Session) of the client object.
+
+Do not set a KS on the client before making this call.
 
 ### API Call
 ```json
 {
   "method": "get",
-  "path": "/service/session/action/startWidgetSession"
+  "path": "/service/session/action/startWidgetSession",
+  "parameters": [
+    {
+      "name": "widgetId"
+    }
+  ]
 }
 ```
 
-## Compute the hash
-You'll need to compute a hash for the Kaltura Session and App Token, which will be passed to `appToken.startSession`. 
+## Compute the Hash
+Compute a hash of the unprivileged Kaltura Session (from the previous step) and the App Token's value, concatenated. This value will be passed to `appToken.startSession` in the following step.
 
-SHA-1 is the default hash function, but others are allowed as well.
-
-See below for an example of how to compute the hash in NodeJS
+SHA-256 is the default hash function used with Application Tokens. If your Application Token was created with a different hash function (e.g. SHA-1 or MD5), compute that hash instead.
 
 
 ### Sample Code (node)
@@ -35,16 +40,31 @@ var crypto = require('crypto')
 
 shasum.update(client.ks + appToken.token);
 var hash = client.shasum.digest('hex');
-
 ```
 
 ## Start the App Token Session
-Once you've computed the hash, pass it's value to `appToken.startSession()` to retrieve a new Kaltura Session. You should then use this session to set `client.ks`.
+You now pass the the hash from the previous step, together with other parameters, to `appToken.startSession`. This returns a new, privileged Kaltura Session for your application. Set the returned value as the client's KS.
+
+You are now ready to make other API calls!
 
 ### API Call
 ```json
 {
   "method": "get",
-  "path": "/service/apptoken/action/startSession"
+  "path": "/service/apptoken/action/startSession",
+  "parameters": [
+    {
+      "name": "id"
+    },
+    {
+      "name": "tokenHash"
+    },
+    {
+      "name": "userId"
+    },
+    {
+      "name": "expiry"
+    }
+  ]
 }
 ```
