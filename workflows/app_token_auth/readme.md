@@ -14,7 +14,7 @@ Start an unprivileged session by calling `session.startWidgetSession`. Once the 
 
 The widgetId should be a partnerId, with an underscore at the beginning, e.g. `_1234567`.
 
-> Do not set a KS on the client before making this call.
+Do not set a KS on the client before making this call.
 
 ### API Call
 ```json
