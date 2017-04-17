@@ -12,13 +12,16 @@ Developers who are provided with an Application Token use it to create temporary
 ## Start a Widget Session
 Start an unprivileged session by calling `session.startWidgetSession`. Once the call completes, set the returned `ks` value as the KS (Kaltura Session) of the client object.
 
-Do not set a KS on the client before making this call.
+The widgetId should be a partnerId, with an underscore at the beginning, e.g. `_1234567`.
+
+> Do not set a KS on the client before making this call.
 
 ### API Call
 ```json
 {
   "method": "get",
   "path": "/service/session/action/startWidgetSession",
+  "disableSetupCode": true,
   "parameters": [
     {
       "name": "widgetId"
@@ -35,11 +38,49 @@ SHA-256 is the default hash function used with Application Tokens. If your Appli
 
 ### Sample Code (node)
 ```javascript
-var crypto = require('crypto')
-  , shasum = crypto.createHash('sha1');
+var crypto = require('crypto');
+var shasum = crypto.createHash('<%- answers.hashFunction %>');
 
-shasum.update(client.ks + appToken.token);
+client.ks = widgetSession.ks;
+shasum.update(client.ks + "<%- answers.appTokenValue %>");
 var hash = client.shasum.digest('hex');
+```
+
+### Sample Code (csharp)
+```csharp
+client.ks = widgetSession.ks;
+<% if (answers.hashFunction === 'sha1') { -%>
+SHA1 sha = new SHA1CryptoServiceProvider();
+<% } else { -%>
+SHA256 sha = new SHA256CryptoServiceProvider();
+<% } -%>
+byte[] hash = sha.ComputeHash(Encoding.ASCII.GetBytes(client.Ks + "<%- answers.appTokenValue %>"));
+string hashString = "";
+foreach (char c in hash)
+  hashString += string.Format("{0:x2}", (int)c);
+```
+
+### Sample Code (php)
+```php
+$client->setKS(widgetSession->ks);
+<% if (answers.hashFunction === 'sha1') { -%>
+$hashString = sha1($client->ks . "<%- answers.appTokenValue %>");
+<% } else { -%>
+$hashString = hash('sha256', $client->ks . "<%- answers.appTokenValue %>");
+<% } -%>
+```
+
+### API Call
+```json
+{
+  "parameters": [{
+    "name": "appTokenValue"
+  }, {
+    "name": "hashFunction",
+    "enum": ["sha1", "sha256"],
+    "default": "sha256"
+  }]
+}
 ```
 
 ## Start the App Token Session
@@ -52,6 +93,7 @@ You are now ready to make other API calls!
 {
   "method": "get",
   "path": "/service/apptoken/action/startSession",
+  "disableSetupCode": true,
   "parameters": [
     {
       "name": "id"
@@ -61,9 +103,6 @@ You are now ready to make other API calls!
     },
     {
       "name": "userId"
-    },
-    {
-      "name": "expiry"
     }
   ]
 }
