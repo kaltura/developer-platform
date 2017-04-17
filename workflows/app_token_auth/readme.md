@@ -48,7 +48,7 @@ var hash = client.shasum.digest('hex');
 
 ### Sample Code (csharp)
 ```csharp
-client.ks = widgetSession.ks;
+client.Ks = widgetSession.ks;
 <% if (answers.hashFunction === 'sha1') { -%>
 SHA1 sha = new SHA1CryptoServiceProvider();
 <% } else { -%>
@@ -62,7 +62,7 @@ foreach (char c in hash)
 
 ### Sample Code (php)
 ```php
-$client->setKS(widgetSession->ks);
+$client->setKS($widgetSession->ks);
 <% if (answers.hashFunction === 'sha1') { -%>
 $hashString = sha1($client->ks . "<%- answers.appTokenValue %>");
 <% } else { -%>
