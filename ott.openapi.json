@@ -7020,10 +7020,10 @@
       "title": "KalturaValue"
     }
   },
-  "host": "tvpapi-us-preprod.ott.kaltura.com",
+  "host": "www.kaltura.com",
   "info": {
-    "description": "The Kaltura OTT API",
-    "title": "Kaltura OTT",
+    "description": "The Kaltura API",
+    "title": "Kaltura",
     "version": "3.6.1542.28904"
   },
   "parameters": {
@@ -7044,6 +7044,12 @@
         "PHP"
       ],
       "x-global": true
+    },
+    "ks": {
+      "in": "query",
+      "name": "ks",
+      "type": "string",
+      "x-global": true
     }
   },
   "paths": {
@@ -7052,6 +7058,9 @@
         "description": "Add a new future scheduled system announcement push notification",
         "operationId": "announcement.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -7138,13 +7147,16 @@
         "operationId": "announcement.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Id of the announcement.",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -7170,6 +7182,9 @@
         "operationId": "announcement.enableSystemAnnouncements",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -7194,6 +7209,9 @@
         "description": "Lists all announcements in the system.",
         "operationId": "announcement.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -7265,13 +7283,16 @@
         "operationId": "announcement.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The announcement identifier",
             "in": "query",
             "name": "announcementId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -7357,20 +7378,23 @@
         "operationId": "announcement.updateStatus",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Id of the announcement.",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Status to update to.",
             "in": "query",
             "name": "status",
-            "required": false,
+            "required": true,
             "type": "boolean"
           }
         ],
@@ -7395,6 +7419,9 @@
         "description": "Add new application authentication token",
         "operationId": "appToken.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -7499,13 +7526,16 @@
         "operationId": "appToken.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Application token identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -7528,13 +7558,16 @@
         "operationId": "appToken.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Application token identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-dynamicEnum": {
               "array": "objects",
@@ -7571,14 +7604,14 @@
             "description": "application token id",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "hashed token - current KS concatenated with the application token hashed using the application token ‘hashType’",
             "in": "query",
             "name": "tokenHash",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -7641,13 +7674,16 @@
         "operationId": "asset.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Asset identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-dynamicEnum": {
               "array": "objects",
@@ -7667,7 +7703,7 @@
             ],
             "in": "query",
             "name": "assetReferenceType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "MEDIA",
@@ -7698,6 +7734,9 @@
         "description": "Returns media or EPG assets. Filters by media identifiers or by EPG internal or external identifier.",
         "operationId": "asset.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -7997,6 +8036,9 @@
         "operationId": "assetComment.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -8097,6 +8139,9 @@
         "operationId": "assetComment.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -8189,13 +8234,16 @@
         "operationId": "assetFile.getContext",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Asset file identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -8206,7 +8254,7 @@
             ],
             "in": "query",
             "name": "contextType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "NONE",
@@ -8233,6 +8281,9 @@
         "description": "Get recently watched media for user, ordered by recently watched first.",
         "operationId": "assetHistory.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -8340,6 +8391,9 @@
         "operationId": "assetStatistics.query",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -8410,6 +8464,9 @@
         "description": "Report player position and action for the user on the watched asset. Player position is used to later allow resume watching.",
         "operationId": "bookmark.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -8550,6 +8607,9 @@
         "operationId": "bookmark.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -8625,6 +8685,9 @@
         "operationId": "cdnAdapterProfile.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -8695,13 +8758,16 @@
         "operationId": "cdnAdapterProfile.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "CDN adapter identifier",
             "in": "query",
             "name": "adapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -8727,13 +8793,16 @@
         "operationId": "cdnAdapterProfile.generateSharedSecret",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "CDN adapter identifier",
             "in": "query",
             "name": "adapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -8759,6 +8828,9 @@
         "operationId": "cdnAdapterProfile.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -8781,13 +8853,16 @@
         "operationId": "cdnAdapterProfile.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "CDN adapter id to update",
             "in": "query",
             "name": "adapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -8858,6 +8933,9 @@
         "operationId": "cdnPartnerSettings.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -8882,6 +8960,9 @@
         "description": "Configure the partner’s CDN settings (default adapters)",
         "operationId": "cdnPartnerSettings.update",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -8931,6 +9012,9 @@
         "description": "Insert new C-DVR adapter for partner",
         "operationId": "cDVRAdapterProfile.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -9002,13 +9086,16 @@
         "operationId": "cDVRAdapterProfile.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "C-DVR adapter identifier",
             "in": "query",
             "name": "adapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -9034,13 +9121,16 @@
         "operationId": "cDVRAdapterProfile.generateSharedSecret",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "C-DVR adapter identifier",
             "in": "query",
             "name": "adapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -9066,6 +9156,9 @@
         "operationId": "cDVRAdapterProfile.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -9088,13 +9181,16 @@
         "operationId": "cDVRAdapterProfile.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "C-DVR adapter identifier",
             "in": "query",
             "name": "adapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -9164,6 +9260,9 @@
         "description": "Insert new channel for partner. Currently supports only KSQL channel",
         "operationId": "channel.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -9258,13 +9357,16 @@
         "operationId": "channel.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "channel identifier",
             "in": "query",
             "name": "channelId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -9290,13 +9392,16 @@
         "operationId": "channel.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Channel Identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -9327,13 +9432,16 @@
         "operationId": "channel.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Channel identifier",
             "in": "query",
             "name": "channelId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -9427,6 +9535,9 @@
         "operationId": "configurationGroup.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -9476,13 +9587,16 @@
         "operationId": "configurationGroup.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Configuration group identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -9508,13 +9622,16 @@
         "operationId": "configurationGroup.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Configuration group identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-dynamicEnum": {
               "array": "objects",
@@ -9548,6 +9665,9 @@
         "operationId": "configurationGroup.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -9573,13 +9693,16 @@
         "operationId": "configurationGroup.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Configuration group identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -9628,6 +9751,9 @@
         "description": "Associate a collection of devices to a configuration group. If a device is already associated to another group – old association is replaced",
         "operationId": "configurationGroupDevice.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -9678,13 +9804,16 @@
         "operationId": "configurationGroupDevice.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -9710,13 +9839,16 @@
         "operationId": "configurationGroupDevice.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -9741,6 +9873,9 @@
         "description": "Return the list of associated devices for a given configuration group",
         "operationId": "configurationGroupDevice.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -9818,6 +9953,9 @@
         "operationId": "configurationGroupTag.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -9867,13 +10005,16 @@
         "operationId": "configurationGroupTag.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Tag",
             "in": "query",
             "name": "tag",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -9899,13 +10040,16 @@
         "operationId": "configurationGroupTag.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Tag",
             "in": "query",
             "name": "tag",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -9930,6 +10074,9 @@
         "description": "Return list of tags for a configuration group",
         "operationId": "configurationGroupTag.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -9984,6 +10131,9 @@
         "description": "Add a new device configuration to a configuration group",
         "operationId": "configurations.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -10088,13 +10238,16 @@
         "operationId": "configurations.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Configuration identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -10120,13 +10273,16 @@
         "operationId": "configurations.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Configuration identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-dynamicEnum": {
               "array": "objects",
@@ -10159,6 +10315,9 @@
         "description": "Return a list of device configurations of a configuration group",
         "operationId": "configurations.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -10214,41 +10373,44 @@
         "operationId": "configurations.serveByDevice",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Application name",
             "in": "query",
             "name": "applicationName",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Client version",
             "in": "query",
             "name": "clientVersion",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "platform",
             "in": "query",
             "name": "platform",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Tag",
             "in": "query",
             "name": "tag",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -10281,13 +10443,16 @@
         "operationId": "configurations.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Configuration identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -10391,6 +10556,9 @@
         "operationId": "country.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -10443,13 +10611,16 @@
         "operationId": "coupon.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Coupon code",
             "in": "query",
             "name": "code",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -10475,6 +10646,9 @@
         "operationId": "deviceBrand.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -10496,6 +10670,9 @@
         "description": "Return a list of the available device families.",
         "operationId": "deviceFamily.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -10519,13 +10696,16 @@
         "operationId": "entitlement.cancel",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The mediaFileID to cancel",
             "in": "query",
             "name": "assetId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -10537,7 +10717,7 @@
             ],
             "in": "query",
             "name": "transactionType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PPV",
@@ -10569,13 +10749,16 @@
         "operationId": "entitlement.cancelRenewal",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Subscription Code",
             "in": "query",
             "name": "subscriptionId",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -10597,6 +10780,9 @@
         "description": "Reconcile the user household&#39;s entitlements with an external entitlements source. This request is frequency protected to avoid too frequent calls per household.",
         "operationId": "entitlement.externalReconcile",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -10623,13 +10809,16 @@
         "operationId": "entitlement.forceCancel",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The mediaFileID to cancel",
             "in": "query",
             "name": "assetId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -10641,7 +10830,7 @@
             ],
             "in": "query",
             "name": "transactionType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PPV",
@@ -10673,13 +10862,16 @@
         "operationId": "entitlement.grant",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Identifier for the product package from which this content is offered",
             "in": "query",
             "name": "productId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -10691,7 +10883,7 @@
             ],
             "in": "query",
             "name": "productType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PPV",
@@ -10704,7 +10896,7 @@
             "description": "Controls if the new entitlements grant will appear in the user’s history. True – will add a history entry. False (or if ommited) – no history entry will be added",
             "in": "query",
             "name": "history",
-            "required": false,
+            "required": true,
             "type": "boolean"
           },
           {
@@ -10736,6 +10928,9 @@
         "description": "Gets all the entitled media items for a household",
         "operationId": "entitlement.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -10847,6 +11042,9 @@
         "operationId": "exportTask.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -10955,13 +11153,16 @@
         "operationId": "exportTask.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The identifier of the task to delete",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -10984,13 +11185,16 @@
         "operationId": "exportTask.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The identifier of the task to get",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -11020,6 +11224,9 @@
         "description": "Returns bulk export tasks by tasks identifiers",
         "operationId": "exportTask.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -11075,13 +11282,16 @@
         "operationId": "exportTask.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The task id to update",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -11190,6 +11400,9 @@
         "operationId": "externalChannelProfile.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -11260,13 +11473,16 @@
         "operationId": "externalChannelProfile.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "External channel identifier",
             "in": "query",
             "name": "externalChannelId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -11292,6 +11508,9 @@
         "operationId": "externalChannelProfile.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -11314,13 +11533,16 @@
         "operationId": "externalChannelProfile.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "External channel identifier",
             "in": "query",
             "name": "externalChannelId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -11391,6 +11613,9 @@
         "operationId": "favorite.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -11440,13 +11665,16 @@
         "operationId": "favorite.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Media identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -11471,6 +11699,9 @@
         "description": "Retrieving users&#39; favorites",
         "operationId": "favorite.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -11536,6 +11767,9 @@
         "operationId": "followTvSeries.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -11578,12 +11812,15 @@
         "operationId": "followTvSeries.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "in": "query",
             "name": "assetId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -11608,6 +11845,9 @@
         "description": "List user&#39;s tv series follows.\r\n            Possible status codes:",
         "operationId": "followTvSeries.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -11678,6 +11918,9 @@
         "operationId": "homeNetwork.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -11741,13 +11984,16 @@
         "operationId": "homeNetwork.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The network to update",
             "in": "query",
             "name": "externalId",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -11773,6 +12019,9 @@
         "operationId": "homeNetwork.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -11795,13 +12044,16 @@
         "operationId": "homeNetwork.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Home network identifier",
             "in": "query",
             "name": "externalId",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -11865,6 +12117,9 @@
         "operationId": "household.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -11921,13 +12176,16 @@
         "operationId": "household.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Household identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -11949,6 +12207,9 @@
         "description": "Returns the household model",
         "operationId": "household.get",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -11990,6 +12251,9 @@
         "operationId": "household.resetFrequency",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -12000,7 +12264,7 @@
             ],
             "in": "query",
             "name": "frequencyType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "DEVICES",
@@ -12028,6 +12292,9 @@
         "operationId": "household.resume",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -12053,6 +12320,9 @@
         "operationId": "household.suspend",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -12077,6 +12347,9 @@
         "description": "Update the household name and description",
         "operationId": "household.update",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -12130,6 +12403,9 @@
         "description": "Add device to household",
         "operationId": "householdDevice.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -12201,20 +12477,23 @@
         "operationId": "householdDevice.addByPin",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device name",
             "in": "query",
             "name": "deviceName",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Pin code",
             "in": "query",
             "name": "pin",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -12240,13 +12519,16 @@
         "operationId": "householdDevice.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -12272,20 +12554,23 @@
         "operationId": "householdDevice.generatePin",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Device brand identifier",
             "in": "query",
             "name": "brandId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -12307,6 +12592,9 @@
         "description": "Returns device registration status to the supplied household",
         "operationId": "householdDevice.get",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -12332,6 +12620,9 @@
         "description": "Returns the devices within the household",
         "operationId": "householdDevice.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -12395,13 +12686,16 @@
         "operationId": "householdDevice.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -12472,13 +12766,16 @@
         "operationId": "householdDevice.updateStatus",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -12490,7 +12787,7 @@
             ],
             "in": "query",
             "name": "status",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PENDING",
@@ -12522,12 +12819,15 @@
         "operationId": "householdLimitations.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -12558,13 +12858,16 @@
         "operationId": "householdPaymentGateway.disable",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment Gateway Identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -12590,13 +12893,16 @@
         "operationId": "householdPaymentGateway.enable",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment Gateway Identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -12622,13 +12928,16 @@
         "operationId": "householdPaymentGateway.getChargeID",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "External identifier for the payment gateway",
             "in": "query",
             "name": "paymentGatewayExternalId",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -12654,20 +12963,23 @@
         "operationId": "householdPaymentGateway.invoke",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The payemnt gateway for which to return the registration URL/s for the household. If omitted – return the regisration URL for the household for the default payment gateway",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Represent the client’s intent for working with the payment gateway. Intent options to be coordinated with the applicable payment gateway adapter.",
             "in": "query",
             "name": "intent",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -12692,6 +13004,9 @@
         "description": "Get a list of all configured Payment Gateways providers available for the account. For each payment is provided with the household associated payment methods.",
         "operationId": "householdPaymentGateway.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -12718,20 +13033,23 @@
         "operationId": "householdPaymentGateway.setChargeID",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "External identifier for the payment gateway",
             "in": "query",
             "name": "paymentGatewayExternalId",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "The billing user account identifier for this household at the given payment gateway",
             "in": "query",
             "name": "chargeId",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -12756,6 +13074,9 @@
         "description": "Add a new payment method for household",
         "operationId": "householdPaymentMethod.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -12820,20 +13141,23 @@
         "operationId": "householdPaymentMethod.forceRemove",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment Gateway Identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Payment method Identifier",
             "in": "query",
             "name": "paymentMethodId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -12858,6 +13182,9 @@
         "description": "Get a list of all payment methods of the household.",
         "operationId": "householdPaymentMethod.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -12884,20 +13211,23 @@
         "operationId": "householdPaymentMethod.remove",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment Gateway Identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Payment method Identifier",
             "in": "query",
             "name": "paymentMethodId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -12923,20 +13253,23 @@
         "operationId": "householdPaymentMethod.setAsDefault",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment Gateway Identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Payment method Identifier",
             "in": "query",
             "name": "paymentMethodId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -12962,6 +13295,9 @@
         "operationId": "householdPremiumService.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -12984,6 +13320,9 @@
         "operationId": "householdQuota.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -13005,6 +13344,9 @@
         "description": "Adds a user to household",
         "operationId": "householdUser.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -13069,13 +13411,16 @@
         "operationId": "householdUser.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The identifier of the user to delete",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -13100,6 +13445,9 @@
         "description": "Returns the users within the household",
         "operationId": "householdUser.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -13156,13 +13504,16 @@
         "operationId": "inboxMessage.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "message id",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-dynamicEnum": {
               "array": "objects",
@@ -13195,6 +13546,9 @@
         "description": "List inbox messages",
         "operationId": "inboxMessage.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -13287,12 +13641,15 @@
         "operationId": "inboxMessage.updateStatus",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -13304,7 +13661,7 @@
             ],
             "in": "query",
             "name": "status",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "UNREAD",
@@ -13332,6 +13689,9 @@
         "description": "Get the URL for playing an asset - program, media or recording",
         "operationId": "licensedUrl.get",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -13463,6 +13823,9 @@
         "operationId": "messageTemplate.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -13472,7 +13835,7 @@
             ],
             "in": "query",
             "name": "assetType",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-enumLabels": [
               "SERIES"
@@ -13499,6 +13862,9 @@
         "operationId": "messageTemplate.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -13508,7 +13874,7 @@
             ],
             "in": "query",
             "name": "assetType",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-enumLabels": [
               "SERIES"
@@ -13593,6 +13959,9 @@
         "description": "Get the list of meta mappings for the partner",
         "operationId": "meta.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -13717,6 +14086,9 @@
         "operationId": "notification.initiateCleanup",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -13739,13 +14111,16 @@
         "operationId": "notification.register",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "In case type is \"announcement\", identifier should be the announcement ID. In case type is \"system\", identifier should be \"login\" (the login topic)",
             "in": "query",
             "name": "identifier",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -13756,7 +14131,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "ANNOUNCEMENT",
@@ -13784,13 +14159,16 @@
         "operationId": "notification.setDevicePushToken",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The device-application pair authentication for push delivery",
             "in": "query",
             "name": "pushToken",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -13813,6 +14191,9 @@
         "operationId": "notificationsPartnerSettings.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -13834,6 +14215,9 @@
         "description": "Update the account notification settings",
         "operationId": "notificationsPartnerSettings.update",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -13933,6 +14317,9 @@
         "operationId": "notificationsSettings.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -13954,6 +14341,9 @@
         "description": "Update the user’s notification settings.",
         "operationId": "notificationsSettings.update",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -14000,6 +14390,9 @@
         "description": "Insert new OSS adapter for partner",
         "operationId": "ossAdapterProfile.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -14064,13 +14457,16 @@
         "operationId": "ossAdapterProfile.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "OSS adapter identifier",
             "in": "query",
             "name": "ossAdapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -14096,13 +14492,16 @@
         "operationId": "ossAdapterProfile.generateSharedSecret",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "OSS adapter identifier",
             "in": "query",
             "name": "ossAdapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -14128,12 +14527,15 @@
         "operationId": "ossAdapterProfile.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -14164,6 +14566,9 @@
         "operationId": "ossAdapterProfile.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -14186,13 +14591,16 @@
         "operationId": "ossAdapterProfile.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "OSS adapter identifier",
             "in": "query",
             "name": "ossAdapterId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -14256,13 +14664,16 @@
         "operationId": "ottCategory.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Category Identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -14293,27 +14704,30 @@
         "operationId": "ottUser.activate",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The partner ID",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Username of the user to activate",
             "in": "query",
             "name": "username",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Activation token of the user",
             "in": "query",
             "name": "activationToken",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -14336,13 +14750,16 @@
         "operationId": "ottUser.addRole",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The role identifier to add",
             "in": "query",
             "name": "roleId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -14365,13 +14782,16 @@
         "operationId": "ottUser.anonymousLogin",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The partner ID",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -14401,6 +14821,9 @@
         "operationId": "ottUser.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -14425,6 +14848,9 @@
         "description": "Retrieving users&#39; data",
         "operationId": "ottUser.get",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -14451,6 +14877,9 @@
         "operationId": "ottUser.getEncryptedUserId",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -14472,6 +14901,9 @@
         "description": "Retrieve user by external identifier or username or if filter is null all user in the master or the user itself",
         "operationId": "ottUser.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -14542,13 +14974,16 @@
         "operationId": "ottUser.login",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner Identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -14603,20 +15038,23 @@
         "operationId": "ottUser.loginWithPin",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner Identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "pin code",
             "in": "query",
             "name": "pin",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -14656,6 +15094,9 @@
         "operationId": "ottUser.logout",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -14678,13 +15119,16 @@
         "operationId": "ottUser.refreshSession",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Refresh token",
             "in": "query",
             "name": "refreshToken",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -14717,13 +15161,16 @@
         "operationId": "ottUser.register",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -14814,7 +15261,7 @@
             "description": "password",
             "in": "query",
             "name": "password",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-inputType": "password"
           }
@@ -14855,20 +15302,23 @@
         "operationId": "ottUser.resendActivationToken",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The partner ID",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Username of the user to activate",
             "in": "query",
             "name": "username",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -14891,20 +15341,23 @@
         "operationId": "ottUser.resetPassword",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner Identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "user name",
             "in": "query",
             "name": "username",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -14927,27 +15380,30 @@
         "operationId": "ottUser.setInitialPassword",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner Identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Token that sent by e-mail",
             "in": "query",
             "name": "token",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "New password",
             "in": "query",
             "name": "password",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-inputType": "password"
           }
@@ -14973,6 +15429,9 @@
         "description": "Update user information",
         "operationId": "ottUser.update",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -15097,27 +15556,30 @@
         "operationId": "ottUser.updateLoginData",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "user name",
             "in": "query",
             "name": "username",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "old password",
             "in": "query",
             "name": "oldPassword",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "new password",
             "in": "query",
             "name": "newPassword",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -15143,13 +15605,16 @@
         "operationId": "parentalRule.disable",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Rule Identifier",
             "in": "query",
             "name": "ruleId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -15160,7 +15625,7 @@
             ],
             "in": "query",
             "name": "entityReference",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "USER",
@@ -15191,6 +15656,9 @@
         "operationId": "parentalRule.disableDefault",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -15201,7 +15669,7 @@
             ],
             "in": "query",
             "name": "entityReference",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "USER",
@@ -15232,13 +15700,16 @@
         "operationId": "parentalRule.enable",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Rule Identifier",
             "in": "query",
             "name": "ruleId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -15249,7 +15720,7 @@
             ],
             "in": "query",
             "name": "entityReference",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "USER",
@@ -15279,6 +15750,9 @@
         "description": "Return the parental rules that applies for the user or household. Can include rules that have been associated in account, household, or user level.\r\n            Association level is also specified in the response.",
         "operationId": "parentalRule.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -15343,6 +15817,9 @@
         "description": "Update Partner Configuration",
         "operationId": "partnerConfiguration.update",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -15421,6 +15898,9 @@
         "description": "Insert new payment gateway for partner",
         "operationId": "paymentGatewayProfile.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -15566,13 +16046,16 @@
         "operationId": "paymentGatewayProfile.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment Gateway Identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -15598,13 +16081,16 @@
         "operationId": "paymentGatewayProfile.generateSharedSecret",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment gateway identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -15630,20 +16116,23 @@
         "operationId": "paymentGatewayProfile.getConfiguration",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The payemnt gateway for which to return the registration URL/s for the household. If omitted – return the regisration URL for the household for the default payment gateway",
             "in": "query",
             "name": "alias",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Represent the client’s intent for working with the payment gateway. Intent options to be coordinated with the applicable payment gateway adapter.",
             "in": "query",
             "name": "intent",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -15669,6 +16158,9 @@
         "operationId": "paymentGatewayProfile.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -15691,13 +16183,16 @@
         "operationId": "paymentGatewayProfile.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment Gateway Identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -15842,6 +16337,9 @@
         "operationId": "paymentMethodProfile.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -15898,13 +16396,16 @@
         "operationId": "paymentMethodProfile.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment method identifier to delete",
             "in": "query",
             "name": "paymentMethodId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -15929,6 +16430,9 @@
         "description": "TBD",
         "operationId": "paymentMethodProfile.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -15985,13 +16489,16 @@
         "operationId": "paymentMethodProfile.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment method identifier to update",
             "in": "query",
             "name": "paymentMethodId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -16047,6 +16554,9 @@
         "description": "List user&#39;s feeds.\r\n            Possible status codes:",
         "operationId": "personalFeed.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -16129,6 +16639,9 @@
         "operationId": "pin.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -16139,7 +16652,7 @@
             ],
             "in": "query",
             "name": "by",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "USER",
@@ -16155,7 +16668,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PURCHASE",
@@ -16193,6 +16706,9 @@
         "operationId": "pin.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -16203,7 +16719,7 @@
             ],
             "in": "query",
             "name": "by",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "USER",
@@ -16219,7 +16735,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PURCHASE",
@@ -16343,13 +16859,16 @@
         "operationId": "pin.validate",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "PIN to validate",
             "in": "query",
             "name": "pin",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -16360,7 +16879,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PURCHASE",
@@ -16398,13 +16917,16 @@
         "operationId": "ppv.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "ppv identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -16434,6 +16956,9 @@
         "description": "Returns a price and a purchase status for each subscription or/and media file, for a given user (if passed) and with the consideration of a coupon code (if passed).",
         "operationId": "productPrice.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -16510,6 +17035,9 @@
         "operationId": "purchaseSettings.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -16520,7 +17048,7 @@
             ],
             "in": "query",
             "name": "by",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "USER",
@@ -16551,6 +17079,9 @@
         "operationId": "purchaseSettings.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -16561,7 +17092,7 @@
             ],
             "in": "query",
             "name": "entityReference",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "USER",
@@ -16663,6 +17194,9 @@
         "operationId": "recommendationProfile.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -16726,13 +17260,16 @@
         "operationId": "recommendationProfile.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "recommendation engine Identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -16758,13 +17295,16 @@
         "operationId": "recommendationProfile.generateSharedSecret",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "recommendation engine Identifier",
             "in": "query",
             "name": "recommendationEngineId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -16790,6 +17330,9 @@
         "operationId": "recommendationProfile.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -16812,13 +17355,16 @@
         "operationId": "recommendationProfile.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "recommendation engine identifier",
             "in": "query",
             "name": "recommendationEngineId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -16882,6 +17428,9 @@
         "operationId": "recording.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -16924,13 +17473,16 @@
         "operationId": "recording.cancel",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -16956,13 +17508,16 @@
         "operationId": "recording.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -16988,13 +17543,16 @@
         "operationId": "recording.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -17027,6 +17585,9 @@
         "description": "Return a list of recordings for the household with optional filter by status and KSQL.",
         "operationId": "recording.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -17118,13 +17679,16 @@
         "operationId": "recording.protect",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -17149,6 +17713,9 @@
         "description": "Returns all regions for the partner",
         "operationId": "region.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -17204,6 +17771,9 @@
         "operationId": "registrySettings.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -17226,13 +17796,16 @@
         "operationId": "report.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device UDID",
             "in": "query",
             "name": "udid",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -17257,6 +17830,9 @@
         "description": "Return device configurations retrieval log. Supports paging and can be filtered with the parameter &quot;FromData&quot;.",
         "operationId": "report.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -17349,6 +17925,9 @@
         "operationId": "seriesRecording.add",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -17430,13 +18009,16 @@
         "operationId": "seriesRecording.cancel",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Series Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -17462,20 +18044,23 @@
         "operationId": "seriesRecording.cancelByEpgId",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Series Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "epg program identifier",
             "in": "query",
             "name": "epgId",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -17501,20 +18086,23 @@
         "operationId": "seriesRecording.cancelBySeasonNumber",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Series Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Season Number",
             "in": "query",
             "name": "seasonNumber",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -17540,13 +18128,16 @@
         "operationId": "seriesRecording.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Series Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -17572,20 +18163,23 @@
         "operationId": "seriesRecording.deleteBySeasonNumber",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Series Recording identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Season Number",
             "in": "query",
             "name": "seasonNumber",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -17610,6 +18204,9 @@
         "description": "Return a list of series recordings for the household with optional filter by status and KSQL.",
         "operationId": "seriesRecording.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -17669,6 +18266,9 @@
         "operationId": "session.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -17698,13 +18298,16 @@
         "operationId": "session.switchUser",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "The identifier of the user to change",
             "in": "query",
             "name": "userIdToSwitch",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -17726,6 +18329,9 @@
         "description": "Set the user social network’s configuration information",
         "operationId": "social.UpdateConfiguration",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -17795,6 +18401,9 @@
         "operationId": "social.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -17804,7 +18413,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "FACEBOOK"
@@ -17831,20 +18440,23 @@
         "operationId": "social.getByToken",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Social token",
             "in": "query",
             "name": "token",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -17854,7 +18466,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "FACEBOOK"
@@ -17884,6 +18496,9 @@
         "operationId": "social.getConfiguration",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -17893,7 +18508,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "FACEBOOK"
@@ -17927,20 +18542,23 @@
         "operationId": "social.login",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "Social token",
             "in": "query",
             "name": "token",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -17950,7 +18568,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "FACEBOOK"
@@ -17987,13 +18605,16 @@
         "operationId": "social.merge",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "social token",
             "in": "query",
             "name": "token",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -18003,7 +18624,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "FACEBOOK"
@@ -18033,20 +18654,23 @@
         "operationId": "social.register",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Partner identifier",
             "in": "query",
             "name": "partnerId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
             "description": "social token",
             "in": "query",
             "name": "token",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -18056,7 +18680,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "FACEBOOK"
@@ -18093,6 +18717,9 @@
         "operationId": "social.unmerge",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -18102,7 +18729,7 @@
             ],
             "in": "query",
             "name": "type",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "FACEBOOK"
@@ -18131,6 +18758,9 @@
         "description": "Insert new user social action",
         "operationId": "socialAction.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -18245,12 +18875,15 @@
         "operationId": "socialAction.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -18275,6 +18908,9 @@
         "description": "Get list of user social actions",
         "operationId": "socialAction.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -18374,6 +19010,9 @@
         "description": "Get a list of all social comments filtered by asset ID and social platform",
         "operationId": "socialComment.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -18494,6 +19133,9 @@
         "operationId": "socialFriendActivity.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -18593,6 +19235,9 @@
         "operationId": "subscription.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -18654,6 +19299,9 @@
         "operationId": "system.getCountry",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -18686,6 +19334,9 @@
         "operationId": "system.getTime",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -18707,6 +19358,9 @@
         "description": "Returns current server version",
         "operationId": "system.getVersion",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -18730,6 +19384,9 @@
         "operationId": "system.ping",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           }
         ],
@@ -18751,6 +19408,9 @@
         "description": "Retrieve the account’s time-shifted TV settings (catch-up and C-DVR, Trick-play, Start-over)",
         "operationId": "timeShiftedTvPartnerSettings.get",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -18776,6 +19436,9 @@
         "description": "Configure the account’s time-shifted TV settings (catch-up and C-DVR, Trick-play, Start-over)",
         "operationId": "timeShiftedTvPartnerSettings.update",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -18938,13 +19601,16 @@
         "operationId": "topic.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Topic identifier",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           }
         ],
@@ -18967,13 +19633,16 @@
         "operationId": "topic.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "topic id",
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer",
             "x-dynamicEnum": {
               "array": "objects",
@@ -19003,6 +19672,9 @@
         "description": "TBD",
         "operationId": "topic.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -19071,12 +19743,15 @@
         "operationId": "topic.updateStatus",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "in": "query",
             "name": "id",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -19088,7 +19763,7 @@
             ],
             "in": "query",
             "name": "automaticIssueNotification",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "INHERIT",
@@ -19116,6 +19791,9 @@
         "description": "Retrieve the purchase session identifier",
         "operationId": "transaction.getPurchaseSessionId",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -19229,6 +19907,9 @@
         "description": "Purchase specific product or subscription for a household. Upon successful charge entitlements to use the requested product or subscription are granted.",
         "operationId": "transaction.purchase",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -19361,13 +20042,16 @@
         "operationId": "transaction.setWaiver",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Asset identifier",
             "in": "query",
             "name": "assetId",
-            "required": false,
+            "required": true,
             "type": "integer"
           },
           {
@@ -19379,7 +20063,7 @@
             ],
             "in": "query",
             "name": "transactionType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "PPV",
@@ -19408,27 +20092,30 @@
         "operationId": "transaction.updateStatus",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Payment gateway identifier",
             "in": "query",
             "name": "paymentGatewayId",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "external transaction identifier",
             "in": "query",
             "name": "externalTransactionId",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
             "description": "Security signature to validate the caller is a payment gateway adapter application",
             "in": "query",
             "name": "signature",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -19503,6 +20190,9 @@
         "description": "Verifies PPV/Subscription/Collection client purchase (such as InApp) and entitles the user.",
         "operationId": "transaction.validateReceipt",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -19581,6 +20271,9 @@
         "description": "Gets user or household transaction history.",
         "operationId": "transactionHistory.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -19681,6 +20374,9 @@
         "operationId": "userAssetRule.list",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
@@ -19744,6 +20440,9 @@
         "description": "Adds a new item to user’s private asset list",
         "operationId": "userAssetsListItem.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -19827,13 +20526,16 @@
         "operationId": "userAssetsListItem.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Asset id to delete",
             "in": "query",
             "name": "assetId",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -19846,7 +20548,7 @@
             ],
             "in": "query",
             "name": "listType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "ALL",
@@ -19879,13 +20581,16 @@
         "operationId": "userAssetsListItem.get",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Asset id to get",
             "in": "query",
             "name": "assetId",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -19898,7 +20603,7 @@
             ],
             "in": "query",
             "name": "listType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "ALL",
@@ -19916,7 +20621,7 @@
             ],
             "in": "query",
             "name": "itemType",
-            "required": false,
+            "required": true,
             "type": "string",
             "x-enumLabels": [
               "ALL",
@@ -19946,6 +20651,9 @@
         "description": "Generate a time and usage expiry login-PIN that can allow a single login per PIN. If an active login-PIN already exists. Calling this API again for same user will add another login-PIN",
         "operationId": "userLoginPin.add",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
@@ -19979,13 +20687,16 @@
         "operationId": "userLoginPin.delete",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Login pin code to expire",
             "in": "query",
             "name": "pinCode",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -20007,6 +20718,9 @@
         "description": "Immediately expire all active login-PINs for a user",
         "operationId": "userLoginPin.deleteAll",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           }
@@ -20030,13 +20744,16 @@
         "operationId": "userLoginPin.update",
         "parameters": [
           {
+            "$ref": "#/parameters/ks"
+          },
+          {
             "$ref": "#/parameters/format"
           },
           {
             "description": "Device Identifier",
             "in": "query",
             "name": "pinCode",
-            "required": false,
+            "required": true,
             "type": "string"
           },
           {
@@ -20068,6 +20785,9 @@
         "description": "Retrieving user roles by identifiers, if filter is empty, returns all partner roles",
         "operationId": "userRole.list",
         "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
           {
             "$ref": "#/parameters/format"
           },
