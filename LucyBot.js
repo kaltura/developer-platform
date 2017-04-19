@@ -33,7 +33,7 @@ function makeEnumItem(name) {
 
 if (TARGET_API === 'ott') {
   let tagItems = openapi.tags.map(t => ({tag: t.name}));
-  config.operationNavigation = config.operationNavigation.concat(tagItems);
+  config.operationNavigation.push({children: tagItems, title: 'Services'});
 }
 
 let objectsItem = {title: 'General Objects', children: [], prerender: false};
