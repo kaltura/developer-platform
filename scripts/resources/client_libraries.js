@@ -8,7 +8,7 @@ var clientMD = '';
 const LINKS = {
   ott: {
     genDate: '26-02-2017',
-    version: '3.6.1542.28904',
+    version: '4.1',
     baseURL: 'https://tvpapi-us-preprod.ott.kaltura.com/v4_1/clientlibs/',
   },
   ovp: {
