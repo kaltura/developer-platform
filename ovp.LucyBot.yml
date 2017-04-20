@@ -288,8 +288,6 @@ operationNavigation:
       - tag: "system"
       - tag: "storageProfile"
         hidden: true
-  - title: "General Objects"
-    prerender: false
 
 workflowNavigation:
   - title: Generate API Sessions
