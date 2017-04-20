@@ -3,7 +3,7 @@
 Building video experiences consists of ingesting media files, playing back videos, and reviewing usage and engagement analytics. In between, there is a world of nuances required for your unique use-case and application. Kaltura VPaaS is built on the principles of atomic services, SDKs, and tools that allow you full control and flexibility over every element and process in your media’s lifecycle.
 
 ## Tools and Guides
-The [Kaltura Developer Tools](https://developer.kaltura.com) and the [VPaaS Developer Guides](https://vpaas.kaltura.com/documentation/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html), enable you to get started building your own video experiences and workflows, and provide you with everything you need to further explore the platform’s capabilities and to become an expert.
+The Kaltura Developer Tools and the [VPaaS Developer Guides](https://vpaas.kaltura.com/documentation/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html), enable you to get started building your own video experiences and workflows, and provide you with everything you need to further explore the platform’s capabilities and to become an expert.
 
 If you're just starting out with Kaltura, we recommend reading: [Getting Started with Kaltura VPaaS](https://vpaas.kaltura.com/documentation/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
 
