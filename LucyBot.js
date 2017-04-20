@@ -59,6 +59,8 @@ config.operationNavigation.push({
   title: "Error Codes",
   markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => {
     let str = '* `' + e.name + '`';
+    if (e.code && e.code !== e.name) str += ' (code: ' + e.code + ')';
+    let desc = e.message
     if (e.message) str += ' - ' + e.message;
     return str;
   }).join('\n'),

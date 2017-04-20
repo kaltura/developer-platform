@@ -23503,976 +23503,1284 @@
   },
   "x-errors": [
     {
+      "code": "1000",
       "name": "DomainAlreadyExists"
     },
     {
+      "code": "1001",
       "name": "ExceededLimit"
     },
     {
+      "code": "1002",
       "name": "DeviceTypeNotAllowed"
     },
     {
+      "code": "1003",
       "name": "DeviceNotInDomain"
     },
     {
+      "code": "1004",
       "name": "MasterEmailAlreadyExists"
     },
     {
+      "code": "1005",
       "name": "UserNotInDomain"
     },
     {
+      "code": "1006",
       "name": "DomainNotExists"
     },
     {
+      "code": "1007",
       "name": "HouseholdUserFailed"
     },
     {
+      "code": "1008",
       "name": "DomainCreatedWithoutNPVRAccount"
     },
     {
+      "code": "1009",
       "name": "DomainSuspended"
     },
     {
+      "code": "1010",
       "name": "DlmNotExist"
     },
     {
+      "code": "1011",
       "name": "WrongPasswordOrUserName"
     },
     {
+      "code": "1012",
       "name": "DomainAlreadySuspended"
     },
     {
+      "code": "1013",
       "name": "DomainAlreadyActive"
     },
     {
+      "code": "1014",
       "name": "LimitationPeriod"
     },
     {
+      "code": "1015",
       "name": "DeviceAlreadyExists"
     },
     {
+      "code": "1016",
       "name": "DeviceExistsInOtherDomains"
     },
     {
+      "code": "1017",
       "name": "NoUsersInDomain"
     },
     {
+      "code": "1018",
       "name": "UserExistsInOtherDomains"
     },
     {
+      "code": "1019",
       "name": "DeviceNotExists"
     },
     {
+      "code": "1020",
       "name": "UserNotExistsInDomain"
     },
     {
+      "code": "1021",
       "name": "ActionUserNotMaster"
     },
     {
+      "code": "1022",
       "name": "ExceededUserLimit"
     },
     {
+      "code": "1023",
       "name": "DomainNotInitialized"
     },
     {
+      "code": "1024",
       "name": "DeviceNotConfirmed"
     },
     {
+      "code": "1025",
       "name": "RequestFailed"
     },
     {
+      "code": "1026",
       "name": "InvalidUser"
     },
     {
+      "code": "1027",
       "name": "UserNotAllowed"
     },
     {
+      "code": "1028",
       "name": "DuplicatePin"
     },
     {
+      "code": "1029",
       "name": "UserAlreadyInDomain"
     },
     {
+      "code": "1030",
       "name": "NotAllowedToDelete"
     },
     {
+      "code": "1031",
       "name": "HomeNetworkAlreadyExists"
     },
     {
+      "code": "1032",
       "name": "HomeNetworkLimitation"
     },
     {
+      "code": "1033",
       "name": "HomeNetworkDoesNotExist"
     },
     {
+      "code": "1034",
       "name": "HomeNetworkFrequency"
     },
     {
+      "code": "2000",
       "name": "UserDoesNotExist"
     },
     {
+      "code": "2001",
       "name": "UserSuspended"
     },
     {
+      "code": "2002",
       "name": "GenerateNewLoginPIN"
     },
     {
+      "code": "2003",
       "name": "PinNotExists"
     },
     {
+      "code": "2004",
       "name": "PinExpired"
     },
     {
+      "code": "2006",
       "name": "NoValidPin"
     },
     {
+      "code": "2007",
       "name": "MissingSecurityParameter"
     },
     {
+      "code": "2008",
       "name": "SecretIsWrong"
     },
     {
+      "code": "2009",
       "name": "LoginViaPinNotAllowed"
     },
     {
+      "code": "2010",
       "name": "PinNotInTheRightLength"
     },
     {
+      "code": "2011",
       "name": "PinAlreadyExists"
     },
     {
+      "code": "2014",
       "name": "UserExists"
     },
     {
+      "code": "2015",
       "name": "InsideLockTime"
     },
     {
+      "code": "2016",
       "name": "UserNotActivated"
     },
     {
+      "code": "2017",
       "name": "UserAllreadyLoggedIn"
     },
     {
+      "code": "2018",
       "name": "UserDoubleLogIn"
     },
     {
+      "code": "2019",
       "name": "DeviceNotRegistered"
     },
     {
+      "code": "2020",
       "name": "NotActivated"
     },
     {
+      "code": "2021",
       "name": "ErrorOnInitUser"
     },
     {
+      "code": "2023",
       "name": "UserNotMasterApproved"
     },
     {
+      "code": "2024",
       "name": "UserWithNoDomain"
     },
     {
+      "code": "2025",
       "name": "UserTypeDoesNotExist"
     },
     {
+      "code": "2026",
       "name": "ActivationTokenNotFound"
     },
     {
+      "code": "2027",
       "name": "UserAlreadyMasterApproved"
     },
     {
+      "code": "2028",
       "name": "LoginServerDown"
     },
     {
+      "code": "2029",
       "name": "RoleAlreadyAssignedToUser"
     },
     {
+      "code": "2030",
       "name": "DefaultUserCannotBeDeleted"
     },
     {
+      "code": "2031",
       "name": "ExclusiveMasterUserCannotBeDeleted"
     },
     {
+      "code": "2032",
       "name": "ItemNotFound"
     },
     {
+      "code": "3000",
       "name": "InvalidPurchase"
     },
     {
+      "code": "3001",
       "name": "CancelationWindowPeriodExpired"
     },
     {
+      "code": "3002",
       "name": "SubscriptionNotRenewable"
     },
     {
+      "code": "3003",
       "name": "ServiceNotAllowed"
     },
     {
+      "code": "3004",
       "name": "InvalidBaseLink"
     },
     {
+      "code": "3005",
       "name": "ContentAlreadyConsumed"
     },
     {
+      "code": "3011",
       "name": "ReasonUnknown"
     },
     {
+      "code": "3015",
       "name": "ChargeStatusUnknown"
     },
     {
+      "code": "3016",
       "name": "ContentIDMissing"
     },
     {
+      "code": "3017",
       "name": "NoMediaRelatedToFile"
     },
     {
+      "code": "3018",
       "name": "NoContentID"
     },
     {
+      "code": "3019",
       "name": "NoProductID"
     },
     {
+      "code": "3020",
       "name": "CouponNotValid"
     },
     {
+      "code": "3021",
       "name": "UnableToPurchasePPVPurchased"
     },
     {
+      "code": "3022",
       "name": "UnableToPurchaseFree"
     },
     {
+      "code": "3023",
       "name": "UnableToPurchaseForPurchaseSubscriptionOnly"
     },
     {
+      "code": "3024",
       "name": "UnableToPurchaseSubscriptionPurchased"
     },
     {
+      "code": "3025",
       "name": "NotForPurchase"
     },
     {
+      "code": "3026",
       "name": "Fail"
     },
     {
+      "code": "3027",
       "name": "UnableToPurchaseCollectionPurchased"
     },
     {
+      "code": "3028",
       "name": "FileToMediaMismatch"
     },
     {
+      "code": "3029",
       "name": "ReconciliationFrequencyLimitation"
     },
     {
+      "code": "3030",
       "name": "InvalidCustomDataIdentifier"
     },
     {
+      "code": "3031",
       "name": "InvalidFileType"
     },
     {
+      "code": "3032",
       "name": "NotEntitled"
     },
     {
+      "code": "3033",
       "name": "AccountCdvrNotEnabled"
     },
     {
+      "code": "3034",
       "name": "AccountCatchUpNotEnabled"
     },
     {
+      "code": "3035",
       "name": "ProgramCdvrNotEnabled"
     },
     {
+      "code": "3036",
       "name": "ProgramCatchUpNotEnabled"
     },
     {
+      "code": "3037",
       "name": "CatchUpBufferLimitation"
     },
     {
+      "code": "3038",
       "name": "ProgramNotInRecordingScheduleWindow"
     },
     {
+      "code": "3039",
       "name": "RecordingNotFound"
     },
     {
+      "code": "3040",
       "name": "RecordingFailed"
     },
     {
+      "code": "3041",
       "name": "PaymentMethodIsUsedByHousehold"
     },
     {
+      "code": "3042",
       "name": "ExceededQuota"
     },
     {
+      "code": "3043",
       "name": "RecordingStatusNotValid"
     },
     {
+      "code": "3044",
       "name": "ExceededProtectionQuota"
     },
     {
+      "code": "3045",
       "name": "AccountProtectRecordNotEnabled"
     },
     {
+      "code": "3046",
       "name": "AccountSeriesRecordingNotEnabled"
     },
     {
+      "code": "3047",
       "name": "AlreadyRecordedAsSeriesOrSeason"
     },
     {
+      "code": "3048",
       "name": "SeriesRecordingNotFound"
     },
     {
+      "code": "3049",
       "name": "EpgIdNotPartOfSeries"
     },
     {
+      "code": "3050",
       "name": "RecordingPlaybackNotAllowedForNonExistingEpgChannel"
     },
     {
+      "code": "3051",
       "name": "RecordingPlaybackNotAllowedForNotEntitledEpgChannel"
     },
     {
+      "code": "3052",
       "name": "SeasonNumberNotMatch"
     },
     {
+      "code": "4000",
       "name": "MediaConcurrencyLimitation"
     },
     {
+      "code": "4001",
       "name": "ConcurrencyLimitation"
     },
     {
+      "code": "4002",
       "name": "BadSearchRequest"
     },
     {
+      "code": "4003",
       "name": "IndexMissing"
     },
     {
+      "code": "4004",
       "name": "SyntaxError"
     },
     {
+      "code": "4005",
       "name": "InvalidSearchField"
     },
     {
+      "code": "4006",
       "name": "NoRecommendationEngineToInsert"
     },
     {
+      "code": "4007",
       "name": "RecommendationEngineNotExist"
     },
     {
+      "code": "4008",
       "name": "RecommendationEngineIdentifierRequired"
     },
     {
+      "code": "4009",
       "name": "RecommendationEngineParamsRequired"
     },
     {
+      "code": "4010",
       "name": "NoExternalChannelToInsert"
     },
     {
+      "code": "4011",
       "name": "ExternalChannelNotExist"
     },
     {
+      "code": "4012",
       "name": "NoExternalChannelToUpdate"
     },
     {
+      "code": "4013",
       "name": "ExternalChannelIdentifierRequired"
     },
     {
+      "code": "4014",
       "name": "ExternalChannelHasNoRecommendationEngine"
     },
     {
+      "code": "4015",
       "name": "NoRecommendationEngineToUpdate"
     },
     {
+      "code": "4016",
       "name": "InactiveExternalChannelEnrichment"
     },
     {
+      "code": "4017",
       "name": "IdentifierRequired"
     },
     {
+      "code": "4018",
       "name": "ObjectNotExist"
     },
     {
+      "code": "4019",
       "name": "NoObjectToInsert"
     },
     {
+      "code": "4020",
       "name": "InvalidMediaType"
     },
     {
+      "code": "4021",
       "name": "InvalidAssetType"
     },
     {
+      "code": "4022",
       "name": "ProgramDoesntExist"
     },
     {
+      "code": "4023",
       "name": "ActionNotRecognized"
     },
     {
+      "code": "4024",
       "name": "InvalidAssetId"
     },
     {
+      "code": "4025",
       "name": "CountryNotFound"
     },
     {
+      "code": "5001",
       "name": "NoPinDefined"
     },
     {
+      "code": "5002",
       "name": "PinMismatch"
     },
     {
+      "code": "5003",
       "name": "RuleNotExists"
     },
     {
+      "code": "5004",
       "name": "NoOSSAdapterToInsert"
     },
     {
+      "code": "5005",
       "name": "NameRequired"
     },
     {
+      "code": "5006",
       "name": "SharedSecretRequired"
     },
     {
+      "code": "5007",
       "name": "OSSAdapterIdentifierRequired"
     },
     {
+      "code": "5008",
       "name": "OSSAdapterNotExist"
     },
     {
+      "code": "5009",
       "name": "OSSAdapterParamsRequired"
     },
     {
+      "code": "5010",
       "name": "UnknownOSSAdapterState"
     },
     {
+      "code": "5011",
       "name": "ActionIsNotAllowed"
     },
     {
+      "code": "5012",
       "name": "NoOSSAdapterToUpdate"
     },
     {
+      "code": "5013",
       "name": "AdapterUrlRequired"
     },
     {
+      "code": "5014",
       "name": "ConflictedParams"
     },
     {
+      "code": "5015",
       "name": "PurchaseSettingsTypeInvalid"
     },
     {
+      "code": "5016",
       "name": "ExportTaskNotFound"
     },
     {
+      "code": "5017",
       "name": "ExportNotificationUrlRequired"
     },
     {
+      "code": "5018",
       "name": "ExportFrequencyMinValue"
     },
     {
+      "code": "5019",
       "name": "AliasMustBeUnique"
     },
     {
+      "code": "5020",
       "name": "AliasRequired"
     },
     {
+      "code": "5021",
       "name": "UserParentalRuleNotExists"
     },
     {
+      "code": "5022",
       "name": "TimeShiftedTvPartnerSettingsNotFound"
     },
     {
+      "code": "5023",
       "name": "TimeShiftedTvPartnerSettingsNotSent"
     },
     {
+      "code": "5024",
       "name": "TimeShiftedTvPartnerSettingsNegativeBufferSent"
     },
     {
+      "code": "5025",
       "name": "CDNPartnerSettingsNotFound"
     },
     {
+      "code": "6000",
       "name": "IncorrectPrice"
     },
     {
+      "code": "6001",
       "name": "UnKnownPPVModule"
     },
     {
+      "code": "6002",
       "name": "ExpiredCard"
     },
     {
+      "code": "6003",
       "name": "CellularPermissionsError"
     },
     {
+      "code": "6004",
       "name": "UnKnownBillingProvider"
     },
     {
+      "code": "6005",
       "name": "PaymentGatewayIdRequired"
     },
     {
+      "code": "6006",
       "name": "PaymentGatewayParamsRequired"
     },
     {
+      "code": "6007",
       "name": "PaymentGatewayNotSetForHousehold"
     },
     {
+      "code": "6008",
       "name": "PaymentGatewayNotExist"
     },
     {
+      "code": "6009",
       "name": "PaymentGatewayChargeIdRequired"
     },
     {
+      "code": "6011",
       "name": "NoConfigurationFound"
     },
     {
+      "code": "6012",
       "name": "AdapterAppFailure"
     },
     {
+      "code": "6013",
       "name": "SignatureMismatch"
     },
     {
+      "code": "6014",
       "name": "ErrorSavingPaymentGatewayTransaction"
     },
     {
+      "code": "6015",
       "name": "ErrorSavingPaymentGatewayPending"
     },
     {
+      "code": "6016",
       "name": "ExternalIdentifierRequired"
     },
     {
+      "code": "6017",
       "name": "ErrorSavingPaymentGatewayHousehold"
     },
     {
+      "code": "6018",
       "name": "NoPaymentGateway"
     },
     {
+      "code": "6020",
       "name": "PaymentGatewayNameRequired"
     },
     {
+      "code": "6021",
       "name": "PaymentGatewaySharedSecretRequired"
     },
     {
+      "code": "6024",
       "name": "HouseholdAlreadySetToPaymentGateway"
     },
     {
+      "code": "6025",
       "name": "ChargeIdAlreadySetToHouseholdPaymentGateway"
     },
     {
+      "code": "6026",
       "name": "ChargeIdNotSetToHousehold"
     },
     {
+      "code": "6027",
       "name": "HouseholdNotSetToPaymentGateway"
     },
     {
+      "code": "6028",
       "name": "PaymentGatewaySelectionIsDisabled"
     },
     {
+      "code": "6030",
       "name": "NoResponseFromPaymentGateway"
     },
     {
+      "code": "6031",
       "name": "InvalidAccount"
     },
     {
+      "code": "6032",
       "name": "InsufficientFunds"
     },
     {
+      "code": "6033",
       "name": "UnknownPaymentGatewayResponse"
     },
     {
+      "code": "6034",
       "name": "PaymentGatewayAdapterUserKnown"
     },
     {
+      "code": "6035",
       "name": "PaymentGatewayAdapterReasonUnknown"
     },
     {
+      "code": "6036",
       "name": "SignatureDoesNotMatch"
     },
     {
+      "code": "6037",
       "name": "ErrorUpdatingPendingTransaction"
     },
     {
+      "code": "6038",
       "name": "PaymentGatewayTransactionNotFound"
     },
     {
+      "code": "6039",
       "name": "PaymentGatewayTransactionIsNotPending"
     },
     {
+      "code": "6040",
       "name": "ExternalIdentifierMustBeUnique"
     },
     {
+      "code": "6041",
       "name": "NoPaymentGatewayToInsert"
     },
     {
+      "code": "6042",
       "name": "UnknownTransactionState"
     },
     {
+      "code": "6043",
       "name": "PaymentGatewayNotValid"
     },
     {
+      "code": "6044",
       "name": "HouseholdRequired"
     },
     {
+      "code": "6045",
       "name": "PaymentGatewayAdapterFailReasonUnknown"
     },
     {
+      "code": "6046",
       "name": "NoPartnerConfigurationToUpdate"
     },
     {
+      "code": "6047",
       "name": "NoConfigurationValueToUpdate"
     },
     {
+      "code": "6048",
       "name": "PaymentMethodNotSetForHousehold"
     },
     {
+      "code": "6049",
       "name": "PaymentMethodNotExist"
     },
     {
+      "code": "6050",
       "name": "PaymentMethodIdRequired"
     },
     {
+      "code": "6051",
       "name": "PaymentMethodExternalIdRequired"
     },
     {
+      "code": "6052",
       "name": "ErrorSavingPaymentGatewayHouseholdPaymentMethod"
     },
     {
+      "code": "6054",
       "name": "PaymentMethodAlreadySetToHouseholdPaymentGateway"
     },
     {
+      "code": "6055",
       "name": "PaymentMethodNameRequired"
     },
     {
+      "code": "6056",
       "name": "PaymentGatewayNotSupportPaymentMethod"
     },
     {
+      "code": "7000",
       "name": "Conflict"
     },
     {
+      "code": "7001",
       "name": "MinFriendsLimitation"
     },
     {
+      "code": "8000",
       "name": "NoNotificationSettingsSent"
     },
     {
+      "code": "8001",
       "name": "PushNotificationFalse"
     },
     {
+      "code": "8002",
       "name": "NoNotificationPartnerSettings"
     },
     {
+      "code": "8003",
       "name": "NoNotificationSettings"
     },
     {
+      "code": "8004",
       "name": "AnnouncementMessageIsEmpty"
     },
     {
+      "code": "8005",
       "name": "AnnouncementInvalidStartTime"
     },
     {
+      "code": "8006",
       "name": "AnnouncementNotFound"
     },
     {
+      "code": "8007",
       "name": "AnnouncementUpdateNotAllowed"
     },
     {
+      "code": "8008",
       "name": "AnnouncementInvalidTimezone"
     },
     {
+      "code": "8009",
       "name": "FeatureDisabled"
     },
     {
+      "code": "8010",
       "name": "AnnouncementMessageTooLong"
     },
     {
+      "code": "8011",
       "name": "FailCreateAnnouncement"
     },
     {
+      "code": "8012",
       "name": "UserNotFollowing"
     },
     {
+      "code": "8013",
       "name": "UserAlreadyFollowing"
     },
     {
+      "code": "8014",
       "name": "MessagePlaceholdersInvalid"
     },
     {
+      "code": "8015",
       "name": "DatetimeFormatIsInvalid"
     },
     {
+      "code": "8016",
       "name": "MessageTemplateNotFound"
     },
     {
+      "code": "8017",
       "name": "URLPlaceholdersInvalid"
     },
     {
+      "code": "8018",
       "name": "InvalidMessageTTL"
     },
     {
+      "code": "8019",
       "name": "MessageIdentifierRequired"
     },
     {
+      "code": "8020",
       "name": "UserInboxMessagesNotExist"
     },
     {
+      "code": "9000",
       "name": "InvalidPriceCode"
     },
     {
+      "code": "9001",
       "name": "InvalidValue"
     },
     {
+      "code": "9002",
       "name": "InvalidDiscountCode"
     },
     {
+      "code": "9003",
       "name": "InvalidPricePlan"
     },
     {
+      "code": "9004",
       "name": "CodeMustBeUnique"
     },
     {
+      "code": "9005",
       "name": "CodeNotExist"
     },
     {
+      "code": "9006",
       "name": "InvalidCodeNotExist"
     },
     {
+      "code": "9008",
       "name": "InvalidChannels"
     },
     {
+      "code": "9009",
       "name": "InvalidFileTypes"
     },
     {
+      "code": "9010",
       "name": "InvalidPreviewModule"
     },
     {
+      "code": "9011",
       "name": "MandatoryField"
     },
     {
+      "code": "9012",
       "name": "UniqueFiled"
     },
     {
+      "code": "9013",
       "name": "InvalidUsageModule"
     },
     {
+      "code": "9014",
       "name": "InvalidCouponGroup"
     },
     {
+      "code": "9015",
       "name": "InvalidCurrency"
     },
     {
+      "code": "9016",
       "name": "ModuleNotExists"
     },
     {
+      "code": "10000",
       "name": "AdapterNotExists"
     },
     {
+      "code": "10001",
       "name": "AdapterIdentifierRequired"
     },
     {
+      "code": "10002",
       "name": "AdapterIsRequired"
     },
     {
+      "code": "10003",
       "name": "NoAdapterToInsert"
     },
     {
+      "code": "11000",
       "name": "IllegalXml"
     },
     {
+      "code": "11001",
       "name": "MissingExternalIdentifier"
     },
     {
+      "code": "11002",
       "name": "UnknownIngestType"
     },
     {
+      "code": "11003",
       "name": "EPGSProgramDatesError"
     },
     {
+      "code": "500003",
       "message": "Bad request",
       "name": "BadRequest"
     },
     {
+      "code": "500057",
       "message": "Invalid version [@version@]",
       "name": "InvalidVersion"
     },
     {
+      "code": "500004",
       "message": "Service Forbidden",
       "name": "ServiceForbidden"
     },
     {
+      "code": "500051",
       "message": "Action [@action@] is forbidden for property [@type@].[@property@]",
       "name": "PropertyActionForbidden"
     },
     {
+      "code": "500052",
       "message": "Argument [@argument@] in action [@service@].[@action@] is forbidden",
       "name": "ActionArgumentForbidden"
     },
     {
+      "code": "500015",
       "message": "Invalid KS format",
       "name": "InvalidKS"
     },
     {
+      "code": "500016",
       "message": "KS expired",
       "name": "ExpiredKS"
     },
     {
+      "code": "500017",
       "message": "Invalid refresh token",
       "name": "InvalidRefreshToken"
     },
     {
+      "code": "500034",
       "message": "Refresh token failed",
       "name": "RefreshTokenFailed"
     },
     {
+      "code": "500035",
       "message": "Invalid user [@id@]",
       "name": "InvalidUser"
     },
     {
+      "code": "500011",
       "message": "Service [@service@] not found",
       "name": "InvalidService"
     },
     {
+      "code": "500012",
       "message": "Action [@service@.@action@] not found",
       "name": "InvalidAction"
     },
     {
+      "code": "500033",
       "message": "Action not specified",
       "name": "ActionNotSpecified"
     },
     {
+      "code": "500054",
       "message": "Invalid action parameter [@parameter@]",
       "name": "InvalidActionParameter"
     },
     {
+      "code": "500013",
       "message": "Invalid action parameters",
       "name": "InvalidActionParameters"
     },
     {
+      "code": "50026",
       "message": "Argument [@argument@] is invalid",
       "name": "InvalidArgument"
     },
     {
+      "code": "500031",
       "message": "Argument [@argument@] must be numeric",
       "name": "ArgumentMustBeNumeric"
     },
     {
+      "code": "50027",
       "message": "Argument [@argument@] cannot be empty",
       "name": "ArgumentCannotBeEmpty"
     },
     {
+      "code": "500036",
       "message": "Argument [@argument@] is not writeable",
       "name": "ArgumentReadonly"
     },
     {
+      "code": "500037",
       "message": "Argument [@argument@] is not updateable",
       "name": "ArgumentInsertonly"
     },
     {
+      "code": "500041",
       "message": "Enumerator value [@value@] is not supported for argument [@argument@]",
       "name": "EnumValueNotSupported"
     },
     {
+      "code": "500044",
       "message": "Argument [@argument@] values must be of type [@enum@]",
       "name": "ArgumentShouldBeEnum"
     },
     {
+      "code": "500058",
       "message": "Argument [@argument@] values must have minimum value of [@value@]",
       "name": "ArgumentShouldContainMinValueCrossed"
     },
     {
+      "code": "500059",
       "message": "Argument [@argument@] values must have max value of [@value@]",
       "name": "ArgumentShouldContainMaxValueCrossed"
     },
     {
+      "code": "500056",
       "message": "One of the arguments [@arguments@] must have a value",
       "name": "ArgumentsCannotBeEmpty"
     },
     {
+      "code": "500038",
       "message": "Only one of @argument1@ or @argument2@ can be used, not both of them",
       "name": "ArgumentsConflictsEachOther"
     },
     {
+      "code": "500039",
       "message": "Argument [@argument@] time have passed",
       "name": "TimeInPast"
     },
     {
+      "code": "500045",
       "message": "Argument [@argument@] maximum length is [@value@]",
       "name": "ArgumentMaxLengthCrossed"
     },
     {
+      "code": "500046",
       "message": "Argument [@argument@] minimum length is [@value@]",
       "name": "ArgumentMinLengthCrossed"
     },
     {
+      "code": "500047",
       "message": "Argument [@argument@] maximum value is [@value@]",
       "name": "ArgumentMaxValueCrossed"
     },
     {
+      "code": "500048",
       "message": "Argument [@argument@] minimum value is [@value@]",
       "name": "ArgumentMinValueCrossed"
     },
     {
+      "code": "500029",
       "message": "Media ids must be numeric",
       "name": "MediaIdsMustBeNumeric"
     },
     {
+      "code": "500030",
       "message": "EPG internal ids must be numeric",
       "name": "EpgInternalIdsMustBeNumeric"
     },
     {
+      "code": "500032",
       "message": "Argument [@argument@] cannot be empty or all",
       "name": "ListTypeCannotBeEmptyOrAll"
     },
     {
+      "code": "500049",
       "message": "Duplicate asset: id [@id@] type = [@type@]",
       "name": "DuplicateAsset"
     },
     {
+      "code": "500050",
       "message": "Duplicate file: id [@id@]",
       "name": "DuplicateFile"
     },
     {
+      "code": "500028",
       "message": "Household [@household@] forbidden",
       "name": "HouseholdForbidden"
     },
     {
+      "code": "50024",
       "message": "Switching users is not allowed for partner",
       "name": "SwitchingUsersIsNotAllowedForPartner"
     },
     {
+      "code": "50023",
       "message": "Application-token [@id@] is not active",
       "name": "NotActiveAppToken"
     },
     {
+      "code": "50022",
       "message": "Invalid application-token hash",
       "name": "InvalidAppTokenHash"
     },
     {
+      "code": "50021",
       "message": "Application-token is expired",
       "name": "ExpiredAppToken"
     },
     {
+      "code": "1",
       "message": "error",
       "name": "Error"
     },
     {
+      "code": "500006",
       "message": "Missing configuration [@configuration@]",
       "name": "MissingConfiguration"
     },
     {
+      "code": "500007",
       "message": "@objectType@ not found",
       "name": "NotFound"
     },
     {
+      "code": "500055",
       "message": "@objectType@ id [@id@] not found",
       "name": "ObjectIdNotFound"
     },
     {
+      "code": "50025",
       "message": "Invalid multirequest token",
       "name": "InvalidMultirequestToken"
     },
     {
+      "code": "500018",
       "message": "Abstract parameter type [@type@]",
       "name": "AbstractParameter"
     },
     {
+      "code": "500053",
       "message": "Missing parameter [@parameter@]",
       "name": "MissingParameter"
     },
     {
+      "code": "500042",
       "message": "Invalid multirequest token, response index is not zero based",
       "name": "MultirequestIndexNotZeroBased"
     },
     {
+      "code": "500043",
       "message": "Invalid multirequest token, invalid response index",
       "name": "MultirequestInvalidIndex"
     }
