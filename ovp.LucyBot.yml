@@ -5,6 +5,8 @@ specifications:
 sitemap:
   hostname: https://developer.kaltura.com
 
+discussionURL: '/discussion/{{slug}}?title={{title}}'
+
 routes:
   /:
     redirect: '/api-docs'

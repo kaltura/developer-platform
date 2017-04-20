@@ -2,8 +2,6 @@ favicon: assets/favicon.ico
 
 loadOpenAPISynchronous: true
 
-discussionURL: '/discussion/{{slug}}?title={{title}}'
-
 uiOptions:
   discussionTitle: 'User contributed notes & discussion'
   redirectHashURLs: true
