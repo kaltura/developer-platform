@@ -5,6 +5,8 @@ let config = new ott.Configuration();
 config.serviceUrl =  process.env.KALTURA_SERVICE_URL || 'http://rest-eus1.ott.kaltura.com/restful';
 let client = new ott.Client(config);
 
+Router.use(require('body-parser').json());
+
 Router.post('/ottLogin', function(req, res) {
   ott.services.ottUser.login(req.body.partnerId, req.body.email, req.body.password)
       .completion((success, response) => {
