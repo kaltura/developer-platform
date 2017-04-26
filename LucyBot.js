@@ -11,6 +11,9 @@ const openapi = require('./' + TARGET_API + '.openapi.json');
 const config = module.exports = getYAML('base.LucyBot');
 const apiConfig = getYAML(TARGET_API + '.LucyBot');
 Object.assign(config, apiConfig);
+config.env = {
+  target_api: TARGET_API,
+}
 
 var definitions = openapi.definitions;
 var enums = openapi['x-enums'];

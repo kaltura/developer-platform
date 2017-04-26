@@ -41,6 +41,7 @@ window.setUpKalturaClient = function(creds, cb) {
   config.serviceUrl = "https://www.kaltura.com/";
   window.KC = new KalturaClient(config);
   KC.setKs(creds.ks);
+  if (window.lucybot.env.target_api === 'ott') return cb(null, creds);
   function checkFailure(success, data) {
     if (!success || (data.code && data.message)) {
       var trackObj = data || {};

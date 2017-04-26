@@ -69,9 +69,13 @@ App.get(basePages, (req, res) => {
   })
 })
 
-App.use('/auth', require('./routes/partner-auth.js'));
-App.use('/github', require('./routes/github.js'));
 App.use('/discussion', require('./routes/discussion'));
+if (process.env.TARGET_API === 'ott') {
+  App.use('/auth', require('./routes/ott-auth.js'));
+} else {
+  App.use('/auth', require('./routes/partner-auth.js'));
+}
+App.use('/github', require('./routes/github.js'));
 
 if (process.env.DEVELOPMENT || process.env.NO_SSL) {
   console.log('----DEVELOPMENT ENVIRONMENT----');

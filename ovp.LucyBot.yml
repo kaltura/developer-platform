@@ -2,6 +2,9 @@ specifications:
   kaltura:
     - openapi: ./ovp.openapi.json
 
+css:
+  - assets/ovp.css
+
 sitemap:
   hostname: https://developer.kaltura.com
 
