@@ -7018,6 +7018,18 @@
         }
       },
       "title": "KalturaValue"
+    },
+    "OTTRequest": {
+      "properties": {
+        "ks": {
+          "type": "string"
+        },
+        "version": {
+          "default": "3.6.1542.28904",
+          "type": "string"
+        }
+      },
+      "type": "object"
     }
   },
   "host": "tvpapi-us-preprod.ott.kaltura.com",
@@ -7044,12 +7056,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "announcement": {
                   "$ref": "#/definitions/KalturaAnnouncement"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7081,12 +7095,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7118,11 +7134,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -7152,12 +7169,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaAnnouncementFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -7192,15 +7211,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "announcement": {
                   "$ref": "#/definitions/KalturaAnnouncement"
                 },
                 "announcementId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7232,12 +7253,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "status": {
                   "type": "boolean"
@@ -7272,12 +7295,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "appToken": {
                   "$ref": "#/definitions/KalturaAppToken"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7306,11 +7331,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -7340,11 +7367,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -7374,14 +7403,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "expiry": {
                   "type": "integer"
                 },
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "tokenHash": {
@@ -7426,14 +7457,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetReferenceType": {
                   "type": "string"
                 },
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -7466,12 +7499,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaAssetFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -7503,12 +7538,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "comment": {
                   "$ref": "#/definitions/KalturaAssetComment"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7537,12 +7574,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaAssetCommentFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -7574,14 +7613,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "contextType": {
                   "type": "string"
                 },
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -7611,12 +7652,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaAssetHistoryFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -7648,10 +7691,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "query": {
                   "$ref": "#/definitions/KalturaAssetStatisticsQuery"
                 }
@@ -7682,12 +7727,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "bookmark": {
                   "$ref": "#/definitions/KalturaBookmark"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7719,12 +7766,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaBookmarkFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7756,12 +7805,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapter": {
                   "$ref": "#/definitions/KalturaCDNAdapterProfile"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7793,12 +7844,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapterId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7830,12 +7883,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapterId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7867,11 +7922,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -7898,15 +7954,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapter": {
                   "$ref": "#/definitions/KalturaCDNAdapterProfile"
                 },
                 "adapterId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -7938,11 +7996,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -7972,10 +8031,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "settings": {
                   "$ref": "#/definitions/KalturaCDNPartnerSettings"
                 }
@@ -8009,12 +8070,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapter": {
                   "$ref": "#/definitions/KalturaCDVRAdapterProfile"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8046,12 +8109,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapterId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8083,12 +8148,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapterId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8120,11 +8187,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -8151,15 +8219,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "adapter": {
                   "$ref": "#/definitions/KalturaCDVRAdapterProfile"
                 },
                 "adapterId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8191,12 +8261,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "channel": {
                   "$ref": "#/definitions/KalturaChannel"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8228,12 +8300,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "channelId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8265,12 +8339,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8299,15 +8375,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "channel": {
                   "$ref": "#/definitions/KalturaChannel"
                 },
                 "channelId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8339,12 +8417,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configurationGroup": {
                   "$ref": "#/definitions/KalturaConfigurationGroup"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8376,11 +8456,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -8413,11 +8495,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -8450,11 +8534,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -8484,14 +8569,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configurationGroup": {
                   "$ref": "#/definitions/KalturaConfigurationGroup"
                 },
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -8524,12 +8611,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configurationGroupDevice": {
                   "$ref": "#/definitions/KalturaConfigurationGroupDevice"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8561,10 +8650,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "udid": {
                   "type": "string"
                 }
@@ -8598,10 +8689,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "udid": {
                   "type": "string"
                 }
@@ -8635,12 +8728,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaConfigurationGroupDeviceFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -8675,12 +8770,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configurationGroupTag": {
                   "$ref": "#/definitions/KalturaConfigurationGroupTag"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8712,10 +8809,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "tag": {
                   "type": "string"
                 }
@@ -8749,10 +8848,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "tag": {
                   "type": "string"
                 }
@@ -8786,12 +8887,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaConfigurationGroupTagFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8823,12 +8926,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configurations": {
                   "$ref": "#/definitions/KalturaConfigurations"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8860,11 +8965,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -8897,11 +9004,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -8934,12 +9043,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaConfigurationsFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -8971,14 +9082,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "applicationName": {
                   "type": "string"
                 },
                 "clientVersion": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "partnerId": {
@@ -9023,14 +9136,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configurations": {
                   "$ref": "#/definitions/KalturaConfigurations"
                 },
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -9063,12 +9178,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaCountryFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9097,11 +9214,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "code": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -9134,11 +9253,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -9165,11 +9285,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -9196,12 +9317,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "transactionType": {
                   "type": "string"
@@ -9236,10 +9359,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "subscriptionId": {
                   "type": "string"
                 }
@@ -9270,11 +9395,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -9304,12 +9430,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "transactionType": {
                   "type": "string"
@@ -9344,15 +9472,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "contentId": {
                   "type": "integer"
                 },
                 "history": {
                   "type": "boolean"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "productId": {
                   "type": "integer"
@@ -9390,12 +9520,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaEntitlementFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -9427,10 +9559,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "task": {
                   "$ref": "#/definitions/KalturaExportTask"
                 }
@@ -9461,12 +9595,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9495,12 +9631,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9529,12 +9667,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaExportTaskFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9563,12 +9703,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "task": {
                   "$ref": "#/definitions/KalturaExportTask"
@@ -9600,12 +9742,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "externalChannel": {
                   "$ref": "#/definitions/KalturaExternalChannelProfile"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9637,12 +9781,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "externalChannelId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9674,11 +9820,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -9705,15 +9852,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "externalChannel": {
                   "$ref": "#/definitions/KalturaExternalChannelProfile"
                 },
                 "externalChannelId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9745,12 +9894,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "favorite": {
                   "$ref": "#/definitions/KalturaFavorite"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9782,12 +9933,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9819,12 +9972,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaFavoriteFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9856,12 +10011,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "followTvSeries": {
                   "$ref": "#/definitions/KalturaFollowTvSeries"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9893,12 +10050,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -9930,12 +10089,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaFollowTvSeriesFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -9967,12 +10128,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "homeNetwork": {
                   "$ref": "#/definitions/KalturaHomeNetwork"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10004,11 +10167,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "externalId": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -10041,11 +10206,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -10072,15 +10238,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "externalId": {
                   "type": "string"
                 },
                 "homeNetwork": {
                   "$ref": "#/definitions/KalturaHomeNetwork"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10112,12 +10280,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "household": {
                   "$ref": "#/definitions/KalturaHousehold"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10149,12 +10319,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10183,12 +10355,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10220,11 +10394,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "frequencyType": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -10254,11 +10430,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -10288,11 +10465,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -10322,12 +10500,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "household": {
                   "$ref": "#/definitions/KalturaHousehold"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10356,12 +10536,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "device": {
                   "$ref": "#/definitions/KalturaHouseholdDevice"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10393,11 +10575,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "deviceName": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "pin": {
@@ -10433,10 +10617,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "udid": {
                   "type": "string"
                 }
@@ -10470,12 +10656,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "brandId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "udid": {
                   "type": "string"
@@ -10507,11 +10695,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -10541,12 +10730,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaHouseholdDeviceFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10578,12 +10769,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "device": {
                   "$ref": "#/definitions/KalturaHouseholdDevice"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "udid": {
                   "type": "string"
@@ -10618,10 +10811,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "status": {
                   "type": "string"
                 },
@@ -10658,12 +10853,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10692,10 +10889,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayId": {
                   "type": "integer"
                 }
@@ -10729,10 +10928,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayId": {
                   "type": "integer"
                 }
@@ -10766,10 +10967,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayExternalId": {
                   "type": "string"
                 }
@@ -10803,14 +11006,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "extraParameters": {
                   "type": "array"
                 },
                 "intent": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "paymentGatewayId": {
@@ -10846,11 +11051,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -10880,11 +11086,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "chargeId": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "paymentGatewayExternalId": {
@@ -10920,12 +11128,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "householdPaymentMethod": {
                   "$ref": "#/definitions/KalturaHouseholdPaymentMethod"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -10957,10 +11167,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayId": {
                   "type": "integer"
                 },
@@ -10997,11 +11209,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -11031,10 +11244,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayId": {
                   "type": "integer"
                 },
@@ -11071,10 +11286,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayId": {
                   "type": "integer"
                 },
@@ -11111,11 +11328,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -11142,11 +11360,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -11173,12 +11392,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "householdUser": {
                   "$ref": "#/definitions/KalturaHouseholdUser"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -11210,11 +11431,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -11247,12 +11470,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaHouseholdUserFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -11284,11 +11509,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -11321,12 +11548,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaInboxMessageFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -11361,11 +11590,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "status": {
@@ -11398,10 +11629,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "request": {
                   "$ref": "#/definitions/KalturaLicensedUrlBaseRequest"
                 }
@@ -11435,12 +11668,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetType": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -11469,12 +11704,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetType": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "template": {
                   "$ref": "#/definitions/KalturaMessageTemplate"
@@ -11506,12 +11743,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaMetaFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -11540,11 +11779,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -11571,11 +11811,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "identifier": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "type": {
@@ -11608,10 +11850,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "pushToken": {
                   "type": "string"
                 }
@@ -11642,11 +11886,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -11673,10 +11918,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "settings": {
                   "$ref": "#/definitions/KalturaNotificationsPartnerSettings"
                 }
@@ -11710,11 +11957,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -11741,10 +11989,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "settings": {
                   "$ref": "#/definitions/KalturaNotificationsSettings"
                 }
@@ -11775,10 +12025,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "ossAdapter": {
                   "$ref": "#/definitions/KalturaOSSAdapterProfile"
                 }
@@ -11812,10 +12064,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "ossAdapterId": {
                   "type": "integer"
                 }
@@ -11849,10 +12103,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "ossAdapterId": {
                   "type": "integer"
                 }
@@ -11886,12 +12142,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -11920,11 +12178,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -11951,10 +12210,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "ossAdapter": {
                   "$ref": "#/definitions/KalturaOSSAdapterProfile"
                 },
@@ -11991,12 +12252,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -12025,11 +12288,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "activationToken": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "partnerId": {
@@ -12065,10 +12330,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "roleId": {
                   "type": "integer"
                 }
@@ -12099,10 +12366,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -12136,11 +12405,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -12170,11 +12440,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -12204,11 +12475,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -12235,12 +12507,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaOTTUserFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -12272,12 +12546,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "extraParams": {
                   "type": "object"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "partnerId": {
                   "type": "integer"
@@ -12321,10 +12597,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -12367,11 +12645,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -12398,10 +12677,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "refreshToken": {
                   "type": "string"
                 },
@@ -12438,10 +12719,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -12481,10 +12764,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -12518,10 +12803,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -12555,10 +12842,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -12598,10 +12887,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "user": {
                   "$ref": "#/definitions/KalturaOTTUser"
                 }
@@ -12635,10 +12926,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "newPassword": {
                   "type": "string"
                 },
@@ -12678,11 +12971,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "entityReference": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "ruleId": {
@@ -12718,11 +13013,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "entityReference": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -12755,11 +13052,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "entityReference": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "ruleId": {
@@ -12795,12 +13094,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaParentalRuleFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -12832,12 +13133,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configuration": {
                   "$ref": "#/definitions/KalturaPartnerConfiguration"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -12866,10 +13169,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGateway": {
                   "$ref": "#/definitions/KalturaPaymentGatewayProfile"
                 }
@@ -12903,10 +13208,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayId": {
                   "type": "integer"
                 }
@@ -12940,10 +13247,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGatewayId": {
                   "type": "integer"
                 }
@@ -12977,6 +13286,11 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "alias": {
                   "type": "string"
@@ -12985,9 +13299,6 @@
                   "type": "array"
                 },
                 "intent": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -13020,11 +13331,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -13051,10 +13363,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentGateway": {
                   "$ref": "#/definitions/KalturaPaymentGatewayProfile"
                 },
@@ -13091,10 +13405,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentMethod": {
                   "$ref": "#/definitions/KalturaPaymentMethodProfile"
                 }
@@ -13128,10 +13444,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentMethodId": {
                   "type": "integer"
                 }
@@ -13165,12 +13483,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaPaymentMethodProfileFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13202,10 +13522,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "paymentMethod": {
                   "$ref": "#/definitions/KalturaPaymentMethodProfile"
                 },
@@ -13242,12 +13564,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaPersonalFeedFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -13279,11 +13603,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "by": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "ruleId": {
@@ -13322,11 +13648,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "by": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "pin": {
@@ -13368,10 +13696,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "pin": {
                   "type": "string"
                 },
@@ -13411,12 +13741,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13445,12 +13777,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaProductPriceFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13479,11 +13813,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "by": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -13516,11 +13852,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "entityReference": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "settings": {
@@ -13556,10 +13894,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "recommendationEngine": {
                   "$ref": "#/definitions/KalturaRecommendationProfile"
                 }
@@ -13593,12 +13933,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13630,10 +13972,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "recommendationEngineId": {
                   "type": "integer"
                 }
@@ -13667,11 +14011,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -13698,10 +14043,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "recommendationEngine": {
                   "$ref": "#/definitions/KalturaRecommendationProfile"
                 },
@@ -13738,10 +14085,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "recording": {
                   "$ref": "#/definitions/KalturaRecording"
                 }
@@ -13775,12 +14124,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13812,12 +14163,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13849,12 +14202,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13886,12 +14241,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaRecordingFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -13926,12 +14283,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13963,12 +14322,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaRegionFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -13997,11 +14358,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -14028,10 +14390,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "udid": {
                   "type": "string"
                 }
@@ -14065,12 +14429,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaReportFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -14105,10 +14471,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "recording": {
                   "$ref": "#/definitions/KalturaSeriesRecording"
                 }
@@ -14142,12 +14510,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -14179,15 +14549,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "epgId": {
                   "type": "integer"
                 },
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -14219,12 +14591,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "seasonNumber": {
                   "type": "integer"
@@ -14259,12 +14633,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -14296,12 +14672,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "seasonNumber": {
                   "type": "integer"
@@ -14336,12 +14714,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaSeriesRecordingFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -14373,10 +14753,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "session": {
                   "type": "string"
                 }
@@ -14407,10 +14789,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "userIdToSwitch": {
                   "type": "string"
                 }
@@ -14441,12 +14825,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "configuration": {
                   "$ref": "#/definitions/KalturaSocialConfig"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -14475,10 +14861,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "type": {
                   "type": "string"
                 }
@@ -14509,10 +14897,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -14552,10 +14942,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -14589,10 +14981,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "partnerId": {
                   "type": "integer"
                 },
@@ -14635,10 +15029,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "token": {
                   "type": "string"
                 },
@@ -14675,11 +15071,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "email": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "partnerId": {
@@ -14721,10 +15119,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "type": {
                   "type": "string"
                 }
@@ -14758,10 +15158,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "socialAction": {
                   "$ref": "#/definitions/KalturaSocialAction"
                 }
@@ -14792,11 +15194,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -14829,12 +15233,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaSocialActionFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -14866,12 +15272,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaSocialCommentFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -14903,12 +15311,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaSocialFriendActivityFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -14940,12 +15350,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaSubscriptionFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -14974,11 +15386,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "ip": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 }
               },
@@ -15011,11 +15425,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -15042,11 +15457,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -15073,11 +15489,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -15104,11 +15521,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -15138,10 +15556,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "settings": {
                   "$ref": "#/definitions/KalturaTimeShiftedTvPartnerSettings"
                 }
@@ -15175,12 +15595,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -15209,12 +15631,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -15243,12 +15667,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaTopicFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -15280,15 +15706,17 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "automaticIssueNotification": {
                   "type": "string"
                 },
                 "id": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -15317,10 +15745,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "purchaseSession": {
                   "$ref": "#/definitions/KalturaPurchaseSession"
                 }
@@ -15351,10 +15781,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "purchase": {
                   "$ref": "#/definitions/KalturaPurchase"
                 }
@@ -15388,12 +15820,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetId": {
                   "type": "integer"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "transactionType": {
                   "type": "string"
@@ -15425,11 +15859,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "externalTransactionId": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "paymentGatewayId": {
@@ -15465,12 +15901,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "externalReceipt": {
                   "$ref": "#/definitions/KalturaExternalReceipt"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -15499,12 +15937,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaTransactionHistoryFilter"
-                },
-                "ks": {
-                  "type": "string"
                 },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
@@ -15536,12 +15976,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaUserAssetRuleFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
@@ -15573,10 +16015,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "userAssetsListItem": {
                   "$ref": "#/definitions/KalturaUserAssetsListItem"
                 }
@@ -15607,11 +16051,13 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetId": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "listType": {
@@ -15647,14 +16093,16 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "assetId": {
                   "type": "string"
                 },
                 "itemType": {
-                  "type": "string"
-                },
-                "ks": {
                   "type": "string"
                 },
                 "listType": {
@@ -15690,10 +16138,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "secret": {
                   "type": "string"
                 }
@@ -15727,10 +16177,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "pinCode": {
                   "type": "string"
                 }
@@ -15761,11 +16213,12 @@
             "in": "body",
             "name": "body",
             "schema": {
-              "properties": {
-                "ks": {
-                  "type": "string"
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
                 }
-              },
+              ],
+              "properties": {},
               "type": "object"
             }
           }
@@ -15792,10 +16245,12 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
-                "ks": {
-                  "type": "string"
-                },
                 "pinCode": {
                   "type": "string"
                 },
@@ -15832,12 +16287,14 @@
             "in": "body",
             "name": "body",
             "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/OTTRequest"
+                }
+              ],
               "properties": {
                 "filter": {
                   "$ref": "#/definitions/KalturaUserRoleFilter"
-                },
-                "ks": {
-                  "type": "string"
                 }
               },
               "type": "object"
