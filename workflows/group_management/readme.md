@@ -13,9 +13,9 @@ This workflow will do the following:
 Note: In order for groups to show up in KMS, a user role needs to be assigned to them.
 
 ## Create group
-Groups are created as a user with type GROUP
+Groups are created as a user with type GROUP.
 User ids should not contain spaces.
-Group name can be set as well, otherwise group will show up with id.
+Group name can be set using full name, otherwise group will show up with id.
 
 ### API Call
 ```json
@@ -25,15 +25,21 @@ Group name can be set as well, otherwise group will show up with id.
   "parameters": [
     {
       "name": "user[type]",
-      "consoleDefault": "GROUP"
+      "consoleDefault": "1"
     },
     {
       "name": "user[id]",
-      "consoleDefault": "sampleUser"
+      "consoleDefault": "sampleUser",
+      "group": "user",
+      "in": "query",
+      "type": "string"
     },
     {
       "name": "user[fullName]",
-      "consoleDefault": "Sample User"
+      "consoleDefault": "Sample User",
+      "group": "user",
+      "in": "query",
+      "type": "string"
     }
   ]
 }
@@ -51,13 +57,19 @@ Add a user to group
 ```
 
 ## View users within a group
-
+This step will return all users that are associated with the group defined.
 
 ### API Call
 ```json
 {
   "method": "get",
-  "path": "/service/groupuser/action/list"
+  "path": "/service/groupuser/action/list",
+  "parameters": [
+    {
+      "name": "filter[groupIdEqual]",
+      "consoleDefault": "sampleGroup"
+    }
+  ]
 }
 ```
 
