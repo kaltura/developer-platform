@@ -50,11 +50,11 @@ Add a user to group
   "parameters": [
     {
       "name": "groupuser[userid]",
-      "consoledefault": "sampleuser"
+      "consoledefault": "sampleUser"
     },
     {
       "name": "groupuser[groupid]",
-      "consoledefault": "samplegroup"
+      "consoledefault": "sampleGroup"
     }
   ]
 }
