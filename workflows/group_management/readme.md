@@ -12,10 +12,9 @@ This workflow will do the following:
 
 Note: In order for groups to show up in KMS, a user role needs to be assigned to them.
 
-## Create group
-Groups are created as a user with type GROUP.
+## Create User
+Users are created as a user with type USER [KalturaUserType::USER].
 User ids should not contain spaces.
-Group name can be set using full name, otherwise group will show up with id.
 
 ### API Call
 ```json
@@ -34,6 +33,34 @@ Group name can be set using full name, otherwise group will show up with id.
     {
       "name": "user[fullName]",
       "consoleDefault": "Sample User"
+    }
+  ]
+}
+```
+
+
+## Create group
+Groups are created as a user with type GROUP.
+User ids should not contain spaces.
+Group name can be set using full name, otherwise group will show up with id.
+
+### API Call
+```json
+{
+  "method": "get",
+  "path": "/service/user/action/add",
+  "parameters": [
+    {
+      "name": "user[type]",
+      "consoleDefault": 1 
+    },
+    {
+      "name": "user[id]",
+      "consoleDefault": "sampleGroup"
+    },
+    {
+      "name": "user[fullName]",
+      "consoleDefault": "Sample Group"
     }
   ]
 }
