@@ -4,11 +4,12 @@
 }
 -->
 
-# Group management
+# Group Management
 This workflow will do the following:
-1. Create a group
-2. Add a user to a group
-3. View users within group
+- Create a user
+- Create a group
+- Add a user to a group
+- List group users
 
 Note: In order for groups to show up in KMS, a user role needs to be assigned to them.
 
@@ -87,7 +88,7 @@ Add a user to group
 }
 ```
 
-## List users in group
+## List group users
 This step will return all users that are associated with the group defined.
 
 ### API Call
