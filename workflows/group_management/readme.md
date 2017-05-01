@@ -49,11 +49,11 @@ Add a user to group
   "path": "/service/groupuser/action/add",
   "parameters": [
     {
-      "name": "groupuser[userid]",
+      "name": "groupUser[userId]",
       "consoledefault": "sampleUser"
     },
     {
-      "name": "groupuser[groupid]",
+      "name": "groupUser[groupId]",
       "consoledefault": "sampleGroup"
     }
   ]
