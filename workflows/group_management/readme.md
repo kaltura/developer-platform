@@ -47,6 +47,12 @@ Add a user to group
 {
   "method": "get",
   "path": "/service/groupuser/action/add"
+  "parameters": [
+    {
+      "name": "groupUser[userId]",
+      "consoleDefault": "sampleUser"
+    }
+  ]
 }
 ```
 
