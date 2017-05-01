@@ -25,7 +25,7 @@ Group name can be set using full name, otherwise group will show up with id.
   "parameters": [
     {
       "name": "user[type]",
-      "consoleDefault": 1
+      "consoleDefault": 0 
     },
     {
       "name": "user[id]",
@@ -49,8 +49,12 @@ Add a user to group
   "path": "/service/groupuser/action/add",
   "parameters": [
     {
-      "name": "groupUser[userId]",
-      "consoleDefault": "sampleUser"
+      "name": "groupuser[userid]",
+      "consoledefault": "sampleuser"
+    },
+    {
+      "name": "groupuser[groupid]",
+      "consoledefault": "samplegroup"
     }
   ]
 }
