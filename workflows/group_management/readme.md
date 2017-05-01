@@ -46,7 +46,7 @@ Add a user to group
 ```json
 {
   "method": "get",
-  "path": "/service/groupuser/action/add"
+  "path": "/service/groupuser/action/add",
   "parameters": [
     {
       "name": "groupUser[userId]",
