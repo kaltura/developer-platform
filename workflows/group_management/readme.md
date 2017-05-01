@@ -29,17 +29,11 @@ Group name can be set using full name, otherwise group will show up with id.
     },
     {
       "name": "user[id]",
-      "consoleDefault": "sampleUser",
-      "group": "user",
-      "in": "query",
-      "type": "string"
+      "consoleDefault": "sampleUser"
     },
     {
       "name": "user[fullName]",
-      "consoleDefault": "Sample User",
-      "group": "user",
-      "in": "query",
-      "type": "string"
+      "consoleDefault": "Sample User"
     }
   ]
 }
