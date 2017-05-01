@@ -40,7 +40,7 @@ User ids should not contain spaces.
 
 
 ## Create group
-Groups are created as a user with type GROUP.
+Groups are created as a user with type GROUP [KalturaUserType::GROUP].
 User ids should not contain spaces.
 Group name can be set using full name, otherwise group will show up with id.
 
