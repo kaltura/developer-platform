@@ -63,7 +63,7 @@ This step will return all users that are associated with the group defined.
 ```json
 {
   "method": "get",
-  "path": "/service/groupuser/action/list"
+  "path": "/service/groupuser/action/list",
   "parameters": [
     {
       "name": "filter[groupIdEqual]",
