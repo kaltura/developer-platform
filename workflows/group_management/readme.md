@@ -25,7 +25,7 @@ Group name can be set using full name, otherwise group will show up with id.
   "parameters": [
     {
       "name": "user[type]",
-      "consoleDefault": "1"
+      "consoleDefault": 1
     },
     {
       "name": "user[id]",
