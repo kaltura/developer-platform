@@ -12,7 +12,7 @@ This workflow will do the following:
 
 Note: In order for groups to show up in KMS, a user role needs to be assigned to them.
 
-## Create User
+## Create a user
 Users are created as a user with type USER [KalturaUserType::USER].
 User ids should not contain spaces.
 
@@ -39,7 +39,7 @@ User ids should not contain spaces.
 ```
 
 
-## Create group
+## Create a group
 Groups are created as a user with type GROUP [KalturaUserType::GROUP].
 User ids should not contain spaces.
 Group name can be set using full name, otherwise group will show up with id.
@@ -66,7 +66,7 @@ Group name can be set using full name, otherwise group will show up with id.
 }
 ```
 
-## Add user to group
+## Add a user to a group
 Add a user to group
 
 ### API Call
@@ -87,7 +87,7 @@ Add a user to group
 }
 ```
 
-## View users within a group
+## List users in group
 This step will return all users that are associated with the group defined.
 
 ### API Call
