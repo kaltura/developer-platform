@@ -140,6 +140,13 @@ You are now ready to make other API calls!
   "disableSetupCode": true,
   "parameters": [
     {
+      "name": "ks",
+      "dynamicValue": {
+        "fromStep": 0,
+        "value": "ks"
+      }
+    },
+    {
       "name": "id"
     },
     {
