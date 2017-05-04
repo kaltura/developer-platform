@@ -308,6 +308,10 @@ workflowNavigation:
     children:
       - workflow: authentication
       - workflow: app_token_auth
+  - title: Secure, Control and Govern
+    icon: users
+    children:
+      - workflow: group_management 
   - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
     workflow: upload
