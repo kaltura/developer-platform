@@ -141,6 +141,7 @@ You are now ready to make other API calls!
   "parameters": [
     {
       "name": "ks",
+      "description": "This should be the ks generated from startWidgetSession in step 1",
       "dynamicValue": {
         "fromStep": 0,
         "value": "ks"
