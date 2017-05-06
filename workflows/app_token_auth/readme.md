@@ -123,12 +123,14 @@ $hashString = hash('sha256', $client->ks . "<%- answers.appTokenValue %>");
 ```
 
 ## Start the App Token Session
-You now pass the the hash from the previous step to the `appToken.startSession` API call. The following parameters are accepted:
+You will now call `appToken.startSession` to obtain a privileged Kaltura Session (KS). 
+
+First, ensure that your client's KS is set to the unprivileged KS returned in Step 1.  Next, pass the following parameters into the `appToken.startSession` call:
 * `id`: The ID of the Application Token with which you are authenticating.
 * `tokenHash`: The hash value of the unprivileged KS and the Application Token value. Use the output of Step 2 of this recipe.
-* `userId`: The ID of the user whose permissions will be used to access content. Note that some Application Tokens already have a fixed User ID, in which case you do not need to pass this value.
+* `userId`: The ID of the user whose permissions will be used to access content. **Note that some Application Tokens already have a fixed User ID, in which case you do not need to pass this value.*
 
-This call returns a new, privileged Kaltura Session for your application. Set the returned value as the client's KS.
+Executing the call returns a new, privileged KS for your application. Set the returned value as the client's KS.
 
 You are now ready to make other API calls!
 
