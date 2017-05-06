@@ -4,14 +4,7 @@
 }
 -->
 
-# Group Management
-This workflow will do the following:
-- Create a user
-- Create a group
-- Add a user to a group
-- List group users
-
-Note: In order for groups to show up in KMS, a user role needs to be assigned to them.
+Note: In order for groups to be displayed in KMS, a user role needs to be assigned to them.
 
 ## Create a user
 Users are created as a user with type USER [KalturaUserType::USER].
