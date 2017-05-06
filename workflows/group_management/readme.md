@@ -4,6 +4,8 @@
 }
 -->
 
+# Group Management
+
 Note: In order for groups to be displayed in KMS, a user role needs to be assigned to them.
 
 ## Create a user
