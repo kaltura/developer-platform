@@ -239,31 +239,59 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
     input.plugins.push(tag['x-plugin']);
   }
   input.parameters = [];
-  let addedParameters = [];
-  input.operation.parameters.forEach(p => {
-    if (p.$ref || p['x-global']) return;
-    let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
-    if (addedParameters.indexOf(baseName) !== -1) return;
-    addedParameters.push(baseName);
-    if (baseName === p.name) {
-      input.parameters.push({name: p.name, schema: p.schema || p})
-    } else {
-      let group = input.operation['x-parameterGroups'].filter(g => g.name === p['x-group'])[0];
-      let title = group.schema.title || getDefName(group.schema.$ref);
-      let schema = this.swagger.definitions[title];
-      input.parameters.push({name: group.name, schema});
+  let isOTT = this.swagger.host.indexOf('ott.') !== -1;
+  if (isOTT) {
+    let body = JSON.parse(input.answers.body || '{}');
+    let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
+    input.answers = {};
+    function addAnswer(key, answer) {
+      if (Array.isArray(answer)) {
+        answer.forEach((ans, idx) => {
+          addAnswer(key + '[' + idx + ']', ans);
+        })
+      } else if (typeof answer === 'object') {
+        for (let subkey in answer) {
+          addAnswer(key + '[' + subkey + ']', answer[subkey]);
+        }
+      } else {
+        input.answers[key] = answer;
+      }
     }
-  })
+    for (let key in body) {
+      if (key === 'ks' || key === 'version') continue;
+      let schema = bodyParam.schema.properties[key];
+      if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+      let param = {name: key, schema};
+      input.parameters.push(param);
+      addAnswer(key, body[key]);
+    }
+  } else {
+    let addedParameters = [];
+    input.operation.parameters.forEach(p => {
+      if (p.$ref || p.global || p['x-global']) return;
+      let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
+      if (addedParameters.indexOf(baseName) !== -1) return;
+      addedParameters.push(baseName);
+      if (baseName === p.name) {
+        input.parameters.push({name: p.name, schema: p.schema || p})
+      } else {
+        let group = input.operation['x-parameterGroups'].filter(g => g.name === p['x-group'])[0];
+        let title = group.schema.title || getDefName(group.schema.$ref);
+        let schema = this.swagger.definitions[title];
+        input.parameters.push({name: group.name, schema});
+      }
+    })
+    input.answers = input.answers || {};
+    input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
+    input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
+    input.parameters.forEach(p => {
+      if (input.answers[p.name] === undefined) {
+        let val = p.schema.default || p.schema['x-consoleDefault'];
+        if (val !== undefined) input.answers[p.name] = val;
+      }
+    })
+  }
   input.parameterNames = input.parameters.map(p => p.name).map(n => this.rewriteVariable(n));
-  input.answers = input.answers || {};
-  input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
-  input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
-  input.parameters.forEach(p => {
-    if (input.answers[p.name] === undefined) {
-      let val = p.schema.default || p.schema['x-consoleDefault'];
-      if (val !== undefined) input.answers[p.name] = val;
-    }
-  })
 }
 
 CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
