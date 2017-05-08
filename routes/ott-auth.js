@@ -12,6 +12,7 @@ Router.post('/ottLogin', function(req, res) {
       .completion((success, response) => {
         if (!success) return res.status(500).send("Error logging in");
         if (!response.result) return res.status(500).send(response.message);
+        if (response.result.error) return res.status(500).send(response.result.message);
         res.json(response.result);
       })
       .execute(client);
