@@ -140,6 +140,7 @@
       window.jquery('#KalturaPartnerIDModal .kaltura-loading').hide();
       window.jquery('#KalturaPartnerIDModal').modal('show');
       mixpanel.identify(creds.email);
+      ga('set', 'userId', creds.email);
       mixpanel.people.set({
         '$email': creds.email,
       })
