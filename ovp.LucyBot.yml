@@ -99,10 +99,16 @@ operationNavigation:
   - title: "Overview"
     markdownFile: ./markdown/overview.md
     discussionURL: null
+    meta:
+      title: "Kaltura VPaaS API Overview"
+      description: "Learn how to use the Kaltura VPaaS API"
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
     disableEditLink: true
     discussionURL: null
+    meta:
+      title: "Native Client Libraries"
+      description: "Download and learn how to use Kaltura's client libraries"
     children:
       - title: "Support Matrix"
         markdownFile: ./markdown/generated/support_matrix.md
