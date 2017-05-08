@@ -59,6 +59,7 @@ describe('Sample Code', function() {
   }]
 
   testCases.forEach(function(testCase) {
+    if ((process.env.TEST_CASE || testCase.name) !== testCase.name) return;
     testCase.input.answers = testCase.input.answers || {};
     testCase.input.answers = {
       body: JSON.stringify(testCase.input.answers),

@@ -22,6 +22,21 @@ describe('Sample Code', function() {
       showSetup: false,
     },
   }, {
+    name: 'array_input',
+    service: 'accesscontrolprofile',
+    action: 'add',
+    input: {
+      showSetup: true,
+      answers: {
+        'accessControlProfile[name]': 'foo',
+        'accessControlProfile[rules][0][code]': 'thiscode',
+        'accessControlProfile[rules][0][contexts][0][type]': 1,
+        'accessControlProfile[rules][0][conditions][0][description]': 'cond 1',
+        'accessControlProfile[rules][0][conditions][1][description]': 'cond 2',
+        'accessControlProfile[rules][1][code]': 'second code',
+      }
+    },
+  }, {
     name: 'start_session',
     service: 'session',
     action: 'start',
@@ -119,6 +134,7 @@ describe('Sample Code', function() {
 
   testCases.forEach(function(testCase) {
     CodeTemplate.LANGUAGES.forEach(function(language) {
+      if ((process.env.TEST_CASE || testCase.name) !== testCase.name) return;
       it('should generate ' + testCase.name + ' for ' + language, function() {
         let opts = {language, swagger};
         let ext = CodeTemplate.LANGUAGE_DETAILS[language].ext;

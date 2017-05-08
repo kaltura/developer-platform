@@ -50,6 +50,8 @@ var language_opts = {
     enumAccessor: '',
     declarationPrefix: '',
     constant: JSON.stringify,
+    emptyArray: function(type, num) {return '[]'},
+    arrayAccessor: function(idx) {return '[' + idx + ']'},
     rewriteAttribute: function(s) {return s},
     rewriteVariable: function(s) {return s},
     rewriteAction: function(s) {return s},
@@ -124,6 +126,9 @@ var language_opts = {
     statementSuffix: ';',
     objPrefix: 'new ',
     objSuffix: '()',
+    emptyArray: function(type, num) {return 'new ArrayList<' + type + '>(' + num + ')'},
+    arrayAccessor: function(idx) {return '.get(' + idx + ')'},
+    arraySetter: function(idx, setter) {return '.set(' + idx + ', ' + setter + ')'},
     rewriteService: function(s) {
       return 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()';
     },
@@ -142,6 +147,8 @@ var language_opts = {
     statementSuffix: ';',
     objPrefix: 'new ',
     objSuffix: '()',
+    emptyArray: function(type, num) {return 'new List<' + type + '>()'},
+    arraySetter: function(idx, setter) {return '.Add(' + setter + ')'},
     rewriteAttribute: function(s) {
       return capitalize(s);
     },
@@ -196,6 +203,12 @@ var CodeTemplate = module.exports = function(opts) {
 
 const getDefName = (ref) => {
   return ref.substring('#/definitions/'.length);
+}
+
+const maybeResolveRef = (schema, swagger) => {
+  if (!schema.$ref) return schema;
+  let name = getDefName(schema.$ref);
+  return swagger.definitions[name];
 }
 
 CodeTemplate.prototype.render = function(input) {
@@ -300,7 +313,7 @@ CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
   return assignment ? assignment + '\n\n': '';
 }
 
-CodeTemplate.prototype.assignment = function(param, answers, parentDef) {
+CodeTemplate.prototype.assignment = function(param, answers, parent) {
   var self = this;
   let subtype = answers[param.name + '[objectType]'];
   if (subtype && subtype !== param.schema.title) {
@@ -308,10 +321,18 @@ CodeTemplate.prototype.assignment = function(param, answers, parentDef) {
       name: param.name,
       schema: this.swagger.definitions[subtype],
     }
-    return self.assignment(newParam, answers, parentDef);
+    return self.assignment(newParam, answers, parent);
+  }
+  if (param['x-showCondition']) {
+    let cond = param['x-showCondition'];
+    if (cond.value.indexOf(answers[cond.name]) === -1) return;
   }
 
-  let assignment = this.lvalue(param, answers) + ' = ' + this.rvalue(param, answers, parentDef) + this.statementSuffix;
+  let assignment = this.lvalue(param) + ' = ' + this.rvalue(param, answers, parent) + this.statementSuffix;
+  let arrMatch = param.name.match(/\[(\d+)\]$/)
+  if (arrMatch && this.arraySetter) {
+    assignment = this.lvalue(param) + this.arraySetter(arrMatch[1], this.rvalue(param, answers)) + this.statementSuffix
+  }
 
   const findSubschema = (subParamName, schema) => {
     if (schema.$ref) schema = this.swagger.definitions[schema.$ref.substring('#/definitions/'.length)];
@@ -331,8 +352,10 @@ CodeTemplate.prototype.assignment = function(param, answers, parentDef) {
     return null;
   }
   if (!isPrimitiveSchema(param.schema)) {
-    let subparamRegexp = '^' + param.name.replace(/\[/g, '\\[').replace(/\]/g, '\\]') + '\\[\\w+\\]';
+    let subparamRegexp = '^' + param.name.replace(/\[/g, '\\[').replace(/\]/g, '\\]');
+    subparamRegexp += '\\[(\\w+)\\]';
     let objectSubparamRegexp = new RegExp(subparamRegexp + '\\[objectType\\]$')
+    let arraySubparamRegexp = new RegExp(subparamRegexp + '\\[(\\d+)\\].*');
     subparamRegexp = new RegExp(subparamRegexp + '$');
     let subsetters = Object.keys(answers)
       .filter(n => n !== param.name && n.match(subparamRegexp) && !n.match(/\[objectType\]$/))
@@ -340,23 +363,47 @@ CodeTemplate.prototype.assignment = function(param, answers, parentDef) {
     let objSubsetters = Object.keys(answers)
       .filter(n => n.match(objectSubparamRegexp))
       .map(n => ({name: n.substring(0, n.length - 12), schema: self.swagger.definitions[answers[n]]}));
-    subsetters = subsetters.concat(objSubsetters)
+    let subsetterStatements = subsetters.concat(objSubsetters)
       .filter(prop => prop.schema)
       .map(function(prop) {
-        return self.assignment(prop, answers, param.schema.title);
+        return self.assignment(prop, answers, param);
       });
-    assignment = ([assignment]).concat(subsetters).join('\n');
+
+    let arraySubsetterNames = Object.keys(answers)
+      .map(n => n.match(arraySubparamRegexp))
+      .filter(match => match)
+      .map(match => match[1]);
+    arraySubsetterNames = arraySubsetterNames.filter((n, idx) => arraySubsetterNames.lastIndexOf(n) === idx);
+    subsetterStatements = subsetterStatements.concat(arraySubsetterNames.map(arrayName => {
+      let schema = param.schema.properties[arrayName];
+      let itemSchema = maybeResolveRef(schema.items, self.swagger);
+      let subparam = {name: param.name + '[' + arrayName + ']', schema};
+      let indices = Object.keys(answers)
+        .map(n => n.match(arraySubparamRegexp))
+        .filter(match => match)
+        .map(match => +match[2])
+      indices = indices.filter((i, idx) => indices.lastIndexOf(i) === idx);
+      let statement = self.lvalue(subparam) + ' = ' + self.emptyArray(self.rewriteType(itemSchema.title), indices.length) + self.statementSuffix;
+      let itemStatements = indices
+        .map(index => {
+          return {
+            schema: itemSchema,
+            name: param.name + '[' + arrayName + ']' + '[' + index + ']'
+          }
+        })
+        .map((prop, idx) => {
+          return self.assignment(prop, answers, param)
+        })
+      return ([statement]).concat(itemStatements).join('\n');
+    }))
+    assignment = ([assignment]).concat(subsetterStatements).join('\n');
   }
   return assignment;
 }
 
-CodeTemplate.prototype.lvalue = function(param, answers) {
+CodeTemplate.prototype.lvalue = function(param) {
   var self = this;
   var isChild = param.name.indexOf('[') !== -1;
-  if (param['x-showCondition']) {
-    let cond = param['x-showCondition'];
-    if (cond.value.indexOf(answers[cond.name]) === -1) return;
-  }
   let enumType = param.schema['x-enumType'];
   if (param.schema.oneOf && param.schema.oneOf[0].enum) {
     enumType = param.schema.title;
@@ -372,8 +419,16 @@ CodeTemplate.prototype.lvalue = function(param, answers) {
   if (isChild) {
     let attrs = param.name.split(/\[/).map(s => s.replace(/\]/g, '')).filter(n => n !== 'objectType');
     lvalue += attrs.map((a, idx) => {
-      return idx === 0 ? self.rewriteVariable(a) : self.rewriteAttribute(a);
-    }).join(self.accessor);
+      if (a.match(/^\d+$/)) {
+        if (idx === attrs.length - 1 && self.arraySetter) {
+          return '';
+        } else {
+          return self.arrayAccessor(a);
+        }
+      } else {
+        return idx === 0 ? self.rewriteVariable(a) : self.accessor + self.rewriteAttribute(a);
+      }
+    }).join('');
   } else {
     let type = enumType || (isPrimitiveSchema(param.schema) ? param.schema.type : param.schema.title) || 'UnknownType';
     type = this.rewriteType(type);
@@ -382,7 +437,7 @@ CodeTemplate.prototype.lvalue = function(param, answers) {
   return lvalue;
 }
 
-CodeTemplate.prototype.rvalue = function(param, answers, parentDef) {
+CodeTemplate.prototype.rvalue = function(param, answers, parent) {
   var self = this;
   let enm = param.schema.enum;
   let enumLabels = param.schema['x-enumLabels'];
@@ -391,8 +446,8 @@ CodeTemplate.prototype.rvalue = function(param, answers, parentDef) {
     enm = param.schema.oneOf.map(sub => sub.enum[0])
     enumLabels = param.schema.oneOf.map(sub => sub.title);
     enumType = param.schema.title;
-  } else if (param.name.match(/\[orderBy\]/) && parentDef) {
-    enumType = parentDef.replace(/Filter$/, 'OrderBy');
+  } else if (param.name.match(/\[orderBy\]/) && parent) {
+    enumType = parent.schema.title.replace(/Filter$/, 'OrderBy');
     let enumDef = this.swagger['x-enums'][enumType];
     if (enumDef) {
       enm = enumDef.oneOf.map(s => s.enum[0]);
