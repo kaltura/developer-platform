@@ -26,12 +26,12 @@ SET TARGET_API=ott
 "C:\Program Files\nodejs\node.exe" scripts\resources\schemas.js
 
 @ECHO Generating ott documentation
-("C:\Program Files\nodejs\node.exe" scripts\resources\ott.js
+"C:\Program Files\nodejs\node.exe" scripts\resources\ott.js
 
 @ECHO Generating support matrix
-("C:\Program Files\nodejs\node.exe" scripts\resources\support_matrix.js
+"C:\Program Files\nodejs\node.exe" scripts\resources\support_matrix.js
 
 @ECHO Running lucybot
-("C:\Program Files\nodejs\node.exe" lucybot build --prerender --destination generated/ott
+"C:\Program Files\nodejs\node.exe" lucybot build --prerender --destination generated/ott
 
 
