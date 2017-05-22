@@ -17,19 +17,21 @@ MKDIR markdown\generated
 ECHO Setting environment variable
 SET TARGET_API=ott
 
-ECHO Generating client libraries markdown
+@ECHO ON
+
+@ECHO Generating client libraries markdown
 "C:\Program Files\nodejs\node.exe" scripts\resources\client_libraries_from_dir.js ott %VERSION% %CLIENT_LIBS_DIR% %CLIENT_LIBS_URL%
 
-ECHO Generating schemes markdown
+@ECHO Generating schemes markdown
 "C:\Program Files\nodejs\node.exe" scripts\resources\schemas.js
 
-ECHO Generating ott documentation
+@ECHO Generating ott documentation
 ("C:\Program Files\nodejs\node.exe" scripts\resources\ott.js
 
-ECHO Generating ott documentation
+@ECHO Generating support matrix
 ("C:\Program Files\nodejs\node.exe" scripts\resources\support_matrix.js
 
-ECHO Running lucybot
+@ECHO Running lucybot
 ("C:\Program Files\nodejs\node.exe" lucybot build --prerender --destination generated/ott
 
 
