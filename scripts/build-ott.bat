@@ -14,9 +14,6 @@ CD %0\..\..\
 ECHO Creating generated markdown directory  
 MKDIR markdown\generated
 
-ECHO Installing node modules and dependencies
-"C:\Program Files\nodejs\npm.cmd" install
-
 ECHO Setting environment variable
 SET TARGET_API=ott
 
