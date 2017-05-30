@@ -141,6 +141,13 @@
       window.jquery('#KalturaPartnerIDModal').modal('show');
       mixpanel.identify(creds.email);
       ga('set', 'userId', creds.email);
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'login',
+        eventAction: 'login',
+        eventLabel: 'partnerId',
+        eventValue: creds.partnerId,
+      });
       mixpanel.people.set({
         '$email': creds.email,
       })

@@ -12,6 +12,8 @@ embedParameters:
 
 javascript:
   - 'assets/mixpanel.js'
+  - 'assets/google-analytics.js'
+  - 'assets/tracker.js'
   - 'assets/KalturaClient.min.js'
   - 'assets/KalturaSessionService.min.js'
   - 'assets/KalturaPartnerService.min.js'
