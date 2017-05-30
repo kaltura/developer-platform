@@ -199,6 +199,7 @@ operationNavigation:
       - tag: "category"
       - tag: "categoryEntry"
       - tag: "categoryUser"
+      - tag: "media"
       - tag: "metadata"
       - tag: "metadataProfile"
       - tag: "captionAsset"
@@ -211,6 +212,7 @@ operationNavigation:
   - title: "Search, Discover and Personalize"
     children:
       - operation: "baseEntry.list"
+      - tag: "media"
       - tag: "captionAssetItem"
       - tag: "playlist"
       - tag: "like"
