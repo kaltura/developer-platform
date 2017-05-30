@@ -1,7 +1,8 @@
 (function() {
   window.lucybot.tracker = function(name, properties) {
-    mixpanel.track(name, properties);
-    ga('send', {
+    if (window.lucybot.prerender) return;
+    window.mixpanel.track(name, properties);
+    window.ga('send', {
       hitType: 'event',
       eventCategory: name,
       eventAction: name,
