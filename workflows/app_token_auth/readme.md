@@ -60,7 +60,7 @@ var shasum = crypto.createHash('<%- answers.hashFunction %>');
 
 client.ks = widgetSession.ks;
 shasum.update(client.ks + "<%- answers.appTokenValue %>");
-var hash = client.shasum.digest('hex');
+var hash = shasum.digest('hex');
 ```
 ### Sample Code (csharp)
 ```csharp

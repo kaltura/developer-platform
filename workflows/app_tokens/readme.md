@@ -79,7 +79,7 @@ var crypto = require('crypto')
   , shasum = crypto.createHash('sha1');
 
 shasum.update(client.ks + appToken.token);
-var hash = client.shasum.digest('hex');
+var hash = shasum.digest('hex');
 
 client.appToken.startSession(function(results) {
   if (results && results.code && results.message) {
