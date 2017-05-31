@@ -10,7 +10,7 @@ An Application Token enables clients to provide their development partners or in
 Developers who are provided with an Application Token use it to create temporary Kaltura Session (KS) tokens, which they will then use to access API functions. These KS tokens will have the restrictions of their originating Application Token.
 
 ## Start a Widget Session
-Start an unprivileged session by calling `session.startWidgetSession`. Once the call completes, set the returned `ks` value as the KS (Kaltura Session) of the client object.
+Start an unprivileged session by calling `session.startWidgetSession`. Once the call completes, use client.setKs() to set the returned `ks` value as the KS (Kaltura Session) of the client object.
 
 The widgetId should be a partnerId, with an underscore at the beginning, e.g. `_1234567`.
 
