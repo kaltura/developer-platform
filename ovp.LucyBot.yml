@@ -323,9 +323,6 @@ workflowNavigation:
   - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
     workflow: upload
-  - title: Live Stream and Broadcast
-    icon: assets/img/icons/play-back.png
-    workflow: live_broadcast
   - title: Enrich and Organize Metadata
     icon: assets/img/icons/distribute.png
     children:
