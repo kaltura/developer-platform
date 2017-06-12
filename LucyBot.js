@@ -37,6 +37,12 @@ function makeEnumItem(name) {
 if (TARGET_API === 'ott') {
   let tagItems = openapi.tags.map(t => ({tag: t.name}));
   config.operationNavigation.push({children: tagItems, title: 'Services'});
+} else {
+  config.javascript = [
+    'assets/mixpanel.js',
+    'assets/google-analytics.js',
+    'assets/tracker.js',
+  ].concat(config.javascript);
 }
 
 let objectsItem = {title: 'General Objects', children: [], prerender: false};
