@@ -33,7 +33,7 @@ Do not set a KS on the client before making this call.
 ## Compute the Hash
 Compute a hash of the unprivileged Kaltura Session (from the previous step) and the App Token's value, concatenated. This value will be passed to `appToken.startSession` in the following step.
 
-SHA-256 is the default hash function used with Application Tokens. If your Application Token was created with a different hash function (e.g. SHA-1 or MD5), compute that hash instead.
+SHA-1 is the default hash function used with Application Tokens. If your Application Token was created with a different hash function (e.g. SHA-256 or MD5), compute that hash instead.
 
 ### API Call
 ```json
