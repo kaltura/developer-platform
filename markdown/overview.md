@@ -36,7 +36,7 @@ For example, to retrieve a list of media entries, you’ll need to call the list
 To learn more, follow these guides: 
 * [How to Create a Kaltura Session](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html)
 * [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)
-* [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
+* [Introduction to Kaltura's Client Libraries](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
 
 For reference, at each action page of the [API docs](https://developer.kaltura.com) you’ll see respected request GET URL at the top of the page. 
 
