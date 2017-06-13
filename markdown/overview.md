@@ -21,7 +21,7 @@ Being a REST API, the Kaltura API can be used by constructing and making calls t
 
 Notice how the service and action are stated in the URL after each parameter name. Replace the placeholders above with the service name and action you'd like to execute:
 
-* The_Service_To_Use — The service (entity in the system) to call. You can find the list of services in the [API side panel](https://developer.kaltura.com) under each of the categories (e.g. [session]( https://developer.kaltura.com/api-docs/Generate_API_Sessions/session), [appToken]( https://developer.kaltura.com/api-docs/Generate_API_Sessions/appToken), [user]( https://developer.kaltura.com/api-docs/Search_Discover_and_Personalize/user), [media]( https://developer.kaltura.com/api-docs/Search_Discover_and_Personalize/media), etc.)
+* The_Service_To_Use — The service (entity in the system) to call. You can find the list of services in the [API side panel](https://developer.kaltura.com) under each of the categories (e.g. [session](https://developer.kaltura.com/api-docs/Generate_API_Sessions/session), [appToken](https://developer.kaltura.com/api-docs/Generate_API_Sessions/appToken), [user](https://developer.kaltura.com/api-docs/Search_Discover_and_Personalize/user), [media](https://developer.kaltura.com/api-docs/Search_Discover_and_Personalize/media), etc.)
 * The_Action_To_Execute — The action you wish to execute on the service. You can find the list of actions available for each service in the [API side panel](https://developer.kaltura.com) under each of the services (e.g. [session.start](https://developer.kaltura.com/api-docs/Generate_API_Sessions/session/session_start), [session.end](https://developer.kaltura.com/api-docs/Generate_API_Sessions/session/session_end), etc.)
 
 For example, to use the ping action to check if the API is up, you can use the `system` service and `ping` action: http://www.kaltura.com/api_v3/index.php/service/system/action/ping .
@@ -36,7 +36,7 @@ For example, to retrieve a list of media entries, you’ll need to call the list
 To learn more, follow these guides: 
 * [How to Create a Kaltura Session](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html)
 * [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)
-* [Kaltura API Authentication and Security(]https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
+* [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
 
 For reference, at each action page of the [API docs](https://developer.kaltura.com) you’ll see respected request GET URL at the top of the page. 
 
