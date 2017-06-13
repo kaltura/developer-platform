@@ -163,7 +163,7 @@ operationNavigation:
       - tag: "attachmentAsset"
       - tag: "externalMedia"
       - tag: "upload"
-        hidden: true
+        hide: true
   - title: "Execute Bulk Ingest and Updates"
     children:
       - operation: "media.bulkUploadAdd"
@@ -177,11 +177,11 @@ operationNavigation:
       - tag: "dropFolder"
       - tag: "dropFolderFile"
       - tag: "virusScanProfile"
-        hidden: true
+        hide: true
       - tag: "aspera"
-        hidden: true
+        hide: true
       - tag: "bulkUpload"
-        hidden: true
+        hide: true
   - title: "Convert and Transcode Media"
     children:
       - tag: "flavorAsset"
@@ -230,7 +230,7 @@ operationNavigation:
       - tag: "like"
       - tag: "uiConf"
       - tag: "annotation"
-        hidden: true
+        hide: true
   - title: "Review Media Analytics"
     children:
       - tag: "analytics"
@@ -246,9 +246,9 @@ operationNavigation:
       - tag: "distributionProfile"
       - tag: "distributionProvider"
       - tag: "deliveryProfile"
-        hidden: true
+        hide: true
       - tag: "storageProfile"
-        hidden: true
+        hide: true
   - title: "Secure, Control and Govern"
     children:
       - tag: "partner"
@@ -261,11 +261,11 @@ operationNavigation:
       - tag: "permission"
       - tag: "permissionItem"
       - tag: "accessControl"
-        hidden: true
+        hide: true
       - tag: "adminUser"
-        hidden: true
+        hide: true
       - tag: "auditTrail"
-        hidden: true
+        hide: true
   - title: "Optimize API Requests"
     children:
       - tag: "multirequest"
@@ -283,7 +283,7 @@ operationNavigation:
       - tag: "integration"
       - tag: "businessProcessCase"
       - tag: "notification"
-        hidden: true
+        hide: true
   - title: "Encrypt and License Content"
     children:
       - tag: "drmLicenseAccess"
@@ -292,7 +292,7 @@ operationNavigation:
       - tag: "playReadyDrm"
       - tag: "widevineDrm"
       - tag: "deliveryProfile"
-        hidden: true
+        hide: true
   - title: "Manage Documents and Other Assets"
     children:
       - tag: "baseEntry"
@@ -308,7 +308,7 @@ operationNavigation:
     children:
       - tag: "system"
       - tag: "storageProfile"
-        hidden: true
+        hide: true
 
 workflowNavigation:
   - title: Generate API Sessions
