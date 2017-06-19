@@ -372,8 +372,11 @@ $component-offset-horizontal: 180px;
 $text-muted: $gray-light;
 $abbr-border-color: $gray-light;
 $headings-small-color: $gray-light;
-$blockquote-small-color: $gray;
-$blockquote-font-size: ($font-size-base * 1.25);
+$blockquote-small-color: #333;
+blockquote {
+  color: $blockquote-small-color;
+}
+$blockquote-font-size: $font-size-base;
 $blockquote-border-color: $table-border-color;
 $page-header-border-color: $table-border-color;
 $dl-horizontal-offset: $component-offset-horizontal;
