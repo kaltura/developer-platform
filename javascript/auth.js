@@ -119,7 +119,7 @@
     creds.password = window.jquery('input[name="KalturaPassword"]').val();
     creds.partnerId = window.jquery('input[name="KalturaPartnerId"]').val();
 
-    mixpanel.track('login_submit', {
+    window.lucybot.tracker('login_submit', {
       email: creds.email,
     });
     var url = window.lucybot.env.target_api === 'ott' ? '/auth/ottLogin' : '/auth/login';
@@ -139,19 +139,23 @@
       }
       window.jquery('#KalturaPartnerIDModal .kaltura-loading').hide();
       window.jquery('#KalturaPartnerIDModal').modal('show');
-      mixpanel.identify(creds.email);
-      ga('set', 'userId', creds.email);
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'login',
-        eventAction: 'login',
-        eventLabel: 'partnerId',
-        eventValue: creds.partnerId,
-      });
-      mixpanel.people.set({
-        '$email': creds.email,
-      })
-      mixpanel.track('login_success', {
+      if (window.ga) {
+        ga('set', 'userId', creds.email);
+        ga('send', {
+          hitType: 'event',
+          eventCategory: 'login',
+          eventAction: 'login',
+          eventLabel: 'partnerId',
+          eventValue: creds.partnerId,
+        });
+      }
+      if (window.mixpanel) {
+        mixpanel.identify(creds.email);
+        mixpanel.people.set({
+          '$email': creds.email,
+        })
+      }
+      window.lucybot.tracker('login_success', {
         email: creds.email,
       });
       var partnerChoicesHTML = response.map(function(partner) {
@@ -161,7 +165,7 @@
       user = creds;
     })
     .fail(function(xhr) {
-      mixpanel.track('login_error', {
+      window.lucybot.tracker('login_error', {
         email: creds.email,
         error: xhr.responseText,
       })
@@ -192,7 +196,7 @@
       setKalturaUser(creds);
     })
     .fail(function(xhr) {
-      mixpanel.track('login_error', {
+      window.lucybot.tracker('login_error', {
         partnerId: user.partnerId,
         email: user.email,
         error: xhr.responseText,

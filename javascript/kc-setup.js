@@ -1,7 +1,7 @@
 window.KC = null;
 
 function setKalturaSession(creds, cb) {
-  mixpanel.track('kaltura_session', {
+  window.lucybot.tracker('kaltura_session', {
     partnerId: creds.partnerId,
   });
   KC.setKs(creds.ks);
@@ -46,7 +46,7 @@ window.setUpKalturaClient = function(creds, cb) {
     if (!success || (data.code && data.message)) {
       var trackObj = data || {};
       console.log('Kaltura Error', success, data);
-      mixpanel.track('kaltura_session_error', trackObj);
+      window.lucybot.tracker('kaltura_session_error', trackObj);
       cb(data);
       return true;
     }
