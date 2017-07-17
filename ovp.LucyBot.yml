@@ -117,27 +117,27 @@ operationNavigation:
     markdownFile: ./markdown/schemas.md
     children:
       - title: 'Syndication Feed'
-        markdownFile: ./markdown/generated/syndication.md
+        markdownURL: ./assets/markdown/generated/syndication.md
         disableEditLink: true
         prerender: false
       - title: 'Bulk Upload'
-        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadXML.md
+        markdownURL: ./assets/markdown/generated/bulkUploadXml.bulkUploadXML.md
         disableEditLink: true
         prerender: false
       - title: 'Bulk Upload Results'
-        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadResultXML.md
+        markdownURL: ./assets/markdown/generated/bulkUploadXml.bulkUploadResultXML.md
         disableEditLink: true
         prerender: false
       - title: 'Cue Point Serve'
-        markdownFile: ./markdown/generated/cuePoint.serveAPI.md
+        markdownURL: ./assets/markdown/generated/cuePoint.serveAPI.md
         disableEditLink: true
         prerender: false
       - title: 'Cue Point Ingest'
-        markdownFile: ./markdown/generated/cuePoint.ingestAPI.md
+        markdownURL: ./assets/markdown/generated/cuePoint.ingestAPI.md
         disableEditLink: true
         prerender: false
       - title: 'Drop Folder'
-        markdownFile: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
+        markdownURL: ./assets/markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         disableEditLink: true
         prerender: false
   - title: "Generate API Sessions"

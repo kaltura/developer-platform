@@ -29,7 +29,7 @@ schemas.forEach(function(s) {
 })
 
 var SCHEMA_MD = fs.readFileSync(__dirname + '/../../markdown/templates/schema.md', 'utf8');
-const OUTPUT_DIR = __dirname + '/../../markdown/generated/';
+const OUTPUT_DIR = __dirname + '/../../assets/markdown/generated/';
 
 function getContents(s) {
   return SCHEMA_MD.replace('{{ label }}', s.label).replace('{{ html }}', s.html);
