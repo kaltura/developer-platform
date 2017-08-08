@@ -1,10 +1,20 @@
+h1.breadcrumbs {
+  font-size: 18px;
+}
 .breadcrumbs .fa-lock,
 .breadcrumbs .fa-unlock {
   display: none;
+}
+.breadcrumbs .fa-chevron-right {
+  font-size: 14px;
 }
 .discussion-frame {
   border: none !important;
 }
 .discussion .discussion-link {
   display: none;
+}
+
+.h2, h2 {
+    font-size: 26px;
 }
