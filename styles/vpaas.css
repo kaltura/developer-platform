@@ -1408,11 +1408,11 @@ td {
   float: right;
 }
 
-.search-close.fa.fa-times.fa-lg {
+/*.search-close.fa.fa-times.fa-lg {
   float: right;
   color: #ccc;
   padding-top: 24px;
-}
+}*/
 
 .nav-dropdown {
   padding-top: 22px;
@@ -1826,7 +1826,7 @@ td {
 }
 
 .fa.fa-times {
-  float: right;
+/*  float: right;*/
   color: #aaa;
 }
 
