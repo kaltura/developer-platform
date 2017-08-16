@@ -281,7 +281,11 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   } else {
     let addedParameters = [];
     input.operation.parameters.forEach(p => {
-      if (p.$ref || p.global || p['x-global']) return;
+      if (p.$ref) {
+        let ref = p.$ref.match(/#\/parameters\/(.*)$/)[1];
+        p = this.swagger.parameters[ref];
+      }
+      if (p.global || p['x-global']) return;
       let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
       if (addedParameters.indexOf(baseName) !== -1) return;
       addedParameters.push(baseName);
