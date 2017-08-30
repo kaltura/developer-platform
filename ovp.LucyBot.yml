@@ -468,6 +468,10 @@ operationNavigation:
       - tag: "system"
       - tag: "storageProfile"
         hide: true
+  - title: "Miscellaneous"
+    isMiscellaneous: true
+    hide: true
+    searchable: true
 
   - title: "Contribute"
     children:
