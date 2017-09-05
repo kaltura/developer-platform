@@ -8,6 +8,8 @@ const version = process.argv[3].replace('v', '').replace('_', '.');
 const dir = process.argv[4];
 const baseUrl = process.argv[5];
 
+console.log(`target: ${target}, version: ${version}, dir: ${dir}, baseUrl: ${baseUrl}`);
+
 function pad(n, width, z) {
   z = z || '0';
   n = n + '';
