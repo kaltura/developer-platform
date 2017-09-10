@@ -22,15 +22,30 @@ var regex = new RegExp(`^([^_]+)_${date}\.tar\.gz$`);
 var files = fs.readdirSync(dir);
 
 var clientMD = '';
-var offset = 0;
+var offsets = {
+	php5: 0,
+	php53: -71,
+	php5Zend: -142,
+	java: -213,
+	csharp: -284,
+	ruby: -355,
+	python: -426,
+	node: -497,
+	ajax: -568,
+	cli: -639,
+	objc: -710,
+	android: -781,
+	swift: -852,
+	php4: -923
+};
 
 files.forEach((file) => {
 	var matches = regex.exec(file);
 	if(matches) {
 		var link = baseUrl + file;
 		var language = matches[1];
+		var offset = offsets[language];
 		clientMD += `<a class="client-lib-link ${language}" data-language="${language}" href="${link}" style="background-position: ${offset}px"></a>`;
-		offset -= 71;
 	}
 });
 
