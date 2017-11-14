@@ -292,7 +292,7 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
       if (baseName === p.name) {
         input.parameters.push({name: p.name, schema: p.schema || p})
       } else {
-        let group = input.operation['x-parameterGroups'].filter(g => g.name === p['x-group'])[0];
+        let group = input.operation['x-parameterGroups'].filter(g => g.name === baseName)[0];
         let title = group.schema.title || getDefName(group.schema.$ref);
         let schema = this.swagger.definitions[title];
         input.parameters.push({name: group.name, schema});
