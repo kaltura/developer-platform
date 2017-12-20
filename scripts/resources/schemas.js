@@ -43,6 +43,17 @@ if (require.main === module) {
       request.get(s.htmlURL, function(err, resp, body) {
         if (err || resp.statusCode !== 200) throw new Error(err || resp.statusCode);
         var $ = cheerio.load(body);
+        $('a[href]').each(function() {
+          let elem = $(this);
+          let href = elem.attr('href');
+          let objMatch = href.match(/object=(\w+)/);
+          if (objMatch) {
+            elem.attr('href', '/api-docs/General_Objects/Enums/' + objMatch[1])
+          } else {
+            let replacement = $('<span>' + elem.text() + '</span>');
+            elem.replaceWith(replacement);
+          }
+        });
         let sections = [];
         $('#doc').contents().each(function() {
           let elem = $(this);
