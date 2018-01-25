@@ -360,6 +360,11 @@ operationNavigation:
       - tag: "stats"
   - title: "Deliver and Distribute Media"
     children:
+      - title: "Video Search Engine Optimization (SEO)"
+        markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/videoSEO.html
+        path: "/Deliver-and-Distribute-Media/videoSEO.html"
+        discussionURL: null
+
       - title: "How to Retrieve the Download or Streaming URL using API Calls?"
         markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html
         path: "/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html"
@@ -400,10 +405,6 @@ operationNavigation:
         path: "/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html"
         discussionURL: null
 
-      - title: "Video Search Engine Optimization (SEO)"
-        markdownURL: ./assets/documentation/Secure_Control_and_Govern/videoSEO.html
-        path: "/Secure_Control_and_Govern/videoSEO.html"
-        discussionURL: null
 
       - tag: "partner"
       - tag: "user"
