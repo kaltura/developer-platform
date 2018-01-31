@@ -167,6 +167,13 @@ var language_opts = {
   python: {
     ext: 'py',
     objSuffix: '()',
+    constant: function(val) {
+      let c = JSON.stringify(val);
+      if (typeof val === 'boolean') {
+        c = c.charAt(0).toUpperCase() + c.substring(1);
+      }
+      return c;
+    },
     rewriteAction: function(s) {
       return replaceActionSuffix(s);
     },

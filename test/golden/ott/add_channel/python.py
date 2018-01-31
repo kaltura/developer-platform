@@ -1,7 +1,7 @@
 
 channel = KalturaChannel()
 channel.description = "foo"
-channel.isActive = true
+channel.isActive = True
 channel.assetTypes = []
 channel.assetTypes[0] = KalturaIntegerValue()
 channel.assetTypes[0].value = 0
