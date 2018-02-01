@@ -1,6 +1,6 @@
 
 entryId = "abcde"
-version = 0
+version = -1
 
 result = client.media.get(entryId, version);
 print(result);

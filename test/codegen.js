@@ -22,6 +22,14 @@ describe('Sample Code', function() {
       showSetup: false,
     },
   }, {
+    name: 'falsy_default',
+    service: 'batch',
+    action: 'freeExclusiveJob',
+    input: {
+      answers: {},
+      showSetup: false,
+    }
+  }, {
     name: 'array_input',
     service: 'accesscontrolprofile',
     action: 'add',

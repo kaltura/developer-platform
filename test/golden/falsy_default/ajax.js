@@ -1,7 +1,9 @@
-var entryId = "abcde";
-var version = -1;
+var id = 0;
+var lockKey = {objectType: "KalturaExclusiveLockKey"};
+var jobType = "";
+var resetExecutionAttempts = false;
 
-KalturaMediaService.get(entryId, version)
+KalturaBatchService.freeExclusiveJob(id, lockKey, jobType, resetExecutionAttempts)
   .execute(client, function(success, results) {
     if (!success || (results && results.code && results.message)) {
       console.log('Kaltura Error', success, results);
