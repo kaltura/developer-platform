@@ -81,7 +81,6 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
     },
     {
       "name": "resume",
-      "consoleDefault": "false",
       "enum": [
         false,
         true
@@ -93,7 +92,6 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
     },
     {
       "name": "finalChunk",
-      "consoleDefault": "true",
       "enum": [
         true,
         false
