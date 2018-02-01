@@ -103,7 +103,7 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
     },
     {
       "name": "resumeAt",
-      "consoleDefault": "-1"
+      "consoleDefault": -1
     }
   ]
 }
