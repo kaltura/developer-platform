@@ -45,7 +45,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (node)
-```node
+```javascript
 auto
 ```
 ### Sample Code (php)
@@ -78,6 +78,34 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
     },
     {
       "name": "fileData"
+    },
+    {
+      "name": "resume",
+      "consoleDefault": "false",
+      "enum": [
+        false,
+        true
+      ],
+      "enumLabels": [
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "finalChunk",
+      "consoleDefault": "true",
+      "enum": [
+        true,
+        false
+      ],
+      "enumLabels": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "resumeAt",
+      "consoleDefault": "-1"
     }
   ]
 }
@@ -100,7 +128,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (node)
-```node
+```javascript
 auto
 ```
 ### Sample Code (php)
