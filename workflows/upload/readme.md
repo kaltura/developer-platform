@@ -81,11 +81,27 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
     },
     {
       "name": "resume",
-      "consoleDefault": "false"
+      "consoleDefault": "false",
+      "enum": [
+        false,
+        true
+      ],
+      "enumLabels": [
+        "false",
+        "true"
+      ]
     },
     {
       "name": "finalChunk",
-      "consoleDefault": "true"
+      "consoleDefault": "true",
+      "enum": [
+        true,
+        false
+      ],
+      "enumLabels": [
+        "true",
+        "false"
+      ]
     },
     {
       "name": "resumeAt",
