@@ -4,7 +4,9 @@
   "description": "",
   "homepage": "https://github.com/kaltura/developer-platform#readme",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "async": "^2.1.5",
@@ -23,6 +25,8 @@
     "jsonwebtoken": "^7.2.1",
     "kaltura": "file:lib/ott",
     "pug": "^2.0.0-beta11",
-    "request": "^2.79.0"
-  }
+    "request": "^2.79.0",
+    "snyk": "^1.41.1"
+  },
+  "snyk": true
 }
