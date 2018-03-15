@@ -34,6 +34,7 @@ For example, to retrieve a list of media entries, you’ll need to call the list
 2. Pass the result of `session.start` to the media.list API. E.g.: https://www.kaltura.com/api_v3/service/media/action/list/ks/Your_KS_String.
 
 To learn more, follow these guides: 
+
 * [How to Create a Kaltura Session](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html)
 * [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)
 * [Introduction to Kaltura's Client Libraries](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
