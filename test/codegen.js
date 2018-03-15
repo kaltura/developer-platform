@@ -57,8 +57,10 @@ describe('Sample Code', function() {
     action: 'start',
     input: {
       answers: {
-        partnerId: 1234,
-        secret: 'secretsauce',
+        partnerId: 2018872,
+        secret: '81b50515b869628777617f454cdca7f5',
+        userId: 'bobby.brennan@gmail.com',
+        sessionType: 0,
       },
       showSetup: true,
     },

@@ -58,6 +58,9 @@ var language_opts = {
     rewriteService: function(s) {return s},
     rewriteType: function(s) {return s},
   },
+  curl: {
+    ext: 'sh',
+  },
   javascript: {
     ext: 'js',
     declarationPrefix: 'var ',

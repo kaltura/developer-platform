@@ -7,7 +7,7 @@
 <script src="/js/kaltura/KalturaClient.js"></script>
 
 <script>
-  var config = new KalturaConfiguration(1234);
+  var config = new KalturaConfiguration(2018872);
   config.serviceUrl = 'https://www.kaltura.com';
   var client = new KalturaClient(config);
   client.session.start(function(success, ks) {
@@ -23,8 +23,8 @@
     // as this exposes your Admin Secret to users.
     // Instead, generate a session on the server and pass the
     // KS to the client.
-  }, "secretsauce",
-  "YOUR_USER_ID",
-  KalturaSessionType.ADMIN,
-  1234)
+  }, "81b50515b869628777617f454cdca7f5",
+  "bobby.brennan@gmail.com",
+  KalturaSessionType.USER,
+  2018872)
 </script>

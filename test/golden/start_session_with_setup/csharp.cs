@@ -19,10 +19,10 @@ namespace Kaltura {
       Configuration config = new Configuration();
       config.ServiceUrl = "https://www.kaltura.com/";
       Client client = new Client(config);
-      int partnerId = 1234;
+      int partnerId = 2018872;
       string secret = "";
       string userId = "";
-      SessionType type = SessionType.ADMIN;
+      SessionType type = SessionType.USER;
       int expiry = 86400;
       string privileges = "";
       client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);

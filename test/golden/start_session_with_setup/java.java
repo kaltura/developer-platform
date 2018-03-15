@@ -21,10 +21,10 @@ class CodeExample {
     config.setEndpoint("https://www.kaltura.com/");
     KalturaClient client = new KalturaClient(config);
     String session = client.getSessionService().start(
-          "secretsauce",
-          "YOUR_USER_ID",
+          "81b50515b869628777617f454cdca7f5",
+          "bobby.brennan@gmail.com",
           KalturaSessionType.ADMIN,
-          1234);
+          2018872);
     client.setKs(session);
     return client;
   }
