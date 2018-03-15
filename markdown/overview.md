@@ -34,13 +34,14 @@ For example, to retrieve a list of media entries, you’ll need to call the list
 2. Pass the result of `session.start` to the media.list API. E.g.: https://www.kaltura.com/api_v3/service/media/action/list/ks/Your_KS_String.
 
 To learn more, follow these guides: 
+
 * [How to Create a Kaltura Session](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html)
 * [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html)
-* [Kaltura API Authentication and Security](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
+* [Introduction to Kaltura's Client Libraries](https://vpaas.kaltura.com/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html)
 
 For reference, at each action page of the [API docs](https://developer.kaltura.com) you’ll see respected request GET URL at the top of the page. 
 
-For example, if you follow the [guide for clipping and trimming](https://blog.kaltura.com/server-side-clipping-and-trimming/), you’ll note that to trim an entry, the service you’ll need to use is called `media`, and the action is called [`updateContent`](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/media/media_updateContent/). You’ll also notice that the input of this API action is expected to recieve two parameters: 
+For example, if you follow the [guide for clipping and trimming](https://blog.kaltura.com/server-side-clipping-and-trimming/), you’ll note that to trim an entry, the service you’ll need to use is called `media`, and the action is called [`updateContent`](https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/media/media_updateContent/). You’ll also notice that the input of this API action is expected to receive two parameters: 
 
 * The ID of the entry to replace with the newly trimmed entry
 * A resource object representing the operations to execute on that entry
@@ -51,7 +52,7 @@ The resource is an object of type [`KalturaOperationResource`](https://developer
 ## Resources  
 We recommend you explore these tools as well:
 * The Kaltura VPaaS [Developer Guides](https://vpaas.kaltura.com/documentation/01_VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html).
-* The Kaltura VPaaS [Interactive Workflows](https://developer.kaltura.com/workflows), providing a quick way to learn about video workflows with Kaltura and see from real examples how to write applicatiosn with Kaltura.
+* The Kaltura VPaaS [Interactive Workflows](https://developer.kaltura.com/workflows), providing a quick way to learn about video workflows with Kaltura and see from real examples how to write application with Kaltura.
 * The [API Test Console](https://developer.kaltura.com/console), providing a quick exploration and discovery for each service and action, allowing you to try each action easily, and serving as code-example generator.
 
 For support, please visit [Kaltura Community Forums](http://www.kaltura.org/forums).

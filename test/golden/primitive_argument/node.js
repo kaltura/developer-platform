@@ -1,5 +1,5 @@
 var entryId = "abcde";
-var version = 0;
+var version = -1;
 
 client.media.get(function(results) {
   if (results && results.code && results.message) {

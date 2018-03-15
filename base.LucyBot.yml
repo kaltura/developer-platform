@@ -6,6 +6,10 @@ uiOptions:
   discussionTitle: 'User contributed notes & discussion'
   redirectHashURLs: true
   embedConsoleInDocumentation: true
+  messages:
+    deprecated: |
+      This API action has been deprecated. If you’re building a new app integration,
+      please consult the usage guides or forums for the more recent API actions to use.
 
 embedParameters:
   format: 1
@@ -15,6 +19,8 @@ javascript:
   - 'assets/KalturaSessionService.min.js'
   - 'assets/KalturaPartnerService.min.js'
   - 'assets/KalturaUiConfService.min.js'
+  - 'assets/js/highlight.pack.js'
+  - 'assets/js/modernizr.js'
 
 codegen:
   languages:

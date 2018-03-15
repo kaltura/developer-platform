@@ -167,6 +167,13 @@ var language_opts = {
   python: {
     ext: 'py',
     objSuffix: '()',
+    constant: function(val) {
+      let c = JSON.stringify(val);
+      if (typeof val === 'boolean') {
+        c = c.charAt(0).toUpperCase() + c.substring(1);
+      }
+      return c;
+    },
     rewriteAction: function(s) {
       return replaceActionSuffix(s);
     },
@@ -281,14 +288,18 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   } else {
     let addedParameters = [];
     input.operation.parameters.forEach(p => {
-      if (p.$ref || p.global || p['x-global']) return;
+      if (p.$ref) {
+        let ref = p.$ref.match(/#\/parameters\/(.*)$/)[1];
+        p = this.swagger.parameters[ref];
+      }
+      if (p.global || p['x-global']) return;
       let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
       if (addedParameters.indexOf(baseName) !== -1) return;
       addedParameters.push(baseName);
       if (baseName === p.name) {
         input.parameters.push({name: p.name, schema: p.schema || p})
       } else {
-        let group = input.operation['x-parameterGroups'].filter(g => g.name === p['x-group'])[0];
+        let group = input.operation['x-parameterGroups'].filter(g => g.name === baseName)[0];
         let title = group.schema.title || getDefName(group.schema.$ref);
         let schema = this.swagger.definitions[title];
         input.parameters.push({name: group.name, schema});
@@ -299,8 +310,8 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
     input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
     input.parameters.forEach(p => {
       if (input.answers[p.name] === undefined) {
-        let val = p.schema.default || p.schema['x-consoleDefault'];
-        if (val !== undefined) input.answers[p.name] = val;
+        if (p.schema.default !== undefined) input.answers[p.name] = p.schema.default;
+        else if (p.schema['x-consoleDefault'] !== undefined) input.answers[p.name] = p.schema['x-consoleDefault'];
       }
     })
   }

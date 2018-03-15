@@ -1,5 +1,5 @@
 string entryId = "abcde";
-int version = 0;
+int version = -1;
 
 OnCompletedHandler<MediaEntry> handler = new OnCompletedHandler<MediaEntry>(
       (MediaEntry result, Exception e) =>

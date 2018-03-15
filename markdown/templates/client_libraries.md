@@ -46,6 +46,7 @@ client libraries as packages that can be installed via the respective package ma
 
 * PHP `composer require kaltura/api-client-library`
 * Ruby `gem install kaltura-client`
+* Python `pip install KalturaApiClient`
 * Java (via Maven)
 
 ```xml

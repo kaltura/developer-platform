@@ -1,5 +1,5 @@
 var entryId = "abcde";
-var version = 0;
+var version = -1;
 
 KalturaMediaService.get(entryId, version)
   .execute(client, function(success, results) {

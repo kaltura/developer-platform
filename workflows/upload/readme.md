@@ -45,7 +45,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (node)
-```node
+```javascript
 auto
 ```
 ### Sample Code (php)
@@ -59,7 +59,17 @@ auto
 
 ## Uploading Files - Send the Data
 Now we'll use the newly created Upload Token to upload a video file.
-Or, if you're working in JavaScript, you can simply use the [jQuery File Upload widget](https://github.com/kaltura/jQuery-File-Upload)
+If you're working in JavaScript, you can simply use the [jQuery File Upload widget](https://github.com/kaltura/jQuery-File-Upload)
+
+Kaltura supports uploading big media files in chunks.
+Chunks can be uploaded in parallel and they will be appended according to their resumeAt position.<br>
+If you do not intend to upload the file in chunks, set ```resume``` to ```false``` and ```finalChunk``` to ```true```.
+
+A parallel upload session consists of two stages:
+
+- Upload requests, each with resume=true,finalChunk=false and the expected resumetAt position (if a chunk failed to arrive it can be re-uploaded)
+- After all of the chunks have been uploaded a final chunk (can be of zero size) should be uploaded 
+with resume=true, finalChunk=true and the expected resumeAt position. In case an ```UPLOAD_TOKEN_CANNOT_MATCH_EXPECTED_SIZE``` exception has been returned (indicating not all of the chunks were appended yet) the final request should be remade.
 
 If you don't have a video file handy, you can right-click [this link](http://cfvod.kaltura.com/pd/p/811441/sp/81144100/serveFlavor/entryId/1_2bjlk7qb/v/2/flavorId/1_d1ft34uv/fileName/Kaltura_Logo_Animation.flv/name/a.flv) and choose **Save As**.
 
@@ -78,6 +88,32 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
     },
     {
       "name": "fileData"
+    },
+    {
+      "name": "resume",
+      "enum": [
+        false,
+        true
+      ],
+      "enumLabels": [
+        "false",
+        "true"
+      ]
+    },
+    {
+      "name": "finalChunk",
+      "enum": [
+        true,
+        false
+      ],
+      "enumLabels": [
+        "true",
+        "false"
+      ]
+    },
+    {
+      "name": "resumeAt",
+      "consoleDefault": -1
     }
   ]
 }
@@ -100,7 +136,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (node)
-```node
+```javascript
 auto
 ```
 ### Sample Code (php)

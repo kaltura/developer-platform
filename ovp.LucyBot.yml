@@ -97,11 +97,56 @@ routes:
 
 operationNavigation:
   - title: "Overview"
-    markdownFile: ./markdown/overview.md
+    markdownURL: ./assets/documentation/overview.html
     discussionURL: null
     meta:
       title: "Kaltura VPaaS API Overview"
       description: "Learn how to use the Kaltura VPaaS API"
+
+  - title: "VPaaS API Getting Started"
+    path: "/VPaaS-API-Getting-Started"
+    children:
+
+      - title: "Get Started with Kaltura VPaaS"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html
+        path: "/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html"
+        discussionURL: null
+
+      - title: "How to Create a Kaltura Session"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html
+        path: "/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html"
+        discussionURL: null
+
+      - title: "Kaltura API Authentication and Security"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html
+        path: "/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html"
+        discussionURL: null
+
+      - title: "Introduction to Kaltura's Client Libraries"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html
+        path: "/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html"
+        discussionURL: null
+
+      - title: "How to use Kaltura's API Abstract Classes"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html
+        path: "/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html"
+        discussionURL: null
+
+      - title: "Creating an Application Token"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/Account-Representative-Steps.html
+        path: "/VPaaS-API-Getting-Started/Account-Representative-Steps.html"
+        discussionURL: null
+
+      - title: "Authorizing with an Application Token"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/Authorizing-With-Application-Token.html
+        path: "/VPaaS-API-Getting-Started/Authorizing-With-Application-Token.html"
+        discussionURL: null
+
+      - title: "Generating Kaltura Sessions with Application Tokens"
+        markdownURL: ./assets/documentation/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html
+        path: "/VPaaS-API-Getting-Started/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html"
+        discussionURL: null
+
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
     disableEditLink: true
@@ -117,27 +162,27 @@ operationNavigation:
     markdownFile: ./markdown/schemas.md
     children:
       - title: 'Syndication Feed'
-        markdownFile: ./markdown/generated/syndication.md
+        markdownURL: ./assets/markdown/generated/syndication.md
         disableEditLink: true
         prerender: false
       - title: 'Bulk Upload'
-        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadXML.md
+        markdownURL: ./assets/markdown/generated/bulkUploadXml.bulkUploadXML.md
         disableEditLink: true
         prerender: false
       - title: 'Bulk Upload Results'
-        markdownFile: ./markdown/generated/bulkUploadXml.bulkUploadResultXML.md
+        markdownURL: ./assets/markdown/generated/bulkUploadXml.bulkUploadResultXML.md
         disableEditLink: true
         prerender: false
       - title: 'Cue Point Serve'
-        markdownFile: ./markdown/generated/cuePoint.serveAPI.md
+        markdownURL: ./assets/markdown/generated/cuePoint.serveAPI.md
         disableEditLink: true
         prerender: false
       - title: 'Cue Point Ingest'
-        markdownFile: ./markdown/generated/cuePoint.ingestAPI.md
+        markdownURL: ./assets/markdown/generated/cuePoint.ingestAPI.md
         disableEditLink: true
         prerender: false
       - title: 'Drop Folder'
-        markdownFile: ./markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
+        markdownURL: ./assets/markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         disableEditLink: true
         prerender: false
   - title: "Generate API Sessions"
@@ -155,6 +200,36 @@ operationNavigation:
       - operation: 'user.loginByLoginId'
   - title: "Ingest and Upload Media"
     children:
+      - title: "Introduction to Content Preparation & Transcoding"
+        markdownURL: ./assets/documentation/Ingest_and_Upload_Media/Content-Ingestion-Transcoding.html
+        path: "/Ingest_and_Upload_Media/Content-Ingestion-Transcoding.html"
+        discussionURL: null
+
+      - title: "Playlist Management"
+        markdownURL: ./assets/documentation/Ingest_and_Upload_Media/playlist-management.html
+        path: "/Ingest_and_Upload_Media/playlist-management.html"
+        discussionURL: null
+
+      - title: "Bulk Content Ingestion API"
+        markdownURL: ./assets/documentation/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html
+        path: "/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html"
+        discussionURL: null
+
+      - title: "Kaltura's Scheduling API Service"
+        markdownURL: ./assets/documentation/Ingest_and_Upload_Media/schedulingAPI.html
+        path: "/Ingest_and_Upload_Media/schedulingAPI.html"
+        discussionURL: null
+
+      - title: "How to Ingest a Media File Bundled with Metadata (CSV, XML, API)"
+        markdownURL: ./assets/documentation/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html
+        path: "/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html"
+        discussionURL: null
+
+      - title: "Create a New Kaltura Entry and Upload Video File using the Kaltura API"
+        markdownURL: ./assets/documentation/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html
+        path: "/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html"
+        discussionURL: null
+
       - tag: "uploadToken"
       - tag: "media"
       - tag: "captionAsset"
@@ -163,7 +238,7 @@ operationNavigation:
       - tag: "attachmentAsset"
       - tag: "externalMedia"
       - tag: "upload"
-        hidden: true
+        hide: true
   - title: "Execute Bulk Ingest and Updates"
     children:
       - operation: "media.bulkUploadAdd"
@@ -177,13 +252,27 @@ operationNavigation:
       - tag: "dropFolder"
       - tag: "dropFolderFile"
       - tag: "virusScanProfile"
-        hidden: true
+        hide: true
       - tag: "aspera"
-        hidden: true
+        hide: true
       - tag: "bulkUpload"
-        hidden: true
+        hide: true
   - title: "Convert and Transcode Media"
     children:
+      - title: "How to use the API to Add a New Conversion Profile"
+        markdownURL: ./assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html
+        path: "/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html"
+        discussionURL: null
+
+      - title: "How to use the API to Add New Flavor Params"
+        markdownURL: ./assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html
+        path: "/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html"
+        discussionURL: null
+
+      - title: "How to Use the API to Create a New Flavor Asset for an Existing Entry"
+        markdownURL: ./assets/documentation/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html
+        path: "/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html"
+        discussionURL: null
       - tag: "flavorAsset"
       - tag: "flavorParams"
       - tag: "flavorParamsOutput"
@@ -195,6 +284,10 @@ operationNavigation:
       - tag: "liveStream"
   - title: "Enrich and Organize Metadata"
     children:
+      - title: "How to Retrieve Metadata of a Media Entry using the API?"
+        markdownURL: ./assets/documentation/Enrich-and-Organize-Metadata/how-retrieve-metadata-media-entry-using-api.html
+        path: "/Enrich-and-Organize-Metadata/how-retrieve-metadata-media-entry-using-api.html"
+        discussionURL: null
       - tag: "baseEntry"
       - tag: "category"
       - tag: "categoryEntry"
@@ -211,6 +304,10 @@ operationNavigation:
       - tag: "tag"
   - title: "Search, Discover and Personalize"
     children:
+      - title: "How to perform AND, OR, NOT and Exact Match searches in API"
+        markdownURL: ./assets/documentation/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html
+        path: "/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html"
+        discussionURL: null
       - operation: "baseEntry.list"
       - tag: "media"
       - tag: "captionAssetItem"
@@ -222,6 +319,20 @@ operationNavigation:
       - tag: "groupUser"
   - title: "Engage and Publish"
     children:
+      - title: "Adding a Thumbnail Flavor Parameter that Supports Resizing Auto-generated Thumbnails"
+        markdownURL: ./assets/documentation/Engage_and_Publish/how-add-thumbnail-flavor-param-supports-resizing-auto-generated-thumbnails-transcoding-profile.html
+        path: "/Engage_and_Publish/how-add-thumbnail-flavor-param-supports-resizing-auto-generated-thumbnails-transcoding-profile.html"
+        discussionURL: null
+
+      - title: "How To Create a Video Thumbnail Rotator in JavaScript"
+        markdownURL: ./assets/documentation/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html
+        path: "/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html"
+        discussionURL: null
+
+      - title: "Kaltura Thumbnail API"
+        markdownURL: ./assets/documentation/Engage_and_Publish/kaltura-thumbnail-api.html
+        path: "/Engage_and_Publish/kaltura-thumbnail-api.html"
+        discussionURL: null
       - tag: "playlist"
       - tag: "thumbnail"
       - tag: "cuePoint"
@@ -230,9 +341,18 @@ operationNavigation:
       - tag: "like"
       - tag: "uiConf"
       - tag: "annotation"
-        hidden: true
-  - title: "Review Media Analytics"
+        hide: true
+  - title: "Media Analytics"
     children:
+      - title: "How to Generate Interactive Video Quiz Reports Using the Kaltura API?"
+        markdownURL: ./assets/documentation/Video-Analytics-and-Insights/how-generate-interactive-video-quiz-reports-using-kaltura-api.html
+        path: "/Video-Analytics-and-Insights/how-generate-interactive-video-quiz-reports-using-kaltura-api.html"
+        discussionURL: null
+
+      - title: "Kaltura's Media Analytics"
+        markdownURL: ./assets/documentation/Video-Analytics-and-Insights/media-analytics.html
+        path: "/Video-Analytics-and-Insights/media-analytics.html"
+        discussionURL: null
       - tag: "analytics"
       - tag: "report"
       - tag: "liveReports"
@@ -240,17 +360,52 @@ operationNavigation:
       - tag: "stats"
   - title: "Deliver and Distribute Media"
     children:
+      - title: "Video Search Engine Optimization (SEO)"
+        markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/videoSEO.html
+        path: "/Deliver-and-Distribute-Media/videoSEO.html"
+        discussionURL: null
+
+      - title: "How to Retrieve the Download or Streaming URL using API Calls?"
+        markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html
+        path: "/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html"
+        discussionURL: null
       - tag: "playManifest"
       - tag: "syndicationFeed"
       - tag: "entryDistribution"
       - tag: "distributionProfile"
       - tag: "distributionProvider"
       - tag: "deliveryProfile"
-        hidden: true
+        hide: true
       - tag: "storageProfile"
-        hidden: true
+        hide: true
   - title: "Secure, Control and Govern"
     children:
+      - title: "Content Categories Management"
+        markdownURL: ./assets/documentation/Secure_Control_and_Govern/Content-Categories-Management.html
+        path: "/Secure_Control_and_Govern/Content-Categories-Management.html"
+        discussionURL: null
+
+      - title: "Content Entitlements and Privacy Enforcement"
+        markdownURL: ./assets/documentation/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html
+        path: "/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html"
+        discussionURL: null
+
+      - title: "Access Control and Content Retrieval on Connected Devices"
+        markdownURL: ./assets/documentation/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html
+        path: "/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html"
+        discussionURL: null
+
+      - title: "The Kaltura Media Access Control Model"
+        markdownURL: ./assets/documentation/Secure_Control_and_Govern/kaltura-media-access-control-model.html
+        path: "/Secure_Control_and_Govern/kaltura-media-access-control-model.html"
+        discussionURL: null
+
+      - title: "Kaltura Audit-Trail - Viewer Example Application"
+        markdownURL: ./assets/documentation/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html
+        path: "/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html"
+        discussionURL: null
+
+
       - tag: "partner"
       - tag: "user"
       - tag: "userRole"
@@ -261,17 +416,22 @@ operationNavigation:
       - tag: "permission"
       - tag: "permissionItem"
       - tag: "accessControl"
-        hidden: true
+        hide: true
       - tag: "adminUser"
-        hidden: true
+        hide: true
       - tag: "auditTrail"
-        hidden: true
+        hide: true
   - title: "Optimize API Requests"
     children:
       - tag: "multirequest"
       - tag: "responseProfile"
   - title: "Integration, Scheduling and Hooks"
     children:
+      - title: "How To Handle Kaltura Server Notifications in PHP"
+        markdownURL: ./assets/documentation/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html
+        path: "/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html"
+        discussionURL: null
+
       - tag: "eventNotificationTemplate"
       - tag: "scheduledTaskProfile"
       - title: "Scheduling Triggers using iCal"
@@ -283,7 +443,7 @@ operationNavigation:
       - tag: "integration"
       - tag: "businessProcessCase"
       - tag: "notification"
-        hidden: true
+        hide: true
   - title: "Encrypt and License Content"
     children:
       - tag: "drmLicenseAccess"
@@ -292,7 +452,7 @@ operationNavigation:
       - tag: "playReadyDrm"
       - tag: "widevineDrm"
       - tag: "deliveryProfile"
-        hidden: true
+        hide: true
   - title: "Manage Documents and Other Assets"
     children:
       - tag: "baseEntry"
@@ -308,7 +468,21 @@ operationNavigation:
     children:
       - tag: "system"
       - tag: "storageProfile"
-        hidden: true
+        hide: true
+  - title: "Miscellaneous"
+    isMiscellaneous: true
+    hide: true
+    searchable: true
+
+  - title: "Contribute"
+    children:
+      - title: "Article Style and Structure Guidelines
+  VPaaS Website Sample Article"
+        markdownURL: ./assets/documentation/Contribute/Article-Style-Structure-Guidelines.html
+        path: "/Contribute/Article-Style-Structure-Guidelines.html"
+        discussionURL: null
+
+
 
 workflowNavigation:
   - title: Generate API Sessions
