@@ -1,5 +1,6 @@
-<% var SESSION_VARS = ['secret', 'userId', 'sessionType', 'partnerId', 'expiry'] -%>
-<% if (showSetup) { -%>
+<% var isSessionStart = serviceID === 'session' && actionID === 'start' -%>
+<% var SESSION_VARS = isSessionStart ? [] : ['secret', 'userId', 'sessionType', 'partnerId', 'expiry'] -%>
+<% if (showSetup && !isSessionStart) { -%>
 KALTURA_SESSION=`curl -X POST https://www.kaltura.com/api_v3/service/session/action/start \
     -d "secret=<%- answers.secret %>" \
     -d "userId=<%- answers.userId %>" \
@@ -9,11 +10,9 @@ KALTURA_SESSION=`curl -X POST https://www.kaltura.com/api_v3/service/session/act
     -d "format=3"`
 KALTURA_SESSION=`echo $KALTURA_SESSION | sed -e "s/^.*\"\(.*\)\".*$/\1/"`
 <% } -%>
-<% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
 curl -X POST https://www.kaltura.com/api_v3/service/<%- serviceID %>/action/<%- actionID %> \
     -d "ks=$KALTURA_SESSION" \
-<%   for (var key in answers) { -%>
+<% for (var key in answers) { -%>
 <%     if (SESSION_VARS.indexOf(key) !== -1) continue; -%>
     -d "<%- key %>=<%- encodeURIComponent(answers[key]) %>" \
-<%   } -%>
 <% } -%>
