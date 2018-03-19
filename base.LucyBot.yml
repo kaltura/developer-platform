@@ -24,6 +24,7 @@ javascript:
 
 codegen:
   languages:
+    - curl
     - php
     - java
     - node
