@@ -27,7 +27,7 @@ If you're working in JavaScript, the [jQuery File Upload widget](https://github.
   "parameters": []
 }
 ```
-### Sample Code (javascript)
+### Sample Code (ajax)
 ```javascript
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',
@@ -118,7 +118,7 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
   ]
 }
 ```
-### Sample Code (javascript)
+### Sample Code (ajax)
 ```javascript
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',

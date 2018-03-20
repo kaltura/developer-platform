@@ -103,7 +103,7 @@ You can use the Chrome dev tools to turn on device mode and chhose a large table
   ]
 }
 ```
-### Sample Code (javascript)
+### Sample Code (ajax)
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",

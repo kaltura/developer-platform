@@ -203,7 +203,7 @@ You can use kWidget to listen for when your Cue Points are triggered
   ]
 }
 ```
-### Sample Code (javascript)
+### Sample Code (ajax)
 ```javascript
 kWidget.addReadyCallback(function(playerId){
   var kdp = $('#' + playerId)[0]; 

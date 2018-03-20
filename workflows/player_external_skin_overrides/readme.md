@@ -167,7 +167,7 @@ The example below assumes that you have created your custom CSS file under the `
 </body>
 </html>
 ```
-### Sample Code (javascript)
+### Sample Code (ajax)
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",
