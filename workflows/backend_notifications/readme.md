@@ -62,41 +62,10 @@ Which type would you like to work with?
 }
 ```
 
-## Choosing a Template to Clone
+## Cloning the Template
 In order to create a new notification, you must clone one of the pre-made templates below. You can see the available templates using ```eventNotificationTemplate.listTemplates```
 
-Choose a template to clone.
-
-### API Call
-```json
-{
-  "method": "get",
-  "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
-  "parameters": [
-    {
-      "name": "id",
-      "dynamicEnum": {
-        "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
-        "method": "get",
-        "parameters": [
-          {
-            "name": "filter[typeEqual]",
-            "value": {
-              "answer": "typeEqual"
-            }
-          }
-        ],
-        "array": "objects",
-        "label": "name",
-        "value": "id"
-      }
-    }
-  ]
-}
-```
-
-## Cloning the Template
-Use the form below to fill in some additional details for your template and create it
+Use the form below to choose a template to clone
 
 ### API Call
 ```json
@@ -106,8 +75,11 @@ Use the form below to fill in some additional details for your template and crea
   "parameters": [
     {
       "name": "id",
-      "dynamicValue": {
-        "fromStep": 2,
+      "dynamicEnum": {
+        "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
+        "method": "get",
+        "array": "objects",
+        "label": "name",
         "value": "id"
       }
     }
