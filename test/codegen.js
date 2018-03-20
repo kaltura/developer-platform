@@ -8,7 +8,10 @@ global.window = {
 }
 
 var swagger = require('../ovp.openapi.json');
+
 var CodeTemplate = require('../codegen');
+
+const CONVERT_TEST_CASES_TO_POST = true;
 
 describe('Sample Code', function() {
   this.timeout(5000);
@@ -60,6 +63,7 @@ describe('Sample Code', function() {
         partnerId: 2018872,
         secret: '81b50515b869628777617f454cdca7f5',
         userId: 'bobby.brennan@gmail.com',
+        type: 0,
         sessionType: 0,
       },
       showSetup: true,
@@ -86,8 +90,8 @@ describe('Sample Code', function() {
     action: 'add',
     input: {
       answers: {
-        tags: 'stuff',
-        language: "Arabic",
+        'captionAsset[tags]': 'stuff',
+        'captionAsset[language]': "Arabic",
       }
     }
   }, {
@@ -140,7 +144,25 @@ describe('Sample Code', function() {
       },
       showSetup: false,
     }
-  }]
+  }];
+
+  if (CONVERT_TEST_CASES_TO_POST) {
+    testCases.forEach(testCase => {
+      let body = {};
+      for (let key in testCase.input.answers) {
+        let parts = key.split(/\]?\[/).map(s => s.replace(']', ''));
+        let obj = body;
+        parts.forEach((part, idx) => {
+          if (part.match(/^\d+$/)) part = parseInt(part);
+          let isArr = idx < parts.length - 1 && parts[idx+1].match(/^\d+$/);
+          let val = idx === parts.length - 1 ? testCase.input.answers[key] : isArr ? [] : {};
+          obj = obj[part] = obj[part] || val;
+        });
+      }
+      testCase.input.answers = {body: JSON.stringify(body)};
+      if (body.sessionType !== undefined) testCase.input.answers.sessionType = body.sessionType;
+    })
+  }
 
   testCases.forEach(function(testCase) {
     CodeTemplate.LANGUAGES.forEach(function(language) {
@@ -158,10 +180,10 @@ describe('Sample Code', function() {
         testCase.input.answers = testCase.input.answers || {};
         testCase.input.showSetup = testCase.input.showSetup || false;
         testCase.input.path = '/service/' + testCase.service + '/action/' + testCase.action;
-        testCase.input.method = 'get';
+        testCase.input.method = CONVERT_TEST_CASES_TO_POST ? 'post' : 'get';
         testCase.input.service = testCase.service;
         testCase.input.action = testCase.action;
-        var code = tmpl.render(testCase.input);
+        var code = tmpl.render(JSON.parse(JSON.stringify(testCase.input)));
         var dir = __dirname + '/golden/' + testCase.name;
         var filename = dir + '/' + language + '.' + ext;
         if (process.env.WRITE_GOLDEN) {

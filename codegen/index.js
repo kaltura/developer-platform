@@ -256,17 +256,20 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   input.serviceID = pathParts[2];
   input.serviceName = input.operation.tags[0];
   input.service = this.rewriteService(input.serviceName, input.serviceID);
+  input.answers = input.answers || {};
+  input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
+  input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
   input.plugins = [];
   let tag = this.swagger.tags.filter(t => t.name === input.serviceName)[0];
   if (tag['x-plugin']) {
     input.plugins.push(tag['x-plugin']);
   }
   input.parameters = [];
-  let isOTT = this.swagger.host.indexOf('ott.') !== -1;
-  if (isOTT) {
+  let opType = input.operation['x-kaltura-format'] || 'post';
+  if (opType === 'post') {
     let body = JSON.parse(input.answers.body || '{}');
+    delete input.answers.body;
     let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
-    input.answers = {};
     function addAnswer(key, answer) {
       if (Array.isArray(answer)) {
         answer.forEach((ans, idx) => {
@@ -280,14 +283,14 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
         input.answers[key] = answer;
       }
     }
-    for (let key in body) {
-      if (key === 'ks' || key === 'version') continue;
-      let schema = bodyParam.schema.properties[key];
+    input.operation['x-kaltura-parameters'].forEach(name => {
+      let schema = bodyParam.schema.properties[name];
       if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
-      let param = {name: key, schema};
+      let param = {name, schema};
       input.parameters.push(param);
-      addAnswer(key, body[key]);
-    }
+      if (name in body) addAnswer(name, body[name]);
+      else if (schema.default !== undefined) addAnswer(name, schema.default);
+    });
   } else {
     let addedParameters = [];
     input.operation.parameters.forEach(p => {
@@ -308,9 +311,6 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
         input.parameters.push({name: group.name, schema});
       }
     })
-    input.answers = input.answers || {};
-    input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
-    input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
     input.parameters.forEach(p => {
       if (input.answers[p.name] === undefined) {
         if (p.schema.default !== undefined) input.answers[p.name] = p.schema.default;
