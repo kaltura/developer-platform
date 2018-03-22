@@ -10,8 +10,8 @@
     KalturaSessionType::ADMIN,
     YOUR_PARTNER_ID);
   $client->setKS($ks);
-  $metadataPlugin = KalturaMetadataClientPlugin::get($client);
 
+  $metadataPlugin = KalturaMetadataClientPlugin::get($client);
   $filter = new KalturaMetadataProfileFilter();
   $pager = new KalturaFilterPager();
 

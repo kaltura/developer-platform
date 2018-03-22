@@ -1,4 +1,5 @@
 <?php
+  $captionPlugin = KalturaCaptionClientPlugin::get($client);
   $entryId = "";
   $captionAsset = new KalturaCaptionAsset();
 
