@@ -11,12 +11,15 @@
     <%- answers.sessionType === 0 ? 'KalturaSessionType::USER' : 'KalturaSessionType::ADMIN' %>,
     <%- answers.partnerId || 'YOUR_PARTNER_ID' %>);
   $client->setKS($ks);
+<% plugins.forEach(function(p) { -%>
+  $<%-p %>Plugin = Kaltura<%- p.charAt(0).toUpperCase() + p.substring(1) %>ClientPlugin::get($client);
+<% }) -%>
 
 <% } -%>
 <% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
 <%- codegen.assignAllParameters(parameters, answers, 2) -%>
   try {
-    $result = $client-><%- service %>-><%- action %>(<%- parameterNames.join(', ') %>);
+    $result = $<%- plugins.length ? plugins[0] + 'Plugin' : 'client' %>-><%- service %>-><%- action %>(<%- parameterNames.join(', ') %>);
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();

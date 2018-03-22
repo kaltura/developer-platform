@@ -10,12 +10,13 @@
     KalturaSessionType::ADMIN,
     YOUR_PARTNER_ID);
   $client->setKS($ks);
+  $metadataPlugin = KalturaMetadataClientPlugin::get($client);
 
   $filter = new KalturaMetadataProfileFilter();
   $pager = new KalturaFilterPager();
 
   try {
-    $result = $client->metadataProfile->listAction($filter, $pager);
+    $result = $metadataPlugin->metadataProfile->listAction($filter, $pager);
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();
