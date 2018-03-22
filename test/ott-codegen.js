@@ -29,13 +29,6 @@ describe('Sample Code', function() {
       answers: {
         channel: {
           description: 'foo',
-          assetTypes: [{
-            value: 0,
-            description: 'assetValDesc',
-          }, {
-            value: 1,
-            description: 'assetDesc2',
-          }],
           isActive: true,
         }
       },
