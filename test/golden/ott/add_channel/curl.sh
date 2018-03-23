@@ -5,4 +5,4 @@ curl -X POST https://www.kaltura.com/api_v3/service/channel/action/add \
     -d "channel[assetTypes][0][description]=assetValDesc" \
     -d "channel[assetTypes][1][value]=1" \
     -d "channel[assetTypes][1][description]=assetDesc2" \
-    -d "channel[isActive]=true" \
+    -d "channel[isActive]=true"

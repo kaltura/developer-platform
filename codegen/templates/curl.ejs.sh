@@ -9,9 +9,9 @@ KALTURA_SESSION=`curl -X POST https://www.kaltura.com/api_v3/service/session/act
     -d "expiry=<%- answers.expiry || 86400 %>" \
     -d "format=1" | sed -e "s:\"::g"`
 <% } -%>
+<% var keys = Object.keys(answers).filter(function(k) {return SESSION_VARS.indexOf(k) === -1}) -%>
 curl -X POST https://www.kaltura.com/api_v3/service/<%- serviceID %>/action/<%- actionID %> \
     -d "ks=$KALTURA_SESSION" \
-<% for (var key in answers) { -%>
-<%     if (SESSION_VARS.indexOf(key) !== -1) continue; -%>
-    -d "<%- key %>=<%- encodeURIComponent(answers[key]) %>" \
+<% for (var i = 0; i < keys.length; ++i) { -%>
+    -d "<%- keys[i] %>=<%- encodeURIComponent(answers[keys[i]]) %>"<%- i === keys.length - 1 ? '' : ' \\' %>
 <% } -%>

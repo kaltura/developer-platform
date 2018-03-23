@@ -12,4 +12,4 @@ curl -X POST https://www.kaltura.com/api_v3/service/accesscontrolprofile/action/
     -d "accessControlProfile[rules][0][contexts][0][type]=1" \
     -d "accessControlProfile[rules][0][conditions][0][description]=cond%201" \
     -d "accessControlProfile[rules][0][conditions][1][description]=cond%202" \
-    -d "accessControlProfile[rules][1][code]=second%20code" \
+    -d "accessControlProfile[rules][1][code]=second%20code"
