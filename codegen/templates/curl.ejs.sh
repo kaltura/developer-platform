@@ -7,7 +7,7 @@ KALTURA_SESSION=`curl -X POST https://www.kaltura.com/api_v3/service/session/act
     -d "type=<%- answers.sessionType || 0 %>" \
     -d "partnerId=<%- answers.partnerId || 'YOUR_PARTNER_ID' %>" \
     -d "expiry=<%- answers.expiry || 86400 %>" \
-    -d "format=1" | sed -e "s:\"::g"`
+    -d "format=1" | sed 's@"@@g'`
 <% } -%>
 <% var keys = Object.keys(answers).filter(function(k) {return SESSION_VARS.indexOf(k) === -1}) -%>
 curl -X POST https://www.kaltura.com/api_v3/service/<%- serviceID %>/action/<%- actionID %> \
