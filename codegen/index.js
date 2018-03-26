@@ -270,15 +270,30 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
     let body = JSON.parse(input.answers.body || '{}');
     delete input.answers.body;
     let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
-    function addAnswer(key, answer) {
+    let findSubschema = (schema, key) => {
+      if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+      if (schema.properties && schema.properties[key]) return schema.properties[key];
+      let alternatives = (schema.allOf || []).concat(schema.oneOf || []);
+      for (let i = 0; i < alternatives.length; ++i) {
+        let alt = findSubschema(alternatives[i], key);
+        if (alt) return alt;
+      }
+    }
+    let addAnswer = (key, answer, schema) => {
+      if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
       if (Array.isArray(answer)) {
         answer.forEach((ans, idx) => {
-          addAnswer(key + '[' + idx + ']', ans);
+          addAnswer(key + '[' + idx + ']', ans, schema.items);
         })
       } else if (typeof answer === 'object') {
-        for (let subkey in answer) {
-          addAnswer(key + '[' + subkey + ']', answer[subkey]);
+        if (answer.objectType) {
+          schema = this.swagger.definitions[answer.objectType];
         }
+        for (let subkey in answer) {
+          addAnswer(key + '[' + subkey + ']', answer[subkey], findSubschema(schema, subkey));
+        }
+        let objectKey = key + '[objectType]';
+        input.answers[objectKey] = input.answers[objectKey] || schema.title;
       } else {
         input.answers[key] = answer;
       }
@@ -288,8 +303,8 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
       if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
       let param = {name, schema};
       input.parameters.push(param);
-      if (name in body) addAnswer(name, body[name]);
-      else if (schema.default !== undefined) addAnswer(name, schema.default);
+      if (name in body) addAnswer(name, body[name], schema);
+      else if (schema.default !== undefined) addAnswer(name, schema.default, schema);
     });
   } else {
     let addedParameters = [];

@@ -25,6 +25,18 @@ describe('Sample Code', function() {
       showSetup: false,
     },
   }, {
+    name: 'implicit_object_type',
+    service: 'elasticsearch_esearch',
+    action: 'searchEntry',
+    input: {
+      answers: {
+        'searchParams[searchOperator][searchItems][0][objectType]': 'KalturaESearchCaptionItem',
+        'searchParams[searchOperator][searchItems][0][searchTerm]': 'asdf',
+        'searchParams[searchOperator][operator]': 1,
+      },
+      showSetup: false,
+    }
+  }, {
     name: 'falsy_default',
     service: 'batch',
     action: 'freeExclusiveJob',
