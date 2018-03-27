@@ -267,73 +267,82 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   input.parameters = [];
   let opType = input.operation['x-kaltura-format'] || 'post';
   if (opType === 'post') {
-    let body = JSON.parse(input.answers.body || '{}');
-    delete input.answers.body;
-    let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
-    let findSubschema = (schema, key) => {
-      if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
-      if (schema.properties && schema.properties[key]) return schema.properties[key];
-      let alternatives = (schema.allOf || []).concat(schema.oneOf || []);
-      for (let i = 0; i < alternatives.length; ++i) {
-        let alt = findSubschema(alternatives[i], key);
-        if (alt) return alt;
-      }
-    }
-    let addAnswer = (key, answer, schema) => {
-      if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
-      if (Array.isArray(answer)) {
-        answer.forEach((ans, idx) => {
-          addAnswer(key + '[' + idx + ']', ans, schema.items);
-        })
-      } else if (typeof answer === 'object') {
-        if (answer.objectType) {
-          schema = this.swagger.definitions[answer.objectType];
-        }
-        for (let subkey in answer) {
-          addAnswer(key + '[' + subkey + ']', answer[subkey], findSubschema(schema, subkey));
-        }
-        let objectKey = key + '[objectType]';
-        input.answers[objectKey] = input.answers[objectKey] || schema.title;
-      } else {
-        input.answers[key] = answer;
-      }
-    }
-    input.operation['x-kaltura-parameters'].forEach(name => {
-      let schema = bodyParam.schema.properties[name];
-      if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
-      let param = {name, schema};
-      input.parameters.push(param);
-      if (name in body) addAnswer(name, body[name], schema);
-      else if (schema.default !== undefined) addAnswer(name, schema.default, schema);
-    });
+    input.parameterNames = input.operation['x-kaltura-parameters'].map(n => this.rewriteVariable(n));
+    this.gatherAnswersForPost(input);
   } else {
-    let addedParameters = [];
-    input.operation.parameters.forEach(p => {
-      if (p.$ref) {
-        let ref = p.$ref.match(/#\/parameters\/(.*)$/)[1];
-        p = this.swagger.parameters[ref];
-      }
-      if (p.global || p['x-global']) return;
-      let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
-      if (addedParameters.indexOf(baseName) !== -1) return;
-      addedParameters.push(baseName);
-      if (baseName === p.name) {
-        input.parameters.push({name: p.name, schema: p.schema || p})
-      } else {
-        let group = input.operation['x-parameterGroups'].filter(g => g.name === baseName)[0];
-        let title = group.schema.title || getDefName(group.schema.$ref);
-        let schema = this.swagger.definitions[title];
-        input.parameters.push({name: group.name, schema});
-      }
-    })
-    input.parameters.forEach(p => {
-      if (input.answers[p.name] === undefined) {
-        if (p.schema.default !== undefined) input.answers[p.name] = p.schema.default;
-        else if (p.schema['x-consoleDefault'] !== undefined) input.answers[p.name] = p.schema['x-consoleDefault'];
-      }
-    })
+    input.parameterNames = input.parameters.map(p => p.name).map(n => this.rewriteVariable(n));
+    this.gatherAnswersForGet(input);
   }
-  input.parameterNames = input.parameters.map(p => p.name).map(n => this.rewriteVariable(n));
+}
+
+CodeTemplate.prototype.gatherAnswersForPost = function(input) {
+  let body = JSON.parse(input.answers.body || '{}');
+  delete input.answers.body;
+  let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
+  let findSubschema = (schema, key) => {
+    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    if (schema.properties && schema.properties[key]) return schema.properties[key];
+    let alternatives = (schema.allOf || []).concat(schema.oneOf || []);
+    for (let i = 0; i < alternatives.length; ++i) {
+      let alt = findSubschema(alternatives[i], key);
+      if (alt) return alt;
+    }
+  }
+  let addAnswer = (key, answer, schema) => {
+    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    if (Array.isArray(answer)) {
+      answer.forEach((ans, idx) => {
+        addAnswer(key + '[' + idx + ']', ans, schema.items);
+      })
+    } else if (typeof answer === 'object') {
+      if (answer.objectType) {
+        schema = this.swagger.definitions[answer.objectType];
+      }
+      for (let subkey in answer) {
+        addAnswer(key + '[' + subkey + ']', answer[subkey], findSubschema(schema, subkey));
+      }
+      let objectKey = key + '[objectType]';
+      input.answers[objectKey] = input.answers[objectKey] || schema.title;
+    } else {
+      input.answers[key] = answer;
+    }
+  }
+  input.operation['x-kaltura-parameters'].forEach(name => {
+    let schema = bodyParam.schema.properties[name];
+    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    let param = {name, schema};
+    input.parameters.push(param);
+    if (name in body) addAnswer(name, body[name], schema);
+    else if (schema.default !== undefined) addAnswer(name, schema.default, schema);
+  });
+}
+
+CodeTemplate.prototype.gatherAnswersForGet = function(input) {
+  let addedParameters = [];
+  input.operation.parameters.forEach(p => {
+    if (p.$ref) {
+      let ref = p.$ref.match(/#\/parameters\/(.*)$/)[1];
+      p = this.swagger.parameters[ref];
+    }
+    if (p.global || p['x-global']) return;
+    let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
+    if (addedParameters.indexOf(baseName) !== -1) return;
+    addedParameters.push(baseName);
+    if (baseName === p.name) {
+      input.parameters.push({name: p.name, schema: p.schema || p})
+    } else {
+      let group = input.operation['x-parameterGroups'].filter(g => g.name === baseName)[0];
+      let title = group.schema.title || getDefName(group.schema.$ref);
+      let schema = this.swagger.definitions[title];
+      input.parameters.push({name: group.name, schema});
+    }
+  })
+  input.parameters.forEach(p => {
+    if (input.answers[p.name] === undefined) {
+      if (p.schema.default !== undefined) input.answers[p.name] = p.schema.default;
+      else if (p.schema['x-consoleDefault'] !== undefined) input.answers[p.name] = p.schema['x-consoleDefault'];
+    }
+  })
 }
 
 CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
