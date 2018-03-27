@@ -105,6 +105,17 @@ var language_opts = {
     rewriteAction: addActionSuffixIfReserved,
     rewriteVariable: s => '$' + s,
   },
+  php53: {
+    ext: 'php',
+    accessor: '->',
+    statementSuffix: ';',
+    objPrefix: 'new ',
+    objSuffix: '()',
+    enumAccessor: '::',
+    rewriteAction: addActionSuffixIfReserved,
+    rewriteService: s => 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()',
+    rewriteVariable: s => '$' + s,
+  },
   ruby: {
     ext: 'rb',
     enumAccessor: '::',
@@ -276,9 +287,6 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
 }
 
 CodeTemplate.prototype.gatherAnswersForPost = function(input) {
-  let body = JSON.parse(input.answers.body || '{}');
-  delete input.answers.body;
-  let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
   let findSubschema = (schema, key) => {
     if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
     if (schema.properties && schema.properties[key]) return schema.properties[key];
@@ -290,6 +298,8 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
   }
   let addAnswer = (key, answer, schema) => {
     if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    if (schema['x-enumType']) input.enums.push(schema['x-enumType']);
+    if (schema.title) input.objects.push(schema.title);
     if (Array.isArray(answer)) {
       answer.forEach((ans, idx) => {
         addAnswer(key + '[' + idx + ']', ans, schema.items);
@@ -307,6 +317,13 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
       input.answers[key] = answer;
     }
   }
+
+  let body = JSON.parse(input.answers.body || '{}');
+  delete input.answers.body;
+  let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
+  input.objects = [];
+  input.enums = [];
+
   input.operation['x-kaltura-parameters'].forEach(name => {
     let schema = bodyParam.schema.properties[name];
     if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
