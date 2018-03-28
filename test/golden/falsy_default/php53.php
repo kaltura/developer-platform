@@ -1,6 +1,6 @@
 <?php
   $id = 0;
-  $lockKey = new KalturaExclusiveLockKey();
+  $lockKey = new ExclusiveLockKey();
   $jobType = "";
   $resetExecutionAttempts = false;
 

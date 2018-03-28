@@ -1,6 +1,6 @@
 <?php
-  $filter = new KalturaMediaEntryFilter();
-  $pager = new KalturaFilterPager();
+  $filter = new MediaEntryFilter();
+  $pager = new FilterPager();
 
   try {
     $result = $client->getMediaService()->listAction($filter, $pager);

@@ -1,5 +1,5 @@
 <?php
-  $cuePoint = new KalturaQuestionCuePoint();
+  $cuePoint = new QuestionCuePoint();
   $cuePoint->entryId = "0_mej0it92";
   $cuePoint->question = "hello world";
 

@@ -13,6 +13,8 @@ const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.substring(1);
 }
 
+const removeKalturaPrefix = str => str.replace(/^Kaltura/, '');
+
 const camelCaseToUnderscore = str => {
   return str.replace(/([a-z])([A-Z])/g, function(whole, lower, upper) {
     return lower + '_' + upper.toLowerCase();
@@ -56,6 +58,7 @@ var language_opts = {
     rewriteVariable: function(s) {return s},
     rewriteAction: function(s) {return s},
     rewriteService: function(s) {return s},
+    rewriteEnum: function(s) {return s},
     rewriteType: function(s) {return s},
   },
   curl: {
@@ -82,7 +85,7 @@ var language_opts = {
     rewriteService: function(s) {
       return 'Kaltura' + capitalize(s) + 'Service';
     },
-    rewriteEnum: function(type, name, value) {
+    rewriteEnumValue: function(type, name, value) {
       return JSON.stringify(value) + " /* " + type + '.' + name + " */";
     },
   },
@@ -115,6 +118,8 @@ var language_opts = {
     rewriteAction: addActionSuffixIfReserved,
     rewriteService: s => 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()',
     rewriteVariable: s => '$' + s,
+    rewriteEnum: removeKalturaPrefix,
+    rewriteType: removeKalturaPrefix,
   },
   ruby: {
     ext: 'rb',
@@ -296,10 +301,18 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
       if (alt) return alt;
     }
   }
+  let addSchema = schema => {
+    let enm = schema['x-enumType'];
+    if (enm && input.enums.indexOf(enm) === -1) {
+      input.enums.push(enm);
+    }
+    if (schema.title && input.objects.indexOf(schema.title) === -1) {
+      input.objects.push(schema.title);
+    }
+  }
   let addAnswer = (key, answer, schema) => {
     if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
-    if (schema['x-enumType']) input.enums.push(schema['x-enumType']);
-    if (schema.title) input.objects.push(schema.title);
+    addSchema(schema);
     if (Array.isArray(answer)) {
       answer.forEach((ans, idx) => {
         addAnswer(key + '[' + idx + ']', ans, schema.items);
@@ -329,9 +342,12 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
     if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
     let param = {name, schema};
     input.parameters.push(param);
+    addSchema(schema);
     if (name in body) addAnswer(name, body[name], schema);
     else if (schema.default !== undefined) addAnswer(name, schema.default, schema);
   });
+  input.enums = input.enums.map(e => this.rewriteEnum(e));
+  input.objects = input.objects.map(e => this.rewriteType(e));
 }
 
 CodeTemplate.prototype.gatherAnswersForGet = function(input) {
@@ -524,7 +540,7 @@ CodeTemplate.prototype.rvalue = function(param, answers, parent) {
     if (enm && enumLabels) {
       let enumName = enumLabels[enm.indexOf(answer)];
       if (enumName) {
-        if (self.rewriteEnum) return self.rewriteEnum(enumType, enumName, answer);
+        if (self.rewriteEnumValue) return self.rewriteEnumValue(enumType, enumName, answer);
         return self.enumPrefix + self.rewriteType(enumType) + (self.enumAccessor || self.accessor) + enumName;
       }
     }

@@ -1,7 +1,7 @@
 <?php
   $secret = "YOUR_KALTURA_SECRET";
   $userId = "YOUR_USER_ID";
-  $type = KalturaSessionType::USER;
+  $type = SessionType::USER;
   $partnerId = 0;
   $expiry = 86400;
   $privileges = "";

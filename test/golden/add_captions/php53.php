@@ -1,6 +1,6 @@
 <?php
   $entryId = "";
-  $captionAsset = new KalturaCaptionAsset();
+  $captionAsset = new CaptionAsset();
   $captionAsset->tags = "stuff";
   $captionAsset->language = "Arabic";
 

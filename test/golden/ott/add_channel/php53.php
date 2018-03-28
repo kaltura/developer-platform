@@ -1,5 +1,5 @@
 <?php
-  $channel = new KalturaChannel();
+  $channel = new Channel();
   $channel->description = "foo";
   $channel->isActive = true;
 
