@@ -317,7 +317,7 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
       answer.forEach((ans, idx) => {
         addAnswer(key + '[' + idx + ']', ans, schema.items);
       })
-    } else if (typeof answer === 'object') {
+    } else if (answer !== null && typeof answer === 'object') {
       if (answer.objectType) {
         schema = this.swagger.definitions[answer.objectType];
       }
