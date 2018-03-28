@@ -75,3 +75,6 @@ config.operationNavigation.push({
   }).join('\n'),
 });
 
+if (TARGET_API === 'ovp') {
+  require('./v4-navigation')(config);
+}
