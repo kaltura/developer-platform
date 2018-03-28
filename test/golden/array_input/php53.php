@@ -8,7 +8,6 @@
   use Kaltura\Client\Type\ContextTypeHolder;
   use Kaltura\Client\Type\Condition;
   use Kaltura\Client\ApiException;
-  use Exception;
 
   // load zend framework 2
   require_once(dirname(__FILE__).'/ClassLoader/ClassLoader.php');
