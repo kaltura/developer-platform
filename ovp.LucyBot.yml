@@ -365,6 +365,11 @@ operationNavigation:
         path: "/Deliver-and-Distribute-Media/videoSEO.html"
         discussionURL: null
 
+      - title: "The playManifest Service: Streaming API for Videos and Playlists"
+        markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/playManifest-streaming-api.html
+        path: "/Deliver-and-Distribute-Media/playManifest-streaming-api.html"
+        discussionURL: null
+
       - title: "How to Retrieve the Download or Streaming URL using API Calls?"
         markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html
         path: "/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html"
