@@ -369,11 +369,6 @@ operationNavigation:
         markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/playManifest-streaming-api.html
         path: "/Deliver-and-Distribute-Media/playManifest-streaming-api.html"
         discussionURL: null
-
-      - title: "How to Retrieve the Download or Streaming URL using API Calls?"
-        markdownURL: ./assets/documentation/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html
-        path: "/Deliver-and-Distribute-Media/how-retrieve-download-or-streaming-url-using-api-calls.html"
-        discussionURL: null
       - tag: "playManifest"
       - tag: "syndicationFeed"
       - tag: "entryDistribution"
