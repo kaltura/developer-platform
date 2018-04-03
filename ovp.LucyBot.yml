@@ -26,7 +26,6 @@ routes:
     ui: console
     for: kaltura
     title: Kaltura API Console
-    navigation: operationNavigation
     meta:
       title: "Kaltura VPaaS API Console"
       description: "Make test calls to the Kaltura VPaaS API"
