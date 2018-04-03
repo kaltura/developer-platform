@@ -52,6 +52,7 @@ var language_opts = {
     enumAccessor: '',
     declarationPrefix: '',
     constant: JSON.stringify,
+    assign: function(lval, rval) {return lval + ' = ' + rval},
     emptyArray: function(type, num) {return '[]'},
     arrayAccessor: function(idx) {return '[' + idx + ']'},
     rewriteAttribute: function(s) {return s},
@@ -145,16 +146,30 @@ var language_opts = {
     statementSuffix: ';',
     objPrefix: 'new ',
     objSuffix: '()',
+    assign: function(lval, rval) {
+      if (lval.indexOf('.') === -1) return lval + ' = ' + rval;
+      while (lval.match(/\.\w+\./)) {
+        lval = lval.replace(/\.(\w+)\./, function(full, name) {
+          return '.get' + capitalize(name) + '().';
+        });
+      }
+      let assignment = lval
+          .replace(/\.(\w+)$/, function(full, name) {
+            return '.set' + capitalize(name) + '(' + rval + ')';
+          })
+          .replace(/\.get\((\d+)\)$/, function(full, idx) {
+            return '.set(' + idx + ', ' + rval + ')';
+          })
+      return assignment;
+    },
     emptyArray: function(type, num) {return 'new ArrayList<' + type + '>(' + num + ')'},
     arrayAccessor: function(idx) {return '.get(' + idx + ')'},
-    arraySetter: function(idx, setter) {return '.set(' + idx + ', ' + setter + ')'},
-    rewriteService: function(s) {
-      return 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()';
-    },
+    rewriteService: capitalize,
     rewriteAction: function(s) {
-      return replaceActionSuffix(s);
+      return capitalize(replaceActionSuffix(s));
     },
     rewriteType: function(s) {
+      s = removeKalturaPrefix(s);
       if (s === 'string') return 'String';
       if (s === 'integer') return 'int';
       return s;
@@ -399,10 +414,12 @@ CodeTemplate.prototype.assignment = function(param, answers, parent) {
     if (cond.value.indexOf(answers[cond.name]) === -1) return;
   }
 
-  let assignment = this.lvalue(param) + ' = ' + this.rvalue(param, answers, parent) + this.statementSuffix;
+  let assignment = '';
   let arrMatch = param.name.match(/\[(\d+)\]$/)
   if (arrMatch && this.arraySetter) {
     assignment = this.lvalue(param) + this.arraySetter(arrMatch[1], this.rvalue(param, answers)) + this.statementSuffix
+  } else {
+    assignment = this.assign(this.lvalue(param), this.rvalue(param, answers, parent)) + this.statementSuffix;
   }
 
   const findSubschema = (subParamName, schema) => {
@@ -454,7 +471,7 @@ CodeTemplate.prototype.assignment = function(param, answers, parent) {
         .filter(match => match)
         .map(match => +match[2])
       indices = indices.filter((i, idx) => indices.lastIndexOf(i) === idx);
-      let statement = self.lvalue(subparam) + ' = ' + self.emptyArray(self.rewriteType(itemSchema.title), indices.length) + self.statementSuffix;
+      let statement = self.assign(self.lvalue(subparam), self.emptyArray(self.rewriteType(itemSchema.title), indices.length)) + self.statementSuffix;
       let itemStatements = indices
         .map(index => {
           return {

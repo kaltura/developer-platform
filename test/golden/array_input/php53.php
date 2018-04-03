@@ -34,9 +34,9 @@
   $accessControlProfile->rules[0]->contexts[0]->type = 1;
   $accessControlProfile->rules[0]->contexts[1] = new ContextTypeHolder();
   $accessControlProfile->rules[0]->conditions = [];
-  $accessControlProfile->rules[0]->conditions[0] = new Condition();
+  $accessControlProfile->rules[0]->conditions[0] = new DeliveryProfileCondition();
   $accessControlProfile->rules[0]->conditions[0]->description = "cond 1";
-  $accessControlProfile->rules[0]->conditions[1] = new Condition();
+  $accessControlProfile->rules[0]->conditions[1] = new DeliveryProfileCondition();
   $accessControlProfile->rules[0]->conditions[1]->description = "cond 2";
   $accessControlProfile->rules[1] = new Rule();
   $accessControlProfile->rules[1]->code = "second code";

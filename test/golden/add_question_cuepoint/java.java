@@ -1,6 +1,11 @@
-KalturaQuestionCuePoint cuePoint = new KalturaQuestionCuePoint();
-cuePoint.entryId = "0_mej0it92";
-cuePoint.question = "hello world";
+QuestionCuePoint cuePoint = new QuestionCuePoint();
+cuePoint.setEntryId("0_mej0it92");
+cuePoint.setQuestion("hello world");
 
-Object result = client.getCuePointService().add(cuePoint);
-System.out.println(result);
+AddCuePointBuilder requestBuilder = CuePointService.add(cuePoint)
+    .setCompletion(new OnCompletion<Response<CuePoint>>() {
+        @Override
+        public void onComplete(Response<CuePoint> result) {
+            System.out.println(result);
+        }
+    });

@@ -1,10 +1,15 @@
-KalturaESearchParams searchParams = new KalturaESearchParams();
-searchParams.searchOperator = new KalturaESearchOperator();
-searchParams.searchOperator.operator = KalturaESearchOperatorType.AND_OP;
-searchParams.searchOperator.searchItems = new ArrayList<KalturaESearchBaseItem>(1);
-searchParams.searchOperator.searchItems.set(0, new KalturaESearchCaptionItem());
-searchParams.searchOperator.searchItems.get(0).searchTerm = "asdf";
-KalturaPager pager = new KalturaPager();
+ESearchParams searchParams = new ESearchParams();
+searchParams.setSearchOperator(new ESearchOperator());
+searchParams.getSearchOperator().setOperator(ESearchOperatorType.AND_OP);
+searchParams.getSearchOperator().setSearchItems(new ArrayList<ESearchBaseItem>(1));
+searchParams.getSearchOperator().getSearchItems().set(0, new ESearchCaptionItem());
+searchParams.getSearchOperator().getSearchItems().get(0).setSearchTerm("asdf");
+Pager pager = new Pager();
 
-Object result = client.getESearchService().searchEntry(searchParams, pager);
-System.out.println(result);
+SearchEntryESearchBuilder requestBuilder = ESearchService.searchentry(searchParams, pager)
+    .setCompletion(new OnCompletion<Response<ESearchResponse>>() {
+        @Override
+        public void onComplete(Response<ESearchResponse> result) {
+            System.out.println(result);
+        }
+    });
