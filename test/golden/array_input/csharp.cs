@@ -21,7 +21,7 @@ namespace Kaltura {
       accessControlProfile.Rules[0].Code = "thiscode";
       accessControlProfile.Rules[0].Contexts = new List<ContextTypeHolder>();
       accessControlProfile.Rules[0].Contexts.Add(new ContextTypeHolder());
-      accessControlProfile.Rules[0].Contexts[0].Type = 1;
+      accessControlProfile.Rules[0].Contexts[0].Type = ContextType.PLAY;
       accessControlProfile.Rules[0].Contexts.Add(new ContextTypeHolder());
       accessControlProfile.Rules[0].Conditions = new List<Condition>();
       accessControlProfile.Rules[0].Conditions.Add(new DeliveryProfileCondition());

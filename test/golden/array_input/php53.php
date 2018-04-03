@@ -31,7 +31,7 @@
   $accessControlProfile->rules[0]->code = "thiscode";
   $accessControlProfile->rules[0]->contexts = [];
   $accessControlProfile->rules[0]->contexts[0] = new ContextTypeHolder();
-  $accessControlProfile->rules[0]->contexts[0]->type = 1;
+  $accessControlProfile->rules[0]->contexts[0]->type = ContextType::PLAY;
   $accessControlProfile->rules[0]->contexts[1] = new ContextTypeHolder();
   $accessControlProfile->rules[0]->conditions = [];
   $accessControlProfile->rules[0]->conditions[0] = new DeliveryProfileCondition();

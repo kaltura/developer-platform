@@ -53,7 +53,7 @@ describe('Sample Code', function() {
       answers: {
         'accessControlProfile[name]': 'foo',
         'accessControlProfile[rules][0][code]': 'thiscode',
-        'accessControlProfile[rules][0][contexts][0][type]': 1,
+        'accessControlProfile[rules][0][contexts][0][type]': "1",
         'accessControlProfile[rules][0][conditions][0][objectType]': 'KalturaDeliveryProfileCondition',
         'accessControlProfile[rules][0][conditions][1][objectType]': 'KalturaDeliveryProfileCondition',
         'accessControlProfile[rules][0][conditions][0][description]': 'cond 1',
