@@ -3808,6 +3808,14 @@
     "to": "/console/service/user/action/enableLogin"
   },
   {
+    "from": "/api-docs/Search_Discover_and_Personalize/user/user_exportToCsv",
+    "to": "/api-docs/service/user/action/exportToCsv"
+  },
+  {
+    "from": "/console/Search_Discover_and_Personalize/user/user_exportToCsv",
+    "to": "/console/service/user/action/exportToCsv"
+  },
+  {
     "from": "/api-docs/Search_Discover_and_Personalize/user/user_get",
     "to": "/api-docs/service/user/action/get"
   },
@@ -3878,6 +3886,14 @@
   {
     "from": "/console/Search_Discover_and_Personalize/user/user_resetPassword",
     "to": "/console/service/user/action/resetPassword"
+  },
+  {
+    "from": "/api-docs/Search_Discover_and_Personalize/user/user_serveCsv",
+    "to": "/api-docs/service/user/action/serveCsv"
+  },
+  {
+    "from": "/console/Search_Discover_and_Personalize/user/user_serveCsv",
+    "to": "/console/service/user/action/serveCsv"
   },
   {
     "from": "/api-docs/Search_Discover_and_Personalize/user/user_setInitialPassword",
@@ -5152,6 +5168,14 @@
     "to": "/console/service/user/action/enableLogin"
   },
   {
+    "from": "/api-docs/Secure_Control_and_Govern/user/user_exportToCsv",
+    "to": "/api-docs/service/user/action/exportToCsv"
+  },
+  {
+    "from": "/console/Secure_Control_and_Govern/user/user_exportToCsv",
+    "to": "/console/service/user/action/exportToCsv"
+  },
+  {
     "from": "/api-docs/Secure_Control_and_Govern/user/user_get",
     "to": "/api-docs/service/user/action/get"
   },
@@ -5222,6 +5246,14 @@
   {
     "from": "/console/Secure_Control_and_Govern/user/user_resetPassword",
     "to": "/console/service/user/action/resetPassword"
+  },
+  {
+    "from": "/api-docs/Secure_Control_and_Govern/user/user_serveCsv",
+    "to": "/api-docs/service/user/action/serveCsv"
+  },
+  {
+    "from": "/console/Secure_Control_and_Govern/user/user_serveCsv",
+    "to": "/console/service/user/action/serveCsv"
   },
   {
     "from": "/api-docs/Secure_Control_and_Govern/user/user_setInitialPassword",
