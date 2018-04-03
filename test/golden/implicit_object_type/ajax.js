@@ -1,5 +1,5 @@
-var searchParams = {objectType: "KalturaESearchParams"};
-searchParams.searchOperator = {objectType: "KalturaESearchOperator"};
+var searchParams = {objectType: "KalturaESearchEntryParams"};
+searchParams.searchOperator = {objectType: "KalturaESearchEntryOperator"};
 searchParams.searchOperator.operator = 1 /* KalturaESearchOperatorType.AND_OP */;
 searchParams.searchOperator.searchItems = [];
 searchParams.searchOperator.searchItems[0] = {objectType: "KalturaESearchCaptionItem"};

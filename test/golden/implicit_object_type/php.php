@@ -1,6 +1,7 @@
 <?php
-  $searchParams = new KalturaESearchParams();
-  $searchParams->searchOperator = new KalturaESearchOperator();
+  $elasticSearchPlugin = KalturaElasticSearchClientPlugin::get($client);
+  $searchParams = new KalturaESearchEntryParams();
+  $searchParams->searchOperator = new KalturaESearchEntryOperator();
   $searchParams->searchOperator->operator = KalturaESearchOperatorType::AND_OP;
   $searchParams->searchOperator->searchItems = [];
   $searchParams->searchOperator->searchItems[0] = new KalturaESearchCaptionItem();
@@ -8,7 +9,7 @@
   $pager = new KalturaPager();
 
   try {
-    $result = $client->eSearch->searchEntry($searchParams, $pager);
+    $result = $elasticSearchPlugin->eSearch->searchEntry($searchParams, $pager);
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();

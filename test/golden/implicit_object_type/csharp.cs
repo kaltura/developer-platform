@@ -1,7 +1,7 @@
-ESearchParams searchParams = new ESearchParams();
-searchParams.SearchOperator = new ESearchOperator();
+ESearchEntryParams searchParams = new ESearchEntryParams();
+searchParams.SearchOperator = new ESearchEntryOperator();
 searchParams.SearchOperator.Operator = ESearchOperatorType.AND_OP;
-searchParams.SearchOperator.SearchItems = new List<ESearchBaseItem>();
+searchParams.SearchOperator.SearchItems = new List<ESearchEntryBaseItem>();
 searchParams.SearchOperator.SearchItems.Add(new ESearchCaptionItem());
 searchParams.SearchOperator.SearchItems[0].SearchTerm = "asdf";
 Pager pager = new Pager();

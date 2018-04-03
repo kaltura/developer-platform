@@ -1,6 +1,6 @@
 <?php
-  $searchParams = new ESearchParams();
-  $searchParams->searchOperator = new ESearchOperator();
+  $searchParams = new ESearchEntryParams();
+  $searchParams->searchOperator = new ESearchEntryOperator();
   $searchParams->searchOperator->operator = ESearchOperatorType::AND_OP;
   $searchParams->searchOperator->searchItems = [];
   $searchParams->searchOperator->searchItems[0] = new ESearchCaptionItem();

@@ -1,6 +1,6 @@
 
-searchParams = KalturaESearchParams()
-searchParams.searchOperator = KalturaESearchOperator()
+searchParams = KalturaESearchEntryParams()
+searchParams.searchOperator = KalturaESearchEntryOperator()
 searchParams.searchOperator.operator = KalturaESearchOperatorType.AND_OP
 searchParams.searchOperator.searchItems = []
 searchParams.searchOperator.searchItems[0] = KalturaESearchCaptionItem()

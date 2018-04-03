@@ -3,5 +3,5 @@ curl -X POST https://www.kaltura.com/api_v3/service/elasticsearch_esearch/action
     -d "searchParams[searchOperator][searchItems][0][objectType]=KalturaESearchCaptionItem" \
     -d "searchParams[searchOperator][searchItems][0][searchTerm]=asdf" \
     -d "searchParams[searchOperator][operator]=1" \
-    -d "searchParams[searchOperator][objectType]=KalturaESearchOperator" \
-    -d "searchParams[objectType]=KalturaESearchParams" \
+    -d "searchParams[searchOperator][objectType]=KalturaESearchEntryOperator" \
+    -d "searchParams[objectType]=KalturaESearchEntryParams"

@@ -1,5 +1,5 @@
-var searchParams = new KalturaESearchParams();
-searchParams.searchOperator = new KalturaESearchOperator();
+var searchParams = new KalturaESearchEntryParams();
+searchParams.searchOperator = new KalturaESearchEntryOperator();
 searchParams.searchOperator.operator = KalturaESearchOperatorType.AND_OP;
 searchParams.searchOperator.searchItems = [];
 searchParams.searchOperator.searchItems[0] = new KalturaESearchCaptionItem();

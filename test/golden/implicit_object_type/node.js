@@ -1,5 +1,5 @@
-var searchParams = new Kaltura.kc.objects.KalturaESearchParams();
-searchParams.searchOperator = new Kaltura.kc.objects.KalturaESearchOperator();
+var searchParams = new Kaltura.kc.objects.KalturaESearchEntryParams();
+searchParams.searchOperator = new Kaltura.kc.objects.KalturaESearchEntryOperator();
 searchParams.searchOperator.operator = Kaltura.kc.enums.KalturaESearchOperatorType.AND_OP;
 searchParams.searchOperator.searchItems = [];
 searchParams.searchOperator.searchItems[0] = new Kaltura.kc.objects.KalturaESearchCaptionItem();
