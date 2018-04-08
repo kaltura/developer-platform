@@ -15,14 +15,24 @@ Iterating over all entries is achieved by calling media.list() passing along a p
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
-      "name": "pager[pageSize]"
-    },
-    {
-      "name": "pager[pageIndex]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "pager": {
+            "properties": {
+              "pageSize": {},
+              "pageIndex": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -36,18 +46,30 @@ Below we've set `pageSize` to 1, and `pageIndex` to the total number of entries 
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
-      "name": "pager[pageSize]",
-      "x-consoleDefault": 1
-    },
-    {
-      "name": "pager[pageIndex]",
-      "dynamicValue": {
-        "fromStep": 0,
-        "value": "totalCount"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "pager": {
+            "properties": {
+              "pageSize": {
+                "x-consoleDefault": 1
+              },
+              "pageIndex": {
+                "dynamicValue": {
+                  "fromStep": 0,
+                  "value": "totalCount"
+                }
+              }
+            },
+            "type": "object"
+          }
+        }
       }
     }
   ]

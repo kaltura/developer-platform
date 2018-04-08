@@ -25,25 +25,26 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/session/action/start",
   "parameters": [
     {
-      "name": "partnerId"
-    },
-    {
-      "name": "userId",
-      "default": "lucybot@example.com"
-    },
-    {
-      "name": "secret"
-    },
-    {
-      "name": "type",
-      "default": 2
-    },
-    {
-      "name": "privileges"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "partnerId": {},
+          "userId": {
+            "default": "lucybot@example.com"
+          },
+          "secret": {},
+          "type": {
+            "default": 2
+          },
+          "privileges": {}
+        }
+      }
     }
   ]
 }
@@ -55,7 +56,7 @@ You can validate your Kaltura session by calling ```user.get``` without a User I
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/user/action/get",
   "ignoreParameters": [
     "format"
@@ -72,14 +73,19 @@ You can then use one of these partnerIds to get a privileged KS.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/user/action/loginByLoginId",
   "parameters": [
     {
-      "name": "loginId"
-    },
-    {
-      "name": "password"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "loginId": {},
+          "password": {}
+        }
+      }
     }
   ]
 }
@@ -93,7 +99,7 @@ You can then re-use `user.loginById` with a partnerId to login for as that parti
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/partner/action/listPartnersForUser",
   "parameters": [],
   "ignoreParameters": [

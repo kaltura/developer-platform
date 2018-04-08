@@ -24,53 +24,55 @@ Use `uiConf.add` below to create one.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/uiconf/action/add",
   "parameters": [
     {
-      "name": "uiConf[name]"
-    },
-    {
-      "name": "uiConf[description]"
-    },
-    {
-      "name": "uiConf[objType]",
-      "x-consoleDefault": 7
-    },
-    {
-      "name": "uiConf[width]",
-      "hidden": true,
-      "x-consoleDefault": 400
-    },
-    {
-      "name": "uiConf[height]",
-      "x-consoleDefault": 300,
-      "hidden": true
-    },
-    {
-      "name": "uiConf[swfUrl]",
-      "x-consoleDefault": "/flash/krecord/v1.7.1/KRecord.swf",
-      "hidden": true
-    },
-    {
-      "name": "uiConf[swfUrlVersion]",
-      "x-consoleDefault": "1.7.1",
-      "hidden": true
-    },
-    {
-      "name": "uiConf[confFile]",
-      "x-consoleDefault": "<!-- KRecord does not require XML -->",
-      "hidden": true
-    },
-    {
-      "name": "uiConf[useCdn]",
-      "x-consoleDefault": "true",
-      "hidden": true
-    },
-    {
-      "name": "uiConf[creationMode]",
-      "x-consoleDefault": 2,
-      "hidden": true
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "uiConf": {
+            "properties": {
+              "name": {},
+              "description": {},
+              "objType": {
+                "x-consoleDefault": 7
+              },
+              "width": {
+                "hidden": true,
+                "x-consoleDefault": 400
+              },
+              "height": {
+                "x-consoleDefault": 300,
+                "hidden": true
+              },
+              "swfUrl": {
+                "x-consoleDefault": "/flash/krecord/v1.7.1/KRecord.swf",
+                "hidden": true
+              },
+              "swfUrlVersion": {
+                "x-consoleDefault": "1.7.1",
+                "hidden": true
+              },
+              "confFile": {
+                "x-consoleDefault": "<!-- KRecord does not require XML -->",
+                "hidden": true
+              },
+              "useCdn": {
+                "x-consoleDefault": "true",
+                "hidden": true
+              },
+              "creationMode": {
+                "x-consoleDefault": 2,
+                "hidden": true
+              }
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -82,17 +84,30 @@ First you'll need to get the LIVE_STREAM conversion profile using `conversionPro
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/conversionprofile/action/list",
   "parameters": [
     {
-      "name": "filter[nameEqual]",
-      "default": "Passthrough",
-      "hidden": true
-    },
-    {
-      "name": "filter[typeEqual]",
-      "default": "2",
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "nameEqual": {
+                "default": "Passthrough",
+                "hidden": true
+              },
+              "typeEqual": {
+                "default": "2",
+                "hidden": true
+              }
+            },
+            "type": "object"
+          }
+        }
+      },
       "hidden": true
     }
   ]
@@ -105,49 +120,55 @@ Now we'll use the conversion profile ID to create a new liveStream entry using `
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/livestream/action/add",
   "parameters": [
     {
-      "name": "liveStreamEntry[name]",
-      "default": "Webcam Live Stream Test"
-    },
-    {
-      "name": "liveStreamEntry[description]",
-      "default": "This is a test of Kaltura's Live Webcam streaming"
-    },
-    {
-      "name": "liveStreamEntry[mediaType]",
-      "default": 201,
-      "hidden": true,
-      "x-consoleDefault": 201
-    },
-    {
-      "name": "liveStreamEntry[recordStatus]",
-      "default": 1,
-      "hidden": true
-    },
-    {
-      "name": "liveStreamEntry[dvrStatus]",
-      "default": 1,
-      "hidden": true
-    },
-    {
-      "name": "liveStreamEntry[dvrWindow]",
-      "default": 60,
-      "hidden": true
-    },
-    {
-      "name": "liveStreamEntry[sourceType]",
-      "default": "32",
-      "hidden": true,
-      "x-consoleDefault": "32"
-    },
-    {
-      "name": "liveStreamEntry[conversionProfileId]",
-      "dynamicValue": {
-        "fromStep": 1,
-        "value": "objects.0.id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "liveStreamEntry": {
+            "properties": {
+              "name": {
+                "default": "Webcam Live Stream Test"
+              },
+              "description": {
+                "default": "This is a test of Kaltura's Live Webcam streaming"
+              },
+              "mediaType": {
+                "default": 201,
+                "hidden": true,
+                "x-consoleDefault": 201
+              },
+              "recordStatus": {
+                "default": 1,
+                "hidden": true
+              },
+              "dvrStatus": {
+                "default": 1,
+                "hidden": true
+              },
+              "dvrWindow": {
+                "default": 60,
+                "hidden": true
+              },
+              "sourceType": {
+                "default": "32",
+                "hidden": true,
+                "x-consoleDefault": "32"
+              },
+              "conversionProfileId": {
+                "dynamicValue": {
+                  "fromStep": 1,
+                  "value": "objects.0.id"
+                }
+              }
+            },
+            "type": "object"
+          }
+        }
       }
     }
   ]
@@ -167,15 +188,11 @@ You can use the kRecord widget to record your broadcast.
       "name": "uiConf",
       "dynamicEnum": {
         "path": "/service/uiconf/action/list",
-        "method": "get",
+        "method": "post",
         "parameters": [
           {
-            "name": "filter[orderBy]",
-            "value": "-updatedAt"
-          },
-          {
-            "name": "filter[objTypeEqual]",
-            "value": 7
+            "name": "body",
+            "value": "{\"filter\":{\"orderBy\":\"-updatedAt\",\"objTypeEqual\":7}}"
           }
         ],
         "array": "objects",
@@ -194,16 +211,12 @@ You can use the kRecord widget to record your broadcast.
       "dynamicEnum": {
         "parameters": [
           {
-            "name": "pager[pageSize]",
-            "value": 500
-          },
-          {
-            "name": "filter[objTypeEqual]",
-            "value": 1
+            "name": "body",
+            "value": "{\"pager\":{\"pageSize\":500},\"filter\":{\"objTypeEqual\":1}}"
           }
         ],
         "path": "/service/uiconf/action/list",
-        "method": "get",
+        "method": "post",
         "array": "objects",
         "value": "id",
         "label": "name"

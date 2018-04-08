@@ -22,7 +22,7 @@ If you're working in JavaScript, the [jQuery File Upload widget](https://github.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/uploadtoken/action/add",
   "parameters": []
 }
@@ -154,17 +154,25 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/add",
   "parameters": [
     {
-      "name": "entry[mediaType]"
-    },
-    {
-      "name": "entry[name]"
-    },
-    {
-      "name": "entry[description]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entry": {
+            "properties": {
+              "mediaType": {},
+              "name": {},
+              "description": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -180,21 +188,33 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
   "path": "/service/media/action/addContent",
   "parameters": [
     {
-      "name": "resource[objectType]",
-      "x-consoleDefault": "KalturaUploadedFileTokenResource"
-    },
-    {
-      "name": "entryId",
-      "dynamicValue": {
-        "fromStep": 2,
-        "value": "id"
-      }
-    },
-    {
-      "name": "resource[token]",
-      "dynamicValue": {
-        "fromStep": 0,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "resource": {
+            "properties": {
+              "objectType": {
+                "x-consoleDefault": "KalturaUploadedFileTokenResource"
+              },
+              "token": {
+                "dynamicValue": {
+                  "fromStep": 0,
+                  "value": "id"
+                },
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "entryId": {
+            "dynamicValue": {
+              "fromStep": 2,
+              "value": "id"
+            }
+          }
+        }
       }
     }
   ]
@@ -207,30 +227,39 @@ You can use kWidget to embed your video in HTML. The video may not be ready for 
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/get",
   "parameters": [
     {
       "name": "uiConf",
       "dynamicEnum": {
         "path": "/service/uiconf/action/list",
-        "method": "get",
+        "method": "post",
         "array": "objects",
         "value": "id",
         "label": "name",
         "parameters": [
           {
-            "name": "filter[objTypeEqual]",
-            "value": 1
+            "name": "body",
+            "value": "{\"filter\":{\"objTypeEqual\":1}}"
           }
         ]
       }
     },
     {
-      "name": "entryId",
-      "dynamicValue": {
-        "fromStep": 2,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "dynamicValue": {
+              "fromStep": 2,
+              "value": "id"
+            },
+            "hidden": true
+          }
+        }
       },
       "hidden": true
     }

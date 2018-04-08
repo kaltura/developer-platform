@@ -27,25 +27,30 @@ You should only specify one of the two options.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/report/action/getTotal",
   "parameters": [
     {
-      "name": "reportType",
-      "default": "1",
-      "hidden": true
-    },
-    {
-      "name": "reportInputFilter[fromDay]"
-    },
-    {
-      "name": "reportInputFilter[toDay]"
-    },
-    {
-      "name": "reportInputFilter[fromDate]"
-    },
-    {
-      "name": "reportInputFilter[toDate]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reportType": {
+            "default": "1",
+            "hidden": true
+          },
+          "reportInputFilter": {
+            "properties": {
+              "fromDay": {},
+              "toDay": {},
+              "fromDate": {},
+              "toDate": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -57,77 +62,85 @@ You can set reportType to any of the [KalturaReportTypes](https://github.com/kal
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/report/action/getTable",
   "parameters": [
     {
-      "name": "reportType",
-      "default": "5",
-      "enum": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "201",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25"
-      ],
-      "enumLabels": [
-        "TOP_CONTENT",
-        "CONTENT_DROPOFF",
-        "CONTENT_INTERACTIONS",
-        "MAP_OVERLAY",
-        "TOP_CONTRIBUTORS",
-        "TOP_SYNDICATION",
-        "CONTENT_CONTRIBUTIONS",
-        "USER_ENGAGEMENT",
-        "SPEFICIC_USER_ENGAGEMENT",
-        "USER_TOP_CONTENT",
-        "USER_CONTENT_DROPOFF",
-        "USER_CONTENT_INTERACTIONS",
-        "APPLICATIONS",
-        "USER_USAGE",
-        "SPECIFIC_USER_USAGE",
-        "PARTNER_USAGE",
-        "VAR_USAGE",
-        "TOP_CREATORS",
-        "PLATFORMS",
-        "OPERATION_SYSTEM",
-        "BROWSERS",
-        "LIVE",
-        "TOP_PLAYBACK_CONTEXT"
-      ]
-    },
-    {
-      "name": "reportInputFilter[fromDay]"
-    },
-    {
-      "name": "reportInputFilter[toDay]"
-    },
-    {
-      "name": "reportInputFilter[fromDate]"
-    },
-    {
-      "name": "reportInputFilter[toDate]"
-    },
-    {
-      "name": "pager[pageSize]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reportType": {
+            "default": "5",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "201",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25"
+            ],
+            "enumLabels": [
+              "TOP_CONTENT",
+              "CONTENT_DROPOFF",
+              "CONTENT_INTERACTIONS",
+              "MAP_OVERLAY",
+              "TOP_CONTRIBUTORS",
+              "TOP_SYNDICATION",
+              "CONTENT_CONTRIBUTIONS",
+              "USER_ENGAGEMENT",
+              "SPEFICIC_USER_ENGAGEMENT",
+              "USER_TOP_CONTENT",
+              "USER_CONTENT_DROPOFF",
+              "USER_CONTENT_INTERACTIONS",
+              "APPLICATIONS",
+              "USER_USAGE",
+              "SPECIFIC_USER_USAGE",
+              "PARTNER_USAGE",
+              "VAR_USAGE",
+              "TOP_CREATORS",
+              "PLATFORMS",
+              "OPERATION_SYSTEM",
+              "BROWSERS",
+              "LIVE",
+              "TOP_PLAYBACK_CONTEXT"
+            ]
+          },
+          "reportInputFilter": {
+            "properties": {
+              "fromDay": {},
+              "toDay": {},
+              "fromDate": {},
+              "toDate": {}
+            },
+            "type": "object"
+          },
+          "pager": {
+            "properties": {
+              "pageSize": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }

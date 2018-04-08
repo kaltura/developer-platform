@@ -40,20 +40,30 @@ This combination of filter parameters will search through all of the Kaltura Med
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
-      "name": "filter[freeText]",
-      "default": "",
-      "x-consoleDefault": ""
-    },
-    {
-      "name": "filter[orderBy]",
-      "x-consoleDefault": "-weight"
-    },
-    {
-      "group": "filter[advancedSearch]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "freeText": {
+                "default": "",
+                "x-consoleDefault": ""
+              },
+              "orderBy": {
+                "x-consoleDefault": "-weight"
+              },
+              "advancedSearch": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -85,35 +95,31 @@ These blend characters may be used as delimiters or as characters.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
-      "name": "filter[idEqual]"
-    },
-    {
-      "name": "filter[idIn]"
-    },
-    {
-      "name": "filter[idNotIn]"
-    },
-    {
-      "name": "filter[nameLike]"
-    },
-    {
-      "name": "filter[tagsMultiLikeOr]"
-    },
-    {
-      "name": "filter[tagsMultiLikeAnd]"
-    },
-    {
-      "name": "filter[createdAtGreaterThanOrEqual]"
-    },
-    {
-      "name": "filter[createdAtLessThanOrEqual]"
-    },
-    {
-      "name": "filter[categoriesIdsNotContains]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "idEqual": {},
+              "idIn": {},
+              "idNotIn": {},
+              "nameLike": {},
+              "tagsMultiLikeOr": {},
+              "tagsMultiLikeAnd": {},
+              "createdAtGreaterThanOrEqual": {},
+              "createdAtLessThanOrEqual": {},
+              "categoriesIdsNotContains": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -125,99 +131,115 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
       "name": "uiConf",
       "dynamicEnum": {
         "path": "/service/uiconf/action/list",
-        "method": "get",
+        "method": "post",
         "array": "objects",
         "value": "id",
         "label": "name",
         "parameters": [
           {
-            "name": "filter[objTypeEqual]",
-            "value": 1
+            "name": "body",
+            "value": "{\"filter\":{\"objTypeEqual\":1}}"
           }
         ]
       }
     },
     {
-      "name": "filter[freeText]",
-      "default": "",
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[freeText]"
-      }
-    },
-    {
-      "name": "filter[createdAtGreaterThanOrEqual]",
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[createdAtGreaterThanOrEqual]"
-      }
-    },
-    {
-      "name": "filter[advancedSearch][objectType]",
-      "default": "KalturaMetadataSearchItem",
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[advancedSearch][objectType]"
-      }
-    },
-    {
-      "name": "filter[advancedSearch][orderBy]",
-      "default": "-createdAt",
-      "enum": [
-        "+createdAt",
-        "+duration",
-        "+lastPlayedAt",
-        "+name",
-        "+plays",
-        "+recent",
-        "+startDate",
-        "+updatedAt",
-        "+views",
-        "-createdAt",
-        "-duration",
-        "-lastPlayedAt",
-        "-name",
-        "-plays",
-        "-recent",
-        "-startDate",
-        "-updatedAt",
-        "-views"
-      ],
-      "enumLabels": [
-        "CREATED_AT_ASC",
-        "DURATION_ASC",
-        "LAST_PLAYED_AT_ASC",
-        "NAME_ASC",
-        "PLAYS_ASC",
-        "RECENT_ASC",
-        "START_DATE_ASC",
-        "UPDATED_AT_ASC",
-        "VIEWS_ASC",
-        "CREATED_AT_DESC",
-        "DURATION_DESC",
-        "LAST_PLAYED_AT_DESC",
-        "NAME_DESC",
-        "PLAYS_DESC",
-        "RECENT_DESC",
-        "START_DATE_DESC",
-        "UPDATED_AT_DESC",
-        "VIEWS_DESC"
-      ],
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[advancedSearch][orderBy]"
-      }
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "freeText": {
+                "default": "",
+                "hidden": true,
+                "dynamicValue": {
+                  "fromStep": 0,
+                  "answer": "body.filter.freeText"
+                }
+              },
+              "createdAtGreaterThanOrEqual": {
+                "hidden": true,
+                "dynamicValue": {
+                  "fromStep": 0,
+                  "answer": "body.filter.createdAtGreaterThanOrEqual"
+                }
+              },
+              "advancedSearch": {
+                "properties": {
+                  "objectType": {
+                    "default": "KalturaMetadataSearchItem",
+                    "hidden": true,
+                    "dynamicValue": {
+                      "fromStep": 0,
+                      "answer": "body.filter.advancedSearch.objectType"
+                    }
+                  },
+                  "orderBy": {
+                    "default": "-createdAt",
+                    "enum": [
+                      "+createdAt",
+                      "+duration",
+                      "+lastPlayedAt",
+                      "+name",
+                      "+plays",
+                      "+recent",
+                      "+startDate",
+                      "+updatedAt",
+                      "+views",
+                      "-createdAt",
+                      "-duration",
+                      "-lastPlayedAt",
+                      "-name",
+                      "-plays",
+                      "-recent",
+                      "-startDate",
+                      "-updatedAt",
+                      "-views"
+                    ],
+                    "enumLabels": [
+                      "CREATED_AT_ASC",
+                      "DURATION_ASC",
+                      "LAST_PLAYED_AT_ASC",
+                      "NAME_ASC",
+                      "PLAYS_ASC",
+                      "RECENT_ASC",
+                      "START_DATE_ASC",
+                      "UPDATED_AT_ASC",
+                      "VIEWS_ASC",
+                      "CREATED_AT_DESC",
+                      "DURATION_DESC",
+                      "LAST_PLAYED_AT_DESC",
+                      "NAME_DESC",
+                      "PLAYS_DESC",
+                      "RECENT_DESC",
+                      "START_DATE_DESC",
+                      "UPDATED_AT_DESC",
+                      "VIEWS_DESC"
+                    ],
+                    "hidden": true,
+                    "dynamicValue": {
+                      "fromStep": 0,
+                      "answer": "body.filter.advancedSearch.orderBy"
+                    }
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          }
+        }
+      },
+      "hidden": true
     }
   ]
 }

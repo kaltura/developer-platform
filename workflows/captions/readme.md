@@ -22,7 +22,7 @@ Choose a video from your library to add captions to.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/get",
   "parameters": [
     {
@@ -30,7 +30,14 @@ Choose a video from your library to add captions to.
       "hidden": true
     },
     {
-      "name": "entryId"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {}
+        }
+      }
     }
   ]
 }
@@ -44,7 +51,7 @@ First you'll need to use `uploadToken.add` to create a new upload token. In the 
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/uploadtoken/action/add",
   "parameters": []
 }
@@ -79,29 +86,36 @@ Next you'll need to create a Caption Asset, which describes the format, language
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/caption_captionasset/action/add",
   "parameters": [
     {
-      "name": "entryId",
-      "dynamicValue": {
-        "fromStep": 0,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "dynamicValue": {
+              "fromStep": 0,
+              "value": "id"
+            }
+          },
+          "captionAsset": {
+            "properties": {
+              "language": {
+                "default": "English"
+              },
+              "label": {},
+              "isDefault": {},
+              "format": {
+                "default": "1"
+              }
+            },
+            "type": "object"
+          }
+        }
       }
-    },
-    {
-      "name": "captionAsset[language]",
-      "default": "English"
-    },
-    {
-      "name": "captionAsset[label]"
-    },
-    {
-      "name": "captionAsset[isDefault]"
-    },
-    {
-      "name": "captionAsset[format]",
-      "default": "1"
     }
   ]
 }
@@ -119,21 +133,33 @@ Set the `id` parameter to the entryId of a media item, and the `contentResource[
   "path": "/service/caption_captionasset/action/setContent",
   "parameters": [
     {
-      "name": "id",
-      "dynamicValue": {
-        "fromStep": 3,
-        "value": "id"
-      }
-    },
-    {
-      "name": "contentResource[objectType]",
-      "default": "KalturaUploadedFileTokenResource"
-    },
-    {
-      "name": "contentResource[token]",
-      "dynamicValue": {
-        "fromStep": 2,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "dynamicValue": {
+              "fromStep": 3,
+              "value": "id"
+            }
+          },
+          "contentResource": {
+            "properties": {
+              "objectType": {
+                "default": "KalturaUploadedFileTokenResource"
+              },
+              "token": {
+                "dynamicValue": {
+                  "fromStep": 2,
+                  "value": "id"
+                },
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        }
       }
     }
   ]
@@ -146,17 +172,29 @@ You can use ```captionAssetItem.search``` to search for scenes within your video
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/captionsearch_captionassetitem/action/search",
   "parameters": [
     {
-      "name": "captionAssetItemFilter[contentLike]",
-      "default": "support"
-    },
-    {
-      "name": "captionAssetItemFilter[objectType]",
-      "default": "KalturaCaptionAssetItemFilter",
-      "hidden": true
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "captionAssetItemFilter": {
+            "properties": {
+              "contentLike": {
+                "default": "support"
+              },
+              "objectType": {
+                "default": "KalturaCaptionAssetItemFilter",
+                "hidden": true
+              }
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }

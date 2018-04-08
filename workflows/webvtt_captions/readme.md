@@ -20,17 +20,30 @@ Use `captionAsset.list` to retrieve a list of Caption Assets
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/caption_captionasset/action/list",
   "parameters": [
     {
-      "name": "filter[entryIdEqual]",
-      "dynamicEnum": {
-        "path": "/service/media/action/list",
-        "method": "get",
-        "array": "objects",
-        "value": "id",
-        "label": "name"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "entryIdEqual": {
+                "dynamicEnum": {
+                  "path": "/service/media/action/list",
+                  "method": "post",
+                  "array": "objects",
+                  "value": "id",
+                  "label": "name"
+                }
+              }
+            },
+            "type": "object"
+          }
+        }
       }
     }
   ]
@@ -45,7 +58,7 @@ First you'll need to use `uploadToken.add` to create a new upload token. In the 
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/uploadtoken/action/add",
   "parameters": []
 }
@@ -80,29 +93,36 @@ Use `captionAsset.add` to create a new Caption Asset
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/caption_captionasset/action/add",
   "parameters": [
     {
-      "name": "entryId",
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[entryIdEqual]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "dynamicValue": {
+              "fromStep": 0,
+              "answer": "body.filter.entryIdEqual"
+            }
+          },
+          "captionAsset": {
+            "properties": {
+              "language": {
+                "default": "English"
+              },
+              "label": {},
+              "isDefault": {},
+              "format": {
+                "default": "3"
+              }
+            },
+            "type": "object"
+          }
+        }
       }
-    },
-    {
-      "name": "captionAsset[language]",
-      "default": "English"
-    },
-    {
-      "name": "captionAsset[label]"
-    },
-    {
-      "name": "captionAsset[isDefault]"
-    },
-    {
-      "name": "captionAsset[format]",
-      "default": "3"
     }
   ]
 }
@@ -114,14 +134,22 @@ Use `captionAsset.get` to get details for a specific Caption Asset
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/caption_captionasset/action/get",
   "parameters": [
     {
-      "name": "captionAssetId",
-      "dynamicValue": {
-        "fromStep": 3,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "captionAssetId": {
+            "dynamicValue": {
+              "fromStep": 3,
+              "value": "id"
+            }
+          }
+        }
       }
     }
   ]
@@ -134,14 +162,22 @@ Use `captionAsset.serveWebVTT` to serve your captions
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/caption_captionasset/action/serveWebVTT",
   "parameters": [
     {
-      "name": "captionAssetId",
-      "dynamicValue": {
-        "fromStep": 3,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "captionAssetId": {
+            "dynamicValue": {
+              "fromStep": 3,
+              "value": "id"
+            }
+          }
+        }
       }
     }
   ]
@@ -154,14 +190,22 @@ Use `captionAsset.delete` to remove a specific Caption Asset
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/caption_captionasset/action/delete",
   "parameters": [
     {
-      "name": "captionAssetId",
-      "dynamicValue": {
-        "fromStep": 3,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "captionAssetId": {
+            "dynamicValue": {
+              "fromStep": 3,
+              "value": "id"
+            }
+          }
+        }
       }
     }
   ]

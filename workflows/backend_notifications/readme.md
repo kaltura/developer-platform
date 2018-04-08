@@ -20,12 +20,26 @@ Use ```permission.list``` with ```nameEqual``` set to ```'EVENTNOTIFICATION_PLUG
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/permission/action/list",
   "parameters": [
     {
-      "name": "filter[nameEqual]",
-      "default": "EVENTNOTIFICATION_PLUGIN_PERMISSION",
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "nameEqual": {
+                "default": "EVENTNOTIFICATION_PLUGIN_PERMISSION",
+                "hidden": true
+              }
+            },
+            "type": "object"
+          }
+        }
+      },
       "hidden": true
     }
   ]
@@ -44,19 +58,32 @@ Which type would you like to work with?
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
   "parameters": [
     {
-      "name": "filter[typeEqual]",
-      "enum": [
-        "emailNotification.Email",
-        "httpNotification.Http"
-      ],
-      "enumLabels": [
-        "E-mail Template",
-        "HTTP Template"
-      ]
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "typeEqual": {
+                "enum": [
+                  "emailNotification.Email",
+                  "httpNotification.Http"
+                ],
+                "x-enumLabels": [
+                  "E-mail Template",
+                  "HTTP Template"
+                ]
+              }
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -70,17 +97,25 @@ Use the form below to choose a template to clone
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/clone",
   "parameters": [
     {
-      "name": "id",
-      "dynamicEnum": {
-        "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
-        "method": "get",
-        "array": "objects",
-        "label": "name",
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "dynamicEnum": {
+              "path": "/service/eventnotification_eventnotificationtemplate/action/listTemplates",
+              "method": "post",
+              "array": "objects",
+              "label": "name",
+              "value": "id"
+            }
+          }
+        }
       }
     }
   ]
@@ -93,7 +128,7 @@ Use ```eventNotificationTemplate.list``` to get a list of your templates.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/list",
   "ignoreParameters": [
     "format"

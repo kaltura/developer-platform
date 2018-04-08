@@ -19,12 +19,19 @@ Do not set a KS on the client before making this call.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/session/action/startWidgetSession",
   "disableSetupCode": true,
   "parameters": [
     {
-      "name": "widgetId"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "widgetId": {}
+        }
+      }
     }
   ]
 }
@@ -112,13 +119,19 @@ $hashString = hash('sha256', $client->ks . "<%- answers.appTokenValue %>");
 ### API Call
 ```json
 {
-  "parameters": [{
-    "name": "appTokenValue"
-  }, {
-    "name": "hashFunction",
-    "enum": ["sha1", "sha256"],
-    "default": "sha256"
-  }]
+  "parameters": [
+    {
+      "name": "appTokenValue"
+    },
+    {
+      "name": "hashFunction",
+      "enum": [
+        "sha1",
+        "sha256"
+      ],
+      "default": "sha256"
+    }
+  ]
 }
 ```
 
@@ -137,7 +150,7 @@ You are now ready to make other API calls!
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/apptoken/action/startSession",
   "disableSetupCode": true,
   "parameters": [
@@ -150,13 +163,16 @@ You are now ready to make other API calls!
       }
     },
     {
-      "name": "id"
-    },
-    {
-      "name": "tokenHash"
-    },
-    {
-      "name": "userId"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {},
+          "tokenHash": {},
+          "userId": {}
+        }
+      }
     }
   ]
 }
