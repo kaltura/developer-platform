@@ -51,7 +51,7 @@ Use `captionAsset.list` to retrieve a list of Caption Assets
 ```
 
 ## Uploading Captions - Create an Upload Token
-Use the uploadToken service to upload an WebVTT file to the Kaltura API. If you don't have an WebVTT file handy, you can [download one here](assets/sample_captions.srt)
+Use the uploadToken service to upload an WebVTT file to the Kaltura API. If you don't have an WebVTT file handy, you can [download one here](/assets/sample_captions.srt)
 
 First you'll need to use `uploadToken.add` to create a new upload token. In the next step we'll use this token to upload the WebVTT data.
 
@@ -65,7 +65,7 @@ First you'll need to use `uploadToken.add` to create a new upload token. In the 
 ```
 
 ## Uploading Captions - Send the WebVTT Data
-Now we'll use the newly created Upload Token to upload the WebVTT file.
+Now we'll use the newly created Upload Token to upload the WebVTT file. If you don't have an WebVTT file handy, you can [download one here](/assets/sample_captions.srt)
 
 ### API Call
 ```json

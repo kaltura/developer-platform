@@ -58,7 +58,7 @@ First you'll need to use `uploadToken.add` to create a new upload token. In the 
 ```
 
 ## Uploading Captions - Send the SRT Data
-Now we'll use the newly created Upload Token to upload the SRT. If you don't have an SRT file handy, you can [download one here](assets/sample_captions.srt)
+Now we'll use the newly created Upload Token to upload the SRT. If you don't have an SRT file handy, you can [download one here](/assets/sample_captions.srt)
 
 ### API Call
 ```json
