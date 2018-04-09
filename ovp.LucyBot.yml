@@ -163,27 +163,21 @@ operationNavigation:
       - title: 'Syndication Feed'
         markdownURL: /assets/markdown/generated/syndication.md
         disableEditLink: true
-        prerender: false
       - title: 'Bulk Upload'
         markdownURL: /assets/markdown/generated/bulkUploadXml.bulkUploadXML.md
         disableEditLink: true
-        prerender: false
       - title: 'Bulk Upload Results'
         markdownURL: /assets/markdown/generated/bulkUploadXml.bulkUploadResultXML.md
         disableEditLink: true
-        prerender: false
       - title: 'Cue Point Serve'
         markdownURL: /assets/markdown/generated/cuePoint.serveAPI.md
         disableEditLink: true
-        prerender: false
       - title: 'Cue Point Ingest'
         markdownURL: /assets/markdown/generated/cuePoint.ingestAPI.md
         disableEditLink: true
-        prerender: false
       - title: 'Drop Folder'
         markdownURL: /assets/markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         disableEditLink: true
-        prerender: false
   - title: "Generate API Sessions"
     children:
       - title: "session"
