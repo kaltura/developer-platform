@@ -34,11 +34,16 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
       "schema": {
         "type": "object",
         "properties": {
-          "partnerId": {},
-          "userId": {
-            "default": "lucybot@example.com"
+          "partnerId": {
+            "fromSecrets": true
           },
-          "secret": {},
+          "userId": {
+            "fromSecrets": true,
+            "default": "user@example.com"
+          },
+          "secret": {
+            "fromSecrets": true
+          },
           "type": {
             "default": 2
           },
@@ -58,8 +63,19 @@ You can validate your Kaltura session by calling ```user.get``` without a User I
 {
   "method": "post",
   "path": "/service/user/action/get",
-  "ignoreParameters": [
-    "format"
+  "parameters": [
+    {
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "fromSecrets": true
+          }
+        }
+      }
+    }
   ]
 }
 ```
