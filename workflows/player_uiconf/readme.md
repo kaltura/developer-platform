@@ -28,7 +28,15 @@ Choose a player to view its configuration
       "schema": {
         "type": "object",
         "properties": {
-          "id": {}
+          "id": {
+            "dynamicEnum": {
+              "path": "/service/uiconf/action/list",
+              "method": "post",
+              "array": "objects",
+              "label": "name",
+              "value": "id"
+            }
+          }
         }
       }
     }

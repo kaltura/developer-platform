@@ -56,7 +56,7 @@ This combination of filter parameters will search through all of the Kaltura Med
                 "x-consoleDefault": ""
               },
               "orderBy": {
-                "x-consoleDefault": "-weight"
+                "x-consoleDefault": "+createdAt"
               },
               "advancedSearch": {}
             },
@@ -248,23 +248,23 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
 ```html
 <div class="row" style="margin-bottom: 10px">
   <div class="col-xs-12 col-md-5">
-    <h2><%- results[0].objects[0].name %></h2>
-    <p><%- results[0].objects[0].description %></p>
+    <h2><%- results[1].objects[0].name %></h2>
+    <p><%- results[1].objects[0].description %></p>
   </div>
   <div class="col-xs-12 col-md-6 col-md-offset-1">
-    <script src="https://cdnapisec.kaltura.com/p/<%-  results[0].objects[0].partnerId  %>/sp/<%-  results[0].objects[0].partnerId  %>00/embedIframeJs/uiconf_id/<%-  answers.uiConf  %>/partner_id/<%-  results[0].objects[0].partnerId  %>">
+    <script src="https://cdnapisec.kaltura.com/p/<%-  results[1].objects[0].partnerId  %>/sp/<%-  results[1].objects[0].partnerId  %>00/embedIframeJs/uiconf_id/<%-  answers.uiConf  %>/partner_id/<%-  results[1].objects[0].partnerId  %>">
     </script>
-    <div id="kaltura_player_<%-  results[0].objects[0].id  %>" style="width: 560px; height: 395px;">
+    <div id="kaltura_player_<%-  results[1].objects[0].id  %>" style="width: 560px; height: 395px;">
     </div>
     <script>
     kWidget.embed({
-      "targetId": "kaltura_player_<%-  results[0].objects[0].id  %>",
-      "wid": "_<%-  results[0].objects[0].partnerId  %>",
+      "targetId": "kaltura_player_<%-  results[1].objects[0].id  %>",
+      "wid": "_<%-  results[1].objects[0].partnerId  %>",
       "uiconf_id": <%-  answers.uiConf  %>,
       "flashvars": {},
       "cache_st": 1437326770,
       "ks": window.ks,
-      "entry_id": "<%-  results[0].objects[0].id  %>"
+      "entry_id": "<%-  results[1].objects[0].id  %>"
     });
     </script>
   </div>
