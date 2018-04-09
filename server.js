@@ -8,7 +8,6 @@ var fs = require('fs');
 
 var App = Express();
 App.use(require('compression')());
-
 if (process.env.ENABLE_CROSS_ORIGIN) {
   App.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -108,3 +107,9 @@ if (process.env.DEVELOPMENT || process.env.NO_SSL) {
     res.end();
   }).listen(80);
 }
+App.use((err, req, res, next) => {
+  console.error(err);
+  next();
+})
+
+
