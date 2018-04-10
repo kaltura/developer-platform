@@ -88,6 +88,16 @@ describe('Sample Code', function() {
     action: 'end',
     input: {}
   }, {
+    name: 'unknown_parameter',
+    service: 'accesscontrol',
+    action: 'add',
+    input: {
+      answers: {
+        uiConf: 12345,
+        name: 'foobar'
+      }
+    }
+  }, {
     name: 'add_question_cuepoint',
     service: 'cuepoint_cuepoint',
     action: 'add',
@@ -162,6 +172,7 @@ describe('Sample Code', function() {
 
   if (CONVERT_TEST_CASES_TO_POST) {
     testCases.forEach(testCase => {
+      if (testCase.name === 'unknown_parameter') return;
       let body = {};
       for (let key in testCase.input.answers) {
         let parts = key.split(/\]?\[/).map(s => s.replace(']', ''));
