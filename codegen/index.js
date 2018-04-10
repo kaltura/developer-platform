@@ -393,10 +393,11 @@ CodeTemplate.prototype.gatherAnswersForGet = function(input) {
   })
 }
 
-CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
+CodeTemplate.prototype.assignAllParameters = function(params, answers, indent, skipNewline) {
   indent = indent || 0;
   let assignment = this.indent(params.map(p => this.assignment(p, answers)).join('\n'), indent);
-  return assignment ? assignment + '\n\n': '';
+  let ending = skipNewline ? '\n' : '\n\n';
+  return assignment ? assignment + ending : '';
 }
 
 CodeTemplate.prototype.assignment = function(param, answers, parent) {
@@ -505,7 +506,7 @@ CodeTemplate.prototype.lvalue = function(param) {
 
   var lvalue = this.statementPrefix;
   if (isChild) {
-    let attrs = param.name.split(/\[/).map(s => s.replace(/\]/g, '')).filter(n => n !== 'objectType');
+    let attrs = param.name.split(/\[/).map(s => s.replace(/\]/g, ''));
     lvalue += attrs.map((a, idx) => {
       if (a.match(/^\d+$/)) {
         if (idx === attrs.length - 1 && self.arraySetter) {
@@ -548,11 +549,7 @@ CodeTemplate.prototype.rvalue = function(param, answers, parent) {
   }
 
   if (!isPrimitiveSchema(param.schema)) {
-    if (param.name.indexOf('[objectType]') !== -1) {
-      return self.objPrefix + self.rewriteType(answer) + self.objSuffix;
-    } else {
-      return self.objPrefix + self.rewriteType(param.schema.title) + self.objSuffix;
-    }
+    return self.objPrefix + self.rewriteType(param.schema.title) + self.objSuffix;
   } else {
     if (enm && enumLabels) {
       let enumName = enumLabels[enm.indexOf(answer)];
