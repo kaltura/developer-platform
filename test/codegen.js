@@ -83,9 +83,9 @@ describe('Sample Code', function() {
     action: 'start',
     input: {
       answers: {
-        partnerId: 2018872,
-        secret: '81b50515b869628777617f454cdca7f5',
-        userId: 'bobby.brennan@gmail.com',
+        partnerId: 123456,
+        secret: '12341234123412341234',
+        userId: 'user@example.com',
         type: 0,
         sessionType: 0,
       },

@@ -16,10 +16,10 @@ import com.kaltura.client.utils.response.base.Response;
 class CodeExample {
     public static void main(String[] args) {
         Client client = CodeExample.generateKalturaClient();
-        String secret = "81b50515b869628777617f454cdca7f5";
-        String userId = "bobby.brennan@gmail.com";
+        String secret = "********************";
+        String userId = "user@example.com";
         SessionType type = SessionType.USER;
-        int partnerId = 2018872;
+        int partnerId = 123456;
         int expiry = 86400;
         String privileges = "";
 
@@ -39,10 +39,10 @@ class CodeExample {
         Client client = new Client(config);
         try {
             String session = client.generateSessionV2(
-                  "81b50515b869628777617f454cdca7f5",
-                  "bobby.brennan@gmail.com",
+                  "12341234123412341234",
+                  "user@example.com",
                   SessionType.ADMIN,
-                  2018872,
+                  123456,
                   86400, "");
             client.setSessionId(session);
         } catch (Exception e) {

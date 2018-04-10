@@ -1,5 +1,5 @@
 var Kaltura = require('kaltura');
-var config = new Kaltura.kc.KalturaConfiguration(2018872);
+var config = new Kaltura.kc.KalturaConfiguration(123456);
 config.serviceUrl = 'https://www.kaltura.com';
 var client = new Kaltura.kc.KalturaClient(config);
 client.session.start(function(ks) {
@@ -8,7 +8,7 @@ client.session.start(function(ks) {
   } else {
     client.setKs(ks);
   }
-}, "81b50515b869628777617f454cdca7f5",
-"bobby.brennan@gmail.com",
+}, "12341234123412341234",
+"user@example.com",
 Kaltura.kc.enums.KalturaSessionType.USER,
-2018872)
+123456)

@@ -10,13 +10,13 @@
   $loader->addPrefix('Kaltura', dirname(__FILE__).'/php53/library');
   $loader->register();
 
-  $config = new KalturaConfiguration(2018872);
+  $config = new KalturaConfiguration(123456);
   $config->setServiceUrl('https://www.kaltura.com');
   $client = new KalturaClient($config);
-  $secret = "81b50515b869628777617f454cdca7f5";
-  $userId = "bobby.brennan@gmail.com";
+  $secret = "********************";
+  $userId = "user@example.com";
   $type = SessionType::USER;
-  $partnerId = 2018872;
+  $partnerId = 123456;
   $expiry = 86400;
   $privileges = "";
 

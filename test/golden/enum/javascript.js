@@ -1,4 +1,4 @@
-var secret = "YOUR_KALTURA_SECRET";
+var secret = "*******************";
 var userId = "YOUR_USER_ID";
 var type = KalturaSessionType.USER;
 var partnerId = 0;

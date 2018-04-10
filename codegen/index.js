@@ -547,9 +547,7 @@ CodeTemplate.prototype.rvalue = function(param, answers, parent) {
   if (answer === undefined) {
     answer = getDefaultValueForType(param.schema.type);
   }
-  if (param.name === 'password') console.log(param, answer);
   if (param.schema['x-inputType'] === 'password' && answer) {
-    console.log('password!');
     let pass = '';
     for (let i = 0; i < answer.length; ++i) pass += '*';
     answer = pass;

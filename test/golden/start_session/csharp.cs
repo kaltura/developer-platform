@@ -1,4 +1,4 @@
-string secret = "YOUR_KALTURA_SECRET";
+string secret = "*******************";
 string userId = "YOUR_USER_ID";
 SessionType type = SessionType.USER;
 int partnerId = 0;
