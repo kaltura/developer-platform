@@ -16,5 +16,6 @@ curl -X POST https://www.kaltura.com/api_v3/service/<%- serviceID %>/action/<%- 
     -d "ks=$KALTURA_SESSION" \
 <% } -%>
 <% for (var i = 0; i < keys.length; ++i) { -%>
-    -d "<%- keys[i] %>=<%- encodeURIComponent(answers[keys[i]]) %>"<%- i === keys.length - 1 ? '' : ' \\' %>
+<%   var ans = keys[i].indexOf('password') === -1 ? answers[keys[i]] : '********' -%>
+    -d "<%- keys[i] %>=<%- encodeURIComponent(ans) %>"<%- i === keys.length - 1 ? '' : ' \\' %>
 <% } -%>

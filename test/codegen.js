@@ -62,6 +62,15 @@ describe('Sample Code', function() {
       }
     },
   }, {
+    name: 'password_input',
+    service: 'user',
+    action: 'loginByLoginId',
+    input: {
+      answers: {
+        password: 'thisisasecret',
+      }
+    }
+  }, {
     name: 'start_session',
     service: 'session',
     action: 'start',
