@@ -66,6 +66,7 @@ objectsItem.children.push({
 
 config.operationNavigation.push({
   title: "Error Codes",
+  prerender: false,
   markdown: "# Error Codes\n\n" + openapi['x-errors'].map(e => {
     let str = '* `' + e.name + '`';
     if (e.code && e.code !== e.name) str += ' (code: ' + e.code + ')';

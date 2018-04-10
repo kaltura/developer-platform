@@ -233,6 +233,7 @@ operationNavigation:
       - tag: "upload"
         hide: true
   - title: "Execute Bulk Ingest and Updates"
+    prerender: false
     children:
       - operation: "media.bulkUploadAdd"
       - operation: "user.addFromBulkUpload"
@@ -273,6 +274,7 @@ operationNavigation:
       - tag: "conversionProfileAssetParams"
       - tag: "mediaInfo"
   - title: "Live Stream and Broadcast"
+    prerender: false
     children:
       - tag: "liveStream"
   - title: "Enrich and Organize Metadata"
@@ -336,6 +338,7 @@ operationNavigation:
       - tag: "annotation"
         hide: true
   - title: "Media Analytics"
+    prerender: false
     children:
       - title: "How to Generate Interactive Video Quiz Reports Using the Kaltura API?"
         markdownURL: /assets/documentation/Video-Analytics-and-Insights/how-generate-interactive-video-quiz-reports-using-kaltura-api.html
@@ -352,6 +355,7 @@ operationNavigation:
       - tag: "liveStats"
       - tag: "stats"
   - title: "Deliver and Distribute Media"
+    prerender: false
     children:
       - title: "Video Search Engine Optimization (SEO)"
         markdownURL: /assets/documentation/Deliver-and-Distribute-Media/videoSEO.html
@@ -415,10 +419,12 @@ operationNavigation:
       - tag: "auditTrail"
         hide: true
   - title: "Optimize API Requests"
+    prerender: false
     children:
       - tag: "multirequest"
       - tag: "responseProfile"
   - title: "Integration, Scheduling and Hooks"
+    prerender: false
     children:
       - title: "How To Handle Kaltura Server Notifications in PHP"
         markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html
@@ -438,6 +444,7 @@ operationNavigation:
       - tag: "notification"
         hide: true
   - title: "Encrypt and License Content"
+    prerender: false
     children:
       - tag: "drmLicenseAccess"
       - tag: "drmPolicy"
@@ -447,22 +454,26 @@ operationNavigation:
       - tag: "deliveryProfile"
         hide: true
   - title: "Manage Documents and Other Assets"
+    prerender: false
     children:
       - tag: "baseEntry"
       - tag: "data"
       - tag: "documents"
   - title: "Manage and Deliver Apps and Widgets"
+    prerender: false
     children:
       - tag: "uiConf"
       - tag: "widget"
       - tag: "fileAsset"
       - tag: "captureSpace"
   - title: "Manage Backend and Storage"
+    prerender: false
     children:
       - tag: "system"
       - tag: "storageProfile"
         hide: true
   - title: "Miscellaneous"
+    prerender: false
     isMiscellaneous: true
     hide: true
     searchable: true
