@@ -538,7 +538,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "port": {
           "type": "integer"
@@ -4228,7 +4229,8 @@
         },
         "endDate": {
           "description": "Entry scheduling end date (null when not set, send -1 to remove)",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "entitledUsersEdit": {
           "description": "list of user ids that are entitled to edit the entry (no server enforcement) The difference between entitledUsersEdit, entitledUsersPublish and entitledUsersView is applicative only",
@@ -4402,7 +4404,8 @@
         },
         "startDate": {
           "description": "Entry scheduling start date (null when not set, send -1 to remove)",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "status": {
           "description": "`readOnly`\n\nEnum Type: `KalturaEntryStatus`",
@@ -7796,10 +7799,12 @@
           "type": "string"
         },
         "scheduleEndDate": {
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "scheduleStartDate": {
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "sshKeyPassphrase": {
           "type": "string"
@@ -12440,7 +12445,8 @@
         "password": {
           "description": "`readOnly`\n\nApi key for service provider",
           "readOnly": true,
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "priority": {
           "description": "Enum Type: `KalturaCielo24Priority`",
@@ -13220,7 +13226,8 @@
           "type": "string"
         },
         "feedLastBuildDate": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "datetime"
         },
         "feedLink": {
           "type": "string"
@@ -17021,7 +17028,8 @@
           "x-enumType": "KalturaDailymotionGeoBlockingMapping"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "user": {
           "type": "string"
@@ -33026,7 +33034,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "port": {
           "type": "integer"
@@ -33191,7 +33200,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "port": {
           "type": "integer"
@@ -33443,7 +33453,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "protocol": {
           "description": "Enum Type: `KalturaDistributionProtocol`",
@@ -34724,7 +34735,8 @@
         },
         "password": {
           "description": "A password to use for the connection.",
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "signSecret": {
           "description": "The secret to sign the notification with",
@@ -34926,7 +34938,8 @@
         },
         "password": {
           "description": "A password to use for the connection.",
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "sslCertificate": {
           "description": "SSL certificate to verify the peer with.",
@@ -35594,7 +35607,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "username": {
           "type": "string"
@@ -38676,7 +38690,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "streamName": {
           "type": "string"
@@ -39313,7 +39328,8 @@
           "x-enumType": "KalturaMailType"
         },
         "minSendDate": {
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "recipientEmail": {
           "type": "string"
@@ -39544,7 +39560,8 @@
         "mediaDate": {
           "description": "`readOnly`\n\nThe media date extracted from EXIF data (For images) as Unix timestamp (In seconds)",
           "readOnly": true,
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "mediaType": {
           "description": "`insertOnly`\n\nEnum Type: `KalturaMediaType`\n\nThe media type of the entry",
@@ -41910,7 +41927,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "slFlavorParamsId": {
           "type": "integer"
@@ -42834,7 +42852,8 @@
         "secret": {
           "description": "`readOnly`",
           "readOnly": true,
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "state": {
           "description": "state code (2char) - this field is optional",
@@ -43094,7 +43113,8 @@
         "reachedLimitDate": {
           "description": "`readOnly`\n\ndate when partner reached the limit of his package (timestamp)",
           "readOnly": true,
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "usage": {
           "description": "`readOnly`\n\ntotal usage in GB - including bandwidth and storage",
@@ -43130,7 +43150,8 @@
         "reachedLimitDate": {
           "description": "`readOnly`\n\ndate when partner reached the limit of his package (timestamp)",
           "readOnly": true,
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "usageGB": {
           "description": "`readOnly`\n\ntotal usage in GB - including bandwidth and storage",
@@ -43829,18 +43850,21 @@
       "properties": {
         "beginDate": {
           "description": "License begin date",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "expirationDate": {
           "description": "License expiration date",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "policy": {
           "$ref": "#/definitions/KalturaPlayReadyPolicy"
         },
         "removalDate": {
           "description": "License removal date",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         }
       },
       "title": "KalturaPlayReadyLicenseDetails",
@@ -45137,7 +45161,8 @@
           "type": "string"
         },
         "endDate": {
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "mediaType": {
           "type": "integer"
@@ -45361,7 +45386,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "port": {
           "type": "integer"
@@ -47164,7 +47190,8 @@
       "properties": {
         "fromDate": {
           "description": "Start date as Unix timestamp (In seconds)",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "fromDay": {
           "description": "Start day as string (YYYYMMDD)",
@@ -47172,7 +47199,8 @@
         },
         "toDate": {
           "description": "End date as Unix timestamp (In seconds)",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "toDay": {
           "description": "End date as string (YYYYMMDD)",
@@ -47842,7 +47870,8 @@
           "type": "integer"
         },
         "endDate": {
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "geoLatitude": {
           "description": "Specifies the global position for the activity",
@@ -47915,7 +47944,8 @@
           "type": "integer"
         },
         "startDate": {
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "status": {
           "description": "`readOnly`\n\nEnum Type: `KalturaScheduleEventStatus`",
@@ -50944,7 +50974,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "port": {
           "type": "integer"
@@ -54446,7 +54477,8 @@
           "type": "string"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "tags": {
           "items": {
@@ -55074,7 +55106,8 @@
         },
         "password": {
           "description": "The password used in association with the email to determine if the Upload User is authorized the incoming request.",
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "remoteAssetParamsId": {
           "description": "The flavor-params that will be used for the remote asset.",
@@ -56198,7 +56231,8 @@
         },
         "password": {
           "description": "`insertOnly` `writeOnly`",
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "roleIds": {
           "type": "string"
@@ -57708,7 +57742,8 @@
       ],
       "properties": {
         "password": {
-          "type": "string"
+          "type": "string",
+          "x-inputType": "password"
         },
         "provisioningParams": {
           "items": {
@@ -59076,11 +59111,13 @@
         },
         "widevineDistributionEndDate": {
           "description": "License distribution window end date",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "widevineDistributionStartDate": {
           "description": "License distribution window start date",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         }
       },
       "title": "KalturaWidevineFlavorAsset",
@@ -59204,11 +59241,13 @@
       "properties": {
         "widevineDistributionEndDate": {
           "description": "License distribution window end date",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         },
         "widevineDistributionStartDate": {
           "description": "License distribution window start date",
-          "type": "integer"
+          "type": "integer",
+          "x-inputType": "datetime"
         }
       },
       "title": "KalturaWidevineFlavorParamsOutput",
@@ -92728,7 +92767,8 @@
                   "type": "string"
                 },
                 "secret": {
-                  "type": "string"
+                  "type": "string",
+                  "x-inputType": "password"
                 },
                 "type": {
                   "default": 0,
@@ -92867,7 +92907,8 @@
                   "type": "string"
                 },
                 "secret": {
-                  "type": "string"
+                  "type": "string",
+                  "x-inputType": "password"
                 },
                 "type": {
                   "default": 0,
