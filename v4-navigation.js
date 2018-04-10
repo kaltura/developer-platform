@@ -43,5 +43,21 @@ module.exports = function(config) {
   config.operationNavigation.forEach(item => {
     setPathForItem(item);
   });
+  config.routes['/console'].navigation = openapi.tags.map(tag => {
+    let item = {tag: tag.name, path: '/service/' + tag.name};
+    item.children = [];
+    for (let path in openapi.paths) {
+      for (let method in openapi.paths[path]) {
+        let op = openapi.paths[path][method];
+        if (op.tags.indexOf(tag.name) !== -1) {
+          item.children.push({
+            operation: op.operationId,
+            path: '/service/' + tag.name + '/action/' + op.operationId.split('.')[1],
+          })
+        }
+      }
+    }
+    return item;
+  })
   fs.writeFileSync(__dirname + '/v4-redirects.json', JSON.stringify(redirects, null, 2));
 }
