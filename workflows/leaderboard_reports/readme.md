@@ -163,21 +163,16 @@ You can use ```media.list``` to see which videos are getting the most likes or v
         "properties": {
           "filter": {
             "properties": {
-              "advancedSearch": {
-                "properties": {
-                  "orderBy": {
-                    "default": "-rank",
-                    "enum": [
-                      "-totalRank",
-                      "-rank"
-                    ],
-                    "enumLabels": [
-                      "TOTAL_RANK_DESC",
-                      "RANK_DESC"
-                    ]
-                  }
-                },
-                "type": "object"
+              "orderBy": {
+                "default": "-rank",
+                "enum": [
+                  "-totalRank",
+                  "-rank"
+                ],
+                "enumLabels": [
+                  "TOTAL_RANK_DESC",
+                  "RANK_DESC"
+                ]
               },
               "totalRankGreaterThanOrEqual": {
                 "default": 1
