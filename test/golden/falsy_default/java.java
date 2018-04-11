@@ -1,7 +1,12 @@
 int id = 0;
-KalturaExclusiveLockKey lockKey = new KalturaExclusiveLockKey();
-KalturaBatchJobType jobType = "";
+ExclusiveLockKey lockKey = new ExclusiveLockKey();
+BatchJobType jobType = "";
 boolean resetExecutionAttempts = false;
 
-Object result = client.getBatchService().freeExclusiveJob(id, lockKey, jobType, resetExecutionAttempts);
-System.out.println(result);
+FreeExclusiveJobBatchBuilder requestBuilder = BatchService.freeexclusivejob(id, lockKey, jobType, resetExecutionAttempts)
+    .setCompletion(new OnCompletion<Response<FreeJobResponse>>() {
+        @Override
+        public void onComplete(Response<FreeJobResponse> result) {
+            System.out.println(result);
+        }
+    });

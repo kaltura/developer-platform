@@ -1,5 +1,5 @@
 <?php
-  $secret = "YOUR_KALTURA_SECRET";
+  $secret = "*******************";
   $userId = "YOUR_USER_ID";
   $type = KalturaSessionType::USER;
   $partnerId = 0;

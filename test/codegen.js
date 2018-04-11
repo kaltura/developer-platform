@@ -8,7 +8,10 @@ global.window = {
 }
 
 var swagger = require('../ovp.openapi.json');
+
 var CodeTemplate = require('../codegen');
+
+const CONVERT_TEST_CASES_TO_POST = true;
 
 describe('Sample Code', function() {
   this.timeout(5000);
@@ -21,6 +24,18 @@ describe('Sample Code', function() {
       answers: {},
       showSetup: false,
     },
+  }, {
+    name: 'implicit_object_type',
+    service: 'elasticsearch_esearch',
+    action: 'searchEntry',
+    input: {
+      answers: {
+        'searchParams[searchOperator][searchItems][0][objectType]': 'KalturaESearchCaptionItem',
+        'searchParams[searchOperator][searchItems][0][searchTerm]': 'asdf',
+        'searchParams[searchOperator][operator]': 1,
+      },
+      showSetup: false,
+    }
   }, {
     name: 'falsy_default',
     service: 'batch',
@@ -38,12 +53,23 @@ describe('Sample Code', function() {
       answers: {
         'accessControlProfile[name]': 'foo',
         'accessControlProfile[rules][0][code]': 'thiscode',
-        'accessControlProfile[rules][0][contexts][0][type]': 1,
+        'accessControlProfile[rules][0][contexts][0][type]': "1",
+        'accessControlProfile[rules][0][conditions][0][objectType]': 'KalturaDeliveryProfileCondition',
+        'accessControlProfile[rules][0][conditions][1][objectType]': 'KalturaDeliveryProfileCondition',
         'accessControlProfile[rules][0][conditions][0][description]': 'cond 1',
         'accessControlProfile[rules][0][conditions][1][description]': 'cond 2',
         'accessControlProfile[rules][1][code]': 'second code',
       }
     },
+  }, {
+    name: 'password_input',
+    service: 'user',
+    action: 'loginByLoginId',
+    input: {
+      answers: {
+        password: 'thisisasecret',
+      }
+    }
   }, {
     name: 'start_session',
     service: 'session',
@@ -57,9 +83,10 @@ describe('Sample Code', function() {
     action: 'start',
     input: {
       answers: {
-        partnerId: 2018872,
-        secret: '81b50515b869628777617f454cdca7f5',
-        userId: 'bobby.brennan@gmail.com',
+        partnerId: 123456,
+        secret: '12341234123412341234',
+        userId: 'user@example.com',
+        type: 0,
         sessionType: 0,
       },
       showSetup: true,
@@ -69,6 +96,16 @@ describe('Sample Code', function() {
     service: 'session',
     action: 'end',
     input: {}
+  }, {
+    name: 'unknown_parameter',
+    service: 'accesscontrol',
+    action: 'add',
+    input: {
+      answers: {
+        uiConf: 12345,
+        name: 'foobar'
+      }
+    }
   }, {
     name: 'add_question_cuepoint',
     service: 'cuepoint_cuepoint',
@@ -86,8 +123,8 @@ describe('Sample Code', function() {
     action: 'add',
     input: {
       answers: {
-        tags: 'stuff',
-        language: "Arabic",
+        'captionAsset[tags]': 'stuff',
+        'captionAsset[language]': "Arabic",
       }
     }
   }, {
@@ -140,7 +177,26 @@ describe('Sample Code', function() {
       },
       showSetup: false,
     }
-  }]
+  }];
+
+  if (CONVERT_TEST_CASES_TO_POST) {
+    testCases.forEach(testCase => {
+      if (testCase.name === 'unknown_parameter') return;
+      let body = {};
+      for (let key in testCase.input.answers) {
+        let parts = key.split(/\]?\[/).map(s => s.replace(']', ''));
+        let obj = body;
+        parts.forEach((part, idx) => {
+          if (part.match(/^\d+$/)) part = parseInt(part);
+          let isArr = idx < parts.length - 1 && parts[idx+1].match(/^\d+$/);
+          let val = idx === parts.length - 1 ? testCase.input.answers[key] : isArr ? [] : {};
+          obj = obj[part] = obj[part] || val;
+        });
+      }
+      testCase.input.answers = {body: JSON.stringify(body)};
+      if (body.sessionType !== undefined) testCase.input.answers.sessionType = body.sessionType;
+    })
+  }
 
   testCases.forEach(function(testCase) {
     CodeTemplate.LANGUAGES.forEach(function(language) {
@@ -158,10 +214,10 @@ describe('Sample Code', function() {
         testCase.input.answers = testCase.input.answers || {};
         testCase.input.showSetup = testCase.input.showSetup || false;
         testCase.input.path = '/service/' + testCase.service + '/action/' + testCase.action;
-        testCase.input.method = 'get';
+        testCase.input.method = CONVERT_TEST_CASES_TO_POST ? 'post' : 'get';
         testCase.input.service = testCase.service;
         testCase.input.action = testCase.action;
-        var code = tmpl.render(testCase.input);
+        var code = tmpl.render(JSON.parse(JSON.stringify(testCase.input)));
         var dir = __dirname + '/golden/' + testCase.name;
         var filename = dir + '/' + language + '.' + ext;
         if (process.env.WRITE_GOLDEN) {

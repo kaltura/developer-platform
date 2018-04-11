@@ -8,7 +8,6 @@ var fs = require('fs');
 
 var App = Express();
 App.use(require('compression')());
-
 if (process.env.ENABLE_CROSS_ORIGIN) {
   App.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -42,12 +41,20 @@ if (!process.env.DEVELOPMENT || process.env.USE_CACHE) {
   App.use('/swagger.json',   cache('med'));
 }
 
-var redirects = require('./redirects');
-App.use('/recipes/:workflow/embed', (req, res, next) => {
-  var redirect = redirects[req.params.workflow];
+var recipeRedirects = require('./recipe-redirects');
+App.use('/recipes/:recipe/embed', (req, res, next) => {
+  var redirect = recipeRedirects[req.params.recipe];
   if (!redirect) return next();
   res.redirect(redirect.redirect + '?embed=true');
 });
+
+var v4Redirects = require('./v4-redirects');
+v4Redirects.forEach(redirect => {
+  App.get(redirect.from, (req, res, next) => {
+    if (req.originalUrl !== redirect.from) return next();
+    res.redirect(301, redirect.to);
+  })
+})
 
 const TARGET_API = process.env.TARGET_API || 'ovp';
 
@@ -100,3 +107,9 @@ if (process.env.DEVELOPMENT || process.env.NO_SSL) {
     res.end();
   }).listen(80);
 }
+App.use((err, req, res, next) => {
+  console.error(err);
+  next();
+})
+
+

@@ -10,6 +10,12 @@ curl -X POST https://www.kaltura.com/api_v3/service/accesscontrolprofile/action/
     -d "accessControlProfile[name]=foo" \
     -d "accessControlProfile[rules][0][code]=thiscode" \
     -d "accessControlProfile[rules][0][contexts][0][type]=1" \
+    -d "accessControlProfile[rules][0][contexts][0][objectType]=KalturaContextTypeHolder" \
+    -d "accessControlProfile[rules][0][conditions][0][objectType]=KalturaDeliveryProfileCondition" \
     -d "accessControlProfile[rules][0][conditions][0][description]=cond%201" \
+    -d "accessControlProfile[rules][0][conditions][1][objectType]=KalturaDeliveryProfileCondition" \
     -d "accessControlProfile[rules][0][conditions][1][description]=cond%202" \
-    -d "accessControlProfile[rules][1][code]=second%20code"
+    -d "accessControlProfile[rules][0][objectType]=KalturaRule" \
+    -d "accessControlProfile[rules][1][code]=second%20code" \
+    -d "accessControlProfile[rules][1][objectType]=KalturaRule" \
+    -d "accessControlProfile[objectType]=KalturaAccessControlProfile"

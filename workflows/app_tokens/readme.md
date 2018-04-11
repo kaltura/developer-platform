@@ -18,7 +18,7 @@ App Tokens are used for generating Kaltura Sessions, and can control what privil
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/apptoken/action/list",
   "ignoreParameters": [
     "format"
@@ -32,7 +32,7 @@ Create a new app token by calling ```appToken.add```.  You can choose whether th
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/apptoken/action/add",
   "ignoreParameters": [
     "format"
@@ -46,14 +46,22 @@ Use `appToken.get` to get details for a specific App Token
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/apptoken/action/get",
   "parameters": [
     {
-      "name": "id",
-      "dynamicValue": {
-        "fromStep": 1,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "dynamicValue": {
+              "fromStep": 1,
+              "value": "id"
+            }
+          }
+        }
       }
     }
   ]
@@ -101,14 +109,22 @@ Use `appToken.delete` to remove a specific App Token
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/apptoken/action/delete",
   "parameters": [
     {
-      "name": "id",
-      "dynamicValue": {
-        "fromStep": 1,
-        "value": "id"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "dynamicValue": {
+              "fromStep": 1,
+              "value": "id"
+            }
+          }
+        }
       }
     }
   ]

@@ -68,12 +68,9 @@ You can use the Chrome dev tools to turn on device mode and chhose a large table
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/get",
   "parameters": [
-    {
-      "name": "entryId"
-    },
     {
       "custom": true,
       "name": "uiConf",
@@ -81,29 +78,31 @@ You can use the Chrome dev tools to turn on device mode and chhose a large table
       "dynamicEnum": {
         "parameters": [
           {
-            "name": "filter[objTypeEqual]",
-            "value": 1
-          },
-          {
-            "name": "filter[tagsMultiLikeOr]",
-            "value": "html5studio"
-          },
-          {
-            "name": "filter[orderBy]",
-            "value": "-createdAt"
+            "name": "body",
+            "value": "{\"filter\":{\"objTypeEqual\":1,\"tagsMultiLikeOr\":\"html5studio\",\"orderBy\":\"-createdAt\"}}"
           }
         ],
         "path": "/service/uiconf/action/list",
-        "method": "get",
+        "method": "post",
         "array": "objects",
         "value": "id",
         "label": "name"
+      }
+    },
+    {
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {}
+        }
       }
     }
   ]
 }
 ```
-### Sample Code (javascript)
+### Sample Code (ajax)
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",

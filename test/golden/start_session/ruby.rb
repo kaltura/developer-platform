@@ -1,5 +1,5 @@
 
-secret = "YOUR_KALTURA_SECRET"
+secret = "*******************"
 user_id = "YOUR_USER_ID"
 type = KalturaSessionType::USER
 partner_id = 0

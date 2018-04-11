@@ -22,46 +22,57 @@ For instance, to find the user who played the most videos, select reportType ```
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/report/action/getTable",
   "parameters": [
     {
-      "name": "reportType",
-      "default": "13",
-      "enum": [
-        "11",
-        "12",
-        "13"
-      ],
-      "enumLabels": [
-        "USER_ENGAGEMENT",
-        "SPEFICIC_USER_ENGAGEMENT",
-        "USER_TOP_CONTENT"
-      ]
-    },
-    {
-      "name": "order",
-      "default": "count_plays",
-      "hidden": true
-    },
-    {
-      "name": "reportInputFilter[fromDay]",
-      "default": "20150101"
-    },
-    {
-      "name": "reportInputFilter[toDay]",
-      "default": "20160101"
-    },
-    {
-      "name": "reportInputFilter[fromDate]"
-    },
-    {
-      "name": "reportInputFilter[toDate]"
-    },
-    {
-      "name": "pager[pageSize]",
-      "x-consoleDefault": 10,
-      "hidden": true
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reportType": {
+            "default": "13",
+            "enum": [
+              "11",
+              "12",
+              "13"
+            ],
+            "enumLabels": [
+              "USER_ENGAGEMENT",
+              "SPEFICIC_USER_ENGAGEMENT",
+              "USER_TOP_CONTENT"
+            ]
+          },
+          "order": {
+            "default": "count_plays",
+            "hidden": true
+          },
+          "reportInputFilter": {
+            "properties": {
+              "fromDay": {
+                "default": "20150101"
+              },
+              "toDay": {
+                "default": "20160101"
+              },
+              "fromDate": {},
+              "toDate": {}
+            },
+            "type": "object"
+          },
+          "pager": {
+            "properties": {
+              "pageSize": {
+                "x-consoleDefault": 10,
+                "hidden": true
+              }
+            },
+            "type": "object",
+            "hidden": true
+          }
+        }
+      }
     }
   ]
 }
@@ -73,44 +84,55 @@ To find the users who contributed the most content, select reportType ```TOP_CON
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/report/action/getTable",
   "parameters": [
     {
-      "name": "reportType",
-      "default": "5",
-      "enum": [
-        "5",
-        "20"
-      ],
-      "enumLabels": [
-        "TOP_CONTRIBUTORS",
-        "TOP_CREATORS"
-      ]
-    },
-    {
-      "name": "order",
-      "default": "count_plays",
-      "hidden": true
-    },
-    {
-      "name": "reportInputFilter[fromDay]",
-      "default": "20150101"
-    },
-    {
-      "name": "reportInputFilter[toDay]",
-      "default": "20160101"
-    },
-    {
-      "name": "reportInputFilter[fromDate]"
-    },
-    {
-      "name": "reportInputFilter[toDate]"
-    },
-    {
-      "name": "pager[pageSize]",
-      "x-consoleDefault": 10,
-      "hidden": true
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "reportType": {
+            "default": "5",
+            "enum": [
+              "5",
+              "20"
+            ],
+            "enumLabels": [
+              "TOP_CONTRIBUTORS",
+              "TOP_CREATORS"
+            ]
+          },
+          "order": {
+            "default": "count_plays",
+            "hidden": true
+          },
+          "reportInputFilter": {
+            "properties": {
+              "fromDay": {
+                "default": "20150101"
+              },
+              "toDay": {
+                "default": "20160101"
+              },
+              "fromDate": {},
+              "toDate": {}
+            },
+            "type": "object"
+          },
+          "pager": {
+            "properties": {
+              "pageSize": {
+                "x-consoleDefault": 10,
+                "hidden": true
+              }
+            },
+            "type": "object",
+            "hidden": true
+          }
+        }
+      }
     }
   ]
 }
@@ -130,24 +152,36 @@ You can use ```media.list``` to see which videos are getting the most likes or v
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
-      "name": "filter[advancedSearch][orderBy]",
-      "default": "-rank",
-      "enum": [
-        "-totalRank",
-        "-rank"
-      ],
-      "enumLabels": [
-        "TOTAL_RANK_DESC",
-        "RANK_DESC"
-      ]
-    },
-    {
-      "name": "filter[totalRankGreaterThanOrEqual]",
-      "default": 1
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "orderBy": {
+                "default": "-rank",
+                "enum": [
+                  "-totalRank",
+                  "-rank"
+                ],
+                "enumLabels": [
+                  "TOTAL_RANK_DESC",
+                  "RANK_DESC"
+                ]
+              },
+              "totalRankGreaterThanOrEqual": {
+                "default": 1
+              }
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }

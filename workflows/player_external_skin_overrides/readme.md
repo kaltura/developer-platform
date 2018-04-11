@@ -59,13 +59,9 @@ The example below assumes that you have created your custom CSS file under the `
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/get",
   "parameters": [
-    {
-      "custom": true,
-      "name": "entryId"
-    },
     {
       "custom": true,
       "name": "uiConf",
@@ -73,23 +69,27 @@ The example below assumes that you have created your custom CSS file under the `
       "dynamicEnum": {
         "parameters": [
           {
-            "name": "filter[objTypeEqual]",
-            "value": 1
-          },
-          {
-            "name": "filter[tagsMultiLikeAnd]",
-            "value": "html5studio"
-          },
-          {
-            "name": "filter[orderBy]",
-            "value": "-createdAt"
+            "name": "body",
+            "value": "{\"filter\":{\"objTypeEqual\":1,\"tagsMultiLikeAnd\":\"html5studio\",\"orderBy\":\"-createdAt\"}}"
           }
         ],
         "path": "/service/uiconf/action/list",
-        "method": "get",
+        "method": "post",
         "array": "objects",
         "value": "id",
         "label": "name"
+      }
+    },
+    {
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "custom": true
+          }
+        }
       }
     }
   ]
@@ -167,7 +167,7 @@ The example below assumes that you have created your custom CSS file under the `
 </body>
 </html>
 ```
-### Sample Code (javascript)
+### Sample Code (ajax)
 ```javascript
 kWidget.embed({
 	"targetId": "kaltura_player",

@@ -1,50 +1,64 @@
 package com.kaltura.code.example;
 import java.util.ArrayList;
+import java.util.List;
 import com.kaltura.client.enums.*;
 import com.kaltura.client.types.*;
 import com.kaltura.client.services.*;
-import com.kaltura.client.KalturaApiException;
-import com.kaltura.client.KalturaClient;
-import com.kaltura.client.KalturaConfiguration;
+import com.kaltura.client.APIOkRequestsExecutor;
+import com.kaltura.client.Client;
+import com.kaltura.client.Configuration;
+import com.kaltura.client.services.AccessControlProfileService;
+import com.kaltura.client.services.AccessControlProfileService.AddAccessControlProfileBuilder;
+import com.kaltura.client.types.ListResponse;
+import com.kaltura.client.utils.response.OnCompletion;
+import com.kaltura.client.utils.response.base.Response;
 
 class CodeExample {
-  public static void main(String[] args) {
-    try {
-      KalturaClient client = CodeExample.generateKalturaClient();
-      KalturaAccessControlProfile accessControlProfile = new KalturaAccessControlProfile();
-      accessControlProfile.name = "foo";
-      accessControlProfile.rules = new ArrayList<KalturaRule>(2);
-      accessControlProfile.rules.set(0, new KalturaRule());
-      accessControlProfile.rules.get(0).code = "thiscode";
-      accessControlProfile.rules.get(0).contexts = new ArrayList<KalturaContextTypeHolder>(2);
-      accessControlProfile.rules.get(0).contexts.set(0, new KalturaContextTypeHolder());
-      accessControlProfile.rules.get(0).contexts.get(0).type = 1;
-      accessControlProfile.rules.get(0).contexts.set(1, new KalturaContextTypeHolder());
-      accessControlProfile.rules.get(0).conditions = new ArrayList<KalturaCondition>(2);
-      accessControlProfile.rules.get(0).conditions.set(0, new KalturaCondition());
-      accessControlProfile.rules.get(0).conditions.get(0).description = "cond 1";
-      accessControlProfile.rules.get(0).conditions.set(1, new KalturaCondition());
-      accessControlProfile.rules.get(0).conditions.get(1).description = "cond 2";
-      accessControlProfile.rules.set(1, new KalturaRule());
-      accessControlProfile.rules.get(1).code = "second code";
+    public static void main(String[] args) {
+        Client client = CodeExample.generateKalturaClient();
+        AccessControlProfile accessControlProfile = new AccessControlProfile();
+        accessControlProfile.setName("foo");
+        accessControlProfile.setRules(new ArrayList<Rule>(2));
+        accessControlProfile.getRules().set(0, new Rule());
+        accessControlProfile.getRules().get(0).setCode("thiscode");
+        accessControlProfile.getRules().get(0).setContexts(new ArrayList<ContextTypeHolder>(2));
+        accessControlProfile.getRules().get(0).getContexts().set(0, new ContextTypeHolder());
+        accessControlProfile.getRules().get(0).getContexts().get(0).setType(ContextType.PLAY);
+        accessControlProfile.getRules().get(0).getContexts().set(1, new ContextTypeHolder());
+        accessControlProfile.getRules().get(0).setConditions(new ArrayList<Condition>(2));
+        accessControlProfile.getRules().get(0).getConditions().set(0, new DeliveryProfileCondition());
+        accessControlProfile.getRules().get(0).getConditions().get(0).setDescription("cond 1");
+        accessControlProfile.getRules().get(0).getConditions().set(1, new DeliveryProfileCondition());
+        accessControlProfile.getRules().get(0).getConditions().get(1).setDescription("cond 2");
+        accessControlProfile.getRules().set(1, new Rule());
+        accessControlProfile.getRules().get(1).setCode("second code");
 
-      Object result = client.getAccessControlProfileService().add(accessControlProfile);
-      System.out.println(result);
-    } catch (KalturaApiException e) {
-      e.printStackTrace();
+        AddAccessControlProfileBuilder requestBuilder = AccessControlProfileService.add(accessControlProfile)
+            .setCompletion(new OnCompletion<Response<AccessControlProfile>>() {
+                @Override
+                public void onComplete(Response<AccessControlProfile> result) {
+                    System.out.println(result);
+                }
+            });
+        APIOkRequestsExecutor.getExecutor().queue(requestBuilder.build(client));
     }
-  }
 
-  public static KalturaClient generateKalturaClient() throws KalturaApiException {
-    KalturaConfiguration config = new KalturaConfiguration();
-    config.setEndpoint("https://www.kaltura.com/");
-    KalturaClient client = new KalturaClient(config);
-    String session = client.getSessionService().start(
-          "YOUR_KALTURA_SECRET",
-          "YOUR_USER_ID",
-          KalturaSessionType.ADMIN,
-          YOUR_PARTNER_ID);
-    client.setKs(session);
-    return client;
-  }
+    public static Client generateKalturaClient() {
+        Configuration config = new Configuration();
+        config.setEndpoint("https://www.kaltura.com/");
+        Client client = new Client(config);
+        try {
+            String session = client.generateSessionV2(
+                  "YOUR_KALTURA_SECRET",
+                  "YOUR_USER_ID",
+                  SessionType.ADMIN,
+                  0,
+                  86400, "");
+            client.setSessionId(session);
+        } catch (Exception e) {
+            System.out.println("Failed to start Kaltura session");
+            System.exit(1);
+        }
+        return client;
+    }
 }

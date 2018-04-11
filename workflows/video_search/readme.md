@@ -40,20 +40,30 @@ This combination of filter parameters will search through all of the Kaltura Med
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
-      "name": "filter[freeText]",
-      "default": "",
-      "x-consoleDefault": ""
-    },
-    {
-      "name": "filter[orderBy]",
-      "x-consoleDefault": "-weight"
-    },
-    {
-      "group": "filter[advancedSearch]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "freeText": {
+                "default": "",
+                "x-consoleDefault": ""
+              },
+              "orderBy": {
+                "x-consoleDefault": "+createdAt"
+              },
+              "advancedSearch": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -85,35 +95,31 @@ These blend characters may be used as delimiters or as characters.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
-      "name": "filter[idEqual]"
-    },
-    {
-      "name": "filter[idIn]"
-    },
-    {
-      "name": "filter[idNotIn]"
-    },
-    {
-      "name": "filter[nameLike]"
-    },
-    {
-      "name": "filter[tagsMultiLikeOr]"
-    },
-    {
-      "name": "filter[tagsMultiLikeAnd]"
-    },
-    {
-      "name": "filter[createdAtGreaterThanOrEqual]"
-    },
-    {
-      "name": "filter[createdAtLessThanOrEqual]"
-    },
-    {
-      "name": "filter[categoriesIdsNotContains]"
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "idEqual": {},
+              "idIn": {},
+              "idNotIn": {},
+              "nameLike": {},
+              "tagsMultiLikeOr": {},
+              "tagsMultiLikeAnd": {},
+              "createdAtGreaterThanOrEqual": {},
+              "createdAtLessThanOrEqual": {},
+              "categoriesIdsNotContains": {}
+            },
+            "type": "object"
+          }
+        }
+      }
     }
   ]
 }
@@ -125,99 +131,115 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/list",
   "parameters": [
     {
       "name": "uiConf",
       "dynamicEnum": {
         "path": "/service/uiconf/action/list",
-        "method": "get",
+        "method": "post",
         "array": "objects",
         "value": "id",
         "label": "name",
         "parameters": [
           {
-            "name": "filter[objTypeEqual]",
-            "value": 1
+            "name": "body",
+            "value": "{\"filter\":{\"objTypeEqual\":1}}"
           }
         ]
       }
     },
     {
-      "name": "filter[freeText]",
-      "default": "",
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[freeText]"
-      }
-    },
-    {
-      "name": "filter[createdAtGreaterThanOrEqual]",
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[createdAtGreaterThanOrEqual]"
-      }
-    },
-    {
-      "name": "filter[advancedSearch][objectType]",
-      "default": "KalturaMetadataSearchItem",
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[advancedSearch][objectType]"
-      }
-    },
-    {
-      "name": "filter[advancedSearch][orderBy]",
-      "default": "-createdAt",
-      "enum": [
-        "+createdAt",
-        "+duration",
-        "+lastPlayedAt",
-        "+name",
-        "+plays",
-        "+recent",
-        "+startDate",
-        "+updatedAt",
-        "+views",
-        "-createdAt",
-        "-duration",
-        "-lastPlayedAt",
-        "-name",
-        "-plays",
-        "-recent",
-        "-startDate",
-        "-updatedAt",
-        "-views"
-      ],
-      "enumLabels": [
-        "CREATED_AT_ASC",
-        "DURATION_ASC",
-        "LAST_PLAYED_AT_ASC",
-        "NAME_ASC",
-        "PLAYS_ASC",
-        "RECENT_ASC",
-        "START_DATE_ASC",
-        "UPDATED_AT_ASC",
-        "VIEWS_ASC",
-        "CREATED_AT_DESC",
-        "DURATION_DESC",
-        "LAST_PLAYED_AT_DESC",
-        "NAME_DESC",
-        "PLAYS_DESC",
-        "RECENT_DESC",
-        "START_DATE_DESC",
-        "UPDATED_AT_DESC",
-        "VIEWS_DESC"
-      ],
-      "hidden": true,
-      "dynamicValue": {
-        "fromStep": 0,
-        "answer": "filter[advancedSearch][orderBy]"
-      }
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "freeText": {
+                "default": "",
+                "hidden": true,
+                "dynamicValue": {
+                  "fromStep": 0,
+                  "answer": "body.filter.freeText"
+                }
+              },
+              "createdAtGreaterThanOrEqual": {
+                "hidden": true,
+                "dynamicValue": {
+                  "fromStep": 0,
+                  "answer": "body.filter.createdAtGreaterThanOrEqual"
+                }
+              },
+              "advancedSearch": {
+                "properties": {
+                  "objectType": {
+                    "default": "KalturaMetadataSearchItem",
+                    "hidden": true,
+                    "dynamicValue": {
+                      "fromStep": 0,
+                      "answer": "body.filter.advancedSearch.objectType"
+                    }
+                  },
+                  "orderBy": {
+                    "default": "-createdAt",
+                    "enum": [
+                      "+createdAt",
+                      "+duration",
+                      "+lastPlayedAt",
+                      "+name",
+                      "+plays",
+                      "+recent",
+                      "+startDate",
+                      "+updatedAt",
+                      "+views",
+                      "-createdAt",
+                      "-duration",
+                      "-lastPlayedAt",
+                      "-name",
+                      "-plays",
+                      "-recent",
+                      "-startDate",
+                      "-updatedAt",
+                      "-views"
+                    ],
+                    "enumLabels": [
+                      "CREATED_AT_ASC",
+                      "DURATION_ASC",
+                      "LAST_PLAYED_AT_ASC",
+                      "NAME_ASC",
+                      "PLAYS_ASC",
+                      "RECENT_ASC",
+                      "START_DATE_ASC",
+                      "UPDATED_AT_ASC",
+                      "VIEWS_ASC",
+                      "CREATED_AT_DESC",
+                      "DURATION_DESC",
+                      "LAST_PLAYED_AT_DESC",
+                      "NAME_DESC",
+                      "PLAYS_DESC",
+                      "RECENT_DESC",
+                      "START_DATE_DESC",
+                      "UPDATED_AT_DESC",
+                      "VIEWS_DESC"
+                    ],
+                    "hidden": true,
+                    "dynamicValue": {
+                      "fromStep": 0,
+                      "answer": "body.filter.advancedSearch.orderBy"
+                    }
+                  }
+                },
+                "type": "object"
+              }
+            },
+            "type": "object"
+          }
+        }
+      },
+      "hidden": true
     }
   ]
 }
@@ -226,23 +248,23 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
 ```html
 <div class="row" style="margin-bottom: 10px">
   <div class="col-xs-12 col-md-5">
-    <h2><%- results[0].objects[0].name %></h2>
-    <p><%- results[0].objects[0].description %></p>
+    <h2><%- results[1].objects[0].name %></h2>
+    <p><%- results[1].objects[0].description %></p>
   </div>
   <div class="col-xs-12 col-md-6 col-md-offset-1">
-    <script src="https://cdnapisec.kaltura.com/p/<%-  results[0].objects[0].partnerId  %>/sp/<%-  results[0].objects[0].partnerId  %>00/embedIframeJs/uiconf_id/<%-  answers.uiConf  %>/partner_id/<%-  results[0].objects[0].partnerId  %>">
+    <script src="https://cdnapisec.kaltura.com/p/<%-  results[1].objects[0].partnerId  %>/sp/<%-  results[1].objects[0].partnerId  %>00/embedIframeJs/uiconf_id/<%-  answers.uiConf  %>/partner_id/<%-  results[1].objects[0].partnerId  %>">
     </script>
-    <div id="kaltura_player_<%-  results[0].objects[0].id  %>" style="width: 560px; height: 395px;">
+    <div id="kaltura_player_<%-  results[1].objects[0].id  %>" style="width: 560px; height: 395px;">
     </div>
     <script>
     kWidget.embed({
-      "targetId": "kaltura_player_<%-  results[0].objects[0].id  %>",
-      "wid": "_<%-  results[0].objects[0].partnerId  %>",
+      "targetId": "kaltura_player_<%-  results[1].objects[0].id  %>",
+      "wid": "_<%-  results[1].objects[0].partnerId  %>",
       "uiconf_id": <%-  answers.uiConf  %>,
       "flashvars": {},
       "cache_st": 1437326770,
       "ks": window.ks,
-      "entry_id": "<%-  results[0].objects[0].id  %>"
+      "entry_id": "<%-  results[1].objects[0].id  %>"
     });
     </script>
   </div>

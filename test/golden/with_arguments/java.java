@@ -1,11 +1,16 @@
-KalturaMediaEntryFilter filter = new KalturaMediaEntryFilter();
-filter.nameLike = "foobar";
-filter.statusEqual = KalturaEntryStatus.READY;
-filter.orderBy = KalturaMediaEntryOrderBy.CREATED_AT_ASC;
-filter.advancedSearch = new KalturaAttributeCondition();
-filter.advancedSearch.value = "baz";
-KalturaFilterPager pager = new KalturaFilterPager();
-pager.pageSize = 3;
+MediaEntryFilter filter = new MediaEntryFilter();
+filter.setNameLike("foobar");
+filter.setStatusEqual(EntryStatus.READY);
+filter.setOrderBy(MediaEntryOrderBy.CREATED_AT_ASC);
+filter.setAdvancedSearch(new AttributeCondition());
+filter.getAdvancedSearch().setValue("baz");
+FilterPager pager = new FilterPager();
+pager.setPageSize(3);
 
-Object result = client.getMediaService().list(filter, pager);
-System.out.println(result);
+ListMediaBuilder requestBuilder = MediaService.list(filter, pager)
+    .setCompletion(new OnCompletion<Response<ListResponse<MediaEntry>>>() {
+        @Override
+        public void onComplete(Response<ListResponse<MediaEntry>> result) {
+            System.out.println(result);
+        }
+    });

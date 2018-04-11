@@ -19,12 +19,26 @@ Choose a player to view its configuration
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/uiconf/action/get",
   "parameters": [
     {
-      "name": "id",
-      "global": true
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "dynamicEnum": {
+              "path": "/service/uiconf/action/list",
+              "method": "post",
+              "array": "objects",
+              "label": "name",
+              "value": "id"
+            }
+          }
+        }
+      }
     }
   ]
 }
@@ -36,32 +50,44 @@ You can use the form below to add, change or remove functionality from your play
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/uiconf/action/update",
   "parameters": [
     {
-      "name": "id",
-      "dynamicEnum": {
-        "path": "/service/uiconf/action/list",
-        "method": "get",
-        "array": "objects",
-        "value": "id",
-        "label": "name",
-        "parameters": [
-          {
-            "name": "filter[objTypeEqual]",
-            "value": 1
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "dynamicEnum": {
+              "path": "/service/uiconf/action/list",
+              "method": "post",
+              "array": "objects",
+              "value": "id",
+              "label": "name",
+              "parameters": [
+                {
+                  "name": "body",
+                  "value": "{\"filter\":{\"objTypeEqual\":1}}"
+                }
+              ]
+            },
+            "global": true
+          },
+          "uiConf": {
+            "properties": {
+              "config": {
+                "x-inputType": "textarea",
+                "dynamicValue": {
+                  "fromStep": 0,
+                  "value": "config"
+                }
+              }
+            },
+            "type": "object"
           }
-        ]
-      },
-      "global": true
-    },
-    {
-      "name": "uiConf[config]",
-      "x-inputType": "textarea",
-      "dynamicValue": {
-        "fromStep": 0,
-        "value": "config"
+        }
       }
     }
   ]

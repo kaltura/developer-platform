@@ -1,9 +1,14 @@
-KalturaAssetHistoryFilter filter = new KalturaAssetHistoryFilter();
-filter.assetIdIn = "id_in";
-filter.orderBy = 0;
-KalturaFilterPager pager = new KalturaFilterPager();
-pager.pageIndex = 3;
-pager.pageSize = 7;
+AssetHistoryFilter filter = new AssetHistoryFilter();
+filter.setAssetIdIn("id_in");
+filter.setOrderBy(0);
+FilterPager pager = new FilterPager();
+pager.setPageIndex(3);
+pager.setPageSize(7);
 
-Object result = client.getAssetHistoryService().list(filter, pager);
-System.out.println(result);
+ListAssetHistoryBuilder requestBuilder = AssetHistoryService.list(filter, pager)
+    .setCompletion(new OnCompletion<Response<ListResponse<AssetHistory>>>() {
+        @Override
+        public void onComplete(Response<ListResponse<AssetHistory>> result) {
+            System.out.println(result);
+        }
+    });

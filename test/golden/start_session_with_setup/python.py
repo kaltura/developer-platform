@@ -1,13 +1,13 @@
 from KalturaClient import *
 from KalturaClient.Plugins.Core import *
 
-config = KalturaConfiguration(2018872)
+config = KalturaConfiguration(123456)
 config.serviceUrl = "https://www.kaltura.com/"
 client = KalturaClient(config)
 ks = client.session.start(
-      "81b50515b869628777617f454cdca7f5",
-      "bobby.brennan@gmail.com",
+      "12341234123412341234",
+      "user@example.com",
       KalturaSessionType.USER,
-      2018872)
+      123456)
 client.setKs(ks)
 

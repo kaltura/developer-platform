@@ -22,18 +22,31 @@ Once the demo loads, try mousing over the thumbnail to see a preview of the vide
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/get",
   "parameters": [
     {
-      "name": "entryId",
-      "dynamicEnum": {
-        "path": "/service/media/action/list",
-        "method": "get",
-        "array": "objects",
-        "value": "id",
-        "label": "name",
-        "parameters": []
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "dynamicEnum": {
+              "path": "/service/media/action/list",
+              "method": "post",
+              "array": "objects",
+              "value": "id",
+              "label": "name",
+              "parameters": [
+                {
+                  "name": "body",
+                  "value": "{}"
+                }
+              ]
+            }
+          }
+        }
       }
     }
   ]
@@ -84,29 +97,42 @@ to img_width * frame_number.
 ### API Call
 ```json
 {
-  "method": "get",
+  "method": "post",
   "path": "/service/media/action/get",
   "parameters": [
-    {
-      "name": "entryId",
-      "dynamicValue": {
-        "fromStep": 0,
-        "value": "id"
-      },
-      "dynamicEnum": {
-        "parameters": [],
-        "array": "objects",
-        "path": "/service/media/action/list",
-        "method": "get",
-        "value": "id",
-        "label": "name"
-      }
-    },
     {
       "custom": true,
       "name": "vid_slices",
       "type": "number",
       "x-consoleDefault": 10
+    },
+    {
+      "name": "body",
+      "in": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "dynamicValue": {
+              "fromStep": 0,
+              "value": "id"
+            },
+            "dynamicEnum": {
+              "parameters": [
+                {
+                  "name": "body",
+                  "value": "{}"
+                }
+              ],
+              "array": "objects",
+              "path": "/service/media/action/list",
+              "method": "post",
+              "value": "id",
+              "label": "name"
+            }
+          }
+        }
+      }
     }
   ]
 }

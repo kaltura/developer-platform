@@ -13,6 +13,8 @@ const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.substring(1);
 }
 
+const removeKalturaPrefix = str => str.replace(/^Kaltura/, '');
+
 const camelCaseToUnderscore = str => {
   return str.replace(/([a-z])([A-Z])/g, function(whole, lower, upper) {
     return lower + '_' + upper.toLowerCase();
@@ -50,12 +52,14 @@ var language_opts = {
     enumAccessor: '',
     declarationPrefix: '',
     constant: JSON.stringify,
+    assign: function(lval, rval) {return lval + ' = ' + rval},
     emptyArray: function(type, num) {return '[]'},
     arrayAccessor: function(idx) {return '[' + idx + ']'},
     rewriteAttribute: function(s) {return s},
     rewriteVariable: function(s) {return s},
     rewriteAction: function(s) {return s},
     rewriteService: function(s) {return s},
+    rewriteEnum: function(s) {return s},
     rewriteType: function(s) {return s},
   },
   curl: {
@@ -82,7 +86,7 @@ var language_opts = {
     rewriteService: function(s) {
       return 'Kaltura' + capitalize(s) + 'Service';
     },
-    rewriteEnum: function(type, name, value) {
+    rewriteEnumValue: function(type, name, value) {
       return JSON.stringify(value) + " /* " + type + '.' + name + " */";
     },
   },
@@ -104,6 +108,19 @@ var language_opts = {
     enumAccessor: '::',
     rewriteAction: addActionSuffixIfReserved,
     rewriteVariable: s => '$' + s,
+  },
+  php53: {
+    ext: 'php',
+    accessor: '->',
+    statementSuffix: ';',
+    objPrefix: 'new ',
+    objSuffix: '()',
+    enumAccessor: '::',
+    rewriteAction: addActionSuffixIfReserved,
+    rewriteService: s => 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()',
+    rewriteVariable: s => '$' + s,
+    rewriteEnum: removeKalturaPrefix,
+    rewriteType: removeKalturaPrefix,
   },
   ruby: {
     ext: 'rb',
@@ -129,16 +146,30 @@ var language_opts = {
     statementSuffix: ';',
     objPrefix: 'new ',
     objSuffix: '()',
+    assign: function(lval, rval) {
+      if (lval.indexOf('.') === -1) return lval + ' = ' + rval;
+      while (lval.match(/\.\w+\./)) {
+        lval = lval.replace(/\.(\w+)\./, function(full, name) {
+          return '.get' + capitalize(name) + '().';
+        });
+      }
+      let assignment = lval
+          .replace(/\.(\w+)$/, function(full, name) {
+            return '.set' + capitalize(name) + '(' + rval + ')';
+          })
+          .replace(/\.get\((\d+)\)$/, function(full, idx) {
+            return '.set(' + idx + ', ' + rval + ')';
+          })
+      return assignment;
+    },
     emptyArray: function(type, num) {return 'new ArrayList<' + type + '>(' + num + ')'},
     arrayAccessor: function(idx) {return '.get(' + idx + ')'},
-    arraySetter: function(idx, setter) {return '.set(' + idx + ', ' + setter + ')'},
-    rewriteService: function(s) {
-      return 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()';
-    },
+    rewriteService: capitalize,
     rewriteAction: function(s) {
-      return replaceActionSuffix(s);
+      return capitalize(replaceActionSuffix(s));
     },
     rewriteType: function(s) {
+      s = removeKalturaPrefix(s);
       if (s === 'string') return 'String';
       if (s === 'integer') return 'int';
       return s;
@@ -256,75 +287,117 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   input.serviceID = pathParts[2];
   input.serviceName = input.operation.tags[0];
   input.service = this.rewriteService(input.serviceName, input.serviceID);
+  input.answers = input.answers || {};
+  input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
+  input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
   input.plugins = [];
   let tag = this.swagger.tags.filter(t => t.name === input.serviceName)[0];
   if (tag['x-plugin']) {
     input.plugins.push(tag['x-plugin']);
   }
   input.parameters = [];
-  let isOTT = this.swagger.host.indexOf('ott.') !== -1;
-  if (isOTT) {
-    let body = JSON.parse(input.answers.body || '{}');
-    let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
-    input.answers = {};
-    function addAnswer(key, answer) {
-      if (Array.isArray(answer)) {
-        answer.forEach((ans, idx) => {
-          addAnswer(key + '[' + idx + ']', ans);
-        })
-      } else if (typeof answer === 'object') {
-        for (let subkey in answer) {
-          addAnswer(key + '[' + subkey + ']', answer[subkey]);
-        }
-      } else {
-        input.answers[key] = answer;
-      }
-    }
-    for (let key in body) {
-      if (key === 'ks' || key === 'version') continue;
-      let schema = bodyParam.schema.properties[key];
-      if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
-      let param = {name: key, schema};
-      input.parameters.push(param);
-      addAnswer(key, body[key]);
-    }
+  let opType = input.operation['x-kaltura-format'] || 'post';
+  if (opType === 'post') {
+    input.parameterNames = input.operation['x-kaltura-parameters'].map(n => this.rewriteVariable(n));
+    this.gatherAnswersForPost(input);
   } else {
-    let addedParameters = [];
-    input.operation.parameters.forEach(p => {
-      if (p.$ref) {
-        let ref = p.$ref.match(/#\/parameters\/(.*)$/)[1];
-        p = this.swagger.parameters[ref];
-      }
-      if (p.global || p['x-global']) return;
-      let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
-      if (addedParameters.indexOf(baseName) !== -1) return;
-      addedParameters.push(baseName);
-      if (baseName === p.name) {
-        input.parameters.push({name: p.name, schema: p.schema || p})
-      } else {
-        let group = input.operation['x-parameterGroups'].filter(g => g.name === baseName)[0];
-        let title = group.schema.title || getDefName(group.schema.$ref);
-        let schema = this.swagger.definitions[title];
-        input.parameters.push({name: group.name, schema});
-      }
-    })
-    input.answers = input.answers || {};
-    input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
-    input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
-    input.parameters.forEach(p => {
-      if (input.answers[p.name] === undefined) {
-        if (p.schema.default !== undefined) input.answers[p.name] = p.schema.default;
-        else if (p.schema['x-consoleDefault'] !== undefined) input.answers[p.name] = p.schema['x-consoleDefault'];
-      }
-    })
+    input.parameterNames = input.parameters.map(p => p.name).map(n => this.rewriteVariable(n));
+    this.gatherAnswersForGet(input);
   }
-  input.parameterNames = input.parameters.map(p => p.name).map(n => this.rewriteVariable(n));
 }
 
-CodeTemplate.prototype.assignAllParameters = function(params, answers, indent) {
+CodeTemplate.prototype.gatherAnswersForPost = function(input) {
+  let findSubschema = (schema, key) => {
+    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    if (schema.properties && schema.properties[key]) return schema.properties[key];
+    let alternatives = (schema.allOf || []).concat(schema.oneOf || []);
+    for (let i = 0; i < alternatives.length; ++i) {
+      let alt = findSubschema(alternatives[i], key);
+      if (alt) return alt;
+    }
+  }
+  let addSchema = schema => {
+    let enm = schema['x-enumType'];
+    if (enm && input.enums.indexOf(enm) === -1) {
+      input.enums.push(enm);
+    }
+    if (schema.title && input.objects.indexOf(schema.title) === -1) {
+      input.objects.push(schema.title);
+    }
+  }
+  let addAnswer = (key, answer, schema) => {
+    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    addSchema(schema);
+    if (Array.isArray(answer)) {
+      answer.forEach((ans, idx) => {
+        addAnswer(key + '[' + idx + ']', ans, schema.items);
+      })
+    } else if (answer !== null && typeof answer === 'object') {
+      if (answer.objectType) {
+        schema = this.swagger.definitions[answer.objectType];
+      }
+      for (let subkey in answer) {
+        addAnswer(key + '[' + subkey + ']', answer[subkey], findSubschema(schema, subkey));
+      }
+      let objectKey = key + '[objectType]';
+      input.answers[objectKey] = input.answers[objectKey] || schema.title;
+    } else {
+      input.answers[key] = answer;
+    }
+  }
+
+  let body = JSON.parse(input.answers.body || '{}');
+  delete input.answers.body;
+  let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
+  input.objects = [];
+  input.enums = [];
+
+  input.operation['x-kaltura-parameters'].forEach(name => {
+    let schema = bodyParam.schema.properties[name];
+    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    let param = {name, schema};
+    input.parameters.push(param);
+    addSchema(schema);
+    if (name in body) addAnswer(name, body[name], schema);
+    else if (schema.default !== undefined) addAnswer(name, schema.default, schema);
+  });
+  input.enums = input.enums.map(e => this.rewriteEnum(e));
+  input.objects = input.objects.map(e => this.rewriteType(e));
+}
+
+CodeTemplate.prototype.gatherAnswersForGet = function(input) {
+  let addedParameters = [];
+  input.operation.parameters.forEach(p => {
+    if (p.$ref) {
+      let ref = p.$ref.match(/#\/parameters\/(.*)$/)[1];
+      p = this.swagger.parameters[ref];
+    }
+    if (p.global || p['x-global']) return;
+    let baseName = p.name.indexOf('[') === -1 ? p.name : p.name.substring(0, p.name.indexOf('['));
+    if (addedParameters.indexOf(baseName) !== -1) return;
+    addedParameters.push(baseName);
+    if (baseName === p.name) {
+      input.parameters.push({name: p.name, schema: p.schema || p})
+    } else {
+      let group = input.operation['x-parameterGroups'].filter(g => g.name === baseName)[0];
+      let title = group.schema.title || getDefName(group.schema.$ref);
+      let schema = this.swagger.definitions[title];
+      input.parameters.push({name: group.name, schema});
+    }
+  })
+  input.parameters.forEach(p => {
+    if (input.answers[p.name] === undefined) {
+      if (p.schema.default !== undefined) input.answers[p.name] = p.schema.default;
+      else if (p.schema['x-consoleDefault'] !== undefined) input.answers[p.name] = p.schema['x-consoleDefault'];
+    }
+  })
+}
+
+CodeTemplate.prototype.assignAllParameters = function(params, answers, indent, skipNewline) {
   indent = indent || 0;
   let assignment = this.indent(params.map(p => this.assignment(p, answers)).join('\n'), indent);
-  return assignment ? assignment + '\n\n': '';
+  let ending = skipNewline ? '\n' : '\n\n';
+  return assignment ? assignment + ending : '';
 }
 
 CodeTemplate.prototype.assignment = function(param, answers, parent) {
@@ -342,10 +415,12 @@ CodeTemplate.prototype.assignment = function(param, answers, parent) {
     if (cond.value.indexOf(answers[cond.name]) === -1) return;
   }
 
-  let assignment = this.lvalue(param) + ' = ' + this.rvalue(param, answers, parent) + this.statementSuffix;
+  let assignment = '';
   let arrMatch = param.name.match(/\[(\d+)\]$/)
   if (arrMatch && this.arraySetter) {
     assignment = this.lvalue(param) + this.arraySetter(arrMatch[1], this.rvalue(param, answers)) + this.statementSuffix
+  } else {
+    assignment = this.assign(this.lvalue(param), this.rvalue(param, answers, parent)) + this.statementSuffix;
   }
 
   const findSubschema = (subParamName, schema) => {
@@ -397,7 +472,7 @@ CodeTemplate.prototype.assignment = function(param, answers, parent) {
         .filter(match => match)
         .map(match => +match[2])
       indices = indices.filter((i, idx) => indices.lastIndexOf(i) === idx);
-      let statement = self.lvalue(subparam) + ' = ' + self.emptyArray(self.rewriteType(itemSchema.title), indices.length) + self.statementSuffix;
+      let statement = self.assign(self.lvalue(subparam), self.emptyArray(self.rewriteType(itemSchema.title), indices.length)) + self.statementSuffix;
       let itemStatements = indices
         .map(index => {
           return {
@@ -431,7 +506,7 @@ CodeTemplate.prototype.lvalue = function(param) {
 
   var lvalue = this.statementPrefix;
   if (isChild) {
-    let attrs = param.name.split(/\[/).map(s => s.replace(/\]/g, '')).filter(n => n !== 'objectType');
+    let attrs = param.name.split(/\[/).map(s => s.replace(/\]/g, ''));
     lvalue += attrs.map((a, idx) => {
       if (a.match(/^\d+$/)) {
         if (idx === attrs.length - 1 && self.arraySetter) {
@@ -472,18 +547,19 @@ CodeTemplate.prototype.rvalue = function(param, answers, parent) {
   if (answer === undefined) {
     answer = getDefaultValueForType(param.schema.type);
   }
+  if (param.schema['x-inputType'] === 'password' && answer) {
+    let pass = '';
+    for (let i = 0; i < answer.length; ++i) pass += '*';
+    answer = pass;
+  }
 
   if (!isPrimitiveSchema(param.schema)) {
-    if (param.name.indexOf('[objectType]') !== -1) {
-      return self.objPrefix + self.rewriteType(answer) + self.objSuffix;
-    } else {
-      return self.objPrefix + self.rewriteType(param.schema.title) + self.objSuffix;
-    }
+    return self.objPrefix + self.rewriteType(param.schema.title) + self.objSuffix;
   } else {
     if (enm && enumLabels) {
       let enumName = enumLabels[enm.indexOf(answer)];
       if (enumName) {
-        if (self.rewriteEnum) return self.rewriteEnum(enumType, enumName, answer);
+        if (self.rewriteEnumValue) return self.rewriteEnumValue(enumType, enumName, answer);
         return self.enumPrefix + self.rewriteType(enumType) + (self.enumAccessor || self.accessor) + enumName;
       }
     }

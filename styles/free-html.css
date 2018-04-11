@@ -1,0 +1,9 @@
+.docs-contents pre {
+  font-size: 12px;
+}
+.docs-contents code {
+  word-break: break-word;
+}
+.docs-contents table {
+  margin-bottom: 15px;
+}

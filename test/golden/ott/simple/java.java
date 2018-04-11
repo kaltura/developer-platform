@@ -1,4 +1,9 @@
 String id = "abc";
 
-Object result = client.getAppTokenService().get(id);
-System.out.println(result);
+GetAppTokenBuilder requestBuilder = AppTokenService.get(id)
+    .setCompletion(new OnCompletion<Response<AppToken>>() {
+        @Override
+        public void onComplete(Response<AppToken> result) {
+            System.out.println(result);
+        }
+    });

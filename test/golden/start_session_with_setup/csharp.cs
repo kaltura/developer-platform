@@ -19,7 +19,7 @@ namespace Kaltura {
       Configuration config = new Configuration();
       config.ServiceUrl = "https://www.kaltura.com/";
       Client client = new Client(config);
-      int partnerId = 2018872;
+      int partnerId = 123456;
       string secret = "";
       string userId = "";
       SessionType type = SessionType.USER;

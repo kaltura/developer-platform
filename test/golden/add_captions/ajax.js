@@ -1,5 +1,7 @@
 var entryId = "";
 var captionAsset = {objectType: "KalturaCaptionAsset"};
+captionAsset.tags = "stuff";
+captionAsset.language = "Arabic";
 
 KalturaCaptionAssetService.add(entryId, captionAsset)
   .execute(client, function(success, results) {

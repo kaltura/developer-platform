@@ -1,5 +1,12 @@
 String entryId = "";
-KalturaCaptionAsset captionAsset = new KalturaCaptionAsset();
+CaptionAsset captionAsset = new CaptionAsset();
+captionAsset.setTags("stuff");
+captionAsset.setLanguage("Arabic");
 
-Object result = client.getCaptionAssetService().add(entryId, captionAsset);
-System.out.println(result);
+AddCaptionAssetBuilder requestBuilder = CaptionAssetService.add(entryId, captionAsset)
+    .setCompletion(new OnCompletion<Response<CaptionAsset>>() {
+        @Override
+        public void onComplete(Response<CaptionAsset> result) {
+            System.out.println(result);
+        }
+    });
