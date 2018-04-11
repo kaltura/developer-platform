@@ -19,9 +19,9 @@ TARGET_API=ovp lucybot build --prerender '^(?!.*\.html$)' --destination generate
 
 cd generated/ovp
 echo "Commiting OVP build"
-git add . --quiet
+git add . >> /dev/nul
 echo "Added everything to commit"
-git commit -a -m "Build site" --quiet
+git commit -a -m "Build site" >> /dev/nul
 echo "Committed everything"
 git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:master >> /dev/null 2>&1
 echo "Pushed new site"
