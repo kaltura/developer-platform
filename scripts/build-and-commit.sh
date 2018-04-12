@@ -9,13 +9,13 @@ echo "Building OVP Website..."
 git clone https://github.com/kaltura/developer-platform-generated generated/ovp
 rm -rf generated/ovp/*
 TARGET_API=ovp ./scripts/resources/all.sh
-TARGET_API=ovp lucybot build --prerender '^(?!.*\.html$)' --destination generated/ovp
+TARGET_API=ovp lucybot build --prerender --truncate_prerender '^(?!.*\.html$)' --destination generated/ovp
 
 echo "Building OTT Website..."
 git clone https://github.com/kaltura/ott-developer-platform-generated generated/ott
 rm -rf generated/ott/*
 TARGET_API=ott ./scripts/resources/all.sh
-TARGET_API=ott lucybot build --prerender --destination generated/ott
+TARGET_API=ott lucybot build --prerender --truncate_prerender --destination generated/ott
 
 cd generated/ovp
 echo "Commiting OVP build"
