@@ -1,3 +1,5 @@
+basePath: /v4_8_1/doc/
+
 specifications:
   ott:
     - openapi: ./ott.openapi.json
