@@ -1,4 +1,4 @@
-basePath: /v4_8_1/doc/
+basePath: /@VERSION@/doc/
 
 specifications:
   ott:
