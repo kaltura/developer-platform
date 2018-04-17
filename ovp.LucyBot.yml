@@ -11,8 +11,23 @@ sitemap:
 discussionURL: '/discussion/{{slug}}?title={{title}}'
 
 routes:
+  default: /404-not-found
+
   /:
     redirect: '/api-docs'
+
+  /404-not-found:
+    title: Page not found
+    ui: markdown
+    markdown: |
+      # 404: Page not found
+      Sorry, but the page you requested doesn't exist.
+
+      Try one of these pages:
+        * [Documentation](/api-docs)
+        * [API Console](/console)
+        * [Interactive Workflows](/workflows)
+
 
   /api-docs:
     title: Kaltura API Documentation
