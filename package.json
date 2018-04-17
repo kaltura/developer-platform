@@ -23,6 +23,7 @@
     "jsonwebtoken": "^8.0.0",
     "kaltura": "file:lib/ott",
     "pug": "^2.0.0-beta11",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "swiftype": "^0.3.1"
   }
 }
