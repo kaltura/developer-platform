@@ -86,18 +86,20 @@ function containsItem(tagOrOp, items) {
 }
 
 let miscItem = config.operationNavigation.filter(i => i.isMiscellaneous).pop();
-miscItem.isMiscellaneous = false;
-miscItem.children = [];
-openapi.tags.forEach(tag => {
-  if (!containsItem(tag.name)) {
-    miscItem.children.push({tag: tag.name});
-  }
-});
-for (let path in openapi.paths) {
-  for (let method in openapi.paths[path]) {
-    let op = openapi.paths[path][method];
-    if (!containsItem(op.operationId) && !containsItem(op.tags[0])) {
-      miscItem.children.push({operation: op.operationId});
+if (miscItem) {
+  miscItem.isMiscellaneous = false;
+  miscItem.children = [];
+  openapi.tags.forEach(tag => {
+    if (!containsItem(tag.name)) {
+      miscItem.children.push({tag: tag.name});
+    }
+  });
+  for (let path in openapi.paths) {
+    for (let method in openapi.paths[path]) {
+      let op = openapi.paths[path][method];
+      if (!containsItem(op.operationId) && !containsItem(op.tags[0])) {
+        miscItem.children.push({operation: op.operationId});
+      }
     }
   }
 }
