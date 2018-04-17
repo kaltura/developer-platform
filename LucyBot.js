@@ -76,6 +76,32 @@ config.operationNavigation.push({
   }).join('\n'),
 });
 
+function containsItem(tagOrOp, items) {
+  items = items || config.operationNavigation;
+  let matching = items.filter(item => {
+    if (item.tag === tagOrOp || item.operation === tagOrOp) return true;
+    return containsItem(tagOrOp, item.children || []);
+  });
+  return !!matching.length;
+}
+
+let miscItem = config.operationNavigation.filter(i => i.isMiscellaneous).pop();
+miscItem.isMiscellaneous = false;
+miscItem.children = [];
+openapi.tags.forEach(tag => {
+  if (!containsItem(tag.name)) {
+    miscItem.children.push({tag: tag.name});
+  }
+});
+for (let path in openapi.paths) {
+  for (let method in openapi.paths[path]) {
+    let op = openapi.paths[path][method];
+    if (!containsItem(op.operationId) && !containsItem(op.tags[0])) {
+      miscItem.children.push({operation: op.operationId});
+    }
+  }
+}
+
 if (TARGET_API === 'ovp') {
   require('./v4-navigation')(config);
 }
