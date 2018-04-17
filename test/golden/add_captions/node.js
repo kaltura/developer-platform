@@ -1,14 +1,10 @@
-var entryId = "";
-var captionAsset = new Kaltura.kc.objects.KalturaCaptionAsset();
+let entryId = "";
+let captionAsset = new kaltura.objects.CaptionAsset();
 captionAsset.tags = "stuff";
 captionAsset.language = "Arabic";
 
-client.captionAsset.add(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-entryId,
-captionAsset);
+kaltura.services.captionAsset.add(entryId, captionAsset)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

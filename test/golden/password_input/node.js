@@ -1,20 +1,12 @@
-var loginId = "";
-var password = "*************";
-var partnerId = 0;
-var expiry = 86400;
-var privileges = "*";
-var otp = "";
+let loginId = "";
+let password = "*************";
+let partnerId = 0;
+let expiry = 86400;
+let privileges = "*";
+let otp = "";
 
-client.user.loginByLoginId(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-loginId,
-password,
-partnerId,
-expiry,
-privileges,
-otp);
+kaltura.services.user.loginByLoginId(loginId, password, partnerId, expiry, privileges, otp)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

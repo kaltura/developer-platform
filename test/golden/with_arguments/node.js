@@ -1,18 +1,14 @@
-var filter = new Kaltura.kc.objects.KalturaMediaEntryFilter();
+let filter = new kaltura.objects.MediaEntryFilter();
 filter.nameLike = "foobar";
-filter.statusEqual = Kaltura.kc.enums.KalturaEntryStatus.READY;
-filter.orderBy = Kaltura.kc.enums.KalturaMediaEntryOrderBy.CREATED_AT_ASC;
-filter.advancedSearch = new Kaltura.kc.objects.KalturaAttributeCondition();
+filter.statusEqual = kaltura.enums.EntryStatus.READY;
+filter.orderBy = kaltura.enums.MediaEntryOrderBy.CREATED_AT_ASC;
+filter.advancedSearch = new kaltura.objects.AttributeCondition();
 filter.advancedSearch.value = "baz";
-var pager = new Kaltura.kc.objects.KalturaFilterPager();
+let pager = new kaltura.objects.FilterPager();
 pager.pageSize = 3;
 
-client.media.listAction(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-filter,
-pager);
+kaltura.services.media.listAction(filter, pager)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

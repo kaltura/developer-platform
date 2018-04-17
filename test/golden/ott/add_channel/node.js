@@ -1,12 +1,9 @@
-var channel = new Kaltura.kc.objects.KalturaChannel();
+let channel = new kaltura.objects.Channel();
 channel.description = "foo";
 channel.isActive = true;
 
-client.channel.add(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-channel);
+kaltura.services.channel.add(channel)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

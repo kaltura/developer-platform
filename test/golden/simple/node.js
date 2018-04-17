@@ -1,12 +1,8 @@
-var filter = new Kaltura.kc.objects.KalturaMediaEntryFilter();
-var pager = new Kaltura.kc.objects.KalturaFilterPager();
+let filter = new kaltura.objects.MediaEntryFilter();
+let pager = new kaltura.objects.FilterPager();
 
-client.media.listAction(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-filter,
-pager);
+kaltura.services.media.listAction(filter, pager)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

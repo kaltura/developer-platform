@@ -1,10 +1,7 @@
-var id = "abc";
+let id = "abc";
 
-client.appToken.get(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-id);
+kaltura.services.appToken.get(id)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

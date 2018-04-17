@@ -1,26 +1,22 @@
-var Kaltura = require('kaltura');
-var config = new Kaltura.kc.KalturaConfiguration();
+const kaltura = require('kaltura-client');
+const config = new kaltura.Configuration();
 config.serviceUrl = 'https://www.kaltura.com';
-var client = new Kaltura.kc.KalturaClient(config);
-client.session.start(function(ks) {
-  if (ks.code && ks.message) {
-    console.log('Error starting session', ks);
-  } else {
+const client = new kaltura.Client(config);
+kaltura.services.session.start(
+    "YOUR_KALTURA_SECRET",
+    "YOUR_USER_ID",
+    kaltura.enums.SessionType.ADMIN,
+    YOUR_PARTNER_ID)
+.completion((success, ks) => {
+    if (!success) throw new Error(ks.message);
     client.setKs(ks);
-    var filter = new Kaltura.kc.objects.KalturaMediaEntryFilter();
-    var pager = new Kaltura.kc.objects.KalturaFilterPager();
+    let filter = new kaltura.objects.MediaEntryFilter();
+    let pager = new kaltura.objects.FilterPager();
 
-    client.media.listAction(function(results) {
-      if (results && results.code && results.message) {
-        console.log('Kaltura Error', results);
-      } else {
-        console.log('Kaltura Result', results);
-      }
-    },
-    filter,
-    pager);
-  }
-}, "YOUR_KALTURA_SECRET",
-"YOUR_USER_ID",
-Kaltura.kc.enums.KalturaSessionType.ADMIN,
-YOUR_PARTNER_ID)
+    kaltura.services.media.listAction(filter, pager)
+    .execute(client)
+    .then(result => {
+        console.log(result);
+    });
+})
+.execute(client);

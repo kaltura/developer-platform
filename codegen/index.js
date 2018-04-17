@@ -92,12 +92,14 @@ var language_opts = {
   },
   node: {
     ext: 'js',
-    declarationPrefix: 'var ',
+    declarationPrefix: 'let ',
     statementSuffix: ';',
-    objPrefix: 'new Kaltura.kc.objects.',
+    objPrefix: 'new kaltura.objects.',
     objSuffix: '()',
-    enumPrefix: 'Kaltura.kc.enums.',
+    enumPrefix: 'kaltura.enums.',
     rewriteAction: addActionSuffixIfReserved,
+    rewriteEnum: removeKalturaPrefix,
+    rewriteType: removeKalturaPrefix,
   },
   php: {
     ext: 'php',
