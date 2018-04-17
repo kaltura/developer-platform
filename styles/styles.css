@@ -22,3 +22,6 @@ h1.breadcrumbs {
 .side-menu-item.deprecated {
   color: #999;
 }
+side-menu .fa-times {
+  color: #fff !important;
+}
