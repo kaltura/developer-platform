@@ -3,20 +3,30 @@ $off-white: #777;
 .footer {
   background-color: #1A1A1A;
   color: $off-white;
+  padding-top: 10px;
 
   .container {
     padding: 0px;
   }
 
-  h5 {
-    color: #fff;
-    margin-top: 60px;
-  }
   a {
     color: $off-white;
     text-transform: none;
     font-weight: normal;
     font-size: 12px;
+  }
+  h5 {
+    color: #fff;
+    margin-top: 60px;
+    a {
+      font-size: 1.25rem;
+    }
+    i.fa {
+      display: none;
+    }
+  }
+  .collapse:not(.show) {
+    display: block;
   }
   a:hover {
     color: #fff;
@@ -56,6 +66,59 @@ $off-white: #777;
 
     div {
       display: inline;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .container, .row {
+      margin: 0;
+      max-width: 1000px;
+    }
+    .col {
+      width: 100%;
+      flex-basis: unset;
+      flex-grow: unset;
+    }
+    .footer-links-columns {
+      padding: 20px 30px;
+    }
+    .footer-links-columns {
+      border-bottom: 1px solid $off-white;
+    }
+    .footer-last-links-column,
+    .social-icon-container,
+    .footer-links-columns {
+      .collapse.show, .collapsing {
+        margin-top: 15px;
+      }
+      .secondary-links {
+        display: none; /* TODO: show these links */
+      }
+    }
+    .collapse:not(.show) {
+      display: none;
+    }
+    h5 {
+      margin: 0px;
+      a {
+        width: 100%;
+        display: inline-block;
+        i.fa {
+          float: right;
+          display: inline;
+        }
+      }
+      a.collapsed i.fa:before {
+        content: "\f078";
+      }
+    }
+    .kaltura-links {
+      text-align: center;
+      border-top: none;
+      border-bottom: none;
+      .footer-last-links-column,
+      .social-icon-container {
+        text-align: center;
+      }
     }
   }
 }

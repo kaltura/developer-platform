@@ -14,12 +14,19 @@ h3.section-title
             a.nav-link Java
           li.nav-item
             a.nav-link Python
-          li.nav-item
+          li.nav-item.extra
             a.nav-link Node
-          li.nav-item
+          li.nav-item.extra
             a.nav-link C#
-          li.nav-item
+          li.nav-item.extra
             a.nav-link Ruby
+          li.nav-item.dropdown.visible-xs
+            a.nav-link.dropdown-toggle(data-toggle="dropdown")
+              i.fa.fa-plus-circle
+            .dropdown-menu
+              a.dropdown-item Node
+              a.dropdown-item C#
+              a.dropdown-item Ruby
         pre
           code.
             var secret = "YOUR_KALTURA_SECRET";

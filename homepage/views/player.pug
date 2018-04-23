@@ -2,22 +2,47 @@ hr.separator
 h3.section-title HTML5 Video Player for any Experience
 
 mixin player-button(image, title, active)
-  .col
-    .player-button(class=active ? "active" : "")
-      img(src=image)
-      h6=title
+  .player-button(class=active ? "active" : "")
+    img(src=image)
+    h6=title
+mixin player-dropdown-item(image, title)
+  a.dropdown-item
+    img(src=image)
+    span=title
 
 .container
   .row
     .col
       .row
-        +player-button('/homepage/assets/background.jpg', 'Fastest time to first frame', true)
-        +player-button('/homepage/assets/background.jpg', 'Most ads delivered')
-        +player-button('/homepage/assets/background.jpg', 'In video quizzes')
+        .col
+          +player-button('/homepage/assets/background.jpg', 'Fastest time to first frame', true)
+        .col
+          +player-button('/homepage/assets/background.jpg', 'Most ads delivered')
+        .col
+          +player-button('/homepage/assets/background.jpg', 'In video quizzes')
       .row
-        +player-button('/homepage/assets/background.jpg', 'Interactive storytelling')
-        +player-button('/homepage/assets/background.jpg', 'Dual screen presentation')
-        +player-button('/homepage/assets/background.jpg', 'Live video')
+        .col
+          +player-button('/homepage/assets/background.jpg', 'Interactive storytelling')
+        .col
+          +player-button('/homepage/assets/background.jpg', 'Dual screen presentation')
+        .col
+          +player-button('/homepage/assets/background.jpg', 'Live video')
     .col
       .video-player
         img(src="/homepage/assets/background.jpg")
+.mobile.text-center
+  .dropdown
+    a.btn.dropdown-toggle(data-toggle="dropdown")
+      img(src="/homepage/assets/background.jpg")
+      span Fastest time to first frame
+      i.fa.fa-right.fa-chevron-down
+    .dropdown-menu
+      +player-dropdown-item('/homepage/assets/background.jpg', 'Fastest time to first frame', true)
+      +player-dropdown-item('/homepage/assets/background.jpg', 'Most ads delivered')
+      +player-dropdown-item('/homepage/assets/background.jpg', 'In video quizzes')
+      +player-dropdown-item('/homepage/assets/background.jpg', 'Interactive storytelling')
+      +player-dropdown-item('/homepage/assets/background.jpg', 'Dual screen presentation')
+      +player-dropdown-item('/homepage/assets/background.jpg', 'Live video')
+
+  .video-player
+    img(src="/homepage/assets/background.jpg")

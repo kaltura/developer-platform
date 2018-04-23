@@ -5,9 +5,29 @@
   margin-right: 8px;
 }
 
+a {
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn {
+  padding: 15px 20px;
+}
+
+.bg-primary {
+  color: #fff;
+}
+
 .page {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.background {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 nav {
@@ -29,6 +49,9 @@ nav {
     .nav-link:hover {
       opacity: .7;
     }
+  }
+  .navbar-toggler {
+    border: none;
   }
 }
 
@@ -61,17 +84,5 @@ hr.separator {
   .section-title {
     color: #fff;
   }
-}
-
-a {
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.btn {
-  padding: 15px 20px;
-}
-
-.bg-primary {
-  color: #fff;
 }
 

@@ -4,9 +4,6 @@
   div.welcome-background {
     height: 500px;
     background-image: url('/homepage/assets/background.jpg');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .welcome {
@@ -29,6 +26,7 @@
   padding-bottom: 100px;
   .feature {
     text-align: center;
+    margin-bottom: 60px;
     img {
       height: 100px;
     }
@@ -56,6 +54,8 @@
       border-top-right-radius: 0px;
       padding: 15px 20px;
       border: none;
+    }
+    .nav-link, .dropdown-item {
       cursor: pointer;
     }
     .nav-link:hover {
@@ -73,19 +73,44 @@
     }
   }
   .code-description {
-    padding-top: 80px;
-    padding-left: 40px;
+    padding-top: 30px;
+    text-align: center;
     .btn-default {
       border-color: theme-color('primary');
       color: theme-color('primary');
     }
+    .btn-default:hover {
+      background-color: lighten(#00abcc, 30%)
+    }
     .console-link {
       text-transform: none;
+      cursor: pointer;
       .fa {
         color: theme-color('primary');
       }
     }
   }
+
+  .nav-item.extra {
+    display: none;
+  }
+  .nav-item .dropdown-toggle:after {
+    border: none;
+  }
+  @include media-breakpoint-up(md) {
+    .nav-item.extra {
+      display: block;
+    }
+    .nav-item.dropdown {
+      display: none;
+    }
+    .code-description {
+      text-align: left;
+      padding-top: 80px;
+      padding-left: 40px;
+    }
+  }
+
 }
 
 .player-page {
@@ -101,12 +126,51 @@
       margin-bottom: 10px;
     }
   }
+
+  .player-button, .dropdown {
+    img {
+      height: 20px;
+    }
+  }
+
   .player-button.active {
     color: #fff;
     background-color: theme-color('primary');
   }
   .video-player img {
     max-width: 100%;
+  }
+
+  .container {
+    display: none;
+  }
+  .mobile {
+    .dropdown {
+      margin-bottom: 15px;
+    }
+    .btn.dropdown-toggle {
+      border: 1px solid #ccc;
+    }
+    .dropdown-toggle:after {
+      border: none;
+    }
+    a.dropdown-item {
+      text-transform: none;
+    }
+    img {
+      margin-right: 8px;
+    }
+    .video-player {
+      padding: 15px;
+    }
+  }
+  @include media-breakpoint-up(sm) {
+    .container {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
   }
 }
 
@@ -117,9 +181,6 @@
     padding-top: 60px;
     height: 500px;
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/homepage/assets/background.jpg');
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   .sign-up-section {
     padding: 60px;
