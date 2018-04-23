@@ -8798,11 +8798,11 @@ hr.separator {
   height: 500px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/homepage/assets/background.jpg");
 }
-.mobile-page .sign-up-section {
-  padding: 60px;
+
+.signup-page {
   background-color: #A1E130;
 }
-.mobile-page .sign-up-section .btn {
+.signup-page .sign-up-section .btn {
   color: #A1E130;
 }
 

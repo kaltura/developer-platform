@@ -182,9 +182,10 @@
     height: 500px;
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/homepage/assets/background.jpg');
   }
+}
+.signup-page {
+  background-color: #A1E130;
   .sign-up-section {
-    padding: 60px;
-    background-color: #A1E130;
     .btn {
       color: #A1E130;
     }
