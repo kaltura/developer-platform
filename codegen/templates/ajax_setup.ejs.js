@@ -5,6 +5,9 @@
   var config = new KalturaConfiguration(<%- answers.partnerId %>);
   config.serviceUrl = 'https://www.kaltura.com';
   var client = new KalturaClient(config);
+<% if (noSession) { -%>
+<%- codegen.indent(code, 2) %>
+<% } else { -%>
   // Note: this is meant only as a sample.
   // You should NEVER generate sessions on the client,
   // as this exposes your Admin Secret to users.
@@ -25,4 +28,5 @@
 <% } -%>
     }
   });
+<% } -%>
 </script>

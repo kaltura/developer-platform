@@ -292,6 +292,7 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   input.answers = input.answers || {};
   input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
   input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
+  input.noSession = input.operation.security && !input.operation.security.length;
   input.plugins = [];
   let tag = this.swagger.tags.filter(t => t.name === input.serviceName)[0];
   if (tag['x-plugin']) {

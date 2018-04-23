@@ -4,11 +4,18 @@
   $config = new KalturaConfiguration(123456);
   $config->serviceUrl = 'https://www.kaltura.com';
   $client = new KalturaClient($config);
-  $ks = $client->session->start(
-    "12341234123412341234",
-    "user@example.com",
-    KalturaSessionType::USER,
-    123456);
-  $client->setKS($ks);
 
+  $secret = "********************";
+  $userId = "user@example.com";
+  $type = KalturaSessionType::USER;
+  $partnerId = 123456;
+  $expiry = 86400;
+  $privileges = "";
+
+  try {
+    $result = $client->session->start($secret, $userId, $type, $partnerId, $expiry, $privileges);
+    var_dump($result);
+  } catch (Exception $e) {
+    echo $e->getMessage();
+  }
 ?>

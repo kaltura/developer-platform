@@ -2,17 +2,17 @@
 <script src="/js/kaltura/KalturaFullClient.min.js"></script>
 
 <script>
-  var config = new KalturaConfiguration(123456);
+  var config = new KalturaConfiguration();
   config.serviceUrl = 'https://www.kaltura.com';
   var client = new KalturaClient(config);
-  var secret = "********************";
-  var userId = "user@example.com";
-  var type = 0 /* KalturaSessionType.USER */;
-  var partnerId = 123456;
+  var loginId = "foobar";
+  var password = "*************";
+  var partnerId = 0;
   var expiry = 86400;
-  var privileges = "";
+  var privileges = "*";
+  var otp = "";
 
-  KalturaSessionService.start(secret, userId, type, partnerId, expiry, privileges)
+  KalturaUserService.loginByLoginId(loginId, password, partnerId, expiry, privileges, otp)
     .execute(client, function(success, results) {
       if (!success || (results && results.code && results.message)) {
         console.log('Kaltura Error', success, results);

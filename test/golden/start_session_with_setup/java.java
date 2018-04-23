@@ -37,18 +37,6 @@ class CodeExample {
         Configuration config = new Configuration();
         config.setEndpoint("https://www.kaltura.com/");
         Client client = new Client(config);
-        try {
-            String session = client.generateSessionV2(
-                  "12341234123412341234",
-                  "user@example.com",
-                  SessionType.ADMIN,
-                  123456,
-                  86400, "");
-            client.setSessionId(session);
-        } catch (Exception e) {
-            System.out.println("Failed to start Kaltura session");
-            System.exit(1);
-        }
         return client;
     }
 }

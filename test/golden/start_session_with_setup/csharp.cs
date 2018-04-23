@@ -13,19 +13,33 @@ namespace Kaltura {
   class CodeExample {
     static void Main(string[] args) {
       Client client = CodeExample.createKalturaClient();
+      bool done = false;
+      string secret = "********************";
+      string userId = "user@example.com";
+      SessionType type = SessionType.USER;
+      int partnerId = 123456;
+      int expiry = 86400;
+      string privileges = "";
+
+      OnCompletedHandler<string> handler = new OnCompletedHandler<string>(
+            (string result, Exception e) =>
+            {
+              CodeExample.PrintObject(result);
+              done = true;
+            });
+      SessionService.Start(secret, userId, type, partnerId, expiry, privileges)
+         .SetCompletion(handler)
+         .Execute(client);
+
+      while (!done) {
+        Thread.Sleep(100);
+      }
     }
 
     static Client createKalturaClient() {
       Configuration config = new Configuration();
       config.ServiceUrl = "https://www.kaltura.com/";
       Client client = new Client(config);
-      int partnerId = 123456;
-      string secret = "";
-      string userId = "";
-      SessionType type = SessionType.USER;
-      int expiry = 86400;
-      string privileges = "";
-      client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
       return client;
     }
 

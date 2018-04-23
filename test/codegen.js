@@ -45,6 +45,17 @@ describe('Sample Code', function() {
       showSetup: false,
     }
   }, {
+    name: 'no_session',
+    service: 'user',
+    action: 'loginByLoginId',
+    input: {
+      answers: {
+        loginId: 'foobar',
+        password: 'thisisasecret',
+      },
+      showSetup: true,
+    }
+  }, {
     name: 'array_input',
     service: 'accesscontrolprofile',
     action: 'add',

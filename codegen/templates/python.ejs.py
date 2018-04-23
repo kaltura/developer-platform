@@ -8,6 +8,7 @@ from KalturaClient.Plugins.<%- p.charAt(0).toUpperCase() + p.substring(1) %> imp
 config = KalturaConfiguration(<%- answers.partnerId %>)
 config.serviceUrl = "https://www.kaltura.com/"
 client = KalturaClient(config)
+<% if (!noSession) { -%>
 ks = client.session.start(
       <%- codegen.constant(answers.secret) %>,
       <%- codegen.constant(answers.userId) %>,
@@ -15,9 +16,9 @@ ks = client.session.start(
       <%- codegen.constant(answers.partnerId) || 'YOUR_PARTNER_ID' %>)
 client.setKs(ks)
 <% } -%>
+<% } -%>
 
-<% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
 <%- codegen.assignAllParameters(parameters, answers) -%>
 result = client.<%- service %>.<%- action %>(<%- parameterNames.join(', ') %>);
 print(result);
-<% } -%>
+<% -%>

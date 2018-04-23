@@ -7,8 +7,8 @@ import com.kaltura.client.services.*;
 import com.kaltura.client.APIOkRequestsExecutor;
 import com.kaltura.client.Client;
 import com.kaltura.client.Configuration;
-import com.kaltura.client.services.<%- service %>Service;
-import com.kaltura.client.services.<%- service %>Service.<%- action %><%- service %>Builder;
+import com.kaltura.client.services.UserService;
+import com.kaltura.client.services.UserService.LoginByLoginIdUserBuilder;
 import com.kaltura.client.types.ListResponse;
 import com.kaltura.client.utils.response.OnCompletion;
 import com.kaltura.client.utils.response.base.Response;
@@ -16,7 +16,20 @@ import com.kaltura.client.utils.response.base.Response;
 class CodeExample {
     public static void main(String[] args) {
         Client client = CodeExample.generateKalturaClient();
-<%- codegen.indent(code, 8) %>
+        String loginId = "foobar";
+        String password = "*************";
+        int partnerId = 0;
+        int expiry = 86400;
+        String privileges = "*";
+        String otp = "";
+
+        LoginByLoginIdUserBuilder requestBuilder = UserService.loginbyloginid(loginId, password, partnerId, expiry, privileges, otp)
+            .setCompletion(new OnCompletion<Response<String>>() {
+                @Override
+                public void onComplete(Response<String> result) {
+                    System.out.println(result);
+                }
+            });
         APIOkRequestsExecutor.getExecutor().queue(requestBuilder.build(client));
     }
 
@@ -24,20 +37,6 @@ class CodeExample {
         Configuration config = new Configuration();
         config.setEndpoint("https://www.kaltura.com/");
         Client client = new Client(config);
-<% if (!noSession) { -%>
-        try {
-            String session = client.generateSessionV2(
-                  "<%- answers.secret %>",
-                  "<%- answers.userId %>",
-                  SessionType.ADMIN,
-                  <%- answers.partnerId || '0' %>,
-                  86400, "");
-            client.setSessionId(session);
-        } catch (Exception e) {
-            System.out.println("Failed to start Kaltura session");
-            System.exit(1);
-        }
-<% } -%>
         return client;
     }
 }

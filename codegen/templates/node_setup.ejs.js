@@ -2,6 +2,7 @@ const kaltura = require('kaltura-client');
 const config = new kaltura.Configuration();
 config.serviceUrl = 'https://www.kaltura.com';
 const client = new kaltura.Client(config);
+<% if (!noSession) { -%>
 kaltura.services.session.start(
     <%- codegen.constant(answers.secret) %>,
     <%- codegen.constant(answers.userId) %>,
@@ -15,3 +16,4 @@ kaltura.services.session.start(
 <% } -%>
 })
 .execute(client);
+<% } -%>

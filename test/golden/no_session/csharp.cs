@@ -14,7 +14,22 @@ namespace Kaltura {
     static void Main(string[] args) {
       Client client = CodeExample.createKalturaClient();
       bool done = false;
-<%- codegen.indent(code, 6) %>
+      string loginId = "foobar";
+      string password = "*************";
+      int partnerId = 0;
+      int expiry = 86400;
+      string privileges = "*";
+      string otp = "";
+
+      OnCompletedHandler<string> handler = new OnCompletedHandler<string>(
+            (string result, Exception e) =>
+            {
+              CodeExample.PrintObject(result);
+              done = true;
+            });
+      UserService.LoginByLoginId(loginId, password, partnerId, expiry, privileges, otp)
+         .SetCompletion(handler)
+         .Execute(client);
 
       while (!done) {
         Thread.Sleep(100);
@@ -25,15 +40,6 @@ namespace Kaltura {
       Configuration config = new Configuration();
       config.ServiceUrl = "https://www.kaltura.com/";
       Client client = new Client(config);
-<% if (!noSession) { -%>
-      int partnerId = <%- answers.partnerId || 'YOUR_PARTNER_ID' %>;
-      string secret = "<% answers.secret %>";
-      string userId = "<% answers.userId %>";
-      SessionType type = <%- answers.sessionType === 0 ? 'SessionType.USER' : 'SessionType.ADMIN' %>;
-      int expiry = 86400;
-      string privileges = "";
-      client.KS = client.GenerateSession(partnerId, secret, userId, type, expiry, privileges);
-<% } -%>
       return client;
     }
 

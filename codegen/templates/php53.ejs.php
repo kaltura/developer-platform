@@ -22,7 +22,7 @@
   $config = new KalturaConfiguration(<%- codegen.constant(answers.partnerId) %>);
   $config->setServiceUrl('https://www.kaltura.com');
   $client = new KalturaClient($config);
-<%   if (serviceID !== 'session' || actionID !== 'start') { -%>
+<%   if (!noSession) { -%>
   $ks = $client->generateSession(
       <%- codegen.constant(answers.secret) %>,
       <%- codegen.constant(answers.userId) %>,
