@@ -1,3 +1,48 @@
 .mobile-background.background
   hr.separator.separator-inverse
   h3.section-title Build Native Video Apps for TV and Mobile
+  .container-fluid
+    .bullets
+      .bullet.bullet-1
+        img.bullet-image(src="/homepage/assets/background.jpg")
+        .bullet-label Less memory
+        .pointer
+      .bullet.bullet-2
+        .pointer
+        .bullet-label Full control
+        img.bullet-image(src="/homepage/assets/background.jpg")
+      .bullet.bullet-2-mobile
+        img.bullet-image(src="/homepage/assets/background.jpg")
+        .bullet-label Full control
+        .pointer
+      .bullet.bullet-3
+        img.bullet-image(src="/homepage/assets/background.jpg")
+        .bullet-label Quick time to first frame
+        .pointer
+      .bullet.bullet-4
+        .pointer
+        .bullet-label Easily extendable
+        img.bullet-image(src="/homepage/assets/background.jpg")
+      .bullet.bullet-4-mobile
+        img.bullet-image(src="/homepage/assets/background.jpg")
+        .bullet-label Easily extendable
+        .pointer
+
+    mixin feature-box(number, label)
+      .feature-box
+        h5=number
+        span=label
+    .features.d-flex.flex-row.flex-wrap
+      +feature-box('Thousands', 'of devices')
+      .spacing
+      +feature-box('Millions', 'of users')
+      .spacing.separator
+      +feature-box('Billions', 'of sessions')
+      .spacing
+      +feature-box('Zero', 'crashes')
+    .logos
+      img.logo(src="/homepage/assets/logo.png")
+      img.logo(src="/homepage/assets/logo.png")
+      img.logo(src="/homepage/assets/logo.png")
+      img.logo(src="/homepage/assets/logo.png")
+
