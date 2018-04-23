@@ -1,0 +1,60 @@
+hr.separator
+h3.section-title
+  span Products for Admissions and Marketing
+.container-fluid
+  .row
+    .col
+      .code-box
+        ul.nav.nav-tabs.nav-justified
+          li.nav-item
+            a.nav-link.active PHP
+          li.nav-item
+            a.nav-link JS
+          li.nav-item
+            a.nav-link Java
+          li.nav-item
+            a.nav-link Python
+          li.nav-item
+            a.nav-link Node
+          li.nav-item
+            a.nav-link C#
+          li.nav-item
+            a.nav-link Ruby
+        pre
+          code.
+            var secret = "YOUR_KALTURA_SECRET";
+            var userId = "YOUR_USER_ID";
+            var type = Kaltura.kc.enums.KalturaSessionType.USER;
+            var partnerId = 0;
+            var expiry = 86400;
+            var privileges = "";
+
+            client.session.start(function(results) {
+              if (results && results.code && results.message) {
+                console.log('Kaltura Error', results);
+              } else {
+                console.log('Kaltura Result', results);
+              }
+            },
+            secret,
+            userId,
+            type,
+            partnerId,
+            expiry,
+            privileges);
+    .col
+      .code-description
+        h4 Upload and ingest media with ease
+        p.
+          Uploading videos to Kaltura using the API is super simple.
+          Videos can be located on disk, or be specified as an HTML
+          file input. Our jQuery upload widget provides a chunked
+          upload with pause and resume functionality and optimization
+          for file chunk size.
+        p
+          a.btn.btn-default
+            span Show me another example
+        p
+          a.console-link
+            span Or try it in our console
+            i.fa.fa-right.fa-chevron-right

@@ -1,0 +1,62 @@
+$off-white: #777;
+
+.footer {
+  background-color: #1A1A1A;
+  color: $off-white;
+
+  .container {
+    padding: 0px;
+  }
+
+  h5 {
+    color: #fff;
+    margin-top: 60px;
+  }
+  a {
+    color: $off-white;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  a:hover {
+    color: #fff;
+  }
+  a.footer-links {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .kaltura-links {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    border-top: 1px solid $off-white;
+    border-bottom: 1px solid $off-white;
+
+    line-height: 50px;
+    img {
+      height: 50px;
+    }
+
+    .footer-last-links-column a {
+      padding: 10px 20px;
+    }
+    .social-icon-container {
+      text-align: right;
+    }
+    .social-icon-container a {
+      padding: 10px;
+    }
+  }
+
+  .copyright-container {
+    text-align: center;
+    font-size: 12px;
+    padding: 30px;
+
+    div {
+      display: inline;
+    }
+  }
+}
+

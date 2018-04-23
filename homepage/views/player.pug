@@ -1,0 +1,23 @@
+hr.separator
+h3.section-title HTML5 Video Player for any Experience
+
+mixin player-button(image, title, active)
+  .col
+    .player-button(class=active ? "active" : "")
+      img(src=image)
+      h6=title
+
+.container
+  .row
+    .col
+      .row
+        +player-button('/homepage/assets/background.jpg', 'Fastest time to first frame', true)
+        +player-button('/homepage/assets/background.jpg', 'Most ads delivered')
+        +player-button('/homepage/assets/background.jpg', 'In video quizzes')
+      .row
+        +player-button('/homepage/assets/background.jpg', 'Interactive storytelling')
+        +player-button('/homepage/assets/background.jpg', 'Dual screen presentation')
+        +player-button('/homepage/assets/background.jpg', 'Live video')
+    .col
+      .video-player
+        img(src="/homepage/assets/background.jpg")

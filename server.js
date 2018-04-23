@@ -23,6 +23,19 @@ if (process.env.USE_BASIC_AUTH && process.env.LUCYBOT_USERNAME && process.env.LU
   App.use(require('./routes/basic-auth.js'));
 }
 
+if (process.env.ENABLE_HOMEPAGE) {
+  App.use('/homepage', Express.static(__dirname + '/homepage'));
+  App.engine('pug', require('pug').__express);
+  App.set('view engine', 'pug')
+  App.set('views', __dirname + '/homepage/views');
+  App.get('/', (req, res) => {
+    res.render('index', {}, (err, html) => {
+      if (err) res.status(500).send(err.toString());
+      res.send(html);
+    });
+  })
+}
+
 if (!process.env.DEVELOPMENT || process.env.USE_CACHE) {
   var cache = function(age) {
     age = age || 'med';

@@ -4,7 +4,14 @@
   "description": "",
   "homepage": "https://github.com/kaltura/developer-platform#readme",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build-homepage": "sass ./homepage/styles/styles.scss ./homepage/assets/styles.css",
+    "watch": "run-when-changed --watch './homepage/styles/*' --exec 'npm run build-homepage'"
+  },
+  "watch": {
+    "build-homepage": {
+      "test": "styles.scss"
+    }
   },
   "devDependencies": {
     "async": "^2.1.5",
@@ -13,17 +20,20 @@
     "ejs": "^2.5.5",
     "mocha": "^3.2.0",
     "pretty-data": "^0.40.0",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "run-when-changed": "^2.1.0"
   },
   "dependencies": {
     "body-parser": "^1.16.0",
+    "bootstrap": "^4.1.0",
     "compression": "^1.6.2",
     "express": "^4.14.1",
     "js-yaml": "^3.8.2",
     "jsonwebtoken": "^8.0.0",
     "kaltura": "file:lib/ott",
-    "pug": "^2.0.0-beta11",
+    "pug": "^2.0.3",
     "request": "^2.79.0",
+    "sass": "^1.2.1",
     "swiftype": "^0.3.1"
   }
 }
