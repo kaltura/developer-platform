@@ -8723,7 +8723,7 @@ hr.separator {
 .code-page .nav-item .dropdown-toggle:after {
   border: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .code-page .nav-item.extra {
     display: block;
   }

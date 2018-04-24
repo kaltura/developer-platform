@@ -97,7 +97,7 @@
   .nav-item .dropdown-toggle:after {
     border: none;
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     .nav-item.extra {
       display: block;
     }
@@ -110,7 +110,6 @@
       padding-left: 40px;
     }
   }
-
 }
 
 .player-page {
