@@ -30,6 +30,17 @@ mixin player-dropdown-item(image, title)
     .col
       .video-player
         img(src="/homepage/assets/background.jpg")
+.tablet
+  .d-flex
+    +player-button('/homepage/assets/background.jpg', 'Fastest time to first frame', true)
+    +player-button('/homepage/assets/background.jpg', 'Most ads delivered')
+    +player-button('/homepage/assets/background.jpg', 'In video quizzes')
+    +player-button('/homepage/assets/background.jpg', 'Interactive storytelling')
+    +player-button('/homepage/assets/background.jpg', 'Dual screen presentation')
+    +player-button('/homepage/assets/background.jpg', 'Live video')
+  .video-player
+    img(src="/homepage/assets/background.jpg")
+
 .mobile.text-center
   .dropdown
     a.btn.dropdown-toggle(data-toggle="dropdown")
