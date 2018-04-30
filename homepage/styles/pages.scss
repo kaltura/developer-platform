@@ -9,14 +9,25 @@
   .welcome {
     padding: 50px;
     font-style: italic;
-
+    h2, .subtitle {
+      font-family: 'Soho', sans-serif;
+      font-style: italic;
+    }
+    h2 {
+      font-weight: 800;
+    }
+    .subtitle {
+      font-weight: 300;
+      font-size: 22px;
+    }
     .btn {
       font-style: normal;
       padding: 15px 20px;
+      background-color: #b1d238;
     }
 
     p span {
-      max-width: 500px;
+      max-width: 750px;
       display: inline-block;
     }
   }
@@ -75,12 +86,20 @@
   .code-description {
     padding-top: 30px;
     text-align: center;
+    h4 {
+      font-family: "Soho", sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 20px;
+    }
     .btn-default {
       border-color: theme-color('primary');
       color: theme-color('primary');
+      padding: 18px 31px;
     }
     .btn-default:hover {
-      background-color: lighten(#00abcc, 30%)
+      background-color: theme-color('primary');
+      color: #fff;
     }
     .console-link {
       text-transform: none;
@@ -114,7 +133,8 @@
 
 .player-page {
   .player-button {
-    border: 1px solid #eee;
+    height: 110px;
+    border: 1px solid #d9d9d9;
     border-radius: 4px;
     text-align: center;
     padding: 15px;
@@ -213,8 +233,13 @@
       width: 24%;
       display: inline-block;
       margin-bottom: 4px;
+      font-size: 20px;
+      font-weight: 300;
       h5 {
+        font-family: "Soho", sans-serif;
         font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
       }
     }
   }
@@ -245,8 +270,8 @@
   .bullet {
     position: absolute;
     left: 50px;
-    width: 300px;
-    font-size: 18px;
+    width: 350px;
+    font-size: 20px;
     .bullet-image {
       margin: 0px 10px;
       border: 1px solid #fff;
@@ -261,7 +286,7 @@
       vertical-align: bottom;
       border-bottom: 1px solid #fff;
       display: inline-block;
-      width: 200px;
+      width: 250px;
     }
     .pointer {
 	  width: 8px;
@@ -356,10 +381,10 @@
 }
 
 .signup-page {
-  background-color: #A1E130;
+  background-color: #b1d238;
   .sign-up-section {
     .btn {
-      color: #A1E130;
+      color: #b1d238;
     }
   }
 }
