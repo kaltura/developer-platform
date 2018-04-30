@@ -13,7 +13,11 @@ script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
 script.
+  var LANGUAGES = ['python', 'ruby', 'php', 'java', 'node', 'ajax', 'csharp'];
   window.setCode = function(lang) {
+    if (!lang) {
+      lang = LANGUAGES[Math.floor(Math.random() * LANGUAGES.length)];
+    }
     window.jQuery('.code-box pre code').hide();
     window.jQuery('.code-box pre code.' + lang).show();
     window.jQuery('.code-box li.nav-item a').removeClass('active');
