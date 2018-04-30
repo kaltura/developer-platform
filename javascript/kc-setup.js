@@ -77,3 +77,7 @@ window.setUpKalturaClient = function(creds, cb) {
   }
 }
 
+if (!maybeContinueSession() && window.location.href.indexOf('signIn=true') !== -1) {
+  window.lucybot.startLogin();
+}
+

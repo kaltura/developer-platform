@@ -71,7 +71,7 @@
     })
   }
 
-  var maybeContinueSession = function() {
+  window.maybeContinueSession = function() {
     var ksMatch = window.location.href.substring(window.location.href.indexOf('?')).match(new RegExp('[?&]ks=([^&]+)'));
     if (ksMatch) ksMatch = window.decodeURIComponent(ksMatch[1]);
     var cookies = document.cookie.split(';').map(function(c) {return c.trim()});
@@ -102,12 +102,6 @@
   window.lucybot.startLogin = function() {
     window.jquery('#KalturaSignInModal').modal('show');
   }
-
-  window.jquery(document).ready(function() {
-    if (!maybeContinueSession() && window.location.href.indexOf('signIn=true') !== -1) {
-      window.lucybot.startLogin();
-    }
-  })
 
   window.startKalturaLogin = function() {
     window.jquery('#KalturaSignInModal .alert-danger').hide();
@@ -211,4 +205,5 @@
       window.jquery('#KalturaSignInModal .alert-danger').show();
     });
   }
+
 })();
