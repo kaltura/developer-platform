@@ -8863,16 +8863,16 @@ hr.separator {
 .mobile-page .mobile-background {
   padding-top: 60px;
   height: 800px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/homepage/assets/background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/homepage/assets/images/Build%20Native%20Video%20Apps/Build-Native-Video-Apps-Background.png");
 }
 .mobile-page .features .spacing {
-  width: 1%;
+  width: 2%;
 }
 .mobile-page .features .feature-box {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 25px;
-  width: 24%;
+  width: 22.5%;
   display: inline-block;
   margin-bottom: 4px;
   font-size: 20px;
@@ -8888,10 +8888,20 @@ hr.separator {
   text-align: center;
 }
 .mobile-page .logos .logo {
-  padding: 15px;
-  width: 15%;
+  margin: 20px;
+  max-height: 23px;
+  max-width: 20%;
+}
+.mobile-page .logos .logo.apple-logo, .mobile-page .logos .logo.roku-logo {
+  max-width: 10%;
 }
 @media (max-width: 767.98px) {
+  .mobile-page .logos .logo {
+    margin: 10px;
+  }
+  .mobile-page .features .spacing-left, .mobile-page .features .spacing-right {
+    width: 0px;
+  }
   .mobile-page .features .separator {
     flex-basis: 100%;
   }
@@ -8899,7 +8909,7 @@ hr.separator {
     width: 49%;
   }
   .mobile-page .mobile-background {
-    height: 900px;
+    height: 1000px;
   }
 }
 .mobile-page .bullets {
@@ -8914,11 +8924,8 @@ hr.separator {
 }
 .mobile-page .bullet .bullet-image {
   margin: 0px 10px;
-  border: 1px solid #fff;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  padding: 5px;
+  width: 55px;
+  height: 55px;
   display: inline-block;
 }
 .mobile-page .bullet .bullet-label {
@@ -8946,6 +8953,17 @@ hr.separator {
   }
   .mobile-page .bullet-2-mobile, .mobile-page .bullet-4-mobile {
     display: block;
+  }
+  .mobile-page .bullet {
+    width: 250px;
+    font-size: 16px;
+  }
+  .mobile-page .bullet .bullet-image {
+    width: 37px;
+    height: 37px;
+  }
+  .mobile-page .bullet .bullet-label {
+    width: 165px;
   }
   .mobile-page .bullet-1 {
     top: 0px;

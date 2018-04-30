@@ -220,17 +220,17 @@
   .mobile-background {
     padding-top: 60px;
     height: 800px;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/homepage/assets/background.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/homepage/assets/images/Build%20Native%20Video%20Apps/Build-Native-Video-Apps-Background.png');
   }
   .features {
     .spacing {
-      width: 1%;
+      width: 2%;
     }
     .feature-box {
       text-align: center;
       background-color: rgba(0, 0, 0, .5);
       padding: 25px;
-      width: 24%;
+      width: 22.5%;
       display: inline-block;
       margin-bottom: 4px;
       font-size: 20px;
@@ -246,12 +246,22 @@
   .logos {
     text-align: center;
     .logo {
-      padding: 15px;
-      width: 15%;
+      margin: 20px;
+      max-height: 23px;
+      max-width: 20%;
+    }
+    .logo.apple-logo, .logo.roku-logo {
+      max-width: 10%;
     }
   }
   @include media-breakpoint-down(sm) {
+    .logos .logo {
+      margin: 10px;
+    }
     .features {
+      .spacing-left, .spacing-right {
+        width: 0px;
+      }
       .separator {
         flex-basis: 100%;
       }
@@ -260,7 +270,7 @@
       }
     }
     .mobile-background {
-      height: 900px;
+      height: 1000px;
     }
   }
   .bullets {
@@ -274,11 +284,8 @@
     font-size: 20px;
     .bullet-image {
       margin: 0px 10px;
-      border: 1px solid #fff;
-      width: 50px;
-      height: 50px;
-      border-radius: 25px;
-      padding: 5px;
+      width: 55px;
+      height: 55px;
       display: inline-block;
     }
     .bullet-label {
@@ -307,6 +314,18 @@
     }
     .bullet-2-mobile, .bullet-4-mobile {
       display: block;
+    }
+    .bullet {
+      width: 250px;
+      font-size: 16px;
+
+      .bullet-image {
+        width: 37px;
+        height: 37px;
+      }
+      .bullet-label {
+        width: 165px;
+      }
     }
     .bullet-1 {
       top: 0px;
