@@ -1,0 +1,10 @@
+MediaEntryFilter filter = new MediaEntryFilter();
+FilterPager pager = new FilterPager();
+
+ListMediaBuilder requestBuilder = MediaService.list(filter, pager)
+    .setCompletion(new OnCompletion&lt;Response&lt;ListResponse&lt;MediaEntry&gt;&gt;&gt;() {
+        @Override
+        public void onComplete(Response&lt;ListResponse&lt;MediaEntry&gt;&gt; result) {
+            System.out.println(result);
+        }
+    });

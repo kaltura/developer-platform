@@ -81,6 +81,14 @@
       background-color: #212727;
       color: #fff;
       padding: 15px;
+      height: 360px;
+      code {
+        display: none;
+      }
+      code.hljs {
+        background: none !important;
+        padding: 0;
+      }
     }
   }
   .code-description {

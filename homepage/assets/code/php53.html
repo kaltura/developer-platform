@@ -1,0 +1,11 @@
+&lt;?php
+  $filter = new MediaEntryFilter();
+  $pager = new FilterPager();
+
+  try {
+    $result = $client-&gt;getMediaService()-&gt;listAction($filter, $pager);
+    var_dump($result);
+  } catch (Exception $e) {
+    echo $e-&gt;getMessage();
+  }
+?&gt;

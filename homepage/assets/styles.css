@@ -8739,6 +8739,14 @@ hr.separator {
   background-color: #212727;
   color: #fff;
   padding: 15px;
+  height: 360px;
+}
+.code-page .code-box pre code {
+  display: none;
+}
+.code-page .code-box pre code.hljs {
+  background: none !important;
+  padding: 0;
 }
 .code-page .code-description {
   padding-top: 30px;

@@ -5,50 +5,40 @@ h3.section-title
   .row
     .col.col.xs-12.col-lg-6
       .code-box
+        mixin code-link(name, label, isExtra)
+          li.nav-item(class=isExtra ? name + " extra" : name)
+            a.nav-link(onclick="setCode('" + name + "')")
+              span=label
         ul.nav.nav-tabs.nav-justified
-          li.nav-item
-            a.nav-link.active PHP
-          li.nav-item
-            a.nav-link JS
-          li.nav-item
-            a.nav-link Java
-          li.nav-item
-            a.nav-link Python
-          li.nav-item.extra
-            a.nav-link Node
-          li.nav-item.extra
-            a.nav-link C#
-          li.nav-item.extra
-            a.nav-link Ruby
+          +code-link('php', 'PHP')
+          +code-link('ajax', 'JS')
+          +code-link('java', 'Java')
+          +code-link('python', 'Python')
+          +code-link('node', 'Node', true)
+          +code-link('csharp', 'C#', true)
+          +code-link('ruby', 'Ruby', true)
           li.nav-item.dropdown.visible-xs
             a.nav-link.dropdown-toggle(data-toggle="dropdown")
               i.fa.fa-plus-circle
             .dropdown-menu
-              a.dropdown-item Node
-              a.dropdown-item C#
-              a.dropdown-item Ruby
+              a.dropdown-item(onclick="setCode('node')") Node
+              a.dropdown-item(onclick="setCode('csharp')") C#
+              a.dropdown-item(onclick="setCode('ruby')") Ruby
         pre
-          code.
-            var secret = "YOUR_KALTURA_SECRET";
-            var userId = "YOUR_USER_ID";
-            var type = Kaltura.kc.enums.KalturaSessionType.USER;
-            var partnerId = 0;
-            var expiry = 86400;
-            var privileges = "";
-
-            client.session.start(function(results) {
-              if (results && results.code && results.message) {
-                console.log('Kaltura Error', results);
-              } else {
-                console.log('Kaltura Result', results);
-              }
-            },
-            secret,
-            userId,
-            type,
-            partnerId,
-            expiry,
-            privileges);
+          code.hljs.php
+            include ../assets/code/php.html
+          code.hljs.ajax.javascript
+            include ../assets/code/ajax.html
+          code.hljs.java
+            include ../assets/code/java.html
+          code.hljs.python
+            include ../assets/code/python.html
+          code.hljs.node.javascript
+            include ../assets/code/node.html
+          code.hljs.csharp.cs
+            include ../assets/code/csharp.html
+          code.hljs.ruby
+            include ../assets/code/ruby.html
     .col.col.xs-12.col-lg-6
       .code-description
         h4 Upload and ingest media with ease
