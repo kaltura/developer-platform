@@ -87,13 +87,15 @@
       if (user && typeof user === 'object' && Object.keys(user).length) {
         if (ksMatch) user.ks = ksMatch;
         setKalturaUser(user);
-        return;
+        return true;
       }
     }
     if (ksMatch) {
       setKalturaUser({ks: ksMatch});
+      return true;
     } else {
       setKalturaUser();
+      return false;
     }
   };
 
@@ -102,7 +104,9 @@
   }
 
   window.jquery(document).ready(function() {
-    maybeContinueSession();
+    if (!maybeContinueSession() && window.location.href.indexOf('signIn=true') !== -1) {
+      window.lucybot.startLogin();
+    }
   })
 
   window.startKalturaLogin = function() {
