@@ -38,7 +38,23 @@ a {
 nav {
   font-weight: bold;
   img {
-    height: 50px;
+    height: 40px;
+  }
+  .brand-subtitle {
+    font-family: "Soho";
+    text-transform: none;
+    display: inline;
+    padding-left: 13px;
+    font-weight: 500;
+    border-left: 1px solid #ccc;
+    margin-left: 15px;
+    height: 40px;
+    vertical-align: middle;
+  }
+  @media (max-width: 380px) {
+    .brand-subtitle {
+      display: none;
+    }
   }
   .navbar-nav {
     .btn {
