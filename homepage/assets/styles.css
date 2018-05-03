@@ -8807,6 +8807,7 @@ hr.separator {
   text-transform: uppercase;
   margin-bottom: 30px;
   cursor: pointer;
+  display: block;
 }
 .player-page .player-button h6 {
   font-size: 14px;
@@ -8816,12 +8817,33 @@ hr.separator {
   height: 20px;
   margin-bottom: 15px;
 }
+.player-page .player-button img.active {
+  display: none;
+}
 .player-page .player-button img, .player-page .dropdown img {
   height: 20px;
 }
 .player-page .player-button.active {
   color: #fff;
   background-color: #00A9CB;
+}
+.player-page .player-button.active img.active {
+  display: inline-block;
+}
+.player-page .player-button.active img.inactive {
+  display: none;
+}
+.player-page .player-button.active:hover {
+  color: #fff;
+}
+.player-page .player-dropdown .player-item {
+  display: none;
+}
+.player-page .player-dropdown .player-item.active {
+  display: inline-block;
+}
+.player-page .tablet .player-button {
+  border-radius: 0px;
 }
 .player-page .video-player img {
   max-width: 100%;

@@ -149,6 +149,7 @@
     text-transform: uppercase;
     margin-bottom: 30px;
     cursor: pointer;
+    display: block;
     h6 {
       font-size: 14px;
       font-weight: bold;
@@ -156,6 +157,9 @@
     img {
       height: 20px;
       margin-bottom: 15px;
+    }
+    img.active {
+      display: none;
     }
   }
 
@@ -168,7 +172,29 @@
   .player-button.active {
     color: #fff;
     background-color: theme-color('primary');
+
+    img.active {
+      display: inline-block;
+    }
+    img.inactive {
+      display: none;
+    }
   }
+  .player-button.active:hover {
+    color: #fff;
+  }
+
+  .player-dropdown .player-item {
+    display: none;
+  }
+  .player-dropdown .player-item.active {
+    display: inline-block;
+  }
+
+  .tablet .player-button {
+    border-radius: 0px;
+  }
+
   .video-player img {
     max-width: 100%;
   }

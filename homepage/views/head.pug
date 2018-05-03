@@ -23,5 +23,15 @@ script.
     window.jQuery('.code-box li.nav-item a').removeClass('active');
     window.jQuery('.code-box li.nav-item.' + lang + ' a').addClass('active');
   }
-  window.jQuery(document).ready(function() { setCode('php') })
+
+  window.setVideo = function(idx) {
+    window.activeVideo = idx;
+    window.jQuery('.player-item').removeClass('active');
+    window.jQuery('.player-item.player-item-idx-' + idx).addClass('active');
+  }
+
   hljs.initHighlightingOnLoad();
+  window.jQuery(document).ready(function() {
+    setCode('php');
+    setVideo(1);
+  });
