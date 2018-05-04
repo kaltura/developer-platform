@@ -23,7 +23,7 @@ if (process.env.USE_BASIC_AUTH && process.env.LUCYBOT_USERNAME && process.env.LU
   App.use(require('./routes/basic-auth.js'));
 }
 
-if (process.env.ENABLE_HOMEPAGE) {
+if (process.env.ENABLE_HOMEPAGE === 'true') {
   App.use('/homepage', Express.static(__dirname + '/homepage'));
   App.engine('pug', require('pug').__express);
   App.set('view engine', 'pug')
