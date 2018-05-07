@@ -150,7 +150,8 @@ describe('Sample Code', function() {
     service: 'media',
     action: 'list',
     input: {
-      answers: {},
+      answers: {
+      },
       showSetup: true,
     }
   }, {
@@ -206,6 +207,10 @@ describe('Sample Code', function() {
       }
       testCase.input.answers = {body: JSON.stringify(body)};
       if (body.sessionType !== undefined) testCase.input.answers.sessionType = body.sessionType;
+      if (body.partnerId !== undefined) testCase.input.answers.partnerId = body.partnerId;
+      if (body.userId !== undefined) testCase.input.answers.userId = body.userId;
+      if (body.secret !== undefined) testCase.input.answers.secret = body.secret;
+      if (body.type !== undefined) testCase.input.answers.type = body.type;
     })
   }
 
