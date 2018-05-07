@@ -7,6 +7,7 @@
   use Kaltura\Client\Type\Rule;
   use Kaltura\Client\Type\ContextTypeHolder;
   use Kaltura\Client\Type\Condition;
+  use Kaltura\Client\Type\DeliveryProfileCondition;
   use Kaltura\Client\ApiException;
 
   // load zend framework 2

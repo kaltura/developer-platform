@@ -101,6 +101,21 @@ var language_opts = {
     rewriteEnum: removeKalturaPrefix,
     rewriteType: removeKalturaPrefix,
   },
+  angular: {
+    ext: 'ts',
+    declarationPrefix: 'let ',
+    statementSuffix: ';',
+    objPrefix: 'new ',
+    objSuffix: '()',
+    rewriteAction: capitalize,
+    rewriteService: capitalize,
+    rewriteEnumValue: (type, name, value) => {
+      return type + '.' + name.toLowerCase().replace(/_[a-z]+/g, s => {
+        console.log('repl', s);
+        return s.charAt(1).toUpperCase() + s.substring(2).toLowerCase()
+      });
+    }
+  },
   php: {
     ext: 'php',
     accessor: '->',
@@ -344,6 +359,7 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
       }
       let objectKey = key + '[objectType]';
       input.answers[objectKey] = input.answers[objectKey] || schema.title;
+      addSchema(this.swagger.definitions[input.answers[objectKey]]);
     } else {
       input.answers[key] = answer;
     }
