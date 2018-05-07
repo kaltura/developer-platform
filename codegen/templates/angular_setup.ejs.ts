@@ -18,15 +18,12 @@ import {<%- enums[i] %>} from "kaltura-ngx-client/api/types/<%- enums[i] %>";
 import {<%- objects[i] %>} from "kaltura-ngx-client/api/types/<%- objects[i] %>";
 <% } -%>
 
-declare let window:any;
-
 @Component({
     selector: 'widget',
     template: `<h1>Hello world</h1>`,
 })
 export class WidgetComponent {
   constructor(private kaltura:KalturaClient) {
-    window.widget = this;
     this.kaltura.request(new SessionStartAction({
         secret: <%- codegen.constant(answers.secret) %>,
         userId: <%- codegen.constant(answers.userId) %>,

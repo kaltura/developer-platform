@@ -10,15 +10,12 @@ import {KalturaSessionType} from "kaltura-ngx-client/api/types/KalturaSessionTyp
 import {KalturaMetadataProfileFilter} from "kaltura-ngx-client/api/types/KalturaMetadataProfileFilter";
 import {KalturaFilterPager} from "kaltura-ngx-client/api/types/KalturaFilterPager";
 
-declare let window:any;
-
 @Component({
     selector: 'widget',
     template: `<h1>Hello world</h1>`,
 })
 export class WidgetComponent {
   constructor(private kaltura:KalturaClient) {
-    window.widget = this;
     this.kaltura.request(new SessionStartAction({
         secret: "YOUR_KALTURA_SECRET",
         userId: "YOUR_USER_ID",

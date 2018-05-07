@@ -14,15 +14,12 @@ import {KalturaContextTypeHolder} from "kaltura-ngx-client/api/types/KalturaCont
 import {KalturaCondition} from "kaltura-ngx-client/api/types/KalturaCondition";
 import {KalturaDeliveryProfileCondition} from "kaltura-ngx-client/api/types/KalturaDeliveryProfileCondition";
 
-declare let window:any;
-
 @Component({
     selector: 'widget',
     template: `<h1>Hello world</h1>`,
 })
 export class WidgetComponent {
   constructor(private kaltura:KalturaClient) {
-    window.widget = this;
     this.kaltura.request(new SessionStartAction({
         secret: "YOUR_KALTURA_SECRET",
         userId: "YOUR_USER_ID",

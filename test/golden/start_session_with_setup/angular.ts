@@ -8,15 +8,12 @@ import {SessionStartAction} from "kaltura-ngx-client/api/types/SessionStartActio
 import {KalturaSessionType} from "kaltura-ngx-client/api/types/KalturaSessionType";
 import {KalturaSessionType} from "kaltura-ngx-client/api/types/KalturaSessionType";
 
-declare let window:any;
-
 @Component({
     selector: 'widget',
     template: `<h1>Hello world</h1>`,
 })
 export class WidgetComponent {
   constructor(private kaltura:KalturaClient) {
-    window.widget = this;
     this.kaltura.request(new SessionStartAction({
         secret: "12341234123412341234",
         userId: "user@example.com",
