@@ -4,10 +4,16 @@
   var user = window.kalturaUser = {};
 
   function loggedInTemplate() {
-    return '<li class="navbar-link"><a onclick="setKalturaUser()">' +
-        '<span class="hidden-md">' + (user.name || '') + ' - </span>' +
-        '<span>' + (user.partnerId || '') + '&nbsp;</span>' +
-        '<span class="text-primary">[sign out]</span></a></li>';
+    return '<li class="dropdown" id="KalturaPartnerIDDropdown">' +
+        '<a class="dropdown-toggle" data-toggle="dropdown">' +
+          '<span class="hidden-md">' + (user.name || '') + ' - </span>' +
+          '<span>' + (user.partnerId || '') + '</span>' +
+          '<i class="fa fa-right fa-caret-down"></i>' +
+        '</a>' +
+        '<ul class="dropdown-menu">' +
+          partnerChoicesTemplate(window.kalturaPartners || []) +
+          '<li><a onclick="setKalturaUser()">Sign Out</a></li>' +
+        '</ul></li>'
   }
 
   var LOGGED_OUT_HTML =
@@ -15,6 +21,12 @@
         +   '<a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Sign Up</a>'
         + '</li>'
         + '<li class="navbar-link"><a onclick="lucybot.startLogin()">Sign In</a></li>';
+
+  function partnerChoicesTemplate(partners) {
+    return partners.map(function(partner) {
+      return '<li><a onclick="setKalturaPartnerID(' + partner.id + ')">' + partner.name + ' (' + partner.id + ')</a></li>'
+    }).join('\n');
+  }
 
   var setCookie = function(creds) {
     var val = creds ? encodeURIComponent(JSON.stringify(creds)) : '';
@@ -47,7 +59,7 @@
 
   window.setKalturaUser = function(creds) {
     function clearUser() {
-      user = {};
+      window.kalturaUser = user = {};
       if (window.secretService) window.secretService.clearSecrets();
       setCookie();
     }
@@ -56,7 +68,7 @@
       updateViewsForLogin(null);
       return;
     }
-    user = creds;
+    window.kalturaUser = user = creds;
     window.setUpKalturaClient(creds, function(err, newCreds) {
       if (err) {
         clearUser();
@@ -156,11 +168,11 @@
       window.lucybot.tracker('login_success', {
         email: creds.email,
       });
-      var partnerChoicesHTML = response.map(function(partner) {
-        return '<li><a onclick="setKalturaPartnerID(' + partner.id + ')">' + partner.name + ' (' + partner.id + ')</a></li>'
-      }).join('\n');
+      window.kalturaPartners = response;
+      var partnerChoicesHTML = partnerChoicesTemplate(response);
+      window.jquery('#KalturaPartnerIDDropdown').find('ul.dropdown-menu').html(partnerChoicesHTML);
       window.jquery('#KalturaPartnerIDModal').find('ul.dropdown-menu').html(partnerChoicesHTML);
-      user = creds;
+      window.kalturaUser = user = creds;
     })
     .fail(function(xhr) {
       window.lucybot.tracker('login_error', {
@@ -180,7 +192,11 @@
     window.jquery.ajax({
       url: '/auth/selectPartner',
       method: 'POST',
-      data: JSON.stringify(user),
+      data: JSON.stringify({
+        email: user.email,
+        partnerId: user.partnerId,
+        password: user.password,
+      }),
       headers: {'Content-Type': 'application/json'},
     })
     .done(function(data) {
@@ -190,6 +206,8 @@
         userId: user.email,
         partnerId: user.partnerId,
         name: data.name,
+        email: user.email,
+        password: user.password,
       }
       setKalturaUser(creds);
     })
