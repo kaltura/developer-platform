@@ -1,7 +1,10 @@
 (function() {
-  var COOKIE_TIMEOUT_MS = 1800000;
+  var COOKIE_TIMEOUT_MS = 30 * 60 * 1000;
+  var PROMPT_TIMEOUT_MS = COOKIE_TIMEOUT_MS - 2 * 60 * 1000;
   var STORAGE_KEY = 'LUCYBOT_RECIPE_CREDS';
   var user = window.kalturaUser = {};
+  var promptTimeout = null;
+  var logoutTimeout = null;
 
   function loggedInTemplate() {
     return '<li class="dropdown" id="KalturaPartnerIDDropdown">' +
@@ -34,6 +37,18 @@
     var expires = new Date(now.getTime() + COOKIE_TIMEOUT_MS);
     var cookie = STORAGE_KEY + '=' + val + '; expires=' + expires.toUTCString() + '; Path=/';
     document.cookie = cookie;
+    if (promptTimeout) clearTimeout(promptTimeout);
+    if (logoutTimeout) clearTimeout(logoutTimeout);
+    if (creds) {
+      promptTimeout = setTimeout(function() {
+        var renew = confirm("Your Kaltura session is about to expire. Do you want to stay logged in?");
+        if (renew) setCookie(creds);
+        else setKalturaUser();
+      }, PROMPT_TIMEOUT_MS);
+      logoutTimeout = setTimeout(function() {
+        setKalturaUser();
+      }, COOKIE_TIMEOUT_MS);
+    }
   }
 
   var updateViewsForLogin = function(creds) {
