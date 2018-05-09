@@ -25,7 +25,7 @@ export class WidgetComponent {
         type: KalturaSessionType.admin,
         partnerId: YOUR_PARTNER_ID,
     }))
-	.map(ks => {
+	.subscribe(ks => {
 		  this.kaltura.setDefaultRequestOptions({ks});
           this.runRequest();
 		},
@@ -40,7 +40,7 @@ export class WidgetComponent {
     let pager = new KalturaFilterPager();
 
     this.kaltura.request(new MediaListAction({filter, pager}))
-        .map(result => {
+        .subscribe(result => {
           console.log(result);
         },
         error => {
