@@ -7,7 +7,7 @@ uiOptions:
   redirectHashURLs: true
   embedConsoleInDocumentation: true
   messages:
-    beta: Please note: this action is experimental.
+    beta: "Please note: this action is experimental."
     deprecated: |
       This API action has been deprecated. If you’re building a new app integration,
       please consult the usage guides or forums for the more recent API actions to use.

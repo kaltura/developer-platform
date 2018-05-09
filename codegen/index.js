@@ -111,7 +111,6 @@ var language_opts = {
     rewriteService: capitalize,
     rewriteEnumValue: (type, name, value) => {
       return type + '.' + name.toLowerCase().replace(/_[a-z]+/g, s => {
-        console.log('repl', s);
         return s.charAt(1).toUpperCase() + s.substring(2).toLowerCase()
       });
     }
