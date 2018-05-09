@@ -6,7 +6,7 @@ let expiry = 86400;
 let privileges = "";
 
 this.kaltura.request(new SessionStartAction({secret, userId, type, partnerId, expiry, privileges}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

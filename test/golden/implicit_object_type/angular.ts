@@ -7,7 +7,7 @@ searchParams.searchOperator.searchItems[0].searchTerm = "asdf";
 let pager = new KalturaPager();
 
 this.kaltura.request(new ESearchSearchEntryAction({searchParams, pager}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

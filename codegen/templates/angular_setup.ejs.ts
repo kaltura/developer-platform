@@ -24,13 +24,17 @@ import {<%- objects[i] %>} from "kaltura-ngx-client/api/types/<%- objects[i] %>"
 })
 export class WidgetComponent {
   constructor(private kaltura:KalturaClient) {
+    this.kaltura.setOptions({
+      clientTag: 'sample-code',
+      endpointUrl: 'https://www.kaltura.com',
+    });
     this.kaltura.request(new SessionStartAction({
         secret: <%- codegen.constant(answers.secret) %>,
         userId: <%- codegen.constant(answers.userId) %>,
         type: <%- answers.sessionType === 0 ? 'KalturaSessionType.user' : 'KalturaSessionType.admin' %>,
         partnerId: <%- answers.partnerId || 'YOUR_PARTNER_ID' %>,
     }))
-	.map(ks => {
+	.subscribe(ks => {
 		  this.kaltura.setDefaultRequestOptions({ks});
           this.runRequest();
 		},

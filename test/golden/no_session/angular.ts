@@ -14,13 +14,17 @@ import {KalturaSessionType} from "kaltura-ngx-client/api/types/KalturaSessionTyp
 })
 export class WidgetComponent {
   constructor(private kaltura:KalturaClient) {
+    this.kaltura.setOptions({
+      clientTag: 'sample-code',
+      endpointUrl: 'https://www.kaltura.com',
+    });
     this.kaltura.request(new SessionStartAction({
         secret: "YOUR_KALTURA_SECRET",
         userId: "YOUR_USER_ID",
         type: KalturaSessionType.admin,
         partnerId: YOUR_PARTNER_ID,
     }))
-	.map(ks => {
+	.subscribe(ks => {
 		  this.kaltura.setDefaultRequestOptions({ks});
           this.runRequest();
 		},
@@ -39,7 +43,7 @@ export class WidgetComponent {
     let otp = "";
 
     this.kaltura.request(new UserLoginByLoginIdAction({loginId, password, partnerId, expiry, privileges, otp}))
-        .map(result => {
+        .subscribe(result => {
           console.log(result);
         },
         error => {

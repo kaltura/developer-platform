@@ -8,7 +8,7 @@ let pager = new KalturaFilterPager();
 pager.pageSize = 3;
 
 this.kaltura.request(new MediaListAction({filter, pager}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

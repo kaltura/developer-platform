@@ -1,7 +1,7 @@
 let accessControl = new KalturaAccessControl();
 
 this.kaltura.request(new AccessControlAddAction({accessControl}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

@@ -1,6 +1,6 @@
 <%- codegen.assignAllParameters(parameters, answers) -%>
 this.kaltura.request(new <%- service %><%- action %>Action({<%- parameterNames.join(', ') %>}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

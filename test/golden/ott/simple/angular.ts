@@ -1,7 +1,7 @@
 let id = "abc";
 
 this.kaltura.request(new AppTokenGetAction({id}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

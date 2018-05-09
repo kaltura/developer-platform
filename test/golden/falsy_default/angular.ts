@@ -4,7 +4,7 @@ let jobType = "";
 let resetExecutionAttempts = false;
 
 this.kaltura.request(new BatchFreeExclusiveJobAction({id, lockKey, jobType, resetExecutionAttempts}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

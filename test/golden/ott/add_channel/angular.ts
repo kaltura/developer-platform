@@ -3,7 +3,7 @@ channel.description = "foo";
 channel.isActive = true;
 
 this.kaltura.request(new ChannelAddAction({channel}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

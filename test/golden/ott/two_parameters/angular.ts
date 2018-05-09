@@ -6,7 +6,7 @@ pager.pageIndex = 3;
 pager.pageSize = 7;
 
 this.kaltura.request(new AssetHistoryListAction({filter, pager}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

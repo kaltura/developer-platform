@@ -1,5 +1,5 @@
 this.kaltura.request(new SessionEndAction({}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {

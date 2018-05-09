@@ -16,13 +16,17 @@ import {KalturaFilterPager} from "kaltura-ngx-client/api/types/KalturaFilterPage
 })
 export class WidgetComponent {
   constructor(private kaltura:KalturaClient) {
+    this.kaltura.setOptions({
+      clientTag: 'sample-code',
+      endpointUrl: 'https://www.kaltura.com',
+    });
     this.kaltura.request(new SessionStartAction({
         secret: "YOUR_KALTURA_SECRET",
         userId: "YOUR_USER_ID",
         type: KalturaSessionType.admin,
         partnerId: YOUR_PARTNER_ID,
     }))
-	.map(ks => {
+	.subscribe(ks => {
 		  this.kaltura.setDefaultRequestOptions({ks});
           this.runRequest();
 		},
@@ -37,7 +41,7 @@ export class WidgetComponent {
     let pager = new KalturaFilterPager();
 
     this.kaltura.request(new MetadataProfileListAction({filter, pager}))
-        .map(result => {
+        .subscribe(result => {
           console.log(result);
         },
         error => {

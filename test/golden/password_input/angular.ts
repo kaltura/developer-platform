@@ -6,7 +6,7 @@ let privileges = "*";
 let otp = "";
 
 this.kaltura.request(new UserLoginByLoginIdAction({loginId, password, partnerId, expiry, privileges, otp}))
-    .map(result => {
+    .subscribe(result => {
       console.log(result);
     },
     error => {
