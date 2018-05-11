@@ -16,7 +16,6 @@ window.lucybot.search = function(query, page, callback) {
     });
     (data.records.workflows || []).forEach(function(doc) {
       results.push({ref: doc.link, score: doc._score});
-      console.log('workflow', doc);
     });
     results.sort((r1, r2) => r1.score > r2.score ? -1 : 1);
     callback(null, results);
