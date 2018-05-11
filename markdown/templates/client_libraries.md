@@ -20,8 +20,8 @@ Please note, the client libraries provided here have been generated for version 
   width: 71px;
   height: 81px;
   overflow: hidden;
-  margin-top: 30px;
-  margin-right: 50px;
+  margin-top: 12px;
+  margin-right: 12px;
   display: inline-block;
   background-image: url(assets/img/client-libs.png);
   background-position: -70px;
@@ -42,7 +42,7 @@ Please note, the client libraries provided here have been generated for version 
 In programming languages that use package managers, Kaltura also provides
 client libraries as packages that can be installed via the respective package manager.
 
-[![NPM](https://nodei.co/npm/kaltura.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura/)
+[![NPM](https://nodei.co/npm/kaltura-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-client/)
 
 * PHP `composer require kaltura/api-client-library`
 * Ruby `gem install kaltura-client`
@@ -52,11 +52,18 @@ client libraries as packages that can be installed via the respective package ma
 ```xml
 <dependency>
   <groupId>com.kaltura</groupId>
-  <artifactId>kalturaClient</artifactId>
-  <version>3.2.1</version>
+  <artifactId>kalturaApiClient</artifactId>
+  <version>1.0.3</version>
 </dependency>
 ```
+
+* [Swift](http://cocoapods.org/pods/KalturaClient)
+
+```
+pod "KalturaClient"
+```
 <% } -%>
+
 
 ## Missing a Language?
 Tweet [@Kaltura_API pls add sdk for: [lang]](http://twitter.com/?status=@Kaltura_API%20pls%20add%20sdk%20for%3A%20%5Bprogramming_language%5D)
