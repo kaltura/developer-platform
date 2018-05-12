@@ -14,7 +14,7 @@ Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use t
 Please note, the client libraries provided here have been generated for version <%- version %> of the Kaltura OTT Platform API. Customers are encouraged to verify their platform API version and ensure the use of client libraries that match the version of their platform version for optimal compatibility. If you’re unsure which version to use, please contact your Kaltura Account Manager
 <% } -%>
 
-## Download Packages
+## Download Client Archives
 <style>
 .client-lib-link {
   width: 71px;
@@ -44,10 +44,11 @@ client libraries as packages that can be installed via the respective package ma
 
 [![NPM](https://nodei.co/npm/kaltura-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-client/)
 
-* PHP `composer require kaltura/api-client-library`
-* Ruby `gem install kaltura-client`
-* Python `pip install KalturaApiClient`
-* Java (via Maven)
+* [PHP](https://packagist.org/packages/kaltura/api-client-library) `composer require kaltura/api-client-library`
+* [Ruby](https://rubygems.org/gems/kaltura-client) `gem install kaltura-client`
+* [Python](https://pypi.python.org/pypi/KalturaApiClient) `pip install KalturaApiClient`
+* [Swift](http://cocoapods.org/pods/KalturaClient) `pod "KalturaClient"`
+* [Java](https://mvnrepository.com/artifact/com.kaltura/kalturaApiClient) (via Maven)
 
 ```xml
 <dependency>
@@ -55,12 +56,6 @@ client libraries as packages that can be installed via the respective package ma
   <artifactId>kalturaApiClient</artifactId>
   <version>1.0.3</version>
 </dependency>
-```
-
-* [Swift](http://cocoapods.org/pods/KalturaClient)
-
-```
-pod "KalturaClient"
 ```
 <% } -%>
 
