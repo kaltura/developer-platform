@@ -331,7 +331,7 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
     input.parameterNames = input.operation['x-kaltura-parameters'].map(n => this.rewriteVariable(n));
     this.gatherAnswersForPost(input);
   } else {
-    input.parameterNames = input.parameters.map(p => p.name).map(n => this.rewriteVariable(n));
+    input.parameterNames = input.operation.parameters.filter(p => !p.$ref).map(p => p.name).map(n => this.rewriteVariable(n));
     this.gatherAnswersForGet(input);
   }
 }

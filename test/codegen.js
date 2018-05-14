@@ -45,6 +45,15 @@ describe('Sample Code', function() {
       showSetup: false,
     }
   }, {
+    name: 'upload',
+    service: 'uploadtoken',
+    action: 'upload',
+    input: {
+      answers: {
+        uploadTokenId: 'abcde'
+      }
+    }
+  }, {
     name: 'no_session',
     service: 'user',
     action: 'loginByLoginId',
