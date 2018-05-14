@@ -35,6 +35,8 @@ Several options can be set using environment variables:
 * KALTURA_RECIPES_PORT
 * DISCOURSE_HOST
 * DISCOURSE_CATEGORY_ID
+* DISABLE_SWIFTYPE
+* ENABLE_HOMEPAGE
 
 #### Required in production
 * TARGET_API - either 'ott' or 'ovp'
