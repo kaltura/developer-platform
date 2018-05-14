@@ -45,6 +45,11 @@ if (TARGET_API === 'ott') {
   ].concat(config.javascript);
 }
 
+if (process.env.DISABLE_SWIFTYPE === 'true') {
+  config.javascript = config.javascript.filter(j => !j.endsWith('/search.js'));
+  console.log("FILTER", config.javascript);
+}
+
 let objectsItem = {title: 'General Objects', children: [], prerender: false};
 config.operationNavigation.push(objectsItem);
 objectsItem.children.push({
