@@ -163,6 +163,22 @@ $('input[name="fileData"]').fileupload({
       },
 });
 ```
+### Sample Code (angular)
+```typescript
+auto
+```
+### Sample Code (csharp)
+```csharp
+auto
+```
+### Sample Code (curl)
+```bash
+auto
+```
+### Sample Code (java)
+```java
+auto
+```
 ### Sample Code (node)
 ```javascript
 auto
@@ -171,8 +187,20 @@ auto
 ```php
 auto
 ```
+### Sample Code (php53)
+```php
+auto
+```
+### Sample Code (python)
+```py
+auto
+```
 ### Sample Code (ruby)
 ```ruby
+auto
+```
+### Sample Code (swift)
+```swift
 auto
 ```
 
