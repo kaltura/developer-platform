@@ -16,4 +16,6 @@ kaltura.services.session.start(
 <% } -%>
 })
 .execute(client);
+<% } else { -%>
+<%- code %>
 <% } -%>
