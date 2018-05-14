@@ -11,7 +11,7 @@ const LINKS = {
     baseURL: 'https://tvpapi-us-preprod.ott.kaltura.com/v4_1/clientlibs/',
   },
   ovp: {
-    genDate: '02-10-2017',
+    genDate: '26-04-2018',
     version: '3.3.0',
     baseURL: 'http://cdnbakmi.kaltura.com/content/clientlibs/',
   }
@@ -24,15 +24,16 @@ const CLIENT_LANGS = {
   php5: LINK.genDate,
   php53: LINK.genDate,
   php5Zend: LINK.genDate,
-  java: '22-03-2017',
+  java: LINK.genDate,
   csharp: LINK.genDate,
   ruby: LINK.genDate,
   python: LINK.genDate,
-  node: '22-03-2017',
-  ajax: '22-03-2017',
+  node: LINK.genDate,
+  ajax: LINK.genDate,
   cli: LINK.genDate,
   objc: LINK.genDate,
   android: LINK.genDate,
+  swift: LINK.genDate,
 };
 
 var idx=0;

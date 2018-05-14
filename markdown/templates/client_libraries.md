@@ -14,14 +14,14 @@ Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use t
 Please note, the client libraries provided here have been generated for version <%- version %> of the Kaltura OTT Platform API. Customers are encouraged to verify their platform API version and ensure the use of client libraries that match the version of their platform version for optimal compatibility. If you’re unsure which version to use, please contact your Kaltura Account Manager
 <% } -%>
 
-## Download Packages
+## Download Client Archives
 <style>
 .client-lib-link {
   width: 71px;
   height: 81px;
   overflow: hidden;
-  margin-top: 30px;
-  margin-right: 50px;
+  margin-top: 12px;
+  margin-right: 12px;
   display: inline-block;
   background-image: url(assets/img/client-libs.png);
   background-position: -70px;
@@ -42,21 +42,23 @@ Please note, the client libraries provided here have been generated for version 
 In programming languages that use package managers, Kaltura also provides
 client libraries as packages that can be installed via the respective package manager.
 
-[![NPM](https://nodei.co/npm/kaltura.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura/)
+[![NPM](https://nodei.co/npm/kaltura-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-client/)
 
-* PHP `composer require kaltura/api-client-library`
-* Ruby `gem install kaltura-client`
-* Python `pip install KalturaApiClient`
-* Java (via Maven)
+* [PHP](https://packagist.org/packages/kaltura/api-client-library) `composer require kaltura/api-client-library`
+* [Ruby](https://rubygems.org/gems/kaltura-client) `gem install kaltura-client`
+* [Python](https://pypi.python.org/pypi/KalturaApiClient) `pip install KalturaApiClient`
+* [Swift](http://cocoapods.org/pods/KalturaClient) `pod "KalturaClient"`
+* [Java](https://mvnrepository.com/artifact/com.kaltura/kalturaApiClient) (via Maven)
 
 ```xml
 <dependency>
   <groupId>com.kaltura</groupId>
-  <artifactId>kalturaClient</artifactId>
-  <version>3.2.1</version>
+  <artifactId>kalturaApiClient</artifactId>
+  <version>1.0.3</version>
 </dependency>
 ```
 <% } -%>
+
 
 ## Missing a Language?
 Tweet [@Kaltura_API pls add sdk for: [lang]](http://twitter.com/?status=@Kaltura_API%20pls%20add%20sdk%20for%3A%20%5Bprogramming_language%5D)
