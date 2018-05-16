@@ -12,6 +12,9 @@
   use Kaltura\Client\Type\<%- objects[i] %>;
 <%   } -%>
   use Kaltura\Client\ApiException;
+<% plugins.forEach(function(p) { -%>
+  $<%-p %>Plugin = <%- p.charAt(0).toUpperCase() + p.substring(1) %>Plugin::get($client);
+<% }) -%>
 
   // load zend framework 2
   require_once(dirname(__FILE__).'/ClassLoader/ClassLoader.php');
@@ -33,7 +36,11 @@
 <% } -%>
 <%- codegen.assignAllParameters(parameters, answers, 2) -%>
   try {
-    $result = $client-><%- service %>-><%- action %>(<%- parameterNames.join(', ') %>);
+<% if (plugins.length) { -%>
+    $result = $<%- plugins[0] %>Plugin-><%- service %>-><%- action %>(<%- parameterNames.join(', ') %>);
+<% } else { -%>
+    $result = $client->get<%- service.charAt(0).toUpperCase() + service.substring(1) %>Service()-><%- action %>(<%- parameterNames.join(', ') %>);
+<% } -%>
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();

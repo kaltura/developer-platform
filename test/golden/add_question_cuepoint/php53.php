@@ -4,7 +4,7 @@
   $cuePoint->question = "hello world";
 
   try {
-    $result = $client->getCuePointService()->add($cuePoint);
+    $result = $cuePointPlugin->cuePoint->add($cuePoint);
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();

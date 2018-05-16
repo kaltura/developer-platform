@@ -133,7 +133,6 @@ var language_opts = {
     objSuffix: '()',
     enumAccessor: '::',
     rewriteAction: addActionSuffixIfReserved,
-    rewriteService: s => 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()',
     rewriteVariable: s => '$' + s,
     rewriteEnum: removeKalturaPrefix,
     rewriteType: removeKalturaPrefix,

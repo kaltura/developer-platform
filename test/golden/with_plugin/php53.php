@@ -5,6 +5,7 @@
   use Kaltura\Client\Type\MetadataProfileFilter;
   use Kaltura\Client\Type\FilterPager;
   use Kaltura\Client\ApiException;
+  $metadataPlugin = MetadataPlugin::get($client);
 
   // load zend framework 2
   require_once(dirname(__FILE__).'/ClassLoader/ClassLoader.php');
@@ -25,7 +26,7 @@
   $pager = new FilterPager();
 
   try {
-    $result = $client->getMetadataProfileService()->listAction($filter, $pager);
+    $result = $metadataPlugin->metadataProfile->listAction($filter, $pager);
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();
