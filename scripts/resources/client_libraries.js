@@ -34,6 +34,7 @@ const CLIENT_LANGS = {
   objc: LINK.genDate,
   android: LINK.genDate,
   swift: LINK.genDate,
+  ngx: LINK.genDate,
 };
 
 var idx=0;
@@ -41,6 +42,7 @@ for (var cl in CLIENT_LANGS){
         if (CLIENT_LANGS.hasOwnProperty(cl)) {
 	    var link = LINK.baseURL + cl + '_' + CLIENT_LANGS[cl] + '.tar.gz';
 	    if (cl === 'node') cl = 'nodejs';
+	    if (cl === 'ngx') cl = 'angular';
 	    let offset = idx * -71;
 	    clientMD += `<a class="client-lib-link ${cl}" data-language="${cl}" href="${link}" style="background-position: ${offset}px"></a>`;
 	    idx++;

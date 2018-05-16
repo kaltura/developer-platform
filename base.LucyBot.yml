@@ -41,6 +41,9 @@ codegen:
       label: cURL
       highlight: bash
     - php
+    - id: php53
+      label: "PHP (namespaces)"
+      highlight: php
     - java
     - node
     - csharp
@@ -49,6 +52,10 @@ codegen:
     - id: ajax
       label: JavaScript
       highlight: javascript
+    - id: angular
+      label: AngularJS
+      highlight: javascript
+    - swift
     - html
 
 github:
