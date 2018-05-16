@@ -1,7 +1,7 @@
 MediaEntryFilter filter = new MediaEntryFilter();
 filter.setNameLike("foobar");
-filter.setStatusEqual(EntryStatus.READY);
-filter.setOrderBy(MediaEntryOrderBy.CREATED_AT_ASC);
+filter.setStatusEqual(EntryStatus.READY.getValue());
+filter.setOrderBy(MediaEntryOrderBy.CREATED_AT_ASC.getValue());
 filter.setAdvancedSearch(new AttributeCondition());
 filter.getAdvancedSearch().setValue("baz");
 FilterPager pager = new FilterPager();

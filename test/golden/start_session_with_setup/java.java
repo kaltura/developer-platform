@@ -18,7 +18,7 @@ class CodeExample {
         Client client = CodeExample.generateKalturaClient();
         String secret = "********************";
         String userId = "user@example.com";
-        SessionType type = SessionType.USER;
+        SessionType type = SessionType.USER.getValue();
         int partnerId = 123456;
         int expiry = 86400;
         String privileges = "";

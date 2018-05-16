@@ -201,7 +201,10 @@ var language_opts = {
       if (s === 'string') return 'String';
       if (s === 'integer') return 'int';
       return s;
-    }
+    },
+    rewriteEnumValue: function(type, name, value) {
+      return removeKalturaPrefix(type) + '.' + name + '.getValue()';
+    },
   },
   csharp: {
     ext: 'cs',
