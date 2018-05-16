@@ -2,10 +2,10 @@
   use Kaltura\Client\Configuration as KalturaConfiguration;
   use Kaltura\Client\Client as KalturaClient;
   use Kaltura\Client\Enum\SessionType;
-  use Kaltura\Client\Type\MetadataProfileFilter;
+  use Kaltura\Client\Plugin\Metadata\Type\MetadataProfileFilter;
   use Kaltura\Client\Type\FilterPager;
   use Kaltura\Client\ApiException;
-  $metadataPlugin = MetadataPlugin::get($client);
+  use Kaltura\Client\Plugin\MetadataPlugin;
 
   // load zend framework 2
   require_once(dirname(__FILE__).'/ClassLoader/ClassLoader.php');
@@ -22,6 +22,7 @@
       SessionType::ADMIN,
       "YOUR_PARTNER_ID");
   $client->setKS($ks);
+  $metadataPlugin = MetadataPlugin::get($client);
   $filter = new MetadataProfileFilter();
   $pager = new FilterPager();
 

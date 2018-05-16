@@ -1,4 +1,9 @@
 <?php
+<% var getImport = function(name, type) { -%>
+<%   var plugin = plugins.filter(function(p) { return name.toLowerCase().indexOf(p) === 0 }).pop() -%>
+<%   if (plugin) return "use Kaltura\\Client\\Plugin\\" + plugin.charAt(0).toUpperCase() + plugin.substring(1) + "\\" + type + "\\" + name + ";" -%>
+<%   return "use Kaltura\\Client\\" + type + "\\" + name + ";" -%>
+<% } -%>
 <% if (showSetup) { -%>
   use Kaltura\Client\Configuration as KalturaConfiguration;
   use Kaltura\Client\Client as KalturaClient;
@@ -6,14 +11,14 @@
   use Kaltura\Client\Enum\SessionType;
 <%   } -%>
 <%   for (var i = 0; i < enums.length; ++i) { -%>
-  use Kaltura\Client\Enum\<%- enums[i] %>;
+  <%- getImport(enums[i], 'Enum') %>
 <%   } -%>
 <%   for (var i = 0; i < objects.length; ++i) { -%>
-  use Kaltura\Client\Type\<%- objects[i] %>;
+  <%- getImport(objects[i], 'Type') %>
 <%   } -%>
   use Kaltura\Client\ApiException;
 <% plugins.forEach(function(p) { -%>
-  $<%-p %>Plugin = <%- p.charAt(0).toUpperCase() + p.substring(1) %>Plugin::get($client);
+  use Kaltura\Client\Plugin\<%- p.charAt(0).toUpperCase() + p.substring(1) %>Plugin;
 <% }) -%>
 
   // load zend framework 2
@@ -33,6 +38,9 @@
       <%- answers.partnerId || '"YOUR_PARTNER_ID"' %>);
   $client->setKS($ks);
 <%   } -%>
+<% plugins.forEach(function(p) { -%>
+  $<%-p %>Plugin = <%- p.charAt(0).toUpperCase() + p.substring(1) %>Plugin::get($client);
+<% }) -%>
 <% } -%>
 <%- codegen.assignAllParameters(parameters, answers, 2) -%>
   try {
