@@ -31,6 +31,7 @@
     "js-yaml": "^3.8.2",
     "jsonwebtoken": "^8.0.0",
     "kaltura": "file:lib/ott",
+    "kaltura-client": "^1.0.10",
     "pug": "^2.0.3",
     "request": "^2.79.0",
     "sass": "^1.2.1",

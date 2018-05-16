@@ -3,9 +3,7 @@ var Router = module.exports = require('express').Router();
 var Request = require('request');
 var jwt = require('jsonwebtoken');
 
-var kc = require('../lib/KalturaClient');
-var ktypes = require('../lib/KalturaTypes');
-var vo = require ('../lib/KalturaVO.js');
+var kaltura = require('kaltura-client');
 
 // Dummy credentials to initialize the client.
 var config = {
@@ -18,34 +16,56 @@ var config = {
 Router.use(require('body-parser').json());
 
 Router.post('/selectPartner', function(req, res) {
-  var kaltura_conf = new kc.KalturaConfiguration(req.body.partnerId);
-  var client = new kc.KalturaClient(kaltura_conf);
-  client.user.loginByLoginId(function(ks){
+  var kaltura_conf = new kaltura.Configuration(req.body.partnerId);
+  var client = new kaltura.Client(kaltura_conf);
+  kaltura.services.user.loginByLoginId(req.body.email, req.body.password, req.body.partnerId)
+  .execute(client).then(function(ks){
     if (!ks) return res.send("Error logging in");
     client.setKs(ks);
-    var type = ktypes.KalturaSessionType.ADMIN;
-    client.partner.getSecrets(function(secrets) {
+    var type = kaltura.enums.SessionType.ADMIN;
+    kaltura.services.partner.getSecrets(req.body.partnerId, req.body.email, req.body.password)
+    .execute(client).then(function(secrets) {
       if (!secrets) return res.status(500).end();
       if (secrets.code && secrets.message) return res.status(500).send(secrets.message);
       res.json(secrets);
-    }, req.body.partnerId, req.body.email, req.body.password);
+    }).catch(e => res.status(500).end());
   })
 })
 
 Router.post('/login', function(req, res) {
-  var kaltura_conf = new kc.KalturaConfiguration(req.body.partnerId);
-  var client = new kc.KalturaClient(kaltura_conf);
-  var type = ktypes.KalturaSessionType.ADMIN;
-  client.user.loginByLoginId(function(ks) {
+  var kaltura_conf = new kaltura.Configuration(req.body.partnerId);
+  var client = new kaltura.Client(kaltura_conf);
+  var type = kaltura.enums.SessionType.ADMIN;
+  kaltura.services.user.loginByLoginId(req.body.email, req.body.password, req.body.partnerId)
+  .execute(client).then(function(ks) {
     if (!ks) return res.send("Error logging in");
     client.setKs(ks);
-    var pager = new vo.KalturaFilterPager();
+    var pager = new kaltura.objects.FilterPager();
     pager.pageSize = 500;
     pager.pageIndex = 1;
-    client.partner.listPartnersForUser(function(partners) {
+    kaltura.services.partner.listPartnersForUser(null, pager)
+    .execute(client).then(function(partners) {
       res.json(partners.objects);
-    },null,pager)
-  }, req.body.email, req.body.password)
+    }).catch(e => res.status(500).end());
+  }).catch(e => res.status(500).end());
+});
+
+Router.post('/loginByKs', function(req, res) {
+  var kaltura_conf = new kaltura.Configuration(req.body.partnerId);
+  var client = new kaltura.Client(kaltura_conf);
+  var type = kaltura.enums.SessionType.ADMIN;
+  client.setKs(req.body.ks);
+  kaltura.services.user.loginByKs(req.body.partnerId)
+  .execute(client).then(function(result) {
+    client.setKs(result.ks);
+    var pager = new kaltura.objects.FilterPager();
+    pager.pageSize = 500;
+    pager.pageIndex = 1;
+    kaltura.services.partner.listPartnersForUser(null, pager)
+    .execute(client).then(function(partners) {
+      res.json(partners.objects);
+    }).catch(e => res.status(500).end());
+  }).catch(e => res.status(500).end());
 })
 
 var COPY_FIELDS = [
@@ -62,15 +82,16 @@ Router.post('/shatest', function(req, res) {
 })
 
 Router.post('/signup', function(req, res) {
-  var kaltura_conf = new kc.KalturaConfiguration(config.partner_id);
+  var kaltura_conf = new kaltura.Configuration(config.partnerId);
   kaltura_conf.serviceUrl = config.service_url;
-  var client = new kc.KalturaClient(kaltura_conf);
-  var type = ktypes.KalturaSessionType.ADMIN;
+  var client = new kaltura.Client(kaltura_conf);
+  var type = kaltura.enums.SessionType.ADMIN;
 
   var expiry = null;
   var privileges = null;
-  client.session.start(function(ks) {
-    var partner = new vo.KalturaPartner();
+  kaltura.services.session.start(config.admin_secret, config.user_id, type, config.partner_id, expiry, privileges)
+  .execute(client).then(function(ks) {
+    var partner = new kaltura.objects.Partner();
     COPY_FIELDS.forEach(function(f) {
       if (req.body[f]) partner[f] = req.body[f];
     });
@@ -87,12 +108,13 @@ Router.post('/signup', function(req, res) {
     }
     var template_partner_id = null;
     var silent = null;
-    client.partner.register(function(results) {
+    kaltura.services.partner.register(partner, cms_password, template_partner_id, silent)
+    .execute(client).then(function(results) {
       if (!results) return res.status(500).end();
       if (results.code && results.message) return res.status(500).send(results.message);
       res.json(results);
-    }, partner, cms_password, template_partner_id, silent);
-  }, config.admin_secret, config.user_id, type, config.partner_id, expiry, privileges);
+    }).catch(e => res.status(500).end());
+  }).catch(e => res.status(500).end());
 
   if (process.env.SSO_SYNC_URL && process.env.KALTURA_SSO_SECRET && process.env.KALTURA_SSO_PAYLOAD) {
     delete req.body.usage;
