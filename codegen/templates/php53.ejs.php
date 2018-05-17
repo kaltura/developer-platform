@@ -18,10 +18,9 @@
 <%   } -%>
   use Kaltura\Client\ApiException;
 <% plugins.forEach(function(p) { -%>
-  use Kaltura\Client\Plugin\<%- p.charAt(0).toUpperCase() + p.substring(1) %>Plugin;
+  use Kaltura\Client\Plugin\<%- p.charAt(0).toUpperCase() + p.substring(1) %>\<%- p.charAt(0).toUpperCase() + p.substring(1) %>Plugin;
 <% }) -%>
 
-  // load zend framework 2
   require_once(dirname(__FILE__).'/ClassLoader/ClassLoader.php');
   $loader = new Symfony\Component\ClassLoader\ClassLoader();
   $loader->addPrefix('Kaltura', dirname(__FILE__).'/php53/library');
