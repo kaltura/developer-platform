@@ -1,6 +1,6 @@
 <?php
   $uploadTokenId = "";
-  $fileData = null;
+  $fileData = "/path/to/file";
   $resume = false;
   $finalChunk = true;
   $resumeAt = -1;

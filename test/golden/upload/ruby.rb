@@ -1,6 +1,6 @@
 
 upload_token_id = ""
-file_data = null
+file_data = File.open("/path/to/file")
 resume = false
 final_chunk = true
 resume_at = -1

@@ -50,7 +50,8 @@ describe('Sample Code', function() {
     action: 'upload',
     input: {
       answers: {
-        uploadTokenId: 'abcde'
+        uploadTokenId: 'abcde',
+        fileData: "foobar",
       }
     }
   }, {

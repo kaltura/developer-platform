@@ -72,6 +72,7 @@ var language_opts = {
     objPrefix: 'new ',
     objSuffix: '()',
     rewriteAction: addActionSuffixIfReserved,
+    fileCode: () => 'new File("/path/to/file")'
   },
   ajax: {
     ext: 'js',
@@ -100,6 +101,7 @@ var language_opts = {
     rewriteAction: addActionSuffixIfReserved,
     rewriteEnum: removeKalturaPrefix,
     rewriteType: removeKalturaPrefix,
+    fileCode: () => "'/path/to/file'",
   },
   angular: {
     ext: 'ts',
@@ -124,6 +126,7 @@ var language_opts = {
     enumAccessor: '::',
     rewriteAction: addActionSuffixIfReserved,
     rewriteVariable: s => '$' + s,
+    fileCode: () => '"/path/to/file"',
   },
   php53: {
     ext: 'php',
@@ -136,6 +139,7 @@ var language_opts = {
     rewriteVariable: s => '$' + s,
     rewriteEnum: removeKalturaPrefix,
     rewriteType: removeKalturaPrefix,
+    fileCode: () => '"/path/to/file"',
   },
   swift: {
     ext: 'swift',
@@ -166,7 +170,8 @@ var language_opts = {
     },
     rewriteService: function(s) {
       return camelCaseToUnderscore(s) + '_service';
-    }
+    },
+    fileCode: () => 'File.open("/path/to/file")',
   },
   java: {
     ext: 'java',
@@ -227,7 +232,8 @@ var language_opts = {
       if (s.indexOf('Kaltura') === 0) return s.substring('Kaltura'.length);
       if (s === 'integer') return 'int';
       return s;
-    }
+    },
+    fileCode: () => 'new FileStream("/path/to/file", FileMode.Open, FileAccess.Read)'
   },
   python: {
     ext: 'py',
@@ -247,7 +253,8 @@ var language_opts = {
       let pieces = id.split('_');
       if (pieces.length === 1) return name;
       return pieces[0] + '.' + name;
-    }
+    },
+    fileCode: () => "open('/path/to/file', 'r')",
   },
 }
 
@@ -560,6 +567,7 @@ CodeTemplate.prototype.lvalue = function(param) {
 }
 
 CodeTemplate.prototype.rvalue = function(param, answers, parent) {
+  if (param.schema.type === 'file' && this.fileCode) return this.fileCode();
   var self = this;
   let enm = param.schema.enum;
   let enumLabels = param.schema['x-enumLabels'];

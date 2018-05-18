@@ -1,5 +1,5 @@
 string uploadTokenId = "";
-file fileData = null;
+file fileData = new FileStream("/path/to/file", FileMode.Open, FileAccess.Read);
 boolean resume = false;
 boolean finalChunk = true;
 number resumeAt = -1;

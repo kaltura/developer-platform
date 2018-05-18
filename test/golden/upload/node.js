@@ -1,5 +1,5 @@
 let uploadTokenId = "";
-let fileData = null;
+let fileData = '/path/to/file';
 let resume = false;
 let finalChunk = true;
 let resumeAt = -1;

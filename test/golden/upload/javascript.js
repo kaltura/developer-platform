@@ -1,5 +1,5 @@
 var uploadTokenId = "";
-var fileData = null;
+var fileData = new File("/path/to/file");
 var resume = false;
 var finalChunk = true;
 var resumeAt = -1;

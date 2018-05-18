@@ -1,6 +1,6 @@
 
 uploadTokenId = ""
-fileData = null
+fileData = open('/path/to/file', 'r')
 resume = False
 finalChunk = True
 resumeAt = -1
