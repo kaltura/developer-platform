@@ -396,6 +396,10 @@ operationNavigation:
         markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Categories-Management.html
         path: "/Secure_Control_and_Govern/Content-Categories-Management.html"
         discussionURL: null
+        seeAlso:
+          - operation: "category.add"
+          - operation: "categoryEntry.add"
+          - operation: "categoryEntry.delete"
 
       - title: "Content Entitlements and Privacy Enforcement"
         markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html
@@ -501,8 +505,6 @@ operationNavigation:
         path: "/Contribute/Article-Style-Structure-Guidelines.html"
         discussionURL: null
 
-
-
 workflowNavigation:
   - title: Generate API Sessions
     icon: assets/img/icons/administrative.png
@@ -512,7 +514,7 @@ workflowNavigation:
   - title: Secure, Control and Govern
     icon: users
     children:
-      - workflow: group_management 
+      - workflow: group_management
   - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
     workflow: upload
