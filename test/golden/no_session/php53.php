@@ -4,7 +4,6 @@
   use Kaltura\Client\Enum\SessionType;
   use Kaltura\Client\ApiException;
 
-  // load zend framework 2
   require_once(dirname(__FILE__).'/ClassLoader/ClassLoader.php');
   $loader = new Symfony\Component\ClassLoader\ClassLoader();
   $loader->addPrefix('Kaltura', dirname(__FILE__).'/php53/library');

@@ -5,9 +5,8 @@
   use Kaltura\Client\Plugin\Metadata\Type\MetadataProfileFilter;
   use Kaltura\Client\Type\FilterPager;
   use Kaltura\Client\ApiException;
-  use Kaltura\Client\Plugin\MetadataPlugin;
+  use Kaltura\Client\Plugin\Metadata\MetadataPlugin;
 
-  // load zend framework 2
   require_once(dirname(__FILE__).'/ClassLoader/ClassLoader.php');
   $loader = new Symfony\Component\ClassLoader\ClassLoader();
   $loader->addPrefix('Kaltura', dirname(__FILE__).'/php53/library');
