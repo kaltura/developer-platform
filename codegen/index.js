@@ -205,11 +205,13 @@ var language_opts = {
       s = removeKalturaPrefix(s);
       if (s === 'string') return 'String';
       if (s === 'integer') return 'int';
+      if (s === 'file') return 'File';
       return s;
     },
     rewriteEnumValue: function(type, name, value) {
       return removeKalturaPrefix(type) + '.' + name + '.getValue()';
     },
+    fileCode: () => 'new FileInputStream("/path/to/file")',
   },
   csharp: {
     ext: 'cs',

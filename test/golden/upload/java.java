@@ -1,5 +1,5 @@
 String uploadTokenId = "";
-file fileData = null;
+File fileData = new FileInputStream("/path/to/file");
 boolean resume = false;
 boolean finalChunk = true;
 number resumeAt = -1;
