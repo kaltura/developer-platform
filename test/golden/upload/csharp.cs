@@ -1,4 +1,4 @@
-string uploadTokenId = "";
+string uploadTokenId = "abcde";
 file fileData = new FileStream("/path/to/file", FileMode.Open, FileAccess.Read);
 boolean resume = false;
 boolean finalChunk = true;

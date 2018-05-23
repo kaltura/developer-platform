@@ -1,4 +1,4 @@
-let uploadTokenId = "";
+let uploadTokenId = "abcde";
 let fileData = '/path/to/file';
 let resume = false;
 let finalChunk = true;

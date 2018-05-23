@@ -1,4 +1,4 @@
-String uploadTokenId = "";
+String uploadTokenId = "abcde";
 File fileData = new FileInputStream("/path/to/file");
 boolean resume = false;
 boolean finalChunk = true;

@@ -1,5 +1,5 @@
 
-upload_token_id = ""
+upload_token_id = "abcde"
 file_data = File.open("/path/to/file")
 resume = false
 final_chunk = true

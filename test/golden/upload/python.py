@@ -1,5 +1,5 @@
 
-uploadTokenId = ""
+uploadTokenId = "abcde"
 fileData = open('/path/to/file', 'r')
 resume = False
 finalChunk = True

@@ -1,4 +1,4 @@
-var uploadTokenId = "";
+var uploadTokenId = "abcde";
 var fileData = new File("/path/to/file");
 var resume = false;
 var finalChunk = true;

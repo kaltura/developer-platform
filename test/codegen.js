@@ -204,6 +204,9 @@ describe('Sample Code', function() {
   if (CONVERT_TEST_CASES_TO_POST) {
     testCases.forEach(testCase => {
       if (testCase.name === 'unknown_parameter') return;
+      let ops = swagger.paths['/service/' + testCase.service + '/action/' + testCase.action];
+      let op = ops.post || ops.get;
+      if (op['x-kaltura-format'] !== 'post') return;
       let body = {};
       for (let key in testCase.input.answers) {
         let parts = key.split(/\]?\[/).map(s => s.replace(']', ''));

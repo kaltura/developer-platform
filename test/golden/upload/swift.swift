@@ -1,5 +1,5 @@
-var uploadTokenId = ""
-var fileData = null
+var uploadTokenId = "abcde"
+var fileData = "foobar"
 var resume = false
 var finalChunk = true
 var resumeAt = -1

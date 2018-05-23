@@ -1,5 +1,5 @@
 <?php
-  $uploadTokenId = "";
+  $uploadTokenId = "abcde";
   $fileData = "/path/to/file";
   $resume = false;
   $finalChunk = true;
