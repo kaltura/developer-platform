@@ -336,13 +336,12 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   if (tag['x-plugin']) {
     input.plugins.push(tag['x-plugin']);
   }
+  input.parameterNames = input.operation['x-kaltura-parameters'].map(n => this.rewriteVariable(n));
   input.parameters = [];
   let opType = input.operation['x-kaltura-format'] || 'post';
   if (opType === 'post') {
-    input.parameterNames = input.operation['x-kaltura-parameters'].map(n => this.rewriteVariable(n));
     this.gatherAnswersForPost(input);
   } else {
-    input.parameterNames = input.operation.parameters.filter(p => !p.$ref).map(p => p.name).map(n => this.rewriteVariable(n));
     this.gatherAnswersForGet(input);
   }
 }
