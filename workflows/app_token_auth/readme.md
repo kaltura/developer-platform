@@ -21,7 +21,6 @@ Do not set a KS on the client before making this call.
 {
   "method": "post",
   "path": "/service/session/action/startWidgetSession",
-  "disableSetupCode": true,
   "parameters": [
     {
       "name": "body",
@@ -152,7 +151,6 @@ You are now ready to make other API calls!
 {
   "method": "post",
   "path": "/service/apptoken/action/startSession",
-  "disableSetupCode": true,
   "parameters": [
     {
       "name": "ks",
