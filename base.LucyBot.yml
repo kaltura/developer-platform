@@ -11,6 +11,12 @@ uiOptions:
     deprecated: |
       This API action has been deprecated. If you’re building a new app integration,
       please consult the usage guides or forums for the more recent API actions to use.
+    console: |
+      This is the interactive Kaltura API Console. Here you can experiment and play with our API, as well as
+      get tested code examples for using the Kaltura Video API in native programming languages using the Kaltura API Client Libraries and Video SDKs.
+
+      To get started, please log in to your Kaltura account (or [sign up for a new account](https://vpaas.kaltura.com/register)),
+      click on an API action on the left menu, fill the fields and click the "execute" button to get a real response from the Kaltura service.
 
 
 embedParameters:
