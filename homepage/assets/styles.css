@@ -8681,10 +8681,13 @@ hr.separator {
 
 .welcome-page {
   padding-bottom: 0px;
+  background-color: #00A9CB;
 }
-.welcome-page div.welcome-background {
+.welcome-page iframe.welcome-video {
   height: 500px;
-  background-image: url("/homepage/assets/background.jpg");
+  width: 100%;
+  margin-top: 6px;
+  border: none;
 }
 .welcome-page .welcome {
   padding: 50px;

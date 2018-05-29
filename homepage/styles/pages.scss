@@ -1,9 +1,13 @@
 .welcome-page {
   padding-bottom: 0px;
+  background-color: theme-color('primary');
 
-  div.welcome-background {
+  iframe.welcome-video {
     height: 500px;
-    background-image: url('/homepage/assets/background.jpg');
+    width: 100%;
+    margin-top: 6px;
+    border: none;
+    border-top: 1px solid #ccc;
   }
 
   .welcome {
