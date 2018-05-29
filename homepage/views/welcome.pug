@@ -1,4 +1,18 @@
-iframe.welcome-video(src="https://cdnapisec.kaltura.com/p/811441/embedPlaykitJs/uiconf_id/42651182?iframeembed=true&entry_id=0_cm8rhiwp")
+.responsive-video
+  #kaltura-player.welcome-video.video-player.video-bg-white(src="https://cdnapisec.kaltura.com/p/811441/embedPlaykitJs/uiconf_id/42651182?iframeembed=true&entry_id=0_cm8rhiwp")
+script.
+  var kalturaPlayer = KalturaPlayer.setup({
+  targetId: "kaltura-player",
+    provider: {
+      partnerId: 811441,
+      uiConfId: 42685191
+    },
+    playback: {
+      autoplay: true
+    }
+  });
+  kalturaPlayer.loadMedia({entryId: '0_cm8rhiwp'});
+
 div.welcome.text-center.bg-primary
   h2 Everything video. Built by you.
   p.subtitle

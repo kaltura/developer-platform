@@ -8683,11 +8683,25 @@ hr.separator {
   padding-bottom: 0px;
   background-color: #00A9CB;
 }
-.welcome-page iframe.welcome-video {
-  height: 500px;
+.welcome-page .responsive-video {
+  position: relative;
+  padding-bottom: 54.24%;
+}
+.welcome-page .video-player {
   width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.welcome-page .video-bg-white .playkit-video-player,
+.welcome-page .video-bg-white .kaltura-player-container,
+.welcome-page .video-bg-white .playkit-player,
+.welcome-page .video-bg-white .playkit-pre-playback-play-overlay,
+.welcome-page .video-bg-white .playkit-loading-backdrop {
+  background: white !important;
+}
+.welcome-page .welcome-video {
   margin-top: 6px;
-  border: none;
+  border-top: 1px solid #ccc;
 }
 .welcome-page .welcome {
   padding: 50px;

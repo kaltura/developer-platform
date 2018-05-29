@@ -2,11 +2,25 @@
   padding-bottom: 0px;
   background-color: theme-color('primary');
 
-  iframe.welcome-video {
-    height: 500px;
-    width: 100%;
+  .responsive-video {
+    position:relative;
+    padding-bottom:54.24%;
+  }
+  .video-player {
+    width:100%;
+    height:100%;
+    position:absolute;
+  }
+  .video-bg-white .playkit-video-player,
+  .video-bg-white .kaltura-player-container,
+  .video-bg-white .playkit-player,
+  .video-bg-white .playkit-pre-playback-play-overlay,
+  .video-bg-white .playkit-loading-backdrop {
+    background: white !important;
+  }
+
+  .welcome-video {
     margin-top: 6px;
-    border: none;
     border-top: 1px solid #ccc;
   }
 
