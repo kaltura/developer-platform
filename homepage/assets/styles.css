@@ -8785,30 +8785,30 @@ hr.separator {
   background: none !important;
   padding: 0;
 }
-.code-page .code-description {
+.code-page .code-details {
   padding-top: 30px;
   text-align: center;
 }
-.code-page .code-description h4 {
+.code-page .code-details h4 {
   font-family: "Soho", sans-serif;
   font-style: italic;
   font-weight: bold;
   font-size: 20px;
 }
-.code-page .code-description .btn-default {
+.code-page .code-details .btn-default {
   border-color: #00A9CB;
   color: #00A9CB;
   padding: 18px 31px;
 }
-.code-page .code-description .btn-default:hover {
+.code-page .code-details .btn-default:hover {
   background-color: #00A9CB;
   color: #fff;
 }
-.code-page .code-description .console-link {
+.code-page .code-details .console-link {
   text-transform: none;
   cursor: pointer;
 }
-.code-page .code-description .console-link .fa {
+.code-page .code-details .console-link .fa {
   color: #00A9CB;
 }
 .code-page .nav-item.extra {
@@ -8824,7 +8824,7 @@ hr.separator {
   .code-page .nav-item.dropdown {
     display: none;
   }
-  .code-page .code-description {
+  .code-page .code-details {
     text-align: left;
     padding-top: 80px;
     padding-left: 40px;

@@ -11,7 +11,6 @@ h3.section-title
               span=label
         ul.nav.nav-tabs.nav-justified
           +code-link('php', 'PHP')
-          +code-link('ajax', 'JS')
           +code-link('java', 'Java')
           +code-link('python', 'Python')
           +code-link('node', 'Node', true)
@@ -26,30 +25,17 @@ h3.section-title
               a.dropdown-item(onclick="setCode('ruby')") Ruby
         pre
           code.hljs.php
-            include ../assets/code/php.html
-          code.hljs.ajax.javascript
-            include ../assets/code/ajax.html
           code.hljs.java
-            include ../assets/code/java.html
           code.hljs.python
-            include ../assets/code/python.html
           code.hljs.node.javascript
-            include ../assets/code/node.html
           code.hljs.csharp.cs
-            include ../assets/code/csharp.html
           code.hljs.ruby
-            include ../assets/code/ruby.html
     .col.col.xs-12.col-lg-6
-      .code-description
-        h4 Upload and ingest media with ease
-        p.
-          Uploading videos to Kaltura using the API is super simple.
-          Videos can be located on disk, or be specified as an HTML
-          file input. Our jQuery upload widget provides a chunked
-          upload with pause and resume functionality and optimization
-          for file chunk size.
+      .code-details
+        h4.title
+        p.description
         p
-          a.btn.btn-default(onclick="setCode()")
+          a.btn.btn-default(onclick="nextCodeSection()")
             span Show me another example
         p
           a.console-link(href="/console")
