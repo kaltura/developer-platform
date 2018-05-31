@@ -1,3 +1,22 @@
+@font-face {
+  font-family: Soho;
+  src: url("/homepage/assets/fonts/Monotype - Soho Gothic Pro Bold Italic.ttf");
+  font-style: italic;
+  font-weight: bold;
+}
+@font-face {
+  font-family: Soho;
+  src: url("/homepage/assets/fonts/Monotype - Soho Gothic Pro ExtraBold It.ttf");
+  font-style: italic;
+  font-weight: 800;
+}
+@font-face {
+  font-family: Soho;
+  src: url("/homepage/assets/fonts/SohoGothicPro-LightItalic.otf");
+  font-style: italic;
+  font-weight: 300;
+}
+
 h1.breadcrumbs {
     font-size: 18px;
     margin-top: 22px;
