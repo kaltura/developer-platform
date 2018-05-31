@@ -250,11 +250,6 @@ sitemap: false
   border-bottom: 1px none #ccc;
 }
 
-.container.footer-container {
-  padding-bottom: 40px;
-  border-bottom: 1px solid #ccc;
-}
-
 .container.tabs-container {
   margin-top: -78px;
 }
@@ -574,30 +569,6 @@ sitemap: false
   padding-left: 30px;
 }
 
-.footer-section {
-  padding-top: 70px;
-  padding-bottom: 70px;
-  background-color: #333;
-}
-
-.footer-headings {
-  font-family: proxima-nova, sans-serif;
-  color: #e7e7e7;
-}
-
-.footer-headings.footer-heading-margin {
-  margin-top: 44px;
-}
-
-.footer-links {
-  display: block;
-  margin-bottom: 12px;
-  font-family: proxima-nova, sans-serif;
-  color: #ccc;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-}
-
 .header-headings {
   display: inline-block;
   padding: 15px;
@@ -641,53 +612,6 @@ sitemap: false
 
 .body-columns {
   margin-bottom: 70px;
-}
-
-.social-div {
-  display: inline-block;
-  margin-top: 26px;
-  margin-right: 38px;
-}
-
-.social-div.fa.fa-linkedin.fa-2x {
-  float: left;
-  color: #ccc;
-}
-
-.social-div.fa.fa-twitter.fa-2x {
-  color: #ccc;
-}
-
-.social-div.fa-github.fa.fa-2x {
-  color: #ccc;
-}
-
-.social-div.fa-stack-overflow.fa.fa-2x {
-  color: #ccc;
-}
-
-.footer-copyright {
-  font-family: proxima-nova, sans-serif;
-  color: #ccc;
-  font-weight: 700;
-}
-
-.footer-copyright-description {
-  font-family: proxima-nova, sans-serif;
-  color: #ccc;
-  line-height: 23px;
-}
-
-.sub-footer-links {
-  margin-top: 33px;
-  margin-right: 0px;
-  margin-left: 26px;
-  float: right;
-  font-family: proxima-nova, sans-serif;
-  color: #ccc;
-  letter-spacing: 1.1px;
-  text-decoration: none;
-  text-transform: none;
 }
 
 .copyright-container {
@@ -2912,9 +2836,6 @@ blockquote.recipes-ref-list ul li {
   .nav-container {
     border-left: 1px none #000;
   }
-  .sub-footer-links {
-    margin-top: 0px;
-  }
   .nav-menu-wrapper {
     padding-left: 0px;
     background-color: #fff;
@@ -3139,16 +3060,6 @@ blockquote.recipes-ref-list ul li {
   border: 1px dashed #ccc;
 }
 
-  .footer-section {
-    padding-right: 17px;
-    padding-left: 17px;
-  }
-  .footer-headings {
-    text-align: left;
-  }
-  .footer-links {
-    text-align: left;
-  }
   .header-headings {
     margin-right: 32px;
     margin-left: 32px;
@@ -3161,18 +3072,6 @@ blockquote.recipes-ref-list ul li {
     padding-right: 30px;
     padding-left: 30px;
   }
-  .social-div.fa.fa-linkedin.fa-2x {
-    display: inline-block;
-    float: none;
-  }
-  .sub-footer-links {
-    margin-right: 38px;
-    margin-left: 0px;
-    float: none;
-  }
-  .footer-links-columns {
-    margin-bottom: 29px;
-  }
   .social-icon-container {
     position: static;
     display: block;
@@ -3181,9 +3080,6 @@ blockquote.recipes-ref-list ul li {
     margin-left: auto;
     clear: none;
     text-align: center;
-  }
-  .footer-last-links-column {
-    margin-top: 36px;
   }
   .sidenav-headings.grp-1-heading {
     margin-top: 0px;
@@ -3435,20 +3331,6 @@ blockquote.recipes-ref-list ul li {
     text-align: center;
   }
   .header-body {
-    text-align: center;
-  }
-  .social-div.fa-stack-overflow.fa.fa-2x {
-    margin-right: 38px;
-  }
-  .sub-footer-links {
-    margin-right: 30px;
-    margin-left: 0px;
-  }
-  .footer-last-links-column {
-    display: block;
-    margin-top: 33px;
-    margin-right: auto;
-    margin-left: auto;
     text-align: center;
   }
   .nav-menu-wrapper {

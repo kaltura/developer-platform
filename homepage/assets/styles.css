@@ -9114,6 +9114,10 @@ hr.separator {
   background-color: #131313;
   color: #777;
   padding-top: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6 {
+  font-family: "Source Sans Pro", sans-serif;
 }
 .footer .container {
   padding: 0px;
@@ -9132,6 +9136,7 @@ hr.separator {
   font-weight: bold;
   font-size: 14px;
   text-transform: uppercase;
+  color: #fff;
 }
 .footer h5 i.fa {
   display: none;
@@ -9174,7 +9179,7 @@ hr.separator {
 .footer .copyright-container div {
   display: inline;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 767px) {
   .footer .container, .footer .row {
     margin: 0;
     max-width: 1000px;
@@ -9190,10 +9195,12 @@ hr.separator {
   .footer .footer-links-columns {
     border-bottom: 1px solid #777;
   }
-  .footer .footer-last-links-column .collapse.show, .footer .footer-last-links-column .collapsing,
+  .footer .footer-last-links-column .collapse.show, .footer .footer-last-links-column .collapse.in, .footer .footer-last-links-column .collapsing,
 .footer .social-icon-container .collapse.show,
+.footer .social-icon-container .collapse.in,
 .footer .social-icon-container .collapsing,
 .footer .footer-links-columns .collapse.show,
+.footer .footer-links-columns .collapse.in,
 .footer .footer-links-columns .collapsing {
     margin-top: 15px;
   }

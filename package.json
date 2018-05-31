@@ -5,7 +5,7 @@
   "homepage": "https://github.com/kaltura/developer-platform#readme",
   "scripts": {
     "test": "mocha",
-    "build-homepage": "sass ./homepage/styles/styles.scss ./homepage/assets/styles.css",
+    "build-homepage": "sass ./homepage/styles/styles.scss ./homepage/assets/styles.css && sass ./homepage/styles/footer.scss ./styles/footer.css",
     "watch": "run-when-changed --watch './homepage/styles/*' --exec 'npm run build-homepage'"
   },
   "watch": {

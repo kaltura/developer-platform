@@ -1,9 +1,15 @@
 $off-white: #777;
 
+
 .footer {
   background-color: #131313;
   color: $off-white;
   padding-top: 10px;
+  font-family: "Source Sans Pro", sans-serif;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Source Sans Pro", sans-serif;
+  }
 
   .container {
     padding: 0px;
@@ -22,6 +28,7 @@ $off-white: #777;
       font-weight: bold;
       font-size: 14px;
       text-transform: uppercase;
+      color: #fff;
     }
     i.fa {
       display: none;
@@ -70,7 +77,7 @@ $off-white: #777;
       display: inline;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @media (max-width: 767px) {
     .container, .row {
       margin: 0;
       max-width: 1000px;
@@ -89,7 +96,7 @@ $off-white: #777;
     .footer-last-links-column,
     .social-icon-container,
     .footer-links-columns {
-      .collapse.show, .collapsing {
+      .collapse.show, .collapse.in, .collapsing {
         margin-top: 15px;
       }
       .secondary-links {
