@@ -3,8 +3,9 @@ var captionAsset = CaptionAsset()
 captionAsset.tags = "stuff"
 captionAsset.language = "Arabic"
 
-var requestBuilder = CaptionAssetService.add(entryId: entryId, captionAsset: captionAsset)
+let requestBuilder = CaptionAssetService.add(entryId: entryId, captionAsset: captionAsset)
 requestBuilder.set(completion: {(result: CaptionAsset?, error: ApiException?) in
-  print(result)
+	print(result!)
+	done()
 })
-executor.send(request: requestBuilder.build(client!))
+executor.send(request: requestBuilder.build(client))

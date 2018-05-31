@@ -1,5 +1,6 @@
-var requestBuilder = SessionService.end()
+let requestBuilder = SessionService.end()
 requestBuilder.set(completion: {(result: ?, error: ApiException?) in
-  print(result)
+	print(result!)
+	done()
 })
-executor.send(request: requestBuilder.build(client!))
+executor.send(request: requestBuilder.build(client))

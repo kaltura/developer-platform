@@ -2,8 +2,9 @@ var cuePoint = QuestionCuePoint()
 cuePoint.entryId = "0_mej0it92"
 cuePoint.question = "hello world"
 
-var requestBuilder = CuePointService.add(cuePoint: cuePoint)
+let requestBuilder = CuePointService.add(cuePoint: cuePoint)
 requestBuilder.set(completion: {(result: CuePoint?, error: ApiException?) in
-  print(result)
+	print(result!)
+	done()
 })
-executor.send(request: requestBuilder.build(client!))
+executor.send(request: requestBuilder.build(client))
