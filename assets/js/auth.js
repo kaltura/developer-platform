@@ -213,6 +213,7 @@
 
   window.setKalturaPartnerID = function(id) {
     user.partnerId = id;
+    window.jquery('#KalturaPartnerIDDropdown a.dropdown-toggle').html('<i class="fa fa-spin fa-refresh"></i>');
     window.jquery('#KalturaPartnerIDModal .kaltura-loading').show();
     window.jquery.ajax({
       url: '/auth/selectPartner',
