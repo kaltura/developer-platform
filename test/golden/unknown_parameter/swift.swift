@@ -1,7 +1,8 @@
 var accessControl = AccessControl()
 
-var requestBuilder = AccessControlService.add(accessControl: accessControl)
+let requestBuilder = AccessControlService.add(accessControl: accessControl)
 requestBuilder.set(completion: {(result: AccessControl?, error: ApiException?) in
-  print(result)
+	print(result!)
+	done()
 })
-executor.send(request: requestBuilder.build(client!))
+executor.send(request: requestBuilder.build(client))

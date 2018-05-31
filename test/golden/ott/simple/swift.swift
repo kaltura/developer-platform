@@ -1,7 +1,8 @@
 var id = "abc"
 
-var requestBuilder = AppTokenService.get(id: id)
+let requestBuilder = AppTokenService.get(id: id)
 requestBuilder.set(completion: {(result: AppToken?, error: ApiException?) in
-  print(result)
+	print(result!)
+	done()
 })
-executor.send(request: requestBuilder.build(client!))
+executor.send(request: requestBuilder.build(client))

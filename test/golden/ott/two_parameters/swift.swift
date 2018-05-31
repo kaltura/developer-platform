@@ -5,8 +5,9 @@ var pager = FilterPager()
 pager.pageIndex = 3
 pager.pageSize = 7
 
-var requestBuilder = AssetHistoryService.list(filter: filter, pager: pager)
+let requestBuilder = AssetHistoryService.list(filter: filter, pager: pager)
 requestBuilder.set(completion: {(result: AssetHistoryListResponse?, error: ApiException?) in
-  print(result)
+	print(result!)
+	done()
 })
-executor.send(request: requestBuilder.build(client!))
+executor.send(request: requestBuilder.build(client))
