@@ -14,8 +14,8 @@
   .video-bg-white .playkit-video-player,
   .video-bg-white .kaltura-player-container,
   .video-bg-white .playkit-player,
-  .video-bg-white .playkit-pre-playback-play-overlay,
-  .video-bg-white .playkit-loading-backdrop {
+  .video-bg-white .playkit-loading-backdrop,
+  .video-bg-white .playkit-pre-playback-play-overlay.playkit-has-poster {
     background: white !important;
   }
 
