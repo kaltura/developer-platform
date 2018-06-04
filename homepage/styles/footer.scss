@@ -29,6 +29,10 @@ $off-white: #777;
       font-size: 14px;
       text-transform: uppercase;
       color: #fff;
+      cursor: default;
+    }
+    a:hover {
+      text-decoration: none;
     }
     i.fa {
       display: none;
@@ -111,6 +115,7 @@ $off-white: #777;
       a {
         width: 100%;
         display: inline-block;
+        cursor: pointer;
         i.fa {
           float: right;
           display: inline;

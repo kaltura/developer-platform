@@ -9137,6 +9137,10 @@ hr.separator {
   font-size: 14px;
   text-transform: uppercase;
   color: #fff;
+  cursor: default;
+}
+.footer h5 a:hover {
+  text-decoration: none;
 }
 .footer h5 i.fa {
   display: none;
@@ -9219,6 +9223,7 @@ hr.separator {
   .footer h5 a {
     width: 100%;
     display: inline-block;
+    cursor: pointer;
   }
   .footer h5 a i.fa {
     float: right;
