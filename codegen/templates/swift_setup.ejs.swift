@@ -3,6 +3,7 @@ import KalturaClient
 let executor: RequestExecutor = USRExecutor.shared
 let config: ConnectionConfiguration = ConnectionConfiguration()
 let client = Client(config)
+<% if (!noSession) { -%>
 let sessionRequestBuilder = SessionService.start(
     secret: <%- codegen.constant(answers.secret) %>,
     userId: <%- codegen.constant(answers.userId) %>,
@@ -13,3 +14,6 @@ sessionRequestBuilder.set(completion: {(ks: String?, error: ApiException?) in
 <%- codegen.indent(code, 2) %>
 })
 executor.send(request: sessionRequestBuilder.build(client))
+<% } else { -%>
+<%- code %>
+<% } -%>
