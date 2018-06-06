@@ -6,7 +6,6 @@ import {KalturaClient} from "kaltura-ngx-client";
 // and KalturaClientModule to your app's imports.
 import {SessionStartAction} from "kaltura-ngx-client/api/types/SessionStartAction";
 import {KalturaSessionType} from "kaltura-ngx-client/api/types/KalturaSessionType";
-import {KalturaSessionType} from "kaltura-ngx-client/api/types/KalturaSessionType";
 
 @Component({
     selector: 'widget',

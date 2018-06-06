@@ -8,7 +8,7 @@ import {SessionStartAction} from "kaltura-ngx-client/api/types/SessionStartActio
 <% if (service !== 'Session' && action !== 'Start') { -%>
 import {<%- service %><%- action %>Action} from "kaltura-ngx-client/api/types/<%- service %><%- action %>Action";
 <% } -%>
-<% if (enums.indexOf('SessionType') === -1) { -%>
+<% if (enums.indexOf('KalturaSessionType') === -1) { -%>
 import {KalturaSessionType} from "kaltura-ngx-client/api/types/KalturaSessionType";
 <% } -%>
 <% for (var i = 0; i < enums.length; ++i) { -%>

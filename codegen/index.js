@@ -117,6 +117,20 @@ var language_opts = {
       });
     }
   },
+  typescript: {
+    ext: 'ts',
+    declarationPrefix: 'let ',
+    statementSuffix: ';',
+    objPrefix: 'new ',
+    objSuffix: '()',
+    rewriteAction: capitalize,
+    rewriteService: capitalize,
+    rewriteEnumValue: (type, name, value) => {
+      return type + '.' + name.toLowerCase().replace(/_[a-z]+/g, s => {
+        return s.charAt(1).toUpperCase() + s.substring(2).toLowerCase()
+      });
+    }
+  },
   php: {
     ext: 'php',
     accessor: '->',
