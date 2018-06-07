@@ -8,10 +8,17 @@ script.
       uiConfId: 42685191
     },
     playback: {
-      autoplay: true
+      preload: 'auto',
+      autoplay: true,
+      loop: true,
     }
   });
-  kalturaPlayer.loadMedia({entryId: '0_cm8rhiwp'});
+  kalturaPlayer.addEventListener(kalturaPlayer.Event.ENDED, function() {
+    setTimeout(function() {kalturaPlayer.play()});
+  });
+  kalturaPlayer.loadMedia({entryId: '0_cm8rhiwp'}).then(function() {
+    kalturaPlayer.load();
+  });
 
 div.welcome.text-center.bg-primary
   h2 Everything video. Built by you.
