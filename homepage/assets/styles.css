@@ -8685,7 +8685,27 @@ hr.separator {
 }
 .welcome-page .responsive-video {
   position: relative;
-  padding-bottom: 54.24%;
+  padding-bottom: 30%;
+}
+@media only screen and (max-width: 1200px) {
+  .welcome-page .responsive-video {
+    padding-bottom: 38%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .welcome-page .responsive-video {
+    padding-bottom: 48%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .welcome-page .responsive-video {
+    padding-bottom: 60%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .welcome-page .responsive-video {
+    padding-bottom: 70%;
+  }
 }
 .welcome-page .video-player {
   width: 100%;
@@ -8695,8 +8715,8 @@ hr.separator {
 .welcome-page .video-bg-white .playkit-video-player,
 .welcome-page .video-bg-white .kaltura-player-container,
 .welcome-page .video-bg-white .playkit-player,
-.welcome-page .video-bg-white .playkit-pre-playback-play-overlay,
-.welcome-page .video-bg-white .playkit-loading-backdrop {
+.welcome-page .video-bg-white .playkit-loading-backdrop,
+.welcome-page .video-bg-white .playkit-pre-playback-play-overlay.playkit-has-poster {
   background: white !important;
 }
 .welcome-page .welcome-video {
