@@ -55,15 +55,16 @@ Router.post('/loginByKs', function(req, res) {
   var client = new kaltura.Client(kaltura_conf);
   var type = kaltura.enums.SessionType.ADMIN;
   client.setKs(req.body.ks);
-  kaltura.services.user.loginByKs(req.body.partnerId)
-  .execute(client).then(function(result) {
-    client.setKs(result.ks);
-    var pager = new kaltura.objects.FilterPager();
-    pager.pageSize = 500;
-    pager.pageIndex = 1;
-    kaltura.services.partner.listPartnersForUser(null, pager)
-    .execute(client).then(function(partners) {
-      res.json(partners.objects);
+  kaltura.services.user.get().execute(client).then(function(result) {
+    kaltura.services.user.loginByKs(req.body.partnerId || result.partnerId).execute(client).then(function(result) {
+      client.setKs(result.ks);
+      var pager = new kaltura.objects.FilterPager();
+      pager.pageSize = 500;
+      pager.pageIndex = 1;
+      kaltura.services.partner.listPartnersForUser(null, pager)
+      .execute(client).then(function(partners) {
+        res.json(partners.objects);
+      }).catch(e => res.status(500).end());
     }).catch(e => res.status(500).end());
   }).catch(e => res.status(500).end());
 })
@@ -77,7 +78,6 @@ var MAP_FIELDS = [
 ]
 
 Router.post('/shatest', function(req, res) {
-  console.log('req.body', req.body);
   res.end();
 })
 
