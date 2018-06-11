@@ -1,59 +1,42 @@
 var fs = require('fs');
 var ejs = require('ejs');
-
-
-var clientMD = '';
-
-const LINKS = {
-  ott: {
-    genDate: '26-02-2017',
-    version: '4.1',
-    baseURL: 'https://tvpapi-us-preprod.ott.kaltura.com/v4_1/clientlibs/',
-  },
-  ovp: {
-    genDate: '26-04-2018',
-    version: '3.3.0',
-    baseURL: 'http://cdnbakmi.kaltura.com/content/clientlibs/',
-  }
-}
-
+var version = 'v13.20.0';
 const MARKDOWN_DIR = __dirname + '/../../markdown';
 const TARGET = process.env.TARGET_API || 'ovp';
-const LINK = LINKS[TARGET];
 const CLIENT_LANGS = {
-  php5: LINK.genDate,
-  php53: LINK.genDate,
-  php5Zend: LINK.genDate,
-  java: LINK.genDate,
-  csharp: LINK.genDate,
-  ruby: LINK.genDate,
-  python: LINK.genDate,
-  node: LINK.genDate,
-  ajax: LINK.genDate,
-  cli: LINK.genDate,
-  objc: LINK.genDate,
-  android: LINK.genDate,
-  swift: LINK.genDate,
-  ngx: LINK.genDate,
+  'PHP': 'php5',
+  'PHP53': 'php53',
+  'ZF': 'php5Zend',
+  'Java': 'java',
+  'Csharp': 'csharp',
+  'Ruby': 'ruby',
+  'Python': 'python',
+  'NodeJS': 'nodejs',
+  'AJAX': 'ajax',
+  'CLI': 'cli',
+  'ObjectiveC': 'objc',
+  'Android': 'android',
+  'Swift': 'swift',
+  'Angular': 'angular',
 };
-
+if (TARGET === 'ott'){
+	baserepo_url='https://github.com/kaltura/KalturaGeneratedAPIClients';
+}else{
+	baserepo_url='https://github.com/kaltura/KalturaOttGeneratedAPIClients';
+}
+var clientMD = '';
 var idx=0;
 for (var cl in CLIENT_LANGS){
-        if (CLIENT_LANGS.hasOwnProperty(cl)) {
-	    var link = LINK.baseURL + cl + '_' + CLIENT_LANGS[cl] + '.tar.gz';
-	    if (cl === 'node') cl = 'nodejs';
-	    if (cl === 'ngx') cl = 'angular';
+	var link = baserepo_url + cl+'/archive/'+ version+'.tar.gz'
 	    let offset = idx * -71;
-	    clientMD += `<a class="client-lib-link ${cl}" data-language="${cl}" href="${link}" style="background-position: ${offset}px"></a>`;
+	    clientMD += `<a class="client-lib-link ${CLIENT_LANGS[cl]}" data-language="${CLIENT_LANGS[cl]}" href="${link}" style="background-position: ${offset}px"></a>`;
 	    idx++;
-	}
 }
-
 var markdownTmpl = fs.readFileSync(MARKDOWN_DIR + '/templates/client_libraries.md', 'utf8');
 ejs.renderFile(MARKDOWN_DIR + '/templates/client_libraries.md', {
   clientMD: clientMD,
   target: TARGET,
-  version: LINK.version,
+  version: version,
 }, {}, (err, md) => {
   fs.writeFileSync(MARKDOWN_DIR + '/generated/client_libraries.md', md);
 })
