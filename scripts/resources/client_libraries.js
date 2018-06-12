@@ -18,11 +18,13 @@ const CLIENT_LANGS = {
   'Android': 'android',
   'Swift': 'swift',
   'Angular': 'angular',
+  'Typescript': 'typescript',
 };
+console.log(TARGET);
 if (TARGET === 'ott'){
-	baserepo_url='https://github.com/kaltura/KalturaGeneratedAPIClients';
-}else{
 	baserepo_url='https://github.com/kaltura/KalturaOttGeneratedAPIClients';
+}else{
+	baserepo_url='https://github.com/kaltura/KalturaGeneratedAPIClients';
 }
 var clientMD = '';
 var idx=0;

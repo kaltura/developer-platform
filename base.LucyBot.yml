@@ -61,6 +61,9 @@ codegen:
     - id: angular
       label: AngularJS
       highlight: javascript
+    - id: typescript
+      label: TypeScript
+      highlight: javascript
     - swift
     - html
 
