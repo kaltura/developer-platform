@@ -56,3 +56,6 @@ pre code {
 .collapse.in {
   display: block !important;
 }
+operation-documentation .input-output-box h4 {
+  font-size: 21px;
+}
