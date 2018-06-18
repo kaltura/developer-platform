@@ -11,8 +11,23 @@ sitemap:
 discussionURL: '/discussion/{{slug}}?title={{title}}'
 
 routes:
+  default: /404-not-found
+
   /:
     redirect: '/api-docs'
+
+  /404-not-found:
+    title: Page not found
+    ui: markdown
+    markdown: |
+      # 404: Page not found
+      Sorry, but the page you requested doesn't exist.
+
+      Try one of these pages:
+        * [Documentation](/api-docs)
+        * [API Console](/console)
+        * [Interactive Workflows](/workflows)
+
 
   /api-docs:
     title: Kaltura API Documentation
@@ -381,6 +396,10 @@ operationNavigation:
         markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Categories-Management.html
         path: "/Secure_Control_and_Govern/Content-Categories-Management.html"
         discussionURL: null
+        seeAlso:
+          - operation: "category.add"
+          - operation: "categoryEntry.add"
+          - operation: "categoryEntry.delete"
 
       - title: "Content Entitlements and Privacy Enforcement"
         markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html
@@ -486,8 +505,6 @@ operationNavigation:
         path: "/Contribute/Article-Style-Structure-Guidelines.html"
         discussionURL: null
 
-
-
 workflowNavigation:
   - title: Generate API Sessions
     icon: assets/img/icons/administrative.png
@@ -497,7 +514,7 @@ workflowNavigation:
   - title: Secure, Control and Govern
     icon: users
     children:
-      - workflow: group_management 
+      - workflow: group_management
   - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
     workflow: upload

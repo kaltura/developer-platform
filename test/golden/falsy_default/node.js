@@ -1,16 +1,10 @@
-var id = 0;
-var lockKey = new Kaltura.kc.objects.KalturaExclusiveLockKey();
-var jobType = "";
-var resetExecutionAttempts = false;
+let id = 0;
+let lockKey = new kaltura.objects.ExclusiveLockKey();
+let jobType = "";
+let resetExecutionAttempts = false;
 
-client.batch.freeExclusiveJob(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-id,
-lockKey,
-jobType,
-resetExecutionAttempts);
+kaltura.services.batch.freeExclusiveJob(id, lockKey, jobType, resetExecutionAttempts)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

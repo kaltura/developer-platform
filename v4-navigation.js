@@ -59,5 +59,5 @@ module.exports = function(config) {
     }
     return item;
   })
-  fs.writeFileSync(__dirname + '/v4-redirects.json', JSON.stringify(redirects, null, 2));
+  if (process.env.WRITE_REDIRECTS) fs.writeFileSync(__dirname + '/v4-redirects.json', JSON.stringify(redirects, null, 2));
 }

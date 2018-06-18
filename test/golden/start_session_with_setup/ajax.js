@@ -5,21 +5,19 @@
   var config = new KalturaConfiguration(123456);
   config.serviceUrl = 'https://www.kaltura.com';
   var client = new KalturaClient(config);
-  // Note: this is meant only as a sample.
-  // You should NEVER generate sessions on the client,
-  // as this exposes your Admin Secret to users.
-  // Instead, generate a session on the server and pass the
-  // KS to the client.
-  KalturaSessionService.start(
-        "12341234123412341234",
-        "user@example.com",
-        0,
-        123456)
-  .execute(client, function(success, ks) {
-    if (!success || (ks.code && ks.message)) {
-      console.log('Error starting session', success, ks);
-    } else {
-      client.setKs(ks);
-    }
-  });
+  var secret = "********************";
+  var userId = "user@example.com";
+  var type = 0 /* KalturaSessionType.USER */;
+  var partnerId = 123456;
+  var expiry = 86400;
+  var privileges = "";
+
+  KalturaSessionService.start(secret, userId, type, partnerId, expiry, privileges)
+    .execute(client, function(success, results) {
+      if (!success || (results && results.code && results.message)) {
+        console.log('Kaltura Error', success, results);
+      } else {
+        console.log('Kaltura Result', results);
+      }
+    });
 </script>

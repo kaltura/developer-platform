@@ -1,39 +1,36 @@
-var Kaltura = require('kaltura');
-var config = new Kaltura.kc.KalturaConfiguration();
+const kaltura = require('kaltura-client');
+const config = new kaltura.Configuration();
 config.serviceUrl = 'https://www.kaltura.com';
-var client = new Kaltura.kc.KalturaClient(config);
-client.session.start(function(ks) {
-  if (ks.code && ks.message) {
-    console.log('Error starting session', ks);
-  } else {
+const client = new kaltura.Client(config);
+kaltura.services.session.start(
+    "YOUR_KALTURA_SECRET",
+    "YOUR_USER_ID",
+    kaltura.enums.SessionType.ADMIN,
+    YOUR_PARTNER_ID)
+.completion((success, ks) => {
+    if (!success) throw new Error(ks.message);
     client.setKs(ks);
-    var accessControlProfile = new Kaltura.kc.objects.KalturaAccessControlProfile();
+    let accessControlProfile = new kaltura.objects.AccessControlProfile();
     accessControlProfile.name = "foo";
     accessControlProfile.rules = [];
-    accessControlProfile.rules[0] = new Kaltura.kc.objects.KalturaRule();
+    accessControlProfile.rules[0] = new kaltura.objects.Rule();
     accessControlProfile.rules[0].code = "thiscode";
     accessControlProfile.rules[0].contexts = [];
-    accessControlProfile.rules[0].contexts[0] = new Kaltura.kc.objects.KalturaContextTypeHolder();
-    accessControlProfile.rules[0].contexts[0].type = Kaltura.kc.enums.KalturaContextType.PLAY;
-    accessControlProfile.rules[0].contexts[1] = new Kaltura.kc.objects.KalturaContextTypeHolder();
+    accessControlProfile.rules[0].contexts[0] = new kaltura.objects.ContextTypeHolder();
+    accessControlProfile.rules[0].contexts[0].type = kaltura.enums.ContextType.PLAY;
+    accessControlProfile.rules[0].contexts[1] = new kaltura.objects.ContextTypeHolder();
     accessControlProfile.rules[0].conditions = [];
-    accessControlProfile.rules[0].conditions[0] = new Kaltura.kc.objects.KalturaDeliveryProfileCondition();
+    accessControlProfile.rules[0].conditions[0] = new kaltura.objects.DeliveryProfileCondition();
     accessControlProfile.rules[0].conditions[0].description = "cond 1";
-    accessControlProfile.rules[0].conditions[1] = new Kaltura.kc.objects.KalturaDeliveryProfileCondition();
+    accessControlProfile.rules[0].conditions[1] = new kaltura.objects.DeliveryProfileCondition();
     accessControlProfile.rules[0].conditions[1].description = "cond 2";
-    accessControlProfile.rules[1] = new Kaltura.kc.objects.KalturaRule();
+    accessControlProfile.rules[1] = new kaltura.objects.Rule();
     accessControlProfile.rules[1].code = "second code";
 
-    client.accessControlProfile.add(function(results) {
-      if (results && results.code && results.message) {
-        console.log('Kaltura Error', results);
-      } else {
-        console.log('Kaltura Result', results);
-      }
-    },
-    accessControlProfile);
-  }
-}, "YOUR_KALTURA_SECRET",
-"YOUR_USER_ID",
-Kaltura.kc.enums.KalturaSessionType.ADMIN,
-YOUR_PARTNER_ID)
+    kaltura.services.accessControlProfile.add(accessControlProfile)
+    .execute(client)
+    .then(result => {
+        console.log(result);
+    });
+})
+.execute(client);

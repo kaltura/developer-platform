@@ -9,6 +9,10 @@ An Application Token enables clients to provide their development partners or in
 
 Developers who are provided with an Application Token use it to create temporary Kaltura Session (KS) tokens, which they will then use to access API functions. These KS tokens will have the restrictions of their originating Application Token.
 
+This workflow assumes you have an AppToken ID, its corresponding hash and that you know the hash function used when creating it (SHA1, SHA256, SHA512 and MD5 are supported).
+
+To create an AppToken, see the [appToken.add() action](/api-docs/service/appToken/action/add).
+
 ## Start a Widget Session
 Start an unprivileged session by calling `session.startWidgetSession`. Once the call completes, use client.setKs() to set the returned `ks` value as the KS (Kaltura Session) of the client object.
 
@@ -21,7 +25,6 @@ Do not set a KS on the client before making this call.
 {
   "method": "post",
   "path": "/service/session/action/startWidgetSession",
-  "disableSetupCode": true,
   "parameters": [
     {
       "name": "body",
@@ -82,6 +85,18 @@ string hashString = "";
 foreach (char c in hash)
   hashString += string.Format("{0:x2}", (int)c);
 ```
+### Sample Code (java)
+```java
+client.setSessionId(widgetSession.ks);
+<% if (answers.hashFunction === 'sha1') { -%>
+MessageDigest md = MessageDigest.getInstance("SHA-1");
+<% } else { -%>
+MessageDigest md = MessageDigest.getInstance("SHA-256");
+<% } -%>
+md.update(client.Ks + "<%- answers.appTokenValue %>");
+byte[] res = md.digest();
+String hashString = toHexString(res);
+```
 ### Sample Code (php)
 ```php
 $client->setKS($widgetSession->ks);
@@ -91,28 +106,14 @@ $hashString = sha1($client->ks . "<%- answers.appTokenValue %>");
 $hashString = hash('sha256', $client->ks . "<%- answers.appTokenValue %>");
 <% } -%>
 ```
-
-### Sample Code (csharp)
-```csharp
-client.Ks = widgetSession.ks;
+### Sample Code (python)
+```python
+import hashlib
+client.setKs(widgetSession.ks)
 <% if (answers.hashFunction === 'sha1') { -%>
-SHA1 sha = new SHA1CryptoServiceProvider();
+hashString = hashlib.sha1(client.ks.encode('ascii') + "<%- answers.appTokenValue %>").hexdigest()
 <% } else { -%>
-SHA256 sha = new SHA256CryptoServiceProvider();
-<% } -%>
-byte[] hash = sha.ComputeHash(Encoding.ASCII.GetBytes(client.Ks + "<%- answers.appTokenValue %>"));
-string hashString = "";
-foreach (char c in hash)
-  hashString += string.Format("{0:x2}", (int)c);
-```
-
-### Sample Code (php)
-```php
-$client->setKS($widgetSession->ks);
-<% if (answers.hashFunction === 'sha1') { -%>
-$hashString = sha1($client->ks . "<%- answers.appTokenValue %>");
-<% } else { -%>
-$hashString = hash('sha256', $client->ks . "<%- answers.appTokenValue %>");
+hashString = hashlib.sha256(client.ks.encode('ascii') + "<%- answers.appTokenValue %>").hexdigest()
 <% } -%>
 ```
 
@@ -152,7 +153,6 @@ You are now ready to make other API calls!
 {
   "method": "post",
   "path": "/service/apptoken/action/startSession",
-  "disableSetupCode": true,
   "parameters": [
     {
       "name": "ks",

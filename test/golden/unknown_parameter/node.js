@@ -1,10 +1,7 @@
-var accessControl = new Kaltura.kc.objects.KalturaAccessControl();
+let accessControl = new kaltura.objects.AccessControl();
 
-client.accessControl.add(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-accessControl);
+kaltura.services.accessControl.add(accessControl)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

@@ -1,6 +1,5 @@
-<% var isSessionStart = serviceID === 'session' && actionID === 'start' -%>
-<% var SESSION_VARS = isSessionStart ? ['ks'] : ['secret', 'userId', 'sessionType', 'partnerId', 'expiry', 'ks'] -%>
-<% if (showSetup && !isSessionStart) { -%>
+<% var SESSION_VARS = noSession ? ['ks'] : ['secret', 'userId', 'sessionType', 'partnerId', 'expiry', 'ks'] -%>
+<% if (showSetup && !noSession) { -%>
 KALTURA_SESSION=`curl -X POST https://www.kaltura.com/api_v3/service/session/action/start \
     -d "secret=<%- answers.secret %>" \
     -d "userId=<%- answers.userId %>" \
@@ -12,10 +11,10 @@ KALTURA_SESSION=`curl -X POST https://www.kaltura.com/api_v3/service/session/act
 <% var keys = Object.keys(answers).filter(function(k) {return SESSION_VARS.indexOf(k) === -1}) -%>
 <% keys = keys.filter(function(k) {return parameterNames.indexOf(k) !== -1 || parameterNames.indexOf(k.substring(0, k.indexOf('['))) !== -1}) -%>
 curl -X POST https://www.kaltura.com/api_v3/service/<%- serviceID %>/action/<%- actionID %> \
-<% if (!isSessionStart) { -%>
+<% if (!noSession) { -%>
     -d "ks=$KALTURA_SESSION" \
 <% } -%>
 <% for (var i = 0; i < keys.length; ++i) { -%>
-<%   var ans = keys[i].indexOf('password') === -1 ? answers[keys[i]] : '********' -%>
+<%   var ans = keys[i].indexOf('password') === -1 && keys[i].indexOf('secret') === -1 ? answers[keys[i]] : '********' -%>
     -d "<%- keys[i] %>=<%- encodeURIComponent(ans) %>"<%- i === keys.length - 1 ? '' : ' \\' %>
 <% } -%>

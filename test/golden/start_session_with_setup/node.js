@@ -1,14 +1,16 @@
-var Kaltura = require('kaltura');
-var config = new Kaltura.kc.KalturaConfiguration(123456);
+const kaltura = require('kaltura-client');
+const config = new kaltura.Configuration();
 config.serviceUrl = 'https://www.kaltura.com';
-var client = new Kaltura.kc.KalturaClient(config);
-client.session.start(function(ks) {
-  if (ks.code && ks.message) {
-    console.log('Error starting session', ks);
-  } else {
-    client.setKs(ks);
-  }
-}, "12341234123412341234",
-"user@example.com",
-Kaltura.kc.enums.KalturaSessionType.USER,
-123456)
+const client = new kaltura.Client(config);
+let secret = "********************";
+let userId = "user@example.com";
+let type = kaltura.enums.SessionType.USER;
+let partnerId = 123456;
+let expiry = 86400;
+let privileges = "";
+
+kaltura.services.session.start(secret, userId, type, partnerId, expiry, privileges)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

@@ -1,0 +1,89 @@
+meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+link(rel="stylesheet" href="/homepage/assets/styles.css")
+link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-dark.min.css")
+script(src="https://cdnapisec.kaltura.com/p/811441/embedPlaykitJs/uiconf_id/42685191")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cs.min.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js")
+script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/ruby.min.js")
+script(src="https://code.jquery.com/jquery-3.1.1.min.js")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+script.
+  var LANGUAGES = ['python', 'ruby', 'php', 'java', 'node', 'csharp'];
+  var EXTENSIONS = {
+    python: 'py',
+    ruby: 'rb',
+    php: 'php',
+    csharp: 'cs',
+    node: 'js',
+    java: 'java',
+  };
+  var CODE_SECTIONS = {
+    ks: {
+      title: "Generate Session",
+      headline: "Stay secure with Kaltura Sessions",
+      description: "The Kaltura Sesssion is an authorization string that identifies the user making a request. It contains information needed for each action in the API such as the associated partnerId, and whether the user has privileges for this action."
+    },
+    ingestion: {
+      title: "Ingestion",
+      headline: "Upload and ingest media with ease",
+      description: "Uploading videos to Kaltura using the API is super simple. Videos can be located on disk, or be specified as an HTML file input. Our jQuery upload widget provides a chunked upload with pause and resume functionality and optimization for file chunk size.",
+    },
+    thumbnails: {
+      title: "Thumb Asset",
+      headline: "Create thumbnails dynamically or statically",
+      description: "In addition to the Thumbnail API, which allows you to dynamically create thumbnails to your entries on-the-fly, Kaltura also provides the ThumbAsset API, which makes it easy to add thumbnails from disk or URL to your video entry.",
+    },
+    user: {
+      title: "User",
+      headline: "User management with kuser accounts",
+      description: "The User API simplifies the process of keeping track of your users. User attributes range from name and username, to city, gender, or preferred language."
+    },
+    search: {
+      title: "Search",
+      headline: "eSearch: simple and powerful",
+      description: "The eSearch API makes it really easy to search through entries: whether with a partial search on the given text, or with using synonyms and other languages. The unified search even allows you to search through all entry data, such as captions and metadata. What's more, search highlighting will help you determine exactly where the match was.",
+    }
+  };
+
+  var currentSection = 'ingestion';
+  var currentLanguage = 'php';
+
+  window.nextCodeSection = function() {
+    var sections = Object.keys(CODE_SECTIONS);
+    var curIdx = sections.indexOf(currentSection);
+    var section = sections[curIdx + 1] || sections[0];
+    window.setCode(currentLanguage, section);
+  }
+
+  window.setCode = function(lang, section) {
+    currentLanguage = lang || currentLanguage
+    currentSection = section || currentSection;
+    var sectionDetails = CODE_SECTIONS[currentSection];
+    window.jQuery('.code-box pre code').hide();
+    window.jQuery('.code-box pre code.' + currentLanguage).show();
+    window.jQuery('.code-box li.nav-item a').removeClass('active');
+    window.jQuery('.code-box li.nav-item.' + currentLanguage + ' a').addClass('active');
+    window.jQuery('.code-details h4').text(sectionDetails.headline);
+    window.jQuery('.code-details p.description').text(sectionDetails.description);
+    window.jQuery.get('/homepage/code-snippets/' + currentSection + '/example.' + EXTENSIONS[currentLanguage], function(code) {
+      var html = hljs.highlight(EXTENSIONS[currentLanguage], code).value;
+      window.jQuery('.code-box pre code.' + currentLanguage).html(html);
+    }, "text");
+  }
+
+  window.setVideo = function(idx) {
+    window.activeVideo = idx;
+    window.jQuery('.player-item').removeClass('active');
+    window.jQuery('.player-item.player-item-idx-' + idx).addClass('active');
+  }
+
+  window.jQuery(document).ready(function() {
+    setCode();
+    setVideo(1);
+  });

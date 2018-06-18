@@ -1,0 +1,68 @@
+hr.separator
+h3.section-title HTML5 Video Player for any Experience
+
+mixin player-button(idx, title)
+  a.player-button.player-item(class="player-item-idx-" + idx, onclick="setVideo(" + idx + ")")
+    img.active(src='/homepage/assets/images/HTML5%20Video%20Player/white/Tab' + idx + '-icon.svg')
+    img.inactive(src='/homepage/assets/images/HTML5%20Video%20Player/Tab' + idx + '-icon.svg')
+    h6=title
+mixin player-dropdown-item(idx, title)
+  a.dropdown-item(onclick="setVideo(" + idx + ")")
+    img(src='/homepage/assets/images/HTML5%20Video%20Player/Tab' + idx + '-icon.svg')
+    span=title
+mixin player-dropdown-display(idx, title)
+  span.player-item(class="player-item-idx-" + idx)
+    img(src='/homepage/assets/images/HTML5%20Video%20Player/Tab' + idx + '-icon.svg')
+    span=title
+
+.container
+  .row
+    .col
+      .row
+        .col
+          +player-button(1, 'Fastest time to first frame')
+        .col
+          +player-button(2, 'Most ads delivered')
+        .col
+          +player-button(3, 'In video quizzes')
+      .row
+        .col
+          +player-button(4, 'Interactive storytelling')
+        .col
+          +player-button(5, 'Dual screen presentation')
+        .col
+          +player-button(6, 'Live video')
+    .col
+      .video-player
+        img(src="/homepage/assets/background.jpg")
+.tablet
+  .d-flex
+    +player-button(1, 'Fastest time to first frame')
+    +player-button(2, 'Most ads delivered')
+    +player-button(3, 'In video quizzes')
+    +player-button(4, 'Interactive storytelling')
+    +player-button(5, 'Dual screen presentation')
+    +player-button(6, 'Live video')
+  .video-player
+    img(src="/homepage/assets/background.jpg")
+
+.mobile.text-center
+  .dropdown.player-dropdown
+    a.btn.dropdown-toggle(data-toggle="dropdown")
+      +player-dropdown-display(1, 'Fastest time to first frame')
+      +player-dropdown-display(2, 'Most ads delivered')
+      +player-dropdown-display(3, 'In video quizzes')
+      +player-dropdown-display(4, 'Interactive storytelling')
+      +player-dropdown-display(5, 'Dual screen presentation')
+      +player-dropdown-display(6, 'Live video')
+      i.fa.fa-right.fa-chevron-down
+    .dropdown-menu
+      +player-dropdown-item(1, 'Fastest time to first frame')
+      +player-dropdown-item(2, 'Most ads delivered')
+      +player-dropdown-item(3, 'In video quizzes')
+      +player-dropdown-item(4, 'Interactive storytelling')
+      +player-dropdown-item(5, 'Dual screen presentation')
+      +player-dropdown-item(6, 'Live video')
+
+  .video-player
+    img(src="/homepage/assets/background.jpg")

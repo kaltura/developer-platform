@@ -1,12 +1,8 @@
-var entryId = "abcde";
-var version = -1;
+let entryId = "abcde";
+let version = -1;
 
-client.media.get(function(results) {
-  if (results && results.code && results.message) {
-    console.log('Kaltura Error', results);
-  } else {
-    console.log('Kaltura Result', results);
-  }
-},
-entryId,
-version);
+kaltura.services.media.get(entryId, version)
+.execute(client)
+.then(result => {
+    console.log(result);
+});

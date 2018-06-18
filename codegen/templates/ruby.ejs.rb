@@ -5,6 +5,7 @@ include Kaltura
 config = KalturaConfiguration.new()
 config.service_url = 'https://www.kaltura.com'
 client = KalturaClient.new(config);
+<% if (!noSession) { -%>
 client.ks = client.session_service.start(
     <%- codegen.constant(answers.secret) %>,
     <%- codegen.constant(answers.userId) %>,
@@ -12,9 +13,9 @@ client.ks = client.session_service.start(
     <%- codegen.constant(answers.partnerId) || 'YOUR_PARTNER_ID' %>)
 
 <% } -%>
+<% } -%>
 
-<% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
 <%- codegen.assignAllParameters(parameters, answers) -%>
 results = client.<%- service %>.<%- action %>(<%- parameterNames.join(', ') %>)
 puts results.inspect
-<% } -%>
+<% -%>

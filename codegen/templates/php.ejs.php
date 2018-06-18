@@ -5,15 +5,16 @@
   $config = new KalturaConfiguration(<%- codegen.constant(answers.partnerId) %>);
   $config->serviceUrl = 'https://www.kaltura.com';
   $client = new KalturaClient($config);
+<% if (!noSession) { -%>
   $ks = $client->session->start(
     <%- codegen.constant(answers.secret) %>,
     <%- codegen.constant(answers.userId) %>,
     <%- answers.sessionType === 0 ? 'KalturaSessionType::USER' : 'KalturaSessionType::ADMIN' %>,
     <%- answers.partnerId || 'YOUR_PARTNER_ID' %>);
   $client->setKS($ks);
+<% } -%>
 
 <% } -%>
-<% if (!showSetup || serviceID !== 'session' || actionID !== 'start') { -%>
 <% plugins.forEach(function(p) { -%>
   $<%-p %>Plugin = Kaltura<%- p.charAt(0).toUpperCase() + p.substring(1) %>ClientPlugin::get($client);
 <% }) -%>
@@ -24,5 +25,4 @@
   } catch (Exception $e) {
     echo $e->getMessage();
   }
-<% } -%>
 ?>

@@ -24,6 +24,7 @@ class CodeExample {
         Configuration config = new Configuration();
         config.setEndpoint("https://www.kaltura.com/");
         Client client = new Client(config);
+<% if (!noSession) { -%>
         try {
             String session = client.generateSessionV2(
                   "<%- answers.secret %>",
@@ -36,6 +37,7 @@ class CodeExample {
             System.out.println("Failed to start Kaltura session");
             System.exit(1);
         }
+<% } -%>
         return client;
     }
 }

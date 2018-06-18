@@ -8,7 +8,7 @@
   $pager = new Pager();
 
   try {
-    $result = $client->getESearchService()->searchEntry($searchParams, $pager);
+    $result = $elasticSearchPlugin->eSearch->searchEntry($searchParams, $pager);
     var_dump($result);
   } catch (Exception $e) {
     echo $e->getMessage();

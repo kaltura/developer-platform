@@ -1,15 +1,44 @@
 body.spaced-for-kaltura-nav {
-  padding-top: 46px;
+  padding-top: 66px;
 }
 #KalturaNav {
-  min-height: 46px;
+  height: 66px;
+  padding: 8px 16px;
 }
 #KalturaNav.navbar-fixed-top .navbar-collapse {
   max-height: 500px;
 }
 
 #KalturaNav .navbar-brand {
-  padding-top: 0px;
+  display: inline-block;
+  padding: 0.3125rem 0rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+#KalturaNav .navbar-brand img {
+  height: 40px;
+  display: inline;
+}
+#KalturaNav .brand-subtitle {
+  font-family: "Soho";
+  text-transform: none;
+  display: inline;
+  padding-left: 13px;
+  font-weight: 500;
+  border-left: 1px solid #ccc;
+  margin-left: 15px;
+  height: 40px;
+  vertical-align: middle;
+  font-size: 20px;
+  color: rgb(33, 37, 41);
+}
+@media (max-width: 380px) {
+  #KalturaNav .brand-subtitle {
+    display: none;
+  }
 }
 
 @media (max-width: 305px) {
@@ -23,22 +52,31 @@ body.spaced-for-kaltura-nav {
   }
 }
 
-#KalturaNav .navbar-brand {
-  padding-right: 20px;
-}
-#KalturaNav a {
-  background-color: #fff !important;
-  color: #333 !important;
-}
 #KalturaNav.navbar button.navbar-toggle,
-#KalturaNav.navbar li.navbar-link > a {
-  color: #333 !important;
-  background-color: #fff !important;
+#KalturaNav.navbar li.dropdown > a,
+#KalturaNav.navbar li.dropdown > a:hover,
+#KalturaNav.navbar li.navbar-link > a:not(.btn) {
+  color: #4A4A4A;
+  background-color: #fff;
+}
+#KalturaNav.navbar li.navbar-link:hover > a:not(.btn) {
+  opacity: .7;
+}
+#KalturaNav.navbar ul.nav li.navbar-link > a {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+#KalturaNav.navbar ul.nav li.navbar-link > a.btn {
+  height: 32px;
   font-size: 14px;
+  padding: 4px 20px;
+  margin-top: 7px;
+  margin-left: 15px;
 }
 
-#KalturaAuthLinks li.navbar-link > a {
-  font-weight: bold;
+#KalturaNav ul.nav {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 #KalturaBlogContent a {

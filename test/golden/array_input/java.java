@@ -23,7 +23,7 @@ class CodeExample {
         accessControlProfile.getRules().get(0).setCode("thiscode");
         accessControlProfile.getRules().get(0).setContexts(new ArrayList<ContextTypeHolder>(2));
         accessControlProfile.getRules().get(0).getContexts().set(0, new ContextTypeHolder());
-        accessControlProfile.getRules().get(0).getContexts().get(0).setType(ContextType.PLAY);
+        accessControlProfile.getRules().get(0).getContexts().get(0).setType(ContextType.PLAY.getValue());
         accessControlProfile.getRules().get(0).getContexts().set(1, new ContextTypeHolder());
         accessControlProfile.getRules().get(0).setConditions(new ArrayList<Condition>(2));
         accessControlProfile.getRules().get(0).getConditions().set(0, new DeliveryProfileCondition());

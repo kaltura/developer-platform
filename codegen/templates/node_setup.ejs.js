@@ -1,17 +1,21 @@
-var Kaltura = require('kaltura');
-var config = new Kaltura.kc.KalturaConfiguration(<%- answers.partnerId %>);
+const kaltura = require('kaltura-client');
+const config = new kaltura.Configuration();
 config.serviceUrl = 'https://www.kaltura.com';
-var client = new Kaltura.kc.KalturaClient(config);
-client.session.start(function(ks) {
-  if (ks.code && ks.message) {
-    console.log('Error starting session', ks);
-  } else {
+const client = new kaltura.Client(config);
+<% if (!noSession) { -%>
+kaltura.services.session.start(
+    <%- codegen.constant(answers.secret) %>,
+    <%- codegen.constant(answers.userId) %>,
+    <%- answers.sessionType === 0 ? 'kaltura.enums.SessionType.USER' : 'kaltura.enums.SessionType.ADMIN' %>,
+    <%- answers.partnerId || 'YOUR_PARTNER_ID' %>)
+.completion((success, ks) => {
+    if (!success) throw new Error(ks.message);
     client.setKs(ks);
 <% if (serviceID !== 'session' && actionID !== 'start') { -%>
 <%- codegen.indent(code, 4) %>
 <% } -%>
-  }
-}, <%- codegen.constant(answers.secret) %>,
-<%- codegen.constant(answers.userId) %>,
-<%- answers.sessionType === 0 ? 'Kaltura.kc.enums.KalturaSessionType.USER' : 'Kaltura.kc.enums.KalturaSessionType.ADMIN' %>,
-<%- answers.partnerId || 'YOUR_PARTNER_ID' %>)
+})
+.execute(client);
+<% } else { -%>
+<%- code %>
+<% } -%>

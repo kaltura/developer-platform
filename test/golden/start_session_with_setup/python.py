@@ -4,10 +4,13 @@ from KalturaClient.Plugins.Core import *
 config = KalturaConfiguration(123456)
 config.serviceUrl = "https://www.kaltura.com/"
 client = KalturaClient(config)
-ks = client.session.start(
-      "12341234123412341234",
-      "user@example.com",
-      KalturaSessionType.USER,
-      123456)
-client.setKs(ks)
 
+secret = "********************"
+userId = "user@example.com"
+type = KalturaSessionType.USER
+partnerId = 123456
+expiry = 86400
+privileges = ""
+
+result = client.session.start(secret, userId, type, partnerId, expiry, privileges);
+print(result);

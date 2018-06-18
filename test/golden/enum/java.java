@@ -1,6 +1,6 @@
 String secret = "*******************";
 String userId = "YOUR_USER_ID";
-SessionType type = SessionType.USER;
+SessionType type = SessionType.USER.getValue();
 int partnerId = 0;
 int expiry = 86400;
 String privileges = "";

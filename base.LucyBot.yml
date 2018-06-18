@@ -7,9 +7,17 @@ uiOptions:
   redirectHashURLs: true
   embedConsoleInDocumentation: true
   messages:
+    beta: "Please note: this action is experimental."
     deprecated: |
       This API action has been deprecated. If you’re building a new app integration,
       please consult the usage guides or forums for the more recent API actions to use.
+    console: |
+      This is the interactive Kaltura API Console. Here you can experiment and play with our API, as well as
+      get tested code examples for using the Kaltura Video API in native programming languages using the Kaltura API Client Libraries and Video SDKs.
+
+      To get started, please log in to your Kaltura account (or [sign up for a new account](https://vpaas.kaltura.com/register)),
+      click on an API action on the left menu, fill the fields and click the "execute" button to get a real response from the Kaltura service.
+
 
 embedParameters:
   format: 1
@@ -21,6 +29,17 @@ javascript:
   - 'assets/KalturaUiConfService.min.js'
   - 'assets/js/highlight.pack.js'
   - 'assets/js/modernizr.js'
+  - 'assets/js/auth.js'
+  - 'assets/js/check-response.js'
+  - 'assets/js/jekyll-code-example-buttons.js'
+  - 'assets/js/jquery.exLink.js'
+  - 'assets/js/kc-setup.js'
+  - 'assets/js/lity.min.js'
+  - 'assets/js/misc.js'
+  - 'assets/js/opentip-jquery.js'
+  - 'assets/js/search.js'
+  - 'assets/js/sidebar.js'
+  - 'assets/js/webflow.js'
 
 codegen:
   languages:
@@ -28,6 +47,9 @@ codegen:
       label: cURL
       highlight: bash
     - php
+    - id: php53
+      label: "PHP (namespaces)"
+      highlight: php
     - java
     - node
     - csharp
@@ -36,6 +58,13 @@ codegen:
     - id: ajax
       label: JavaScript
       highlight: javascript
+    - id: angular
+      label: AngularJS
+      highlight: javascript
+    - id: typescript
+      label: TypeScript
+      highlight: javascript
+    - swift
     - html
 
 github:

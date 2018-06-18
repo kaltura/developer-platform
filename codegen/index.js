@@ -72,6 +72,7 @@ var language_opts = {
     objPrefix: 'new ',
     objSuffix: '()',
     rewriteAction: addActionSuffixIfReserved,
+    fileCode: () => 'new File("/path/to/file")'
   },
   ajax: {
     ext: 'js',
@@ -92,12 +93,43 @@ var language_opts = {
   },
   node: {
     ext: 'js',
-    declarationPrefix: 'var ',
+    declarationPrefix: 'let ',
     statementSuffix: ';',
-    objPrefix: 'new Kaltura.kc.objects.',
+    objPrefix: 'new kaltura.objects.',
     objSuffix: '()',
-    enumPrefix: 'Kaltura.kc.enums.',
+    enumPrefix: 'kaltura.enums.',
     rewriteAction: addActionSuffixIfReserved,
+    rewriteEnum: removeKalturaPrefix,
+    rewriteType: removeKalturaPrefix,
+    fileCode: () => "'/path/to/file'",
+  },
+  angular: {
+    ext: 'ts',
+    declarationPrefix: 'let ',
+    statementSuffix: ';',
+    objPrefix: 'new ',
+    objSuffix: '()',
+    rewriteAction: capitalize,
+    rewriteService: capitalize,
+    rewriteEnumValue: (type, name, value) => {
+      return type + '.' + name.toLowerCase().replace(/_[a-z]+/g, s => {
+        return s.charAt(1).toUpperCase() + s.substring(2).toLowerCase()
+      });
+    }
+  },
+  typescript: {
+    ext: 'ts',
+    declarationPrefix: 'let ',
+    statementSuffix: ';',
+    objPrefix: 'new ',
+    objSuffix: '()',
+    rewriteAction: capitalize,
+    rewriteService: capitalize,
+    rewriteEnumValue: (type, name, value) => {
+      return type + '.' + name.toLowerCase().replace(/_[a-z]+/g, s => {
+        return s.charAt(1).toUpperCase() + s.substring(2).toLowerCase()
+      });
+    }
   },
   php: {
     ext: 'php',
@@ -108,6 +140,7 @@ var language_opts = {
     enumAccessor: '::',
     rewriteAction: addActionSuffixIfReserved,
     rewriteVariable: s => '$' + s,
+    fileCode: () => '"/path/to/file"',
   },
   php53: {
     ext: 'php',
@@ -117,10 +150,23 @@ var language_opts = {
     objSuffix: '()',
     enumAccessor: '::',
     rewriteAction: addActionSuffixIfReserved,
-    rewriteService: s => 'get' + s.charAt(0).toUpperCase() + s.substring(1) + 'Service()',
     rewriteVariable: s => '$' + s,
     rewriteEnum: removeKalturaPrefix,
     rewriteType: removeKalturaPrefix,
+    fileCode: () => '"/path/to/file"',
+  },
+  swift: {
+    ext: 'swift',
+    declarationPrefix: 'var ',
+    rewriteService: capitalize,
+    objSuffix: '()',
+    rewriteEnum: removeKalturaPrefix,
+    rewriteType: type => {
+      type = removeKalturaPrefix(type);
+      if (type === 'integer') type = 'Int';
+      type = capitalize(type);
+      return type;
+    },
   },
   ruby: {
     ext: 'rb',
@@ -138,7 +184,8 @@ var language_opts = {
     },
     rewriteService: function(s) {
       return camelCaseToUnderscore(s) + '_service';
-    }
+    },
+    fileCode: () => 'File.open("/path/to/file")',
   },
   java: {
     ext: 'java',
@@ -172,8 +219,13 @@ var language_opts = {
       s = removeKalturaPrefix(s);
       if (s === 'string') return 'String';
       if (s === 'integer') return 'int';
+      if (s === 'file') return 'File';
       return s;
-    }
+    },
+    rewriteEnumValue: function(type, name, value) {
+      return removeKalturaPrefix(type) + '.' + name + '.getValue()';
+    },
+    fileCode: () => 'new FileInputStream("/path/to/file")',
   },
   csharp: {
     ext: 'cs',
@@ -196,7 +248,8 @@ var language_opts = {
       if (s.indexOf('Kaltura') === 0) return s.substring('Kaltura'.length);
       if (s === 'integer') return 'int';
       return s;
-    }
+    },
+    fileCode: () => 'new FileStream("/path/to/file", FileMode.Open, FileAccess.Read)'
   },
   python: {
     ext: 'py',
@@ -216,7 +269,8 @@ var language_opts = {
       let pieces = id.split('_');
       if (pieces.length === 1) return name;
       return pieces[0] + '.' + name;
-    }
+    },
+    fileCode: () => "open('/path/to/file', 'r')",
   },
 }
 
@@ -290,18 +344,18 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   input.answers = input.answers || {};
   input.answers.secret = input.answers.secret || 'YOUR_KALTURA_SECRET';
   input.answers.userId = input.answers.userId || 'YOUR_USER_ID';
+  input.noSession = input.operation.security && !input.operation.security.length;
   input.plugins = [];
   let tag = this.swagger.tags.filter(t => t.name === input.serviceName)[0];
   if (tag['x-plugin']) {
     input.plugins.push(tag['x-plugin']);
   }
+  input.parameterNames = input.operation['x-kaltura-parameters'].map(n => this.rewriteVariable(n));
   input.parameters = [];
   let opType = input.operation['x-kaltura-format'] || 'post';
   if (opType === 'post') {
-    input.parameterNames = input.operation['x-kaltura-parameters'].map(n => this.rewriteVariable(n));
     this.gatherAnswersForPost(input);
   } else {
-    input.parameterNames = input.parameters.map(p => p.name).map(n => this.rewriteVariable(n));
     this.gatherAnswersForGet(input);
   }
 }
@@ -341,6 +395,7 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
       }
       let objectKey = key + '[objectType]';
       input.answers[objectKey] = input.answers[objectKey] || schema.title;
+      addSchema(this.swagger.definitions[input.answers[objectKey]]);
     } else {
       input.answers[key] = answer;
     }
@@ -527,6 +582,7 @@ CodeTemplate.prototype.lvalue = function(param) {
 }
 
 CodeTemplate.prototype.rvalue = function(param, answers, parent) {
+  if (param.schema.type === 'file' && this.fileCode) return this.fileCode();
   var self = this;
   let enm = param.schema.enum;
   let enumLabels = param.schema['x-enumLabels'];

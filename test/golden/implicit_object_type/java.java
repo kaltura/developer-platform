@@ -1,6 +1,6 @@
 ESearchEntryParams searchParams = new ESearchEntryParams();
 searchParams.setSearchOperator(new ESearchEntryOperator());
-searchParams.getSearchOperator().setOperator(ESearchOperatorType.AND_OP);
+searchParams.getSearchOperator().setOperator(ESearchOperatorType.AND_OP.getValue());
 searchParams.getSearchOperator().setSearchItems(new ArrayList<ESearchEntryBaseItem>(1));
 searchParams.getSearchOperator().getSearchItems().set(0, new ESearchCaptionItem());
 searchParams.getSearchOperator().getSearchItems().get(0).setSearchTerm("asdf");

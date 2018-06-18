@@ -45,6 +45,27 @@ describe('Sample Code', function() {
       showSetup: false,
     }
   }, {
+    name: 'upload',
+    service: 'uploadtoken',
+    action: 'upload',
+    input: {
+      answers: {
+        uploadTokenId: 'abcde',
+        fileData: "foobar",
+      }
+    }
+  }, {
+    name: 'no_session',
+    service: 'user',
+    action: 'loginByLoginId',
+    input: {
+      answers: {
+        loginId: 'foobar',
+        password: 'thisisasecret',
+      },
+      showSetup: true,
+    }
+  }, {
     name: 'array_input',
     service: 'accesscontrolprofile',
     action: 'add',
@@ -139,7 +160,8 @@ describe('Sample Code', function() {
     service: 'media',
     action: 'list',
     input: {
-      answers: {},
+      answers: {
+      },
       showSetup: true,
     }
   }, {
@@ -182,6 +204,9 @@ describe('Sample Code', function() {
   if (CONVERT_TEST_CASES_TO_POST) {
     testCases.forEach(testCase => {
       if (testCase.name === 'unknown_parameter') return;
+      let ops = swagger.paths['/service/' + testCase.service + '/action/' + testCase.action];
+      let op = ops.post || ops.get;
+      if (op['x-kaltura-format'] !== 'post') return;
       let body = {};
       for (let key in testCase.input.answers) {
         let parts = key.split(/\]?\[/).map(s => s.replace(']', ''));
@@ -195,6 +220,10 @@ describe('Sample Code', function() {
       }
       testCase.input.answers = {body: JSON.stringify(body)};
       if (body.sessionType !== undefined) testCase.input.answers.sessionType = body.sessionType;
+      if (body.partnerId !== undefined) testCase.input.answers.partnerId = body.partnerId;
+      if (body.userId !== undefined) testCase.input.answers.userId = body.userId;
+      if (body.secret !== undefined) testCase.input.answers.secret = body.secret;
+      if (body.type !== undefined) testCase.input.answers.type = body.type;
     })
   }
 

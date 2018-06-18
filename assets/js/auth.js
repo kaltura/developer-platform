@@ -1,20 +1,39 @@
 (function() {
-  var COOKIE_TIMEOUT_MS = 1800000;
+  var COOKIE_TIMEOUT_MS = 60 * 60 * 1000;
+  var PROMPT_TIMEOUT_MS = COOKIE_TIMEOUT_MS - 2 * 60 * 1000;
   var STORAGE_KEY = 'LUCYBOT_RECIPE_CREDS';
   var user = window.kalturaUser = {};
+  var promptTimeout = null;
+  var logoutTimeout = null;
 
   function loggedInTemplate() {
-    return '<li class="navbar-link"><a onclick="setKalturaUser()">' +
-        '<span class="hidden-md">' + (user.name || '') + ' - </span>' +
-        '<span>' + (user.partnerId || '') + '&nbsp;</span>' +
-        '<span class="text-primary">[sign out]</span></a></li>';
+    return '<li class="dropdown auth-link" id="KalturaPartnerIDDropdown">' +
+        '<a class="dropdown-toggle" data-toggle="dropdown">' +
+          '<span class="hidden-md">' + (user.name ? user.name + ' - ' : '') + '</span>' +
+          '<span>' + (user.partnerId || '[Using Custom KS]') + '</span>' +
+          '<i class="fa fa-right fa-caret-down"></i>' +
+        '</a>' +
+        '<ul class="dropdown-menu">' +
+          partnerChoicesTemplate(window.kalturaPartners || []) +
+          '<li><a onclick="setKalturaUser()">Sign Out</a></li>' +
+        '</ul></li>'
   }
 
   var LOGGED_OUT_HTML =
-          '<li class="navbar-link">'
-        +   '<a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Sign Up</a>'
-        + '</li>'
-        + '<li class="navbar-link"><a onclick="lucybot.startLogin()">Sign In</a></li>';
+      '<li class="navbar-link auth-link"><a class="btn btn-success" onclick="lucybot.startLogin()">Sign In</a></li>';
+
+  function setPartnerChoices(choices) {
+    window.kalturaPartners = choices;
+    var partnerChoicesHTML = partnerChoicesTemplate(choices);
+    window.jquery('#KalturaPartnerIDDropdown').find('ul.dropdown-menu').html(partnerChoicesHTML);
+    window.jquery('#KalturaPartnerIDModal').find('ul.dropdown-menu').html(partnerChoicesHTML);
+  }
+
+  function partnerChoicesTemplate(partners) {
+    return partners.map(function(partner) {
+      return '<li><a onclick="setKalturaPartnerID(' + partner.id + ')">' + partner.name + ' (' + partner.id + ')</a></li>'
+    }).join('\n');
+  }
 
   var setCookie = function(creds) {
     var val = creds ? encodeURIComponent(JSON.stringify(creds)) : '';
@@ -22,19 +41,30 @@
     var expires = new Date(now.getTime() + COOKIE_TIMEOUT_MS);
     var cookie = STORAGE_KEY + '=' + val + '; expires=' + expires.toUTCString() + '; Path=/';
     document.cookie = cookie;
+    if (promptTimeout) clearTimeout(promptTimeout);
+    if (logoutTimeout) clearTimeout(logoutTimeout);
+    if (creds) {
+      promptTimeout = setTimeout(function() {
+        window.jquery('#KalturaContinueSessionModal').modal('show');
+      }, PROMPT_TIMEOUT_MS);
+      logoutTimeout = setTimeout(function() {
+        setKalturaUser();
+      }, COOKIE_TIMEOUT_MS);
+    }
   }
 
   var updateViewsForLogin = function(creds) {
     window.jquery('#KalturaSignInModal .alert-danger').hide();
+    window.jquery('#KalturaNav ul.nav li.auth-link').remove();
     if (!creds) {
-      window.jquery('#KalturaAuthLinks').html(LOGGED_OUT_HTML);
+      window.jquery('#KalturaNav ul.nav').append(LOGGED_OUT_HTML);
       window.jquery('#KalturaSidebar .logged-in').hide();
       window.jquery('#KalturaSidebar .not-logged-in').show();
       window.jquery('input[name="KalturaEmail"]').val('');
       window.jquery('input[name="KalturaPassword"]').val('');
       window.jquery('input[name="KalturaSession"]').val('');
     } else {
-      window.jquery('#KalturaAuthLinks').html(loggedInTemplate());
+      window.jquery('#KalturaNav ul.nav').append(loggedInTemplate());
       window.jquery('#KalturaSidebar .not-logged-in').hide();
       window.jquery('#KalturaSidebar .logged-in').show();
       window.jquery('#KalturaSidebar .partnerId').text(creds.partnerId || '');
@@ -47,7 +77,7 @@
 
   window.setKalturaUser = function(creds) {
     function clearUser() {
-      user = {};
+      window.kalturaUser = user = {};
       if (window.secretService) window.secretService.clearSecrets();
       setCookie();
     }
@@ -56,22 +86,23 @@
       updateViewsForLogin(null);
       return;
     }
-    user = creds;
-    window.setUpKalturaClient(creds, function(err, newCreds) {
+    window.kalturaUser = user = creds;
+
+    let fn = creds.partnerId ? window.setUpKalturaClient : window.setKalturaSession;
+    fn(creds, function(err, newCreds) {
       if (err) {
         clearUser();
         window.jquery('#KalturaSignInModal .alert-danger').show();
-        return;
+        return
       }
       window.jquery('#KalturaSignInModal').modal('hide');
-
       updateViewsForLogin(creds);
       setCookie(creds);
-      if (window.secretService) window.secretService.setSecrets(creds);
+      window.secretService.setSecrets(creds);
     })
   }
 
-  var maybeContinueSession = function() {
+  window.maybeContinueSession = function() {
     var ksMatch = window.location.href.substring(window.location.href.indexOf('?')).match(new RegExp('[?&]ks=([^&]+)'));
     if (ksMatch) ksMatch = window.decodeURIComponent(ksMatch[1]);
     var cookies = document.cookie.split(';').map(function(c) {return c.trim()});
@@ -86,31 +117,47 @@
       } catch(e) {}
       if (user && typeof user === 'object' && Object.keys(user).length) {
         if (ksMatch) user.ks = ksMatch;
-        setKalturaUser(user);
-        return;
+        window.loginByKs(user);
+        return true;
       }
     }
     if (ksMatch) {
       setKalturaUser({ks: ksMatch});
+      return true;
     } else {
       setKalturaUser();
+      return false;
     }
   };
+
+  window.loginByKs = function(user) {
+    if (user.partnerId) {
+      window.jquery.ajax({
+        url: '/auth/loginByKs',
+        method: 'POST',
+        data: JSON.stringify({ks: user.ks, partnerId: user.partnerId}),
+        headers: {'Content-Type': 'application/json'},
+      })
+      .done(function(response) {
+        setPartnerChoices(response);
+        setKalturaUser(user);
+      })
+    } else {
+      setPartnerChoices([]);
+      setKalturaUser(user);
+    }
+  }
 
   window.lucybot.startLogin = function() {
     window.jquery('#KalturaSignInModal').modal('show');
   }
-
-  window.jquery(document).ready(function() {
-    maybeContinueSession();
-  })
 
   window.startKalturaLogin = function() {
     window.jquery('#KalturaSignInModal .alert-danger').hide();
     var creds = {}
     creds.ks = window.jquery('input[name="KalturaSession"]').val();
     if (creds.ks) {
-      setKalturaUser(creds);
+      window.loginByKs(creds);
       return;
     }
 
@@ -158,11 +205,8 @@
       window.lucybot.tracker('login_success', {
         email: creds.email,
       });
-      var partnerChoicesHTML = response.map(function(partner) {
-        return '<li><a onclick="setKalturaPartnerID(' + partner.id + ')">' + partner.name + ' (' + partner.id + ')</a></li>'
-      }).join('\n');
-      window.jquery('#KalturaPartnerIDModal').find('ul.dropdown-menu').html(partnerChoicesHTML);
-      user = creds;
+      setPartnerChoices(response);
+      window.kalturaUser = user = creds;
     })
     .fail(function(xhr) {
       window.lucybot.tracker('login_error', {
@@ -178,11 +222,16 @@
 
   window.setKalturaPartnerID = function(id) {
     user.partnerId = id;
+    window.jquery('#KalturaPartnerIDDropdown a.dropdown-toggle').html('<i class="fa fa-spin fa-refresh"></i>');
     window.jquery('#KalturaPartnerIDModal .kaltura-loading').show();
     window.jquery.ajax({
       url: '/auth/selectPartner',
       method: 'POST',
-      data: JSON.stringify(user),
+      data: JSON.stringify({
+        email: user.email,
+        partnerId: user.partnerId,
+        password: user.password,
+      }),
       headers: {'Content-Type': 'application/json'},
     })
     .done(function(data) {
@@ -192,6 +241,8 @@
         userId: user.email,
         partnerId: user.partnerId,
         name: data.name,
+        email: user.email,
+        password: user.password,
       }
       setKalturaUser(creds);
     })
@@ -207,4 +258,5 @@
       window.jquery('#KalturaSignInModal .alert-danger').show();
     });
   }
+
 })();
