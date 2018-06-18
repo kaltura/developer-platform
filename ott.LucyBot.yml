@@ -1,5 +1,3 @@
-basePath: /@VERSION@/doc/
-
 specifications:
   ott:
     - openapi: ./ott.openapi.json
