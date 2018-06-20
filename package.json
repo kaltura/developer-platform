@@ -14,27 +14,27 @@
     }
   },
   "devDependencies": {
-    "async": "^2.6.0",
+    "async": "^2.6.1",
     "chai": "^4.1.2",
     "cheerio": "^1.0.0-rc.2",
-    "ejs": "^2.5.5",
-    "mocha": "^5.1.1",
+    "ejs": "^2.6.1",
+    "mocha": "^5.2.0",
     "pretty-data": "^0.40.0",
-    "request": "^2.79.0",
+    "request": "^2.87.0",
     "run-when-changed": "^2.1.0"
   },
   "dependencies": {
-    "body-parser": "^1.16.0",
-    "bootstrap": "^4.1.0",
-    "compression": "^1.6.2",
-    "express": "^4.14.1",
-    "js-yaml": "^3.8.2",
-    "jsonwebtoken": "^8.0.0",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.1",
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "js-yaml": "^3.12.0",
+    "jsonwebtoken": "^8.3.0",
     "kaltura": "file:lib/ott",
     "kaltura-client": "^1.0.10",
     "pug": "^2.0.3",
-    "request": "^2.79.0",
-    "sass": "^1.2.1",
+    "request": "^2.87.0",
+    "sass": "^1.6.2",
     "swiftype": "^0.3.1"
   }
 }
