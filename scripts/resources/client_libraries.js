@@ -1,6 +1,6 @@
 var fs = require('fs');
 var ejs = require('ejs');
-var version = process.env.API_VERSION || 'v13.20.0';
+var version = 'v13.20.0';
 const MARKDOWN_DIR = __dirname + '/../../markdown';
 const TARGET = process.env.TARGET_API || 'ovp';
 const CLIENT_LANGS = {
@@ -21,9 +21,15 @@ const CLIENT_LANGS = {
   'Typescript': 'typescript',
 };
 console.log(TARGET);
-if (TARGET === 'ott'){
+if (TARGET === 'ott'){	
+	if(process.env.OTT_API_VERSION) {
+		version = process.env.OTT_API_VERSION;
+	}
 	baserepo_url='https://github.com/kaltura/KalturaOttGeneratedAPIClients';
 }else{
+	if(process.env.OVP_API_VERSION) {
+		version = process.env.OVP_API_VERSION;
+	}
 	baserepo_url='https://github.com/kaltura/KalturaGeneratedAPIClients';
 }
 var clientMD = '';
