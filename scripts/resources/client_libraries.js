@@ -21,9 +21,15 @@ const CLIENT_LANGS = {
   'Typescript': 'typescript',
 };
 console.log(TARGET);
-if (TARGET === 'ott'){
+if (TARGET === 'ott'){	
+	if(process.env.OTT_API_VERSION) {
+		version = process.env.OTT_API_VERSION;
+	}
 	baserepo_url='https://github.com/kaltura/KalturaOttGeneratedAPIClients';
 }else{
+	if(process.env.OVP_API_VERSION) {
+		version = process.env.OVP_API_VERSION;
+	}
 	baserepo_url='https://github.com/kaltura/KalturaGeneratedAPIClients';
 }
 var clientMD = '';
