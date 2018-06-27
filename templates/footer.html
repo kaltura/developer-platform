@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" id="KalturaFooterContainer">
 <div id="KalturaFooter" class="w-section footer-section">
   <div class="w-container container footer-container">
     <div class="row">
@@ -68,3 +68,10 @@
   </div>
 </div>
 </div>
+<script>
+if (window.lucybot.embed) {
+  elem = document.getElementById('KalturaFooterContainer');
+  if (elem) elem.remove();
+}
+</script>
+
