@@ -7,9 +7,9 @@ searchParams.getSearchOperator().getSearchItems().get(0).setSearchTerm("asdf");
 Pager pager = new Pager();
 
 SearchEntryESearchBuilder requestBuilder = ESearchService.searchentry(searchParams, pager)
-    .setCompletion(new OnCompletion<Response<ESearchResponse>>() {
+    .setCompletion(new OnCompletion<Response<ESearchEntryResponse>>() {
         @Override
-        public void onComplete(Response<ESearchResponse> result) {
+        public void onComplete(Response<ESearchEntryResponse> result) {
             System.out.println(result);
         }
     });

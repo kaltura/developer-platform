@@ -7,7 +7,7 @@ searchParams.searchOperator.searchItems[0].searchTerm = "asdf"
 var pager = Pager()
 
 let requestBuilder = ESearchService.searchEntry(searchParams: searchParams, pager: pager)
-requestBuilder.set(completion: {(result: ESearchResponse?, error: ApiException?) in
+requestBuilder.set(completion: {(result: ESearchEntryResponse?, error: ApiException?) in
 	print(result!)
 	done()
 })
