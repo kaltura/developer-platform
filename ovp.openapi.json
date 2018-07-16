@@ -11731,6 +11731,7 @@
             "Portuguese",
             "Russian",
             "Spanish",
+            "Thai",
             "Turkish"
           ],
           "type": "string",
@@ -11753,6 +11754,7 @@
             "PT",
             "RU",
             "ES",
+            "TH",
             "TR"
           ],
           "x-enumType": "KalturaCatalogItemLanguage"
@@ -17392,6 +17394,11 @@
         }
       ],
       "properties": {
+        "copiedFrom": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        },
         "createdAt": {
           "description": "`readOnly`",
           "readOnly": true,
@@ -19824,6 +19831,10 @@
         }
       ],
       "properties": {
+        "config": {
+          "description": "Override server node default configuration - json format",
+          "type": "string"
+        },
         "deliveryProfileIds": {
           "items": {
             "$ref": "#/definitions/KalturaKeyValue"
@@ -20057,6 +20068,7 @@
             "Portuguese",
             "Russian",
             "Spanish",
+            "Thai",
             "Turkish"
           ],
           "type": "string",
@@ -20079,6 +20091,7 @@
             "PT",
             "RU",
             "ES",
+            "TH",
             "TR"
           ],
           "x-enumType": "KalturaCatalogItemLanguage"
@@ -24678,9 +24691,6 @@
           "$ref": "#/definitions/KalturaESearchCategoryOperator"
         },
         {
-          "$ref": "#/definitions/KalturaESearchCategoryQuery"
-        },
-        {
           "$ref": "#/definitions/KalturaESearchCategoryItem"
         },
         {
@@ -24691,9 +24701,6 @@
         },
         {
           "$ref": "#/definitions/KalturaESearchEntryOperator"
-        },
-        {
-          "$ref": "#/definitions/KalturaESearchEntryQuery"
         },
         {
           "$ref": "#/definitions/KalturaESearchNestedOperator"
@@ -24720,9 +24727,6 @@
           "$ref": "#/definitions/KalturaESearchUserOperator"
         },
         {
-          "$ref": "#/definitions/KalturaESearchUserQuery"
-        },
-        {
           "$ref": "#/definitions/KalturaESearchUserItem"
         },
         {
@@ -24733,12 +24737,10 @@
         "objectType": {
           "enum": [
             "KalturaESearchCategoryOperator",
-            "KalturaESearchCategoryQuery",
             "KalturaESearchCategoryItem",
             "KalturaESearchCategoryMetadataItem",
             "KalturaESearchCategoryUserItem",
             "KalturaESearchEntryOperator",
-            "KalturaESearchEntryQuery",
             "KalturaESearchNestedOperator",
             "KalturaESearchCaptionItem",
             "KalturaESearchCuePointItem",
@@ -24747,7 +24749,6 @@
             "KalturaESearchEntryItem",
             "KalturaESearchUnifiedItem",
             "KalturaESearchUserOperator",
-            "KalturaESearchUserQuery",
             "KalturaESearchUserItem",
             "KalturaESearchUserMetadataItem"
           ],
@@ -24825,9 +24826,6 @@
           "$ref": "#/definitions/KalturaESearchCategoryOperator"
         },
         {
-          "$ref": "#/definitions/KalturaESearchCategoryQuery"
-        },
-        {
           "$ref": "#/definitions/KalturaESearchCategoryItem"
         },
         {
@@ -24841,7 +24839,6 @@
         "objectType": {
           "enum": [
             "KalturaESearchCategoryOperator",
-            "KalturaESearchCategoryQuery",
             "KalturaESearchCategoryItem",
             "KalturaESearchCategoryMetadataItem",
             "KalturaESearchCategoryUserItem"
@@ -25065,20 +25062,6 @@
         }
       },
       "title": "KalturaESearchCategoryParams",
-      "type": "object"
-    },
-    "KalturaESearchCategoryQuery": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/KalturaESearchCategoryBaseItem"
-        }
-      ],
-      "properties": {
-        "eSearchQuery": {
-          "type": "string"
-        }
-      },
-      "title": "KalturaESearchCategoryQuery",
       "type": "object"
     },
     "KalturaESearchCategoryResponse": {
@@ -25329,9 +25312,6 @@
           "$ref": "#/definitions/KalturaESearchEntryOperator"
         },
         {
-          "$ref": "#/definitions/KalturaESearchEntryQuery"
-        },
-        {
           "$ref": "#/definitions/KalturaESearchNestedOperator"
         },
         {
@@ -25357,7 +25337,6 @@
         "objectType": {
           "enum": [
             "KalturaESearchEntryOperator",
-            "KalturaESearchEntryQuery",
             "KalturaESearchNestedOperator",
             "KalturaESearchCaptionItem",
             "KalturaESearchCuePointItem",
@@ -25632,20 +25611,6 @@
         }
       },
       "title": "KalturaESearchEntryParams",
-      "type": "object"
-    },
-    "KalturaESearchEntryQuery": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/KalturaESearchEntryBaseItem"
-        }
-      ],
-      "properties": {
-        "eSearchQuery": {
-          "type": "string"
-        }
-      },
-      "title": "KalturaESearchEntryQuery",
       "type": "object"
     },
     "KalturaESearchEntryResponse": {
@@ -26105,9 +26070,6 @@
           "$ref": "#/definitions/KalturaESearchUserOperator"
         },
         {
-          "$ref": "#/definitions/KalturaESearchUserQuery"
-        },
-        {
           "$ref": "#/definitions/KalturaESearchUserItem"
         },
         {
@@ -26118,7 +26080,6 @@
         "objectType": {
           "enum": [
             "KalturaESearchUserOperator",
-            "KalturaESearchUserQuery",
             "KalturaESearchUserItem",
             "KalturaESearchUserMetadataItem"
           ],
@@ -26260,20 +26221,6 @@
       "title": "KalturaESearchUserParams",
       "type": "object"
     },
-    "KalturaESearchUserQuery": {
-      "allOf": [
-        {
-          "$ref": "#/definitions/KalturaESearchUserBaseItem"
-        }
-      ],
-      "properties": {
-        "eSearchQuery": {
-          "type": "string"
-        }
-      },
-      "title": "KalturaESearchUserQuery",
-      "type": "object"
-    },
     "KalturaESearchUserResponse": {
       "allOf": [
         {
@@ -26312,10 +26259,6 @@
         }
       ],
       "properties": {
-        "config": {
-          "description": "Overdie edge server default configuration - json format",
-          "type": "string"
-        },
         "playbackDomain": {
           "description": "Delivery server playback Domain",
           "type": "string"
@@ -28018,9 +27961,6 @@
           "$ref": "#/definitions/KalturaEntryServerNodeFilter"
         },
         {
-          "$ref": "#/definitions/KalturaLiveEntryServerNodeBaseFilter"
-        },
-        {
           "$ref": "#/definitions/KalturaConferenceEntryServerNodeFilter"
         },
         {
@@ -28043,7 +27983,6 @@
         "objectType": {
           "enum": [
             "KalturaEntryServerNodeFilter",
-            "KalturaLiveEntryServerNodeBaseFilter",
             "KalturaConferenceEntryServerNodeFilter",
             "KalturaLiveEntryServerNodeFilter"
           ],
@@ -28123,9 +28062,6 @@
       "discriminator": "objectType",
       "oneOf": [
         {
-          "$ref": "#/definitions/KalturaLiveEntryServerNodeBaseFilter"
-        },
-        {
           "$ref": "#/definitions/KalturaConferenceEntryServerNodeFilter"
         },
         {
@@ -28135,7 +28071,6 @@
       "properties": {
         "objectType": {
           "enum": [
-            "KalturaLiveEntryServerNodeBaseFilter",
             "KalturaConferenceEntryServerNodeFilter",
             "KalturaLiveEntryServerNodeFilter"
           ],
@@ -28284,7 +28219,7 @@
         "price": {
           "description": "`readOnly`\n\nThe charged price to execute this task",
           "readOnly": true,
-          "type": "integer"
+          "type": "number"
         },
         "queueTime": {
           "description": "`readOnly`",
@@ -31733,9 +31668,6 @@
           "$ref": "#/definitions/KalturaEntryServerNodeFilter"
         },
         {
-          "$ref": "#/definitions/KalturaLiveEntryServerNodeBaseFilter"
-        },
-        {
           "$ref": "#/definitions/KalturaConferenceEntryServerNodeFilter"
         },
         {
@@ -32040,7 +31972,6 @@
             "KalturaFeedDropFolderFileFilter",
             "KalturaWebexDropFolderFileFilter",
             "KalturaEntryServerNodeFilter",
-            "KalturaLiveEntryServerNodeBaseFilter",
             "KalturaConferenceEntryServerNodeFilter",
             "KalturaLiveEntryServerNodeFilter",
             "KalturaEventNotificationTemplateFilter",
@@ -39703,6 +39634,7 @@
           "$ref": "#/definitions/KalturaEntryServerNodeFilter"
         }
       ],
+      "description": "`abstract`",
       "discriminator": "objectType",
       "oneOf": [
         {
@@ -48382,6 +48314,7 @@
             "Portuguese",
             "Russian",
             "Spanish",
+            "Thai",
             "Turkish"
           ],
           "type": "string",
@@ -48404,6 +48337,7 @@
             "PT",
             "RU",
             "ES",
+            "TH",
             "TR"
           ],
           "x-enumType": "KalturaCatalogItemLanguage"
@@ -48564,7 +48498,7 @@
         "usedCredit": {
           "description": "`readOnly`",
           "readOnly": true,
-          "type": "integer"
+          "type": "number"
         }
       },
       "title": "KalturaReachProfile",
@@ -51332,6 +51266,9 @@
           "type": "integer"
         },
         "lastExecutionStartedAtLessThanOrEqual": {
+          "type": "integer"
+        },
+        "lastExecutionStartedAtLessThanOrEqualOrNull": {
           "type": "integer"
         },
         "objectType": {
@@ -60862,6 +60799,7 @@
             "Portuguese",
             "Russian",
             "Spanish",
+            "Thai",
             "Turkish"
           ],
           "type": "string",
@@ -60884,6 +60822,7 @@
             "PT",
             "RU",
             "ES",
+            "TH",
             "TR"
           ],
           "x-enumType": "KalturaCatalogItemLanguage"
@@ -60953,6 +60892,7 @@
             "Portuguese",
             "Russian",
             "Spanish",
+            "Thai",
             "Turkish"
           ],
           "type": "string",
@@ -60975,6 +60915,7 @@
             "PT",
             "RU",
             "ES",
+            "TH",
             "TR"
           ],
           "x-enumType": "KalturaCatalogItemLanguage"
@@ -61363,7 +61304,7 @@
           "x-enumType": "KalturaVendorCatalogItemPriceFunction"
         },
         "pricePerUnit": {
-          "type": "integer"
+          "type": "number"
         }
       },
       "title": "KalturaVendorCatalogItemPricing",
@@ -61449,6 +61390,7 @@
             "Portuguese",
             "Russian",
             "Spanish",
+            "Thai",
             "Turkish"
           ],
           "type": "string",
@@ -61471,6 +61413,7 @@
             "PT",
             "RU",
             "ES",
+            "TH",
             "TR"
           ],
           "x-enumType": "KalturaCatalogItemLanguage"
@@ -61520,6 +61463,7 @@
             "Portuguese",
             "Russian",
             "Spanish",
+            "Thai",
             "Turkish"
           ],
           "type": "string",
@@ -61542,6 +61486,7 @@
             "PT",
             "RU",
             "ES",
+            "TH",
             "TR"
           ],
           "x-enumType": "KalturaCatalogItemLanguage"
@@ -64501,7 +64446,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "3.3.0"
+    "version": "14.2.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -65124,14 +65069,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/accesscontrol/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -65360,14 +65298,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/accesscontrolprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -65982,14 +65913,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/annotation_annotation/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -66324,7 +66248,7 @@
     },
     "/service/apptoken/action/delete": {
       "post": {
-        "description": "Delete application authentication token by id",
+        "description": "Delete application authentication token by ID",
         "operationId": "appToken.delete",
         "parameters": [
           {
@@ -66368,7 +66292,7 @@
     },
     "/service/apptoken/action/get": {
       "post": {
-        "description": "Get application authentication token by id",
+        "description": "Get application authentication token by ID",
         "operationId": "appToken.get",
         "parameters": [
           {
@@ -66383,14 +66307,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/apptoken/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -66467,7 +66384,7 @@
     },
     "/service/apptoken/action/startSession": {
       "post": {
-        "description": "Starts a new KS (kaltura Session) based on application authentication token id",
+        "description": "Starts a new KS (kaltura Session) based on an application authentication token ID",
         "operationId": "appToken.startSession",
         "parameters": [
           {
@@ -66541,7 +66458,7 @@
     },
     "/service/apptoken/action/update": {
       "post": {
-        "description": "Update application authentication token by id",
+        "description": "Update application authentication token by ID",
         "operationId": "appToken.update",
         "parameters": [
           {
@@ -67185,14 +67102,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/audit_audittrail/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -67853,14 +67763,7 @@
             "schema": {
               "properties": {
                 "entryId": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "name",
-                    "method": "post",
-                    "path": "/service/media/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 },
                 "version": {
                   "default": -1,
@@ -71103,14 +71006,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/bulkupload/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -71327,14 +71223,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/bulkupload_bulk/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -72080,14 +71969,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/businessprocessnotification_businessprocessserver/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -72970,14 +72852,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/caption_captionparams/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -73646,14 +73521,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/category/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -75058,14 +74926,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/contentdistribution_distributionprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -75452,14 +75313,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/contentdistribution_entrydistribution/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -76108,14 +75962,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/contentdistribution_genericdistributionprovider/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -76709,14 +76556,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/contentdistribution_genericdistributionprovideraction/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -77086,14 +76926,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/conversionprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -77652,14 +77485,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/cuepoint_cuepoint/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -78105,14 +77931,7 @@
             "schema": {
               "properties": {
                 "entryId": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "name",
-                    "method": "post",
-                    "path": "/service/media/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 },
                 "version": {
                   "default": -1,
@@ -78406,14 +78225,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/deliveryprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -78946,14 +78758,7 @@
             "schema": {
               "properties": {
                 "entryId": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "name",
-                    "method": "post",
-                    "path": "/service/media/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 },
                 "version": {
                   "default": -1,
@@ -81179,14 +80984,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/entryservernode/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -81629,14 +81427,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/eventnotification_eventnotificationtemplate/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -82168,14 +81959,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/externalmedia_externalmedia/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -82404,14 +82188,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/fileasset/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -82988,14 +82765,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/flavorasset/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -83757,14 +83527,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/flavorparams/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -83949,14 +83712,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/flavorparamsoutput/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -88962,14 +88718,7 @@
             "schema": {
               "properties": {
                 "entryId": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "name",
-                    "method": "post",
-                    "path": "/service/media/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 },
                 "version": {
                   "default": -1,
@@ -91850,14 +91599,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/metadata_metadata/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -92534,14 +92276,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/metadata_metadataprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -93286,14 +93021,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/partner/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "type": "object"
@@ -94593,14 +94321,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/playlist/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 },
                 "version": {
                   "default": -1,
@@ -95290,14 +95011,7 @@
             "schema": {
               "properties": {
                 "entryId": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "name",
-                    "method": "post",
-                    "path": "/service/media/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -95745,14 +95459,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/reach_entryvendortask/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -96257,14 +95964,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/reach_reachprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -96653,14 +96353,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/reach_vendorcatalogitem/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -97819,14 +97512,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/responseprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -99116,14 +98802,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/scheduledtask_scheduledtaskprofile/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -100316,14 +99995,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/shortlink_shortlink/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -101095,14 +100767,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/syndicationfeed/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -102538,14 +102203,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/thumbparams/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -102730,14 +102388,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/thumbparamsoutput/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -103057,14 +102708,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "integer",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/uiconf/action/list",
-                    "value": "id"
-                  }
+                  "type": "integer"
                 }
               },
               "required": [
@@ -104797,14 +104441,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/userentry/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -105898,14 +105535,7 @@
             "schema": {
               "properties": {
                 "id": {
-                  "type": "string",
-                  "x-dynamicEnum": {
-                    "array": "objects",
-                    "label": "id",
-                    "method": "post",
-                    "path": "/service/widget/action/list",
-                    "value": "id"
-                  }
+                  "type": "string"
                 }
               },
               "required": [
@@ -110690,6 +110320,12 @@
             "Spanish"
           ],
           "title": "ES"
+        },
+        {
+          "enum": [
+            "Thai"
+          ],
+          "title": "TH"
         },
         {
           "enum": [
