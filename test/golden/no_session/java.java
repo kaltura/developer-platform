@@ -23,7 +23,7 @@ class CodeExample {
         String privileges = "*";
         String otp = "";
 
-        LoginByLoginIdUserBuilder requestBuilder = UserService.loginbyloginid(loginId, password, partnerId, expiry, privileges, otp)
+        LoginByLoginIdUserBuilder requestBuilder = UserService.loginByLoginId(loginId, password, partnerId, expiry, privileges, otp)
             .setCompletion(new OnCompletion<Response<String>>() {
                 @Override
                 public void onComplete(Response<String> result) {
