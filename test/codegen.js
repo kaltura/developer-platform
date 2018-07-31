@@ -37,6 +37,15 @@ describe('Sample Code', function() {
       showSetup: false,
     }
   }, {
+    name: 'property_in_subclass',
+    service: 'livestream',
+    action: 'add',
+    input: {
+      answers: {
+        'liveStreamEntry[liveStreamConfigurations][0][backupUrl]': 'abcd',
+      }
+    }
+  }, {
     name: 'falsy_default',
     service: 'batch',
     action: 'freeExclusiveJob',

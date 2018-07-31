@@ -300,12 +300,6 @@ const getDefName = (ref) => {
   return ref.substring('#/definitions/'.length);
 }
 
-const maybeResolveRef = (schema, swagger) => {
-  if (!schema.$ref) return schema;
-  let name = getDefName(schema.$ref);
-  return swagger.definitions[name];
-}
-
 CodeTemplate.prototype.render = function(input) {
   var self = this;
   if (input.path) {
@@ -328,11 +322,11 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   input.operation = this.swagger.paths[input.path][input.method];
   let responseSchema = input.operation.responses[200].schema;
   if (responseSchema) {
-    if (responseSchema.$ref) responseSchema = this.swagger.definitions[getDefName(responseSchema.$ref)];
+    responseSchema = this.maybeResolveRef(responseSchema);
     input.responseType = this.rewriteType(responseSchema.title || responseSchema.type);
     if (responseSchema.title && responseSchema.title.match(/ListResponse$/)) {
       let items = responseSchema.properties.objects.items;
-      if (items.$ref) items = this.swagger.definitions[getDefName(items.$ref)];
+      items = this.maybeResolveRef(items);
       input.responseListType = this.rewriteType(items.title || items.type);
     }
   }
@@ -362,7 +356,7 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
 
 CodeTemplate.prototype.gatherAnswersForPost = function(input) {
   let findSubschema = (schema, key) => {
-    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    schema = this.maybeResolveRef(schema);
     if (schema.properties && schema.properties[key]) return schema.properties[key];
     let alternatives = (schema.allOf || []).concat(schema.oneOf || []);
     for (let i = 0; i < alternatives.length; ++i) {
@@ -380,7 +374,7 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
     }
   }
   let addAnswer = (key, answer, schema) => {
-    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    schema = this.maybeResolveRef(schema);
     addSchema(schema);
     if (Array.isArray(answer)) {
       answer.forEach((ans, idx) => {
@@ -409,7 +403,7 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
 
   input.operation['x-kaltura-parameters'].forEach(name => {
     let schema = bodyParam.schema.properties[name];
-    if (schema.$ref) schema = this.swagger.definitions[getDefName(schema.$ref)];
+    schema = this.maybeResolveRef(schema);
     let param = {name, schema};
     input.parameters.push(param);
     addSchema(schema);
@@ -479,7 +473,7 @@ CodeTemplate.prototype.assignment = function(param, answers, parent) {
   }
 
   const findSubschema = (subParamName, schema) => {
-    if (schema.$ref) schema = this.swagger.definitions[schema.$ref.substring('#/definitions/'.length)];
+    schema = this.maybeResolveRef(schema);
     let propName = subParamName.split(/\[/).map(s => s.replace(/\]/g, '')).pop();
     if (propName === 'objectType') {
       return this.swagger.definitions[answers[subParamName]];
@@ -519,8 +513,9 @@ CodeTemplate.prototype.assignment = function(param, answers, parent) {
       .map(match => match[1]);
     arraySubsetterNames = arraySubsetterNames.filter((n, idx) => arraySubsetterNames.lastIndexOf(n) === idx);
     subsetterStatements = subsetterStatements.concat(arraySubsetterNames.map(arrayName => {
-      let schema = param.schema.properties[arrayName];
-      let itemSchema = maybeResolveRef(schema.items, self.swagger);
+      let schema = this.getPropertySchema(param.schema, arrayName);
+      if (!schema) throw new Error("Schema not found for property " + arrayName + " in " + param.schema.title);
+      let itemSchema = this.maybeResolveRef(schema.items);
       let subparam = {name: param.name + '[' + arrayName + ']', schema};
       let indices = Object.keys(answers)
         .map(n => n.match(arraySubparamRegexp))
@@ -553,11 +548,7 @@ CodeTemplate.prototype.lvalue = function(param) {
     enumType = param.schema.title;
   }
 
-  if (param.schema.$ref) {
-    let name = param.schema.$ref.substring('#/definitions/'.length);
-    param.schema = this.swagger.definitions[name];
-    param.schema.title = name;
-  }
+  param.schema = this.maybeResolveRef(param.schema);
 
   var lvalue = this.statementPrefix;
   if (isChild) {
@@ -579,6 +570,24 @@ CodeTemplate.prototype.lvalue = function(param) {
     lvalue += EJS.render(self.declarationPrefix, {type}) + self.rewriteVariable(param.name);
   }
   return lvalue;
+}
+
+CodeTemplate.prototype.getPropertySchema = function(schema, prop) {
+  schema = this.maybeResolveRef(schema);
+  if (schema.properties && schema.properties[prop]) {
+    return schema.properties[prop];
+  }
+  let subs = (schema.allOf || []).concat(schema.anyOf || []);
+  for (let sub of subs) {
+    let propSchema = this.getPropertySchema(sub, prop);
+    if (propSchema) return propSchema;
+  }
+}
+
+CodeTemplate.prototype.maybeResolveRef = function(schema) {
+  if (!schema.$ref) return schema;
+  let name = schema.$ref.substring('#/definitions/'.length);
+  return this.swagger.definitions[name];
 }
 
 CodeTemplate.prototype.rvalue = function(param, answers, parent) {
