@@ -37,6 +37,15 @@ describe('Sample Code', function() {
       showSetup: false,
     }
   }, {
+    name: 'top_level_array',
+    service: 'media',
+    action: 'convert',
+    input: {
+      answers: {
+        'dynamicConversionAttributes[0][flavorParamsId]': 3
+      }
+    }
+  }, {
     name: 'property_in_subclass',
     service: 'livestream',
     action: 'add',
