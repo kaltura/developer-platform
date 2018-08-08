@@ -20,7 +20,7 @@
       var filter = new KalturaMediaEntryFilter();
       var pager = new KalturaFilterPager();
 
-      client.media.listAction(function(success, results) {
+      client.media.list(function(success, results) {
         if (!success || (results && results.code && results.message)) {
           console.log('Kaltura Error', success, results);
         } else {

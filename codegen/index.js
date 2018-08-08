@@ -2,7 +2,11 @@
 
 var EJS = window.ejs;
 
-const RESERVED_NAMES = ['list', 'clone', 'delete'];
+const RESERVED_NAMES = {
+  javascript: ['delete'],
+  php: ['list', 'clone'],
+}
+
 const TMPL_DIR = __dirname + '/templates';
 
 const replaceActionSuffix = str => {
@@ -36,8 +40,8 @@ const isPrimitiveSchema = schema => {
   return true;
 }
 
-const addActionSuffixIfReserved = action => {
-  if (RESERVED_NAMES.indexOf(action) !== -1) action += 'Action';
+const addActionSuffixIfReserved = (lang, action) => {
+  if (RESERVED_NAMES[lang].indexOf(action) !== -1) action += 'Action';
   return action;
 }
 
@@ -71,7 +75,7 @@ var language_opts = {
     statementSuffix: ';',
     objPrefix: 'new ',
     objSuffix: '()',
-    rewriteAction: addActionSuffixIfReserved,
+    rewriteAction: s => addActionSuffixIfReserved('javascript', s),
     fileCode: () => 'new File("/path/to/file")'
   },
   ajax: {
@@ -83,7 +87,7 @@ var language_opts = {
     rewriteType: function(s) {
       if (s.indexOf('Kaltura') === 0) return '{objectType: "' + s + '"}';
     },
-    rewriteAction: addActionSuffixIfReserved,
+    rewriteAction: s => addActionSuffixIfReserved('javascript', s),
     rewriteService: function(s) {
       return 'Kaltura' + capitalize(s) + 'Service';
     },
@@ -98,7 +102,7 @@ var language_opts = {
     objPrefix: 'new kaltura.objects.',
     objSuffix: '()',
     enumPrefix: 'kaltura.enums.',
-    rewriteAction: addActionSuffixIfReserved,
+    rewriteAction: s => addActionSuffixIfReserved('javascript', s),
     rewriteEnum: removeKalturaPrefix,
     rewriteType: removeKalturaPrefix,
     fileCode: () => "'/path/to/file'",
@@ -138,7 +142,7 @@ var language_opts = {
     objPrefix: 'new ',
     objSuffix: '()',
     enumAccessor: '::',
-    rewriteAction: addActionSuffixIfReserved,
+    rewriteAction: s => addActionSuffixIfReserved('php', s),
     rewriteVariable: s => '$' + s,
     fileCode: () => '"/path/to/file"',
   },
@@ -149,7 +153,7 @@ var language_opts = {
     objPrefix: 'new ',
     objSuffix: '()',
     enumAccessor: '::',
-    rewriteAction: addActionSuffixIfReserved,
+    rewriteAction: s => addActionSuffixIfReserved('php', s),
     rewriteVariable: s => '$' + s,
     rewriteEnum: removeKalturaPrefix,
     rewriteType: removeKalturaPrefix,

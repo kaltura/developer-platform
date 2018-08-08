@@ -20,7 +20,7 @@
       var filter = new KalturaMetadataProfileFilter();
       var pager = new KalturaFilterPager();
 
-      client.metadataProfile.listAction(function(success, results) {
+      client.metadataProfile.list(function(success, results) {
         if (!success || (results && results.code && results.message)) {
           console.log('Kaltura Error', success, results);
         } else {

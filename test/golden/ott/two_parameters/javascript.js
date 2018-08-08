@@ -5,7 +5,7 @@ var pager = new KalturaFilterPager();
 pager.pageIndex = 3;
 pager.pageSize = 7;
 
-client.assetHistory.listAction(function(success, results) {
+client.assetHistory.list(function(success, results) {
   if (!success || (results && results.code && results.message)) {
     console.log('Kaltura Error', success, results);
   } else {
