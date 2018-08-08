@@ -7,7 +7,7 @@ filter.advancedSearch.value = "baz";
 let pager = new kaltura.objects.FilterPager();
 pager.pageSize = 3;
 
-kaltura.services.media.list(filter, pager)
+kaltura.services.media.listAction(filter, pager)
 .execute(client)
 .then(result => {
     console.log(result);

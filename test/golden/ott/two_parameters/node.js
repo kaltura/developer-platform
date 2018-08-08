@@ -5,7 +5,7 @@ let pager = new kaltura.objects.FilterPager();
 pager.pageIndex = 3;
 pager.pageSize = 7;
 
-kaltura.services.assetHistory.list(filter, pager)
+kaltura.services.assetHistory.listAction(filter, pager)
 .execute(client)
 .then(result => {
     console.log(result);

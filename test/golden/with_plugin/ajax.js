@@ -23,7 +23,7 @@
       var filter = {objectType: "KalturaMetadataProfileFilter"};
       var pager = {objectType: "KalturaFilterPager"};
 
-      KalturaMetadataProfileService.list(filter, pager)
+      KalturaMetadataProfileService.listAction(filter, pager)
         .execute(client, function(success, results) {
           if (!success || (results && results.code && results.message)) {
             console.log('Kaltura Error', success, results);

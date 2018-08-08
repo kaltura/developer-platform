@@ -7,7 +7,7 @@ filter.advancedSearch.value = "baz";
 var pager = new KalturaFilterPager();
 pager.pageSize = 3;
 
-client.media.list(function(success, results) {
+client.media.listAction(function(success, results) {
   if (!success || (results && results.code && results.message)) {
     console.log('Kaltura Error', success, results);
   } else {

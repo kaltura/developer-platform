@@ -3,8 +3,8 @@
 var EJS = window.ejs;
 
 const RESERVED_NAMES = {
-  javascript: ['delete'],
-  php: ['list', 'clone'],
+  javascript: ['delete', 'list', 'clone', 'export'],
+  php: ['list', 'clone', 'goto'],
 }
 
 const TMPL_DIR = __dirname + '/templates';

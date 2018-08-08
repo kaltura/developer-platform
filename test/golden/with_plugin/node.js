@@ -13,7 +13,7 @@ kaltura.services.session.start(
     let filter = new kaltura.objects.MetadataProfileFilter();
     let pager = new kaltura.objects.FilterPager();
 
-    kaltura.services.metadataProfile.list(filter, pager)
+    kaltura.services.metadataProfile.listAction(filter, pager)
     .execute(client)
     .then(result => {
         console.log(result);
