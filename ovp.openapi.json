@@ -11822,20 +11822,28 @@
             -1,
             0,
             1800,
+            7200,
             10800,
             21600,
+            28800,
+            43200,
             86400,
-            172800
+            172800,
+            864000
           ],
           "type": "integer",
           "x-enumLabels": [
             "BEST_EFFORT",
             "IMMEDIATE",
             "THIRTY_MINUTES",
+            "TWO_HOURS",
             "THREE_HOURS",
             "SIX_HOURS",
+            "EIGHT_HOURS",
+            "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
-            "FORTY_EIGHT_HOURS"
+            "FORTY_EIGHT_HOURS",
+            "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
         },
@@ -48554,55 +48562,6 @@
           ],
           "x-enumType": "KalturaVendorCatalogItemOutputFormat"
         },
-        "defaultSourceLanguage": {
-          "description": "Enum Type: `KalturaCatalogItemLanguage`",
-          "enum": [
-            "Arabic",
-            "Cantonese",
-            "Chinese",
-            "Dutch",
-            "English",
-            "English (American)",
-            "English (British)",
-            "French",
-            "German",
-            "Hebrew",
-            "Hindi",
-            "Italian",
-            "Japanese",
-            "Korean",
-            "Mandarin Chinese",
-            "Portuguese",
-            "Russian",
-            "Spanish",
-            "Thai",
-            "Turkish"
-          ],
-          "type": "string",
-          "x-enumLabels": [
-            "AR",
-            "YUE",
-            "ZH",
-            "NL",
-            "EN",
-            "EN_US",
-            "EN_GB",
-            "FR",
-            "DE",
-            "HE",
-            "HI",
-            "IT",
-            "JA",
-            "KO",
-            "CMN",
-            "PT",
-            "RU",
-            "ES",
-            "TH",
-            "TR"
-          ],
-          "x-enumType": "KalturaCatalogItemLanguage"
-        },
         "dictionaries": {
           "items": {
             "$ref": "#/definitions/KalturaDictionary"
@@ -61426,20 +61385,28 @@
             -1,
             0,
             1800,
+            7200,
             10800,
             21600,
+            28800,
+            43200,
             86400,
-            172800
+            172800,
+            864000
           ],
           "type": "integer",
           "x-enumLabels": [
             "BEST_EFFORT",
             "IMMEDIATE",
             "THIRTY_MINUTES",
+            "TWO_HOURS",
             "THREE_HOURS",
             "SIX_HOURS",
+            "EIGHT_HOURS",
+            "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
-            "FORTY_EIGHT_HOURS"
+            "FORTY_EIGHT_HOURS",
+            "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
         },
@@ -61554,20 +61521,28 @@
             -1,
             0,
             1800,
+            7200,
             10800,
             21600,
+            28800,
+            43200,
             86400,
-            172800
+            172800,
+            864000
           ],
           "type": "integer",
           "x-enumLabels": [
             "BEST_EFFORT",
             "IMMEDIATE",
             "THIRTY_MINUTES",
+            "TWO_HOURS",
             "THREE_HOURS",
             "SIX_HOURS",
+            "EIGHT_HOURS",
+            "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
-            "FORTY_EIGHT_HOURS"
+            "FORTY_EIGHT_HOURS",
+            "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
         },
@@ -61701,21 +61676,6 @@
       ],
       "discriminator": "objectType",
       "properties": {
-        "allowOverage": {
-          "description": "Enum Type: `KalturaNullableBoolean`",
-          "enum": [
-            -1,
-            0,
-            1
-          ],
-          "type": "integer",
-          "x-enumLabels": [
-            "NULL_VALUE",
-            "FALSE_VALUE",
-            "TRUE_VALUE"
-          ],
-          "x-enumType": "KalturaNullableBoolean"
-        },
         "credit": {
           "type": "integer"
         },
@@ -64821,7 +64781,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "14.2.0"
+    "version": "14.3.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -67910,6 +67870,9 @@
             "schema": {
               "properties": {
                 "cloneOptions": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaBaseEntryCloneOptionItem"
+                  },
                   "type": "array"
                 },
                 "entryId": {
@@ -68927,6 +68890,9 @@
                   "$ref": "#/definitions/KalturaBulkUploadResult"
                 },
                 "pluginDataArray": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaBulkUploadPluginData"
+                  },
                   "type": "array"
                 }
               },
@@ -70260,6 +70226,9 @@
             "schema": {
               "properties": {
                 "flavorsData": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaConvertCollectionFlavorData"
+                  },
                   "type": "array"
                 },
                 "id": {
@@ -70694,9 +70663,15 @@
                   "$ref": "#/definitions/KalturaScheduler"
                 },
                 "schedulerStatuses": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaSchedulerStatus"
+                  },
                   "type": "array"
                 },
                 "workerQueueFilters": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaWorkerQueueFilter"
+                  },
                   "type": "array"
                 }
               },
@@ -78993,6 +78968,9 @@
                   "type": "integer"
                 },
                 "dynamicConversionAttributes": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaConversionAttribute"
+                  },
                   "type": "array"
                 },
                 "entryId": {
@@ -90636,6 +90614,9 @@
                   "type": "integer"
                 },
                 "dynamicConversionAttributes": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaConversionAttribute"
+                  },
                   "type": "array"
                 },
                 "entryId": {
@@ -90824,7 +90805,8 @@
                     "method": "post",
                     "path": "/service/media/action/list",
                     "value": "id"
-                  }
+                  },
+                  "x-inputType": "text"
                 },
                 "version": {
                   "default": -1,
@@ -90879,6 +90861,9 @@
                   "type": "string"
                 },
                 "extendingItemsArray": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaExtendingItemMrssParameter"
+                  },
                   "type": "array"
                 },
                 "features": {
@@ -94639,6 +94624,9 @@
                   "type": "string"
                 },
                 "filters": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaMediaEntryFilterForPlaylist"
+                  },
                   "type": "array"
                 },
                 "pager": {
@@ -95972,6 +95960,9 @@
               "properties": {
                 "id": {
                   "type": "integer"
+                },
+                "rejectReason": {
+                  "type": "string"
                 }
               },
               "required": [
@@ -95994,7 +95985,8 @@
         ],
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
-          "id"
+          "id",
+          "rejectReason"
         ]
       }
     },
@@ -96411,53 +96403,6 @@
         "x-kaltura-parameters": [
           "filter",
           "pager"
-        ]
-      }
-    },
-    "/service/reach_reachprofile/action/resetCredit": {
-      "post": {
-        "description": "reset vednor profile credit",
-        "operationId": "reachProfile.resetCredit",
-        "parameters": [
-          {
-            "$ref": "#/parameters/ks"
-          },
-          {
-            "$ref": "#/parameters/format"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "schema": {
-              "properties": {
-                "reachProfileId": {
-                  "type": "integer"
-                }
-              },
-              "required": [
-                "reachProfileId"
-              ],
-              "type": "object"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/KalturaReachProfile"
-            }
-          },
-          "x-Errors": {
-            "description": "* `REACH_PROFILE_NOT_FOUND`: Reach profile with id provided not found [@ID@]"
-          }
-        },
-        "tags": [
-          "reachProfile"
-        ],
-        "x-kaltura-format": "post",
-        "x-kaltura-parameters": [
-          "reachProfileId"
         ]
       }
     },
@@ -96937,6 +96882,9 @@
                   "type": "integer"
                 },
                 "params": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaKeyValue"
+                  },
                   "type": "array"
                 }
               },
@@ -97103,6 +97051,9 @@
                   "type": "integer"
                 },
                 "params": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaKeyValue"
+                  },
                   "type": "array"
                 }
               },
@@ -103972,6 +103923,9 @@
             "schema": {
               "properties": {
                 "additionalFields": {
+                  "items": {
+                    "$ref": "#/definitions/KalturaCsvAdditionalFieldInfo"
+                  },
                   "type": "array"
                 },
                 "filter": {
@@ -138158,6 +138112,12 @@
         },
         {
           "enum": [
+            7200
+          ],
+          "title": "TWO_HOURS"
+        },
+        {
+          "enum": [
             10800
           ],
           "title": "THREE_HOURS"
@@ -138170,6 +138130,18 @@
         },
         {
           "enum": [
+            28800
+          ],
+          "title": "EIGHT_HOURS"
+        },
+        {
+          "enum": [
+            43200
+          ],
+          "title": "TWELVE_HOURS"
+        },
+        {
+          "enum": [
             86400
           ],
           "title": "TWENTY_FOUR_HOURS"
@@ -138179,6 +138151,12 @@
             172800
           ],
           "title": "FORTY_EIGHT_HOURS"
+        },
+        {
+          "enum": [
+            864000
+          ],
+          "title": "TEN_DAYS"
         }
       ],
       "title": "KalturaVendorServiceTurnAroundTime"
@@ -143188,9 +143166,9 @@
       "name": "CANNOT_UPDATE_STATUS_OF_TASK_WHICH_IS_IN_FINAL_STATE"
     },
     {
-      "code": "CANNOT_SET_ALLOW_OVERAGE_CREDIT",
-      "message": "Allow overage set to false but overage credit is set",
-      "name": "CANNOT_SET_ALLOW_OVERAGE_CREDIT"
+      "code": "OVERAGE_CREDIT_CANNOT_BE_NEGATIVE",
+      "message": "Overage credit value cannot be negative",
+      "name": "OVERAGE_CREDIT_CANNOT_BE_NEGATIVE"
     }
   ]
 }
