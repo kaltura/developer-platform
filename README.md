@@ -37,6 +37,7 @@ Several options can be set using environment variables:
 * DISCOURSE_CATEGORY_ID
 * DISABLE_SWIFTYPE
 * ENABLE_HOMEPAGE
+* BASE_PATH
 
 #### Required in production
 * TARGET_API - either 'ott' or 'ovp'

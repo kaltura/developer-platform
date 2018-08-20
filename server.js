@@ -8,6 +8,7 @@ var fs = require('fs');
 const TARGET_API = process.env.TARGET_API || 'ovp';
 const STATIC_DIR = __dirname + '/generated/' + TARGET_API;
 const DEFAULT_INDEX = fs.readFileSync(path.join(STATIC_DIR, 'default_index.html'), 'utf8');
+const BASE_PATH = process.env.BASE_PATH || '';
 
 var App = Express();
 App.use(require('compression')());
@@ -72,8 +73,11 @@ v4Redirects.forEach(redirect => {
   })
 })
 
-
-App.use(Express.static(STATIC_DIR));
+if (BASE_PATH) {
+  App.use(BASE_PATH, Express.static(STATIC_DIR));
+} else {
+  App.use(Express.static(STATIC_DIR));
+}
 
 const GH_PAGES_BASE = '/kaltura-recipes-v3';
 App.use(GH_PAGES_BASE, (req, res, next) => {
