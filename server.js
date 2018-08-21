@@ -84,6 +84,7 @@ App.use(GH_PAGES_BASE, (req, res, next) => {
   res.redirect(req.originalUrl.substring(GH_PAGES_BASE.length));
 })
 
+App.use('/quiz', require('./routes/quiz'))
 App.use('/discussion', require('./routes/discussion'));
 if (process.env.TARGET_API === 'ott') {
   App.use('/auth', require('./routes/ott-auth.js'));

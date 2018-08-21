@@ -20,49 +20,46 @@ mixin player-dropdown-display(idx, title)
     .col
       .row
         .col
-          +player-button(1, 'Fastest time to first frame')
+          +player-button(4, 'Interactive storytelling')
+        .col
+          +player-button(3, 'In video quizzes')
+        .col
+          +player-button(5, 'Dual screen presentation')
+      .row
+        .col
+          +player-button(1, 'Accessibility')
         .col
           +player-button(2, 'Most ads delivered')
         .col
-          +player-button(3, 'In video quizzes')
-      .row
-        .col
-          +player-button(4, 'Interactive storytelling')
-        .col
-          +player-button(5, 'Dual screen presentation')
-        .col
-          +player-button(6, 'Live video')
+          +player-button(6, '360 degree VR')
     .col
-      .video-player
-        img(src="/homepage/assets/background.jpg")
+      iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
 .tablet
   .d-flex
-    +player-button(1, 'Fastest time to first frame')
-    +player-button(2, 'Most ads delivered')
-    +player-button(3, 'In video quizzes')
     +player-button(4, 'Interactive storytelling')
+    +player-button(3, 'In video quizzes')
     +player-button(5, 'Dual screen presentation')
-    +player-button(6, 'Live video')
-  .video-player
-    img(src="/homepage/assets/background.jpg")
+    +player-button(1, 'Accessibility')
+    +player-button(2, 'Most ads delivered')
+    +player-button(6, '360 degree VR')
+  iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
 
 .mobile.text-center
   .dropdown.player-dropdown
     a.btn.dropdown-toggle(data-toggle="dropdown")
-      +player-dropdown-display(1, 'Fastest time to first frame')
-      +player-dropdown-display(2, 'Most ads delivered')
-      +player-dropdown-display(3, 'In video quizzes')
       +player-dropdown-display(4, 'Interactive storytelling')
+      +player-dropdown-display(3, 'In video quizzes')
       +player-dropdown-display(5, 'Dual screen presentation')
-      +player-dropdown-display(6, 'Live video')
+      +player-dropdown-display(1, 'Accessibility')
+      +player-dropdown-display(2, 'Most ads delivered')
+      +player-dropdown-display(6, '360 degree VR')
       i.fa.fa-right.fa-chevron-down
     .dropdown-menu
-      +player-dropdown-item(1, 'Fastest time to first frame')
-      +player-dropdown-item(2, 'Most ads delivered')
-      +player-dropdown-item(3, 'In video quizzes')
       +player-dropdown-item(4, 'Interactive storytelling')
+      +player-dropdown-item(3, 'In video quizzes')
       +player-dropdown-item(5, 'Dual screen presentation')
-      +player-dropdown-item(6, 'Live video')
+      +player-dropdown-item(1, 'Accessibility')
+      +player-dropdown-item(2, 'Most ads delivered')
+      +player-dropdown-item(6, '360 degree VR')
 
-  .video-player
-    img(src="/homepage/assets/background.jpg")
+  iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")

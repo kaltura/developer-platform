@@ -51,6 +51,21 @@ script.
     }
   };
 
+  var VIDEO_LINKS = {
+    // ads
+    2: 'https://cdnapisec.kaltura.com/p/2421271/embedPlaykitJs/uiconf_id/43052262?iframeembed=true&entry_id=0_uanuf4gk',
+    // interactive storytelling
+    4: 'https://cdnapisec.kaltura.com/p/2421271/sp/242127100/embedIframeJs/uiconf_id/42925761/partner_id/2421271?iframeembed=true&playerId=kaltura_player_1531665566&entry_id=1_t9w32b41',
+    // dual screen
+    5: 'https://cdnapisec.kaltura.com/p/2421271/sp/242127100/embedIframeJs/uiconf_id/42924502/partner_id/2421271?iframeembed=true&playerId=kaltura_player_1531665566&entry_id=1_uyxoldoe',
+    // vr
+    6: 'https://cdnapisec.kaltura.com/p/2421271/embedPlaykitJs/uiconf_id/43047361?iframeembed=true&entry_id=1_qx6chwid',
+    // accessibility
+    1: 'https://cdnapisec.kaltura.com/p/2421271/sp/242127100/embedIframeJs/uiconf_id/42923931/partner_id/2421271?iframeembed=true&playerId=kaltura_player_1534678564&entry_id=1_71gyojxl',
+    // quiz
+    3: 'https://cdnapisec.kaltura.com/p/2421271/sp/242127100/embedIframeJs/uiconf_id/42924562/partner_id/2421271?iframeembed=true&playerId=kaltura_player_1531665566&entry_id=1_ttzm547s&flashvars[\'ks\']=',
+  }
+
   var currentSection = 'ingestion';
   var currentLanguage = 'php';
 
@@ -81,9 +96,17 @@ script.
     window.activeVideo = idx;
     window.jQuery('.player-item').removeClass('active');
     window.jQuery('.player-item.player-item-idx-' + idx).addClass('active');
+    var iframe = window.jQuery('iframe.player-example');
+    if (idx === 3) {
+      window.jQuery.get('/quiz/user_ks', function(ks) {
+        iframe.attr('src', VIDEO_LINKS[idx] + ks);
+      })
+    } else {
+      iframe.attr('src', VIDEO_LINKS[idx]);
+    }
   }
 
   window.jQuery(document).ready(function() {
     setCode();
-    setVideo(1);
+    setVideo(4);
   });
