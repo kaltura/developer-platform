@@ -65281,7 +65281,7 @@
       "x-group": "metadataProfile"
     },
     "clientTag": {
-      "default": "developer.kaltura.com",
+      "default": "devkcom",
       "in": "query",
       "name": "clientTag",
       "type": "string",
