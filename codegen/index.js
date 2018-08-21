@@ -401,7 +401,7 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
 
   let body = JSON.parse(input.answers.body || '{}');
   delete input.answers.body;
-  let bodyParam = input.operation.parameters.filter(p => p.in ==='body')[0];
+  let bodyParam = input.operation.parameters.filter(p => p.in ==='body' && p.name === 'body')[0];
   input.objects = [];
   input.enums = [];
 
