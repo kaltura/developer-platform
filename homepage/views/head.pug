@@ -14,6 +14,7 @@ script(src="https://code.jquery.com/jquery-3.1.1.min.js")
 script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
 script.
+  window.lucybot = {embed: false};
   var LANGUAGES = ['python', 'ruby', 'php', 'java', 'node', 'csharp'];
   var EXTENSIONS = {
     python: 'py',
@@ -96,7 +97,10 @@ script.
     window.activeVideo = idx;
     window.jQuery('.player-item').removeClass('active');
     window.jQuery('.player-item.player-item-idx-' + idx).addClass('active');
-    var iframe = window.jQuery('iframe.player-example');
+    var deviceClass = '.desktop';
+    if (window.innerWidth < 768) deviceClass = '.mobile';
+    else if (window.innerWidth < 992) deviceClass = '.tablet';
+    var iframe = window.jQuery(deviceClass + ' iframe.player-example');
     if (idx === 3) {
       window.jQuery.get('/quiz/user_ks', function(ks) {
         iframe.attr('src', VIDEO_LINKS[idx] + ks);

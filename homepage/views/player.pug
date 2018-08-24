@@ -15,7 +15,7 @@ mixin player-dropdown-display(idx, title)
     img(src='/homepage/assets/images/HTML5%20Video%20Player/Tab' + idx + '-icon.svg')
     span=title
 
-.container
+.desktop.container
   .row
     .col
       .row
@@ -31,9 +31,10 @@ mixin player-dropdown-display(idx, title)
         .col
           +player-button(2, 'Most ads delivered')
         .col
-          +player-button(6, '360 degree VR')
+          +player-button(6, '360 Video and VR')
     .col
-      iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
+      .iframe-player-wrapper
+        iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
 .tablet
   .d-flex
     +player-button(4, 'Interactive storytelling')
@@ -41,8 +42,9 @@ mixin player-dropdown-display(idx, title)
     +player-button(5, 'Dual screen presentation')
     +player-button(1, 'Accessibility')
     +player-button(2, 'Most ads delivered')
-    +player-button(6, '360 degree VR')
-  iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
+    +player-button(6, '360 Video and VR')
+  .iframe-player-wrapper
+    iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
 
 .mobile.text-center
   .dropdown.player-dropdown
@@ -52,7 +54,7 @@ mixin player-dropdown-display(idx, title)
       +player-dropdown-display(5, 'Dual screen presentation')
       +player-dropdown-display(1, 'Accessibility')
       +player-dropdown-display(2, 'Most ads delivered')
-      +player-dropdown-display(6, '360 degree VR')
+      +player-dropdown-display(6, '360 Video and VR')
       i.fa.fa-right.fa-chevron-down
     .dropdown-menu
       +player-dropdown-item(4, 'Interactive storytelling')
@@ -60,6 +62,7 @@ mixin player-dropdown-display(idx, title)
       +player-dropdown-item(5, 'Dual screen presentation')
       +player-dropdown-item(1, 'Accessibility')
       +player-dropdown-item(2, 'Most ads delivered')
-      +player-dropdown-item(6, '360 degree VR')
+      +player-dropdown-item(6, '360 Video and VR')
 
-  iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
+  .iframe-player-wrapper
+    iframe.player-example(allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" frameborder="0")
