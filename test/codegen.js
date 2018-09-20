@@ -25,6 +25,14 @@ describe('Sample Code', function() {
       showSetup: false,
     },
   }, {
+    name: 'abstract_class',
+    service: 'cuepoint_cuepoint',
+    action: 'add',
+    input: {
+      answers: {},
+      showSetup: false,
+    }
+  }, {
     name: 'implicit_object_type',
     service: 'elasticsearch_esearch',
     action: 'searchEntry',

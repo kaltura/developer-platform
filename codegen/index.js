@@ -54,7 +54,9 @@ var language_opts = {
     enumPrefix: '',
     enumAccessor: '',
     declarationPrefix: '',
+    nullKeyword: 'null',
     constant: JSON.stringify,
+    comment: function(str) {return '/* ' + str + ' */'},
     assign: function(lval, rval) {return lval + ' = ' + rval},
     emptyArray: function(type, num) {return '[]'},
     arrayAccessor: function(idx) {return '[' + idx + ']'},
@@ -141,6 +143,7 @@ var language_opts = {
     objPrefix: 'new ',
     objSuffix: '()',
     enumAccessor: '::',
+    nullKeyword: 'NULL',
     rewriteAction: s => addActionSuffixIfReserved('php', s),
     rewriteVariable: s => '$' + s,
     fileCode: () => '"/path/to/file"',
@@ -152,6 +155,7 @@ var language_opts = {
     objPrefix: 'new ',
     objSuffix: '()',
     enumAccessor: '::',
+    nullKeyword: 'NULL',
     rewriteAction: s => addActionSuffixIfReserved('php', s),
     rewriteVariable: s => '$' + s,
     rewriteEnum: removeKalturaPrefix,
@@ -175,6 +179,8 @@ var language_opts = {
     ext: 'rb',
     enumAccessor: '::',
     objSuffix: '.new()',
+    nullKeyword: 'nil',
+    comment: str => "",
     rewriteVariable: function(s) {
       return camelCaseToUnderscore(s)
     },
@@ -258,6 +264,8 @@ var language_opts = {
   python: {
     ext: 'py',
     objSuffix: '()',
+    nullKeyword: 'None',
+    comment: str => "",
     constant: function(val) {
       let c = JSON.stringify(val);
       if (typeof val === 'boolean') {
@@ -392,8 +400,12 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
         addAnswer(key + '[' + subkey + ']', answer[subkey], findSubschema(schema, subkey));
       }
       let objectKey = key + '[objectType]';
-      input.answers[objectKey] = input.answers[objectKey] || schema.title;
-      addSchema(this.swagger.definitions[input.answers[objectKey]]);
+      if (!schema['x-abstract']) {
+        input.answers[objectKey] = input.answers[objectKey] || schema.title;
+      }
+      if (input.answers[objectKey]) {
+        addSchema(this.swagger.definitions[input.answers[objectKey]]);
+      }
     } else {
       input.answers[key] = answer;
     }
@@ -628,7 +640,11 @@ CodeTemplate.prototype.rvalue = function(param, answers, parent) {
   }
 
   if (schema.type === 'object') {
-    return self.objPrefix + self.rewriteType(schema.title, itemSchema && (itemSchema.title || itemSchema.type)) + self.objSuffix;
+    if (schema['x-abstract'] && !answers[param.name + '[objectType]']) {
+      return self.nullKeyword + ' ' + self.comment(schema.title + " is an abstract class, please select an implementation");
+    } else {
+      return self.objPrefix + self.rewriteType(schema.title, itemSchema && (itemSchema.title || itemSchema.type)) + self.objSuffix;
+    }
   } else if (schema.type === 'array') {
     return self.emptyArray(this.rewriteType(itemSchema.title || itemSchema.type), 0);
   } else {

@@ -2,7 +2,7 @@ language: node_js
 node_js:
       - "6"
 before_install:
-  - "npm i -g npm@5 && npm -v && npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/LucyBot-Inc/documentation-generator#7e24887"
+  - "npm i -g npm@5 && npm -v && npm install -g https://$GITHUB_ACCESS_TOKEN@github.com/LucyBot-Inc/documentation-generator#v4.2.0"
 script:
   - npm test
   - ./scripts/build-and-commit.sh
