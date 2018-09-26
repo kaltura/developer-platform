@@ -2,11 +2,7 @@ body.spaced-for-kaltura-nav {
   padding-top: 66px;
 }
 #KalturaNav {
-  height: 66px;
   padding: 8px 16px;
-}
-#KalturaNav.navbar-fixed-top .navbar-collapse {
-  max-height: 500px;
 }
 
 #KalturaNav .navbar-brand {
@@ -16,6 +12,13 @@ body.spaced-for-kaltura-nav {
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
+}
+
+#KalturaNav .btn-success {
+  color: #fff;
+}
+#KalturaNav .btn-success:hover {
+  background-color: #04775e;
 }
 
 #KalturaNav .navbar-brand img {

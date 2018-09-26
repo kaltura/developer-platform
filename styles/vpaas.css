@@ -2763,59 +2763,6 @@ blockquote.recipes-ref-list ul li {
   .tabbed-section {
     padding-top: 25px;
   }
-  /*
-  .tab-links {
-    display: block;
-    padding-top: 19px;
-    padding-bottom: 19px;
-    border-right: 1px none #000;
-    border-left: 5px solid #ccc;
-    border-top-width: 1px;
-    border-top-color: #ccc;
-  }
-  .tab-links:hover {
-    border-top: 1px solid #ccc;
-    border-left-width: 5px;
-    border-left-color: #f7a600;
-  }
-  .tab-links.first-tab-link {
-    border-left-width: 5px;
-    border-left-color: #ccc;
-  }
-  .tab-links.first-tab-link:hover {
-    border-left-width: 5px;
-    border-left-color: #f7a600;
-  }
-  .tab-links.first-tab-link.w--current {
-    border-left: 5px solid #f7a600;
-    border-top-width: 1px;
-    border-top-color: #ccc;
-  }
-  .tab-links.code-tab {
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    border-top-width: 1px;
-    border-top-color: #ccc;
-  }
-  .tab-links.code-tab.w--current {
-    border-top: 1px none #000;
-    border-left-width: 5px;
-    border-left-color: #f7a600;
-  }
-  .tab-links.code-tab.first-tab-link {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px none #000;
-  }
-  .tab-links.code-tab.last-tab-link {
-    border-top: 1px none #000;
-  }
-  .tab-links.code-tab.last-tab-link:hover {
-    border-top: 1px none #000;
-  }
-  .tab-links.code-tab.last-tab-link.w--current {
-    border-bottom: 1px none #000;
-  }
-  */
   .all-events-div {
     display: block;
     width: 85%;
