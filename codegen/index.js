@@ -282,7 +282,7 @@ var language_opts = {
       if (pieces.length === 1) return name;
       return pieces[0] + '.' + name;
     },
-    fileCode: () => "open('/path/to/file', 'r')",
+    fileCode: () => "open('/path/to/file', 'rb')",
   },
 }
 
