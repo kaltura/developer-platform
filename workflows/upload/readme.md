@@ -278,7 +278,8 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
 ```
 
 ## Viewing your Video
-You can use kWidget to embed your video in HTML. The video may not be ready for a minute, so you can poll its status with `media.get` by hitting 'Send Request'.
+You can use kWidget to embed your video in HTML. </br>
+Depending on your source, transcoding may take a while, so you can poll the entry's status with `media.get` by hitting 'Send Request'. For a list of entry status codes, please see: https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaEntryStatus
 
 ### API Call
 ```json
