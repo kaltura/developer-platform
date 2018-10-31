@@ -362,7 +362,7 @@ CodeTemplate.prototype.setOperationInputFields = function(input) {
   if (opType === 'post') {
     this.gatherAnswersForPost(input);
   } else {
-    this.gatherAnswersForGet(input);
+    this.gatherAnswersForGetOrFile(input);
   }
 }
 
@@ -430,7 +430,7 @@ CodeTemplate.prototype.gatherAnswersForPost = function(input) {
   input.objects = input.objects.map(e => this.rewriteType(e));
 }
 
-CodeTemplate.prototype.gatherAnswersForGet = function(input) {
+CodeTemplate.prototype.gatherAnswersForGetOrFile = function(input) {
   let addedParameters = [];
   input.operation.parameters.forEach(p => {
     if (p.$ref) {
@@ -456,6 +456,22 @@ CodeTemplate.prototype.gatherAnswersForGet = function(input) {
       else if (p.schema['x-consoleDefault'] !== undefined) input.answers[p.name] = p.schema['x-consoleDefault'];
     }
   })
+  input.objects = [];
+  input.enums = [];
+  let addSchema = schema => {
+    let enm = schema['x-enumType'];
+    if (enm && input.enums.indexOf(enm) === -1) {
+      input.enums.push(enm);
+    }
+    if (schema.title && input.objects.indexOf(schema.title) === -1) {
+      input.objects.push(schema.title);
+    }
+  }
+  input.parameters.filter(p => p.schema).forEach(p => {
+    addSchema(p.schema);
+  })
+  input.enums = input.enums.map(e => this.rewriteEnum(e));
+  input.objects = input.objects.map(e => this.rewriteType(e));
 }
 
 CodeTemplate.prototype.assignAllParameters = function(params, answers, indent, skipNewline) {

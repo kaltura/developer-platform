@@ -1,3 +1,15 @@
+require 'kaltura'
+include Kaltura
+
+config = KalturaConfiguration.new()
+config.service_url = 'https://www.kaltura.com'
+client = KalturaClient.new(config);
+client.ks = client.session_service.start(
+    "YOUR_KALTURA_SECRET",
+    "YOUR_USER_ID",
+    Kaltura::KalturaSessionType::ADMIN,
+    YOUR_PARTNER_ID)
+
 
 upload_token_id = "abcde"
 file_data = File.open("/path/to/file")

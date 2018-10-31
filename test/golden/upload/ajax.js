@@ -1,14 +1,39 @@
-var uploadTokenId = "abcde";
-var fileData = "foobar";
-var resume = false;
-var finalChunk = true;
-var resumeAt = -1;
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/kaltura/KalturaFullClient.min.js"></script>
 
-KalturaUploadTokenService.upload(uploadTokenId, fileData, resume, finalChunk, resumeAt)
-  .execute(client, function(success, results) {
-    if (!success || (results && results.code && results.message)) {
-      console.log('Kaltura Error', success, results);
+<script>
+  var config = new KalturaConfiguration();
+  config.serviceUrl = 'https://www.kaltura.com';
+  var client = new KalturaClient(config);
+  // Note: this is meant only as a sample.
+  // You should NEVER generate sessions on the client,
+  // as this exposes your Admin Secret to users.
+  // Instead, generate a session on the server and pass the
+  // KS to the client.
+  KalturaSessionService.start(
+        "YOUR_KALTURA_SECRET",
+        "YOUR_USER_ID",
+        2,
+        YOUR_PARTNER_ID)
+  .execute(client, function(success, ks) {
+    if (!success || (ks.code && ks.message)) {
+      console.log('Error starting session', success, ks);
     } else {
-      console.log('Kaltura Result', results);
+      client.setKs(ks);
+      var uploadTokenId = "abcde";
+      var fileData = "foobar";
+      var resume = false;
+      var finalChunk = true;
+      var resumeAt = -1;
+
+      KalturaUploadTokenService.upload(uploadTokenId, fileData, resume, finalChunk, resumeAt)
+        .execute(client, function(success, results) {
+          if (!success || (results && results.code && results.message)) {
+            console.log('Kaltura Error', success, results);
+          } else {
+            console.log('Kaltura Result', results);
+          }
+        });
     }
   });
+</script>

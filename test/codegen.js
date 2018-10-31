@@ -78,7 +78,8 @@ describe('Sample Code', function() {
       answers: {
         uploadTokenId: 'abcde',
         fileData: "foobar",
-      }
+      },
+      showSetup: true,
     }
   }, {
     name: 'no_session',
