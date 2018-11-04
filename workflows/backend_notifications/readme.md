@@ -122,7 +122,7 @@ Use the form below to choose a template to clone
 }
 ```
 
-## Updating your cloned notification
+## Updating your newly cloned notification
 Use ```eventNotificationTemplate.update``` to edit the properties of your newly cloned event notification.
 
 ### API Call
@@ -136,6 +136,19 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
 }
 ```
 
+## Activating your newly cloned notification
+Use ```eventNotificationTemplate.updateStatus``` to control your notification status.
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/eventnotification_eventnotificationtemplate/action/updateStatus",
+  "ignoreParameters": [
+    "format"
+  ]
+}
+```
 
 ## Viewing your Notification Templates
 Use ```eventNotificationTemplate.list``` to get a list of your templates.
