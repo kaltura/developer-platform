@@ -23,6 +23,7 @@ embedParameters:
   format: 1
 
 javascript:
+  - 'assets/google-analytics.js'
   - 'assets/KalturaClient.min.js'
   - 'assets/KalturaSessionService.min.js'
   - 'assets/KalturaPartnerService.min.js'
