@@ -539,6 +539,21 @@
         "edgeServerIds": {
           "description": "Comma separated list of edge servers playBack should be done from",
           "type": "string"
+        },
+        "seamlessFallbackEnabled": {
+          "description": "Enum Type: `KalturaNullableBoolean`",
+          "enum": [
+            -1,
+            0,
+            1
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "NULL_VALUE",
+            "FALSE_VALUE",
+            "TRUE_VALUE"
+          ],
+          "x-enumType": "KalturaNullableBoolean"
         }
       },
       "title": "KalturaAccessControlServeRemoteEdgeServerAction",
@@ -7910,6 +7925,10 @@
           ],
           "type": "string"
         },
+        "privileges": {
+          "description": "privileges for the job",
+          "type": "string"
+        },
         "resultsFileLocalPath": {
           "description": "`readOnly`\n\nCreated by the API",
           "readOnly": true,
@@ -11722,6 +11741,9 @@
         "fileContainer": {
           "$ref": "#/definitions/KalturaFileContainer"
         },
+        "srcAssetEncryptionKey": {
+          "type": "string"
+        },
         "srcAssetId": {
           "type": "string"
         },
@@ -11814,6 +11836,55 @@
           "type": "string"
         },
         "sourceLanguageEqual": {
+          "description": "Enum Type: `KalturaCatalogItemLanguage`",
+          "enum": [
+            "Arabic",
+            "Cantonese",
+            "Chinese",
+            "Dutch",
+            "English",
+            "English (American)",
+            "English (British)",
+            "French",
+            "German",
+            "Hebrew",
+            "Hindi",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Mandarin Chinese",
+            "Portuguese",
+            "Russian",
+            "Spanish",
+            "Thai",
+            "Turkish"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "AR",
+            "YUE",
+            "ZH",
+            "NL",
+            "EN",
+            "EN_US",
+            "EN_GB",
+            "FR",
+            "DE",
+            "HE",
+            "HI",
+            "IT",
+            "JA",
+            "KO",
+            "CMN",
+            "PT",
+            "RU",
+            "ES",
+            "TH",
+            "TR"
+          ],
+          "x-enumType": "KalturaCatalogItemLanguage"
+        },
+        "targetLanguageEqual": {
           "description": "Enum Type: `KalturaCatalogItemLanguage`",
           "enum": [
             "Arabic",
@@ -24937,6 +25008,26 @@
       "type": "object",
       "x-abstract": true
     },
+    "KalturaESearchBaseFilter": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchHistoryFilter"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaESearchHistoryFilter"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaESearchBaseFilter",
+      "type": "object",
+      "x-abstract": true
+    },
     "KalturaESearchBaseItem": {
       "anyOf": [
         {
@@ -25921,6 +26012,61 @@
         }
       },
       "title": "KalturaESearchHighlight",
+      "type": "object"
+    },
+    "KalturaESearchHistory": {
+      "properties": {
+        "searchTerm": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        },
+        "searchedObject": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        },
+        "timestamp": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "title": "KalturaESearchHistory",
+      "type": "object"
+    },
+    "KalturaESearchHistoryFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchBaseFilter"
+        }
+      ],
+      "properties": {
+        "searchTermStartsWith": {
+          "type": "string"
+        },
+        "searchedObjectIn": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaESearchHistoryFilter",
+      "type": "object"
+    },
+    "KalturaESearchHistoryListResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaListResponse"
+        }
+      ],
+      "properties": {
+        "objects": {
+          "items": {
+            "$ref": "#/definitions/KalturaESearchHistory"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaESearchHistoryListResponse",
       "type": "object"
     },
     "KalturaESearchItemData": {
@@ -38524,6 +38670,9 @@
           "$ref": "#/definitions/KalturaDropFolderListResponse"
         },
         {
+          "$ref": "#/definitions/KalturaESearchHistoryListResponse"
+        },
+        {
           "$ref": "#/definitions/KalturaEntryDistributionListResponse"
         },
         {
@@ -38739,6 +38888,7 @@
             "KalturaDrmProfileListResponse",
             "KalturaDropFolderFileListResponse",
             "KalturaDropFolderListResponse",
+            "KalturaESearchHistoryListResponse",
             "KalturaEntryDistributionListResponse",
             "KalturaEntryServerNodeListResponse",
             "KalturaEntryVendorTaskListResponse",
@@ -47790,6 +47940,9 @@
         "customData": {
           "type": "string"
         },
+        "flavorAssetEncryptionKey": {
+          "type": "string"
+        },
         "flavorAssetId": {
           "type": "string"
         },
@@ -49074,6 +49227,74 @@
       "title": "KalturaReachProfileListResponse",
       "type": "object"
     },
+    "KalturaReachReportInputFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaReportInputFilter"
+        }
+      ],
+      "properties": {
+        "serviceFeature": {
+          "description": "Enum Type: `KalturaVendorServiceFeature`",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "CAPTIONS",
+            "TRANSLATION"
+          ],
+          "x-enumType": "KalturaVendorServiceFeature"
+        },
+        "serviceType": {
+          "description": "Enum Type: `KalturaVendorServiceType`",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "HUMAN",
+            "MACHINE"
+          ],
+          "x-enumType": "KalturaVendorServiceType"
+        },
+        "turnAroundTime": {
+          "description": "Enum Type: `KalturaVendorServiceTurnAroundTime`",
+          "enum": [
+            -1,
+            0,
+            1800,
+            7200,
+            10800,
+            21600,
+            28800,
+            43200,
+            86400,
+            172800,
+            864000
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "BEST_EFFORT",
+            "IMMEDIATE",
+            "THIRTY_MINUTES",
+            "TWO_HOURS",
+            "THREE_HOURS",
+            "SIX_HOURS",
+            "EIGHT_HOURS",
+            "TWELVE_HOURS",
+            "TWENTY_FOUR_HOURS",
+            "FORTY_EIGHT_HOURS",
+            "TEN_DAYS"
+          ],
+          "x-enumType": "KalturaVendorServiceTurnAroundTime"
+        }
+      },
+      "title": "KalturaReachReportInputFilter",
+      "type": "object"
+    },
     "KalturaRecalculateCacheJobData": {
       "allOf": [
         {
@@ -50000,6 +50221,9 @@
         },
         {
           "$ref": "#/definitions/KalturaEndUserReportInputFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaReachReportInputFilter"
         }
       ],
       "discriminator": "objectType",
@@ -50016,7 +50240,8 @@
         "objectType": {
           "enum": [
             "KalturaReportInputFilter",
-            "KalturaEndUserReportInputFilter"
+            "KalturaEndUserReportInputFilter",
+            "KalturaReachReportInputFilter"
           ],
           "type": "string"
         },
@@ -50045,12 +50270,27 @@
         },
         {
           "$ref": "#/definitions/KalturaEndUserReportInputFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaReachReportInputFilter"
         }
       ],
       "discriminator": "objectType",
       "properties": {
         "categories": {
           "description": "Search onjects in specified categories",
+          "type": "string"
+        },
+        "customVar1In": {
+          "description": "Filter by customVar1",
+          "type": "string"
+        },
+        "customVar2In": {
+          "description": "Filter by customVar2",
+          "type": "string"
+        },
+        "customVar3In": {
+          "description": "Filter by customVar3",
           "type": "string"
         },
         "interval": {
@@ -50072,7 +50312,8 @@
         },
         "objectType": {
           "enum": [
-            "KalturaEndUserReportInputFilter"
+            "KalturaEndUserReportInputFilter",
+            "KalturaReachReportInputFilter"
           ],
           "type": "string"
         },
@@ -53301,7 +53542,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "readOnly": true,
           "type": "integer",
@@ -53309,7 +53551,8 @@
             "ACTIVE",
             "DISABLED",
             "DELETED",
-            "NOT_REGISTERED"
+            "NOT_REGISTERED",
+            "NOT_OPERATIONAL"
           ],
           "x-enumType": "KalturaServerNodeStatus"
         },
@@ -53441,14 +53684,16 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer",
           "x-enumLabels": [
             "ACTIVE",
             "DISABLED",
             "DELETED",
-            "NOT_REGISTERED"
+            "NOT_REGISTERED",
+            "NOT_OPERATIONAL"
           ],
           "x-enumType": "KalturaServerNodeStatus"
         },
@@ -61966,6 +62211,9 @@
       ],
       "discriminator": "objectType",
       "properties": {
+        "addOn": {
+          "type": "integer"
+        },
         "credit": {
           "type": "integer"
         },
@@ -65090,7 +65338,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "14.5.0"
+    "version": "14.7.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -65242,6 +65490,13 @@
       "type": "string",
       "x-group": "bulkUploadData"
     },
+    "KalturaBulkUploadCsvJobData:bulkUploadData[privileges]": {
+      "description": "privileges for the job",
+      "in": "query",
+      "name": "bulkUploadData[privileges]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
     "KalturaBulkUploadEntryData:bulkUploadEntryData[conversionProfileId]": {
       "description": "Selected profile id for all bulk entries",
       "in": "query",
@@ -65387,6 +65642,13 @@
       "type": "string",
       "x-group": "bulkUploadData"
     },
+    "KalturaBulkUploadICalJobData:bulkUploadData[privileges]": {
+      "description": "privileges for the job",
+      "in": "query",
+      "name": "bulkUploadData[privileges]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
     "KalturaBulkUploadJobData:bulkUploadData[emailRecipients]": {
       "description": "Recipients of the email for bulk upload success/failure",
       "in": "query",
@@ -65493,6 +65755,13 @@
       ],
       "in": "query",
       "name": "bulkUploadData[objectType]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
+    "KalturaBulkUploadJobData:bulkUploadData[privileges]": {
+      "description": "privileges for the job",
+      "in": "query",
+      "name": "bulkUploadData[privileges]",
       "type": "string",
       "x-group": "bulkUploadData"
     },
@@ -67346,6 +67615,9 @@
                 "id": {
                   "type": "string"
                 },
+                "sessionPrivileges": {
+                  "type": "string"
+                },
                 "tokenHash": {
                   "type": "string"
                 },
@@ -67394,7 +67666,8 @@
           "tokenHash",
           "userId",
           "type",
-          "expiry"
+          "expiry",
+          "sessionPrivileges"
         ]
       }
     },
@@ -72744,7 +73017,7 @@
     },
     "/service/bulkupload/action/serve": {
       "post": {
-        "description": "serve action returan the original file.",
+        "description": "serve action return the original file.",
         "operationId": "bulkUpload.serve",
         "parameters": [
           {
@@ -75442,6 +75715,9 @@
             "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[numOfErrorObjects]"
           },
           {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[privileges]"
+          },
+          {
             "$ref": "#/parameters/KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]"
           }
         ],
@@ -76472,6 +76748,9 @@
           },
           {
             "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[numOfErrorObjects]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[privileges]"
           },
           {
             "$ref": "#/parameters/KalturaBulkUploadCategoryUserData:bulkUploadCategoryUserData[objectType]"
@@ -95078,6 +95357,9 @@
             "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[numOfErrorObjects]"
           },
           {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[privileges]"
+          },
+          {
             "$ref": "#/parameters/KalturaBulkUploadEntryData:bulkUploadEntryData[objectType]"
           },
           {
@@ -102604,6 +102886,7 @@
                     "26",
                     "27",
                     "28",
+                    "29",
                     "201"
                   ],
                   "type": "string",
@@ -102637,6 +102920,7 @@
                     "VPAAS_USAGE",
                     "ENTRY_USAGE",
                     "REACH_USAGE",
+                    "TOP_CUSTOM_VAR1",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -102853,6 +103137,7 @@
                     "26",
                     "27",
                     "28",
+                    "29",
                     "201"
                   ],
                   "type": "string",
@@ -102886,6 +103171,7 @@
                     "VPAAS_USAGE",
                     "ENTRY_USAGE",
                     "REACH_USAGE",
+                    "TOP_CUSTOM_VAR1",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -102990,6 +103276,7 @@
                     "26",
                     "27",
                     "28",
+                    "29",
                     "201"
                   ],
                   "type": "string",
@@ -103023,6 +103310,7 @@
                     "VPAAS_USAGE",
                     "ENTRY_USAGE",
                     "REACH_USAGE",
+                    "TOP_CUSTOM_VAR1",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -103120,6 +103408,7 @@
                     "26",
                     "27",
                     "28",
+                    "29",
                     "201"
                   ],
                   "type": "string",
@@ -103153,6 +103442,7 @@
                     "VPAAS_USAGE",
                     "ENTRY_USAGE",
                     "REACH_USAGE",
+                    "TOP_CUSTOM_VAR1",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -103265,6 +103555,7 @@
                     "26",
                     "27",
                     "28",
+                    "29",
                     "201"
                   ],
                   "type": "string",
@@ -103298,6 +103589,7 @@
                     "VPAAS_USAGE",
                     "ENTRY_USAGE",
                     "REACH_USAGE",
+                    "TOP_CUSTOM_VAR1",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -103939,6 +104231,9 @@
           },
           {
             "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[numOfErrorObjects]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[privileges]"
           },
           {
             "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[eventsType]"
@@ -104696,6 +104991,9 @@
           },
           {
             "$ref": "#/parameters/KalturaBulkUploadCsvJobData:bulkUploadData[numOfErrorObjects]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadCsvJobData:bulkUploadData[privileges]"
           },
           {
             "$ref": "#/parameters/KalturaBulkUploadCsvJobData:bulkUploadData[columns]"
@@ -105468,6 +105766,104 @@
         ]
       }
     },
+    "/service/searchhistory_searchhistory/action/delete": {
+      "post": {
+        "operationId": "searchHistory.delete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "searchTerm": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "searchTerm"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "searchHistory"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "searchTerm"
+        ]
+      }
+    },
+    "/service/searchhistory_searchhistory/action/list": {
+      "post": {
+        "operationId": "searchHistory.list",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "filter": {
+                  "$ref": "#/definitions/KalturaESearchHistoryFilter"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaESearchHistoryListResponse"
+            }
+          }
+        },
+        "tags": [
+          "searchHistory"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "filter"
+        ]
+      }
+    },
     "/service/servernode/action/add": {
       "post": {
         "description": "Adds a server node to the Kaltura DB.",
@@ -105742,6 +106138,72 @@
         ]
       }
     },
+    "/service/servernode/action/getFullPath": {
+      "post": {
+        "description": "Get the edge server node full path",
+        "operationId": "serverNode.getFullPath",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "deliveryFormat": {
+                  "type": "string"
+                },
+                "deliveryType": {
+                  "type": "string"
+                },
+                "hostName": {
+                  "type": "string"
+                },
+                "protocol": {
+                  "default": "http",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hostName"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "serverNode"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "hostName",
+          "protocol",
+          "deliveryFormat",
+          "deliveryType"
+        ]
+      }
+    },
     "/service/servernode/action/list": {
       "post": {
         "operationId": "serverNode.list",
@@ -105881,6 +106343,25 @@
                 },
                 "serverNode": {
                   "$ref": "#/definitions/KalturaServerNode"
+                },
+                "serverNodeStatus": {
+                  "default": 1,
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ],
+                  "type": "integer",
+                  "x-enumLabels": [
+                    "ACTIVE",
+                    "DISABLED",
+                    "DELETED",
+                    "NOT_REGISTERED",
+                    "NOT_OPERATIONAL"
+                  ],
+                  "x-enumType": "KalturaServerNodeStatus"
                 }
               },
               "required": [
@@ -105904,7 +106385,8 @@
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
           "hostName",
-          "serverNode"
+          "serverNode",
+          "serverNodeStatus"
         ]
       }
     },
@@ -110477,6 +110959,9 @@
             "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[numOfErrorObjects]"
           },
           {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[privileges]"
+          },
+          {
             "$ref": "#/parameters/KalturaBulkUploadUserData:bulkUploadUserData[objectType]"
           }
         ],
@@ -112549,6 +113034,224 @@
         ]
       }
     },
+    "/service/vendor_zoomvendor/action/deAuthorization": {
+      "post": {
+        "operationId": "zoomVendor.deAuthorization",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "zoomVendor"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": []
+      }
+    },
+    "/service/vendor_zoomvendor/action/fetchRegistrationPage": {
+      "post": {
+        "operationId": "zoomVendor.fetchRegistrationPage",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "iv": {
+                  "type": "string"
+                },
+                "tokensData": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "tokensData",
+                "iv"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "zoomVendor"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "tokensData",
+          "iv"
+        ]
+      }
+    },
+    "/service/vendor_zoomvendor/action/oauthValidation": {
+      "post": {
+        "operationId": "zoomVendor.oauthValidation",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "zoomVendor"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": []
+      }
+    },
+    "/service/vendor_zoomvendor/action/recordingComplete": {
+      "post": {
+        "operationId": "zoomVendor.recordingComplete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "zoomVendor"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": []
+      }
+    },
+    "/service/vendor_zoomvendor/action/submitRegistration": {
+      "post": {
+        "operationId": "zoomVendor.submitRegistration",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "accountId": {
+                  "type": "string"
+                },
+                "defaultUserId": {
+                  "type": "string"
+                },
+                "zoomCategory": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "defaultUserId",
+                "zoomCategory",
+                "accountId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "zoomVendor"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "defaultUserId",
+          "zoomCategory",
+          "accountId"
+        ]
+      }
+    },
     "/service/virusscan_virusscanprofile/action/add": {
       "post": {
         "description": "Allows you to add an virus scan profile object and virus scan profile content associated with Kaltura object",
@@ -113773,6 +114476,10 @@
       "name": "search"
     },
     {
+      "name": "searchHistory",
+      "x-plugin": "searchHistory"
+    },
+    {
       "description": "Server Node service",
       "name": "serverNode"
     },
@@ -113901,6 +114608,10 @@
     {
       "description": "Internal Service is used for actions that are used internally in Kaltura applications and might be changed in the future without any notice.",
       "name": "xInternal"
+    },
+    {
+      "name": "zoomVendor",
+      "x-plugin": "vendor"
     }
   ],
   "x-enums": {
@@ -141292,6 +142003,12 @@
         },
         {
           "enum": [
+            "29"
+          ],
+          "title": "TOP_CUSTOM_VAR1"
+        },
+        {
+          "enum": [
             "201"
           ],
           "title": "PARTNER_USAGE"
@@ -142342,6 +143059,12 @@
             4
           ],
           "title": "NOT_REGISTERED"
+        },
+        {
+          "enum": [
+            5
+          ],
+          "title": "NOT_OPERATIONAL"
         }
       ],
       "title": "KalturaServerNodeStatus"
@@ -145487,6 +146210,17 @@
       ],
       "title": "KalturaVendorTranslationCatalogItemOrderBy"
     },
+    "KalturaVendorTypeEnum": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "ZOOM_ACCOUNT"
+        }
+      ],
+      "title": "KalturaVendorTypeEnum"
+    },
     "KalturaVerizonVcastDistributionField": {
       "oneOf": [
         {
@@ -147749,6 +148483,11 @@
       "name": "FAILED_TO_CALCULATE_DYNAMIC_DEPENDENT_VALUE"
     },
     {
+      "code": "FAILED_TO_INIT_OBJECT",
+      "message": "Failed to initialize necessary object",
+      "name": "FAILED_TO_INIT_OBJECT"
+    },
+    {
       "code": "ENTRY_NOT_READY",
       "message": "Entry \"@ENTRY_NAME@\" is not ready",
       "name": "ENTRY_NOT_READY"
@@ -149802,6 +150541,11 @@
       "code": "METADATA_PROFILE_NOT_SPECIFIED",
       "message": "Metadata Profile need to be specified",
       "name": "METADATA_PROFILE_NOT_SPECIFIED"
+    },
+    {
+      "code": "METADATA_OBJECT_ID_NOT_FOUND",
+      "message": "Object Id [@ID@], not found",
+      "name": "METADATA_OBJECT_ID_NOT_FOUND"
     },
     {
       "code": "INVALID_CUE_POINT_ID",
