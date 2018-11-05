@@ -157,9 +157,22 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
 {
   "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/updateStatus",
-  "ignoreParameters": [
-    "format"
-  ]
+  "parameters": [{
+    "name": "body",
+    "in": "body",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "dynamicValue": {
+            "fromStep": 2,
+            "answer": "body.id"
+          }
+        },
+        "eventNotificationTemplate": {}
+      }
+    }
+  }]
 }
 ```
 
