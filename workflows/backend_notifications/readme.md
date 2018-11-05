@@ -130,9 +130,22 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
 {
   "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/update",
-  "ignoreParameters": [
-    "format"
-  ]
+  "parameters": [{
+    "name": "body",
+    "in": "body",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "dynamicValue": {
+            "fromStep": 2,
+            "answer": "body.id"
+          }
+        },
+        "eventNotificationTemplate": {}
+      }
+    }
+  }]
 }
 ```
 
