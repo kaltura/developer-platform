@@ -169,7 +169,7 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
             "answer": "body.id"
           }
         },
-        "eventNotificationTemplate": {}
+        "status": {}
       }
     }
   }]
