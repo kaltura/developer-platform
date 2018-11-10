@@ -135,16 +135,32 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
     "in": "body",
     "schema": {
       "type": "object",
-      "properties": {
-        "id": {
-          "dynamicValue": {
-            "fromStep": 2,
-            "answer": "body.id"
+        "properties": {
+          "id": {
+            "dynamicEnum": {
+              "path": "/service/eventnotification_eventnotificationtemplate/action/list",
+              "method": "post",
+              "array": "objects",
+              "label": "name",
+              "value": "id"
+            },
+		  "filter": {
+		    "properties": {
+		      "typeEqual": {
+			"enum": [
+			  "httpNotification.Http"
+			],
+			"x-enumLabels": [
+			  "HTTP Template"
+			]
+		      }
+		    },
+		    "type": "object"
+		  }
           }
         },
         "eventNotificationTemplate": {}
       }
-    }
   }]
 }
 ```
@@ -162,16 +178,32 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
     "in": "body",
     "schema": {
       "type": "object",
-      "properties": {
-        "id": {
-          "dynamicValue": {
-            "fromStep": 2,
-            "answer": "body.id"
+        "properties": {
+          "id": {
+            "dynamicEnum": {
+              "path": "/service/eventnotification_eventnotificationtemplate/action/list",
+              "method": "post",
+              "array": "objects",
+              "label": "name",
+              "value": "id"
+            },
+		  "filter": {
+		    "properties": {
+		      "typeEqual": {
+			"enum": [
+			  "httpNotification.Http"
+			],
+			"x-enumLabels": [
+			  "HTTP Template"
+			]
+		      }
+		    },
+		    "type": "object"
+		  }
           }
         },
         "status": {}
       }
-    }
   }]
 }
 ```
