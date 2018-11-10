@@ -173,9 +173,9 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
               "array": "objects",
               "label": "name",
               "value": "id"
-            }
-          },
-        "status": {}
+            },
+            "status": {}
+          }
         }
       }
   }]
