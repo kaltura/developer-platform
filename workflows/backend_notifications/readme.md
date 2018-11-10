@@ -143,23 +143,10 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
               "array": "objects",
               "label": "name",
               "value": "id"
-            },
-		  "filter": {
-		    "properties": {
-		      "typeEqual": {
-			"enum": [
-			  "httpNotification.Http"
-			],
-			"x-enumLabels": [
-			  "HTTP Template"
-			]
-		      }
-		    },
-		    "type": "object"
-		  }
-          }
-        },
+            }
+          },
         "eventNotificationTemplate": {}
+        }
       }
   }]
 }
@@ -186,23 +173,10 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
               "array": "objects",
               "label": "name",
               "value": "id"
-            },
-		  "filter": {
-		    "properties": {
-		      "typeEqual": {
-			"enum": [
-			  "httpNotification.Http"
-			],
-			"x-enumLabels": [
-			  "HTTP Template"
-			]
-		      }
-		    },
-		    "type": "object"
-		  }
-          }
-        },
+            }
+          },
         "status": {}
+        }
       }
   }]
 }
