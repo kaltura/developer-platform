@@ -137,15 +137,12 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
       "type": "object",
         "properties": {
           "id": {
-            "dynamicEnum": {
-              "path": "/service/eventnotification_eventnotificationtemplate/action/list",
-              "method": "post",
-              "array": "objects",
-              "label": "name",
+            "dynamicValue": {
+              "fromStep": 2,
               "value": "id"
             }
           },
-        "eventNotificationTemplate": {}
+          "eventNotificationTemplate": {}
         }
       }
   }]
@@ -167,15 +164,12 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
       "type": "object",
         "properties": {
           "id": {
-            "dynamicEnum": {
-              "path": "/service/eventnotification_eventnotificationtemplate/action/list",
-              "method": "post",
-              "array": "objects",
-              "label": "name",
+            "dynamicValue": {
+              "fromStep": 2,
               "value": "id"
-            },
-            "status": {}
-          }
+            }
+          },
+          "status": {}
         }
       }
   }]
