@@ -150,7 +150,7 @@ operationNavigation:
 
       - title: "Generating Kaltura Sessions with Application Tokens"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html
-        path: "/VPaaS-API-Getting-Started/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html"
+        path: "/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html"
         discussionURL: null
 
   - title: "Client Libraries"
