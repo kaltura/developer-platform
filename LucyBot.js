@@ -109,6 +109,4 @@ if (miscItem) {
   }
 }
 
-if (TARGET_API === 'ovp') {
-  require('./v4-navigation')(config);
-}
+require('./v4-navigation')(config);
