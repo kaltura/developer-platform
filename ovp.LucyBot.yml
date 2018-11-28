@@ -137,6 +137,11 @@ operationNavigation:
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html
         path: "/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html"
         discussionURL: null
+       
+      - title: "Application Token Session Management"
+        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/application-token-session-management.html
+        path: "/VPaaS-API-Getting-Started/application-token-session-management.html"
+        discussionURL: null       
 
       - title: "Creating an Application Token"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Account-Representative-Steps.html

@@ -23,11 +23,11 @@ git add . >> /dev/null
 echo "Added everything to commit"
 git commit -a -m "Build site" >> /dev/null
 echo "Committed everything"
-git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:master >> /dev/null 2>&1
+git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:$BRANCH >> /dev/null 2>&1
 echo "Pushed new site"
 
 cd ../ott
 echo "Commiting OTT build"
 git add . >> /dev/null
 git commit -a -m "Build site" >> /dev/null
-git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/ott-developer-platform-generated HEAD:master >> /dev/null 2>&1
+git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/ott-developer-platform-generated HEAD:$BRANCH >> /dev/null 2>&1
