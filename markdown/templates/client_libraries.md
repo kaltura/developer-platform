@@ -14,6 +14,7 @@ Users of self-hosted editions of Kaltura (On-Prem or CE) are encouraged to use t
 Please note, the client libraries provided here have been generated for version <%- version %> of the Kaltura OTT Platform API. Customers are encouraged to verify their platform API version and ensure the use of client libraries that match the version of their platform version for optimal compatibility. If you’re unsure which version to use, please contact your Kaltura Account Manager
 <% } -%>
 
+<% if (target === 'ovp') { -%>
 ## Download Client Archives
 <style>
 .client-lib-link {
@@ -37,6 +38,8 @@ Please note, the client libraries provided here have been generated for version 
   })
 </script>
 
+<% } -%>
+
 <% if (target === 'ovp') { -%>
 ## Install Via Package Managers
 In programming languages that use package managers, Kaltura also provides
@@ -57,11 +60,25 @@ client libraries as packages that can be installed via the respective package ma
   <version>14.5.0</version>
 </dependency>
 ```
+<% } else { -%>
+
+## Install Via Package Managers
+In programming languages that use package managers, Kaltura also provides
+client libraries as packages that can be installed via the respective package manager.
+
+[![NPM](https://nodei.co/npm/kaltura-ott-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/kaltura-ott-client/)
+
+* [Node](https://nodei.co/npm/kaltura-ott-client/) `npm install kaltura-ott-client`
+* [PHP](https://packagist.org/packages/kaltura/ott-api-client-library) `composer require kaltura/ott-api-client-library`
+* [Python](https://pypi.python.org/pypi/KalturaOttApiClient) `pip install KalturaOttApiClient`
+* [Swift](http://cocoapods.org/pods/KalturaOttClient) `pod "KalturaOttClient"`
+* [Java](https://mvnrepository.com/artifact/com.kaltura/KalturaOttApiClient) (via Maven)
+* [Typescript](https://github.com/kaltura/KalturaOttGeneratedAPIClientsTypescript)
+* [CSharp](https://github.com/kaltura/KalturaOttGeneratedAPIClientsCsharp)
+
 <% } -%>
 
 
 ## Missing a Language?
 Tweet [@Kaltura_API pls add sdk for: [lang]](http://twitter.com/?status=@Kaltura_API%20pls%20add%20sdk%20for%3A%20%5Bprogramming_language%5D)
-
-or [create your own Client Library Generator](http://www.kaltura.org/api-client-library-generator-guide)
 
