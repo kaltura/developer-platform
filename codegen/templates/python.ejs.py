@@ -19,6 +19,6 @@ client.setKs(ks)
 <% } -%>
 
 <%- codegen.assignAllParameters(parameters, answers) -%>
-result = client.<%- service %>.<%- action %>(<%- parameterNames.join(', ') %>);
-print(result);
+result = client.<%- service %>.<%- action %>(<%- parameterNames.join(', ') %>)
+print(result)
 <% -%>
