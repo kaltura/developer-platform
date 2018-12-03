@@ -1,8 +1,8 @@
 
 id = 0
-lockKey = KalturaExclusiveLockKey()
-jobType = ""
-resetExecutionAttempts = False
+lock_key = KalturaExclusiveLockKey()
+job_type = ""
+reset_execution_attempts = False
 
-result = client.batch.freeExclusiveJob(id, lockKey, jobType, resetExecutionAttempts);
-print(result);
+result = client.batch.freeExclusiveJob(id, lock_key, job_type, reset_execution_attempts)
+print(result)

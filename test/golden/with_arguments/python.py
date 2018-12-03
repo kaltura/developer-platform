@@ -8,5 +8,5 @@ filter.advancedSearch.value = "baz"
 pager = KalturaFilterPager()
 pager.pageSize = 3
 
-result = client.media.list(filter, pager);
-print(result);
+result = client.media.list(filter, pager)
+print(result)

@@ -1,8 +1,8 @@
 
-entryId = ""
-captionAsset = KalturaCaptionAsset()
-captionAsset.tags = "stuff"
-captionAsset.language = "Arabic"
+entry_id = ""
+caption_asset = KalturaCaptionAsset()
+caption_asset.tags = "stuff"
+caption_asset.language = "Arabic"
 
-result = client.caption.captionAsset.add(entryId, captionAsset);
-print(result);
+result = client.caption.captionAsset.add(entry_id, caption_asset)
+print(result)

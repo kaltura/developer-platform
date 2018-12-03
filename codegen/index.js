@@ -282,6 +282,11 @@ var language_opts = {
       if (pieces.length === 1) return name;
       return pieces[0] + '.' + name;
     },
+    rewriteVariable: s => {
+      s = camelCaseToUnderscore(s)
+      if (s === 'type') s = 'k_type';
+      return s
+    },
     fileCode: () => "open('/path/to/file', 'rb')",
   },
 }

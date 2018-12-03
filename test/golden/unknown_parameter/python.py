@@ -1,5 +1,5 @@
 
-accessControl = KalturaAccessControl()
+access_control = KalturaAccessControl()
 
-result = client.accessControl.add(accessControl);
-print(result);
+result = client.accessControl.add(access_control)
+print(result)

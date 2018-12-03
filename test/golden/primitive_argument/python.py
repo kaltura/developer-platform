@@ -1,6 +1,6 @@
 
-entryId = "abcde"
+entry_id = "abcde"
 version = -1
 
-result = client.media.get(entryId, version);
-print(result);
+result = client.media.get(entry_id, version)
+print(result)

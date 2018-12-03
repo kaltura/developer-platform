@@ -1,11 +1,11 @@
 
-searchParams = KalturaESearchEntryParams()
-searchParams.searchOperator = KalturaESearchEntryOperator()
-searchParams.searchOperator.operator = KalturaESearchOperatorType.AND_OP
-searchParams.searchOperator.searchItems = []
-searchParams.searchOperator.searchItems[0] = KalturaESearchCaptionItem()
-searchParams.searchOperator.searchItems[0].searchTerm = "asdf"
+search_params = KalturaESearchEntryParams()
+search_params.searchOperator = KalturaESearchEntryOperator()
+search_params.searchOperator.operator = KalturaESearchOperatorType.AND_OP
+search_params.searchOperator.searchItems = []
+search_params.searchOperator.searchItems[0] = KalturaESearchCaptionItem()
+search_params.searchOperator.searchItems[0].searchTerm = "asdf"
 pager = KalturaPager()
 
-result = client.elasticsearch.eSearch.searchEntry(searchParams, pager);
-print(result);
+result = client.elasticsearch.eSearch.searchEntry(search_params, pager)
+print(result)

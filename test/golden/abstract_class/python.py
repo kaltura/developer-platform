@@ -1,5 +1,5 @@
 
-cuePoint = None 
+cue_point = None 
 
-result = client.cuepoint.cuePoint.add(cuePoint);
-print(result);
+result = client.cuepoint.cuePoint.add(cue_point)
+print(result)

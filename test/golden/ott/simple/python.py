@@ -1,5 +1,5 @@
 
 id = "abc"
 
-result = client.appToken.get(id);
-print(result);
+result = client.appToken.get(id)
+print(result)

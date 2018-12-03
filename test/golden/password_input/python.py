@@ -1,10 +1,10 @@
 
-loginId = ""
+login_id = ""
 password = "*************"
-partnerId = 0
+partner_id = 0
 expiry = 86400
 privileges = "*"
 otp = ""
 
-result = client.user.loginByLoginId(loginId, password, partnerId, expiry, privileges, otp);
-print(result);
+result = client.user.loginByLoginId(login_id, password, partner_id, expiry, privileges, otp)
+print(result)

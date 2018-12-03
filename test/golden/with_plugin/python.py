@@ -15,5 +15,5 @@ client.setKs(ks)
 filter = KalturaMetadataProfileFilter()
 pager = KalturaFilterPager()
 
-result = client.metadata.metadataProfile.list(filter, pager);
-print(result);
+result = client.metadata.metadataProfile.list(filter, pager)
+print(result)

@@ -1,3 +1,3 @@
 
-result = client.session.end();
-print(result);
+result = client.session.end()
+print(result)
