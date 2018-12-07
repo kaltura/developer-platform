@@ -38,6 +38,7 @@ Several options can be set using environment variables:
 * DISABLE_SWIFTYPE
 * ENABLE_HOMEPAGE
 * BASE_PATH
+* OTT_API_VERSION - relevant for 'ott' only. (e.g. v5_1_0)
 
 #### Required in production
 * TARGET_API - either 'ott' or 'ovp'
