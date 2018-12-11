@@ -1,4 +1,5 @@
-const openapi = require('./ovp.openapi.json');
+const TARGET_API = process.env.TARGET_API || 'ovp';
+const openapi = require('./' + TARGET_API + '.openapi.json');
 const fs = require('fs');
 
 function getOperations(tag) {

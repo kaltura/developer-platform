@@ -336,7 +336,7 @@ operationNavigation:
         path: "/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html"
         discussionURL: null
 
-      - title: "Kaltura Thumbnail API"
+      - title: "Kaltura Video Thumbnail and Image Transformation API"
         markdownURL: /assets/documentation/Engage_and_Publish/kaltura-thumbnail-api.html
         path: "/Engage_and_Publish/kaltura-thumbnail-api.html"
         discussionURL: null
