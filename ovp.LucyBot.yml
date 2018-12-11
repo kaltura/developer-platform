@@ -5,6 +5,8 @@ specifications:
 css:
   - assets/ovp.css
 
+workflowDirectory: workflows/ovp
+
 sitemap:
   hostname: https://developer.kaltura.com
 

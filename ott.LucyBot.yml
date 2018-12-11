@@ -5,6 +5,8 @@ specifications:
 css:
   - assets/ott.css
 
+workflowDirectory: workflows/ott
+
 routes:
   /:
     redirect: /api-docs
