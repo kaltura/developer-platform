@@ -25,6 +25,14 @@ describe('Sample Code', function() {
       showSetup: false,
     },
   }, {
+    name: 'app_token_session',
+    service: 'apptoken',
+    action: 'startSession',
+    input: {
+      answers: {partnerId: 12345},
+      showSetup: true,
+    }
+  }, {
     name: 'abstract_class',
     service: 'cuepoint_cuepoint',
     action: 'add',
