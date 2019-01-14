@@ -343,7 +343,7 @@ operationNavigation:
         path: "/Engage_and_Publish/kaltura-thumbnail-api.html"
         discussionURL: null
       - tag: "playlist"
-      - tag: "thumbnail"
+      - tag: "thumbAsset"
       - tag: "cuePoint"
       - tag: "quiz"
       - tag: "userEntry"
