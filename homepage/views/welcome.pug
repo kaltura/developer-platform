@@ -4,17 +4,14 @@ script.
   var kalturaPlayer = KalturaPlayer.setup({
   targetId: "kaltura-player",
     provider: {
-      partnerId: 811441,
-      uiConfId: 42685191
+      partnerId: 2421271,
+      uiConfId: 43006971
     },
     playback: {
       preload: 'auto',
       autoplay: true,
-      loop: true,
+      loop: true
     }
-  });
-  kalturaPlayer.addEventListener(kalturaPlayer.Event.ENDED, function() {
-    setTimeout(function() {kalturaPlayer.play()});
   });
   kalturaPlayer.loadMedia({entryId: '0_cm8rhiwp'}).then(function() {
     kalturaPlayer.load();
