@@ -244,6 +244,7 @@ operationNavigation:
       - tag: "thumbAsset"
       - tag: "attachmentAsset"
       - tag: "externalMedia"
+      # `upload` service was deprecated in favour of `UploadToken`  
       - tag: "upload"
         hide: true
   - title: "Execute Bulk Ingest and Updates"
@@ -263,6 +264,7 @@ operationNavigation:
         hide: true
       - tag: "aspera"
         hide: true
+      # `bulkUpload` service was deprecated in favour of `bulk`  
       - tag: "bulkUpload"
         hide: true
   - title: "Convert and Transcode Media"
@@ -430,6 +432,7 @@ operationNavigation:
       - tag: "categoryUser"
       - tag: "permission"
       - tag: "permissionItem"
+      # `accessControl` service was deprecated in favour of `accessControlProfile`  
       - tag: "accessControl"
         hide: true
       - tag: "adminUser"
@@ -459,6 +462,7 @@ operationNavigation:
           - tag: "scheduleResource"
       - tag: "integration"
       - tag: "businessProcessCase"
+      # `notification` service was deprecated in favour of `eventNotificationTemplate`  
       - tag: "notification"
         hide: true
   - title: "Encrypt and License Content"
