@@ -2,7 +2,12 @@ meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit
 link(rel="stylesheet" href="/homepage/assets/styles.css")
 link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
 link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-dark.min.css")
-script(src="/assets/google-analytics.js")
+script(async src="https://www.googletagmanager.com/gtag/js?id=UA-68472312-3")
+script.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-68472312-3');
 script(src="https://cdnapisec.kaltura.com/p/2421271/embedPlaykitJs/uiconf_id/43006971")
 script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
 script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js")
