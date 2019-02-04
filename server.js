@@ -94,6 +94,10 @@ if (process.env.TARGET_API === 'ott') {
 App.use('/github', require('./routes/github.js'));
 
 App.get('*', (req, res) => {
+  if (req.originalUrl.endsWith('.html/')) {
+    let newUrl = req.protocol + '://' + req.get('host') + req.originalUrl.replace(/\/$/, '');
+    return res.redirect(301, newUrl);
+  }
   res.set('Content-Type', 'text/html');
   res.send(DEFAULT_INDEX);
 })
