@@ -207,6 +207,12 @@ auto
 ## Creating a Media Entry
 Now we'll create a Media Entry to hold our video. Use the form below to enter your video's details.
 
+1. Select `entry` of type `KalturaMediaEntry`.
+2. Select the correct `mediaType`.
+3. Optionally add basic metadata, such as the asset's `name` and `description`.
+4. You may leave the other fields blank or with their default values.
+
+
 ### API Call
 ```json
 {
@@ -235,7 +241,11 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
 ```
 
 ## Attach the Video
-Now that you've created a new Media Entry, you need to associate the uploaded video with it.
+Now that you've created a new Media Entry, you need to associate the uploaded video with it:
+
+1. Select `resource` of type `KalturaUploadedFileResourceToken`.
+2. Confirm the `entryId` from the previous step, and the `token` from the first step.
+
 
 ### API Call
 ```json
