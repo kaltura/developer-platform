@@ -1448,6 +1448,9 @@
           "readOnly": true,
           "type": "string"
         },
+        "feedback": {
+          "type": "string"
+        },
         "isCorrect": {
           "description": "`readOnly`\n\nEnum Type: `KalturaNullableBoolean`",
           "enum": [
@@ -1463,6 +1466,9 @@
             "TRUE_VALUE"
           ],
           "x-enumType": "KalturaNullableBoolean"
+        },
+        "openAnswer": {
+          "type": "string"
         },
         "parentId": {
           "description": "`insertOnly`",
@@ -7540,6 +7546,26 @@
       "title": "KalturaBeaconSearchScheduledResourceOrderByItem",
       "type": "object"
     },
+    "KalturaBlackoutScheduleEvent": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaScheduleEvent"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaBlackoutScheduleEvent",
+      "type": "object"
+    },
+    "KalturaBlackoutScheduleEventFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaRecordScheduleEventBaseFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaBlackoutScheduleEventFilter",
+      "type": "object"
+    },
     "KalturaBooleanField": {
       "allOf": [
         {
@@ -7686,6 +7712,7 @@
         "bulkUploadObjectType": {
           "description": "Enum Type: `KalturaBulkUploadObjectType`",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
@@ -7696,6 +7723,7 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
@@ -7850,6 +7878,7 @@
         "bulkUploadObjectTypeEqual": {
           "description": "Enum Type: `KalturaBulkUploadObjectType`",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
@@ -7860,6 +7889,7 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
@@ -8064,12 +8094,14 @@
           "description": "Enum Type: `KalturaScheduleEventType`\n\nThe type of the events that ill be created by this upload",
           "enum": [
             1,
-            2
+            2,
+            3
           ],
           "type": "integer",
           "x-enumLabels": [
             "RECORD",
-            "LIVE_STREAM"
+            "LIVE_STREAM",
+            "BLACKOUT"
           ],
           "x-enumType": "KalturaScheduleEventType"
         }
@@ -8108,6 +8140,7 @@
         "bulkUploadObjectType": {
           "description": "`readOnly`\n\nEnum Type: `KalturaBulkUploadObjectType`\n\nType of object for bulk upload",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
@@ -8119,6 +8152,7 @@
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
@@ -8307,6 +8341,9 @@
           "$ref": "#/definitions/KalturaBulkUploadResultEntry"
         },
         {
+          "$ref": "#/definitions/KalturaBulkUploadResultJob"
+        },
+        {
           "$ref": "#/definitions/KalturaBulkUploadResultScheduleEvent"
         },
         {
@@ -8352,6 +8389,7 @@
         "bulkUploadResultObjectType": {
           "description": "Enum Type: `KalturaBulkUploadObjectType`",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
@@ -8362,6 +8400,7 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
@@ -8405,6 +8444,7 @@
             "KalturaBulkUploadResultCategoryEntry",
             "KalturaBulkUploadResultCategoryUser",
             "KalturaBulkUploadResultEntry",
+            "KalturaBulkUploadResultJob",
             "KalturaBulkUploadResultScheduleEvent",
             "KalturaBulkUploadResultScheduleResource",
             "KalturaBulkUploadResultUser"
@@ -8625,6 +8665,21 @@
         }
       },
       "title": "KalturaBulkUploadResultEntry",
+      "type": "object"
+    },
+    "KalturaBulkUploadResultJob": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadResult"
+        }
+      ],
+      "properties": {
+        "jobObjectId": {
+          "description": "ID of object being processed by the job",
+          "type": "integer"
+        }
+      },
+      "title": "KalturaBulkUploadResultJob",
       "type": "object"
     },
     "KalturaBulkUploadResultScheduleEvent": {
@@ -11961,6 +12016,9 @@
           "type": "string"
         },
         "language": {
+          "type": "string"
+        },
+        "languageCode": {
           "type": "string"
         },
         "url": {
@@ -25043,12 +25101,14 @@
           "description": "Enum Type: `KalturaScheduleEventType`\n\nThe type of the events that ill be created by this upload",
           "enum": [
             1,
-            2
+            2,
+            3
           ],
           "type": "integer",
           "x-enumLabels": [
             "RECORD",
-            "LIVE_STREAM"
+            "LIVE_STREAM",
+            "BLACKOUT"
           ],
           "x-enumType": "KalturaScheduleEventType"
         }
@@ -26086,6 +26146,7 @@
             "end_date",
             "entitled_kusers_edit",
             "entitled_kusers_publish",
+            "entitled_kusers_view",
             "entry_type",
             "external_source_type",
             "id",
@@ -26122,6 +26183,7 @@
             "END_DATE",
             "ENTITLED_USER_EDIT",
             "ENTITLED_USER_PUBLISH",
+            "ENTITLED_USER_VIEW",
             "ENTRY_TYPE",
             "EXTERNAL_SOURCE_TYPE",
             "ID",
@@ -28457,6 +28519,12 @@
       "description": "`abstract`",
       "discriminator": "objectType",
       "properties": {
+        "blackoutConflicts": {
+          "items": {
+            "$ref": "#/definitions/KalturaScheduleEvent"
+          },
+          "type": "array"
+        },
         "categoryIds": {
           "description": "Categories that associated with this event",
           "type": "string"
@@ -28495,6 +28563,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -28523,6 +28594,7 @@
           "enum": [
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -28549,6 +28621,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -28557,6 +28632,7 @@
         "objectType": {
           "enum": [
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -32097,6 +32173,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         },
         {
@@ -32650,6 +32729,7 @@
             "KalturaScheduleEventFilter",
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter",
             "KalturaScheduleEventResourceFilter",
             "KalturaScheduleResourceFilter",
@@ -48697,7 +48777,8 @@
             4,
             5,
             6,
-            7
+            7,
+            8
           ],
           "type": "integer",
           "x-enumLabels": [
@@ -48707,7 +48788,8 @@
             "MULTIPLE_ANSWER_QUESTION",
             "FILL_IN_BLANK",
             "HOT_SPOT",
-            "GO_TO"
+            "GO_TO",
+            "OPEN_QUESTION"
           ],
           "x-enumType": "KalturaQuestionType"
         }
@@ -49155,6 +49237,9 @@
         }
       ],
       "properties": {
+        "feedback": {
+          "type": "string"
+        },
         "score": {
           "description": "`readOnly`",
           "readOnly": true,
@@ -49739,6 +49824,9 @@
       ],
       "anyOf": [
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -49747,6 +49835,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -50063,6 +50152,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         },
         {
@@ -50190,6 +50282,7 @@
             "KalturaScheduleEventFilter",
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter",
             "KalturaScheduleEventResourceFilter",
             "KalturaScheduleResourceFilter",
@@ -51328,6 +51421,9 @@
     "KalturaScheduleEvent": {
       "anyOf": [
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEvent"
+        },
+        {
           "$ref": "#/definitions/KalturaLiveStreamScheduleEvent"
         },
         {
@@ -51395,6 +51491,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBlackoutScheduleEvent",
             "KalturaLiveStreamScheduleEvent",
             "KalturaRecordScheduleEvent"
           ],
@@ -51499,6 +51596,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -51531,6 +51631,7 @@
             "KalturaScheduleEventFilter",
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -51647,6 +51748,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -51656,6 +51760,7 @@
           "enum": [
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -65865,7 +65970,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "14.11.0"
+    "version": "14.13.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -66069,14 +66174,16 @@
       "description": "Enum Type: `KalturaScheduleEventType`\n\nThe type of the events that ill be created by this upload",
       "enum": [
         1,
-        2
+        2,
+        3
       ],
       "in": "query",
       "name": "bulkUploadData[eventsType]",
       "type": "integer",
       "x-enumLabels": [
         "RECORD",
-        "LIVE_STREAM"
+        "LIVE_STREAM",
+        "BLACKOUT"
       ],
       "x-enumType": "KalturaScheduleEventType",
       "x-group": "bulkUploadData"
@@ -70945,6 +71052,7 @@
                 },
                 "bulkUploadObjectType": {
                   "enum": [
+                    "bulkUploadFilter.JOB",
                     "scheduleBulkUpload.SCHEDULE_EVENT",
                     "scheduleBulkUpload.SCHEDULE_RESOURCE",
                     "1",
@@ -70955,6 +71063,7 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "JOB",
                     "SCHEDULE_EVENT",
                     "SCHEDULE_RESOURCE",
                     "ENTRY",
@@ -94099,7 +94208,7 @@
     "/service/livestream/action/createPeriodicSyncPoints": {
       "post": {
         "deprecated": true,
-        "description": "Creates perioding metadata sync-point events on a live stream",
+        "description": "Creates periodic metadata sync-point events on a live stream",
         "operationId": "liveStream.createPeriodicSyncPoints",
         "parameters": [
           {
@@ -97348,7 +97457,7 @@
     },
     "/service/metadata_metadata/action/addFromBulk": {
       "post": {
-        "description": "Allows you to add a metadata xml data from remote URL.\n\nEnables different permissions than addFromUrl action.",
+        "description": "Allows you to add a metadata XML data from remote URL.\n\nEnables different permissions than addFromUrl action.",
         "operationId": "metadata.addFromBulk",
         "parameters": [
           {
@@ -97531,7 +97640,7 @@
     },
     "/service/metadata_metadata/action/addFromUrl": {
       "post": {
-        "description": "Allows you to add a metadata xml data from remote URL",
+        "description": "Allows you to add a metadata XML data from remote URL",
         "operationId": "metadata.addFromUrl",
         "parameters": [
           {
@@ -98897,7 +99006,7 @@
     },
     "/service/metadata_metadataprofile/action/updateTransformationFromFile": {
       "post": {
-        "description": "Update an existing metadata object xslt file",
+        "description": "Update an existing metadata object XSLT file",
         "operationId": "metadataProfile.updateTransformationFromFile",
         "parameters": [
           {
@@ -103574,6 +103683,9 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
                     "201"
                   ],
                   "type": "string",
@@ -103616,6 +103728,9 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -103841,6 +103956,9 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
                     "201"
                   ],
                   "type": "string",
@@ -103883,6 +104001,9 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -103996,6 +104117,9 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
                     "201"
                   ],
                   "type": "string",
@@ -104038,6 +104162,9 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -104144,6 +104271,9 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
                     "201"
                   ],
                   "type": "string",
@@ -104186,6 +104316,9 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -104307,6 +104440,9 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
                     "201"
                   ],
                   "type": "string",
@@ -104349,6 +104485,9 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
@@ -105228,6 +105367,21 @@
                 "scheduleEvent": {
                   "$ref": "#/definitions/KalturaScheduleEvent"
                 },
+                "scheduleEventConflictType": {
+                  "default": 1,
+                  "enum": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "type": "integer",
+                  "x-enumLabels": [
+                    "RESOURCE_CONFLICT",
+                    "BLACKOUT_CONFLICT",
+                    "BOTH"
+                  ],
+                  "x-enumType": "KalturaScheduleEventConflictType"
+                },
                 "scheduleEventIdToIgnore": {
                   "type": "string"
                 }
@@ -105255,7 +105409,8 @@
         "x-kaltura-parameters": [
           "resourceIds",
           "scheduleEvent",
-          "scheduleEventIdToIgnore"
+          "scheduleEventIdToIgnore",
+          "scheduleEventConflictType"
         ]
       }
     },
@@ -105574,6 +105729,10 @@
                 "filter": {
                   "$ref": "#/definitions/KalturaScheduleEventResourceFilter"
                 },
+                "filterBlackoutConflicts": {
+                  "default": true,
+                  "type": "boolean"
+                },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
                 }
@@ -105596,7 +105755,8 @@
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
           "filter",
-          "pager"
+          "pager",
+          "filterBlackoutConflicts"
         ]
       }
     },
@@ -107886,7 +108046,7 @@
     },
     "/service/shortlink_shortlink/action/update": {
       "post": {
-        "description": "Update exisitng short link",
+        "description": "Update existing short link",
         "operationId": "shortLink.update",
         "parameters": [
           {
@@ -114302,7 +114462,7 @@
     },
     "/service/virusscan_virusscanprofile/action/update": {
       "post": {
-        "description": "Update exisitng virus scan profile, it is possible to update the virus scan profile id too",
+        "description": "Update existing virus scan profile, it is possible to update the virus scan profile id too",
         "operationId": "virusScanProfile.update",
         "parameters": [
           {
@@ -114871,7 +115031,7 @@
       "x-plugin": "attUverseDistribution"
     },
     {
-      "description": "Audit Trail service",
+      "description": "The Audit Trail service allows you to keep track of changes made to various Kaltura objects. \n This service is disabled by default.",
       "name": "auditTrail",
       "x-plugin": "audit"
     },
@@ -115271,7 +115431,7 @@
       "name": "stats"
     },
     {
-      "description": "Storage Profiles service",
+      "description": "The Storage Profile service allows you to export your Kaltura content to external storage volumes.\n This service is disabled by default, please contact your account manager if you wish to enable it for your partner.",
       "name": "storageProfile"
     },
     {
@@ -118835,6 +118995,12 @@
       "oneOf": [
         {
           "enum": [
+            "bulkUploadFilter.JOB"
+          ],
+          "title": "JOB"
+        },
+        {
+          "enum": [
             "scheduleBulkUpload.SCHEDULE_EVENT"
           ],
           "title": "SCHEDULE_EVENT"
@@ -120171,6 +120337,23 @@
         }
       ],
       "title": "KalturaConditionType"
+    },
+    "KalturaConfMapsSourceLocation": {
+      "oneOf": [
+        {
+          "enum": [
+            "FileSystem"
+          ],
+          "title": "FS"
+        },
+        {
+          "enum": [
+            "database"
+          ],
+          "title": "DB"
+        }
+      ],
+      "title": "KalturaConfMapsSourceLocation"
     },
     "KalturaConferenceRoomStatus": {
       "oneOf": [
@@ -124548,6 +124731,12 @@
             "entitled_kusers_publish"
           ],
           "title": "ENTITLED_USER_PUBLISH"
+        },
+        {
+          "enum": [
+            "entitled_kusers_view"
+          ],
+          "title": "ENTITLED_USER_VIEW"
         },
         {
           "enum": [
@@ -139511,6 +139700,18 @@
         },
         {
           "enum": [
+            "CONF_MAPS_EDIT_PLUGIN_ADMIN"
+          ],
+          "title": "CONF_MAPS_EDIT_PLUGIN_ADMIN"
+        },
+        {
+          "enum": [
+            "CONF_MAPS_VIEW_PLUGIN_ADMIN"
+          ],
+          "title": "CONF_MAPS_VIEW_PLUGIN_ADMIN"
+        },
+        {
+          "enum": [
             "CONTENT_INGEST_BULK_UPLOAD"
           ],
           "title": "CONTENT_INGEST_BULK_UPLOAD"
@@ -139916,6 +140117,12 @@
             "FEATURE_HTML5_V2_PLAYER_PREVIEW"
           ],
           "title": "FEATURE_HTML5_V2_PLAYER_PREVIEW"
+        },
+        {
+          "enum": [
+            "FEATURE_HTTP_NOTIFICATIONS_DEFAULT_PROTOCOL_HTTPS"
+          ],
+          "title": "FEATURE_HTTP_NOTIFICATIONS_DEFAULT_PROTOCOL_HTTPS"
         },
         {
           "enum": [
@@ -142114,6 +142321,12 @@
             7
           ],
           "title": "GO_TO"
+        },
+        {
+          "enum": [
+            8
+          ],
+          "title": "OPEN_QUESTION"
         }
       ],
       "title": "KalturaQuestionType"
@@ -142926,6 +143139,24 @@
         },
         {
           "enum": [
+            "39"
+          ],
+          "title": "TOP_CONTENT_CONTRIBUTORS"
+        },
+        {
+          "enum": [
+            "40"
+          ],
+          "title": "APP_DOMAIN_UNIQUE_ACTIVE_USERS"
+        },
+        {
+          "enum": [
+            "41"
+          ],
+          "title": "TOP_SOURCES"
+        },
+        {
+          "enum": [
             "201"
           ],
           "title": "PARTNER_USAGE"
@@ -143136,6 +143367,29 @@
         }
       ],
       "title": "KalturaScheduleEventClassificationType"
+    },
+    "KalturaScheduleEventConflictType": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "RESOURCE_CONFLICT"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "BLACKOUT_CONFLICT"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "BOTH"
+        }
+      ],
+      "title": "KalturaScheduleEventConflictType"
     },
     "KalturaScheduleEventOrderBy": {
       "oneOf": [
@@ -143396,6 +143650,12 @@
             2
           ],
           "title": "LIVE_STREAM"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "BLACKOUT"
         }
       ],
       "title": "KalturaScheduleEventType"
@@ -150597,6 +150857,41 @@
       "code": "CANNOT_CREATE_CLIP_FLAVOR_JOB",
       "message": "cannot create clip, flavor convert batch job returned as null",
       "name": "CANNOT_CREATE_CLIP_FLAVOR_JOB"
+    },
+    {
+      "code": "MISSING_MAP_NAME",
+      "message": "Map name must be supplied",
+      "name": "MISSING_MAP_NAME"
+    },
+    {
+      "code": "CANNOT_PARSE_CONTENT",
+      "message": "Error - [@ERR@] Cannot parse content - \r\n [@CONTENT@]",
+      "name": "CANNOT_PARSE_CONTENT"
+    },
+    {
+      "code": "CONF_CONTORL_ERROR",
+      "message": "Conf control error - [@ERR@]",
+      "name": "CONF_CONTORL_ERROR"
+    },
+    {
+      "code": "MAP_DOES_NOT_EXIST",
+      "message": "Map does not exist",
+      "name": "MAP_DOES_NOT_EXIST"
+    },
+    {
+      "code": "MAP_ALREADY_EXIST",
+      "message": "Map already exist for this map name {@NAME@} and host {@HOST@}",
+      "name": "MAP_ALREADY_EXIST"
+    },
+    {
+      "code": "MAP_CANNOT_BE_CREATED_ON_FILE_SYSTEM",
+      "message": "Map cannnot be created on file system",
+      "name": "MAP_CANNOT_BE_CREATED_ON_FILE_SYSTEM"
+    },
+    {
+      "code": "HOST_NAME_CONTAINS_ASTRIX",
+      "message": "Host name contains *, use # instead {@HOST_NAME@}",
+      "name": "HOST_NAME_CONTAINS_ASTRIX"
     },
     {
       "code": "INTERNAL_DATABASE_ERROR",

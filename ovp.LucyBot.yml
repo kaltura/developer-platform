@@ -390,7 +390,6 @@ operationNavigation:
       - tag: "deliveryProfile"
         hide: true
       - tag: "storageProfile"
-        hide: true
   - title: "Secure, Control and Govern"
     children:
       - title: "Content Categories Management"
@@ -438,7 +437,6 @@ operationNavigation:
       - tag: "adminUser"
         hide: true
       - tag: "auditTrail"
-        hide: true
   - title: "Optimize API Requests"
     prerender: false
     children:
@@ -493,7 +491,6 @@ operationNavigation:
     children:
       - tag: "system"
       - tag: "storageProfile"
-        hide: true
   - title: "Miscellaneous"
     prerender: false
     isMiscellaneous: true
