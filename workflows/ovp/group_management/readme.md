@@ -20,32 +20,21 @@ User ids should not contain spaces.
     {
       "name": "body",
       "schema": {
+        "type": "object",
         "properties": {
           "user": {
             "properties": {
-              "fullName": {
-                "type": "string",
-                "consoleDefault": "Sample User"
+              "type": {
+                "consoleDefault": 0
               },
               "id": {
-                "type": "string",
                 "consoleDefault": "sampleUser"
               },
-              "type": {
-                "description": "Enum Type: `KalturaUserType`",
-                "enum": [
-                  0,
-                  1
-                ],
-                "type": "integer",
-                "x-enumLabels": [
-                  "USER",
-                  "GROUP"
-                ],
-                "x-enumType": "KalturaUserType",
-                "consoleDefault": 0
+              "fullName": {
+                "consoleDefault": "Sample User"
               }
-            }
+            },
+            "type": "object"
           }
         }
       }
@@ -68,32 +57,21 @@ Group name can be set using full name, otherwise group will show up with id.
     {
       "name": "body",
       "schema": {
+        "type": "object",
         "properties": {
           "user": {
             "properties": {
-              "fullName": {
-                "type": "string",
-                "consoleDefault": "Sample Group"
+              "type": {
+                "consoleDefault": 1
               },
               "id": {
-                "type": "string",
                 "consoleDefault": "sampleGroup"
               },
-              "type": {
-                "description": "Enum Type: `KalturaUserType`",
-                "enum": [
-                  0,
-                  1
-                ],
-                "type": "integer",
-                "x-enumLabels": [
-                  "USER",
-                  "GROUP"
-                ],
-                "x-enumType": "KalturaUserType",
-                "consoleDefault": 1
+              "fullName": {
+                "consoleDefault": "Sample Group"
               }
-            }
+            },
+            "type": "object"
           }
         }
       }
@@ -114,20 +92,18 @@ Add a user to group
     {
       "name": "body",
       "schema": {
+        "type": "object",
         "properties": {
           "groupUser": {
             "properties": {
-              "groupId": {
-                "description": "`insertOnly`",
-                "type": "string",
-                "consoleDefault": "sampleGroup"
-              },
               "userId": {
-                "description": "`insertOnly`",
-                "type": "string",
                 "consoleDefault": "sampleUser"
+              },
+              "groupId": {
+                "consoleDefault": "sampleGroup"
               }
-            }
+            },
+            "type": "object"
           }
         }
       }
@@ -148,9 +124,15 @@ This step will return all users that are associated with the group defined.
     {
       "name": "body",
       "schema": {
+        "type": "object",
         "properties": {
           "filter": {
-            "properties": {}
+            "properties": {
+              "groupIdEqual": {
+                "consoleDefault": "sampleGroup"
+              }
+            },
+            "type": "object"
           }
         }
       }
