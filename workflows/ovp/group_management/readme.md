@@ -7,24 +7,9 @@
 # Group Management
 Note: In order for groups to be displayed in KMS, a user role needs to be assigned to them.
 
-## undefined
-
-
-### API Call
-```json
-{
-  "method": "post",
-  "path": "/service/user/action/add",
-  "parameters": [
-    {
-      "name": "body"
-    }
-  ]
-}
-```
-
-## undefined
-
+## Create a user
+Users are created as a user with type USER [KalturaUserType::USER].
+User ids should not contain spaces.
 
 ### API Call
 ```json
@@ -39,8 +24,26 @@ Note: In order for groups to be displayed in KMS, a user role needs to be assign
 }
 ```
 
-## undefined
+## Create a group
+Groups are created as a user with type GROUP [KalturaUserType::GROUP].
+User ids should not contain spaces.
+Group name can be set using full name, otherwise group will show up with id.
 
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/user/action/add",
+  "parameters": [
+    {
+      "name": "body"
+    }
+  ]
+}
+```
+
+## Add a user to a group
+Add a user to group
 
 ### API Call
 ```json
@@ -55,8 +58,8 @@ Note: In order for groups to be displayed in KMS, a user role needs to be assign
 }
 ```
 
-## undefined
-
+## List group users
+This step will return all users that are associated with the group defined.
 
 ### API Call
 ```json
