@@ -45,7 +45,6 @@ This combination of filter parameters will search through all of the Kaltura Med
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -100,7 +99,6 @@ These blend characters may be used as delimiters or as characters.
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -152,7 +150,6 @@ Here's how to embed the results in HTML. You can select a skin by setting uiconf
     },
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
