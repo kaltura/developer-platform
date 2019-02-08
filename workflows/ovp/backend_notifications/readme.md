@@ -183,14 +183,6 @@ Use ```eventNotificationTemplate.list``` to get a list of your templates.
 {
   "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/list",
-  "parameters": [
-    {
-      "name": "clientTag"
-    },
-    {
-      "name": "body"
-    }
-  ],
   "ignoreParameters": [
     "format"
   ]
