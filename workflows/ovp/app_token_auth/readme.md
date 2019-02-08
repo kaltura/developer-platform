@@ -1,11 +1,11 @@
 <!--METADATA
 {
-  "summary": "Learn how to authenticate using App Tokens."
+  "summary": "Learn how to authenticate using App Tokens"
 }
 -->
 
 # App Token Authentication
-An Application Token enables clients to provide their development partners or internal technical teams with restricted access to the Kaltura API. Each Application Token restricts the API methods that may be called by its users, and can allow restricted content access for clients who use entitlements (e.g. restricted access to MediaSpace content).
+An Application Token enables clients to provide their development partners or internal technical teams with restricted access to the Kaltura API. Each Application Token restricts the API methods that may be called by its users, and can allow restricted content access for clients who use entitlements (e.g., restricted access to MediaSpace content).
 
 Developers who are provided with an Application Token use it to create temporary Kaltura Session (KS) tokens, which they will then use to access API functions. These KS tokens will have the restrictions of their originating Application Token.
 
@@ -37,6 +37,83 @@ Do not set a KS on the client before making this call.
     }
   ]
 }
+```
+
+## Compute the Hash
+Compute a hash of the unprivileged Kaltura Session (from the previous step) and the App Token's value, concatenated. This value will be passed to `appToken.startSession` in the following step.
+
+SHA-1 is the default hash function used with Application Tokens. If your Application Token was created with a different hash function (e.g. SHA-256 or MD5), compute that hash instead.
+
+### API Call
+```json
+{
+  "parameters": [
+    {
+      "name": "appTokenValue"
+    },
+    {
+      "name": "hashFunction",
+      "enum": [
+        "sha1",
+        "sha256"
+      ],
+      "default": "sha256"
+    }
+  ]
+}
+```
+### Sample Code (node)
+```javascript
+var crypto = require('crypto');
+var shasum = crypto.createHash('<%- answers.hashFunction %>');
+
+client.ks = widgetSession.ks;
+shasum.update(client.ks + "<%- answers.appTokenValue %>");
+var hash = shasum.digest('hex');
+```
+### Sample Code (csharp)
+```csharp
+client.Ks = widgetSession.ks;
+<% if (answers.hashFunction === 'sha1') { -%>
+SHA1 sha = new SHA1CryptoServiceProvider();
+<% } else { -%>
+SHA256 sha = new SHA256CryptoServiceProvider();
+<% } -%>
+byte[] hash = sha.ComputeHash(Encoding.ASCII.GetBytes(client.Ks + "<%- answers.appTokenValue %>"));
+string hashString = "";
+foreach (char c in hash)
+  hashString += string.Format("{0:x2}", (int)c);
+```
+### Sample Code (java)
+```java
+client.setSessionId(widgetSession.ks);
+<% if (answers.hashFunction === 'sha1') { -%>
+MessageDigest md = MessageDigest.getInstance("SHA-1");
+<% } else { -%>
+MessageDigest md = MessageDigest.getInstance("SHA-256");
+<% } -%>
+md.update(client.Ks + "<%- answers.appTokenValue %>");
+byte[] res = md.digest();
+String hashString = toHexString(res);
+```
+### Sample Code (php)
+```php
+$client->setKS($widgetSession->ks);
+<% if (answers.hashFunction === 'sha1') { -%>
+$hashString = sha1($client->ks . "<%- answers.appTokenValue %>");
+<% } else { -%>
+$hashString = hash('sha256', $client->ks . "<%- answers.appTokenValue %>");
+<% } -%>
+```
+### Sample Code (python)
+```python
+import hashlib
+client.setKs(widgetSession.ks)
+<% if (answers.hashFunction === 'sha1') { -%>
+hashString = hashlib.sha1(client.ks.encode('ascii') + "<%- answers.appTokenValue %>").hexdigest()
+<% } else { -%>
+hashString = hashlib.sha256(client.ks.encode('ascii') + "<%- answers.appTokenValue %>").hexdigest()
+<% } -%>
 ```
 
 ## Start the App Token Session
