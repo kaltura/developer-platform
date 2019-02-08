@@ -25,7 +25,6 @@ Use ```permission.list``` with ```nameEqual``` set to ```'EVENTNOTIFICATION_PLUG
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -63,7 +62,6 @@ Which type would you like to work with?
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -102,7 +100,6 @@ Use the form below to choose a template to clone
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -130,11 +127,11 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
 {
   "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/update",
-  "parameters": [{
-    "name": "body",
-    "in": "body",
-    "schema": {
-      "type": "object",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
         "properties": {
           "id": {
             "dynamicValue": {
@@ -145,7 +142,8 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
           "eventNotificationTemplate": {}
         }
       }
-  }]
+    }
+  ]
 }
 ```
 
@@ -157,11 +155,11 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
 {
   "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/updateStatus",
-  "parameters": [{
-    "name": "body",
-    "in": "body",
-    "schema": {
-      "type": "object",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
         "properties": {
           "id": {
             "dynamicValue": {
@@ -172,7 +170,8 @@ Use ```eventNotificationTemplate.updateStatus``` to control your notification st
           "status": {}
         }
       }
-  }]
+    }
+  ]
 }
 ```
 
@@ -184,6 +183,14 @@ Use ```eventNotificationTemplate.list``` to get a list of your templates.
 {
   "method": "post",
   "path": "/service/eventnotification_eventnotificationtemplate/action/list",
+  "parameters": [
+    {
+      "name": "clientTag"
+    },
+    {
+      "name": "body"
+    }
+  ],
   "ignoreParameters": [
     "format"
   ]
