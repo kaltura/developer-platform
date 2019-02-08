@@ -18,7 +18,37 @@ User ids should not contain spaces.
   "path": "/service/user/action/add",
   "parameters": [
     {
-      "name": "body"
+      "name": "body",
+      "schema": {
+        "properties": {
+          "user": {
+            "properties": {
+              "fullName": {
+                "type": "string",
+                "consoleDefault": "Sample User"
+              },
+              "id": {
+                "type": "string",
+                "consoleDefault": "sampleUser"
+              },
+              "type": {
+                "description": "Enum Type: `KalturaUserType`",
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer",
+                "x-enumLabels": [
+                  "USER",
+                  "GROUP"
+                ],
+                "x-enumType": "KalturaUserType",
+                "consoleDefault": 0
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }
@@ -36,7 +66,37 @@ Group name can be set using full name, otherwise group will show up with id.
   "path": "/service/user/action/add",
   "parameters": [
     {
-      "name": "body"
+      "name": "body",
+      "schema": {
+        "properties": {
+          "user": {
+            "properties": {
+              "fullName": {
+                "type": "string",
+                "consoleDefault": "Sample Group"
+              },
+              "id": {
+                "type": "string",
+                "consoleDefault": "sampleGroup"
+              },
+              "type": {
+                "description": "Enum Type: `KalturaUserType`",
+                "enum": [
+                  0,
+                  1
+                ],
+                "type": "integer",
+                "x-enumLabels": [
+                  "USER",
+                  "GROUP"
+                ],
+                "x-enumType": "KalturaUserType",
+                "consoleDefault": 1
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }
@@ -52,7 +112,25 @@ Add a user to group
   "path": "/service/groupuser/action/add",
   "parameters": [
     {
-      "name": "body"
+      "name": "body",
+      "schema": {
+        "properties": {
+          "groupUser": {
+            "properties": {
+              "groupId": {
+                "description": "`insertOnly`",
+                "type": "string",
+                "consoleDefault": "sampleGroup"
+              },
+              "userId": {
+                "description": "`insertOnly`",
+                "type": "string",
+                "consoleDefault": "sampleUser"
+              }
+            }
+          }
+        }
+      }
     }
   ]
 }
@@ -68,7 +146,14 @@ This step will return all users that are associated with the group defined.
   "path": "/service/groupuser/action/list",
   "parameters": [
     {
-      "name": "body"
+      "name": "body",
+      "schema": {
+        "properties": {
+          "filter": {
+            "properties": {}
+          }
+        }
+      }
     }
   ]
 }
