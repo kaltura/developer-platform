@@ -5,12 +5,10 @@
 -->
 
 # Group Management
-
 Note: In order for groups to be displayed in KMS, a user role needs to be assigned to them.
 
-## Create a user
-Users are created as a user with type USER [KalturaUserType::USER].
-User ids should not contain spaces.
+## undefined
+
 
 ### API Call
 ```json
@@ -19,37 +17,14 @@ User ids should not contain spaces.
   "path": "/service/user/action/add",
   "parameters": [
     {
-      "name": "body",
-      "in": "body",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "user": {
-            "properties": {
-              "type": {
-                "consoleDefault": 0
-              },
-              "id": {
-                "consoleDefault": "sampleUser"
-              },
-              "fullName": {
-                "consoleDefault": "Sample User"
-              }
-            },
-            "type": "object"
-          }
-        }
-      }
+      "name": "body"
     }
   ]
 }
 ```
 
+## undefined
 
-## Create a group
-Groups are created as a user with type GROUP [KalturaUserType::GROUP].
-User ids should not contain spaces.
-Group name can be set using full name, otherwise group will show up with id.
 
 ### API Call
 ```json
@@ -58,34 +33,14 @@ Group name can be set using full name, otherwise group will show up with id.
   "path": "/service/user/action/add",
   "parameters": [
     {
-      "name": "body",
-      "in": "body",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "user": {
-            "properties": {
-              "type": {
-                "consoleDefault": 1
-              },
-              "id": {
-                "consoleDefault": "sampleGroup"
-              },
-              "fullName": {
-                "consoleDefault": "Sample Group"
-              }
-            },
-            "type": "object"
-          }
-        }
-      }
+      "name": "body"
     }
   ]
 }
 ```
 
-## Add a user to a group
-Add a user to group
+## undefined
+
 
 ### API Call
 ```json
@@ -94,31 +49,14 @@ Add a user to group
   "path": "/service/groupuser/action/add",
   "parameters": [
     {
-      "name": "body",
-      "in": "body",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "groupUser": {
-            "properties": {
-              "userId": {
-                "consoleDefault": "sampleUser"
-              },
-              "groupId": {
-                "consoleDefault": "sampleGroup"
-              }
-            },
-            "type": "object"
-          }
-        }
-      }
+      "name": "body"
     }
   ]
 }
 ```
 
-## List group users
-This step will return all users that are associated with the group defined.
+## undefined
+
 
 ### API Call
 ```json
@@ -127,21 +65,7 @@ This step will return all users that are associated with the group defined.
   "path": "/service/groupuser/action/list",
   "parameters": [
     {
-      "name": "body",
-      "in": "body",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "filter": {
-            "properties": {
-              "groupIdEqual": {
-                "consoleDefault": "sampleGroup"
-              }
-            },
-            "type": "object"
-          }
-        }
-      }
+      "name": "body"
     }
   ]
 }
