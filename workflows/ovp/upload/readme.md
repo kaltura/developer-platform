@@ -28,7 +28,7 @@ If you're working in JavaScript, the [jQuery File Upload widget](https://github.
 }
 ```
 ### Sample Code (ajax)
-```ajax
+```javascript
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',
       url: 'https://www.kaltura.com/api_v3/?service=uploadToken&action=upload&format=1',
@@ -45,7 +45,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (angular)
-```angular
+```typescript
 auto
 ```
 ### Sample Code (csharp)
@@ -53,7 +53,7 @@ auto
 auto
 ```
 ### Sample Code (curl)
-```curl
+```bash
 auto
 ```
 ### Sample Code (java)
@@ -69,11 +69,11 @@ auto
 auto
 ```
 ### Sample Code (php53)
-```php53
+```php
 auto
 ```
 ### Sample Code (python)
-```python
+```py
 auto
 ```
 ### Sample Code (ruby)
@@ -147,7 +147,7 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
 }
 ```
 ### Sample Code (ajax)
-```ajax
+```javascript
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',
       url: 'https://www.kaltura.com/api_v3/?service=uploadToken&action=upload&format=1',
@@ -164,7 +164,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (angular)
-```angular
+```typescript
 auto
 ```
 ### Sample Code (csharp)
@@ -172,7 +172,7 @@ auto
 auto
 ```
 ### Sample Code (curl)
-```curl
+```bash
 auto
 ```
 ### Sample Code (java)
@@ -188,11 +188,11 @@ auto
 auto
 ```
 ### Sample Code (php53)
-```php53
+```php
 auto
 ```
 ### Sample Code (python)
-```python
+```py
 auto
 ```
 ### Sample Code (ruby)
