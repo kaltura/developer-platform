@@ -28,7 +28,7 @@ If you're working in JavaScript, the [jQuery File Upload widget](https://github.
 }
 ```
 ### Sample Code (ajax)
-```javascript
+```ajax
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',
       url: 'https://www.kaltura.com/api_v3/?service=uploadToken&action=upload&format=1',
@@ -45,7 +45,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (angular)
-```typescript
+```angular
 auto
 ```
 ### Sample Code (csharp)
@@ -53,7 +53,7 @@ auto
 auto
 ```
 ### Sample Code (curl)
-```bash
+```curl
 auto
 ```
 ### Sample Code (java)
@@ -69,11 +69,11 @@ auto
 auto
 ```
 ### Sample Code (php53)
-```php
+```php53
 auto
 ```
 ### Sample Code (python)
-```py
+```python
 auto
 ```
 ### Sample Code (ruby)
@@ -147,7 +147,7 @@ If you don't have a video file handy, you can right-click [this link](http://cfv
 }
 ```
 ### Sample Code (ajax)
-```javascript
+```ajax
 $('input[name="fileData"]').fileupload({
       apiURL:'https://www.kaltura.com/api_v3/',
       url: 'https://www.kaltura.com/api_v3/?service=uploadToken&action=upload&format=1',
@@ -164,7 +164,7 @@ $('input[name="fileData"]').fileupload({
 });
 ```
 ### Sample Code (angular)
-```typescript
+```angular
 auto
 ```
 ### Sample Code (csharp)
@@ -172,7 +172,7 @@ auto
 auto
 ```
 ### Sample Code (curl)
-```bash
+```curl
 auto
 ```
 ### Sample Code (java)
@@ -188,11 +188,11 @@ auto
 auto
 ```
 ### Sample Code (php53)
-```php
+```php53
 auto
 ```
 ### Sample Code (python)
-```py
+```python
 auto
 ```
 ### Sample Code (ruby)
@@ -212,7 +212,6 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
 3. Optionally add basic metadata, such as the asset's `name` and `description`.
 4. You may leave the other fields blank or with their default values.
 
-
 ### API Call
 ```json
 {
@@ -221,7 +220,6 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -246,7 +244,6 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
 1. Select `resource` of type `KalturaUploadedFileResourceToken`.
 2. Confirm the `entryId` from the previous step, and the `token` from the first step.
 
-
 ### API Call
 ```json
 {
@@ -255,7 +252,6 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -316,7 +312,6 @@ For a list of entry status codes, please see: https://developer.kaltura.com/api-
     },
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
