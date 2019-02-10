@@ -15,7 +15,7 @@
 This recipe will walk you through the process of uploading new videos using the Kaltura API. Video files can be located on disk, or be specified as an HTML file input. If you're working in a web environment, we highly recommend using the [jQuery Chunked File Upload Library](https://github.com/kaltura/chunked-file-upload-jquery). This library handles chunking files in Javascript, automatically determining the optimal chunk size and number of parallel uploaded chunks, as well as handle pause-and-resume and retry in case of temporary network failures. It completely abstracts and simplifies working with the [uploadToken](https://developer.kaltura.com/api-docs/#/uploadToken) service and file upload flow.
 
 ## Uploading Files - Create an Upload Token
-Use the uploadToken service to upload a new video file to the Kaltura API. First you'll need to use `uploadToken.add` to create a new upload token.
+Use the `uploadToken` service to upload a new video file to the Kaltura API. First you'll need to use `uploadToken.add` to create a new upload token.
 
 If you're working in JavaScript, the [jQuery File Upload widget](https://github.com/kaltura/jQuery-File-Upload) will take care of this step for you.
 
@@ -212,7 +212,6 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
 3. Optionally add basic metadata, such as the asset's `name` and `description`.
 4. You may leave the other fields blank or with their default values.
 
-
 ### API Call
 ```json
 {
@@ -221,7 +220,6 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -246,7 +244,6 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
 1. Select `resource` of type `KalturaUploadedFileResourceToken`.
 2. Confirm the `entryId` from the previous step, and the `token` from the first step.
 
-
 ### API Call
 ```json
 {
@@ -255,7 +252,6 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -316,7 +312,6 @@ For a list of entry status codes, please see: https://developer.kaltura.com/api-
     },
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
