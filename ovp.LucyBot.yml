@@ -222,11 +222,6 @@ operationNavigation:
         path: "/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html"
         discussionURL: null
 
-      - title: "Kaltura's Scheduling API Service"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/schedulingAPI.html
-        path: "/Ingest_and_Upload_Media/schedulingAPI.html"
-        discussionURL: null
-
       - title: "How to Ingest a Media File Bundled with Metadata (CSV, XML, API)"
         markdownURL: /assets/documentation/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html
         path: "/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html"
@@ -445,6 +440,17 @@ operationNavigation:
   - title: "Integration, Scheduling and Hooks"
     prerender: false
     children:
+      - title: "Recorded and Live Stream Events Scheduling and iCal API"
+        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html
+        path: "/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html"
+        discussionURL: null
+      - title: "Scheduling Triggers using iCal"
+        markdownFile: ./markdown/scheduling.md
+        children:
+          - tag: "scheduleEvent"
+          - tag: "scheduleEventResource"
+          - tag: "scheduleResource"
+
       - title: "How To Handle Kaltura Server Notifications in PHP"
         markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html
         path: "/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html"
@@ -452,12 +458,6 @@ operationNavigation:
 
       - tag: "eventNotificationTemplate"
       - tag: "scheduledTaskProfile"
-      - title: "Scheduling Triggers using iCal"
-        markdownFile: ./markdown/scheduling.md
-        children:
-          - tag: "scheduleEvent"
-          - tag: "scheduleEventResource"
-          - tag: "scheduleResource"
       - tag: "integration"
       - tag: "businessProcessCase"
       # `notification` service was deprecated in favour of `eventNotificationTemplate`  
