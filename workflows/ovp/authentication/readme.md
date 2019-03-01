@@ -30,24 +30,39 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
           "partnerId": {
+            "type": "integer",
             "fromSecrets": true
           },
           "userId": {
+            "type": "string",
             "fromSecrets": true,
             "default": "user@example.com"
           },
           "secret": {
+            "type": "string",
+            "x-inputType": "password",
             "fromSecrets": true
           },
           "type": {
-            "default": 2
+            "default": 2,
+            "enum": [
+              0,
+              2
+            ],
+            "type": "integer",
+            "x-enumLabels": [
+              "USER",
+              "ADMIN"
+            ],
+            "x-enumType": "KalturaSessionType"
           },
-          "privileges": {}
+          "privileges": {
+            "type": "string"
+          }
         }
       }
     }
@@ -66,11 +81,11 @@ You can validate your Kaltura session by calling ```user.get``` without a User I
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
           "userId": {
+            "type": "string",
             "fromSecrets": true
           }
         }
@@ -94,12 +109,16 @@ You can then use one of these partnerIds to get a privileged KS.
   "parameters": [
     {
       "name": "body",
-      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
-          "loginId": {},
-          "password": {}
+          "loginId": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "x-inputType": "password"
+          }
         }
       }
     }
@@ -117,7 +136,6 @@ You can then re-use `user.loginById` with a partnerId to login for as that parti
 {
   "method": "post",
   "path": "/service/partner/action/listPartnersForUser",
-  "parameters": [],
   "ignoreParameters": [
     "format"
   ]
