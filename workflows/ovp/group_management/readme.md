@@ -175,6 +175,10 @@ This step will return all users that are associated with the group defined.
   ]
 }
 ```
+### Sample Code (php)
+```php
+asdfasfdasfdsa
+```
 
 ## Finish
 You have now created a group and assigned a user to it. 
