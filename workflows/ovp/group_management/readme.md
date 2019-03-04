@@ -26,20 +26,16 @@ User ids should not contain spaces.
           "user": {
             "properties": {
               "type": {
-                "consoleDefault": 0,
-                "name": "body.user.type"
+                "consoleDefault": 0
               },
               "id": {
-                "consoleDefault": "sampleUser33",
-                "name": "body.user.id"
+                "consoleDefault": "sampleUser"
               },
               "fullName": {
-                "consoleDefault": "Sample User",
-                "name": "body.user.fullName"
+                "consoleDefault": "Sample User"
               }
             },
-            "type": "object",
-            "name": "body.user"
+            "type": "object"
           }
         }
       }
@@ -141,6 +137,37 @@ This step will return all users that are associated with the group defined.
               }
             },
             "type": "object"
+          }
+        }
+      }
+    }
+  ]
+}
+```
+
+## New Step
+
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/accesscontrol/action/add",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "accessControl": {
+            "type": "object",
+            "properties": {
+              "description": {
+                "name": "body.accessControl.description",
+                "consoleDefault": "asdfa"
+              }
+            },
+            "name": "body.accessControl"
           }
         }
       }
