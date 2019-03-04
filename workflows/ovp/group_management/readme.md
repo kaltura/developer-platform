@@ -37,7 +37,8 @@ User ids should not contain spaces.
             "type": "object"
           }
         }
-      }
+      },
+      "contentType": "application/json"
     }
   ]
 }
