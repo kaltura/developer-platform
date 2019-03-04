@@ -19,26 +19,30 @@ User ids should not contain spaces.
   "parameters": [
     {
       "name": "body",
+      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
           "user": {
             "properties": {
               "type": {
-                "consoleDefault": 0
+                "consoleDefault": 0,
+                "name": "body.user.type"
               },
               "id": {
-                "consoleDefault": "sampleUser"
+                "consoleDefault": "sampleUser33",
+                "name": "body.user.id"
               },
               "fullName": {
-                "consoleDefault": "Sample User"
+                "consoleDefault": "Sample User",
+                "name": "body.user.fullName"
               }
             },
-            "type": "object"
+            "type": "object",
+            "name": "body.user"
           }
         }
-      },
-      "contentType": "application/json"
+      }
     }
   ]
 }
@@ -57,6 +61,7 @@ Group name can be set using full name, otherwise group will show up with id.
   "parameters": [
     {
       "name": "body",
+      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -92,6 +97,7 @@ Add a user to group
   "parameters": [
     {
       "name": "body",
+      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
@@ -124,6 +130,7 @@ This step will return all users that are associated with the group defined.
   "parameters": [
     {
       "name": "body",
+      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
