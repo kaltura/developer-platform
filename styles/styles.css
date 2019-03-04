@@ -41,7 +41,7 @@ h1.breadcrumbs {
 .side-menu-item.deprecated {
   color: #999;
 }
-gallery .fa-times,
+gallery .input-group-btn .fa-times,
 side-menu .fa-times {
   color: #fff !important;
 }
