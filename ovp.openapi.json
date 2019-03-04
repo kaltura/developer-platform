@@ -989,8 +989,16 @@
         }
       ],
       "properties": {
-        "transcriptAssetId": {
-          "description": "The id of the transcript object the vendor should use while runing the alignment task",
+        "captionAssetId": {
+          "description": "`insertOnly`\n\nOptional - The id of the caption asset object the vendor should update once alignment task processing is done",
+          "type": "string"
+        },
+        "jsonTranscriptAssetId": {
+          "description": "`insertOnly`\n\nOptional - The id of the json transcript object the vendor should update once alignment task processing is done",
+          "type": "string"
+        },
+        "textTranscriptAssetId": {
+          "description": "The id of the text transcript object the vendor should use while runing the alignment task",
           "type": "string"
         }
       },
@@ -7467,7 +7475,14 @@
           "$ref": "#/definitions/KalturaBeaconSearchParams"
         }
       ],
-      "properties": {},
+      "properties": {
+        "orderBy": {
+          "$ref": "#/definitions/KalturaBeaconSearchScheduledResourceOrderBy"
+        },
+        "searchOperator": {
+          "$ref": "#/definitions/KalturaBeaconScheduledResourceOperator"
+        }
+      },
       "title": "KalturaBeaconScheduledResourceSearchParams",
       "type": "object"
     },
@@ -7494,12 +7509,6 @@
             "KalturaBeaconScheduledResourceSearchParams"
           ],
           "type": "string"
-        },
-        "orderBy": {
-          "$ref": "#/definitions/KalturaBeaconSearchScheduledResourceOrderBy"
-        },
-        "searchOperator": {
-          "$ref": "#/definitions/KalturaBeaconScheduledResourceOperator"
         }
       },
       "title": "KalturaBeaconSearchParams",
@@ -14270,7 +14279,7 @@
       "properties": {
         "operationAttributes": {
           "items": {
-            "$ref": "#/definitions/KalturaObject"
+            "$ref": "#/definitions/KalturaOperationAttributes"
           },
           "type": "array"
         },
@@ -26318,9 +26327,15 @@
             "last_played_at",
             "name",
             "plays",
+            "plays_last_1_day",
+            "plays_last_30_days",
+            "plays_last_7_days",
             "start_date",
             "updated_at",
             "views",
+            "views_last_1_day",
+            "views_last_30_days",
+            "views_last_7_days",
             "votes"
           ],
           "type": "string",
@@ -26330,9 +26345,15 @@
             "LAST_PLAYED_AT",
             "NAME",
             "PLAYS",
+            "PLAYS_LAST_1_DAY",
+            "PLAYS_LAST_30_DAYS",
+            "PLAYS_LAST_7_DAYS",
             "START_DATE",
             "UPDATED_AT",
             "VIEWS",
+            "VIEWS_LAST_1_DAY",
+            "VIEWS_LAST_30_DAYS",
+            "VIEWS_LAST_7_DAYS",
             "VOTES"
           ],
           "x-enumType": "KalturaESearchEntryOrderByFieldName"
@@ -29083,7 +29104,8 @@
             4,
             5,
             6,
-            7
+            7,
+            8
           ],
           "type": "integer",
           "x-enumLabels": [
@@ -29093,7 +29115,8 @@
             "PENDING_MODERATION",
             "REJECTED",
             "ERROR",
-            "ABORTED"
+            "ABORTED",
+            "PENDING_ENTRY_READY"
           ],
           "x-enumType": "KalturaEntryVendorTaskStatus"
         },
@@ -29195,7 +29218,8 @@
             4,
             5,
             6,
-            7
+            7,
+            8
           ],
           "type": "integer",
           "x-enumLabels": [
@@ -29205,7 +29229,8 @@
             "PENDING_MODERATION",
             "REJECTED",
             "ERROR",
-            "ABORTED"
+            "ABORTED",
+            "PENDING_ENTRY_READY"
           ],
           "x-enumType": "KalturaEntryVendorTaskStatus"
         },
@@ -50764,6 +50789,17 @@
           "description": "Filter by device",
           "type": "string"
         },
+        "entryCreatedAtGreaterThanOrEqual": {
+          "description": "Entry created at greater than or equal as Unix timestamp",
+          "type": "integer"
+        },
+        "entryCreatedAtLessThanOrEqual": {
+          "description": "Entry created at less than or equal as Unix timestamp",
+          "type": "integer"
+        },
+        "entryOperator": {
+          "$ref": "#/definitions/KalturaESearchEntryOperator"
+        },
         "interval": {
           "description": "Enum Type: `KalturaReportInterval`\n\nAggregated results according to interval",
           "enum": [
@@ -50794,6 +50830,10 @@
         },
         "operatingSystemFamilyIn": {
           "description": "Filter by operating system family",
+          "type": "string"
+        },
+        "ownerIdsIn": {
+          "description": "Filter by entry owner",
           "type": "string"
         },
         "regionIn": {
@@ -50850,6 +50890,18 @@
         }
       },
       "title": "KalturaReportResponse",
+      "type": "object"
+    },
+    "KalturaReportResponseOptions": {
+      "properties": {
+        "delimiter": {
+          "type": "string"
+        },
+        "skipEmptyDates": {
+          "type": "boolean"
+        }
+      },
+      "title": "KalturaReportResponseOptions",
       "type": "object"
     },
     "KalturaReportTable": {
@@ -65970,7 +66022,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "14.13.0"
+    "version": "14.15.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -103686,6 +103738,7 @@
                     "39",
                     "40",
                     "41",
+                    "42",
                     "201"
                   ],
                   "type": "string",
@@ -103731,9 +103784,13 @@
                     "TOP_CONTENT_CONTRIBUTORS",
                     "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
                     "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -103762,7 +103819,8 @@
         "x-kaltura-parameters": [
           "reportType",
           "reportInputFilter",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -103959,6 +104017,7 @@
                     "39",
                     "40",
                     "41",
+                    "42",
                     "201"
                   ],
                   "type": "string",
@@ -104004,9 +104063,13 @@
                     "TOP_CONTENT_CONTRIBUTORS",
                     "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
                     "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -104036,7 +104099,8 @@
           "reportType",
           "reportInputFilter",
           "dimension",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -104120,6 +104184,7 @@
                     "39",
                     "40",
                     "41",
+                    "42",
                     "201"
                   ],
                   "type": "string",
@@ -104165,9 +104230,13 @@
                     "TOP_CONTENT_CONTRIBUTORS",
                     "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
                     "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -104196,7 +104265,8 @@
           "reportInputFilter",
           "pager",
           "order",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -104274,6 +104344,7 @@
                     "39",
                     "40",
                     "41",
+                    "42",
                     "201"
                   ],
                   "type": "string",
@@ -104319,9 +104390,13 @@
                     "TOP_CONTENT_CONTRIBUTORS",
                     "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
                     "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -104347,7 +104422,8 @@
         "x-kaltura-parameters": [
           "reportType",
           "reportInputFilter",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -104443,6 +104519,7 @@
                     "39",
                     "40",
                     "41",
+                    "42",
                     "201"
                   ],
                   "type": "string",
@@ -104488,9 +104565,13 @@
                     "TOP_CONTENT_CONTRIBUTORS",
                     "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
                     "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -104525,7 +104606,8 @@
           "dimension",
           "pager",
           "order",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -124913,6 +124995,24 @@
         },
         {
           "enum": [
+            "plays_last_1_day"
+          ],
+          "title": "PLAYS_LAST_1_DAY"
+        },
+        {
+          "enum": [
+            "plays_last_30_days"
+          ],
+          "title": "PLAYS_LAST_30_DAYS"
+        },
+        {
+          "enum": [
+            "plays_last_7_days"
+          ],
+          "title": "PLAYS_LAST_7_DAYS"
+        },
+        {
+          "enum": [
             "start_date"
           ],
           "title": "START_DATE"
@@ -124928,6 +125028,24 @@
             "views"
           ],
           "title": "VIEWS"
+        },
+        {
+          "enum": [
+            "views_last_1_day"
+          ],
+          "title": "VIEWS_LAST_1_DAY"
+        },
+        {
+          "enum": [
+            "views_last_30_days"
+          ],
+          "title": "VIEWS_LAST_30_DAYS"
+        },
+        {
+          "enum": [
+            "views_last_7_days"
+          ],
+          "title": "VIEWS_LAST_7_DAYS"
         },
         {
           "enum": [
@@ -126400,6 +126518,12 @@
             7
           ],
           "title": "ABORTED"
+        },
+        {
+          "enum": [
+            8
+          ],
+          "title": "PENDING_ENTRY_READY"
         }
       ],
       "title": "KalturaEntryVendorTaskStatus"
@@ -143157,6 +143281,12 @@
         },
         {
           "enum": [
+            "42"
+          ],
+          "title": "VPAAS_USAGE_MULTI"
+        },
+        {
+          "enum": [
             "201"
           ],
           "title": "PARTNER_USAGE"
@@ -149779,6 +149909,11 @@
       "name": "VOLUME_MAP_NOT_CONFIGURED"
     },
     {
+      "code": "RESOURCE_ENTRY_ID_MISSING",
+      "message": "Entry Id on resource object is missing",
+      "name": "RESOURCE_ENTRY_ID_MISSING"
+    },
+    {
       "code": "NOTIFICATION_FOR_ENTRY_NOT_FOUND",
       "message": "Notification for entry id \"@ENTRY@\" not found",
       "name": "NOTIFICATION_FOR_ENTRY_NOT_FOUND"
@@ -151877,6 +152012,11 @@
       "code": "ATTACHMENT_ASSET_DOWNLOAD_FAILED",
       "message": "Attachment asset download from URL \"@URL@\" failed",
       "name": "ATTACHMENT_ASSET_DOWNLOAD_FAILED"
+    },
+    {
+      "code": "ATTACHMENT_ASSET_FORMAT_MISMATCH",
+      "message": "The format type of the provided attachment asset id \"@ASSET_ID@\" is not of the expected type \"@EXPECTED_TYPE@\"",
+      "name": "ATTACHMENT_ASSET_FORMAT_MISMATCH"
     },
     {
       "code": "AUDIT_TRAIL_DISABLED",
