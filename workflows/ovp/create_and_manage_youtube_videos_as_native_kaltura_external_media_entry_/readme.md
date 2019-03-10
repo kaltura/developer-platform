@@ -7,7 +7,7 @@
 # Manage YouTube Videos in Kaltura
 This workflow will guide you on how to use the [externalMedia](https://developer.kaltura.com/api-docs/service/externalMedia) service to manage YouTube hosted videos as native Kaltura videos that benefit from the same workflows, experience and analytics available for Kaltura hosted video entries.
 
-## Create an External Media Entry that points to the YouTube hosted video
+## externalMedia.add of YouTube video ID
 To add a YouTube hosted video as a Kaltura media, you will need the YouTube video ID:
 To find your YouTube video ID: 
 
@@ -23,6 +23,38 @@ That ID will be set as the value of referenceId field in Kaltura when creating t
 {
   "method": "post",
   "path": "/service/externalmedia_externalmedia/action/add",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entry": {
+            "type": "object",
+            "properties": {
+              "mediaType": {
+                "name": "body.entry.mediaType",
+                "consoleDefault": "2"
+              },
+              "externalSourceType": {
+                "name": "body.entry.externalSourceType",
+                "consoleDefault": "\"YouTube\""
+              },
+              "referenceId": {
+                "name": "body.entry.referenceId"
+              },
+              "name": {
+                "name": "body.entry.name"
+              },
+              "description": {
+                "name": "body.entry.description"
+              }
+            },
+            "name": "body.entry"
+          }
+        }
+      }
+    }
+  ]
 }
 ```
