@@ -38,10 +38,11 @@ That ID will be set as the value of referenceId field in Kaltura when creating t
               },
               "externalSourceType": {
                 "name": "body.entry.externalSourceType",
-                "consoleDefault": "\"YouTube\""
+                "consoleDefault": "KalturaExternalMediaSourceType.YOUTUBE"
               },
               "referenceId": {
-                "name": "body.entry.referenceId"
+                "name": "body.entry.referenceId",
+                "consoleDefault": "Lt6PPiTTwbE"
               },
               "name": {
                 "name": "body.entry.name"
