@@ -64,3 +64,31 @@ For getting the title and description of the YouTube video, we recommend using t
   ]
 }
 ```
+
+## Create a Thumbnail for the Entry
+First, create a ThumbAsset that will hold the thumbnail image for the video in Kaltura.
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/thumbasset/action/add",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "dynamicValue": {
+              "fromStep": 0,
+              "answer": "body"
+            }
+          }
+        }
+      },
+      "consoleDefault": "{}"
+    }
+  ]
+}
+```
