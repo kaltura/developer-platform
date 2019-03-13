@@ -12,11 +12,13 @@ To add a YouTube hosted video as a Kaltura media, you will need the YouTube vide
 To find your YouTube video ID: 
 
 1. Visit the YouTube video page. 
-2. Look at the URL of that page, and at the end of it, you should see a URL param `v`. The value of `v` is the ID of your YouTube video (for example: in this YouTube video; https://www.youtube.com/watch?v=CA8a88L8RBU , the ID is CA8a88L8RBU).
+2. Look at the URL of that page, and at the end of it, you should see a URL param `v`. The value of `v` is the ID of your YouTube video (for example: in this YouTube video; https://www.youtube.com/watch?v=ioY-Cp58zkY , the ID is ioY-Cp58zkY).
 
 That ID will be set as the value of referenceId field in Kaltura when creating the ExternalMediaEntry object.
 
 > Important: Make sure that your YouTube video visibility must be set to either `Public` or `Unlisted`. Private YouTube videos will not work outside YouTube.
+
+For getting the title and description of the YouTube video, we recommend using the [YouTube Data API](https://developers.google.com/youtube/v3/getting-started). 
 
 ### API Call
 ```json
@@ -34,27 +36,30 @@ That ID will be set as the value of referenceId field in Kaltura when creating t
             "properties": {
               "mediaType": {
                 "name": "body.entry.mediaType",
-                "consoleDefault": "2"
+                "consoleDefault": 1
               },
               "externalSourceType": {
                 "name": "body.entry.externalSourceType",
-                "consoleDefault": "KalturaExternalMediaSourceType.YOUTUBE"
+                "consoleDefault": "YouTube"
               },
               "referenceId": {
                 "name": "body.entry.referenceId",
-                "consoleDefault": "Lt6PPiTTwbE"
+                "consoleDefault": "ioY-Cp58zkY"
               },
               "name": {
-                "name": "body.entry.name"
+                "name": "body.entry.name",
+                "consoleDefault": "Try Not To Laugh or Grin STER WURS (BEST OF) - Star Wars parody"
               },
               "description": {
-                "name": "body.entry.description"
+                "name": "body.entry.description",
+                "consoleDefault": "Star Wars parody video"
               }
             },
             "name": "body.entry"
           }
         }
-      }
+      },
+      "consoleDefault": "{}"
     }
   ]
 }
