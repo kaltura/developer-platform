@@ -18,7 +18,7 @@ That ID will be set as the value of referenceId field in Kaltura when creating t
 
 > Important: Make sure that your YouTube video visibility must be set to either `Public` or `Unlisted`. Private YouTube videos will not work outside YouTube.
 
-For getting the title and description of the YouTube video, we recommend using the [YouTube Data API](https://developers.google.com/youtube/v3/getting-started). 
+For getting the title and description of the YouTube video, we recommend using the [YouTube Data API](https://developers.google.com/youtube/v3/getting-started).
 
 ### API Call
 ```json
@@ -82,9 +82,10 @@ First, create a ThumbAsset that will hold the thumbnail image for the video in K
           "entryId": {
             "dynamicValue": {
               "fromStep": 0,
-              "answer": "body"
+              "value": "id"
             }
-          }
+          },
+          "thumbAsset": {}
         }
       },
       "consoleDefault": "{}"
