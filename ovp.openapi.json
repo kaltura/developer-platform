@@ -508,6 +508,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaAccessControlScope",
             "KalturaEntryContextDataParams",
             "KalturaPlaybackContextOptions"
           ],
@@ -2012,6 +2013,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaAsset",
             "KalturaAttachmentAsset",
             "KalturaCaptionAsset",
             "KalturaFlavorAsset",
@@ -2269,6 +2271,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaAssetFilter",
             "KalturaAttachmentAssetFilter",
             "KalturaTranscriptAssetFilter",
             "KalturaCaptionAssetFilter",
@@ -2428,6 +2431,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaAssetParams",
             "KalturaCaptionParams",
             "KalturaFlavorParams",
             "KalturaThumbParams",
@@ -2686,6 +2690,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaAssetParamsFilter",
             "KalturaAssetParamsOutputFilter",
             "KalturaCaptionParamsFilter",
             "KalturaFlavorParamsFilter",
@@ -2923,6 +2928,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaAssetServeOptions",
             "KalturaAttachmentServeOptions",
             "KalturaThumbnailServeOptions"
           ],
@@ -3225,6 +3231,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaAttachmentAsset",
             "KalturaTranscriptAsset"
           ],
           "type": "string"
@@ -3353,6 +3360,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaAttachmentAssetFilter",
             "KalturaTranscriptAssetFilter"
           ],
           "type": "string"
@@ -4172,6 +4180,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaAuditTrailChangeItem",
             "KalturaAuditTrailChangeXmlNode"
           ],
           "type": "string"
@@ -4671,6 +4680,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBaseEntry",
             "KalturaDataEntry",
             "KalturaDocumentEntry",
             "KalturaPlayableEntry",
@@ -5556,6 +5566,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBaseEntryFilter",
             "KalturaPlayableEntryFilter",
             "KalturaMediaEntryFilter",
             "KalturaMediaEntryFilterForPlaylist",
@@ -6028,6 +6039,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBaseSyndicationFeedFilter",
             "KalturaGenericSyndicationFeedFilter",
             "KalturaGenericXsltSyndicationFeedFilter",
             "KalturaGoogleVideoSyndicationFeedFilter",
@@ -6455,6 +6467,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBaseUser",
             "KalturaGroup",
             "KalturaUser",
             "KalturaAdminUser"
@@ -7322,6 +7335,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBatchJobFilter",
             "KalturaBatchJobFilterExt"
           ],
           "type": "string"
@@ -8092,6 +8106,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBooleanValue",
             "KalturaEvalBooleanField"
           ],
           "type": "string"
@@ -8682,6 +8697,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBulkUploadJobData",
             "KalturaBulkUploadCsvJobData",
             "KalturaBulkUploadFilterJobData",
             "KalturaBulkUploadICalJobData",
@@ -8922,6 +8938,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBulkUploadResult",
             "KalturaBulkUploadResultCategory",
             "KalturaBulkUploadResultCategoryEntry",
             "KalturaBulkUploadResultCategoryUser",
@@ -9296,6 +9313,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBulkUploadXmlJobData",
             "KalturaDropFolderXmlBulkUploadJobData"
           ],
           "type": "string"
@@ -9514,6 +9532,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBusinessProcessNotificationTemplateFilter",
             "KalturaBusinessProcessAbortNotificationTemplateFilter",
             "KalturaBusinessProcessSignalNotificationTemplateFilter",
             "KalturaBusinessProcessStartNotificationTemplateFilter"
@@ -9785,6 +9804,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBusinessProcessServerFilter",
             "KalturaActivitiBusinessProcessServerFilter"
           ],
           "type": "string"
@@ -11116,6 +11136,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaCaptionAssetFilter",
             "KalturaCaptionAssetItemFilter"
           ],
           "type": "string"
@@ -16007,6 +16028,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaConfigurableDistributionProfileFilter",
             "KalturaAttUverseDistributionProfileFilter",
             "KalturaAvnDistributionProfileFilter",
             "KalturaComcastMrssDistributionProfileFilter",
@@ -16302,6 +16324,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaContextDataResult",
             "KalturaEntryContextDataResult"
           ],
           "type": "string"
@@ -16323,6 +16346,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaContextTypeHolder",
             "KalturaAccessControlContextTypeHolder"
           ],
           "type": "string"
@@ -16653,6 +16677,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaConvartableJobData",
             "KalturaConvertCollectionJobData",
             "KalturaConvertJobData",
             "KalturaExtractMediaJobData",
@@ -18811,6 +18836,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaCuePointFilter",
             "KalturaAdCuePointFilter",
             "KalturaAnnotationFilter",
             "KalturaAnswerCuePointFilter",
@@ -19554,6 +19580,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDeliveryProfile",
             "KalturaDeliveryProfileAkamaiAppleHttpManifest",
             "KalturaDeliveryProfileAkamaiHds",
             "KalturaDeliveryProfileAkamaiHttp",
@@ -20212,6 +20239,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDeliveryProfileFilter",
             "KalturaDeliveryProfileAkamaiAppleHttpManifestFilter",
             "KalturaDeliveryProfileAkamaiHdsFilter",
             "KalturaDeliveryProfileAkamaiHttpFilter",
@@ -20739,6 +20767,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDeliveryProfileLivePackager",
             "KalturaDeliveryProfileLivePackagerHls"
           ],
           "type": "string"
@@ -20786,6 +20815,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDeliveryProfileRtmp",
             "KalturaDeliveryProfileGenericRtmp"
           ],
           "type": "string"
@@ -20845,6 +20875,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDeliveryProfileRtmpFilter",
             "KalturaDeliveryProfileGenericRtmpFilter"
           ],
           "type": "string"
@@ -20904,6 +20935,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDeliveryProfileVodPackagerPlayServer",
             "KalturaDeliveryProfileVodPackagerHls"
           ],
           "type": "string"
@@ -21012,6 +21044,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter"
@@ -21087,6 +21120,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDetachedResponseProfile",
             "KalturaResponseProfile"
           ],
           "type": "string"
@@ -21420,6 +21454,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDistributionJobData",
             "KalturaDistributionDeleteJobData",
             "KalturaDistributionFetchReportJobData",
             "KalturaDistributionSubmitJobData",
@@ -22297,6 +22332,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDistributionProfileFilter",
             "KalturaConfigurableDistributionProfileFilter",
             "KalturaAttUverseDistributionProfileFilter",
             "KalturaAvnDistributionProfileFilter",
@@ -22943,6 +22979,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDistributionProviderFilter",
             "KalturaAttUverseDistributionProviderFilter",
             "KalturaAvnDistributionProviderFilter",
             "KalturaComcastMrssDistributionProviderFilter",
@@ -23061,6 +23098,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDistributionUpdateJobData",
             "KalturaDistributionDisableJobData",
             "KalturaDistributionEnableJobData"
           ],
@@ -23190,6 +23228,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDistributionValidationErrorInvalidData",
             "KalturaDistributionValidationErrorInvalidMetadata"
           ],
           "type": "string"
@@ -23856,6 +23895,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDrmPlaybackPluginData",
             "KalturaFairPlayPlaybackPluginData"
           ],
           "type": "string"
@@ -23950,6 +23990,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDrmPolicy",
             "KalturaPlayReadyPolicy"
           ],
           "type": "string"
@@ -24132,6 +24173,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDrmPolicyFilter",
             "KalturaPlayReadyPolicyFilter"
           ],
           "type": "string"
@@ -24203,6 +24245,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDrmProfile",
             "KalturaFairplayDrmProfile",
             "KalturaPlayReadyProfile",
             "KalturaWidevineProfile"
@@ -24367,6 +24410,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDrmProfileFilter",
             "KalturaFairplayDrmProfileFilter",
             "KalturaPlayReadyProfileFilter",
             "KalturaWidevineProfileFilter"
@@ -24550,6 +24594,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDropFolder",
             "KalturaFeedDropFolder",
             "KalturaWebexDropFolder",
             "KalturaFtpDropFolder",
@@ -24907,6 +24952,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDropFolderContentProcessorJobData",
             "KalturaWebexDropFolderContentProcessorJobData"
           ],
           "type": "string"
@@ -25038,6 +25084,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDropFolderFile",
             "KalturaFeedDropFolderFile",
             "KalturaWebexDropFolderFile"
           ],
@@ -25357,6 +25404,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaDropFolderFileFilter",
             "KalturaFeedDropFolderFileFilter",
             "KalturaWebexDropFolderFileFilter"
           ],
@@ -25540,6 +25588,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaDropFolderFilter",
             "KalturaFeedDropFolderFilter",
             "KalturaRemoteDropFolderFilter",
             "KalturaFtpDropFolderFilter",
@@ -28590,6 +28639,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaEntryContextDataParams",
             "KalturaPlaybackContextOptions"
           ],
           "type": "string"
@@ -29227,6 +29277,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaEntryLiveStats",
             "KalturaEntryReferrerLiveStats",
             "KalturaGeoTimeLiveStats"
           ],
@@ -29422,6 +29473,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
             "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
@@ -29706,6 +29758,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaEntryServerNodeFilter",
             "KalturaConferenceEntryServerNodeFilter",
             "KalturaLiveEntryServerNodeFilter"
           ],
@@ -30329,6 +30382,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaEventNotificationDispatchJobData",
             "KalturaBusinessProcessNotificationDispatchJobData",
             "KalturaEmailNotificationDispatchJobData",
             "KalturaHttpNotificationDispatchJobData"
@@ -30368,6 +30422,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaEventNotificationParameter",
             "KalturaPushEventNotificationParameter",
             "KalturaEmailNotificationParameter",
             "KalturaEventNotificationArrayParameter"
@@ -30717,6 +30772,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaEventNotificationTemplate",
             "KalturaBooleanNotificationTemplate",
             "KalturaEmailNotificationTemplate",
             "KalturaHttpNotificationTemplate",
@@ -30952,6 +31008,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaEventNotificationTemplateFilter",
             "KalturaBusinessProcessNotificationTemplateFilter",
             "KalturaBusinessProcessAbortNotificationTemplateFilter",
             "KalturaBusinessProcessSignalNotificationTemplateFilter",
@@ -32621,6 +32678,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaFileSyncDescriptor",
             "KalturaDestFileSyncDescriptor",
             "KalturaSourceFileSyncDescriptor"
           ],
@@ -34350,6 +34408,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaFlavorAsset",
             "KalturaLiveAsset",
             "KalturaWidevineFlavorAsset"
           ],
@@ -34498,6 +34557,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaFlavorAssetFilter",
             "KalturaLiveAssetFilter",
             "KalturaWidevineFlavorAssetFilter"
           ],
@@ -34827,6 +34887,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaFlavorParams",
             "KalturaFlavorParamsOutput",
             "KalturaDocumentFlavorParams",
             "KalturaImageFlavorParams",
@@ -35144,6 +35205,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaFlavorParamsFilter",
             "KalturaDocumentFlavorParamsFilter",
             "KalturaFlavorParamsOutputFilter",
             "KalturaDocumentFlavorParamsOutputFilter",
@@ -35235,6 +35297,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaFlavorParamsOutput",
             "KalturaDocumentFlavorParamsOutput",
             "KalturaImageFlavorParamsOutput",
             "KalturaMediaFlavorParamsOutput",
@@ -35345,6 +35408,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaFlavorParamsOutputFilter",
             "KalturaDocumentFlavorParamsOutputFilter",
             "KalturaImageFlavorParamsOutputFilter",
             "KalturaMediaFlavorParamsOutputFilter",
@@ -36084,6 +36148,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaFtpDistributionProvider",
             "KalturaFtpScheduledDistributionProvider"
           ],
           "type": "string"
@@ -36139,6 +36204,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaFtpDistributionProviderFilter",
             "KalturaFtpScheduledDistributionProviderFilter"
           ],
           "type": "string"
@@ -36980,6 +37046,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaGenericSyndicationFeed",
             "KalturaGenericXsltSyndicationFeed",
             "KalturaOperaSyndicationFeed",
             "KalturaRokuSyndicationFeed"
@@ -37041,6 +37108,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaGenericSyndicationFeedFilter",
             "KalturaGenericXsltSyndicationFeedFilter"
           ],
           "type": "string"
@@ -37104,6 +37172,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaGenericXsltSyndicationFeed",
             "KalturaOperaSyndicationFeed",
             "KalturaRokuSyndicationFeed"
           ],
@@ -38998,6 +39067,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaImportJobData",
             "KalturaSshImportJobData",
             "KalturaDropFolderImportJobData"
           ],
@@ -39054,6 +39124,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaIndexAdvancedFilter",
             "KalturaEntryIndexAdvancedFilter"
           ],
           "type": "string"
@@ -39152,6 +39223,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaIntegerValue",
             "KalturaTimeContextField"
           ],
           "type": "string"
@@ -39539,6 +39611,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaJobData",
             "KalturaBulkDownloadJobData",
             "KalturaBulkUploadJobData",
             "KalturaCaptureThumbJobData",
@@ -40154,6 +40227,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaListResponse",
             "KalturaAccessControlListResponse",
             "KalturaAccessControlProfileListResponse",
             "KalturaAnnotationListResponse",
@@ -41184,6 +41258,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaLiveEntryFilter",
             "KalturaLiveChannelFilter",
             "KalturaLiveStreamEntryFilter",
             "KalturaLiveStreamAdminEntryFilter"
@@ -41757,6 +41832,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaLiveStats",
             "KalturaEntryLiveStats",
             "KalturaEntryReferrerLiveStats",
             "KalturaGeoTimeLiveStats"
@@ -42231,6 +42307,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaLiveStreamEntry",
             "KalturaLiveStreamAdminEntry"
           ],
           "type": "string"
@@ -42394,6 +42471,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaLiveStreamEntryFilter",
             "KalturaLiveStreamAdminEntryFilter"
           ],
           "type": "string"
@@ -42605,6 +42683,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaLiveStreamPushPublishConfiguration",
             "KalturaLiveStreamPushPublishRTMPConfiguration"
           ],
           "type": "string"
@@ -43546,6 +43625,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaMediaEntry",
             "KalturaExternalMediaEntry",
             "KalturaLiveChannel",
             "KalturaLiveStreamEntry",
@@ -43918,6 +43998,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaMediaEntryFilter",
             "KalturaMediaEntryFilterForPlaylist",
             "KalturaExternalMediaEntryFilter",
             "KalturaLiveEntryFilter",
@@ -44496,6 +44577,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter"
           ],
           "type": "string"
@@ -46590,6 +46672,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaPager",
             "KalturaFilterPager"
           ],
           "type": "string"
@@ -47068,6 +47151,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaPartnerFilter",
             "KalturaVarConsolePartnerFilter"
           ],
           "type": "string"
@@ -47720,6 +47804,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaPermissionItemFilter",
             "KalturaApiActionPermissionItemFilter",
             "KalturaApiParameterPermissionItemFilter"
           ],
@@ -48318,6 +48403,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaPlayableEntry",
             "KalturaMediaEntry",
             "KalturaMixEntry",
             "KalturaExternalMediaEntry",
@@ -48520,6 +48606,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaPlayableEntryFilter",
             "KalturaMediaEntryFilter",
             "KalturaMediaEntryFilterForPlaylist",
             "KalturaExternalMediaEntryFilter",
@@ -49054,6 +49141,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaPluginData",
             "KalturaDrmPlaybackPluginData",
             "KalturaDrmEntryContextPluginData",
             "KalturaFairplayEntryContextPluginData",
@@ -49331,6 +49419,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaProvisionJobData",
             "KalturaAkamaiProvisionJobData",
             "KalturaAkamaiUniversalProvisionJobData",
             "KalturaVelocixProvisionJobData"
@@ -51323,6 +51412,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaRemoteDropFolderFilter",
             "KalturaFtpDropFolderFilter",
             "KalturaSshDropFolderFilter",
             "KalturaScpDropFolderFilter",
@@ -51602,6 +51692,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaReportInputBaseFilter",
             "KalturaReportInputFilter",
             "KalturaEndUserReportInputFilter",
             "KalturaReachReportInputFilter"
@@ -51713,6 +51804,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaReportInputFilter",
             "KalturaEndUserReportInputFilter",
             "KalturaReachReportInputFilter"
           ],
@@ -52173,6 +52265,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaResponseProfileMapping",
             "KalturaMetadataResponseProfileMapping"
           ],
           "type": "string"
@@ -52700,6 +52793,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaScheduleEventFilter",
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
             "KalturaBlackoutScheduleEventFilter",
@@ -53234,6 +53328,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaScheduleResourceFilter",
             "KalturaCameraScheduleResourceFilter",
             "KalturaLiveEntryScheduleResourceFilter",
             "KalturaLocationScheduleResourceFilter"
@@ -54125,6 +54220,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaScope",
             "KalturaEventNotificationScope"
           ],
           "type": "string"
@@ -54249,6 +54345,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaSearch",
             "KalturaSearchResult"
           ],
           "type": "string"
@@ -54462,6 +54559,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaSearchCondition",
             "KalturaSearchComparableCondition",
             "KalturaSearchMatchCondition"
           ],
@@ -54771,6 +54869,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaSearchOperator",
             "KalturaDynamicObjectSearchItem",
             "KalturaMetadataSearchItem"
           ],
@@ -55225,6 +55324,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaServerNodeFilter",
             "KalturaConferenceServerNodeFilter",
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
@@ -55347,6 +55447,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaSessionRestriction",
             "KalturaPreviewRestriction"
           ],
           "type": "string"
@@ -55373,6 +55474,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaSftpDropFolder",
             "KalturaTrRdsDropFolder"
           ],
           "type": "string"
@@ -55798,6 +55900,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaSshDropFolderFilter",
             "KalturaScpDropFolderFilter",
             "KalturaSftpDropFolderFilter"
           ],
@@ -55849,6 +55952,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaSshImportJobData",
             "KalturaDropFolderImportJobData"
           ],
           "type": "string"
@@ -55908,6 +56012,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaStartWidgetSessionResponse",
             "KalturaSessionResponse"
           ],
           "type": "string"
@@ -56317,6 +56422,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaStorageDeleteJobData",
             "KalturaKontikiStorageDeleteJobData"
           ],
           "type": "string"
@@ -56352,6 +56458,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaStorageExportJobData",
             "KalturaAmazonS3StorageExportJobData",
             "KalturaKontikiStorageExportJobData"
           ],
@@ -56412,6 +56519,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaStorageJobData",
             "KalturaStorageDeleteJobData",
             "KalturaStorageExportJobData",
             "KalturaKontikiStorageDeleteJobData",
@@ -56526,6 +56634,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaStorageProfile",
             "KalturaAmazonS3StorageProfile",
             "KalturaKontikiStorageProfile"
           ],
@@ -56773,6 +56882,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaStorageProfileFilter",
             "KalturaAmazonS3StorageProfileFilter",
             "KalturaKontikiStorageProfileFilter"
           ],
@@ -56965,6 +57075,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaStringValue",
             "KalturaAnonymousIPContextField",
             "KalturaCoordinatesContextField",
             "KalturaCountryContextField",
@@ -57707,6 +57818,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaThumbAsset",
             "KalturaTimedThumbAsset"
           ],
           "type": "string"
@@ -57830,6 +57942,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaThumbAssetFilter",
             "KalturaTimedThumbAssetFilter"
           ],
           "type": "string"
@@ -58143,6 +58256,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaThumbParams",
             "KalturaThumbParamsOutput"
           ],
           "type": "string"
@@ -58294,6 +58408,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaThumbParamsFilter",
             "KalturaThumbParamsOutputFilter"
           ],
           "type": "string"
@@ -58464,6 +58579,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaTimeRangeVendorCredit",
             "KalturaReoccurringVendorCredit"
           ],
           "type": "string"
@@ -60604,6 +60720,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaUrlRecognizer",
             "KalturaUrlRecognizerAkamaiG2O"
           ],
           "type": "string"
@@ -60669,6 +60786,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaUrlResource",
             "KalturaRemoteStorageResource",
             "KalturaSshUrlResource"
           ],
@@ -60744,6 +60862,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaUrlTokenizer",
             "KalturaUrlTokenizerAkamaiHttp",
             "KalturaUrlTokenizerAkamaiRtmp",
             "KalturaUrlTokenizerAkamaiRtsp",
@@ -61102,6 +61221,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaUser",
             "KalturaAdminUser"
           ],
           "type": "string"
@@ -61565,6 +61685,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaUserEntryFilter",
             "KalturaViewHistoryUserEntryFilter",
             "KalturaQuizUserEntryFilter"
           ],
@@ -61676,6 +61797,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaUserFilter",
             "KalturaGroupFilter",
             "KalturaAdminUserFilter"
           ],
@@ -62530,6 +62652,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaVarPartnerUsageItem",
             "KalturaVarPartnerUsageTotalItem"
           ],
           "type": "string"
@@ -62756,6 +62879,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaVendorCaptionsCatalogItem",
             "KalturaVendorTranslationCatalogItem"
           ],
           "type": "string"
@@ -62945,6 +63069,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaVendorCaptionsCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
           "type": "string"
@@ -63278,6 +63403,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaVendorCatalogItemFilter",
             "KalturaVendorAlignmentCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
@@ -63381,6 +63507,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaVendorCredit",
             "KalturaTimeRangeVendorCredit",
             "KalturaReoccurringVendorCredit"
           ],
@@ -66608,6 +66735,7 @@
     },
     "KalturaBulkUploadCsvJobData:bulkUploadData[objectType]": {
       "enum": [
+        "KalturaJobData",
         "KalturaBulkDownloadJobData",
         "KalturaBulkUploadJobData",
         "KalturaCaptureThumbJobData",
@@ -66763,6 +66891,7 @@
     },
     "KalturaBulkUploadICalJobData:bulkUploadData[objectType]": {
       "enum": [
+        "KalturaJobData",
         "KalturaBulkDownloadJobData",
         "KalturaBulkUploadJobData",
         "KalturaCaptureThumbJobData",
@@ -66880,6 +67009,7 @@
     },
     "KalturaBulkUploadJobData:bulkUploadData[objectType]": {
       "enum": [
+        "KalturaJobData",
         "KalturaBulkDownloadJobData",
         "KalturaBulkUploadJobData",
         "KalturaCaptureThumbJobData",
