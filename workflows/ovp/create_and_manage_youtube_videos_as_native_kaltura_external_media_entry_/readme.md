@@ -12,7 +12,8 @@ To add a YouTube hosted video as a Kaltura media, you will need the YouTube vide
 To find your YouTube video ID: 
 
 1. Visit the YouTube video page. 
-2. Look at the URL of that page, and at the end of it, you should see a URL param `v`. The value of `v` is the ID of your YouTube video (for example: in this YouTube video; https://www.youtube.com/watch?v=ioY-Cp58zkY , the ID is ioY-Cp58zkY).
+2. Look at the URL of that page, and at the end of it, you should see a URL param `v`.   The value of `v` is the ID of your YouTube video.   
+For example: in this YouTube video; `https://www.youtube.com/watch?v=ioY-Cp58zkY` , the ID is `ioY-Cp58zkY`.
 
 That ID will be set as the value of referenceId field in Kaltura when creating the ExternalMediaEntry object.
 
@@ -66,7 +67,7 @@ For getting the title and description of the YouTube video, we recommend using t
 ```
 
 ## Create a Thumbnail for the Entry
-First, create a ThumbAsset that will hold the thumbnail image for the video in Kaltura.
+First, create a ThumbAsset that will hold the thumbnail image for the video in Kaltura. In the next step we will import the Thumbnail from YouTube to that ThumbAsset object.
 
 ### API Call
 ```json
@@ -85,7 +86,59 @@ First, create a ThumbAsset that will hold the thumbnail image for the video in K
               "value": "id"
             }
           },
-          "thumbAsset": {}
+          "thumbAsset": {
+            "type": "object",
+            "properties": {
+              "objectType": {
+                "consoleDefault": "KalturaThumbAsset"
+              }
+            }
+          }
+        }
+      },
+      "consoleDefault": "{}"
+    }
+  ]
+}
+```
+
+## Import the YouTube Thumbnail
+To import the YouTube thumbnail, use the following URL structure:  
+`http://img.youtube.com/vi/[VIDEO_ID]/maxresdefault.jpg`   
+Replace [VIDEO_ID] with the YouTube ID of the video you'd like to use.
+
+For example: in this YouTube video; `https://www.youtube.com/watch?v=ioY-Cp58zkY` , the ID is `ioY-Cp58zkY`.   
+And the Thumbnail URL is: `http://img.youtube.com/vi/ioY-Cp58zkY/maxresdefault.jpg`   .
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/thumbasset/action/setContent",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "dynamicValue": {
+              "fromStep": 1,
+              "value": "id"
+            }
+          },
+          "contentResource": {
+            "type": "object",
+            "properties": {
+              "objectType": {
+                "consoleDefault": "KalturaUrlResource"
+              },
+              "url": {
+                "dynamicValue": null,
+                "consoleDefault": "http://img.youtube.com/vi/ioY-Cp58zkY/maxresdefault.jpg"
+              }
+            }
+          }
         }
       },
       "consoleDefault": "{}"
