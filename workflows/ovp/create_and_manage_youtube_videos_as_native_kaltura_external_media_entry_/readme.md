@@ -7,7 +7,7 @@
 # Manage YouTube Videos in Kaltura
 This workflow will guide you on how to use the [externalMedia](https://developer.kaltura.com/api-docs/service/externalMedia) service to manage YouTube hosted videos as native Kaltura videos that benefit from the same workflows, experience and analytics available for Kaltura hosted video entries.
 
-## externalMedia.add of YouTube video ID
+## Add a YouTube Video Entry
 To add a YouTube hosted video as a Kaltura media, you will need the YouTube video ID:
 To find your YouTube video ID: 
 
@@ -150,7 +150,7 @@ And the Thumbnail URL is: `http://img.youtube.com/vi/ioY-Cp58zkY/maxresdefault.j
 
 ## Set the thumbnail as default
 In this step we will set the thumbnail imported from YouTube as the default thumbnail of the entry.     
-After this step, when embedding the Kaltura player with that entry ID, the player will present this thumbnail before the user clicks the play button.  
+After this step, when embedding the Kaltura player with that entry ID, the player will present this thumbnail before the user clicks the play button.
 
 ### API Call
 ```json
@@ -178,4 +178,4 @@ After this step, when embedding the Kaltura player with that entry ID, the playe
 ```
 
 ## Finish
-Note: If you're using the PlayKit (aka v7) Player, make sure to enable the YouTube plugin in the KMC > TV Platform Studio.
+Note: If you're using the PlayKit Player (aka Player v7), make sure to enable the YouTube plugin in the KMC > TV Platform Studio.
