@@ -15,11 +15,12 @@ To find your YouTube video ID:
 2. Look at the URL of that page, and at the end of it, you should see a URL param `v`.   The value of `v` is the ID of your YouTube video.   
 For example: in this YouTube video; `https://www.youtube.com/watch?v=ioY-Cp58zkY` , the ID is `ioY-Cp58zkY`.
 
-That ID will be set as the value of referenceId field in Kaltura when creating the ExternalMediaEntry object.
+That ID will be set as the value of the `referenceId` field in Kaltura when creating the `ExternalMediaEntry` object.
 
-> Important: Make sure that your YouTube video visibility must be set to either `Public` or `Unlisted`. Private YouTube videos will not work outside YouTube.
+> Important: Make sure that the YouTube video visibility is set to either `Public` or `Unlisted`.   
+> Private YouTube videos will not play outside YouTube, and as such are not supported as Kaltura external entries.
 
-For getting the title and description of the YouTube video, we recommend using the [YouTube Data API](https://developers.google.com/youtube/v3/getting-started).
+In order to get the title and description of the YouTube video, we recommend using the [YouTube Data API](https://developers.google.com/youtube/v3/getting-started).
 
 ### API Call
 ```json
