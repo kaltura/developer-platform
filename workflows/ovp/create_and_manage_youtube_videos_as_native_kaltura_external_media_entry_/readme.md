@@ -147,3 +147,35 @@ And the Thumbnail URL is: `http://img.youtube.com/vi/ioY-Cp58zkY/maxresdefault.j
   ]
 }
 ```
+
+## Set the thumbnail as default
+In this step we will set the thumbnail imported from YouTube as the default thumbnail of the entry.     
+After this step, when embedding the Kaltura player with that entry ID, the player will present this thumbnail before the user clicks the play button.  
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/thumbasset/action/setAsDefault",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "thumbAssetId": {
+            "dynamicValue": {
+              "fromStep": 2,
+              "value": "id"
+            }
+          }
+        }
+      },
+      "consoleDefault": "{}"
+    }
+  ]
+}
+```
+
+## Finish
+Note: If you're using the PlayKit (aka v7) Player, make sure to enable the YouTube plugin in the KMC > TV Platform Studio.
