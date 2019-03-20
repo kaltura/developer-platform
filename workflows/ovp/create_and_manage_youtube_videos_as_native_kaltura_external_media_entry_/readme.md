@@ -1,6 +1,6 @@
 <!--METADATA
 {
-  "summary": "Using ExternalMediaEntry to natively manage YouTube videos as Kaltura video entries, including support for all interactivity, analytics and enrichment capabilities, while keeping the video hosted and delivered by YouTube. The video will be in the Kaltura player (wrapping around the YouTube chrome-less player)"
+  "summary": "Using ExternalMediaEntry to natively manage YouTube videos as Kaltura video entries, including support for all interactivity, analytics and enrichment capabilities, while keeping the video hosted and delivered by YouTube. The video will be played inside the Kaltura player (wrapping the YouTube chrome-less player)."
 }
 -->
 
