@@ -569,7 +569,6 @@ workflowNavigation:
     isContact: true
 
 iosNavigation:
-
   - title: "Getting Started with the Player SDK for iOS"
     markdownURL: /assets/documentation/player-portal/ios/getting-started-ios.html
     path: "/player/ios/getting"
@@ -625,10 +624,3 @@ iosNavigation:
   - title: "Audio Mode for iOS"
     markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
     path: "/player/ios/audio-mode-ios.html"
-
-
-
-
-
-
-
