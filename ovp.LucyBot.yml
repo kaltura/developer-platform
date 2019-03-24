@@ -57,6 +57,16 @@ routes:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
+  /player:
+    ui: player
+    for: kaltura
+    markdownFile: "/assets/documentation/player-portal/player-home.html"
+
+  /player/ios:
+    ui: documentation
+    for: kaltura 
+    navigation: iosNavigation
+
   /new-workflow:
     ui: workflow
     for: kaltura
@@ -557,3 +567,61 @@ workflowNavigation:
   - title: Contact Us
     icon: assets/img/icons/contact.png
     isContact: true
+
+iosNavigation:
+
+  - title: "Getting Started with the Player SDK for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/getting-started-ios.html
+    path: "/player/ios/getting"
+
+  - title: "Supported Devices for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/supported-devices-ios.html
+    path: "/player/ios/supported-devices-ios.html"
+
+  - title: "Player Events for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/player-events-ios.html
+    path: "/player/ios/player-events-ios.html"
+
+  - title: "Track Selection for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/track-selection-ios.html
+    path: "/player/ios/track-selection-ios.html"
+
+  - title: "Analytics Plugins for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/analytics-plugins-ios.html
+    path: "/player/ios/analytics-plugins-ios.html"
+
+  - title: "Interactive Media Ads for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/interactive-media-ads-ios.html
+    path: "/player/ios/interactive-media-ads-ios.html"
+
+  - title: "Live Streaming for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/live-streaming-ios.html
+    path: "/player/ios/live-streaming-ios.html"
+
+  - title: "Background Play for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/backgruond-play-ios.html
+    path: "/player/ios/background-play-ios.html"
+
+  - title: "Download-to-go for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
+    path: "/player/ios/download-to-go-ios.html"
+
+    - title: "Offline Assets for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
+    path: "/player/ios/offline-assets-ios.html"
+
+  - title: "VR/360 Video for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/vr-360-ios.html
+    path: "/player/ios/vr-360-ios.html"
+
+  - title: "Kaltura Session Authentication for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/kaltura-session-authentication-ios.html
+    path: "/player/ios/kaltura-session-authentication-ios.html"
+
+  - title: "Player UI Tutorial for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/player-ui-ios.html
+    path: "/player/ios/player-ui-ios.html"
+
+  - title: "Audio Mode for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
+    path: "/player/ios/audio-mode-ios.html"
