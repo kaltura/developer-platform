@@ -605,7 +605,7 @@ iosNavigation:
     markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
     path: "/player/ios/download-to-go-ios.html"
 
-    - title: "Offline Assets for iOS"
+  - title: "Offline Assets for iOS"
     markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
     path: "/player/ios/offline-assets-ios.html"
 
