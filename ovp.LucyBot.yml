@@ -58,12 +58,12 @@ routes:
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
   /player:
-    ui: player
+    documentation: player
     for: kaltura
     markdownFile: "/assets/documentation/player-portal/player-home.html"
 
   /player/ios:
-    ui: documentation
+    documentation: documentation
     for: kaltura 
     navigation: iosNavigation
 
