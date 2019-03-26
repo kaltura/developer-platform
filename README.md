@@ -9,6 +9,8 @@ Documentation for LucyBot is available at [docs.lucybot.com](http://docs.lucybot
 
 ## Running
 
+### Running in Production
+
 There are two target APIs: ovp (the standard Kaltura VPaaS) and ott.
 
 #### ovp
@@ -24,6 +26,16 @@ npm install
 git clone http://github.com/kaltura/ott-developer-platform-generated generated/ott
 TARGET_API=ott node server.js
 ```
+
+### Running in Development
+
+```
+npm install
+TARGET_API=ovp lucybot build --prerender --truncate_prerender --destination generated/ovp
+TARGET_API=ovp node server.js
+```
+
+or replace `ovp` with `ott` to build the OTT site.
 
 ### Environment Options
 Several options can be set using environment variables:

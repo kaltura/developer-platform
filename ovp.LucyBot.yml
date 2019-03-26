@@ -58,13 +58,11 @@ routes:
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
   /player:
-    ui: player
-    for: kaltura
+    documentation: player
     markdownFile: "/assets/documentation/player-portal/player-home.html"
 
   /player/ios:
-    ui: documentation
-    for: kaltura 
+    documentation: documentation
     navigation: iosNavigation
 
   /new-workflow:
@@ -605,7 +603,7 @@ iosNavigation:
     markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
     path: "/player/ios/download-to-go-ios.html"
 
-    - title: "Offline Assets for iOS"
+  - title: "Offline Assets for iOS"
     markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
     path: "/player/ios/offline-assets-ios.html"
 
