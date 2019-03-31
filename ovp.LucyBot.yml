@@ -10,7 +10,7 @@ workflowDirectory: workflows/ovp
 sitemap:
   hostname: https://developer.kaltura.com
 
-discussionURL: '/discussion/{{slug}}?title={{title}}'
+#discussionURL: '/discussion/{{slug}}?title={{title}}'
 
 routes:
   default: /404-not-found
