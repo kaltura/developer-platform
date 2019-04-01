@@ -596,7 +596,7 @@ iosNavigation:
     path: "/live-streaming-ios"
 
   - title: "Background Play for iOS"
-    markdownURL: /assets/documentation/player-portal/ios/backgruond-play-ios.html
+    markdownURL: /assets/documentation/player-portal/ios/background-play-ios.html
     path: "/background-play-ios"
 
   - title: "Download-to-go for iOS"
