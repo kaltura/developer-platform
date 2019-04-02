@@ -319,7 +319,7 @@ operationNavigation:
   - title: "Search, Discover and Personalize"
     children:
       - title: "Searching with Kaltura eSearch API"
-        markdownURL: /assets/documentation/Search--Discover-and-Personalize/search.html
+        markdownURL: /assets/documentation/Search--Discover-and-Personalize/esearch.html
         path: "/Search--Discover-and-Personalize/esearch.html"
         discussionURL: null        
       - title: "How to perform AND, OR, NOT and Exact Match searches in API"
