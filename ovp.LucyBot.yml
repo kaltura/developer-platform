@@ -496,6 +496,7 @@ operationNavigation:
     isMiscellaneous: true
     hide: true
     searchable: true
+    autoselect: false
 
   - title: "Contribute"
     children:
