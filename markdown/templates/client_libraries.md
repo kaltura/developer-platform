@@ -57,7 +57,7 @@ client libraries as packages that can be installed via the respective package ma
 <dependency>
   <groupId>com.kaltura</groupId>
   <artifactId>kalturaApiClient</artifactId>
-  <version>14.5.0</version>
+  <version>14.16.0</version>
 </dependency>
 ```
 <% } else if (traget === 'ott') { -%>
