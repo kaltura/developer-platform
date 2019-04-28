@@ -10,7 +10,7 @@ workflowDirectory: workflows/ovp
 sitemap:
   hostname: https://developer.kaltura.com
 
-discussionURL: '/discussion/{{slug}}?title={{title}}'
+#discussionURL: '/discussion/{{slug}}?title={{title}}'
 
 routes:
   default: /404-not-found
@@ -56,6 +56,14 @@ routes:
     meta:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
+
+  /player:
+    documentation: player
+    markdownFile: "/assets/documentation/player-portal/player-home.html"
+
+  /player/ios:
+    documentation: documentation
+    navigation: iosNavigation
 
   /new-workflow:
     ui: workflow
@@ -222,11 +230,6 @@ operationNavigation:
         path: "/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html"
         discussionURL: null
 
-      - title: "Kaltura's Scheduling API Service"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/schedulingAPI.html
-        path: "/Ingest_and_Upload_Media/schedulingAPI.html"
-        discussionURL: null
-
       - title: "How to Ingest a Media File Bundled with Metadata (CSV, XML, API)"
         markdownURL: /assets/documentation/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html
         path: "/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html"
@@ -244,6 +247,7 @@ operationNavigation:
       - tag: "thumbAsset"
       - tag: "attachmentAsset"
       - tag: "externalMedia"
+      # `upload` service was deprecated in favour of `UploadToken`  
       - tag: "upload"
         hide: true
   - title: "Execute Bulk Ingest and Updates"
@@ -263,6 +267,7 @@ operationNavigation:
         hide: true
       - tag: "aspera"
         hide: true
+      # `bulkUpload` service was deprecated in favour of `bulk`  
       - tag: "bulkUpload"
         hide: true
   - title: "Convert and Transcode Media"
@@ -313,6 +318,10 @@ operationNavigation:
       - tag: "tag"
   - title: "Search, Discover and Personalize"
     children:
+      - title: "Searching with Kaltura eSearch API"
+        markdownURL: /assets/documentation/Search--Discover-and-Personalize/search.html
+        path: "/Search--Discover-and-Personalize/esearch.html"
+        discussionURL: null        
       - title: "How to perform AND, OR, NOT and Exact Match searches in API"
         markdownURL: /assets/documentation/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html
         path: "/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html"
@@ -388,7 +397,6 @@ operationNavigation:
       - tag: "deliveryProfile"
         hide: true
       - tag: "storageProfile"
-        hide: true
   - title: "Secure, Control and Govern"
     children:
       - title: "Content Categories Management"
@@ -430,12 +438,12 @@ operationNavigation:
       - tag: "categoryUser"
       - tag: "permission"
       - tag: "permissionItem"
+      # `accessControl` service was deprecated in favour of `accessControlProfile`  
       - tag: "accessControl"
         hide: true
       - tag: "adminUser"
         hide: true
       - tag: "auditTrail"
-        hide: true
   - title: "Optimize API Requests"
     prerender: false
     children:
@@ -444,6 +452,17 @@ operationNavigation:
   - title: "Integration, Scheduling and Hooks"
     prerender: false
     children:
+      - title: "Recorded and Live Stream Events Scheduling and iCal API"
+        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html
+        path: "/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html"
+        discussionURL: null
+      - title: "Scheduling Triggers using iCal"
+        markdownFile: ./markdown/scheduling.md
+        children:
+          - tag: "scheduleEvent"
+          - tag: "scheduleEventResource"
+          - tag: "scheduleResource"
+
       - title: "How To Handle Kaltura Server Notifications in PHP"
         markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html
         path: "/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html"
@@ -451,14 +470,9 @@ operationNavigation:
 
       - tag: "eventNotificationTemplate"
       - tag: "scheduledTaskProfile"
-      - title: "Scheduling Triggers using iCal"
-        markdownFile: ./markdown/scheduling.md
-        children:
-          - tag: "scheduleEvent"
-          - tag: "scheduleEventResource"
-          - tag: "scheduleResource"
       - tag: "integration"
       - tag: "businessProcessCase"
+      # `notification` service was deprecated in favour of `eventNotificationTemplate`  
       - tag: "notification"
         hide: true
   - title: "Encrypt and License Content"
@@ -489,12 +503,12 @@ operationNavigation:
     children:
       - tag: "system"
       - tag: "storageProfile"
-        hide: true
   - title: "Miscellaneous"
     prerender: false
     isMiscellaneous: true
     hide: true
     searchable: true
+    autoselect: false
 
   - title: "Contribute"
     children:
@@ -556,3 +570,60 @@ workflowNavigation:
   - title: Contact Us
     icon: assets/img/icons/contact.png
     isContact: true
+
+iosNavigation:
+  - title: "Getting Started with the Player SDK for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/getting-started-ios.html
+    path: "/getting-started-ios"
+
+  - title: "Supported Devices for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/supported-devices-ios.html
+    path: "/supported-devices-ios"
+
+  - title: "Player Events for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/player-events-ios.html
+    path: "/player-events-ios"
+
+  - title: "Track Selection for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/track-selection-ios.html
+    path: "/track-selection-ios"
+
+  - title: "Analytics Plugins for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/analytics-plugins-ios.html
+    path: "/analytics-plugins-ios"
+
+  - title: "Interactive Media Ads for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/interactive-media-ads-ios.html
+    path: "/interactive-media-ads-ios"
+
+  - title: "Live Streaming for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/live-streaming-ios.html
+    path: "/live-streaming-ios"
+
+  - title: "Background Play for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/background-play-ios.html
+    path: "/background-play-ios"
+
+  - title: "Download-to-go for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
+    path: "/download-to-go-ios"
+
+  - title: "Offline Assets for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
+    path: "/offline-assets-ios"
+
+  - title: "VR/360 Video for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/vr-360-ios.html
+    path: "/vr-360-ios"
+
+  - title: "Kaltura Session Authentication for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/kaltura-session-authentication-ios.html
+    path: "/kaltura-session-authentication-ios"
+
+  - title: "Player UI Tutorial for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/player-ui-ios.html
+    path: "/player-ui-ios"
+
+  - title: "Audio Mode for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
+    path: "/audio-mode-ios"

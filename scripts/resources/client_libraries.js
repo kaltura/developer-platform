@@ -1,6 +1,6 @@
 var fs = require('fs');
 var ejs = require('ejs');
-var version = 'v14.9.0';
+var version = 'v14.18.0';
 const MARKDOWN_DIR = __dirname + '/../../markdown';
 const TARGET = process.env.TARGET_API || 'ovp';
 const CLIENT_LANGS = {
@@ -14,7 +14,6 @@ const CLIENT_LANGS = {
   'NodeJS': 'nodejs',
   'AJAX': 'ajax',
   'CLI': 'cli',
-  'ObjectiveC': 'objc',
   'Android': 'android',
   'Swift': 'swift',
   'Angular': 'angular',

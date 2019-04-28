@@ -14,17 +14,19 @@ window.hideKalturaSidebar = function() {
   window.jquery('app .container-fluid').css('margin-left', '79px')
 }
 
-var BLOG_URL = 'https://corp.kaltura.com/wp-json?json=get_category_posts&slug=technology&count=5&status=publish&page=1';
+var BLOG_URL = 'https://corp.kaltura.com/wp-json/wp/v2/blog/?blog-category=77&per_page=5';
 
 window.jquery(document).ready(function() {
 
   function postTemplate(post) {
-    return '<p><a href="' + post.url + '" target="_blank">' + post.title + '</a></p>';
+    return '<p><a href="' + post.link + '" target="_blank">' + post.title.rendered + '</a></p>';
   }
 
   window.jquery.getJSON(BLOG_URL)
   .done(function(data) {
-    window.jquery('#KalturaBlogContent').html(data.posts.map(postTemplate).join('\n'));
+    if (data) {
+      window.jquery('#KalturaBlogContent').html(data.map(postTemplate).join('\n'));
+    }
   })
   .fail(function(xhr) {
     console.log('blog failure', xhr);

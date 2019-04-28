@@ -40,7 +40,6 @@ if (TARGET_API === 'ott') {
 } else {
   config.javascript = [
     'assets/mixpanel.js',
-    'assets/google-analytics.js',
     'assets/tracker.js',
   ].concat(config.javascript);
 }

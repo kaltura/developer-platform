@@ -989,8 +989,16 @@
         }
       ],
       "properties": {
-        "transcriptAssetId": {
-          "description": "The id of the transcript object the vendor should use while runing the alignment task",
+        "captionAssetId": {
+          "description": "`insertOnly`\n\nOptional - The id of the caption asset object the vendor should update once alignment task processing is done",
+          "type": "string"
+        },
+        "jsonTranscriptAssetId": {
+          "description": "`insertOnly`\n\nOptional - The id of the json transcript object the vendor should update once alignment task processing is done",
+          "type": "string"
+        },
+        "textTranscriptAssetId": {
+          "description": "The id of the text transcript object the vendor should use while runing the alignment task",
           "type": "string"
         }
       },
@@ -1448,6 +1456,9 @@
           "readOnly": true,
           "type": "string"
         },
+        "feedback": {
+          "type": "string"
+        },
         "isCorrect": {
           "description": "`readOnly`\n\nEnum Type: `KalturaNullableBoolean`",
           "enum": [
@@ -1463,6 +1474,9 @@
             "TRUE_VALUE"
           ],
           "x-enumType": "KalturaNullableBoolean"
+        },
+        "openAnswer": {
+          "type": "string"
         },
         "parentId": {
           "description": "`insertOnly`",
@@ -2728,6 +2742,7 @@
             "3gp",
             "applehttp",
             "avi",
+            "bif",
             "bmp",
             "copy",
             "flv",
@@ -2760,6 +2775,7 @@
             "_3GP",
             "APPLEHTTP",
             "AVI",
+            "BIF",
             "BMP",
             "COPY",
             "FLV",
@@ -6070,6 +6086,452 @@
       "title": "KalturaBaseSyndicationFeedListResponse",
       "type": "object"
     },
+    "KalturaBaseUser": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaBaseUser"
+        },
+        {
+          "$ref": "#/definitions/KalturaGroup"
+        },
+        {
+          "$ref": "#/definitions/KalturaUser"
+        },
+        {
+          "$ref": "#/definitions/KalturaAdminUser"
+        }
+      ],
+      "discriminator": "objectType",
+      "properties": {
+        "adminTags": {
+          "description": "Admin tags can be updated only by using an admin session",
+          "type": "string"
+        },
+        "allowedPartnerIds": {
+          "type": "string"
+        },
+        "allowedPartnerPackages": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "createdAt": {
+          "description": "`readOnly`\n\nCreation date as Unix timestamp (In seconds)",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "deletedAt": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "fullName": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "indexedPartnerDataInt": {
+          "type": "integer"
+        },
+        "indexedPartnerDataString": {
+          "type": "string"
+        },
+        "language": {
+          "description": "Enum Type: `KalturaLanguageCode`",
+          "enum": [
+            "aa",
+            "ab",
+            "af",
+            "am",
+            "ar",
+            "as",
+            "ay",
+            "az",
+            "ba",
+            "be",
+            "bg",
+            "bh",
+            "bi",
+            "bn",
+            "bo",
+            "br",
+            "ca",
+            "co",
+            "cs",
+            "cy",
+            "da",
+            "de",
+            "dz",
+            "el",
+            "en",
+            "en_gb",
+            "en_us",
+            "eo",
+            "es",
+            "et",
+            "eu",
+            "fa",
+            "fi",
+            "fj",
+            "fo",
+            "fr",
+            "fy",
+            "ga",
+            "gd",
+            "gl",
+            "gn",
+            "gu",
+            "gv",
+            "ha",
+            "he",
+            "hi",
+            "hr",
+            "hu",
+            "hy",
+            "ia",
+            "id",
+            "ie",
+            "ik",
+            "in",
+            "is",
+            "it",
+            "iu",
+            "iw",
+            "ja",
+            "ji",
+            "jv",
+            "ka",
+            "kk",
+            "kl",
+            "km",
+            "kn",
+            "ko",
+            "ks",
+            "ku",
+            "ky",
+            "la",
+            "li",
+            "ln",
+            "lo",
+            "lt",
+            "lv",
+            "mg",
+            "mi",
+            "mk",
+            "ml",
+            "mn",
+            "mo",
+            "mr",
+            "ms",
+            "mt",
+            "multilingual",
+            "my",
+            "na",
+            "ne",
+            "nl",
+            "no",
+            "oc",
+            "om",
+            "or",
+            "pa",
+            "pl",
+            "ps",
+            "pt",
+            "qu",
+            "rm",
+            "rn",
+            "ro",
+            "ru",
+            "rw",
+            "sa",
+            "sd",
+            "sg",
+            "sh",
+            "si",
+            "sk",
+            "sl",
+            "sm",
+            "sn",
+            "so",
+            "sq",
+            "sr",
+            "ss",
+            "st",
+            "su",
+            "sv",
+            "sw",
+            "ta",
+            "te",
+            "tg",
+            "th",
+            "ti",
+            "tk",
+            "tl",
+            "tn",
+            "to",
+            "tr",
+            "ts",
+            "tt",
+            "tw",
+            "ug",
+            "uk",
+            "ur",
+            "uz",
+            "vi",
+            "vo",
+            "wo",
+            "xh",
+            "yi",
+            "yo",
+            "zh",
+            "zu"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "AA",
+            "AB",
+            "AF",
+            "AM",
+            "AR",
+            "AS_",
+            "AY",
+            "AZ",
+            "BA",
+            "BE",
+            "BG",
+            "BH",
+            "BI",
+            "BN",
+            "BO",
+            "BR",
+            "CA",
+            "CO",
+            "CS",
+            "CY",
+            "DA",
+            "DE",
+            "DZ",
+            "EL",
+            "EN",
+            "EN_GB",
+            "EN_US",
+            "EO",
+            "ES",
+            "ET",
+            "EU",
+            "FA",
+            "FI",
+            "FJ",
+            "FO",
+            "FR",
+            "FY",
+            "GA",
+            "GD",
+            "GL",
+            "GN",
+            "GU",
+            "GV",
+            "HA",
+            "HE",
+            "HI",
+            "HR",
+            "HU",
+            "HY",
+            "IA",
+            "ID",
+            "IE",
+            "IK",
+            "IN",
+            "IS",
+            "IT",
+            "IU",
+            "IW",
+            "JA",
+            "JI",
+            "JV",
+            "KA",
+            "KK",
+            "KL",
+            "KM",
+            "KN",
+            "KO",
+            "KS",
+            "KU",
+            "KY",
+            "LA",
+            "LI",
+            "LN",
+            "LO",
+            "LT",
+            "LV",
+            "MG",
+            "MI",
+            "MK",
+            "ML",
+            "MN",
+            "MO",
+            "MR",
+            "MS",
+            "MT",
+            "MU",
+            "MY",
+            "NA",
+            "NE",
+            "NL",
+            "NO",
+            "OC",
+            "OM",
+            "OR_",
+            "PA",
+            "PL",
+            "PS",
+            "PT",
+            "QU",
+            "RM",
+            "RN",
+            "RO",
+            "RU",
+            "RW",
+            "SA",
+            "SD",
+            "SG",
+            "SH",
+            "SI",
+            "SK",
+            "SL",
+            "SM",
+            "SN",
+            "SO",
+            "SQ",
+            "SR",
+            "SS",
+            "ST",
+            "SU",
+            "SV",
+            "SW",
+            "TA",
+            "TE",
+            "TG",
+            "TH",
+            "TI",
+            "TK",
+            "TL",
+            "TN",
+            "TO",
+            "TR",
+            "TS",
+            "TT",
+            "TW",
+            "UG",
+            "UK",
+            "UR",
+            "UZ",
+            "VI",
+            "VO",
+            "WO",
+            "XH",
+            "YI",
+            "YO",
+            "ZH",
+            "ZU"
+          ],
+          "x-enumType": "KalturaLanguageCode"
+        },
+        "lastLoginTime": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaGroup",
+            "KalturaUser",
+            "KalturaAdminUser"
+          ],
+          "type": "string"
+        },
+        "partnerData": {
+          "description": "Can be used to store various partner related data as a string",
+          "type": "string"
+        },
+        "partnerId": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "screenName": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "status": {
+          "description": "Enum Type: `KalturaUserStatus`",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "BLOCKED",
+            "ACTIVE",
+            "DELETED"
+          ],
+          "x-enumType": "KalturaUserStatus"
+        },
+        "statusUpdatedAt": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "storageSize": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "thumbnailUrl": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "description": "`readOnly`\n\nLast update date as Unix timestamp (In seconds)",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "userMode": {
+          "description": "Enum Type: `KalturaUserMode`",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "NONE",
+            "PROTECTED_USER"
+          ],
+          "x-enumType": "KalturaUserMode"
+        },
+        "zip": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaBaseUser",
+      "type": "object"
+    },
     "KalturaBaseVendorCredit": {
       "anyOf": [
         {
@@ -6266,12 +6728,12 @@
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
             "dropFolder.DropFolderWatcher",
-            "0",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
+            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -6319,7 +6781,9 @@
             "45",
             "46",
             "47",
-            "48"
+            "48",
+            "49",
+            "50"
           ],
           "readOnly": true,
           "type": "string",
@@ -6335,12 +6799,12 @@
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
             "DROP_FOLDER_WATCHER",
-            "CONVERT",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
+            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -6388,7 +6852,9 @@
             "SERVER_NODE_MONITOR",
             "USERS_CSV",
             "CLIP_CONCAT",
-            "COPY_CUE_POINTS"
+            "COPY_CUE_POINTS",
+            "EXPORT_CSV",
+            "REPORT_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -6606,12 +7072,12 @@
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
             "dropFolder.DropFolderWatcher",
-            "0",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
+            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -6659,7 +7125,9 @@
             "45",
             "46",
             "47",
-            "48"
+            "48",
+            "49",
+            "50"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -6674,12 +7142,12 @@
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
             "DROP_FOLDER_WATCHER",
-            "CONVERT",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
+            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -6727,7 +7195,9 @@
             "SERVER_NODE_MONITOR",
             "USERS_CSV",
             "CLIP_CONCAT",
-            "COPY_CUE_POINTS"
+            "COPY_CUE_POINTS",
+            "EXPORT_CSV",
+            "REPORT_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -6974,12 +7444,12 @@
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
             "dropFolder.DropFolderWatcher",
-            "0",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
+            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -7027,7 +7497,9 @@
             "45",
             "46",
             "47",
-            "48"
+            "48",
+            "49",
+            "50"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -7042,12 +7514,12 @@
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
             "DROP_FOLDER_WATCHER",
-            "CONVERT",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
+            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -7095,7 +7567,9 @@
             "SERVER_NODE_MONITOR",
             "USERS_CSV",
             "CLIP_CONCAT",
-            "COPY_CUE_POINTS"
+            "COPY_CUE_POINTS",
+            "EXPORT_CSV",
+            "REPORT_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -7461,7 +7935,14 @@
           "$ref": "#/definitions/KalturaBeaconSearchParams"
         }
       ],
-      "properties": {},
+      "properties": {
+        "orderBy": {
+          "$ref": "#/definitions/KalturaBeaconSearchScheduledResourceOrderBy"
+        },
+        "searchOperator": {
+          "$ref": "#/definitions/KalturaBeaconScheduledResourceOperator"
+        }
+      },
       "title": "KalturaBeaconScheduledResourceSearchParams",
       "type": "object"
     },
@@ -7488,12 +7969,6 @@
             "KalturaBeaconScheduledResourceSearchParams"
           ],
           "type": "string"
-        },
-        "orderBy": {
-          "$ref": "#/definitions/KalturaBeaconSearchScheduledResourceOrderBy"
-        },
-        "searchOperator": {
-          "$ref": "#/definitions/KalturaBeaconScheduledResourceOperator"
         }
       },
       "title": "KalturaBeaconSearchParams",
@@ -7540,6 +8015,41 @@
       "title": "KalturaBeaconSearchScheduledResourceOrderByItem",
       "type": "object"
     },
+    "KalturaBlackoutScheduleEvent": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaScheduleEvent"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaBlackoutScheduleEvent",
+      "type": "object"
+    },
+    "KalturaBlackoutScheduleEventFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaRecordScheduleEventBaseFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaBlackoutScheduleEventFilter",
+      "type": "object"
+    },
+    "KalturaBooleanEventNotificationCondition": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaCondition"
+        }
+      ],
+      "properties": {
+        "booleanEventNotificationIds": {
+          "description": "The boolean event notification ids",
+          "type": "string"
+        }
+      },
+      "title": "KalturaBooleanEventNotificationCondition",
+      "type": "object"
+    },
     "KalturaBooleanField": {
       "allOf": [
         {
@@ -7564,6 +8074,16 @@
       "title": "KalturaBooleanField",
       "type": "object",
       "x-abstract": true
+    },
+    "KalturaBooleanNotificationTemplate": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaEventNotificationTemplate"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaBooleanNotificationTemplate",
+      "type": "object"
     },
     "KalturaBooleanValue": {
       "allOf": [
@@ -7643,6 +8163,9 @@
     "KalturaBulkServiceData": {
       "anyOf": [
         {
+          "$ref": "#/definitions/KalturaBulkServiceFilterDataBase"
+        },
+        {
           "$ref": "#/definitions/KalturaBulkServiceFilterData"
         }
       ],
@@ -7651,6 +8174,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBulkServiceFilterDataBase",
             "KalturaBulkServiceFilterData"
           ],
           "type": "string"
@@ -7663,19 +8187,46 @@
     "KalturaBulkServiceFilterData": {
       "allOf": [
         {
-          "$ref": "#/definitions/KalturaBulkServiceData"
+          "$ref": "#/definitions/KalturaBulkServiceFilterDataBase"
         }
       ],
       "description": "Represents the Bulk service input for filter bulk upload",
       "properties": {
-        "filter": {
-          "$ref": "#/definitions/KalturaFilter"
-        },
         "templateObject": {
           "$ref": "#/definitions/KalturaObjectBase"
         }
       },
       "title": "KalturaBulkServiceFilterData",
+      "type": "object"
+    },
+    "KalturaBulkServiceFilterDataBase": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkServiceData"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkServiceFilterDataBase"
+        },
+        {
+          "$ref": "#/definitions/KalturaBulkServiceFilterData"
+        }
+      ],
+      "description": "Represents the Bulk service input for filter bulk upload",
+      "discriminator": "objectType",
+      "properties": {
+        "filter": {
+          "$ref": "#/definitions/KalturaFilter"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaBulkServiceFilterData"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaBulkServiceFilterDataBase",
       "type": "object"
     },
     "KalturaBulkUpload": {
@@ -7686,23 +8237,27 @@
         "bulkUploadObjectType": {
           "description": "Enum Type: `KalturaBulkUploadObjectType`",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
             "2",
             "3",
             "4",
-            "5"
+            "5",
+            "6"
           ],
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
             "CATEGORY",
             "USER",
             "CATEGORY_USER",
-            "CATEGORY_ENTRY"
+            "CATEGORY_ENTRY",
+            "USER_ENTRY"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -7850,23 +8405,27 @@
         "bulkUploadObjectTypeEqual": {
           "description": "Enum Type: `KalturaBulkUploadObjectType`",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
             "2",
             "3",
             "4",
-            "5"
+            "5",
+            "6"
           ],
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
             "CATEGORY",
             "USER",
             "CATEGORY_USER",
-            "CATEGORY_ENTRY"
+            "CATEGORY_ENTRY",
+            "USER_ENTRY"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -8064,12 +8623,14 @@
           "description": "Enum Type: `KalturaScheduleEventType`\n\nThe type of the events that ill be created by this upload",
           "enum": [
             1,
-            2
+            2,
+            3
           ],
           "type": "integer",
           "x-enumLabels": [
             "RECORD",
-            "LIVE_STREAM"
+            "LIVE_STREAM",
+            "BLACKOUT"
           ],
           "x-enumType": "KalturaScheduleEventType"
         }
@@ -8108,24 +8669,28 @@
         "bulkUploadObjectType": {
           "description": "`readOnly`\n\nEnum Type: `KalturaBulkUploadObjectType`\n\nType of object for bulk upload",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
             "2",
             "3",
             "4",
-            "5"
+            "5",
+            "6"
           ],
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
             "CATEGORY",
             "USER",
             "CATEGORY_USER",
-            "CATEGORY_ENTRY"
+            "CATEGORY_ENTRY",
+            "USER_ENTRY"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -8307,6 +8872,9 @@
           "$ref": "#/definitions/KalturaBulkUploadResultEntry"
         },
         {
+          "$ref": "#/definitions/KalturaBulkUploadResultJob"
+        },
+        {
           "$ref": "#/definitions/KalturaBulkUploadResultScheduleEvent"
         },
         {
@@ -8314,6 +8882,9 @@
         },
         {
           "$ref": "#/definitions/KalturaBulkUploadResultUser"
+        },
+        {
+          "$ref": "#/definitions/KalturaBulkUploadResultUserEntry"
         }
       ],
       "discriminator": "objectType",
@@ -8352,23 +8923,27 @@
         "bulkUploadResultObjectType": {
           "description": "Enum Type: `KalturaBulkUploadObjectType`",
           "enum": [
+            "bulkUploadFilter.JOB",
             "scheduleBulkUpload.SCHEDULE_EVENT",
             "scheduleBulkUpload.SCHEDULE_RESOURCE",
             "1",
             "2",
             "3",
             "4",
-            "5"
+            "5",
+            "6"
           ],
           "type": "string",
           "x-enumLabels": [
+            "JOB",
             "SCHEDULE_EVENT",
             "SCHEDULE_RESOURCE",
             "ENTRY",
             "CATEGORY",
             "USER",
             "CATEGORY_USER",
-            "CATEGORY_ENTRY"
+            "CATEGORY_ENTRY",
+            "USER_ENTRY"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -8405,9 +8980,11 @@
             "KalturaBulkUploadResultCategoryEntry",
             "KalturaBulkUploadResultCategoryUser",
             "KalturaBulkUploadResultEntry",
+            "KalturaBulkUploadResultJob",
             "KalturaBulkUploadResultScheduleEvent",
             "KalturaBulkUploadResultScheduleResource",
-            "KalturaBulkUploadResultUser"
+            "KalturaBulkUploadResultUser",
+            "KalturaBulkUploadResultUserEntry"
           ],
           "type": "string"
         },
@@ -8627,6 +9204,21 @@
       "title": "KalturaBulkUploadResultEntry",
       "type": "object"
     },
+    "KalturaBulkUploadResultJob": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadResult"
+        }
+      ],
+      "properties": {
+        "jobObjectId": {
+          "description": "ID of object being processed by the job",
+          "type": "integer"
+        }
+      },
+      "title": "KalturaBulkUploadResultJob",
+      "type": "object"
+    },
     "KalturaBulkUploadResultScheduleEvent": {
       "allOf": [
         {
@@ -8727,6 +9319,20 @@
         }
       },
       "title": "KalturaBulkUploadResultUser",
+      "type": "object"
+    },
+    "KalturaBulkUploadResultUserEntry": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadResult"
+        }
+      ],
+      "properties": {
+        "userEntryId": {
+          "type": "integer"
+        }
+      },
+      "title": "KalturaBulkUploadResultUserEntry",
       "type": "object"
     },
     "KalturaBulkUploadUserData": {
@@ -11963,6 +12569,9 @@
         "language": {
           "type": "string"
         },
+        "languageCode": {
+          "type": "string"
+        },
         "url": {
           "type": "string"
         },
@@ -12101,13 +12710,15 @@
           "enum": [
             1,
             2,
-            3
+            3,
+            4
           ],
           "type": "integer",
           "x-enumLabels": [
             "CAPTIONS",
             "TRANSLATION",
-            "ALIGNMENT"
+            "ALIGNMENT",
+            "AUDIO_DESCRIPTION"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -12136,21 +12747,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -12159,21 +12775,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -12185,21 +12806,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -12208,21 +12834,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -12241,6 +12872,7 @@
             43200,
             86400,
             172800,
+            345600,
             864000
           ],
           "type": "integer",
@@ -12255,6 +12887,7 @@
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
+            "FOUR_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -14212,7 +14845,7 @@
       "properties": {
         "operationAttributes": {
           "items": {
-            "$ref": "#/definitions/KalturaObject"
+            "$ref": "#/definitions/KalturaOperationAttributes"
           },
           "type": "array"
         },
@@ -14702,6 +15335,9 @@
           "$ref": "#/definitions/KalturaAuthenticatedCondition"
         },
         {
+          "$ref": "#/definitions/KalturaBooleanEventNotificationCondition"
+        },
+        {
           "$ref": "#/definitions/KalturaCategoryEntryCondition"
         },
         {
@@ -14774,6 +15410,7 @@
             "KalturaAssetPropertiesCompareCondition",
             "KalturaAssetTypeCondition",
             "KalturaAuthenticatedCondition",
+            "KalturaBooleanEventNotificationCondition",
             "KalturaCategoryEntryCondition",
             "KalturaDeliveryProfileCondition",
             "KalturaEventFieldCondition",
@@ -14821,7 +15458,8 @@
             "13",
             "14",
             "15",
-            "16"
+            "16",
+            "17"
           ],
           "readOnly": true,
           "type": "string",
@@ -14848,7 +15486,8 @@
             "DELIVERY_PROFILE",
             "ACTIVE_EDGE_VALIDATE",
             "ANONYMOUS_IP",
-            "ASSET_TYPE"
+            "ASSET_TYPE",
+            "BOOLEAN"
           ],
           "x-enumType": "KalturaConditionType"
         }
@@ -20613,21 +21252,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -20636,21 +21280,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -25043,12 +25692,14 @@
           "description": "Enum Type: `KalturaScheduleEventType`\n\nThe type of the events that ill be created by this upload",
           "enum": [
             1,
-            2
+            2,
+            3
           ],
           "type": "integer",
           "x-enumLabels": [
             "RECORD",
-            "LIVE_STREAM"
+            "LIVE_STREAM",
+            "BLACKOUT"
           ],
           "x-enumType": "KalturaScheduleEventType"
         }
@@ -25266,6 +25917,63 @@
       "type": "object",
       "x-abstract": true
     },
+    "KalturaESearchAbstractGroupItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchGroupBaseItem"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchGroupItem"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchGroupMetadataItem"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "addHighlight": {
+          "type": "boolean"
+        },
+        "itemType": {
+          "description": "Enum Type: `KalturaESearchItemType`",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "EXACT_MATCH",
+            "PARTIAL",
+            "STARTS_WITH",
+            "EXISTS",
+            "RANGE"
+          ],
+          "x-enumType": "KalturaESearchItemType"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaESearchGroupItem",
+            "KalturaESearchGroupMetadataItem"
+          ],
+          "type": "string"
+        },
+        "range": {
+          "$ref": "#/definitions/KalturaESearchRange"
+        },
+        "searchTerm": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaESearchAbstractGroupItem",
+      "type": "object",
+      "x-abstract": true
+    },
     "KalturaESearchAbstractUserItem": {
       "allOf": [
         {
@@ -25388,6 +26096,15 @@
           "$ref": "#/definitions/KalturaESearchUnifiedItem"
         },
         {
+          "$ref": "#/definitions/KalturaESearchGroupOperator"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchGroupItem"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchGroupMetadataItem"
+        },
+        {
           "$ref": "#/definitions/KalturaESearchUserOperator"
         },
         {
@@ -25416,6 +26133,9 @@
             "KalturaESearchCategoryEntryItem",
             "KalturaESearchEntryItem",
             "KalturaESearchUnifiedItem",
+            "KalturaESearchGroupOperator",
+            "KalturaESearchGroupItem",
+            "KalturaESearchGroupMetadataItem",
             "KalturaESearchUserOperator",
             "KalturaESearchUserItem",
             "KalturaESearchUserMetadataItem"
@@ -26086,6 +26806,7 @@
             "end_date",
             "entitled_kusers_edit",
             "entitled_kusers_publish",
+            "entitled_kusers_view",
             "entry_type",
             "external_source_type",
             "id",
@@ -26122,6 +26843,7 @@
             "END_DATE",
             "ENTITLED_USER_EDIT",
             "ENTITLED_USER_PUBLISH",
+            "ENTITLED_USER_VIEW",
             "ENTRY_TYPE",
             "EXTERNAL_SOURCE_TYPE",
             "ID",
@@ -26256,9 +26978,15 @@
             "last_played_at",
             "name",
             "plays",
+            "plays_last_1_day",
+            "plays_last_30_days",
+            "plays_last_7_days",
             "start_date",
             "updated_at",
             "views",
+            "views_last_1_day",
+            "views_last_30_days",
+            "views_last_7_days",
             "votes"
           ],
           "type": "string",
@@ -26268,9 +26996,15 @@
             "LAST_PLAYED_AT",
             "NAME",
             "PLAYS",
+            "PLAYS_LAST_1_DAY",
+            "PLAYS_LAST_30_DAYS",
+            "PLAYS_LAST_7_DAYS",
             "START_DATE",
             "UPDATED_AT",
             "VIEWS",
+            "VIEWS_LAST_1_DAY",
+            "VIEWS_LAST_30_DAYS",
+            "VIEWS_LAST_7_DAYS",
             "VOTES"
           ],
           "x-enumType": "KalturaESearchEntryOrderByFieldName"
@@ -26322,6 +27056,208 @@
         }
       },
       "title": "KalturaESearchEntryResult",
+      "type": "object"
+    },
+    "KalturaESearchGroupBaseItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchBaseItem"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchGroupOperator"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchGroupItem"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchGroupMetadataItem"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaESearchGroupOperator",
+            "KalturaESearchGroupItem",
+            "KalturaESearchGroupMetadataItem"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaESearchGroupBaseItem",
+      "type": "object",
+      "x-abstract": true
+    },
+    "KalturaESearchGroupItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchAbstractGroupItem"
+        }
+      ],
+      "properties": {
+        "fieldName": {
+          "description": "Enum Type: `KalturaESearchGroupFieldName`",
+          "enum": [
+            "created_at",
+            "email",
+            "first_name",
+            "group_ids",
+            "last_name",
+            "permission_names",
+            "role_ids",
+            "screen_name",
+            "tags",
+            "updated_at",
+            "user_id"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "CREATED_AT",
+            "EMAIL",
+            "FIRST_NAME",
+            "GROUP_IDS",
+            "LAST_NAME",
+            "PERMISSION_NAMES",
+            "ROLE_IDS",
+            "SCREEN_NAME",
+            "TAGS",
+            "UPDATED_AT",
+            "USER_ID"
+          ],
+          "x-enumType": "KalturaESearchGroupFieldName"
+        }
+      },
+      "title": "KalturaESearchGroupItem",
+      "type": "object"
+    },
+    "KalturaESearchGroupMetadataItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchAbstractGroupItem"
+        }
+      ],
+      "properties": {
+        "metadataFieldId": {
+          "type": "integer"
+        },
+        "metadataProfileId": {
+          "type": "integer"
+        },
+        "xpath": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaESearchGroupMetadataItem",
+      "type": "object"
+    },
+    "KalturaESearchGroupOperator": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchGroupBaseItem"
+        }
+      ],
+      "properties": {
+        "operator": {
+          "description": "Enum Type: `KalturaESearchOperatorType`",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "AND_OP",
+            "OR_OP",
+            "NOT_OP"
+          ],
+          "x-enumType": "KalturaESearchOperatorType"
+        },
+        "searchItems": {
+          "items": {
+            "$ref": "#/definitions/KalturaESearchGroupBaseItem"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaESearchGroupOperator",
+      "type": "object"
+    },
+    "KalturaESearchGroupOrderByItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchOrderByItem"
+        }
+      ],
+      "properties": {
+        "sortField": {
+          "description": "Enum Type: `KalturaESearchGroupOrderByFieldName`",
+          "enum": [
+            "created_at",
+            "members_count",
+            "puser_id",
+            "screen_name",
+            "updated_at"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "CREATED_AT",
+            "MEMBERS_COUNT",
+            "USER_ID",
+            "SCREEN_NAME",
+            "UPDATED_AT"
+          ],
+          "x-enumType": "KalturaESearchGroupOrderByFieldName"
+        }
+      },
+      "title": "KalturaESearchGroupOrderByItem",
+      "type": "object"
+    },
+    "KalturaESearchGroupParams": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchParams"
+        }
+      ],
+      "properties": {
+        "searchOperator": {
+          "$ref": "#/definitions/KalturaESearchGroupOperator"
+        }
+      },
+      "title": "KalturaESearchGroupParams",
+      "type": "object"
+    },
+    "KalturaESearchGroupResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchResponse"
+        }
+      ],
+      "properties": {
+        "objects": {
+          "items": {
+            "$ref": "#/definitions/KalturaESearchGroupResult"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaESearchGroupResponse",
+      "type": "object"
+    },
+    "KalturaESearchGroupResult": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchResult"
+        }
+      ],
+      "properties": {
+        "object": {
+          "$ref": "#/definitions/KalturaGroup"
+        }
+      },
+      "title": "KalturaESearchGroupResult",
       "type": "object"
     },
     "KalturaESearchHighlight": {
@@ -26626,6 +27562,9 @@
           "$ref": "#/definitions/KalturaESearchEntryOrderByItem"
         },
         {
+          "$ref": "#/definitions/KalturaESearchGroupOrderByItem"
+        },
+        {
           "$ref": "#/definitions/KalturaESearchMetadataOrderByItem"
         },
         {
@@ -26640,6 +27579,7 @@
             "KalturaBeaconSearchScheduledResourceOrderByItem",
             "KalturaESearchCategoryOrderByItem",
             "KalturaESearchEntryOrderByItem",
+            "KalturaESearchGroupOrderByItem",
             "KalturaESearchMetadataOrderByItem",
             "KalturaESearchUserOrderByItem"
           ],
@@ -26672,6 +27612,9 @@
           "$ref": "#/definitions/KalturaESearchEntryParams"
         },
         {
+          "$ref": "#/definitions/KalturaESearchGroupParams"
+        },
+        {
           "$ref": "#/definitions/KalturaESearchUserParams"
         }
       ],
@@ -26688,6 +27631,7 @@
           "enum": [
             "KalturaESearchCategoryParams",
             "KalturaESearchEntryParams",
+            "KalturaESearchGroupParams",
             "KalturaESearchUserParams"
           ],
           "type": "string"
@@ -26727,6 +27671,9 @@
           "$ref": "#/definitions/KalturaESearchEntryResponse"
         },
         {
+          "$ref": "#/definitions/KalturaESearchGroupResponse"
+        },
+        {
           "$ref": "#/definitions/KalturaESearchUserResponse"
         }
       ],
@@ -26737,6 +27684,7 @@
           "enum": [
             "KalturaESearchCategoryResponse",
             "KalturaESearchEntryResponse",
+            "KalturaESearchGroupResponse",
             "KalturaESearchUserResponse"
           ],
           "type": "string"
@@ -26758,6 +27706,9 @@
         },
         {
           "$ref": "#/definitions/KalturaESearchEntryResult"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchGroupResult"
         },
         {
           "$ref": "#/definitions/KalturaESearchUserResult"
@@ -26782,6 +27733,7 @@
           "enum": [
             "KalturaESearchCategoryResult",
             "KalturaESearchEntryResult",
+            "KalturaESearchGroupResult",
             "KalturaESearchUserResult"
           ],
           "type": "string"
@@ -26941,11 +27893,15 @@
           "description": "Enum Type: `KalturaESearchUserOrderByFieldName`",
           "enum": [
             "created_at",
+            "puser_id",
+            "screen_name",
             "updated_at"
           ],
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT",
+            "USER_ID",
+            "SCREEN_NAME",
             "UPDATED_AT"
           ],
           "x-enumType": "KalturaESearchUserOrderByFieldName"
@@ -28457,6 +29413,12 @@
       "description": "`abstract`",
       "discriminator": "objectType",
       "properties": {
+        "blackoutConflicts": {
+          "items": {
+            "$ref": "#/definitions/KalturaScheduleEvent"
+          },
+          "type": "array"
+        },
         "categoryIds": {
           "description": "Categories that associated with this event",
           "type": "string"
@@ -28495,6 +29457,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -28523,6 +29488,7 @@
           "enum": [
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -28549,6 +29515,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -28557,6 +29526,7 @@
         "objectType": {
           "enum": [
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -29007,7 +29977,8 @@
             4,
             5,
             6,
-            7
+            7,
+            8
           ],
           "type": "integer",
           "x-enumLabels": [
@@ -29017,7 +29988,8 @@
             "PENDING_MODERATION",
             "REJECTED",
             "ERROR",
-            "ABORTED"
+            "ABORTED",
+            "PENDING_ENTRY_READY"
           ],
           "x-enumType": "KalturaEntryVendorTaskStatus"
         },
@@ -29119,7 +30091,8 @@
             4,
             5,
             6,
-            7
+            7,
+            8
           ],
           "type": "integer",
           "x-enumLabels": [
@@ -29129,7 +30102,8 @@
             "PENDING_MODERATION",
             "REJECTED",
             "ERROR",
-            "ABORTED"
+            "ABORTED",
+            "PENDING_ENTRY_READY"
           ],
           "x-enumType": "KalturaEntryVendorTaskStatus"
         },
@@ -29159,24 +30133,12 @@
     "KalturaEntryVendorTaskCsvJobData": {
       "allOf": [
         {
-          "$ref": "#/definitions/KalturaJobData"
+          "$ref": "#/definitions/KalturaExportCsvJobData"
         }
       ],
       "properties": {
         "filter": {
           "$ref": "#/definitions/KalturaEntryVendorTaskFilter"
-        },
-        "outputPath": {
-          "description": "The file location",
-          "type": "string"
-        },
-        "userMail": {
-          "description": "The users email",
-          "type": "string"
-        },
-        "userName": {
-          "description": "The users name",
-          "type": "string"
         }
       },
       "title": "KalturaEntryVendorTaskCsvJobData",
@@ -29639,6 +30601,9 @@
           "$ref": "#/definitions/KalturaEventNotificationTemplate"
         },
         {
+          "$ref": "#/definitions/KalturaBooleanNotificationTemplate"
+        },
+        {
           "$ref": "#/definitions/KalturaEmailNotificationTemplate"
         },
         {
@@ -29843,6 +30808,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBooleanNotificationTemplate",
             "KalturaEmailNotificationTemplate",
             "KalturaHttpNotificationTemplate",
             "KalturaPushNotificationTemplate",
@@ -29879,6 +30845,7 @@
         "type": {
           "description": "`insertOnly`\n\nEnum Type: `KalturaEventNotificationTemplateType`",
           "enum": [
+            "booleanNotification.Boolean",
             "businessProcessNotification.BusinessProcessAbort",
             "businessProcessNotification.BusinessProcessSignal",
             "businessProcessNotification.BusinessProcessStart",
@@ -29888,6 +30855,7 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "BOOLEAN",
             "BPM_ABORT",
             "BPM_SIGNAL",
             "BPM_START",
@@ -30005,6 +30973,7 @@
         "typeEqual": {
           "description": "Enum Type: `KalturaEventNotificationTemplateType`",
           "enum": [
+            "booleanNotification.Boolean",
             "businessProcessNotification.BusinessProcessAbort",
             "businessProcessNotification.BusinessProcessSignal",
             "businessProcessNotification.BusinessProcessStart",
@@ -30014,6 +30983,7 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "BOOLEAN",
             "BPM_ABORT",
             "BPM_SIGNAL",
             "BPM_START",
@@ -30217,6 +31187,52 @@
         }
       },
       "title": "KalturaExecuteMetadataXsltObjectTask",
+      "type": "object"
+    },
+    "KalturaExportCsvJobData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaJobData"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaExportCsvJobData"
+        },
+        {
+          "$ref": "#/definitions/KalturaEntryVendorTaskCsvJobData"
+        },
+        {
+          "$ref": "#/definitions/KalturaMediaEsearchExportToCsvJobData"
+        },
+        {
+          "$ref": "#/definitions/KalturaUsersCsvJobData"
+        }
+      ],
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaEntryVendorTaskCsvJobData",
+            "KalturaMediaEsearchExportToCsvJobData",
+            "KalturaUsersCsvJobData"
+          ],
+          "type": "string"
+        },
+        "outputPath": {
+          "description": "The file location",
+          "type": "string"
+        },
+        "userMail": {
+          "description": "The users email",
+          "type": "string"
+        },
+        "userName": {
+          "description": "The users name",
+          "type": "string"
+        }
+      },
+      "title": "KalturaExportCsvJobData",
       "type": "object"
     },
     "KalturaExtendingItemMrssParameter": {
@@ -31944,10 +32960,10 @@
           "$ref": "#/definitions/KalturaUserFilter"
         },
         {
-          "$ref": "#/definitions/KalturaAdminUserFilter"
+          "$ref": "#/definitions/KalturaGroupFilter"
         },
         {
-          "$ref": "#/definitions/KalturaEntryVendorTaskFilter"
+          "$ref": "#/definitions/KalturaAdminUserFilter"
         },
         {
           "$ref": "#/definitions/KalturaAccessControlFilter"
@@ -32058,6 +33074,9 @@
           "$ref": "#/definitions/KalturaEntryDistributionFilter"
         },
         {
+          "$ref": "#/definitions/KalturaEntryVendorTaskFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaFileAssetFilter"
         },
         {
@@ -32097,6 +33116,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         },
         {
@@ -32134,6 +33156,9 @@
         },
         {
           "$ref": "#/definitions/KalturaVendorAlignmentCatalogItemFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaVendorAudioDescriptionCatalogItemFilter"
         },
         {
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
@@ -32599,8 +33624,8 @@
             "KalturaPlaylistFilter",
             "KalturaCategoryUserFilter",
             "KalturaUserFilter",
+            "KalturaGroupFilter",
             "KalturaAdminUserFilter",
-            "KalturaEntryVendorTaskFilter",
             "KalturaAccessControlFilter",
             "KalturaAccessControlProfileFilter",
             "KalturaAssetParamsFilter",
@@ -32637,6 +33662,7 @@
             "KalturaQuestionCuePointFilter",
             "KalturaThumbCuePointFilter",
             "KalturaEntryDistributionFilter",
+            "KalturaEntryVendorTaskFilter",
             "KalturaFileAssetFilter",
             "KalturaGroupUserFilter",
             "KalturaLikeFilter",
@@ -32650,6 +33676,7 @@
             "KalturaScheduleEventFilter",
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter",
             "KalturaScheduleEventResourceFilter",
             "KalturaScheduleResourceFilter",
@@ -32663,6 +33690,7 @@
             "KalturaUserRoleFilter",
             "KalturaVendorCatalogItemFilter",
             "KalturaVendorAlignmentCatalogItemFilter",
+            "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter",
             "KalturaBatchJobFilter",
@@ -33836,6 +34864,7 @@
             "3gp",
             "applehttp",
             "avi",
+            "bif",
             "bmp",
             "copy",
             "flv",
@@ -33868,6 +34897,7 @@
             "_3GP",
             "APPLEHTTP",
             "AVI",
+            "BIF",
             "BMP",
             "COPY",
             "FLV",
@@ -34110,6 +35140,7 @@
             "3gp",
             "applehttp",
             "avi",
+            "bif",
             "bmp",
             "copy",
             "flv",
@@ -34142,6 +35173,7 @@
             "_3GP",
             "APPLEHTTP",
             "AVI",
+            "BIF",
             "BMP",
             "COPY",
             "FLV",
@@ -34522,12 +35554,12 @@
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
             "dropFolder.DropFolderWatcher",
-            "0",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
+            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -34575,7 +35607,9 @@
             "45",
             "46",
             "47",
-            "48"
+            "48",
+            "49",
+            "50"
           ],
           "readOnly": true,
           "type": "string",
@@ -34591,12 +35625,12 @@
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
             "DROP_FOLDER_WATCHER",
-            "CONVERT",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
+            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -34644,7 +35678,9 @@
             "SERVER_NODE_MONITOR",
             "USERS_CSV",
             "CLIP_CONCAT",
-            "COPY_CUE_POINTS"
+            "COPY_CUE_POINTS",
+            "EXPORT_CSV",
+            "REPORT_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -36420,6 +37456,49 @@
       "title": "KalturaGoogleVideoSyndicationFeedFilter",
       "type": "object"
     },
+    "KalturaGroup": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBaseUser"
+        }
+      ],
+      "properties": {
+        "membersCount": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "title": "KalturaGroup",
+      "type": "object"
+    },
+    "KalturaGroupFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaUserFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaGroupFilter",
+      "type": "object"
+    },
+    "KalturaGroupListResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaListResponse"
+        }
+      ],
+      "properties": {
+        "objects": {
+          "items": {
+            "$ref": "#/definitions/KalturaGroup"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaGroupListResponse",
+      "type": "object"
+    },
     "KalturaGroupUser": {
       "properties": {
         "createdAt": {
@@ -36442,6 +37521,11 @@
         },
         "groupId": {
           "description": "`insertOnly`",
+          "type": "string"
+        },
+        "id": {
+          "description": "`readOnly`",
+          "readOnly": true,
           "type": "string"
         },
         "partnerId": {
@@ -36471,6 +37555,19 @@
         "userId": {
           "description": "`insertOnly`",
           "type": "string"
+        },
+        "userRole": {
+          "description": "Enum Type: `KalturaGroupUserRole`",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "MEMBER",
+            "MANAGER"
+          ],
+          "x-enumType": "KalturaGroupUserRole"
         }
       },
       "title": "KalturaGroupUser",
@@ -38424,10 +39521,10 @@
           "$ref": "#/definitions/KalturaDropFolderContentProcessorJobData"
         },
         {
-          "$ref": "#/definitions/KalturaEntryVendorTaskCsvJobData"
+          "$ref": "#/definitions/KalturaEventNotificationDispatchJobData"
         },
         {
-          "$ref": "#/definitions/KalturaEventNotificationDispatchJobData"
+          "$ref": "#/definitions/KalturaExportCsvJobData"
         },
         {
           "$ref": "#/definitions/KalturaFlattenJobData"
@@ -38472,6 +39569,9 @@
           "$ref": "#/definitions/KalturaProvisionJobData"
         },
         {
+          "$ref": "#/definitions/KalturaReportExportJobData"
+        },
+        {
           "$ref": "#/definitions/KalturaScheduledTaskJobData"
         },
         {
@@ -38482,9 +39582,6 @@
         },
         {
           "$ref": "#/definitions/KalturaTransformMetadataJobData"
-        },
-        {
-          "$ref": "#/definitions/KalturaUsersCsvJobData"
         },
         {
           "$ref": "#/definitions/KalturaVirusScanJobData"
@@ -38550,6 +39647,15 @@
           "$ref": "#/definitions/KalturaHttpNotificationDispatchJobData"
         },
         {
+          "$ref": "#/definitions/KalturaEntryVendorTaskCsvJobData"
+        },
+        {
+          "$ref": "#/definitions/KalturaMediaEsearchExportToCsvJobData"
+        },
+        {
+          "$ref": "#/definitions/KalturaUsersCsvJobData"
+        },
+        {
           "$ref": "#/definitions/KalturaSshImportJobData"
         },
         {
@@ -38602,8 +39708,8 @@
             "KalturaDeleteJobData",
             "KalturaDistributionJobData",
             "KalturaDropFolderContentProcessorJobData",
-            "KalturaEntryVendorTaskCsvJobData",
             "KalturaEventNotificationDispatchJobData",
+            "KalturaExportCsvJobData",
             "KalturaFlattenJobData",
             "KalturaImportJobData",
             "KalturaImportMetadataJobData",
@@ -38618,11 +39724,11 @@
             "KalturaParseCaptionAssetJobData",
             "KalturaParseMultiLanguageCaptionAssetJobData",
             "KalturaProvisionJobData",
+            "KalturaReportExportJobData",
             "KalturaScheduledTaskJobData",
             "KalturaStorageJobData",
             "KalturaSyncCategoryPrivacyContextJobData",
             "KalturaTransformMetadataJobData",
-            "KalturaUsersCsvJobData",
             "KalturaVirusScanJobData",
             "KalturaWidevineRepositorySyncJobData",
             "KalturaBulkUploadCsvJobData",
@@ -38644,6 +39750,9 @@
             "KalturaBusinessProcessNotificationDispatchJobData",
             "KalturaEmailNotificationDispatchJobData",
             "KalturaHttpNotificationDispatchJobData",
+            "KalturaEntryVendorTaskCsvJobData",
+            "KalturaMediaEsearchExportToCsvJobData",
+            "KalturaUsersCsvJobData",
             "KalturaSshImportJobData",
             "KalturaDropFolderImportJobData",
             "KalturaAkamaiProvisionJobData",
@@ -39054,6 +40163,9 @@
           "$ref": "#/definitions/KalturaGenericDistributionProviderListResponse"
         },
         {
+          "$ref": "#/definitions/KalturaGroupListResponse"
+        },
+        {
           "$ref": "#/definitions/KalturaGroupUserListResponse"
         },
         {
@@ -39244,6 +40356,7 @@
             "KalturaFlavorParamsOutputListResponse",
             "KalturaGenericDistributionProviderActionListResponse",
             "KalturaGenericDistributionProviderListResponse",
+            "KalturaGroupListResponse",
             "KalturaGroupUserListResponse",
             "KalturaLikeListResponse",
             "KalturaLiveChannelListResponse",
@@ -42264,7 +43377,11 @@
             "130",
             "131",
             "132",
-            "133"
+            "133",
+            "135",
+            "136",
+            "137",
+            "138"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -42310,7 +43427,11 @@
             "MAIL_TYPE_LIVE_REPORT_EXPORT_SUCCESS",
             "MAIL_TYPE_LIVE_REPORT_EXPORT_FAILURE",
             "MAIL_TYPE_LIVE_REPORT_EXPORT_ABORT",
-            "MAIL_TYPE_USERS_CSV"
+            "MAIL_TYPE_USERS_CSV",
+            "MAIL_TYPE_OBJECTS_CSV",
+            "MAIL_TYPE_REPORT_EXPORT_SUCCESS",
+            "MAIL_TYPE_REPORT_EXPORT_FAILURE",
+            "MAIL_TYPE_REPORT_EXPORT_ABORT"
           ],
           "x-enumType": "KalturaMailType"
         },
@@ -43113,6 +44234,20 @@
         }
       },
       "title": "KalturaMediaEntryMatchAttributeCondition",
+      "type": "object"
+    },
+    "KalturaMediaEsearchExportToCsvJobData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaExportCsvJobData"
+        }
+      ],
+      "properties": {
+        "searchParams": {
+          "$ref": "#/definitions/KalturaESearchEntryParams"
+        }
+      },
+      "title": "KalturaMediaEsearchExportToCsvJobData",
       "type": "object"
     },
     "KalturaMediaFlavorParams": {
@@ -46009,7 +47144,13 @@
       "description": "`abstract`",
       "discriminator": "objectType",
       "properties": {
+        "createdAtGreaterThanOrEqual": {
+          "type": "integer"
+        },
         "idEqual": {
+          "type": "integer"
+        },
+        "idGreaterThan": {
           "type": "integer"
         },
         "idIn": {
@@ -47843,7 +48984,7 @@
           "type": "string"
         },
         "playlistType": {
-          "description": "Enum Type: `KalturaPlaylistType`\n\nType of playlist",
+          "description": "`insertOnly`\n\nEnum Type: `KalturaPlaylistType`\n\nType of playlist",
           "enum": [
             3,
             10,
@@ -48697,7 +49838,8 @@
             4,
             5,
             6,
-            7
+            7,
+            8
           ],
           "type": "integer",
           "x-enumLabels": [
@@ -48707,7 +49849,8 @@
             "MULTIPLE_ANSWER_QUESTION",
             "FILL_IN_BLANK",
             "HOT_SPOT",
-            "GO_TO"
+            "GO_TO",
+            "OPEN_QUESTION"
           ],
           "x-enumType": "KalturaQuestionType"
         }
@@ -49011,6 +50154,28 @@
           ],
           "x-enumType": "KalturaNullableBoolean"
         },
+        "attemptsAllowed": {
+          "type": "integer"
+        },
+        "scoreType": {
+          "description": "Enum Type: `KalturaScoreType`",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "HIGHEST",
+            "LOWEST",
+            "LATEST",
+            "FIRST",
+            "AVERAGE"
+          ],
+          "x-enumType": "KalturaScoreType"
+        },
         "showCorrectAfterSubmission": {
           "description": "Enum Type: `KalturaNullableBoolean`",
           "enum": [
@@ -49155,10 +50320,23 @@
         }
       ],
       "properties": {
+        "calculatedScore": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "number"
+        },
+        "feedback": {
+          "type": "string"
+        },
         "score": {
           "description": "`readOnly`",
           "readOnly": true,
           "type": "number"
+        },
+        "version": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
         }
       },
       "title": "KalturaQuizUserEntry",
@@ -49449,6 +50627,19 @@
           "description": "`readOnly`",
           "readOnly": true,
           "type": "number"
+        },
+        "vendorTaskProcessingRegion": {
+          "description": "Enum Type: `KalturaVendorTaskProcessingRegion`\n\nIndicates in which region the task processing should task place",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "US",
+            "EU"
+          ],
+          "x-enumType": "KalturaVendorTaskProcessingRegion"
         }
       },
       "title": "KalturaReachProfile",
@@ -49591,13 +50782,15 @@
           "enum": [
             1,
             2,
-            3
+            3,
+            4
           ],
           "type": "integer",
           "x-enumLabels": [
             "CAPTIONS",
             "TRANSLATION",
-            "ALIGNMENT"
+            "ALIGNMENT",
+            "AUDIO_DESCRIPTION"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -49627,6 +50820,7 @@
             43200,
             86400,
             172800,
+            345600,
             864000
           ],
           "type": "integer",
@@ -49641,6 +50835,7 @@
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
+            "FOUR_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -49739,6 +50934,9 @@
       ],
       "anyOf": [
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -49747,6 +50945,7 @@
       "properties": {
         "objectType": {
           "enum": [
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -49910,10 +51109,10 @@
           "$ref": "#/definitions/KalturaUserFilter"
         },
         {
-          "$ref": "#/definitions/KalturaAdminUserFilter"
+          "$ref": "#/definitions/KalturaGroupFilter"
         },
         {
-          "$ref": "#/definitions/KalturaEntryVendorTaskFilter"
+          "$ref": "#/definitions/KalturaAdminUserFilter"
         },
         {
           "$ref": "#/definitions/KalturaAccessControlFilter"
@@ -50024,6 +51223,9 @@
           "$ref": "#/definitions/KalturaEntryDistributionFilter"
         },
         {
+          "$ref": "#/definitions/KalturaEntryVendorTaskFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaFileAssetFilter"
         },
         {
@@ -50061,6 +51263,9 @@
         },
         {
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
         },
         {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
@@ -50102,6 +51307,9 @@
           "$ref": "#/definitions/KalturaVendorAlignmentCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorAudioDescriptionCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
@@ -50139,8 +51347,8 @@
             "KalturaPlaylistFilter",
             "KalturaCategoryUserFilter",
             "KalturaUserFilter",
+            "KalturaGroupFilter",
             "KalturaAdminUserFilter",
-            "KalturaEntryVendorTaskFilter",
             "KalturaAccessControlFilter",
             "KalturaAccessControlProfileFilter",
             "KalturaAssetParamsFilter",
@@ -50177,6 +51385,7 @@
             "KalturaQuestionCuePointFilter",
             "KalturaThumbCuePointFilter",
             "KalturaEntryDistributionFilter",
+            "KalturaEntryVendorTaskFilter",
             "KalturaFileAssetFilter",
             "KalturaGroupUserFilter",
             "KalturaLikeFilter",
@@ -50190,6 +51399,7 @@
             "KalturaScheduleEventFilter",
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter",
             "KalturaScheduleEventResourceFilter",
             "KalturaScheduleResourceFilter",
@@ -50203,6 +51413,7 @@
             "KalturaUserRoleFilter",
             "KalturaVendorCatalogItemFilter",
             "KalturaVendorAlignmentCatalogItemFilter",
+            "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
@@ -50531,6 +51742,199 @@
       "title": "KalturaReportBaseTotal",
       "type": "object"
     },
+    "KalturaReportExportItem": {
+      "properties": {
+        "action": {
+          "description": "Enum Type: `KalturaReportExportItemType`",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "TABLE",
+            "TOTAL",
+            "GRAPH"
+          ],
+          "x-enumType": "KalturaReportExportItemType"
+        },
+        "filter": {
+          "$ref": "#/definitions/KalturaReportInputFilter"
+        },
+        "objectIds": {
+          "type": "string"
+        },
+        "order": {
+          "type": "string"
+        },
+        "reportTitle": {
+          "type": "string"
+        },
+        "reportType": {
+          "description": "Enum Type: `KalturaReportType`",
+          "enum": [
+            "quiz.QUIZ",
+            "quiz.QUIZ_AGGREGATE_BY_QUESTION",
+            "quiz.QUIZ_USER_AGGREGATE_BY_QUESTION",
+            "quiz.QUIZ_USER_PERCENTAGE",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "201"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "QUIZ",
+            "QUIZ_AGGREGATE_BY_QUESTION",
+            "QUIZ_USER_AGGREGATE_BY_QUESTION",
+            "QUIZ_USER_PERCENTAGE",
+            "TOP_CONTENT",
+            "CONTENT_DROPOFF",
+            "CONTENT_INTERACTIONS",
+            "MAP_OVERLAY",
+            "TOP_CONTRIBUTORS",
+            "TOP_SYNDICATION",
+            "CONTENT_CONTRIBUTIONS",
+            "USER_ENGAGEMENT",
+            "SPECIFIC_USER_ENGAGEMENT",
+            "USER_TOP_CONTENT",
+            "USER_CONTENT_DROPOFF",
+            "USER_CONTENT_INTERACTIONS",
+            "APPLICATIONS",
+            "USER_USAGE",
+            "SPECIFIC_USER_USAGE",
+            "VAR_USAGE",
+            "TOP_CREATORS",
+            "PLATFORMS",
+            "OPERATING_SYSTEM",
+            "BROWSERS",
+            "LIVE",
+            "TOP_PLAYBACK_CONTEXT",
+            "VPAAS_USAGE",
+            "ENTRY_USAGE",
+            "REACH_USAGE",
+            "TOP_CUSTOM_VAR1",
+            "MAP_OVERLAY_CITY",
+            "OPERATING_SYSTEM_FAMILIES",
+            "BROWSERS_FAMILIES",
+            "USER_ENGAGEMENT_TIMELINE",
+            "UNIQUE_USERS_PLAY",
+            "MAP_OVERLAY_COUNTRY",
+            "MAP_OVERLAY_REGION",
+            "TOP_CONTENT_CREATOR",
+            "TOP_CONTENT_CONTRIBUTORS",
+            "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+            "TOP_SOURCES",
+            "VPAAS_USAGE_MULTI",
+            "PERCENTILES",
+            "CONTENT_REPORT_REASONS",
+            "PLAYER_RELATED_INTERACTIONS",
+            "PLAYBACK_RATE",
+            "PARTNER_USAGE"
+          ],
+          "x-enumType": "KalturaReportType"
+        },
+        "responseOptions": {
+          "$ref": "#/definitions/KalturaReportResponseOptions"
+        }
+      },
+      "title": "KalturaReportExportItem",
+      "type": "object"
+    },
+    "KalturaReportExportJobData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaJobData"
+        }
+      ],
+      "properties": {
+        "filePaths": {
+          "type": "string"
+        },
+        "recipientEmail": {
+          "type": "string"
+        },
+        "reportItems": {
+          "items": {
+            "$ref": "#/definitions/KalturaReportExportItem"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaReportExportJobData",
+      "type": "object"
+    },
+    "KalturaReportExportParams": {
+      "properties": {
+        "recipientEmail": {
+          "type": "string"
+        },
+        "reportItems": {
+          "items": {
+            "$ref": "#/definitions/KalturaReportExportItem"
+          },
+          "type": "array"
+        },
+        "timeZoneOffset": {
+          "description": "Time zone offset in minutes (between client to UTC)",
+          "type": "integer"
+        }
+      },
+      "title": "KalturaReportExportParams",
+      "type": "object"
+    },
+    "KalturaReportExportResponse": {
+      "properties": {
+        "referenceJobId": {
+          "type": "integer"
+        },
+        "reportEmail": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaReportExportResponse",
+      "type": "object"
+    },
     "KalturaReportFilter": {
       "properties": {
         "dimension": {
@@ -50671,6 +52075,20 @@
           "description": "Filter by device",
           "type": "string"
         },
+        "entryCreatedAtGreaterThanOrEqual": {
+          "description": "Entry created at greater than or equal as Unix timestamp",
+          "type": "integer"
+        },
+        "entryCreatedAtLessThanOrEqual": {
+          "description": "Entry created at less than or equal as Unix timestamp",
+          "type": "integer"
+        },
+        "entryIdIn": {
+          "type": "string"
+        },
+        "entryOperator": {
+          "$ref": "#/definitions/KalturaESearchEntryOperator"
+        },
         "interval": {
           "description": "Enum Type: `KalturaReportInterval`\n\nAggregated results according to interval",
           "enum": [
@@ -50701,6 +52119,10 @@
         },
         "operatingSystemFamilyIn": {
           "description": "Filter by operating system family",
+          "type": "string"
+        },
+        "ownerIdsIn": {
+          "description": "Filter by entry owner",
           "type": "string"
         },
         "regionIn": {
@@ -50757,6 +52179,18 @@
         }
       },
       "title": "KalturaReportResponse",
+      "type": "object"
+    },
+    "KalturaReportResponseOptions": {
+      "properties": {
+        "delimiter": {
+          "type": "string"
+        },
+        "skipEmptyDates": {
+          "type": "boolean"
+        }
+      },
+      "title": "KalturaReportResponseOptions",
       "type": "object"
     },
     "KalturaReportTable": {
@@ -51328,6 +52762,9 @@
     "KalturaScheduleEvent": {
       "anyOf": [
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEvent"
+        },
+        {
           "$ref": "#/definitions/KalturaLiveStreamScheduleEvent"
         },
         {
@@ -51395,6 +52832,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaBlackoutScheduleEvent",
             "KalturaLiveStreamScheduleEvent",
             "KalturaRecordScheduleEvent"
           ],
@@ -51499,6 +52937,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -51531,6 +52972,7 @@
             "KalturaScheduleEventFilter",
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -51647,6 +53089,9 @@
           "$ref": "#/definitions/KalturaLiveStreamScheduleEventFilter"
         },
         {
+          "$ref": "#/definitions/KalturaBlackoutScheduleEventFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaRecordScheduleEventFilter"
         }
       ],
@@ -51656,6 +53101,7 @@
           "enum": [
             "KalturaEntryScheduleEventFilter",
             "KalturaLiveStreamScheduleEventFilter",
+            "KalturaBlackoutScheduleEventFilter",
             "KalturaRecordScheduleEventFilter"
           ],
           "type": "string"
@@ -52691,12 +54137,12 @@
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
             "dropFolder.DropFolderWatcher",
-            "0",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
+            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -52744,7 +54190,9 @@
             "45",
             "46",
             "47",
-            "48"
+            "48",
+            "49",
+            "50"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -52759,12 +54207,12 @@
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
             "DROP_FOLDER_WATCHER",
-            "CONVERT",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
+            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -52812,7 +54260,9 @@
             "SERVER_NODE_MONITOR",
             "USERS_CSV",
             "CLIP_CONCAT",
-            "COPY_CUE_POINTS"
+            "COPY_CUE_POINTS",
+            "EXPORT_CSV",
+            "REPORT_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         }
@@ -52915,12 +54365,12 @@
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
             "dropFolder.DropFolderWatcher",
-            "0",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
+            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -52968,7 +54418,9 @@
             "45",
             "46",
             "47",
-            "48"
+            "48",
+            "49",
+            "50"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -52983,12 +54435,12 @@
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
             "DROP_FOLDER_WATCHER",
-            "CONVERT",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
+            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -53036,7 +54488,9 @@
             "SERVER_NODE_MONITOR",
             "USERS_CSV",
             "CLIP_CONCAT",
-            "COPY_CUE_POINTS"
+            "COPY_CUE_POINTS",
+            "EXPORT_CSV",
+            "REPORT_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -57024,6 +58478,7 @@
             "3gp",
             "applehttp",
             "avi",
+            "bif",
             "bmp",
             "copy",
             "flv",
@@ -57056,6 +58511,7 @@
             "_3GP",
             "APPLEHTTP",
             "AVI",
+            "BIF",
             "BMP",
             "COPY",
             "FLV",
@@ -57086,6 +58542,10 @@
           "x-enumType": "KalturaContainerFormat"
         },
         "height": {
+          "type": "integer"
+        },
+        "interval": {
+          "description": "interval in seconds for creating thumbnail",
           "type": "integer"
         },
         "objectType": {
@@ -57148,6 +58608,7 @@
             "3gp",
             "applehttp",
             "avi",
+            "bif",
             "bmp",
             "copy",
             "flv",
@@ -57180,6 +58641,7 @@
             "_3GP",
             "APPLEHTTP",
             "AVI",
+            "BIF",
             "BMP",
             "COPY",
             "FLV",
@@ -59995,6 +61457,11 @@
       "type": "object"
     },
     "KalturaUser": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBaseUser"
+        }
+      ],
       "anyOf": [
         {
           "$ref": "#/definitions/KalturaUser"
@@ -60005,45 +61472,10 @@
       ],
       "discriminator": "objectType",
       "properties": {
-        "adminTags": {
-          "description": "Admin tags can be updated only by using an admin session",
-          "type": "string"
-        },
-        "allowedPartnerIds": {
-          "type": "string"
-        },
-        "allowedPartnerPackages": {
-          "type": "string"
-        },
-        "city": {
-          "type": "string"
-        },
-        "country": {
-          "type": "string"
-        },
-        "createdAt": {
-          "description": "`readOnly`\n\nCreation date as Unix timestamp (In seconds)",
-          "readOnly": true,
-          "type": "integer"
-        },
         "dateOfBirth": {
           "type": "integer"
         },
-        "deletedAt": {
-          "description": "`readOnly`",
-          "readOnly": true,
-          "type": "integer"
-        },
-        "description": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
         "firstName": {
-          "type": "string"
-        },
-        "fullName": {
           "type": "string"
         },
         "gender": {
@@ -60061,327 +61493,12 @@
           ],
           "x-enumType": "KalturaGender"
         },
-        "id": {
-          "type": "string"
-        },
-        "indexedPartnerDataInt": {
-          "type": "integer"
-        },
-        "indexedPartnerDataString": {
-          "type": "string"
-        },
         "isAccountOwner": {
           "description": "`insertOnly`",
           "type": "boolean"
         },
         "isAdmin": {
           "type": "boolean"
-        },
-        "language": {
-          "description": "Enum Type: `KalturaLanguageCode`",
-          "enum": [
-            "aa",
-            "ab",
-            "af",
-            "am",
-            "ar",
-            "as",
-            "ay",
-            "az",
-            "ba",
-            "be",
-            "bg",
-            "bh",
-            "bi",
-            "bn",
-            "bo",
-            "br",
-            "ca",
-            "co",
-            "cs",
-            "cy",
-            "da",
-            "de",
-            "dz",
-            "el",
-            "en",
-            "en_gb",
-            "en_us",
-            "eo",
-            "es",
-            "et",
-            "eu",
-            "fa",
-            "fi",
-            "fj",
-            "fo",
-            "fr",
-            "fy",
-            "ga",
-            "gd",
-            "gl",
-            "gn",
-            "gu",
-            "gv",
-            "ha",
-            "he",
-            "hi",
-            "hr",
-            "hu",
-            "hy",
-            "ia",
-            "id",
-            "ie",
-            "ik",
-            "in",
-            "is",
-            "it",
-            "iu",
-            "iw",
-            "ja",
-            "ji",
-            "jv",
-            "ka",
-            "kk",
-            "kl",
-            "km",
-            "kn",
-            "ko",
-            "ks",
-            "ku",
-            "ky",
-            "la",
-            "li",
-            "ln",
-            "lo",
-            "lt",
-            "lv",
-            "mg",
-            "mi",
-            "mk",
-            "ml",
-            "mn",
-            "mo",
-            "mr",
-            "ms",
-            "mt",
-            "multilingual",
-            "my",
-            "na",
-            "ne",
-            "nl",
-            "no",
-            "oc",
-            "om",
-            "or",
-            "pa",
-            "pl",
-            "ps",
-            "pt",
-            "qu",
-            "rm",
-            "rn",
-            "ro",
-            "ru",
-            "rw",
-            "sa",
-            "sd",
-            "sg",
-            "sh",
-            "si",
-            "sk",
-            "sl",
-            "sm",
-            "sn",
-            "so",
-            "sq",
-            "sr",
-            "ss",
-            "st",
-            "su",
-            "sv",
-            "sw",
-            "ta",
-            "te",
-            "tg",
-            "th",
-            "ti",
-            "tk",
-            "tl",
-            "tn",
-            "to",
-            "tr",
-            "ts",
-            "tt",
-            "tw",
-            "ug",
-            "uk",
-            "ur",
-            "uz",
-            "vi",
-            "vo",
-            "wo",
-            "xh",
-            "yi",
-            "yo",
-            "zh",
-            "zu"
-          ],
-          "type": "string",
-          "x-enumLabels": [
-            "AA",
-            "AB",
-            "AF",
-            "AM",
-            "AR",
-            "AS_",
-            "AY",
-            "AZ",
-            "BA",
-            "BE",
-            "BG",
-            "BH",
-            "BI",
-            "BN",
-            "BO",
-            "BR",
-            "CA",
-            "CO",
-            "CS",
-            "CY",
-            "DA",
-            "DE",
-            "DZ",
-            "EL",
-            "EN",
-            "EN_GB",
-            "EN_US",
-            "EO",
-            "ES",
-            "ET",
-            "EU",
-            "FA",
-            "FI",
-            "FJ",
-            "FO",
-            "FR",
-            "FY",
-            "GA",
-            "GD",
-            "GL",
-            "GN",
-            "GU",
-            "GV",
-            "HA",
-            "HE",
-            "HI",
-            "HR",
-            "HU",
-            "HY",
-            "IA",
-            "ID",
-            "IE",
-            "IK",
-            "IN",
-            "IS",
-            "IT",
-            "IU",
-            "IW",
-            "JA",
-            "JI",
-            "JV",
-            "KA",
-            "KK",
-            "KL",
-            "KM",
-            "KN",
-            "KO",
-            "KS",
-            "KU",
-            "KY",
-            "LA",
-            "LI",
-            "LN",
-            "LO",
-            "LT",
-            "LV",
-            "MG",
-            "MI",
-            "MK",
-            "ML",
-            "MN",
-            "MO",
-            "MR",
-            "MS",
-            "MT",
-            "MU",
-            "MY",
-            "NA",
-            "NE",
-            "NL",
-            "NO",
-            "OC",
-            "OM",
-            "OR_",
-            "PA",
-            "PL",
-            "PS",
-            "PT",
-            "QU",
-            "RM",
-            "RN",
-            "RO",
-            "RU",
-            "RW",
-            "SA",
-            "SD",
-            "SG",
-            "SH",
-            "SI",
-            "SK",
-            "SL",
-            "SM",
-            "SN",
-            "SO",
-            "SQ",
-            "SR",
-            "SS",
-            "ST",
-            "SU",
-            "SV",
-            "SW",
-            "TA",
-            "TE",
-            "TG",
-            "TH",
-            "TI",
-            "TK",
-            "TL",
-            "TN",
-            "TO",
-            "TR",
-            "TS",
-            "TT",
-            "TW",
-            "UG",
-            "UK",
-            "UR",
-            "UZ",
-            "VI",
-            "VO",
-            "WO",
-            "XH",
-            "YI",
-            "YO",
-            "ZH",
-            "ZU"
-          ],
-          "x-enumType": "KalturaLanguageCode"
-        },
-        "lastLoginTime": {
-          "description": "`readOnly`",
-          "readOnly": true,
-          "type": "integer"
         },
         "lastName": {
           "type": "string"
@@ -60396,15 +61513,6 @@
           ],
           "type": "string"
         },
-        "partnerData": {
-          "description": "Can be used to store various partner related data as a string",
-          "type": "string"
-        },
-        "partnerId": {
-          "description": "`readOnly`",
-          "readOnly": true,
-          "type": "integer"
-        },
         "password": {
           "description": "`insertOnly` `writeOnly`",
           "type": "string",
@@ -60416,43 +61524,6 @@
         "roleNames": {
           "description": "`readOnly`",
           "readOnly": true,
-          "type": "string"
-        },
-        "screenName": {
-          "type": "string"
-        },
-        "state": {
-          "type": "string"
-        },
-        "status": {
-          "description": "Enum Type: `KalturaUserStatus`",
-          "enum": [
-            0,
-            1,
-            2
-          ],
-          "type": "integer",
-          "x-enumLabels": [
-            "BLOCKED",
-            "ACTIVE",
-            "DELETED"
-          ],
-          "x-enumType": "KalturaUserStatus"
-        },
-        "statusUpdatedAt": {
-          "description": "`readOnly`",
-          "readOnly": true,
-          "type": "integer"
-        },
-        "storageSize": {
-          "description": "`readOnly`",
-          "readOnly": true,
-          "type": "integer"
-        },
-        "tags": {
-          "type": "string"
-        },
-        "thumbnailUrl": {
           "type": "string"
         },
         "type": {
@@ -60467,27 +61538,6 @@
             "GROUP"
           ],
           "x-enumType": "KalturaUserType"
-        },
-        "updatedAt": {
-          "description": "`readOnly`\n\nLast update date as Unix timestamp (In seconds)",
-          "readOnly": true,
-          "type": "integer"
-        },
-        "userMode": {
-          "description": "Enum Type: `KalturaUserMode`",
-          "enum": [
-            0,
-            1
-          ],
-          "type": "integer",
-          "x-enumLabels": [
-            "NONE",
-            "PROTECTED_USER"
-          ],
-          "x-enumType": "KalturaUserMode"
-        },
-        "zip": {
-          "type": "string"
         }
       },
       "title": "KalturaUser",
@@ -60553,6 +61603,9 @@
           "$ref": "#/definitions/KalturaUserFilter"
         },
         {
+          "$ref": "#/definitions/KalturaGroupFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaAdminUserFilter"
         }
       ],
@@ -60595,6 +61648,7 @@
         "objectType": {
           "enum": [
             "KalturaUserFilter",
+            "KalturaGroupFilter",
             "KalturaAdminUserFilter"
           ],
           "type": "string"
@@ -60939,6 +61993,9 @@
           ],
           "x-enumType": "KalturaUserEntryOrderBy"
         },
+        "partnerId": {
+          "type": "integer"
+        },
         "privacyContextEqual": {
           "type": "string"
         },
@@ -60992,6 +62049,9 @@
           "$ref": "#/definitions/KalturaUserFilter"
         },
         {
+          "$ref": "#/definitions/KalturaGroupFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaAdminUserFilter"
         }
       ],
@@ -61026,6 +62086,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaGroupFilter",
             "KalturaAdminUserFilter"
           ],
           "type": "string"
@@ -61371,7 +62432,7 @@
     "KalturaUsersCsvJobData": {
       "allOf": [
         {
-          "$ref": "#/definitions/KalturaJobData"
+          "$ref": "#/definitions/KalturaExportCsvJobData"
         }
       ],
       "properties": {
@@ -61387,18 +62448,6 @@
         "metadataProfileId": {
           "description": "The metadata profile we should look the xpath in",
           "type": "integer"
-        },
-        "outputPath": {
-          "description": "The file location",
-          "type": "string"
-        },
-        "userMail": {
-          "description": "The users email",
-          "type": "string"
-        },
-        "userName": {
-          "description": "The users name",
-          "type": "string"
         }
       },
       "title": "KalturaUsersCsvJobData",
@@ -62012,21 +63061,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -62035,21 +63089,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -62067,6 +63126,89 @@
       ],
       "properties": {},
       "title": "KalturaVendorAlignmentCatalogItemFilter",
+      "type": "object"
+    },
+    "KalturaVendorAudioDescriptionCatalogItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaVendorCatalogItem"
+        }
+      ],
+      "properties": {
+        "flavorParamsId": {
+          "type": "integer"
+        },
+        "sourceLanguage": {
+          "description": "Enum Type: `KalturaCatalogItemLanguage`",
+          "enum": [
+            "Arabic",
+            "Cantonese",
+            "Chinese",
+            "Danish",
+            "Dutch",
+            "English",
+            "English (American)",
+            "English (British)",
+            "Finnish",
+            "French",
+            "German",
+            "Hebrew",
+            "Hindi",
+            "Icelandic",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Mandarin Chinese",
+            "Norwegian",
+            "Portuguese",
+            "Russian",
+            "Spanish",
+            "Swedish",
+            "Thai",
+            "Turkish"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "AR",
+            "YUE",
+            "ZH",
+            "DA",
+            "NL",
+            "EN",
+            "EN_US",
+            "EN_GB",
+            "FI",
+            "FR",
+            "DE",
+            "HE",
+            "HI",
+            "IS",
+            "IT",
+            "JA",
+            "KO",
+            "CMN",
+            "NO",
+            "PT",
+            "RU",
+            "ES",
+            "SV",
+            "TH",
+            "TR"
+          ],
+          "x-enumType": "KalturaCatalogItemLanguage"
+        }
+      },
+      "title": "KalturaVendorAudioDescriptionCatalogItem",
+      "type": "object"
+    },
+    "KalturaVendorAudioDescriptionCatalogItemFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemBaseFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaVendorAudioDescriptionCatalogItemFilter",
       "type": "object"
     },
     "KalturaVendorCaptionsCatalogItem": {
@@ -62128,21 +63270,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -62151,21 +63298,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -62186,6 +63338,9 @@
           "$ref": "#/definitions/KalturaVendorAlignmentCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorAudioDescriptionCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
@@ -62198,6 +63353,7 @@
         "objectType": {
           "enum": [
             "KalturaVendorAlignmentCatalogItemFilter",
+            "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
@@ -62225,21 +63381,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -62248,21 +63409,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -62328,6 +63494,9 @@
           "$ref": "#/definitions/KalturaVendorAlignmentCatalogItem"
         },
         {
+          "$ref": "#/definitions/KalturaVendorAudioDescriptionCatalogItem"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItem"
         },
         {
@@ -62353,6 +63522,7 @@
         "objectType": {
           "enum": [
             "KalturaVendorAlignmentCatalogItem",
+            "KalturaVendorAudioDescriptionCatalogItem",
             "KalturaVendorCaptionsCatalogItem",
             "KalturaVendorTranslationCatalogItem"
           ],
@@ -62366,14 +63536,16 @@
           "enum": [
             1,
             2,
-            3
+            3,
+            4
           ],
           "readOnly": true,
           "type": "integer",
           "x-enumLabels": [
             "CAPTIONS",
             "TRANSLATION",
-            "ALIGNMENT"
+            "ALIGNMENT",
+            "AUDIO_DESCRIPTION"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -62422,6 +63594,7 @@
             43200,
             86400,
             172800,
+            345600,
             864000
           ],
           "type": "integer",
@@ -62436,6 +63609,7 @@
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
+            "FOUR_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -62467,6 +63641,9 @@
           "$ref": "#/definitions/KalturaVendorAlignmentCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorAudioDescriptionCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
@@ -62495,6 +63672,7 @@
           "enum": [
             "KalturaVendorCatalogItemFilter",
             "KalturaVendorAlignmentCatalogItemFilter",
+            "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
@@ -62505,13 +63683,15 @@
           "enum": [
             1,
             2,
-            3
+            3,
+            4
           ],
           "type": "integer",
           "x-enumLabels": [
             "CAPTIONS",
             "TRANSLATION",
-            "ALIGNMENT"
+            "ALIGNMENT",
+            "AUDIO_DESCRIPTION"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -62565,6 +63745,7 @@
             43200,
             86400,
             172800,
+            345600,
             864000
           ],
           "type": "integer",
@@ -62579,6 +63760,7 @@
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
+            "FOUR_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -62617,6 +63799,9 @@
           "$ref": "#/definitions/KalturaVendorAlignmentCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorAudioDescriptionCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
@@ -62628,6 +63813,7 @@
         "objectType": {
           "enum": [
             "KalturaVendorAlignmentCatalogItemFilter",
+            "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
@@ -62775,21 +63961,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -62798,21 +63989,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -62848,21 +64044,26 @@
             "Arabic",
             "Cantonese",
             "Chinese",
+            "Danish",
             "Dutch",
             "English",
             "English (American)",
             "English (British)",
+            "Finnish",
             "French",
             "German",
             "Hebrew",
             "Hindi",
+            "Icelandic",
             "Italian",
             "Japanese",
             "Korean",
             "Mandarin Chinese",
+            "Norwegian",
             "Portuguese",
             "Russian",
             "Spanish",
+            "Swedish",
             "Thai",
             "Turkish"
           ],
@@ -62871,21 +64072,26 @@
             "AR",
             "YUE",
             "ZH",
+            "DA",
             "NL",
             "EN",
             "EN_US",
             "EN_GB",
+            "FI",
             "FR",
             "DE",
             "HE",
             "HI",
+            "IS",
             "IT",
             "JA",
             "KO",
             "CMN",
+            "NO",
             "PT",
             "RU",
             "ES",
+            "SV",
             "TH",
             "TR"
           ],
@@ -64788,12 +65994,12 @@
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
             "dropFolder.DropFolderWatcher",
-            "0",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
+            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -64841,7 +66047,9 @@
             "45",
             "46",
             "47",
-            "48"
+            "48",
+            "49",
+            "50"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -64856,12 +66064,12 @@
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
             "DROP_FOLDER_WATCHER",
-            "CONVERT",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
+            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -64909,7 +66117,9 @@
             "SERVER_NODE_MONITOR",
             "USERS_CSV",
             "CLIP_CONCAT",
-            "COPY_CUE_POINTS"
+            "COPY_CUE_POINTS",
+            "EXPORT_CSV",
+            "REPORT_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -65865,7 +67075,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "14.11.0"
+    "version": "14.18.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -65972,8 +67182,8 @@
         "KalturaDeleteJobData",
         "KalturaDistributionJobData",
         "KalturaDropFolderContentProcessorJobData",
-        "KalturaEntryVendorTaskCsvJobData",
         "KalturaEventNotificationDispatchJobData",
+        "KalturaExportCsvJobData",
         "KalturaFlattenJobData",
         "KalturaImportJobData",
         "KalturaImportMetadataJobData",
@@ -65988,11 +67198,11 @@
         "KalturaParseCaptionAssetJobData",
         "KalturaParseMultiLanguageCaptionAssetJobData",
         "KalturaProvisionJobData",
+        "KalturaReportExportJobData",
         "KalturaScheduledTaskJobData",
         "KalturaStorageJobData",
         "KalturaSyncCategoryPrivacyContextJobData",
         "KalturaTransformMetadataJobData",
-        "KalturaUsersCsvJobData",
         "KalturaVirusScanJobData",
         "KalturaWidevineRepositorySyncJobData",
         "KalturaBulkUploadCsvJobData",
@@ -66014,6 +67224,9 @@
         "KalturaBusinessProcessNotificationDispatchJobData",
         "KalturaEmailNotificationDispatchJobData",
         "KalturaHttpNotificationDispatchJobData",
+        "KalturaEntryVendorTaskCsvJobData",
+        "KalturaMediaEsearchExportToCsvJobData",
+        "KalturaUsersCsvJobData",
         "KalturaSshImportJobData",
         "KalturaDropFolderImportJobData",
         "KalturaAkamaiProvisionJobData",
@@ -66069,14 +67282,16 @@
       "description": "Enum Type: `KalturaScheduleEventType`\n\nThe type of the events that ill be created by this upload",
       "enum": [
         1,
-        2
+        2,
+        3
       ],
       "in": "query",
       "name": "bulkUploadData[eventsType]",
       "type": "integer",
       "x-enumLabels": [
         "RECORD",
-        "LIVE_STREAM"
+        "LIVE_STREAM",
+        "BLACKOUT"
       ],
       "x-enumType": "KalturaScheduleEventType",
       "x-group": "bulkUploadData"
@@ -66125,8 +67340,8 @@
         "KalturaDeleteJobData",
         "KalturaDistributionJobData",
         "KalturaDropFolderContentProcessorJobData",
-        "KalturaEntryVendorTaskCsvJobData",
         "KalturaEventNotificationDispatchJobData",
+        "KalturaExportCsvJobData",
         "KalturaFlattenJobData",
         "KalturaImportJobData",
         "KalturaImportMetadataJobData",
@@ -66141,11 +67356,11 @@
         "KalturaParseCaptionAssetJobData",
         "KalturaParseMultiLanguageCaptionAssetJobData",
         "KalturaProvisionJobData",
+        "KalturaReportExportJobData",
         "KalturaScheduledTaskJobData",
         "KalturaStorageJobData",
         "KalturaSyncCategoryPrivacyContextJobData",
         "KalturaTransformMetadataJobData",
-        "KalturaUsersCsvJobData",
         "KalturaVirusScanJobData",
         "KalturaWidevineRepositorySyncJobData",
         "KalturaBulkUploadCsvJobData",
@@ -66167,6 +67382,9 @@
         "KalturaBusinessProcessNotificationDispatchJobData",
         "KalturaEmailNotificationDispatchJobData",
         "KalturaHttpNotificationDispatchJobData",
+        "KalturaEntryVendorTaskCsvJobData",
+        "KalturaMediaEsearchExportToCsvJobData",
+        "KalturaUsersCsvJobData",
         "KalturaSshImportJobData",
         "KalturaDropFolderImportJobData",
         "KalturaAkamaiProvisionJobData",
@@ -66242,8 +67460,8 @@
         "KalturaDeleteJobData",
         "KalturaDistributionJobData",
         "KalturaDropFolderContentProcessorJobData",
-        "KalturaEntryVendorTaskCsvJobData",
         "KalturaEventNotificationDispatchJobData",
+        "KalturaExportCsvJobData",
         "KalturaFlattenJobData",
         "KalturaImportJobData",
         "KalturaImportMetadataJobData",
@@ -66258,11 +67476,11 @@
         "KalturaParseCaptionAssetJobData",
         "KalturaParseMultiLanguageCaptionAssetJobData",
         "KalturaProvisionJobData",
+        "KalturaReportExportJobData",
         "KalturaScheduledTaskJobData",
         "KalturaStorageJobData",
         "KalturaSyncCategoryPrivacyContextJobData",
         "KalturaTransformMetadataJobData",
-        "KalturaUsersCsvJobData",
         "KalturaVirusScanJobData",
         "KalturaWidevineRepositorySyncJobData",
         "KalturaBulkUploadCsvJobData",
@@ -66284,6 +67502,9 @@
         "KalturaBusinessProcessNotificationDispatchJobData",
         "KalturaEmailNotificationDispatchJobData",
         "KalturaHttpNotificationDispatchJobData",
+        "KalturaEntryVendorTaskCsvJobData",
+        "KalturaMediaEsearchExportToCsvJobData",
+        "KalturaUsersCsvJobData",
         "KalturaSshImportJobData",
         "KalturaDropFolderImportJobData",
         "KalturaAkamaiProvisionJobData",
@@ -67417,6 +68638,9 @@
                 },
                 "id": {
                   "type": "string"
+                },
+                "parentId": {
+                  "type": "string"
                 }
               },
               "required": [
@@ -67431,7 +68655,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/KalturaCuePoint"
+              "$ref": "#/definitions/KalturaAnnotation"
             }
           },
           "x-Errors": {
@@ -67444,7 +68668,8 @@
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
           "id",
-          "entryId"
+          "entryId",
+          "parentId"
         ]
       }
     },
@@ -70945,23 +72170,27 @@
                 },
                 "bulkUploadObjectType": {
                   "enum": [
+                    "bulkUploadFilter.JOB",
                     "scheduleBulkUpload.SCHEDULE_EVENT",
                     "scheduleBulkUpload.SCHEDULE_RESOURCE",
                     "1",
                     "2",
                     "3",
                     "4",
-                    "5"
+                    "5",
+                    "6"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "JOB",
                     "SCHEDULE_EVENT",
                     "SCHEDULE_RESOURCE",
                     "ENTRY",
                     "CATEGORY",
                     "USER",
                     "CATEGORY_USER",
-                    "CATEGORY_ENTRY"
+                    "CATEGORY_ENTRY",
+                    "USER_ENTRY"
                   ],
                   "x-enumType": "KalturaBulkUploadObjectType"
                 }
@@ -71035,12 +72264,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -71088,7 +72317,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -71103,12 +72334,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -71156,7 +72387,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -71291,12 +72524,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -71344,7 +72577,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -71359,12 +72594,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -71412,7 +72647,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -71500,12 +72737,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -71553,7 +72790,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -71568,12 +72807,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -71621,7 +72860,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -71892,12 +73133,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -71945,7 +73186,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -71960,12 +73203,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -72013,7 +73256,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -84871,6 +86116,62 @@
         ]
       }
     },
+    "/service/elasticsearch_esearch/action/searchGroup": {
+      "post": {
+        "operationId": "eSearch.searchGroup",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "pager": {
+                  "$ref": "#/definitions/KalturaPager"
+                },
+                "searchParams": {
+                  "$ref": "#/definitions/KalturaESearchGroupParams"
+                }
+              },
+              "required": [
+                "searchParams"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaESearchGroupResponse"
+            }
+          }
+        },
+        "tags": [
+          "eSearch"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "searchParams",
+          "pager"
+        ]
+      }
+    },
     "/service/elasticsearch_esearch/action/searchUser": {
       "post": {
         "operationId": "eSearch.searchUser",
@@ -86280,6 +87581,59 @@
         "x-kaltura-parameters": [
           "id",
           "status"
+        ]
+      }
+    },
+    "/service/exportcsv/action/serveCsv": {
+      "post": {
+        "description": "Will serve a requested CSV",
+        "operationId": "exportcsv.serveCsv",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "exportcsv"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "id"
         ]
       }
     },
@@ -88635,6 +89989,350 @@
         ]
       }
     },
+    "/service/group_group/action/add": {
+      "post": {
+        "description": "Adds a new group (user of type group).",
+        "operationId": "group.add",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "group": {
+                  "$ref": "#/definitions/KalturaGroup"
+                }
+              },
+              "required": [
+                "group"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaGroup"
+            }
+          },
+          "x-Errors": {
+            "description": "* `DUPLICATE_USER_BY_ID`: User with id [@UID@] already exists in system\n* `PROPERTY_VALIDATION_CANNOT_BE_NULL`: The property \"@PROP_NAME@\" cannot be null\n* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `UNKNOWN_PARTNER_ID`: Unknown partner_id [@PID@]\n* `PASSWORD_STRUCTURE_INVALID`: The password you entered has an invalid structure.\nPasswords must obey the following rules :\n@RULES@\n* `DUPLICATE_USER_BY_LOGIN_ID`: Loginable user with email [@EMAIL@] already exists in system"
+          }
+        },
+        "tags": [
+          "group"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "group"
+        ]
+      }
+    },
+    "/service/group_group/action/clone": {
+      "post": {
+        "description": "clone the group (groupId), and set group id with the neeGroupName.",
+        "operationId": "group.clone",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "newGroupName": {
+                  "type": "string"
+                },
+                "originalGroupId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "originalGroupId",
+                "newGroupName"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaGroup"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `INVALID_GROUP_ID`: Invalid group id - @ID@"
+          }
+        },
+        "tags": [
+          "group"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "originalGroupId",
+          "newGroupName"
+        ]
+      }
+    },
+    "/service/group_group/action/delete": {
+      "post": {
+        "description": "Delete group by ID",
+        "operationId": "group.delete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "groupId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "groupId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaGroup"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_USER_ID`: Invalid user id"
+          }
+        },
+        "tags": [
+          "group"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "groupId"
+        ]
+      }
+    },
+    "/service/group_group/action/get": {
+      "post": {
+        "description": "Retrieves a group object for a specified group ID.",
+        "operationId": "group.get",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "groupId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "groupId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaGroup"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_GROUP_ID`: Invalid group id - @ID@"
+          }
+        },
+        "tags": [
+          "group"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "groupId"
+        ]
+      }
+    },
+    "/service/group_group/action/list": {
+      "post": {
+        "description": "Lists group  objects that are associated with an account.\n\nBlocked users are listed unless you use a filter to exclude them.\n\nDeleted users are not listed unless you use a filter to include them.",
+        "operationId": "group.list",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "filter": {
+                  "$ref": "#/definitions/KalturaGroupFilter"
+                },
+                "pager": {
+                  "$ref": "#/definitions/KalturaFilterPager"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaGroupListResponse"
+            }
+          }
+        },
+        "tags": [
+          "group"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "filter",
+          "pager"
+        ]
+      }
+    },
+    "/service/group_group/action/update": {
+      "post": {
+        "description": "Update group by ID",
+        "operationId": "group.update",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "group": {
+                  "$ref": "#/definitions/KalturaGroup"
+                },
+                "groupId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "groupId",
+                "group"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaGroup"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_USER_ID`: Invalid user id"
+          }
+        },
+        "tags": [
+          "group"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "groupId",
+          "group"
+        ]
+      }
+    },
     "/service/groupuser/action/add": {
       "post": {
         "description": "Add new GroupUser",
@@ -88862,6 +90560,64 @@
           "groupIds",
           "removeFromExistingGroups",
           "createNewGroups"
+        ]
+      }
+    },
+    "/service/groupuser/action/update": {
+      "post": {
+        "description": "update GroupUser",
+        "operationId": "groupUser.update",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "groupUser": {
+                  "$ref": "#/definitions/KalturaGroupUser"
+                },
+                "groupUserId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "groupUserId",
+                "groupUser"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaGroupUser"
+            }
+          }
+        },
+        "tags": [
+          "groupUser"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "groupUserId",
+          "groupUser"
         ]
       }
     },
@@ -89415,12 +91171,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -89468,7 +91224,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -89483,12 +91241,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -89536,7 +91294,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -90556,12 +92316,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -90609,7 +92369,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -90624,12 +92386,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -90677,7 +92439,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -91756,12 +93520,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -91809,7 +93573,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -91824,12 +93590,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -91877,7 +93643,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -92488,12 +94256,12 @@
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
                     "dropFolder.DropFolderWatcher",
-                    "0",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
+                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -92541,7 +94309,9 @@
                     "45",
                     "46",
                     "47",
-                    "48"
+                    "48",
+                    "49",
+                    "50"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -92556,12 +94326,12 @@
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
                     "DROP_FOLDER_WATCHER",
-                    "CONVERT",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
+                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -92609,7 +94379,9 @@
                     "SERVER_NODE_MONITOR",
                     "USERS_CSV",
                     "CLIP_CONCAT",
-                    "COPY_CUE_POINTS"
+                    "COPY_CUE_POINTS",
+                    "EXPORT_CSV",
+                    "REPORT_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -94099,7 +95871,7 @@
     "/service/livestream/action/createPeriodicSyncPoints": {
       "post": {
         "deprecated": true,
-        "description": "Creates perioding metadata sync-point events on a live stream",
+        "description": "Creates periodic metadata sync-point events on a live stream",
         "operationId": "liveStream.createPeriodicSyncPoints",
         "parameters": [
           {
@@ -96310,6 +98082,62 @@
         ]
       }
     },
+    "/service/media/action/exportToCsv": {
+      "post": {
+        "description": "Creates a batch job that sends an email with a link to download a CSV containing a list of entries",
+        "operationId": "media.exportToCsv",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "data": {
+                  "$ref": "#/definitions/KalturaMediaEsearchExportToCsvJobData"
+                }
+              },
+              "required": [
+                "data"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "x-Errors": {
+            "description": "* `USER_EMAIL_NOT_FOUND`: Email address for user [@USER_ID@] was not found"
+          }
+        },
+        "tags": [
+          "media"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "data"
+        ]
+      }
+    },
     "/service/media/action/flag": {
       "post": {
         "description": "Flag inappropriate media entry for moderation",
@@ -97348,7 +99176,7 @@
     },
     "/service/metadata_metadata/action/addFromBulk": {
       "post": {
-        "description": "Allows you to add a metadata xml data from remote URL.\n\nEnables different permissions than addFromUrl action.",
+        "description": "Allows you to add a metadata XML data from remote URL.\n\nEnables different permissions than addFromUrl action.",
         "operationId": "metadata.addFromBulk",
         "parameters": [
           {
@@ -97531,7 +99359,7 @@
     },
     "/service/metadata_metadata/action/addFromUrl": {
       "post": {
-        "description": "Allows you to add a metadata xml data from remote URL",
+        "description": "Allows you to add a metadata XML data from remote URL",
         "operationId": "metadata.addFromUrl",
         "parameters": [
           {
@@ -98897,7 +100725,7 @@
     },
     "/service/metadata_metadataprofile/action/updateTransformationFromFile": {
       "post": {
-        "description": "Update an existing metadata object xslt file",
+        "description": "Update an existing metadata object XSLT file",
         "operationId": "metadataProfile.updateTransformationFromFile",
         "parameters": [
           {
@@ -101078,9 +102906,6 @@
             "schema": {
               "$ref": "#/definitions/KalturaPlaylist"
             }
-          },
-          "x-Errors": {
-            "description": "* `INVALID_ENTRY_ID`: Invalid entry id [\"@ID@\"]\n* `INVALID_PLAYLIST_TYPE`: Invalid playlist type"
           }
         },
         "tags": [
@@ -102120,7 +103945,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaEntryVendorTask"
+            }
           },
           "x-Errors": {
             "description": "* `ENTRY_VENDOR_TASK_NOT_FOUND`: Entry vendor task item with id provided not found [@ID@]\n* `CANNOT_APPROVE_NOT_MODERATED_TASK`: Cannot approve task which is not pending moderation\n* `EXCEEDED_MAX_CREDIT_ALLOWED`: Exceeded max credit allowed, task could not be added for entry [@ENTRY_ID@] and catalog item [@CATALOG_ITEM_ID@]"
@@ -102185,6 +104013,62 @@
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
           "filter"
+        ]
+      }
+    },
+    "/service/reach_entryvendortask/action/extendAccessKey": {
+      "post": {
+        "description": "Extend access key in case the existing one has expired.",
+        "operationId": "entryVendorTask.extendAccessKey",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaEntryVendorTask"
+            }
+          },
+          "x-Errors": {
+            "description": "* `ENTRY_VENDOR_TASK_NOT_FOUND`: Entry vendor task item with id provided not found [@ID@]\n* `CANNOT_EXTEND_ACCESS_KEY`: Extending accessKey for non processing task is not allowed"
+          }
+        },
+        "tags": [
+          "entryVendorTask"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "id"
         ]
       }
     },
@@ -102393,7 +104277,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaEntryVendorTask"
+            }
           },
           "x-Errors": {
             "description": "* `ENTRY_VENDOR_TASK_NOT_FOUND`: Entry vendor task item with id provided not found [@ID@]\n* `CANNOT_REJECT_NOT_MODERATED_TASK`: Cannot reject task which is not pending moderation"
@@ -102411,6 +104298,7 @@
     },
     "/service/reach_entryvendortask/action/serveCsv": {
       "post": {
+        "deprecated": true,
         "description": "Will serve a requested csv",
         "operationId": "entryVendorTask.serveCsv",
         "parameters": [
@@ -102504,7 +104392,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaEntryVendorTask"
+            }
           },
           "x-Errors": {
             "description": "* `ENTRY_VENDOR_TASK_NOT_FOUND`: Entry vendor task item with id provided not found [@ID@]"
@@ -103503,6 +105394,58 @@
         ]
       }
     },
+    "/service/report/action/exportToCsv": {
+      "post": {
+        "operationId": "report.exportToCsv",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "params": {
+                  "$ref": "#/definitions/KalturaReportExportParams"
+                }
+              },
+              "required": [
+                "params"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaReportExportResponse"
+            }
+          }
+        },
+        "tags": [
+          "report"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "params"
+        ]
+      }
+    },
     "/service/report/action/getBaseTotal": {
       "post": {
         "description": "report getBaseTotal action allows to get the total base for storage reports",
@@ -103574,6 +105517,14 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
+                    "42",
+                    "43",
+                    "44",
+                    "45",
+                    "46",
                     "201"
                   ],
                   "type": "string",
@@ -103616,9 +105567,20 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
+                    "PERCENTILES",
+                    "CONTENT_REPORT_REASONS",
+                    "PLAYER_RELATED_INTERACTIONS",
+                    "PLAYBACK_RATE",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -103647,7 +105609,8 @@
         "x-kaltura-parameters": [
           "reportType",
           "reportInputFilter",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -103841,6 +105804,14 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
+                    "42",
+                    "43",
+                    "44",
+                    "45",
+                    "46",
                     "201"
                   ],
                   "type": "string",
@@ -103883,9 +105854,20 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
+                    "PERCENTILES",
+                    "CONTENT_REPORT_REASONS",
+                    "PLAYER_RELATED_INTERACTIONS",
+                    "PLAYBACK_RATE",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -103915,7 +105897,8 @@
           "reportType",
           "reportInputFilter",
           "dimension",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -103996,6 +105979,14 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
+                    "42",
+                    "43",
+                    "44",
+                    "45",
+                    "46",
                     "201"
                   ],
                   "type": "string",
@@ -104038,9 +106029,20 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
+                    "PERCENTILES",
+                    "CONTENT_REPORT_REASONS",
+                    "PLAYER_RELATED_INTERACTIONS",
+                    "PLAYBACK_RATE",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -104069,7 +106071,8 @@
           "reportInputFilter",
           "pager",
           "order",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -104144,6 +106147,14 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
+                    "42",
+                    "43",
+                    "44",
+                    "45",
+                    "46",
                     "201"
                   ],
                   "type": "string",
@@ -104186,9 +106197,20 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
+                    "PERCENTILES",
+                    "CONTENT_REPORT_REASONS",
+                    "PLAYER_RELATED_INTERACTIONS",
+                    "PLAYBACK_RATE",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -104214,7 +106236,8 @@
         "x-kaltura-parameters": [
           "reportType",
           "reportInputFilter",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -104307,6 +106330,14 @@
                     "36",
                     "37",
                     "38",
+                    "39",
+                    "40",
+                    "41",
+                    "42",
+                    "43",
+                    "44",
+                    "45",
+                    "46",
                     "201"
                   ],
                   "type": "string",
@@ -104349,9 +106380,20 @@
                     "MAP_OVERLAY_COUNTRY",
                     "MAP_OVERLAY_REGION",
                     "TOP_CONTENT_CREATOR",
+                    "TOP_CONTENT_CONTRIBUTORS",
+                    "APP_DOMAIN_UNIQUE_ACTIVE_USERS",
+                    "TOP_SOURCES",
+                    "VPAAS_USAGE_MULTI",
+                    "PERCENTILES",
+                    "CONTENT_REPORT_REASONS",
+                    "PLAYER_RELATED_INTERACTIONS",
+                    "PLAYBACK_RATE",
                     "PARTNER_USAGE"
                   ],
                   "x-enumType": "KalturaReportType"
+                },
+                "responseOptions": {
+                  "$ref": "#/definitions/KalturaReportResponseOptions"
                 }
               },
               "required": [
@@ -104386,7 +106428,8 @@
           "dimension",
           "pager",
           "order",
-          "objectIds"
+          "objectIds",
+          "responseOptions"
         ]
       }
     },
@@ -105228,6 +107271,21 @@
                 "scheduleEvent": {
                   "$ref": "#/definitions/KalturaScheduleEvent"
                 },
+                "scheduleEventConflictType": {
+                  "default": 1,
+                  "enum": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "type": "integer",
+                  "x-enumLabels": [
+                    "RESOURCE_CONFLICT",
+                    "BLACKOUT_CONFLICT",
+                    "BOTH"
+                  ],
+                  "x-enumType": "KalturaScheduleEventConflictType"
+                },
                 "scheduleEventIdToIgnore": {
                   "type": "string"
                 }
@@ -105255,7 +107313,8 @@
         "x-kaltura-parameters": [
           "resourceIds",
           "scheduleEvent",
-          "scheduleEventIdToIgnore"
+          "scheduleEventIdToIgnore",
+          "scheduleEventConflictType"
         ]
       }
     },
@@ -105574,6 +107633,10 @@
                 "filter": {
                   "$ref": "#/definitions/KalturaScheduleEventResourceFilter"
                 },
+                "filterBlackoutConflicts": {
+                  "default": true,
+                  "type": "boolean"
+                },
                 "pager": {
                   "$ref": "#/definitions/KalturaFilterPager"
                 }
@@ -105596,7 +107659,8 @@
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
           "filter",
-          "pager"
+          "pager",
+          "filterBlackoutConflicts"
         ]
       }
     },
@@ -107886,7 +109950,7 @@
     },
     "/service/shortlink_shortlink/action/update": {
       "post": {
-        "description": "Update exisitng short link",
+        "description": "Update existing short link",
         "operationId": "shortLink.update",
         "parameters": [
           {
@@ -112598,6 +114662,7 @@
     },
     "/service/user/action/serveCsv": {
       "post": {
+        "deprecated": true,
         "description": "Will serve a requested CSV",
         "operationId": "user.serveCsv",
         "parameters": [
@@ -112933,6 +114998,9 @@
             "schema": {
               "type": "integer"
             }
+          },
+          "x-Errors": {
+            "description": "* `FAILED_TO_CREATE_BULK_DELETE`: Failed to create bulk delete"
           }
         },
         "tags": [
@@ -113195,7 +115263,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaUserEntry"
+            }
           }
         },
         "tags": [
@@ -114302,7 +116373,7 @@
     },
     "/service/virusscan_virusscanprofile/action/update": {
       "post": {
-        "description": "Update exisitng virus scan profile, it is possible to update the virus scan profile id too",
+        "description": "Update existing virus scan profile, it is possible to update the virus scan profile id too",
         "operationId": "virusScanProfile.update",
         "parameters": [
           {
@@ -114871,7 +116942,7 @@
       "x-plugin": "attUverseDistribution"
     },
     {
-      "description": "Audit Trail service",
+      "description": "The Audit Trail service allows you to keep track of changes made to various Kaltura objects. \n This service is disabled by default.",
       "name": "auditTrail",
       "x-plugin": "audit"
     },
@@ -115052,6 +117123,10 @@
       "x-plugin": "eventNotification"
     },
     {
+      "description": "Export CSV service is used to manage CSV exports of objects",
+      "name": "exportcsv"
+    },
+    {
       "description": "External media service lets you upload and manage embed codes and external playable content",
       "name": "externalMedia",
       "x-plugin": "externalMedia"
@@ -115090,6 +117165,10 @@
       "description": "Generic Distribution Provider Actions service",
       "name": "genericDistributionProviderAction",
       "x-plugin": "contentDistribution"
+    },
+    {
+      "name": "group",
+      "x-plugin": "group"
     },
     {
       "description": "Add & Manage GroupUser",
@@ -115271,7 +117350,7 @@
       "name": "stats"
     },
     {
-      "description": "Storage Profiles service",
+      "description": "The Storage Profile service allows you to export your Kaltura content to external storage volumes.\n This service is disabled by default, please contact your account manager if you wish to enable it for your partner.",
       "name": "storageProfile"
     },
     {
@@ -118256,12 +120335,6 @@
         },
         {
           "enum": [
-            "0"
-          ],
-          "title": "CONVERT"
-        },
-        {
-          "enum": [
             "eventNotification.EventNotificationHandler"
           ],
           "title": "EVENT_NOTIFICATION_HANDLER"
@@ -118289,6 +120362,12 @@
             "scheduledTask.ScheduledTask"
           ],
           "title": "SCHEDULED_TASK"
+        },
+        {
+          "enum": [
+            "0"
+          ],
+          "title": "CONVERT"
         },
         {
           "enum": [
@@ -118577,6 +120656,18 @@
             "48"
           ],
           "title": "COPY_CUE_POINTS"
+        },
+        {
+          "enum": [
+            "49"
+          ],
+          "title": "EXPORT_CSV"
+        },
+        {
+          "enum": [
+            "50"
+          ],
+          "title": "REPORT_EXPORT"
         }
       ],
       "title": "KalturaBatchJobType"
@@ -118835,6 +120926,12 @@
       "oneOf": [
         {
           "enum": [
+            "bulkUploadFilter.JOB"
+          ],
+          "title": "JOB"
+        },
+        {
+          "enum": [
             "scheduleBulkUpload.SCHEDULE_EVENT"
           ],
           "title": "SCHEDULE_EVENT"
@@ -118874,6 +120971,12 @@
             "5"
           ],
           "title": "CATEGORY_ENTRY"
+        },
+        {
+          "enum": [
+            "6"
+          ],
+          "title": "USER_ENTRY"
         }
       ],
       "title": "KalturaBulkUploadObjectType"
@@ -119380,6 +121483,12 @@
         },
         {
           "enum": [
+            "Danish"
+          ],
+          "title": "DA"
+        },
+        {
+          "enum": [
             "Dutch"
           ],
           "title": "NL"
@@ -119401,6 +121510,12 @@
             "English (British)"
           ],
           "title": "EN_GB"
+        },
+        {
+          "enum": [
+            "Finnish"
+          ],
+          "title": "FI"
         },
         {
           "enum": [
@@ -119428,6 +121543,12 @@
         },
         {
           "enum": [
+            "Icelandic"
+          ],
+          "title": "IS"
+        },
+        {
+          "enum": [
             "Italian"
           ],
           "title": "IT"
@@ -119452,6 +121573,12 @@
         },
         {
           "enum": [
+            "Norwegian"
+          ],
+          "title": "NO"
+        },
+        {
+          "enum": [
             "Portuguese"
           ],
           "title": "PT"
@@ -119467,6 +121594,12 @@
             "Spanish"
           ],
           "title": "ES"
+        },
+        {
+          "enum": [
+            "Swedish"
+          ],
+          "title": "SV"
         },
         {
           "enum": [
@@ -120168,9 +122301,32 @@
             "16"
           ],
           "title": "ASSET_TYPE"
+        },
+        {
+          "enum": [
+            "17"
+          ],
+          "title": "BOOLEAN"
         }
       ],
       "title": "KalturaConditionType"
+    },
+    "KalturaConfMapsSourceLocation": {
+      "oneOf": [
+        {
+          "enum": [
+            "FileSystem"
+          ],
+          "title": "FS"
+        },
+        {
+          "enum": [
+            "database"
+          ],
+          "title": "DB"
+        }
+      ],
+      "title": "KalturaConfMapsSourceLocation"
     },
     "KalturaConferenceRoomStatus": {
       "oneOf": [
@@ -120284,6 +122440,12 @@
             "avi"
           ],
           "title": "AVI"
+        },
+        {
+          "enum": [
+            "bif"
+          ],
+          "title": "BIF"
         },
         {
           "enum": [
@@ -124127,6 +126289,77 @@
       "oneOf": [],
       "title": "KalturaDynamicEnum"
     },
+    "KalturaESearchBaseUserFieldName": {
+      "oneOf": [
+        {
+          "enum": [
+            "created_at"
+          ],
+          "title": "CREATED_AT"
+        },
+        {
+          "enum": [
+            "email"
+          ],
+          "title": "EMAIL"
+        },
+        {
+          "enum": [
+            "first_name"
+          ],
+          "title": "FIRST_NAME"
+        },
+        {
+          "enum": [
+            "group_ids"
+          ],
+          "title": "GROUP_IDS"
+        },
+        {
+          "enum": [
+            "last_name"
+          ],
+          "title": "LAST_NAME"
+        },
+        {
+          "enum": [
+            "permission_names"
+          ],
+          "title": "PERMISSION_NAMES"
+        },
+        {
+          "enum": [
+            "role_ids"
+          ],
+          "title": "ROLE_IDS"
+        },
+        {
+          "enum": [
+            "screen_name"
+          ],
+          "title": "SCREEN_NAME"
+        },
+        {
+          "enum": [
+            "tags"
+          ],
+          "title": "TAGS"
+        },
+        {
+          "enum": [
+            "updated_at"
+          ],
+          "title": "UPDATED_AT"
+        },
+        {
+          "enum": [
+            "user_id"
+          ],
+          "title": "USER_ID"
+        }
+      ],
+      "title": "KalturaESearchBaseUserFieldName"
+    },
     "KalturaESearchCaptionFieldName": {
       "oneOf": [
         {
@@ -124551,6 +126784,12 @@
         },
         {
           "enum": [
+            "entitled_kusers_view"
+          ],
+          "title": "ENTITLED_USER_VIEW"
+        },
+        {
+          "enum": [
             "entry_type"
           ],
           "title": "ENTRY_TYPE"
@@ -124724,6 +126963,24 @@
         },
         {
           "enum": [
+            "plays_last_1_day"
+          ],
+          "title": "PLAYS_LAST_1_DAY"
+        },
+        {
+          "enum": [
+            "plays_last_30_days"
+          ],
+          "title": "PLAYS_LAST_30_DAYS"
+        },
+        {
+          "enum": [
+            "plays_last_7_days"
+          ],
+          "title": "PLAYS_LAST_7_DAYS"
+        },
+        {
+          "enum": [
             "start_date"
           ],
           "title": "START_DATE"
@@ -124742,12 +126999,136 @@
         },
         {
           "enum": [
+            "views_last_1_day"
+          ],
+          "title": "VIEWS_LAST_1_DAY"
+        },
+        {
+          "enum": [
+            "views_last_30_days"
+          ],
+          "title": "VIEWS_LAST_30_DAYS"
+        },
+        {
+          "enum": [
+            "views_last_7_days"
+          ],
+          "title": "VIEWS_LAST_7_DAYS"
+        },
+        {
+          "enum": [
             "votes"
           ],
           "title": "VOTES"
         }
       ],
       "title": "KalturaESearchEntryOrderByFieldName"
+    },
+    "KalturaESearchGroupFieldName": {
+      "oneOf": [
+        {
+          "enum": [
+            "created_at"
+          ],
+          "title": "CREATED_AT"
+        },
+        {
+          "enum": [
+            "email"
+          ],
+          "title": "EMAIL"
+        },
+        {
+          "enum": [
+            "first_name"
+          ],
+          "title": "FIRST_NAME"
+        },
+        {
+          "enum": [
+            "group_ids"
+          ],
+          "title": "GROUP_IDS"
+        },
+        {
+          "enum": [
+            "last_name"
+          ],
+          "title": "LAST_NAME"
+        },
+        {
+          "enum": [
+            "permission_names"
+          ],
+          "title": "PERMISSION_NAMES"
+        },
+        {
+          "enum": [
+            "role_ids"
+          ],
+          "title": "ROLE_IDS"
+        },
+        {
+          "enum": [
+            "screen_name"
+          ],
+          "title": "SCREEN_NAME"
+        },
+        {
+          "enum": [
+            "tags"
+          ],
+          "title": "TAGS"
+        },
+        {
+          "enum": [
+            "updated_at"
+          ],
+          "title": "UPDATED_AT"
+        },
+        {
+          "enum": [
+            "user_id"
+          ],
+          "title": "USER_ID"
+        }
+      ],
+      "title": "KalturaESearchGroupFieldName"
+    },
+    "KalturaESearchGroupOrderByFieldName": {
+      "oneOf": [
+        {
+          "enum": [
+            "created_at"
+          ],
+          "title": "CREATED_AT"
+        },
+        {
+          "enum": [
+            "members_count"
+          ],
+          "title": "MEMBERS_COUNT"
+        },
+        {
+          "enum": [
+            "puser_id"
+          ],
+          "title": "USER_ID"
+        },
+        {
+          "enum": [
+            "screen_name"
+          ],
+          "title": "SCREEN_NAME"
+        },
+        {
+          "enum": [
+            "updated_at"
+          ],
+          "title": "UPDATED_AT"
+        }
+      ],
+      "title": "KalturaESearchGroupOrderByFieldName"
     },
     "KalturaESearchItemDataType": {
       "oneOf": [
@@ -125134,6 +127515,18 @@
             "created_at"
           ],
           "title": "CREATED_AT"
+        },
+        {
+          "enum": [
+            "puser_id"
+          ],
+          "title": "USER_ID"
+        },
+        {
+          "enum": [
+            "screen_name"
+          ],
+          "title": "SCREEN_NAME"
         },
         {
           "enum": [
@@ -126211,6 +128604,12 @@
             7
           ],
           "title": "ABORTED"
+        },
+        {
+          "enum": [
+            8
+          ],
+          "title": "PENDING_ENTRY_READY"
         }
       ],
       "title": "KalturaEntryVendorTaskStatus"
@@ -126742,6 +129141,12 @@
       "oneOf": [
         {
           "enum": [
+            "booleanNotification.Boolean"
+          ],
+          "title": "BOOLEAN"
+        },
+        {
+          "enum": [
             "businessProcessNotification.BusinessProcessAbort"
           ],
           "title": "BPM_ABORT"
@@ -126795,6 +129200,29 @@
         }
       ],
       "title": "KalturaEventType"
+    },
+    "KalturaExportObjectType": {
+      "oneOf": [
+        {
+          "enum": [
+            "elasticSearch.esearchMedia"
+          ],
+          "title": "ESEARCH_MEDIA"
+        },
+        {
+          "enum": [
+            "reach.entryVendorTask"
+          ],
+          "title": "ENTRY_VENDOR_TASK"
+        },
+        {
+          "enum": [
+            "1"
+          ],
+          "title": "USER"
+        }
+      ],
+      "title": "KalturaExportObjectType"
     },
     "KalturaExportProtocol": {
       "oneOf": [
@@ -128979,6 +131407,23 @@
         }
       ],
       "title": "KalturaGroupUserOrderBy"
+    },
+    "KalturaGroupUserRole": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "MEMBER"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "MANAGER"
+        }
+      ],
+      "title": "KalturaGroupUserRole"
     },
     "KalturaGroupUserStatus": {
       "oneOf": [
@@ -136957,6 +139402,30 @@
             "133"
           ],
           "title": "MAIL_TYPE_USERS_CSV"
+        },
+        {
+          "enum": [
+            "135"
+          ],
+          "title": "MAIL_TYPE_OBJECTS_CSV"
+        },
+        {
+          "enum": [
+            "136"
+          ],
+          "title": "MAIL_TYPE_REPORT_EXPORT_SUCCESS"
+        },
+        {
+          "enum": [
+            "137"
+          ],
+          "title": "MAIL_TYPE_REPORT_EXPORT_FAILURE"
+        },
+        {
+          "enum": [
+            "138"
+          ],
+          "title": "MAIL_TYPE_REPORT_EXPORT_ABORT"
         }
       ],
       "title": "KalturaMailType"
@@ -139511,6 +141980,18 @@
         },
         {
           "enum": [
+            "CONF_MAPS_EDIT_PLUGIN_ADMIN"
+          ],
+          "title": "CONF_MAPS_EDIT_PLUGIN_ADMIN"
+        },
+        {
+          "enum": [
+            "CONF_MAPS_VIEW_PLUGIN_ADMIN"
+          ],
+          "title": "CONF_MAPS_VIEW_PLUGIN_ADMIN"
+        },
+        {
+          "enum": [
             "CONTENT_INGEST_BULK_UPLOAD"
           ],
           "title": "CONTENT_INGEST_BULK_UPLOAD"
@@ -139916,6 +142397,12 @@
             "FEATURE_HTML5_V2_PLAYER_PREVIEW"
           ],
           "title": "FEATURE_HTML5_V2_PLAYER_PREVIEW"
+        },
+        {
+          "enum": [
+            "FEATURE_HTTP_NOTIFICATIONS_DEFAULT_PROTOCOL_HTTPS"
+          ],
+          "title": "FEATURE_HTTP_NOTIFICATIONS_DEFAULT_PROTOCOL_HTTPS"
         },
         {
           "enum": [
@@ -142114,6 +144601,12 @@
             7
           ],
           "title": "GO_TO"
+        },
+        {
+          "enum": [
+            8
+          ],
+          "title": "OPEN_QUESTION"
         }
       ],
       "title": "KalturaQuestionType"
@@ -142660,6 +145153,29 @@
       ],
       "title": "KalturaRemoteDropFolderOrderBy"
     },
+    "KalturaReportExportItemType": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "TABLE"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "TOTAL"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "GRAPH"
+        }
+      ],
+      "title": "KalturaReportExportItemType"
+    },
     "KalturaReportInterval": {
       "oneOf": [
         {
@@ -142926,6 +145442,54 @@
         },
         {
           "enum": [
+            "39"
+          ],
+          "title": "TOP_CONTENT_CONTRIBUTORS"
+        },
+        {
+          "enum": [
+            "40"
+          ],
+          "title": "APP_DOMAIN_UNIQUE_ACTIVE_USERS"
+        },
+        {
+          "enum": [
+            "41"
+          ],
+          "title": "TOP_SOURCES"
+        },
+        {
+          "enum": [
+            "42"
+          ],
+          "title": "VPAAS_USAGE_MULTI"
+        },
+        {
+          "enum": [
+            "43"
+          ],
+          "title": "PERCENTILES"
+        },
+        {
+          "enum": [
+            "44"
+          ],
+          "title": "CONTENT_REPORT_REASONS"
+        },
+        {
+          "enum": [
+            "45"
+          ],
+          "title": "PLAYER_RELATED_INTERACTIONS"
+        },
+        {
+          "enum": [
+            "46"
+          ],
+          "title": "PLAYBACK_RATE"
+        },
+        {
+          "enum": [
             "201"
           ],
           "title": "PARTNER_USAGE"
@@ -143136,6 +145700,29 @@
         }
       ],
       "title": "KalturaScheduleEventClassificationType"
+    },
+    "KalturaScheduleEventConflictType": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "RESOURCE_CONFLICT"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "BLACKOUT_CONFLICT"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "BOTH"
+        }
+      ],
+      "title": "KalturaScheduleEventConflictType"
     },
     "KalturaScheduleEventOrderBy": {
       "oneOf": [
@@ -143396,6 +145983,12 @@
             2
           ],
           "title": "LIVE_STREAM"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "BLACKOUT"
         }
       ],
       "title": "KalturaScheduleEventType"
@@ -143656,6 +146249,41 @@
         }
       ],
       "title": "KalturaSchemaType"
+    },
+    "KalturaScoreType": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "HIGHEST"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "LOWEST"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "LATEST"
+        },
+        {
+          "enum": [
+            4
+          ],
+          "title": "FIRST"
+        },
+        {
+          "enum": [
+            5
+          ],
+          "title": "AVERAGE"
+        }
+      ],
+      "title": "KalturaScoreType"
     },
     "KalturaScpDropFolderOrderBy": {
       "oneOf": [
@@ -146983,6 +149611,12 @@
             3
           ],
           "title": "ALIGNMENT"
+        },
+        {
+          "enum": [
+            4
+          ],
+          "title": "AUDIO_DESCRIPTION"
         }
       ],
       "title": "KalturaVendorServiceFeature"
@@ -147051,6 +149685,12 @@
         },
         {
           "enum": [
+            345600
+          ],
+          "title": "FOUR_DAYS"
+        },
+        {
+          "enum": [
             864000
           ],
           "title": "TEN_DAYS"
@@ -147074,6 +149714,23 @@
         }
       ],
       "title": "KalturaVendorServiceType"
+    },
+    "KalturaVendorTaskProcessingRegion": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "US"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "EU"
+        }
+      ],
+      "title": "KalturaVendorTaskProcessingRegion"
     },
     "KalturaVendorTranslationCatalogItemOrderBy": {
       "oneOf": [
@@ -149519,6 +152176,11 @@
       "name": "VOLUME_MAP_NOT_CONFIGURED"
     },
     {
+      "code": "RESOURCE_ENTRY_ID_MISSING",
+      "message": "Entry Id on resource object is missing",
+      "name": "RESOURCE_ENTRY_ID_MISSING"
+    },
+    {
       "code": "NOTIFICATION_FOR_ENTRY_NOT_FOUND",
       "message": "Notification for entry id \"@ENTRY@\" not found",
       "name": "NOTIFICATION_FOR_ENTRY_NOT_FOUND"
@@ -149752,6 +152414,11 @@
       "code": "THUMB_ASSET_IS_NOT_OF_TYPE_TIMED_THUMB",
       "message": "Thumbnail asset \"@ASSET@\" is not of type timed thumb",
       "name": "THUMB_ASSET_IS_NOT_OF_TYPE_TIMED_THUMB"
+    },
+    {
+      "code": "THUMB_ASSET_CONTENT_NOT_SECURE",
+      "message": "Thumbnail asset content contains potential security risks",
+      "name": "THUMB_ASSET_CONTENT_NOT_SECURE"
     },
     {
       "code": "CATEGORY_NOT_FOUND",
@@ -150009,6 +152676,11 @@
       "name": "INVALID_OBJECT_ID"
     },
     {
+      "code": "FAILED_TO_CREATE_BULK_DELETE",
+      "message": "Failed to create bulk delete",
+      "name": "FAILED_TO_CREATE_BULK_DELETE"
+    },
+    {
       "code": "USER_NOT_FOUND",
       "message": "User was not found",
       "name": "USER_NOT_FOUND"
@@ -150017,6 +152689,11 @@
       "code": "GROUP_NOT_FOUND",
       "message": "Group was not found",
       "name": "GROUP_NOT_FOUND"
+    },
+    {
+      "code": "GROUP_USER_NOT_FOUND",
+      "message": "Group user was not found",
+      "name": "GROUP_USER_NOT_FOUND"
     },
     {
       "code": "GROUP_USER_ALREADY_EXISTS",
@@ -150597,6 +153274,41 @@
       "code": "CANNOT_CREATE_CLIP_FLAVOR_JOB",
       "message": "cannot create clip, flavor convert batch job returned as null",
       "name": "CANNOT_CREATE_CLIP_FLAVOR_JOB"
+    },
+    {
+      "code": "MISSING_MAP_NAME",
+      "message": "Map name must be supplied",
+      "name": "MISSING_MAP_NAME"
+    },
+    {
+      "code": "CANNOT_PARSE_CONTENT",
+      "message": "Error - [@ERR@] Cannot parse content - \r\n [@CONTENT@]",
+      "name": "CANNOT_PARSE_CONTENT"
+    },
+    {
+      "code": "CONF_CONTORL_ERROR",
+      "message": "Conf control error - [@ERR@]",
+      "name": "CONF_CONTORL_ERROR"
+    },
+    {
+      "code": "MAP_DOES_NOT_EXIST",
+      "message": "Map does not exist",
+      "name": "MAP_DOES_NOT_EXIST"
+    },
+    {
+      "code": "MAP_ALREADY_EXIST",
+      "message": "Map already exist for this map name {@NAME@} and host {@HOST@}",
+      "name": "MAP_ALREADY_EXIST"
+    },
+    {
+      "code": "MAP_CANNOT_BE_CREATED_ON_FILE_SYSTEM",
+      "message": "Map cannnot be created on file system",
+      "name": "MAP_CANNOT_BE_CREATED_ON_FILE_SYSTEM"
+    },
+    {
+      "code": "HOST_NAME_CONTAINS_ASTRIX",
+      "message": "Host name contains *, use # instead {@HOST_NAME@}",
+      "name": "HOST_NAME_CONTAINS_ASTRIX"
     },
     {
       "code": "INTERNAL_DATABASE_ERROR",
@@ -151339,6 +154051,11 @@
       "name": "FILE_CREATION_FAILED"
     },
     {
+      "code": "DRUID_QUERY_TIMED_OUT",
+      "message": "Query timed out",
+      "name": "DRUID_QUERY_TIMED_OUT"
+    },
+    {
       "code": "INTERNAL_SERVER_ERROR",
       "message": "Internal server error @ERR_TEXT@",
       "name": "INTERNAL_SERVER_ERROR"
@@ -151582,6 +154299,11 @@
       "code": "ATTACHMENT_ASSET_DOWNLOAD_FAILED",
       "message": "Attachment asset download from URL \"@URL@\" failed",
       "name": "ATTACHMENT_ASSET_DOWNLOAD_FAILED"
+    },
+    {
+      "code": "ATTACHMENT_ASSET_FORMAT_MISMATCH",
+      "message": "The format type of the provided attachment asset id \"@ASSET_ID@\" is not of the expected type \"@EXPECTED_TYPE@\"",
+      "name": "ATTACHMENT_ASSET_FORMAT_MISMATCH"
     },
     {
       "code": "AUDIT_TRAIL_DISABLED",
@@ -151949,6 +154671,11 @@
       "name": "QUIZ_USER_ENTRY_ALREADY_EXISTS"
     },
     {
+      "code": "NO_MORE_RETAKES_ALLOWED",
+      "message": "No Retakes left for the given user-id and entry-id [@ENTRY_ID@]. cannot retake quiz",
+      "name": "NO_MORE_RETAKES_ALLOWED"
+    },
+    {
       "code": "INVALID_SCHEDULE_END_BEFORE_START",
       "message": "End time [@END@] must be after start time [@START@]",
       "name": "INVALID_SCHEDULE_END_BEFORE_START"
@@ -152012,6 +154739,11 @@
       "code": "CATALOG_ITEM_NOT_ENABLED_FOR_ACCOUNT",
       "message": "Catalog item with id provided [@ID@], is not enabled on account level",
       "name": "CATALOG_ITEM_NOT_ENABLED_FOR_ACCOUNT"
+    },
+    {
+      "code": "CATALOG_ITEM_ONLY_HUMAN_ALLOWED",
+      "message": "Only human service type is allowed for given vendor catalog item",
+      "name": "CATALOG_ITEM_ONLY_HUMAN_ALLOWED"
     },
     {
       "code": "REACH_PROFILE_NOT_FOUND",
@@ -152094,9 +154826,29 @@
       "name": "CANNOT_UPDATE_STATUS_OF_TASK_WHICH_IS_IN_FINAL_STATE"
     },
     {
+      "code": "CANNOT_EXTEND_ACCESS_KEY",
+      "message": "Extending accessKey for non processing task is not allowed",
+      "name": "CANNOT_EXTEND_ACCESS_KEY"
+    },
+    {
+      "code": "FAILED_EXTEND_ACCESS_KEY",
+      "message": "Extending accessKey operation failed",
+      "name": "FAILED_EXTEND_ACCESS_KEY"
+    },
+    {
       "code": "OVERAGE_CREDIT_CANNOT_BE_NEGATIVE",
       "message": "Overage credit value cannot be negative",
       "name": "OVERAGE_CREDIT_CANNOT_BE_NEGATIVE"
+    },
+    {
+      "code": "INVALID_GROUP_ID",
+      "message": "Invalid group id - @ID@",
+      "name": "INVALID_GROUP_ID"
+    },
+    {
+      "code": "DUPLICATE_GROUP_BY_ID",
+      "message": "Group with id [@ID@] already exists in system",
+      "name": "DUPLICATE_GROUP_BY_ID"
     }
   ]
 }
