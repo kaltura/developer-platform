@@ -5,7 +5,6 @@
 -->
 
 # Group Management
-
 Note: In order for groups to be displayed in KMS, a user role needs to be assigned to them.
 
 ## Create a user
@@ -44,7 +43,6 @@ User ids should not contain spaces.
   ]
 }
 ```
-
 
 ## Create a group
 Groups are created as a user with type GROUP [KalturaUserType::GROUP].
