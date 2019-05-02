@@ -36,9 +36,7 @@ javascript:
   - 'assets/js/kc-setup.js'
   - 'assets/js/lity.min.js'
   - 'assets/js/misc.js'
-  - 'assets/js/opentip-jquery.js'
   - 'assets/js/sidebar.js'
-  - 'assets/js/webflow.js'
 
 codegen:
   languages:

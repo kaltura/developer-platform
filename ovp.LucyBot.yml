@@ -10,7 +10,7 @@ workflowDirectory: workflows/ovp
 sitemap:
   hostname: https://developer.kaltura.com
 
-discussionURL: '/discussion/{{slug}}?title={{title}}'
+#discussionURL: '/discussion/{{slug}}?title={{title}}'
 
 routes:
   default: /404-not-found
@@ -318,6 +318,10 @@ operationNavigation:
       - tag: "tag"
   - title: "Search, Discover and Personalize"
     children:
+      - title: "Searching with Kaltura eSearch API"
+        markdownURL: /assets/documentation/Search--Discover-and-Personalize/search.html
+        path: "/Search--Discover-and-Personalize/esearch.html"
+        discussionURL: null        
       - title: "How to perform AND, OR, NOT and Exact Match searches in API"
         markdownURL: /assets/documentation/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html
         path: "/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html"
@@ -504,6 +508,7 @@ operationNavigation:
     isMiscellaneous: true
     hide: true
     searchable: true
+    autoselect: false
 
   - title: "Contribute"
     children:
@@ -596,7 +601,7 @@ iosNavigation:
     path: "/live-streaming-ios"
 
   - title: "Background Play for iOS"
-    markdownURL: /assets/documentation/player-portal/ios/backgruond-play-ios.html
+    markdownURL: /assets/documentation/player-portal/ios/background-play-ios.html
     path: "/background-play-ios"
 
   - title: "Download-to-go for iOS"
