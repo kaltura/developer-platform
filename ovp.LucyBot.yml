@@ -65,6 +65,10 @@ routes:
     documentation: documentation
     navigation: iosNavigation
 
+  /player/web: 
+    documentation: documentation
+    navigation: webNavigation
+
   /new-workflow:
     ui: workflow
     for: kaltura
@@ -570,6 +574,71 @@ workflowNavigation:
   - title: Contact Us
     icon: assets/img/icons/contact.png
     isContact: true
+
+webNavigation: 
+  - title: "Getting Started with the Web Player"
+    markdownURL: /assets/documentation/player-portal/web/getting-started-web.html
+    path: "/getting-started-web"
+
+  - title: "Embed Types for Web Player"
+    markdownURL: /assets/documentation/player-portal/web/embed-types-web.html
+    path: "/embed-types-web"
+
+  - title: "Player Setup for Web"
+    markdownURL: /assets/documentation/player-portal/web/player-setup-web.html
+    path: "/player-setup-web"
+
+  - title: "Player Configuration for Web"
+    markdownURL: /assets/documentation/player-portal/web/configuration-web.html
+    path: "/configuration-web"
+
+  - title: "Managing Playlists for Web"
+    markdownURL: /assets/documentation/player-portal/web/playlist-web.html
+    path: "/playlist-web"
+
+  - title: "Player CSS for Web"
+    markdownURL: /assets/documentation/player-portal/web/player-css-web.html
+    path: "/player-css-web"
+
+  - title: "User Preferences for Web Player"
+    markdownURL: /assets/documentation/player-portal/web/user-preferences-web.html
+    path: "/user-preferences-web"
+
+  - title: "Keyboard Shortcuts for Web Player"
+    markdownURL: /assets/documentation/player-portal/web/keyboard-shortcuts-web.html
+    path: "/keyboard-shortcuts-web"
+
+  - title: "Player Events for Web"
+    markdownURL: /assets/documentation/player-portal/web/player-events-web.html
+    path: "/player-events-web"
+
+  - title: "Managing Tracks for Web Player"
+    markdownURL: /assets/documentation/player-portal/web/managing-tracks-web.html
+    path: "/managing-tracks-web"
+
+  - title: "Player States for Web"
+    markdownURL: /assets/documentation/player-portal/web/player-states-web.html
+    path: "/player-states-web"
+
+  - title: "Web Player API"
+    markdownURL: /assets/documentation/player-portal/web/api-web.html
+    path: "/api-web" 
+
+  - title: "Controlling Player Errors for Web"
+    markdownURL: /assets/documentation/player-portal/web/errors-web.html
+    path: "/errors-web"
+
+  - title: "Debugging for Web Player"
+    markdownURL: /assets/documentation/player-portal/web/debugging-web.html
+    path: "/debugging-web"
+
+  - title: "Building Plugins for the Web Player"
+    markdownURL: /assets/documentation/player-portal/web/building-plugins-web.html
+    path: "/building-plugins-web"
+
+  - title: "Coding Guidelines for Web Player"
+    markdownURL: /assets/documentation/player-portal/web/coding-guidelines-web.html
+    path: "/coding-guidelines-web"
 
 iosNavigation:
   - title: "Getting Started with the Player SDK for iOS"
