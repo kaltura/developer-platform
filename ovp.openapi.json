@@ -780,6 +780,7 @@
             "+createdAt",
             "+duration",
             "+endTime",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
@@ -787,6 +788,7 @@
             "-createdAt",
             "-duration",
             "-endTime",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -797,6 +799,7 @@
             "CREATED_AT_ASC",
             "DURATION_ASC",
             "END_TIME_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
@@ -804,6 +807,7 @@
             "CREATED_AT_DESC",
             "DURATION_DESC",
             "END_TIME_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -1330,6 +1334,7 @@
             "+createdAt",
             "+duration",
             "+endTime",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
@@ -1337,6 +1342,7 @@
             "-createdAt",
             "-duration",
             "-endTime",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -1347,6 +1353,7 @@
             "CREATED_AT_ASC",
             "DURATION_ASC",
             "END_TIME_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
@@ -1354,6 +1361,7 @@
             "CREATED_AT_DESC",
             "DURATION_DESC",
             "END_TIME_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -1537,11 +1545,13 @@
         "orderBy": {
           "enum": [
             "+createdAt",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
             "+updatedAt",
             "-createdAt",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -1550,11 +1560,13 @@
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
             "UPDATED_AT_ASC",
             "CREATED_AT_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -6601,6 +6613,9 @@
         },
         "schedulerId": {
           "type": "integer"
+        },
+        "schedulerName": {
+          "type": "string"
         },
         "sessionId": {
           "type": "string"
@@ -14997,6 +15012,7 @@
             "+createdAt",
             "+duration",
             "+endTime",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
@@ -15004,6 +15020,7 @@
             "-createdAt",
             "-duration",
             "-endTime",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -15014,6 +15031,7 @@
             "CREATED_AT_ASC",
             "DURATION_ASC",
             "END_TIME_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
@@ -15021,6 +15039,7 @@
             "CREATED_AT_DESC",
             "DURATION_DESC",
             "END_TIME_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -18605,6 +18624,11 @@
           "readOnly": true,
           "type": "string"
         },
+        "intId": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
         "isMomentary": {
           "description": "`readOnly`",
           "readOnly": true,
@@ -18917,11 +18941,13 @@
         "orderBy": {
           "enum": [
             "+createdAt",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
             "+updatedAt",
             "-createdAt",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -18930,11 +18956,13 @@
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
             "UPDATED_AT_ASC",
             "CREATED_AT_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -25982,6 +26010,9 @@
       ],
       "anyOf": [
         {
+          "$ref": "#/definitions/KalturaESearchGroupUserItem"
+        },
+        {
           "$ref": "#/definitions/KalturaESearchUserItem"
         },
         {
@@ -26015,6 +26046,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaESearchGroupUserItem",
             "KalturaESearchUserItem",
             "KalturaESearchUserMetadataItem"
           ],
@@ -26108,6 +26140,9 @@
           "$ref": "#/definitions/KalturaESearchUserOperator"
         },
         {
+          "$ref": "#/definitions/KalturaESearchGroupUserItem"
+        },
+        {
           "$ref": "#/definitions/KalturaESearchUserItem"
         },
         {
@@ -26137,6 +26172,7 @@
             "KalturaESearchGroupItem",
             "KalturaESearchGroupMetadataItem",
             "KalturaESearchUserOperator",
+            "KalturaESearchGroupUserItem",
             "KalturaESearchUserItem",
             "KalturaESearchUserMetadataItem"
           ],
@@ -27260,6 +27296,41 @@
       "title": "KalturaESearchGroupResult",
       "type": "object"
     },
+    "KalturaESearchGroupUserItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchAbstractUserItem"
+        }
+      ],
+      "properties": {
+        "creationMode": {
+          "description": "Enum Type: `KalturaGroupUserCreationMode`",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "MANUAL",
+            "AUTOMATIC"
+          ],
+          "x-enumType": "KalturaGroupUserCreationMode"
+        },
+        "fieldName": {
+          "description": "Enum Type: `KalturaEsearchGroupUserFieldName`",
+          "enum": [
+            "group_ids"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "GROUP_IDS"
+          ],
+          "x-enumType": "KalturaEsearchGroupUserFieldName"
+        }
+      },
+      "title": "KalturaESearchGroupUserItem",
+      "type": "object"
+    },
     "KalturaESearchHighlight": {
       "properties": {
         "fieldName": {
@@ -27764,6 +27835,9 @@
           "$ref": "#/definitions/KalturaESearchUserOperator"
         },
         {
+          "$ref": "#/definitions/KalturaESearchGroupUserItem"
+        },
+        {
           "$ref": "#/definitions/KalturaESearchUserItem"
         },
         {
@@ -27776,6 +27850,7 @@
         "objectType": {
           "enum": [
             "KalturaESearchUserOperator",
+            "KalturaESearchGroupUserItem",
             "KalturaESearchUserItem",
             "KalturaESearchUserMetadataItem"
           ],
@@ -30324,11 +30399,13 @@
         "orderBy": {
           "enum": [
             "+createdAt",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
             "+updatedAt",
             "-createdAt",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -30337,11 +30414,13 @@
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
             "UPDATED_AT_ASC",
             "CREATED_AT_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -49902,11 +49981,13 @@
         "orderBy": {
           "enum": [
             "+createdAt",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
             "+updatedAt",
             "-createdAt",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -49915,11 +49996,13 @@
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
             "UPDATED_AT_ASC",
             "CREATED_AT_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -58388,11 +58471,13 @@
         "orderBy": {
           "enum": [
             "+createdAt",
+            "+intId",
             "+partnerSortValue",
             "+startTime",
             "+triggeredAt",
             "+updatedAt",
             "-createdAt",
+            "-intId",
             "-partnerSortValue",
             "-startTime",
             "-triggeredAt",
@@ -58401,11 +58486,13 @@
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT_ASC",
+            "INT_ID_ASC",
             "PARTNER_SORT_VALUE_ASC",
             "START_TIME_ASC",
             "TRIGGERED_AT_ASC",
             "UPDATED_AT_ASC",
             "CREATED_AT_DESC",
+            "INT_ID_DESC",
             "PARTNER_SORT_VALUE_DESC",
             "START_TIME_DESC",
             "TRIGGERED_AT_DESC",
@@ -67075,7 +67162,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "14.18.0"
+    "version": "14.20.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -90070,6 +90157,9 @@
             "name": "body",
             "schema": {
               "properties": {
+                "newGroupId": {
+                  "type": "string"
+                },
                 "newGroupName": {
                   "type": "string"
                 },
@@ -90079,7 +90169,7 @@
               },
               "required": [
                 "originalGroupId",
-                "newGroupName"
+                "newGroupId"
               ],
               "type": "object"
             }
@@ -90102,6 +90192,7 @@
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
           "originalGroupId",
+          "newGroupId",
           "newGroupName"
         ]
       }
@@ -117683,6 +117774,12 @@
         },
         {
           "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
+        },
+        {
+          "enum": [
             "+partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_ASC"
@@ -117722,6 +117819,12 @@
             "-endTime"
           ],
           "title": "END_TIME_DESC"
+        },
+        {
+          "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
         },
         {
           "enum": [
@@ -117922,6 +118025,12 @@
         },
         {
           "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
+        },
+        {
+          "enum": [
             "+partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_ASC"
@@ -117964,6 +118073,12 @@
         },
         {
           "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
+        },
+        {
+          "enum": [
             "-partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_DESC"
@@ -117999,6 +118114,12 @@
         },
         {
           "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
+        },
+        {
+          "enum": [
             "+partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_ASC"
@@ -118026,6 +118147,12 @@
             "-createdAt"
           ],
           "title": "CREATED_AT_DESC"
+        },
+        {
+          "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
         },
         {
           "enum": [
@@ -122045,6 +122172,12 @@
         },
         {
           "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
+        },
+        {
+          "enum": [
             "+partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_ASC"
@@ -122084,6 +122217,12 @@
             "-endTime"
           ],
           "title": "END_TIME_DESC"
+        },
+        {
+          "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
         },
         {
           "enum": [
@@ -123203,6 +123342,12 @@
         },
         {
           "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
+        },
+        {
+          "enum": [
             "+partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_ASC"
@@ -123230,6 +123375,12 @@
             "-createdAt"
           ],
           "title": "CREATED_AT_DESC"
+        },
+        {
+          "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
         },
         {
           "enum": [
@@ -128614,6 +128765,17 @@
       ],
       "title": "KalturaEntryVendorTaskStatus"
     },
+    "KalturaEsearchGroupUserFieldName": {
+      "oneOf": [
+        {
+          "enum": [
+            "group_ids"
+          ],
+          "title": "GROUP_IDS"
+        }
+      ],
+      "title": "KalturaEsearchGroupUserFieldName"
+    },
     "KalturaEventCuePointOrderBy": {
       "oneOf": [
         {
@@ -128621,6 +128783,12 @@
             "+createdAt"
           ],
           "title": "CREATED_AT_ASC"
+        },
+        {
+          "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
         },
         {
           "enum": [
@@ -128651,6 +128819,12 @@
             "-createdAt"
           ],
           "title": "CREATED_AT_DESC"
+        },
+        {
+          "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
         },
         {
           "enum": [
@@ -142466,6 +142640,12 @@
         },
         {
           "enum": [
+            "FEATURE_LIMIT_ALLOWED_ACTIONS"
+          ],
+          "title": "FEATURE_LIMIT_ALLOWED_ACTIONS"
+        },
+        {
+          "enum": [
             "FEATURE_LIVE_CHANNEL"
           ],
           "title": "FEATURE_LIVE_CHANNEL"
@@ -144503,6 +144683,12 @@
         },
         {
           "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
+        },
+        {
+          "enum": [
             "+partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_ASC"
@@ -144530,6 +144716,12 @@
             "-createdAt"
           ],
           "title": "CREATED_AT_DESC"
+        },
+        {
+          "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
         },
         {
           "enum": [
@@ -148111,6 +148303,12 @@
         },
         {
           "enum": [
+            "+intId"
+          ],
+          "title": "INT_ID_ASC"
+        },
+        {
+          "enum": [
             "+partnerSortValue"
           ],
           "title": "PARTNER_SORT_VALUE_ASC"
@@ -148138,6 +148336,12 @@
             "-createdAt"
           ],
           "title": "CREATED_AT_DESC"
+        },
+        {
+          "enum": [
+            "-intId"
+          ],
+          "title": "INT_ID_DESC"
         },
         {
           "enum": [
@@ -152416,9 +152620,9 @@
       "name": "THUMB_ASSET_IS_NOT_OF_TYPE_TIMED_THUMB"
     },
     {
-      "code": "THUMB_ASSET_CONTENT_NOT_SECURE",
-      "message": "Thumbnail asset content contains potential security risks",
-      "name": "THUMB_ASSET_CONTENT_NOT_SECURE"
+      "code": "IMAGE_CONTENT_NOT_SECURE",
+      "message": "Image content contains potential security risks",
+      "name": "IMAGE_CONTENT_NOT_SECURE"
     },
     {
       "code": "CATEGORY_NOT_FOUND",
