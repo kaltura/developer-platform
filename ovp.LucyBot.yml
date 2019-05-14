@@ -640,10 +640,6 @@ webNavigation:
     markdownURL: /assets/documentation/player-portal/web/source-selection-web.html
     path: "/source-selection-web"
 
-  - title: "Building Plugins for the Player"
-    markdownURL: /assets/documentation/player-portal/web/building-plugins-web.html
-    path: "/building-plugins-web"
-
   - title: "Coding Guidelines"
     markdownURL: /assets/documentation/player-portal/web/coding-guidelines-web.html
     path: "/coding-guidelines-web"
