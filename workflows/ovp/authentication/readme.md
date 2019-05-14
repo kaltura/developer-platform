@@ -12,7 +12,7 @@
 }
 -->
 
-# Authentication1
+# Authentication
 This recipe will guide you through the steps necessary to create a Kaltura Session (ks), a temporary authentication token that can provide either user-level or admin-level access to your Kaltura account.,,
 
 ## Starting a Kaltura Session
