@@ -12,7 +12,7 @@
 }
 -->
 
-# Authentication
+# Authentication1
 This recipe will guide you through the steps necessary to create a Kaltura Session (ks), a temporary authentication token that can provide either user-level or admin-level access to your Kaltura account.,,
 
 ## Starting a Kaltura Session
@@ -30,39 +30,24 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
   "parameters": [
     {
       "name": "body",
+      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
           "partnerId": {
-            "type": "integer",
             "fromSecrets": true
           },
           "userId": {
-            "type": "string",
             "fromSecrets": true,
             "default": "user@example.com"
           },
           "secret": {
-            "type": "string",
-            "x-inputType": "password",
             "fromSecrets": true
           },
           "type": {
-            "default": 2,
-            "enum": [
-              0,
-              2
-            ],
-            "type": "integer",
-            "x-enumLabels": [
-              "USER",
-              "ADMIN"
-            ],
-            "x-enumType": "KalturaSessionType"
+            "default": 2
           },
-          "privileges": {
-            "type": "string"
-          }
+          "privileges": {}
         }
       }
     }
@@ -81,11 +66,11 @@ You can validate your Kaltura session by calling ```user.get``` without a User I
   "parameters": [
     {
       "name": "body",
+      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
           "userId": {
-            "type": "string",
             "fromSecrets": true
           }
         }
@@ -109,16 +94,12 @@ You can then use one of these partnerIds to get a privileged KS.
   "parameters": [
     {
       "name": "body",
+      "in": "body",
       "schema": {
         "type": "object",
         "properties": {
-          "loginId": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string",
-            "x-inputType": "password"
-          }
+          "loginId": {},
+          "password": {}
         }
       }
     }
@@ -136,6 +117,7 @@ You can then re-use `user.loginById` with a partnerId to login for as that parti
 {
   "method": "post",
   "path": "/service/partner/action/listPartnersForUser",
+  "parameters": [],
   "ignoreParameters": [
     "format"
   ]
