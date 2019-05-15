@@ -67,3 +67,8 @@ operationNavigation:
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
     discussionURL: null
+    
+github:
+  repo: "kaltura/developer-platform"
+  client_id: "dd75e59ddbcbea0ea46f"
+  access_token_url: "/github/access_token"
