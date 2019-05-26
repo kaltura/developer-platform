@@ -96,6 +96,8 @@ if (process.env.TARGET_API === 'ott') {
   App.use('/auth', require('./routes/partner-auth.js'));
 }
 App.use('/github', require('./routes/github.js'));
+App.use('/doc/github', require('./routes/github.js'));
+
 
 App.get('*', (req, res) => {
   if (req.originalUrl.endsWith('.html/')) {
