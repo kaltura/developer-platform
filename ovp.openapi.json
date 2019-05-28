@@ -4835,6 +4835,7 @@
             "-1",
             "conference.CONFERENCE_ENTRY_SERVER",
             "externalMedia.externalMedia",
+            "sip.SIP_ENTRY_SERVER",
             "1",
             "2",
             "5",
@@ -4848,6 +4849,7 @@
             "AUTOMATIC",
             "CONFERENCE_ENTRY_SERVER",
             "EXTERNAL_MEDIA",
+            "SIP_ENTRY_SERVER",
             "MEDIA_CLIP",
             "MIX",
             "PLAYLIST",
@@ -5320,6 +5322,7 @@
             "-1",
             "conference.CONFERENCE_ENTRY_SERVER",
             "externalMedia.externalMedia",
+            "sip.SIP_ENTRY_SERVER",
             "1",
             "2",
             "5",
@@ -5333,6 +5336,7 @@
             "AUTOMATIC",
             "CONFERENCE_ENTRY_SERVER",
             "EXTERNAL_MEDIA",
+            "SIP_ENTRY_SERVER",
             "MEDIA_CLIP",
             "MIX",
             "PLAYLIST",
@@ -6233,6 +6237,7 @@
             "ku",
             "ky",
             "la",
+            "lb",
             "li",
             "ln",
             "lo",
@@ -6382,6 +6387,7 @@
             "KU",
             "KY",
             "LA",
+            "LB",
             "LI",
             "LN",
             "LO",
@@ -10516,6 +10522,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -10540,6 +10547,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -10842,6 +10850,7 @@
             "ku",
             "ky",
             "la",
+            "lb",
             "li",
             "ln",
             "lo",
@@ -10992,6 +11001,7 @@
             "KU",
             "KY",
             "LA",
+            "LB",
             "LI",
             "LN",
             "LO",
@@ -11581,6 +11591,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -11605,6 +11616,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -12232,6 +12244,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -12256,6 +12269,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -14532,6 +14546,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -14556,6 +14571,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -17153,6 +17169,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -17177,6 +17194,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -29660,6 +29678,9 @@
           "$ref": "#/definitions/KalturaLiveEntryServerNode"
         },
         {
+          "$ref": "#/definitions/KalturaSipEntryServerNode"
+        },
+        {
           "$ref": "#/definitions/KalturaClippingTaskEntryServerNode"
         }
       ],
@@ -29685,6 +29706,7 @@
           "enum": [
             "KalturaConferenceEntryServerNode",
             "KalturaLiveEntryServerNode",
+            "KalturaSipEntryServerNode",
             "KalturaClippingTaskEntryServerNode"
           ],
           "type": "string"
@@ -29772,6 +29794,9 @@
         },
         {
           "$ref": "#/definitions/KalturaLiveEntryServerNodeFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaSipEntryServerNodeFilter"
         }
       ],
       "description": "`abstract`",
@@ -29793,7 +29818,8 @@
           "enum": [
             "KalturaEntryServerNodeFilter",
             "KalturaConferenceEntryServerNodeFilter",
-            "KalturaLiveEntryServerNodeFilter"
+            "KalturaLiveEntryServerNodeFilter",
+            "KalturaSipEntryServerNodeFilter"
           ],
           "type": "string"
         },
@@ -29878,6 +29904,9 @@
         },
         {
           "$ref": "#/definitions/KalturaLiveEntryServerNodeFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaSipEntryServerNodeFilter"
         }
       ],
       "discriminator": "objectType",
@@ -29885,7 +29914,8 @@
         "objectType": {
           "enum": [
             "KalturaConferenceEntryServerNodeFilter",
-            "KalturaLiveEntryServerNodeFilter"
+            "KalturaLiveEntryServerNodeFilter",
+            "KalturaSipEntryServerNodeFilter"
           ],
           "type": "string"
         },
@@ -33576,6 +33606,9 @@
           "$ref": "#/definitions/KalturaLiveEntryServerNodeFilter"
         },
         {
+          "$ref": "#/definitions/KalturaSipEntryServerNodeFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaEventNotificationTemplateFilter"
         },
         {
@@ -33640,6 +33673,9 @@
         },
         {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaSipServerNodeFilter"
         },
         {
           "$ref": "#/definitions/KalturaShortLinkFilter"
@@ -33882,6 +33918,7 @@
             "KalturaEntryServerNodeFilter",
             "KalturaConferenceEntryServerNodeFilter",
             "KalturaLiveEntryServerNodeFilter",
+            "KalturaSipEntryServerNodeFilter",
             "KalturaEventNotificationTemplateFilter",
             "KalturaBusinessProcessNotificationTemplateFilter",
             "KalturaBusinessProcessAbortNotificationTemplateFilter",
@@ -33904,6 +33941,7 @@
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter",
+            "KalturaSipServerNodeFilter",
             "KalturaShortLinkFilter",
             "KalturaStorageProfileFilter",
             "KalturaAmazonS3StorageProfileFilter",
@@ -34316,6 +34354,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -34340,6 +34379,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -42488,6 +42528,11 @@
         "secondaryRtspBroadcastingUrl": {
           "type": "string"
         },
+        "sipToken": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        },
         "streamName": {
           "type": "string"
         },
@@ -43181,6 +43226,7 @@
             "ku",
             "ky",
             "la",
+            "lb",
             "li",
             "ln",
             "lo",
@@ -43330,6 +43376,7 @@
             "KU",
             "KY",
             "LA",
+            "LB",
             "LI",
             "LN",
             "LO",
@@ -47391,6 +47438,21 @@
         }
       },
       "title": "KalturaPartnerListResponse",
+      "type": "object"
+    },
+    "KalturaPartnerPublicInfo": {
+      "properties": {
+        "analyticsPersistentSessionId": {
+          "type": "boolean"
+        },
+        "analyticsUrl": {
+          "type": "string"
+        },
+        "ottEnvironmentUrl": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaPartnerPublicInfo",
       "type": "object"
     },
     "KalturaPartnerStatistics": {
@@ -55410,6 +55472,9 @@
           "$ref": "#/definitions/KalturaConferenceServerNode"
         },
         {
+          "$ref": "#/definitions/KalturaSipServerNode"
+        },
+        {
           "$ref": "#/definitions/KalturaEdgeServerNode"
         },
         {
@@ -55457,6 +55522,7 @@
         "objectType": {
           "enum": [
             "KalturaConferenceServerNode",
+            "KalturaSipServerNode",
             "KalturaEdgeServerNode",
             "KalturaWowzaMediaServerNode"
           ],
@@ -55503,6 +55569,7 @@
           "description": "`readOnly`\n\nEnum Type: `KalturaServerNodeType`",
           "enum": [
             "conference.CONFERENCE_SERVER",
+            "sip.SIP_SERVER",
             "wowza.WOWZA_MEDIA_SERVER",
             "1"
           ],
@@ -55510,6 +55577,7 @@
           "type": "string",
           "x-enumLabels": [
             "CONFERENCE_SERVER",
+            "SIP_SERVER",
             "WOWZA_MEDIA_SERVER",
             "EDGE"
           ],
@@ -55549,6 +55617,9 @@
         },
         {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaSipServerNodeFilter"
         }
       ],
       "description": "`abstract`",
@@ -55606,7 +55677,8 @@
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
-            "KalturaWowzaMediaServerNodeFilter"
+            "KalturaWowzaMediaServerNodeFilter",
+            "KalturaSipServerNodeFilter"
           ],
           "type": "string"
         },
@@ -55660,12 +55732,14 @@
           "description": "Enum Type: `KalturaServerNodeType`",
           "enum": [
             "conference.CONFERENCE_SERVER",
+            "sip.SIP_SERVER",
             "wowza.WOWZA_MEDIA_SERVER",
             "1"
           ],
           "type": "string",
           "x-enumLabels": [
             "CONFERENCE_SERVER",
+            "SIP_SERVER",
             "WOWZA_MEDIA_SERVER",
             "EDGE"
           ],
@@ -55709,6 +55783,9 @@
         },
         {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaSipServerNodeFilter"
         }
       ],
       "discriminator": "objectType",
@@ -55719,7 +55796,8 @@
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
-            "KalturaWowzaMediaServerNodeFilter"
+            "KalturaWowzaMediaServerNodeFilter",
+            "KalturaSipServerNodeFilter"
           ],
           "type": "string"
         },
@@ -56118,6 +56196,142 @@
         }
       },
       "title": "KalturaShortLinkListResponse",
+      "type": "object"
+    },
+    "KalturaSipEntryServerNode": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaEntryServerNode"
+        }
+      ],
+      "properties": {
+        "sipPrimaryAdpId": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        },
+        "sipRoomId": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        },
+        "sipSecondaryAdpId": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "title": "KalturaSipEntryServerNode",
+      "type": "object"
+    },
+    "KalturaSipEntryServerNodeBaseFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaEntryServerNodeFilter"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaSipEntryServerNodeFilter"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaSipEntryServerNodeFilter"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaSipEntryServerNodeBaseFilter",
+      "type": "object",
+      "x-abstract": true
+    },
+    "KalturaSipEntryServerNodeFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaSipEntryServerNodeBaseFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaSipEntryServerNodeFilter",
+      "type": "object"
+    },
+    "KalturaSipResponse": {
+      "properties": {
+        "action": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaSipResponse",
+      "type": "object"
+    },
+    "KalturaSipServerNode": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaServerNode"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaSipServerNode",
+      "type": "object"
+    },
+    "KalturaSipServerNodeBaseFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaServerNodeFilter"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaSipServerNodeFilter"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaSipServerNodeFilter"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaSipServerNodeBaseFilter",
+      "type": "object",
+      "x-abstract": true
+    },
+    "KalturaSipServerNodeFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaSipServerNodeBaseFilter"
+        }
+      ],
+      "properties": {
+        "orderBy": {
+          "enum": [
+            "+createdAt",
+            "+heartbeatTime",
+            "+updatedAt",
+            "-createdAt",
+            "-heartbeatTime",
+            "-updatedAt"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "CREATED_AT_ASC",
+            "HEARTBEAT_TIME_ASC",
+            "UPDATED_AT_ASC",
+            "CREATED_AT_DESC",
+            "HEARTBEAT_TIME_DESC",
+            "UPDATED_AT_DESC"
+          ],
+          "x-enumType": "KalturaSipServerNodeOrderBy"
+        }
+      },
+      "title": "KalturaSipServerNodeFilter",
       "type": "object"
     },
     "KalturaSiteCondition": {
@@ -59507,6 +59721,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -59531,6 +59746,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -60038,6 +60254,9 @@
       ],
       "properties": {
         "ingestUrl": {
+          "type": "string"
+        },
+        "innerType": {
           "type": "string"
         },
         "password": {
@@ -65075,6 +65294,7 @@
             "Lunda",
             "Luo (Kenya and Tanzania)",
             "Lushootseed",
+            "Luxembourgish (Letzeburgesch)",
             "Macedonian",
             "Madurese",
             "Magahi",
@@ -65099,6 +65319,7 @@
             "Meitei",
             "Mende (Sierra Leone)",
             "Menominee",
+            "Michif",
             "Micmac",
             "Min Bei Chinese",
             "Min Dong Chinese",
@@ -67162,7 +67383,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "14.20.0"
+    "version": "15.0.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -70468,6 +70689,7 @@
                     "-1",
                     "conference.CONFERENCE_ENTRY_SERVER",
                     "externalMedia.externalMedia",
+                    "sip.SIP_ENTRY_SERVER",
                     "1",
                     "2",
                     "5",
@@ -70481,6 +70703,7 @@
                     "AUTOMATIC",
                     "CONFERENCE_ENTRY_SERVER",
                     "EXTERNAL_MEDIA",
+                    "SIP_ENTRY_SERVER",
                     "MEDIA_CLIP",
                     "MIX",
                     "PLAYLIST",
@@ -70614,6 +70837,7 @@
                     "-1",
                     "conference.CONFERENCE_ENTRY_SERVER",
                     "externalMedia.externalMedia",
+                    "sip.SIP_ENTRY_SERVER",
                     "1",
                     "2",
                     "5",
@@ -70627,6 +70851,7 @@
                     "AUTOMATIC",
                     "CONFERENCE_ENTRY_SERVER",
                     "EXTERNAL_MEDIA",
+                    "SIP_ENTRY_SERVER",
                     "MEDIA_CLIP",
                     "MIX",
                     "PLAYLIST",
@@ -101309,6 +101534,59 @@
         "x-kaltura-parameters": []
       }
     },
+    "/service/partner/action/getPublicInfo": {
+      "post": {
+        "description": "Returns partner public info by Id",
+        "operationId": "partner.getPublicInfo",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaPartnerPublicInfo"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_PARTNER_ID`: Invalid partner id \"@PID@\""
+          }
+        },
+        "tags": [
+          "partner"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "id"
+        ]
+      }
+    },
     "/service/partner/action/getSecrets": {
       "post": {
         "description": "Retrieve partner secret and admin secret",
@@ -110100,6 +110378,161 @@
         ]
       }
     },
+    "/service/sip_pexip/action/generateSipUrl": {
+      "post": {
+        "operationId": "pexip.generateSipUrl",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                },
+                "regenerate": {
+                  "default": false,
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "entryId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "pexip"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId",
+          "regenerate"
+        ]
+      }
+    },
+    "/service/sip_pexip/action/handleIncomingCall": {
+      "post": {
+        "operationId": "pexip.handleIncomingCall",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        },
+        "tags": [
+          "pexip"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": []
+      }
+    },
+    "/service/sip_pexip/action/listRooms": {
+      "post": {
+        "operationId": "pexip.listRooms",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "activeOnly": {
+                  "default": false,
+                  "type": "boolean"
+                },
+                "offset": {
+                  "default": 0,
+                  "type": "integer"
+                },
+                "pageSize": {
+                  "default": 500,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/KalturaStringValue"
+              },
+              "type": "array"
+            }
+          }
+        },
+        "tags": [
+          "pexip"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "offset",
+          "pageSize",
+          "activeOnly"
+        ]
+      }
+    },
     "/service/stats/action/collect": {
       "post": {
         "description": "Will write to the event log a single line representing the event\n\nclient version - will help interprete the line structure. different client versions might have slightly different data/data formats in the line\nevent_id - number is the row number in yuval's excel\ndatetime - same format as MySql's datetime - can change and should reflect the time zone\nsession id - can be some big random number or guid\npartner id\nentry id\nunique viewer\nwidget id\nui_conf id\nuid - the puser id as set by the ppartner\ncurrent point - in milliseconds\nduration - milliseconds\nuser ip\nprocess duration - in milliseconds\ncontrol id\nseek\nnew point\nreferrer\n\nKalturaStatsEvent $event",
@@ -117354,6 +117787,10 @@
     {
       "description": "PermissionItem service lets you create and manage permission items",
       "name": "permissionItem"
+    },
+    {
+      "name": "pexip",
+      "x-plugin": "sip"
     },
     {
       "description": "Playlist service lets you create,manage and play your playlists\n Playlists could be static (containing a fixed list of entries) or dynamic (based on a filter)",
@@ -128563,6 +129000,12 @@
         },
         {
           "enum": [
+            "sip.SIP_ENTRY_SERVER"
+          ],
+          "title": "SIP_ENTRY_SERVER"
+        },
+        {
+          "enum": [
             "1"
           ],
           "title": "MEDIA_CLIP"
@@ -133904,13 +134347,13 @@
           "enum": [
             "Hebrew"
           ],
-          "title": "HE"
+          "title": "IW"
         },
         {
           "enum": [
             "Hebrew"
           ],
-          "title": "IW"
+          "title": "HE"
         },
         {
           "enum": [
@@ -134550,6 +134993,12 @@
         },
         {
           "enum": [
+            "Luxembourgish (Letzeburgesch)"
+          ],
+          "title": "LB"
+        },
+        {
+          "enum": [
             "Macedonian"
           ],
           "title": "MK"
@@ -134691,6 +135140,12 @@
             "Menominee"
           ],
           "title": "MEZ"
+        },
+        {
+          "enum": [
+            "Michif"
+          ],
+          "title": "CRG"
         },
         {
           "enum": [
@@ -136472,6 +136927,12 @@
             "la"
           ],
           "title": "LA"
+        },
+        {
+          "enum": [
+            "lb"
+          ],
+          "title": "LB"
         },
         {
           "enum": [
@@ -142418,6 +142879,12 @@
         },
         {
           "enum": [
+            "FEATURE_ANALYTICS_PERSISTENT_SESSION_ID"
+          ],
+          "title": "FEATURE_ANALYTICS_PERSISTENT_SESSION_ID"
+        },
+        {
+          "enum": [
             "FEATURE_ANALYTICS_TAB"
           ],
           "title": "FEATURE_ANALYTICS_TAB"
@@ -142775,6 +143242,12 @@
             "FEATURE_SILVERLIGHT"
           ],
           "title": "FEATURE_SILVERLIGHT"
+        },
+        {
+          "enum": [
+            "FEATURE_SIP"
+          ],
+          "title": "FEATURE_SIP"
         },
         {
           "enum": [
@@ -146816,6 +147289,12 @@
         },
         {
           "enum": [
+            "sip.SIP_SERVER"
+          ],
+          "title": "SIP_SERVER"
+        },
+        {
+          "enum": [
             "wowza.WOWZA_MEDIA_SERVER"
           ],
           "title": "WOWZA_MEDIA_SERVER"
@@ -146962,6 +147441,136 @@
         }
       ],
       "title": "KalturaShortLinkStatus"
+    },
+    "KalturaSipEntryServerNodeStatus": {
+      "oneOf": [
+        {
+          "enum": [
+            -1
+          ],
+          "title": "ERROR"
+        },
+        {
+          "enum": [
+            0
+          ],
+          "title": "STOPPED"
+        },
+        {
+          "enum": [
+            1
+          ],
+          "title": "PLAYABLE"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "BROADCASTING"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "AUTHENTICATED"
+        },
+        {
+          "enum": [
+            4
+          ],
+          "title": "MARKED_FOR_DELETION"
+        },
+        {
+          "enum": [
+            5
+          ],
+          "title": "TASK_PENDING"
+        },
+        {
+          "enum": [
+            6
+          ],
+          "title": "TASK_QUEUED"
+        },
+        {
+          "enum": [
+            7
+          ],
+          "title": "TASK_PROCESSING"
+        },
+        {
+          "enum": [
+            8
+          ],
+          "title": "TASK_UPLOADING"
+        },
+        {
+          "enum": [
+            9
+          ],
+          "title": "TASK_FINISHED"
+        },
+        {
+          "enum": [
+            11
+          ],
+          "title": "CREATED"
+        },
+        {
+          "enum": [
+            12
+          ],
+          "title": "ACTIVE"
+        },
+        {
+          "enum": [
+            13
+          ],
+          "title": "ENDED"
+        }
+      ],
+      "title": "KalturaSipEntryServerNodeStatus"
+    },
+    "KalturaSipServerNodeOrderBy": {
+      "oneOf": [
+        {
+          "enum": [
+            "+createdAt"
+          ],
+          "title": "CREATED_AT_ASC"
+        },
+        {
+          "enum": [
+            "+heartbeatTime"
+          ],
+          "title": "HEARTBEAT_TIME_ASC"
+        },
+        {
+          "enum": [
+            "+updatedAt"
+          ],
+          "title": "UPDATED_AT_ASC"
+        },
+        {
+          "enum": [
+            "-createdAt"
+          ],
+          "title": "CREATED_AT_DESC"
+        },
+        {
+          "enum": [
+            "-heartbeatTime"
+          ],
+          "title": "HEARTBEAT_TIME_DESC"
+        },
+        {
+          "enum": [
+            "-updatedAt"
+          ],
+          "title": "UPDATED_AT_DESC"
+        }
+      ],
+      "title": "KalturaSipServerNodeOrderBy"
     },
     "KalturaSiteRestrictionType": {
       "oneOf": [
@@ -152395,6 +153004,26 @@
       "name": "BULK_UPLOAD_NOT_FOUND"
     },
     {
+      "code": "PEXIP_MAP_NOT_CONFIGURED",
+      "message": "Need to add pexip map support to configuration",
+      "name": "PEXIP_MAP_NOT_CONFIGURED"
+    },
+    {
+      "code": "PEXIP_ROOM_CREATION_FAILED",
+      "message": "Can't create virtual room for entry \"@ENTRY@\" ",
+      "name": "PEXIP_ROOM_CREATION_FAILED"
+    },
+    {
+      "code": "PEXIP_ADP_CREATION_FAILED",
+      "message": "Can't create virtual ADP for entry \"@ENTRY@\" ",
+      "name": "PEXIP_ADP_CREATION_FAILED"
+    },
+    {
+      "code": "SIP_ENTRY_SERVER_NODE_CREATION_FAILED ",
+      "message": "Can't create sip entry server node for entry \"@ENTRY@\" ",
+      "name": "SIP_ENTRY_SERVER_NODE_CREATION_FAILED "
+    },
+    {
       "code": "SOURCE_WIDGET_OR_UICONF_REQUIRED",
       "message": "SourceWidgetId or UiConfId id are required",
       "name": "SOURCE_WIDGET_OR_UICONF_REQUIRED"
@@ -155038,6 +155667,11 @@
       "code": "FAILED_EXTEND_ACCESS_KEY",
       "message": "Extending accessKey operation failed",
       "name": "FAILED_EXTEND_ACCESS_KEY"
+    },
+    {
+      "code": "TASK_NOT_CREATED",
+      "message": "Failed to create task for entry [@ENTRY_ID@] and catalog item [@CATALOG_ITEM_ID@]",
+      "name": "TASK_NOT_CREATED"
     },
     {
       "code": "OVERAGE_CREDIT_CANNOT_BE_NEGATIVE",
