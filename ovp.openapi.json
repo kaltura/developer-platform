@@ -4362,6 +4362,15 @@
       "title": "KalturaAuthenticatedCondition",
       "type": "object"
     },
+    "KalturaAuthentication": {
+      "properties": {
+        "qrCode": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaAuthentication",
+      "type": "object"
+    },
     "KalturaAvnDistributionProfile": {
       "allOf": [
         {
@@ -6169,9 +6178,11 @@
             "aa",
             "ab",
             "af",
+            "alg",
             "am",
             "ar",
             "as",
+            "ath",
             "ay",
             "az",
             "ba",
@@ -6179,11 +6190,14 @@
             "bg",
             "bh",
             "bi",
+            "bla",
             "bn",
             "bo",
             "br",
             "ca",
             "co",
+            "cr",
+            "crg",
             "cs",
             "cy",
             "da",
@@ -6219,7 +6233,9 @@
             "id",
             "ie",
             "ik",
+            "ikt",
             "in",
+            "iro",
             "is",
             "it",
             "iu",
@@ -6245,20 +6261,26 @@
             "lv",
             "mg",
             "mi",
+            "mic",
             "mk",
             "ml",
             "mn",
             "mo",
+            "moe",
             "mr",
             "ms",
             "mt",
-            "multilingual",
+            "mu",
             "my",
             "na",
             "ne",
             "nl",
             "no",
             "oc",
+            "oj",
+            "ojs",
+            "ojw",
+            "oka",
             "om",
             "or",
             "pa",
@@ -6272,6 +6294,7 @@
             "ru",
             "rw",
             "sa",
+            "sal",
             "sd",
             "sg",
             "sh",
@@ -6279,6 +6302,7 @@
             "sk",
             "sl",
             "sm",
+            "smi",
             "sn",
             "so",
             "sq",
@@ -6289,6 +6313,7 @@
             "sv",
             "sw",
             "ta",
+            "tce",
             "te",
             "tg",
             "th",
@@ -6303,6 +6328,7 @@
             "tw",
             "ug",
             "uk",
+            "un",
             "ur",
             "uz",
             "vi",
@@ -6312,16 +6338,19 @@
             "yi",
             "yo",
             "zh",
-            "zu"
+            "zu",
+            "zxx"
           ],
           "type": "string",
           "x-enumLabels": [
             "AA",
             "AB",
             "AF",
+            "ALG",
             "AM",
             "AR",
             "AS_",
+            "ATH",
             "AY",
             "AZ",
             "BA",
@@ -6329,11 +6358,14 @@
             "BG",
             "BH",
             "BI",
+            "BLA",
             "BN",
             "BO",
             "BR",
             "CA",
             "CO",
+            "CR",
+            "CRG",
             "CS",
             "CY",
             "DA",
@@ -6369,7 +6401,9 @@
             "ID",
             "IE",
             "IK",
+            "IKT",
             "IN",
+            "IRO",
             "IS",
             "IT",
             "IU",
@@ -6395,10 +6429,12 @@
             "LV",
             "MG",
             "MI",
+            "MIC",
             "MK",
             "ML",
             "MN",
             "MO",
+            "MOE",
             "MR",
             "MS",
             "MT",
@@ -6409,6 +6445,10 @@
             "NL",
             "NO",
             "OC",
+            "OJ",
+            "OJS",
+            "OJW",
+            "OKA",
             "OM",
             "OR_",
             "PA",
@@ -6422,6 +6462,7 @@
             "RU",
             "RW",
             "SA",
+            "SAL",
             "SD",
             "SG",
             "SH",
@@ -6429,6 +6470,7 @@
             "SK",
             "SL",
             "SM",
+            "SMI",
             "SN",
             "SO",
             "SQ",
@@ -6439,6 +6481,7 @@
             "SV",
             "SW",
             "TA",
+            "TCE",
             "TE",
             "TG",
             "TH",
@@ -6453,6 +6496,7 @@
             "TW",
             "UG",
             "UK",
+            "UN",
             "UR",
             "UZ",
             "VI",
@@ -6462,7 +6506,8 @@
             "YI",
             "YO",
             "ZH",
-            "ZU"
+            "ZU",
+            "ZXX"
           ],
           "x-enumType": "KalturaLanguageCode"
         },
@@ -8577,6 +8622,14 @@
             "V3"
           ],
           "x-enumType": "KalturaBulkUploadCsvVersion"
+        },
+        "processObjectId": {
+          "description": "The object in process",
+          "type": "string"
+        },
+        "processObjectType": {
+          "description": "The type of the object in process",
+          "type": "string"
         }
       },
       "title": "KalturaBulkUploadCsvJobData",
@@ -8635,7 +8688,7 @@
     "KalturaBulkUploadICalJobData": {
       "allOf": [
         {
-          "$ref": "#/definitions/KalturaBulkUploadJobData"
+          "$ref": "#/definitions/KalturaBulkUploadScheduleEventJobData"
         }
       ],
       "description": "Represents the Bulk upload job data for iCal bulk upload",
@@ -8676,10 +8729,13 @@
           "$ref": "#/definitions/KalturaBulkUploadFilterJobData"
         },
         {
+          "$ref": "#/definitions/KalturaBulkUploadXmlJobData"
+        },
+        {
           "$ref": "#/definitions/KalturaBulkUploadICalJobData"
         },
         {
-          "$ref": "#/definitions/KalturaBulkUploadXmlJobData"
+          "$ref": "#/definitions/KalturaBulkUploadScheduleEventCsvJobData"
         },
         {
           "$ref": "#/definitions/KalturaDropFolderXmlBulkUploadJobData"
@@ -8754,8 +8810,9 @@
           "enum": [
             "KalturaBulkUploadCsvJobData",
             "KalturaBulkUploadFilterJobData",
-            "KalturaBulkUploadICalJobData",
             "KalturaBulkUploadXmlJobData",
+            "KalturaBulkUploadICalJobData",
+            "KalturaBulkUploadScheduleEventCsvJobData",
             "KalturaDropFolderXmlBulkUploadJobData"
           ],
           "type": "string"
@@ -9247,7 +9304,56 @@
         }
       ],
       "properties": {
+        "categoryIds": {
+          "type": "string"
+        },
+        "coEditors": {
+          "type": "string"
+        },
+        "coPublishers": {
+          "type": "string"
+        },
+        "contentOwnerId": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "integer"
+        },
+        "endTime": {
+          "type": "integer"
+        },
+        "eventOrganizerId": {
+          "type": "string"
+        },
+        "eventType": {
+          "type": "integer"
+        },
+        "recurrence": {
+          "type": "string"
+        },
         "referenceId": {
+          "type": "string"
+        },
+        "resourceId": {
+          "description": "ID of the resource specified for the new event.",
+          "type": "string"
+        },
+        "startTime": {
+          "type": "integer"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "templateEntryId": {
+          "type": "string"
+        },
+        "templateEntryType": {
+          "type": "string"
+        },
+        "title": {
           "type": "string"
         }
       },
@@ -9355,6 +9461,69 @@
       },
       "title": "KalturaBulkUploadResultUserEntry",
       "type": "object"
+    },
+    "KalturaBulkUploadScheduleEventCsvJobData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadScheduleEventJobData"
+        }
+      ],
+      "description": "Represents the Bulk upload job data for CSV bulk upload",
+      "properties": {
+        "columns": {
+          "items": {
+            "$ref": "#/definitions/KalturaString"
+          },
+          "type": "array"
+        },
+        "csvVersion": {
+          "description": "`readOnly`\n\nEnum Type: `KalturaBulkUploadCsvVersion`\n\nThe version of the csv file",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "readOnly": true,
+          "type": "integer",
+          "x-enumLabels": [
+            "V1",
+            "V2",
+            "V3"
+          ],
+          "x-enumType": "KalturaBulkUploadCsvVersion"
+        }
+      },
+      "title": "KalturaBulkUploadScheduleEventCsvJobData",
+      "type": "object"
+    },
+    "KalturaBulkUploadScheduleEventJobData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadJobData"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadICalJobData"
+        },
+        {
+          "$ref": "#/definitions/KalturaBulkUploadScheduleEventCsvJobData"
+        }
+      ],
+      "description": "`abstract`\n\nRepresents the abstract Bulk upload job data for general bulk upload",
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaBulkUploadICalJobData",
+            "KalturaBulkUploadScheduleEventCsvJobData"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaBulkUploadScheduleEventJobData",
+      "type": "object",
+      "x-abstract": true
     },
     "KalturaBulkUploadUserData": {
       "allOf": [
@@ -10252,6 +10421,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -10272,6 +10442,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -10339,6 +10510,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -10435,9 +10607,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -10559,6 +10733,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -10574,6 +10749,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -10588,6 +10764,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -10638,7 +10816,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -10665,6 +10845,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -10679,6 +10860,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -10782,9 +10964,11 @@
             "aa",
             "ab",
             "af",
+            "alg",
             "am",
             "ar",
             "as",
+            "ath",
             "ay",
             "az",
             "ba",
@@ -10792,11 +10976,14 @@
             "bg",
             "bh",
             "bi",
+            "bla",
             "bn",
             "bo",
             "br",
             "ca",
             "co",
+            "cr",
+            "crg",
             "cs",
             "cy",
             "da",
@@ -10832,7 +11019,9 @@
             "id",
             "ie",
             "ik",
+            "ikt",
             "in",
+            "iro",
             "is",
             "it",
             "iu",
@@ -10858,20 +11047,26 @@
             "lv",
             "mg",
             "mi",
+            "mic",
             "mk",
             "ml",
             "mn",
             "mo",
+            "moe",
             "mr",
             "ms",
             "mt",
-            "multilingual",
+            "mu",
             "my",
             "na",
             "ne",
             "nl",
             "no",
             "oc",
+            "oj",
+            "ojs",
+            "ojw",
+            "oka",
             "om",
             "or",
             "pa",
@@ -10885,6 +11080,7 @@
             "ru",
             "rw",
             "sa",
+            "sal",
             "sd",
             "sg",
             "sh",
@@ -10892,6 +11088,7 @@
             "sk",
             "sl",
             "sm",
+            "smi",
             "sn",
             "so",
             "sq",
@@ -10902,6 +11099,7 @@
             "sv",
             "sw",
             "ta",
+            "tce",
             "te",
             "tg",
             "th",
@@ -10916,6 +11114,7 @@
             "tw",
             "ug",
             "uk",
+            "un",
             "ur",
             "uz",
             "vi",
@@ -10925,7 +11124,8 @@
             "yi",
             "yo",
             "zh",
-            "zu"
+            "zu",
+            "zxx"
           ],
           "readOnly": true,
           "type": "string",
@@ -10933,9 +11133,11 @@
             "AA",
             "AB",
             "AF",
+            "ALG",
             "AM",
             "AR",
             "AS_",
+            "ATH",
             "AY",
             "AZ",
             "BA",
@@ -10943,11 +11145,14 @@
             "BG",
             "BH",
             "BI",
+            "BLA",
             "BN",
             "BO",
             "BR",
             "CA",
             "CO",
+            "CR",
+            "CRG",
             "CS",
             "CY",
             "DA",
@@ -10983,7 +11188,9 @@
             "ID",
             "IE",
             "IK",
+            "IKT",
             "IN",
+            "IRO",
             "IS",
             "IT",
             "IU",
@@ -11009,10 +11216,12 @@
             "LV",
             "MG",
             "MI",
+            "MIC",
             "MK",
             "ML",
             "MN",
             "MO",
+            "MOE",
             "MR",
             "MS",
             "MT",
@@ -11023,6 +11232,10 @@
             "NL",
             "NO",
             "OC",
+            "OJ",
+            "OJS",
+            "OJW",
+            "OKA",
             "OM",
             "OR_",
             "PA",
@@ -11036,6 +11249,7 @@
             "RU",
             "RW",
             "SA",
+            "SAL",
             "SD",
             "SG",
             "SH",
@@ -11043,6 +11257,7 @@
             "SK",
             "SL",
             "SM",
+            "SMI",
             "SN",
             "SO",
             "SQ",
@@ -11053,6 +11268,7 @@
             "SV",
             "SW",
             "TA",
+            "TCE",
             "TE",
             "TG",
             "TH",
@@ -11067,6 +11283,7 @@
             "TW",
             "UG",
             "UK",
+            "UN",
             "UR",
             "UZ",
             "VI",
@@ -11076,7 +11293,8 @@
             "YI",
             "YO",
             "ZH",
-            "ZU"
+            "ZU",
+            "ZXX"
           ],
           "x-enumType": "KalturaLanguageCode"
         },
@@ -11321,6 +11539,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -11341,6 +11560,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -11408,6 +11628,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -11504,9 +11725,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -11628,6 +11851,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -11643,6 +11867,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -11657,6 +11882,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -11707,7 +11934,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -11734,6 +11963,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -11748,6 +11978,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -11974,6 +12205,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -11994,6 +12226,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -12061,6 +12294,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -12157,9 +12391,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -12281,6 +12517,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -12296,6 +12533,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -12310,6 +12548,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -12360,7 +12600,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -12387,6 +12629,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -12401,6 +12644,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -12740,14 +12984,16 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer",
           "x-enumLabels": [
             "CAPTIONS",
             "TRANSLATION",
             "ALIGNMENT",
-            "AUDIO_DESCRIPTION"
+            "AUDIO_DESCRIPTION",
+            "CHAPTERING"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -12792,6 +13038,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -12820,6 +13067,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -12851,6 +13099,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -12879,6 +13128,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -13609,6 +13859,10 @@
           "description": "Category id to check condition for",
           "type": "integer"
         },
+        "categoryIds": {
+          "description": "Category id's to check condition for",
+          "type": "string"
+        },
         "categoryUserPermission": {
           "description": "Enum Type: `KalturaCategoryUserPermissionLevel`\n\nMinimum category user level permission to validate",
           "enum": [
@@ -14276,6 +14530,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -14296,6 +14551,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -14363,6 +14619,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -14459,9 +14716,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -14583,6 +14842,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -14598,6 +14858,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -14612,6 +14873,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -14662,7 +14925,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -14689,6 +14954,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -14703,6 +14969,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -16899,6 +17166,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -16919,6 +17187,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -16986,6 +17255,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -17082,9 +17352,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -17206,6 +17478,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -17221,6 +17494,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -17235,6 +17509,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -17285,7 +17561,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -17312,6 +17590,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -17326,6 +17605,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -21314,6 +21594,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -21342,6 +21623,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -33273,6 +33555,9 @@
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorChapteringCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorTranslationCatalogItemFilter"
         },
         {
@@ -33807,6 +34092,7 @@
             "KalturaVendorAlignmentCatalogItemFilter",
             "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
+            "KalturaVendorChapteringCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter",
             "KalturaBatchJobFilter",
             "KalturaBatchJobFilterExt",
@@ -34084,6 +34370,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -34104,6 +34391,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -34171,6 +34459,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -34267,9 +34556,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -34391,6 +34682,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -34406,6 +34698,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -34420,6 +34713,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -34470,7 +34765,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -34497,6 +34794,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -34511,6 +34809,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -37586,6 +37885,19 @@
           "description": "`readOnly`",
           "readOnly": true,
           "type": "integer"
+        },
+        "processStatus": {
+          "description": "Enum Type: `KalturaGroupProcessStatus`",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "NONE",
+            "PROCESSING"
+          ],
+          "x-enumType": "KalturaGroupProcessStatus"
         }
       },
       "title": "KalturaGroup",
@@ -39715,10 +40027,13 @@
           "$ref": "#/definitions/KalturaBulkUploadFilterJobData"
         },
         {
+          "$ref": "#/definitions/KalturaBulkUploadXmlJobData"
+        },
+        {
           "$ref": "#/definitions/KalturaBulkUploadICalJobData"
         },
         {
-          "$ref": "#/definitions/KalturaBulkUploadXmlJobData"
+          "$ref": "#/definitions/KalturaBulkUploadScheduleEventCsvJobData"
         },
         {
           "$ref": "#/definitions/KalturaDropFolderXmlBulkUploadJobData"
@@ -39852,8 +40167,9 @@
             "KalturaWidevineRepositorySyncJobData",
             "KalturaBulkUploadCsvJobData",
             "KalturaBulkUploadFilterJobData",
-            "KalturaBulkUploadICalJobData",
             "KalturaBulkUploadXmlJobData",
+            "KalturaBulkUploadICalJobData",
+            "KalturaBulkUploadScheduleEventCsvJobData",
             "KalturaDropFolderXmlBulkUploadJobData",
             "KalturaConvertCollectionJobData",
             "KalturaConvertJobData",
@@ -43158,9 +43474,11 @@
             "aa",
             "ab",
             "af",
+            "alg",
             "am",
             "ar",
             "as",
+            "ath",
             "ay",
             "az",
             "ba",
@@ -43168,11 +43486,14 @@
             "bg",
             "bh",
             "bi",
+            "bla",
             "bn",
             "bo",
             "br",
             "ca",
             "co",
+            "cr",
+            "crg",
             "cs",
             "cy",
             "da",
@@ -43208,7 +43529,9 @@
             "id",
             "ie",
             "ik",
+            "ikt",
             "in",
+            "iro",
             "is",
             "it",
             "iu",
@@ -43234,20 +43557,26 @@
             "lv",
             "mg",
             "mi",
+            "mic",
             "mk",
             "ml",
             "mn",
             "mo",
+            "moe",
             "mr",
             "ms",
             "mt",
-            "multilingual",
+            "mu",
             "my",
             "na",
             "ne",
             "nl",
             "no",
             "oc",
+            "oj",
+            "ojs",
+            "ojw",
+            "oka",
             "om",
             "or",
             "pa",
@@ -43261,6 +43590,7 @@
             "ru",
             "rw",
             "sa",
+            "sal",
             "sd",
             "sg",
             "sh",
@@ -43268,6 +43598,7 @@
             "sk",
             "sl",
             "sm",
+            "smi",
             "sn",
             "so",
             "sq",
@@ -43278,6 +43609,7 @@
             "sv",
             "sw",
             "ta",
+            "tce",
             "te",
             "tg",
             "th",
@@ -43292,6 +43624,7 @@
             "tw",
             "ug",
             "uk",
+            "un",
             "ur",
             "uz",
             "vi",
@@ -43301,16 +43634,19 @@
             "yi",
             "yo",
             "zh",
-            "zu"
+            "zu",
+            "zxx"
           ],
           "type": "string",
           "x-enumLabels": [
             "AA",
             "AB",
             "AF",
+            "ALG",
             "AM",
             "AR",
             "AS_",
+            "ATH",
             "AY",
             "AZ",
             "BA",
@@ -43318,11 +43654,14 @@
             "BG",
             "BH",
             "BI",
+            "BLA",
             "BN",
             "BO",
             "BR",
             "CA",
             "CO",
+            "CR",
+            "CRG",
             "CS",
             "CY",
             "DA",
@@ -43358,7 +43697,9 @@
             "ID",
             "IE",
             "IK",
+            "IKT",
             "IN",
+            "IRO",
             "IS",
             "IT",
             "IU",
@@ -43384,10 +43725,12 @@
             "LV",
             "MG",
             "MI",
+            "MIC",
             "MK",
             "ML",
             "MN",
             "MO",
+            "MOE",
             "MR",
             "MS",
             "MT",
@@ -43398,6 +43741,10 @@
             "NL",
             "NO",
             "OC",
+            "OJ",
+            "OJS",
+            "OJW",
+            "OKA",
             "OM",
             "OR_",
             "PA",
@@ -43411,6 +43758,7 @@
             "RU",
             "RW",
             "SA",
+            "SAL",
             "SD",
             "SG",
             "SH",
@@ -43418,6 +43766,7 @@
             "SK",
             "SL",
             "SM",
+            "SMI",
             "SN",
             "SO",
             "SQ",
@@ -43428,6 +43777,7 @@
             "SV",
             "SW",
             "TA",
+            "TCE",
             "TE",
             "TG",
             "TH",
@@ -43442,6 +43792,7 @@
             "TW",
             "UG",
             "UK",
+            "UN",
             "UR",
             "UZ",
             "VI",
@@ -43451,7 +43802,8 @@
             "YI",
             "YO",
             "ZH",
-            "ZU"
+            "ZU",
+            "ZXX"
           ],
           "x-enumType": "KalturaLanguageCode"
         },
@@ -43507,7 +43859,8 @@
             "135",
             "136",
             "137",
-            "138"
+            "138",
+            "139"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -43557,7 +43910,8 @@
             "MAIL_TYPE_OBJECTS_CSV",
             "MAIL_TYPE_REPORT_EXPORT_SUCCESS",
             "MAIL_TYPE_REPORT_EXPORT_FAILURE",
-            "MAIL_TYPE_REPORT_EXPORT_ABORT"
+            "MAIL_TYPE_REPORT_EXPORT_ABORT",
+            "MAIL_TYPE_SIP_FAILURE"
           ],
           "x-enumType": "KalturaMailType"
         },
@@ -46987,6 +47341,22 @@
         },
         "appearInSearch": {
           "type": "integer"
+        },
+        "authenticationType": {
+          "description": "`readOnly`\n\nEnum Type: `KalturaPartnerAuthenticationType`",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "readOnly": true,
+          "type": "integer",
+          "x-enumLabels": [
+            "PASSWORD_ONLY",
+            "TWO_FACTOR_AUTH",
+            "SSO"
+          ],
+          "x-enumType": "KalturaPartnerAuthenticationType"
         },
         "cdnHost": {
           "description": "`readOnly`",
@@ -50928,14 +51298,16 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer",
           "x-enumLabels": [
             "CAPTIONS",
             "TRANSLATION",
             "ALIGNMENT",
-            "AUDIO_DESCRIPTION"
+            "AUDIO_DESCRIPTION",
+            "CHAPTERING"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -51458,6 +51830,9 @@
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorChapteringCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorTranslationCatalogItemFilter"
         }
       ],
@@ -51560,6 +51935,7 @@
             "KalturaVendorAlignmentCatalogItemFilter",
             "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
+            "KalturaVendorChapteringCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
           "type": "string"
@@ -51965,7 +52341,19 @@
             "44",
             "45",
             "46",
-            "201"
+            "201",
+            "10001",
+            "10002",
+            "10003",
+            "10004",
+            "10005",
+            "10006",
+            "10007",
+            "10008",
+            "10009",
+            "10010",
+            "10011",
+            "10012"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -52015,7 +52403,19 @@
             "CONTENT_REPORT_REASONS",
             "PLAYER_RELATED_INTERACTIONS",
             "PLAYBACK_RATE",
-            "PARTNER_USAGE"
+            "PARTNER_USAGE",
+            "MAP_OVERLAY_COUNTRY_REALTIME",
+            "MAP_OVERLAY_REGION_REALTIME",
+            "MAP_OVERLAY_CITY_REALTIME",
+            "PLATFORMS_REALTIME",
+            "USERS_OVERVIEW_REALTIME",
+            "QOS_OVERVIEW_REALTIME",
+            "DISCOVERY_REALTIME",
+            "ENTRY_LEVEL_USERS_DISCOVERY_REALTIME",
+            "ENTRY_LEVEL_USERS_STATUS_REALTIME",
+            "PLATFORMS_DISCOVERY_REALTIME",
+            "PLAYBACK_TYPE_REALTIME",
+            "CONTENT_REALTIME"
           ],
           "x-enumType": "KalturaReportType"
         },
@@ -52238,12 +52638,18 @@
           "description": "Enum Type: `KalturaReportInterval`\n\nAggregated results according to interval",
           "enum": [
             "days",
-            "months"
+            "hours",
+            "minutes",
+            "months",
+            "ten_seconds"
           ],
           "type": "string",
           "x-enumLabels": [
             "DAYS",
-            "MONTHS"
+            "HOURS",
+            "MINUTES",
+            "MONTHS",
+            "TEN_SECONDS"
           ],
           "x-enumType": "KalturaReportInterval"
         },
@@ -56263,6 +56669,12 @@
       "properties": {
         "action": {
           "type": "string"
+        },
+        "hostName": {
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
         }
       },
       "title": "KalturaSipResponse",
@@ -59451,6 +59863,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -59471,6 +59884,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -59538,6 +59952,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -59634,9 +60049,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -59758,6 +60175,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -59773,6 +60191,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -59787,6 +60206,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -59837,7 +60258,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -59864,6 +60287,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -59878,6 +60302,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -63383,6 +63808,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -63411,6 +63837,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -63466,6 +63893,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -63494,6 +63922,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -63592,6 +64021,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -63620,6 +64050,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -63650,6 +64081,9 @@
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorChapteringCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorTranslationCatalogItemFilter"
         }
       ],
@@ -63661,6 +64095,7 @@
             "KalturaVendorAlignmentCatalogItemFilter",
             "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
+            "KalturaVendorChapteringCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
           "type": "string"
@@ -63703,6 +64138,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -63731,6 +64167,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -63806,6 +64243,9 @@
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItem"
         },
         {
+          "$ref": "#/definitions/KalturaVendorChapteringCatalogItem"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorTranslationCatalogItem"
         }
       ],
@@ -63830,6 +64270,7 @@
             "KalturaVendorAlignmentCatalogItem",
             "KalturaVendorAudioDescriptionCatalogItem",
             "KalturaVendorCaptionsCatalogItem",
+            "KalturaVendorChapteringCatalogItem",
             "KalturaVendorTranslationCatalogItem"
           ],
           "type": "string"
@@ -63843,7 +64284,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "readOnly": true,
           "type": "integer",
@@ -63851,7 +64293,8 @@
             "CAPTIONS",
             "TRANSLATION",
             "ALIGNMENT",
-            "AUDIO_DESCRIPTION"
+            "AUDIO_DESCRIPTION",
+            "CHAPTERING"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -63953,6 +64396,9 @@
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorChapteringCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorTranslationCatalogItemFilter"
         }
       ],
@@ -63980,6 +64426,7 @@
             "KalturaVendorAlignmentCatalogItemFilter",
             "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
+            "KalturaVendorChapteringCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
           "type": "string"
@@ -63990,14 +64437,16 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "type": "integer",
           "x-enumLabels": [
             "CAPTIONS",
             "TRANSLATION",
             "ALIGNMENT",
-            "AUDIO_DESCRIPTION"
+            "AUDIO_DESCRIPTION",
+            "CHAPTERING"
           ],
           "x-enumType": "KalturaVendorServiceFeature"
         },
@@ -64111,6 +64560,9 @@
           "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemFilter"
         },
         {
+          "$ref": "#/definitions/KalturaVendorChapteringCatalogItemFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaVendorTranslationCatalogItemFilter"
         }
       ],
@@ -64121,6 +64573,7 @@
             "KalturaVendorAlignmentCatalogItemFilter",
             "KalturaVendorAudioDescriptionCatalogItemFilter",
             "KalturaVendorCaptionsCatalogItemFilter",
+            "KalturaVendorChapteringCatalogItemFilter",
             "KalturaVendorTranslationCatalogItemFilter"
           ],
           "type": "string"
@@ -64189,6 +64642,88 @@
         }
       },
       "title": "KalturaVendorCatalogItemPricing",
+      "type": "object"
+    },
+    "KalturaVendorChapteringCatalogItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaVendorCatalogItem"
+        }
+      ],
+      "properties": {
+        "sourceLanguage": {
+          "description": "Enum Type: `KalturaCatalogItemLanguage`",
+          "enum": [
+            "Arabic",
+            "Cantonese",
+            "Chinese",
+            "Danish",
+            "Dutch",
+            "English",
+            "English (American)",
+            "English (British)",
+            "Finnish",
+            "French",
+            "German",
+            "Hebrew",
+            "Hindi",
+            "Icelandic",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Mandarin Chinese",
+            "Norwegian",
+            "Polish",
+            "Portuguese",
+            "Russian",
+            "Spanish",
+            "Swedish",
+            "Thai",
+            "Turkish"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "AR",
+            "YUE",
+            "ZH",
+            "DA",
+            "NL",
+            "EN",
+            "EN_US",
+            "EN_GB",
+            "FI",
+            "FR",
+            "DE",
+            "HE",
+            "HI",
+            "IS",
+            "IT",
+            "JA",
+            "KO",
+            "CMN",
+            "NO",
+            "PL",
+            "PT",
+            "RU",
+            "ES",
+            "SV",
+            "TH",
+            "TR"
+          ],
+          "x-enumType": "KalturaCatalogItemLanguage"
+        }
+      },
+      "title": "KalturaVendorChapteringCatalogItem",
+      "type": "object"
+    },
+    "KalturaVendorChapteringCatalogItemFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaVendorCaptionsCatalogItemBaseFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaVendorChapteringCatalogItemFilter",
       "type": "object"
     },
     "KalturaVendorCredit": {
@@ -64283,6 +64818,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -64311,6 +64847,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -64366,6 +64903,7 @@
             "Korean",
             "Mandarin Chinese",
             "Norwegian",
+            "Polish",
             "Portuguese",
             "Russian",
             "Spanish",
@@ -64394,6 +64932,7 @@
             "KO",
             "CMN",
             "NO",
+            "PL",
             "PT",
             "RU",
             "ES",
@@ -65024,6 +65563,7 @@
             "Albanian (Gheg)",
             "Albanian (Tosk)",
             "Aleut",
+            "Algonquian languages",
             "Algonquin",
             "Altai (Southern)",
             "Amharic",
@@ -65044,6 +65584,7 @@
             "Assiniboine",
             "Assyrian Neo-Aramaic",
             "Asturian",
+            "Athapascan languages",
             "Atikamekw",
             "Awadhi",
             "Aymara",
@@ -65111,6 +65652,7 @@
             "Comox",
             "Coptic",
             "Corsican",
+            "Cree",
             "Creek",
             "Crimean Tatar",
             "Croatian",
@@ -65207,9 +65749,11 @@
             "Ingush",
             "Interlingua",
             "Interlingue",
+            "Inuinnaqtun",
             "Inuktitut",
             "Inupiak",
             "Irish",
+            "Iroquoian languages",
             "Italian",
             "Itelmen",
             "Japanese",
@@ -65331,6 +65875,7 @@
             "Moldavian",
             "Mon",
             "Mongolian",
+            "Montagnais",
             "Morisyen",
             "Mossi",
             "Mozarabic",
@@ -65346,6 +65891,7 @@
             "Nganasan",
             "Nisgaa",
             "Niuean",
+            "No linguistic content",
             "Nogai",
             "Norse Old",
             "Northern Sotho Pedi Sepedi",
@@ -65360,6 +65906,8 @@
             "Ojibwa Northwestern",
             "Ojibwa Severn",
             "Ojibwa Western",
+            "Ojibwe, Ojibwa",
+            "Okanagan",
             "Okinawan Central",
             "Old English",
             "Oneida",
@@ -65410,7 +65958,9 @@
             "Sakha",
             "Salar",
             "Salish Straits",
+            "Salishan languages",
             "Sami Kildin",
+            "Sami languages",
             "Samoan",
             "Sangro",
             "Sanskrit",
@@ -65437,6 +65987,7 @@
             "Shuswap",
             "Sicilian",
             "Sidamo",
+            "Siksika",
             "Silesian",
             "Sindhi",
             "Sinhalese",
@@ -65451,6 +66002,7 @@
             "Sorbian Lower",
             "Sorbian Upper",
             "Southern Sami",
+            "Southern Tutchone",
             "Spanish",
             "Sranan",
             "Stoney",
@@ -67383,7 +67935,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.0.0"
+    "version": "15.1.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -67515,8 +68067,9 @@
         "KalturaWidevineRepositorySyncJobData",
         "KalturaBulkUploadCsvJobData",
         "KalturaBulkUploadFilterJobData",
-        "KalturaBulkUploadICalJobData",
         "KalturaBulkUploadXmlJobData",
+        "KalturaBulkUploadICalJobData",
+        "KalturaBulkUploadScheduleEventCsvJobData",
         "KalturaDropFolderXmlBulkUploadJobData",
         "KalturaConvertCollectionJobData",
         "KalturaConvertJobData",
@@ -67559,6 +68112,20 @@
       "type": "string",
       "x-group": "bulkUploadData"
     },
+    "KalturaBulkUploadCsvJobData:bulkUploadData[processObjectId]": {
+      "description": "The object in process",
+      "in": "query",
+      "name": "bulkUploadData[processObjectId]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
+    "KalturaBulkUploadCsvJobData:bulkUploadData[processObjectType]": {
+      "description": "The type of the object in process",
+      "in": "query",
+      "name": "bulkUploadData[processObjectType]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
     "KalturaBulkUploadEntryData:bulkUploadEntryData[conversionProfileId]": {
       "description": "Selected profile id for all bulk entries",
       "in": "query",
@@ -67578,144 +68145,6 @@
       "name": "bulkUploadEntryData[objectType]",
       "type": "string",
       "x-group": "bulkUploadEntryData"
-    },
-    "KalturaBulkUploadICalJobData:bulkUploadData[emailRecipients]": {
-      "description": "Recipients of the email for bulk upload success/failure",
-      "in": "query",
-      "name": "bulkUploadData[emailRecipients]",
-      "type": "string",
-      "x-group": "bulkUploadData"
-    },
-    "KalturaBulkUploadICalJobData:bulkUploadData[eventsType]": {
-      "description": "Enum Type: `KalturaScheduleEventType`\n\nThe type of the events that ill be created by this upload",
-      "enum": [
-        1,
-        2,
-        3
-      ],
-      "in": "query",
-      "name": "bulkUploadData[eventsType]",
-      "type": "integer",
-      "x-enumLabels": [
-        "RECORD",
-        "LIVE_STREAM",
-        "BLACKOUT"
-      ],
-      "x-enumType": "KalturaScheduleEventType",
-      "x-group": "bulkUploadData"
-    },
-    "KalturaBulkUploadICalJobData:bulkUploadData[fileName]": {
-      "description": "Friendly name of the file, used to be recognized later in the logs.",
-      "in": "query",
-      "name": "bulkUploadData[fileName]",
-      "type": "string",
-      "x-group": "bulkUploadData"
-    },
-    "KalturaBulkUploadICalJobData:bulkUploadData[numOfErrorObjects]": {
-      "description": "Number of objects that finished on error status",
-      "in": "query",
-      "name": "bulkUploadData[numOfErrorObjects]",
-      "type": "integer",
-      "x-group": "bulkUploadData"
-    },
-    "KalturaBulkUploadICalJobData:bulkUploadData[objectData][objectType]": {
-      "enum": [
-        "KalturaBulkUploadCategoryData",
-        "KalturaBulkUploadCategoryEntryData",
-        "KalturaBulkUploadCategoryUserData",
-        "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
-      ],
-      "in": "query",
-      "name": "bulkUploadData[objectData][objectType]",
-      "type": "string",
-      "x-group": "bulkUploadData[objectData]"
-    },
-    "KalturaBulkUploadICalJobData:bulkUploadData[objectType]": {
-      "enum": [
-        "KalturaBulkDownloadJobData",
-        "KalturaBulkUploadJobData",
-        "KalturaCaptureThumbJobData",
-        "KalturaClipConcatJobData",
-        "KalturaConcatJobData",
-        "KalturaConvartableJobData",
-        "KalturaConvertLiveSegmentJobData",
-        "KalturaConvertProfileJobData",
-        "KalturaCopyCaptionsJobData",
-        "KalturaCopyJobData",
-        "KalturaCopyPartnerJobData",
-        "KalturaDeleteFileJobData",
-        "KalturaDeleteJobData",
-        "KalturaDistributionJobData",
-        "KalturaDropFolderContentProcessorJobData",
-        "KalturaEventNotificationDispatchJobData",
-        "KalturaExportCsvJobData",
-        "KalturaFlattenJobData",
-        "KalturaImportJobData",
-        "KalturaImportMetadataJobData",
-        "KalturaIndexJobData",
-        "KalturaIndexTagsByPrivacyContextJobData",
-        "KalturaIntegrationJobData",
-        "KalturaLiveReportExportJobData",
-        "KalturaLiveToVodJobData",
-        "KalturaMailJobData",
-        "KalturaMoveCategoryEntriesJobData",
-        "KalturaNotificationJobData",
-        "KalturaParseCaptionAssetJobData",
-        "KalturaParseMultiLanguageCaptionAssetJobData",
-        "KalturaProvisionJobData",
-        "KalturaReportExportJobData",
-        "KalturaScheduledTaskJobData",
-        "KalturaStorageJobData",
-        "KalturaSyncCategoryPrivacyContextJobData",
-        "KalturaTransformMetadataJobData",
-        "KalturaVirusScanJobData",
-        "KalturaWidevineRepositorySyncJobData",
-        "KalturaBulkUploadCsvJobData",
-        "KalturaBulkUploadFilterJobData",
-        "KalturaBulkUploadICalJobData",
-        "KalturaBulkUploadXmlJobData",
-        "KalturaDropFolderXmlBulkUploadJobData",
-        "KalturaConvertCollectionJobData",
-        "KalturaConvertJobData",
-        "KalturaExtractMediaJobData",
-        "KalturaPostConvertJobData",
-        "KalturaDistributionDeleteJobData",
-        "KalturaDistributionFetchReportJobData",
-        "KalturaDistributionSubmitJobData",
-        "KalturaDistributionUpdateJobData",
-        "KalturaDistributionDisableJobData",
-        "KalturaDistributionEnableJobData",
-        "KalturaWebexDropFolderContentProcessorJobData",
-        "KalturaBusinessProcessNotificationDispatchJobData",
-        "KalturaEmailNotificationDispatchJobData",
-        "KalturaHttpNotificationDispatchJobData",
-        "KalturaEntryVendorTaskCsvJobData",
-        "KalturaMediaEsearchExportToCsvJobData",
-        "KalturaUsersCsvJobData",
-        "KalturaSshImportJobData",
-        "KalturaDropFolderImportJobData",
-        "KalturaAkamaiProvisionJobData",
-        "KalturaAkamaiUniversalProvisionJobData",
-        "KalturaVelocixProvisionJobData",
-        "KalturaRecalculateResponseProfileCacheJobData",
-        "KalturaStorageDeleteJobData",
-        "KalturaStorageExportJobData",
-        "KalturaKontikiStorageDeleteJobData",
-        "KalturaAmazonS3StorageExportJobData",
-        "KalturaKontikiStorageExportJobData"
-      ],
-      "in": "query",
-      "name": "bulkUploadData[objectType]",
-      "type": "string",
-      "x-group": "bulkUploadData"
-    },
-    "KalturaBulkUploadICalJobData:bulkUploadData[privileges]": {
-      "description": "privileges for the job",
-      "in": "query",
-      "name": "bulkUploadData[privileges]",
-      "type": "string",
-      "x-group": "bulkUploadData"
     },
     "KalturaBulkUploadJobData:bulkUploadData[emailRecipients]": {
       "description": "Recipients of the email for bulk upload success/failure",
@@ -67793,8 +68222,131 @@
         "KalturaWidevineRepositorySyncJobData",
         "KalturaBulkUploadCsvJobData",
         "KalturaBulkUploadFilterJobData",
-        "KalturaBulkUploadICalJobData",
         "KalturaBulkUploadXmlJobData",
+        "KalturaBulkUploadICalJobData",
+        "KalturaBulkUploadScheduleEventCsvJobData",
+        "KalturaDropFolderXmlBulkUploadJobData",
+        "KalturaConvertCollectionJobData",
+        "KalturaConvertJobData",
+        "KalturaExtractMediaJobData",
+        "KalturaPostConvertJobData",
+        "KalturaDistributionDeleteJobData",
+        "KalturaDistributionFetchReportJobData",
+        "KalturaDistributionSubmitJobData",
+        "KalturaDistributionUpdateJobData",
+        "KalturaDistributionDisableJobData",
+        "KalturaDistributionEnableJobData",
+        "KalturaWebexDropFolderContentProcessorJobData",
+        "KalturaBusinessProcessNotificationDispatchJobData",
+        "KalturaEmailNotificationDispatchJobData",
+        "KalturaHttpNotificationDispatchJobData",
+        "KalturaEntryVendorTaskCsvJobData",
+        "KalturaMediaEsearchExportToCsvJobData",
+        "KalturaUsersCsvJobData",
+        "KalturaSshImportJobData",
+        "KalturaDropFolderImportJobData",
+        "KalturaAkamaiProvisionJobData",
+        "KalturaAkamaiUniversalProvisionJobData",
+        "KalturaVelocixProvisionJobData",
+        "KalturaRecalculateResponseProfileCacheJobData",
+        "KalturaStorageDeleteJobData",
+        "KalturaStorageExportJobData",
+        "KalturaKontikiStorageDeleteJobData",
+        "KalturaAmazonS3StorageExportJobData",
+        "KalturaKontikiStorageExportJobData",
+        "KalturaBulkUploadScheduleEventJobData"
+      ],
+      "in": "query",
+      "name": "bulkUploadData[objectType]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
+    "KalturaBulkUploadJobData:bulkUploadData[privileges]": {
+      "description": "privileges for the job",
+      "in": "query",
+      "name": "bulkUploadData[privileges]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
+    "KalturaBulkUploadScheduleEventJobData:bulkUploadData[emailRecipients]": {
+      "description": "Recipients of the email for bulk upload success/failure",
+      "in": "query",
+      "name": "bulkUploadData[emailRecipients]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
+    "KalturaBulkUploadScheduleEventJobData:bulkUploadData[fileName]": {
+      "description": "Friendly name of the file, used to be recognized later in the logs.",
+      "in": "query",
+      "name": "bulkUploadData[fileName]",
+      "type": "string",
+      "x-group": "bulkUploadData"
+    },
+    "KalturaBulkUploadScheduleEventJobData:bulkUploadData[numOfErrorObjects]": {
+      "description": "Number of objects that finished on error status",
+      "in": "query",
+      "name": "bulkUploadData[numOfErrorObjects]",
+      "type": "integer",
+      "x-group": "bulkUploadData"
+    },
+    "KalturaBulkUploadScheduleEventJobData:bulkUploadData[objectData][objectType]": {
+      "enum": [
+        "KalturaBulkUploadCategoryData",
+        "KalturaBulkUploadCategoryEntryData",
+        "KalturaBulkUploadCategoryUserData",
+        "KalturaBulkUploadEntryData",
+        "KalturaBulkUploadUserData"
+      ],
+      "in": "query",
+      "name": "bulkUploadData[objectData][objectType]",
+      "type": "string",
+      "x-group": "bulkUploadData[objectData]"
+    },
+    "KalturaBulkUploadScheduleEventJobData:bulkUploadData[objectType]": {
+      "enum": [
+        "KalturaBulkDownloadJobData",
+        "KalturaBulkUploadJobData",
+        "KalturaCaptureThumbJobData",
+        "KalturaClipConcatJobData",
+        "KalturaConcatJobData",
+        "KalturaConvartableJobData",
+        "KalturaConvertLiveSegmentJobData",
+        "KalturaConvertProfileJobData",
+        "KalturaCopyCaptionsJobData",
+        "KalturaCopyJobData",
+        "KalturaCopyPartnerJobData",
+        "KalturaDeleteFileJobData",
+        "KalturaDeleteJobData",
+        "KalturaDistributionJobData",
+        "KalturaDropFolderContentProcessorJobData",
+        "KalturaEventNotificationDispatchJobData",
+        "KalturaExportCsvJobData",
+        "KalturaFlattenJobData",
+        "KalturaImportJobData",
+        "KalturaImportMetadataJobData",
+        "KalturaIndexJobData",
+        "KalturaIndexTagsByPrivacyContextJobData",
+        "KalturaIntegrationJobData",
+        "KalturaLiveReportExportJobData",
+        "KalturaLiveToVodJobData",
+        "KalturaMailJobData",
+        "KalturaMoveCategoryEntriesJobData",
+        "KalturaNotificationJobData",
+        "KalturaParseCaptionAssetJobData",
+        "KalturaParseMultiLanguageCaptionAssetJobData",
+        "KalturaProvisionJobData",
+        "KalturaReportExportJobData",
+        "KalturaScheduledTaskJobData",
+        "KalturaStorageJobData",
+        "KalturaSyncCategoryPrivacyContextJobData",
+        "KalturaTransformMetadataJobData",
+        "KalturaVirusScanJobData",
+        "KalturaWidevineRepositorySyncJobData",
+        "KalturaBulkUploadCsvJobData",
+        "KalturaBulkUploadFilterJobData",
+        "KalturaBulkUploadXmlJobData",
+        "KalturaBulkUploadICalJobData",
+        "KalturaBulkUploadScheduleEventCsvJobData",
         "KalturaDropFolderXmlBulkUploadJobData",
         "KalturaConvertCollectionJobData",
         "KalturaConvertJobData",
@@ -67830,7 +68382,7 @@
       "type": "string",
       "x-group": "bulkUploadData"
     },
-    "KalturaBulkUploadJobData:bulkUploadData[privileges]": {
+    "KalturaBulkUploadScheduleEventJobData:bulkUploadData[privileges]": {
       "description": "privileges for the job",
       "in": "query",
       "name": "bulkUploadData[privileges]",
@@ -68682,7 +69234,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaAuthentication"
+            }
           },
           "x-Errors": {
             "description": "* `ADMIN_KUSER_NOT_FOUND`: The data you entered is invalid\n* `PASSWORD_STRUCTURE_INVALID`: The password you entered has an invalid structure.\nPasswords must obey the following rules :\n@RULES@\n* `NEW_PASSWORD_HASH_KEY_EXPIRED`: Given hash key has expired\n* `NEW_PASSWORD_HASH_KEY_INVALID`: Given hash key is invalid\n* `PASSWORD_ALREADY_USED`: Chosen password has already been used\n* `INTERNAL_SERVERL_ERROR`: Internal server error occurred"
@@ -101723,12 +102278,18 @@
                 "resolution": {
                   "enum": [
                     "days",
-                    "months"
+                    "hours",
+                    "minutes",
+                    "months",
+                    "ten_seconds"
                   ],
                   "type": "string",
                   "x-enumLabels": [
                     "DAYS",
-                    "MONTHS"
+                    "HOURS",
+                    "MINUTES",
+                    "MONTHS",
+                    "TEN_SECONDS"
                   ],
                   "x-enumType": "KalturaReportInterval"
                 },
@@ -105894,7 +106455,19 @@
                     "44",
                     "45",
                     "46",
-                    "201"
+                    "201",
+                    "10001",
+                    "10002",
+                    "10003",
+                    "10004",
+                    "10005",
+                    "10006",
+                    "10007",
+                    "10008",
+                    "10009",
+                    "10010",
+                    "10011",
+                    "10012"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -105944,7 +106517,19 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
-                    "PARTNER_USAGE"
+                    "PARTNER_USAGE",
+                    "MAP_OVERLAY_COUNTRY_REALTIME",
+                    "MAP_OVERLAY_REGION_REALTIME",
+                    "MAP_OVERLAY_CITY_REALTIME",
+                    "PLATFORMS_REALTIME",
+                    "USERS_OVERVIEW_REALTIME",
+                    "QOS_OVERVIEW_REALTIME",
+                    "DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_STATUS_REALTIME",
+                    "PLATFORMS_DISCOVERY_REALTIME",
+                    "PLAYBACK_TYPE_REALTIME",
+                    "CONTENT_REALTIME"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -106181,7 +106766,19 @@
                     "44",
                     "45",
                     "46",
-                    "201"
+                    "201",
+                    "10001",
+                    "10002",
+                    "10003",
+                    "10004",
+                    "10005",
+                    "10006",
+                    "10007",
+                    "10008",
+                    "10009",
+                    "10010",
+                    "10011",
+                    "10012"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -106231,7 +106828,19 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
-                    "PARTNER_USAGE"
+                    "PARTNER_USAGE",
+                    "MAP_OVERLAY_COUNTRY_REALTIME",
+                    "MAP_OVERLAY_REGION_REALTIME",
+                    "MAP_OVERLAY_CITY_REALTIME",
+                    "PLATFORMS_REALTIME",
+                    "USERS_OVERVIEW_REALTIME",
+                    "QOS_OVERVIEW_REALTIME",
+                    "DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_STATUS_REALTIME",
+                    "PLATFORMS_DISCOVERY_REALTIME",
+                    "PLAYBACK_TYPE_REALTIME",
+                    "CONTENT_REALTIME"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -106356,7 +106965,19 @@
                     "44",
                     "45",
                     "46",
-                    "201"
+                    "201",
+                    "10001",
+                    "10002",
+                    "10003",
+                    "10004",
+                    "10005",
+                    "10006",
+                    "10007",
+                    "10008",
+                    "10009",
+                    "10010",
+                    "10011",
+                    "10012"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -106406,7 +107027,19 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
-                    "PARTNER_USAGE"
+                    "PARTNER_USAGE",
+                    "MAP_OVERLAY_COUNTRY_REALTIME",
+                    "MAP_OVERLAY_REGION_REALTIME",
+                    "MAP_OVERLAY_CITY_REALTIME",
+                    "PLATFORMS_REALTIME",
+                    "USERS_OVERVIEW_REALTIME",
+                    "QOS_OVERVIEW_REALTIME",
+                    "DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_STATUS_REALTIME",
+                    "PLATFORMS_DISCOVERY_REALTIME",
+                    "PLAYBACK_TYPE_REALTIME",
+                    "CONTENT_REALTIME"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -106524,7 +107157,19 @@
                     "44",
                     "45",
                     "46",
-                    "201"
+                    "201",
+                    "10001",
+                    "10002",
+                    "10003",
+                    "10004",
+                    "10005",
+                    "10006",
+                    "10007",
+                    "10008",
+                    "10009",
+                    "10010",
+                    "10011",
+                    "10012"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -106574,7 +107219,19 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
-                    "PARTNER_USAGE"
+                    "PARTNER_USAGE",
+                    "MAP_OVERLAY_COUNTRY_REALTIME",
+                    "MAP_OVERLAY_REGION_REALTIME",
+                    "MAP_OVERLAY_CITY_REALTIME",
+                    "PLATFORMS_REALTIME",
+                    "USERS_OVERVIEW_REALTIME",
+                    "QOS_OVERVIEW_REALTIME",
+                    "DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_STATUS_REALTIME",
+                    "PLATFORMS_DISCOVERY_REALTIME",
+                    "PLAYBACK_TYPE_REALTIME",
+                    "CONTENT_REALTIME"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -106707,7 +107364,19 @@
                     "44",
                     "45",
                     "46",
-                    "201"
+                    "201",
+                    "10001",
+                    "10002",
+                    "10003",
+                    "10004",
+                    "10005",
+                    "10006",
+                    "10007",
+                    "10008",
+                    "10009",
+                    "10010",
+                    "10011",
+                    "10012"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -106757,7 +107426,19 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
-                    "PARTNER_USAGE"
+                    "PARTNER_USAGE",
+                    "MAP_OVERLAY_COUNTRY_REALTIME",
+                    "MAP_OVERLAY_REGION_REALTIME",
+                    "MAP_OVERLAY_CITY_REALTIME",
+                    "PLATFORMS_REALTIME",
+                    "USERS_OVERVIEW_REALTIME",
+                    "QOS_OVERVIEW_REALTIME",
+                    "DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_DISCOVERY_REALTIME",
+                    "ENTRY_LEVEL_USERS_STATUS_REALTIME",
+                    "PLATFORMS_DISCOVERY_REALTIME",
+                    "PLAYBACK_TYPE_REALTIME",
+                    "CONTENT_REALTIME"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -107389,25 +108070,22 @@
             "type": "file"
           },
           {
-            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[objectType]"
+            "$ref": "#/parameters/KalturaBulkUploadScheduleEventJobData:bulkUploadData[objectType]"
           },
           {
-            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[fileName]"
+            "$ref": "#/parameters/KalturaBulkUploadScheduleEventJobData:bulkUploadData[fileName]"
           },
           {
-            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[objectData][objectType]"
+            "$ref": "#/parameters/KalturaBulkUploadScheduleEventJobData:bulkUploadData[objectData][objectType]"
           },
           {
-            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[emailRecipients]"
+            "$ref": "#/parameters/KalturaBulkUploadScheduleEventJobData:bulkUploadData[emailRecipients]"
           },
           {
-            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[numOfErrorObjects]"
+            "$ref": "#/parameters/KalturaBulkUploadScheduleEventJobData:bulkUploadData[numOfErrorObjects]"
           },
           {
-            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[privileges]"
-          },
-          {
-            "$ref": "#/parameters/KalturaBulkUploadICalJobData:bulkUploadData[eventsType]"
+            "$ref": "#/parameters/KalturaBulkUploadScheduleEventJobData:bulkUploadData[privileges]"
           }
         ],
         "responses": {
@@ -107427,10 +108105,10 @@
         ],
         "x-parameterGroups": [
           {
-            "description": "Object Type: `KalturaBulkUploadICalJobData`",
+            "description": "Object Type: `KalturaBulkUploadScheduleEventJobData`",
             "name": "bulkUploadData",
             "schema": {
-              "$ref": "#/definitions/KalturaBulkUploadICalJobData"
+              "$ref": "#/definitions/KalturaBulkUploadScheduleEventJobData"
             },
             "subGroups": [
               {
@@ -108189,6 +108867,12 @@
           },
           {
             "$ref": "#/parameters/KalturaBulkUploadCsvJobData:bulkUploadData[columns]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadCsvJobData:bulkUploadData[processObjectId]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadCsvJobData:bulkUploadData[processObjectType]"
           }
         ],
         "responses": {
@@ -114647,6 +115331,62 @@
         ]
       }
     },
+    "/service/user/action/generateQrCode": {
+      "post": {
+        "description": "get QR image content",
+        "operationId": "user.generateQrCode",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "hashKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hashKey"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_HASH`: hashKey is not valid\n* `INVALID_USER_ID`: Invalid user id\n* `ERROR_IN_QR_GENERATION`: Could not generate QR code"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "hashKey"
+        ]
+      }
+    },
     "/service/user/action/get": {
       "post": {
         "description": "Retrieves a user object for a specified user ID.",
@@ -114990,7 +115730,7 @@
             }
           },
           "x-Errors": {
-            "description": "* `PARTNER_CHANGE_ACCOUNT_DISABLED`: Partner change account is disabled for current session\n* `INVALID_USER_ID`: Invalid user id\n* `PARTNER_CHANGE_ACCOUNT_DISABLED`: Partner change account is disabled for current session\n* `ADMIN_KUSER_NOT_FOUND`: The data you entered is invalid\n* `LOGIN_DATA_NOT_FOUND`: Login id not found\n* `LOGIN_BLOCKED`: You account is locked\n* `USER_IS_BLOCKED`: User is blocked\n* `INTERNAL_SERVERL_ERROR`: Internal server error occurred\n* `UNKNOWN_PARTNER_ID`: Unknown partner_id [@PID@]\n* `SERVICE_ACCESS_CONTROL_RESTRICTED`: The access to service [@SERVICE@] is forbidden due to access control restriction"
+            "description": "* `PARTNER_CHANGE_ACCOUNT_DISABLED`: Partner change account is disabled for current session\n* `INVALID_USER_ID`: Invalid user id\n* `PARTNER_CHANGE_ACCOUNT_DISABLED`: Partner change account is disabled for current session\n* `ADMIN_KUSER_NOT_FOUND`: The data you entered is invalid\n* `LOGIN_DATA_NOT_FOUND`: Login id not found\n* `LOGIN_BLOCKED`: You account is locked\n* `USER_IS_BLOCKED`: User is blocked\n* `INTERNAL_SERVERL_ERROR`: Internal server error occurred\n* `UNKNOWN_PARTNER_ID`: Unknown partner_id [@PID@]\n* `SERVICE_ACCESS_CONTROL_RESTRICTED`: The access to service [@SERVICE@] is forbidden due to access control restriction\n* `DIRECT_LOGIN_BLOCKED`: Direct login is blocked on this partner"
           }
         },
         "tags": [
@@ -115062,7 +115802,7 @@
             }
           },
           "x-Errors": {
-            "description": "* `USER_NOT_FOUND`: User was not found\n* `USER_WRONG_PASSWORD`: Wrong password supplied\n* `INVALID_PARTNER_ID`: Invalid partner id \"@PID@\"\n* `LOGIN_RETRIES_EXCEEDED`: Maximum login retries exceeded. Your account has been locked and will not be available for 24 hours\n* `LOGIN_BLOCKED`: You account is locked\n* `PASSWORD_EXPIRED`: Current password has expired\n* `USER_IS_BLOCKED`: User is blocked"
+            "description": "* `USER_NOT_FOUND`: User was not found\n* `USER_WRONG_PASSWORD`: Wrong password supplied\n* `INVALID_PARTNER_ID`: Invalid partner id \"@PID@\"\n* `LOGIN_RETRIES_EXCEEDED`: Maximum login retries exceeded. Your account has been locked and will not be available for 24 hours\n* `LOGIN_BLOCKED`: You account is locked\n* `PASSWORD_EXPIRED`: Current password has expired\n* `USER_IS_BLOCKED`: User is blocked\n* `DIRECT_LOGIN_BLOCKED`: Direct login is blocked on this partner"
           }
         },
         "security": [],
@@ -115277,7 +116017,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaAuthentication"
+            }
           },
           "x-Errors": {
             "description": "* `LOGIN_DATA_NOT_FOUND`: Login id not found\n* `PASSWORD_STRUCTURE_INVALID`: The password you entered has an invalid structure.\nPasswords must obey the following rules :\n@RULES@\n* `NEW_PASSWORD_HASH_KEY_EXPIRED`: Given hash key has expired\n* `NEW_PASSWORD_HASH_KEY_INVALID`: Given hash key is invalid\n* `PASSWORD_ALREADY_USED`: Chosen password has already been used\n* `INTERNAL_SERVERL_ERROR`: Internal server error occurred"
@@ -122140,6 +122883,12 @@
             "Norwegian"
           ],
           "title": "NO"
+        },
+        {
+          "enum": [
+            "Polish"
+          ],
+          "title": "PL"
         },
         {
           "enum": [
@@ -131979,6 +132728,23 @@
       ],
       "title": "KalturaGoogleVideoSyndicationFeedOrderBy"
     },
+    "KalturaGroupProcessStatus": {
+      "oneOf": [
+        {
+          "enum": [
+            0
+          ],
+          "title": "NONE"
+        },
+        {
+          "enum": [
+            1
+          ],
+          "title": "PROCESSING"
+        }
+      ],
+      "title": "KalturaGroupProcessStatus"
+    },
     "KalturaGroupUserCreationMode": {
       "oneOf": [
         {
@@ -133361,6 +134127,12 @@
         },
         {
           "enum": [
+            "Algonquian languages"
+          ],
+          "title": "ALG"
+        },
+        {
+          "enum": [
             "Algonquin"
           ],
           "title": "ALQ"
@@ -133478,6 +134250,12 @@
             "Asturian"
           ],
           "title": "AST"
+        },
+        {
+          "enum": [
+            "Athapascan languages"
+          ],
+          "title": "ATH"
         },
         {
           "enum": [
@@ -133880,6 +134658,12 @@
             "Corsican"
           ],
           "title": "CO"
+        },
+        {
+          "enum": [
+            "Cree"
+          ],
+          "title": "CR"
         },
         {
           "enum": [
@@ -134471,6 +135255,12 @@
         },
         {
           "enum": [
+            "Inuinnaqtun"
+          ],
+          "title": "IKT"
+        },
+        {
+          "enum": [
             "Inuktitut"
           ],
           "title": "IU"
@@ -134486,6 +135276,12 @@
             "Irish"
           ],
           "title": "GA"
+        },
+        {
+          "enum": [
+            "Iroquoian languages"
+          ],
+          "title": "IRO"
         },
         {
           "enum": [
@@ -135215,6 +136011,12 @@
         },
         {
           "enum": [
+            "Montagnais"
+          ],
+          "title": "MOE"
+        },
+        {
+          "enum": [
             "Morisyen"
           ],
           "title": "MFE"
@@ -135305,6 +136107,12 @@
         },
         {
           "enum": [
+            "No linguistic content"
+          ],
+          "title": "ZXX"
+        },
+        {
+          "enum": [
             "Nogai"
           ],
           "title": "NOG"
@@ -135386,6 +136194,18 @@
             "Ojibwa Western"
           ],
           "title": "OJW"
+        },
+        {
+          "enum": [
+            "Ojibwe, Ojibwa"
+          ],
+          "title": "OJ"
+        },
+        {
+          "enum": [
+            "Okanagan"
+          ],
+          "title": "OKA"
         },
         {
           "enum": [
@@ -135689,9 +136509,21 @@
         },
         {
           "enum": [
+            "Salishan languages"
+          ],
+          "title": "SAL"
+        },
+        {
+          "enum": [
             "Sami Kildin"
           ],
           "title": "SJD"
+        },
+        {
+          "enum": [
+            "Sami languages"
+          ],
+          "title": "SMI"
         },
         {
           "enum": [
@@ -135851,6 +136683,12 @@
         },
         {
           "enum": [
+            "Siksika"
+          ],
+          "title": "BLA"
+        },
+        {
+          "enum": [
             "Silesian"
           ],
           "title": "SZL"
@@ -135932,6 +136770,12 @@
             "Southern Sami"
           ],
           "title": "SMA"
+        },
+        {
+          "enum": [
+            "Southern Tutchone"
+          ],
+          "title": "TCE"
         },
         {
           "enum": [
@@ -136465,13 +137309,13 @@
           "enum": [
             "Yiddish"
           ],
-          "title": "YI"
+          "title": "JI"
         },
         {
           "enum": [
             "Yiddish"
           ],
-          "title": "JI"
+          "title": "YI"
         },
         {
           "enum": [
@@ -136522,6 +137366,12 @@
         },
         {
           "enum": [
+            "alg"
+          ],
+          "title": "ALG"
+        },
+        {
+          "enum": [
             "am"
           ],
           "title": "AM"
@@ -136537,6 +137387,12 @@
             "as"
           ],
           "title": "AS_"
+        },
+        {
+          "enum": [
+            "ath"
+          ],
+          "title": "ATH"
         },
         {
           "enum": [
@@ -136582,6 +137438,12 @@
         },
         {
           "enum": [
+            "bla"
+          ],
+          "title": "BLA"
+        },
+        {
+          "enum": [
             "bn"
           ],
           "title": "BN"
@@ -136609,6 +137471,18 @@
             "co"
           ],
           "title": "CO"
+        },
+        {
+          "enum": [
+            "cr"
+          ],
+          "title": "CR"
+        },
+        {
+          "enum": [
+            "crg"
+          ],
+          "title": "CRG"
         },
         {
           "enum": [
@@ -136822,9 +137696,21 @@
         },
         {
           "enum": [
+            "ikt"
+          ],
+          "title": "IKT"
+        },
+        {
+          "enum": [
             "in"
           ],
           "title": "IN"
+        },
+        {
+          "enum": [
+            "iro"
+          ],
+          "title": "IRO"
         },
         {
           "enum": [
@@ -136978,6 +137864,12 @@
         },
         {
           "enum": [
+            "mic"
+          ],
+          "title": "MIC"
+        },
+        {
+          "enum": [
             "mk"
           ],
           "title": "MK"
@@ -137002,6 +137894,12 @@
         },
         {
           "enum": [
+            "moe"
+          ],
+          "title": "MOE"
+        },
+        {
+          "enum": [
             "mr"
           ],
           "title": "MR"
@@ -137020,7 +137918,7 @@
         },
         {
           "enum": [
-            "multilingual"
+            "mu"
           ],
           "title": "MU"
         },
@@ -137059,6 +137957,30 @@
             "oc"
           ],
           "title": "OC"
+        },
+        {
+          "enum": [
+            "oj"
+          ],
+          "title": "OJ"
+        },
+        {
+          "enum": [
+            "ojs"
+          ],
+          "title": "OJS"
+        },
+        {
+          "enum": [
+            "ojw"
+          ],
+          "title": "OJW"
+        },
+        {
+          "enum": [
+            "oka"
+          ],
+          "title": "OKA"
         },
         {
           "enum": [
@@ -137140,6 +138062,12 @@
         },
         {
           "enum": [
+            "sal"
+          ],
+          "title": "SAL"
+        },
+        {
+          "enum": [
             "sd"
           ],
           "title": "SD"
@@ -137179,6 +138107,12 @@
             "sm"
           ],
           "title": "SM"
+        },
+        {
+          "enum": [
+            "smi"
+          ],
+          "title": "SMI"
         },
         {
           "enum": [
@@ -137239,6 +138173,12 @@
             "ta"
           ],
           "title": "TA"
+        },
+        {
+          "enum": [
+            "tce"
+          ],
+          "title": "TCE"
         },
         {
           "enum": [
@@ -137326,6 +138266,12 @@
         },
         {
           "enum": [
+            "un"
+          ],
+          "title": "UN"
+        },
+        {
+          "enum": [
             "ur"
           ],
           "title": "UR"
@@ -137383,6 +138329,12 @@
             "zu"
           ],
           "title": "ZU"
+        },
+        {
+          "enum": [
+            "zxx"
+          ],
+          "title": "ZXX"
         }
       ],
       "title": "KalturaLanguageCode"
@@ -140061,6 +141013,12 @@
             "138"
           ],
           "title": "MAIL_TYPE_REPORT_EXPORT_ABORT"
+        },
+        {
+          "enum": [
+            "139"
+          ],
+          "title": "MAIL_TYPE_SIP_FAILURE"
         }
       ],
       "title": "KalturaMailType"
@@ -142130,6 +143088,29 @@
       ],
       "title": "KalturaObjectTaskType"
     },
+    "KalturaPartnerAuthenticationType": {
+      "oneOf": [
+        {
+          "enum": [
+            0
+          ],
+          "title": "PASSWORD_ONLY"
+        },
+        {
+          "enum": [
+            1
+          ],
+          "title": "TWO_FACTOR_AUTH"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "SSO"
+        }
+      ],
+      "title": "KalturaPartnerAuthenticationType"
+    },
     "KalturaPartnerFreeTrialType": {
       "oneOf": [
         {
@@ -143113,6 +144094,12 @@
         },
         {
           "enum": [
+            "FEATURE_LIVE_ANALYTICS_DASHBOARD"
+          ],
+          "title": "FEATURE_LIVE_ANALYTICS_DASHBOARD"
+        },
+        {
+          "enum": [
             "FEATURE_LIVE_CHANNEL"
           ],
           "title": "FEATURE_LIVE_CHANNEL"
@@ -143536,6 +144523,12 @@
             "SYSTEM_ADMIN_PERMISSIONS_MANAGE"
           ],
           "title": "SYSTEM_ADMIN_PERMISSIONS_MANAGE"
+        },
+        {
+          "enum": [
+            "SYSTEM_ADMIN_PERMISSIONS_UPDATE"
+          ],
+          "title": "SYSTEM_ADMIN_PERMISSIONS_UPDATE"
         },
         {
           "enum": [
@@ -145851,9 +146844,27 @@
         },
         {
           "enum": [
+            "hours"
+          ],
+          "title": "HOURS"
+        },
+        {
+          "enum": [
+            "minutes"
+          ],
+          "title": "MINUTES"
+        },
+        {
+          "enum": [
             "months"
           ],
           "title": "MONTHS"
+        },
+        {
+          "enum": [
+            "ten_seconds"
+          ],
+          "title": "TEN_SECONDS"
         }
       ],
       "title": "KalturaReportInterval"
@@ -146158,6 +147169,78 @@
             "201"
           ],
           "title": "PARTNER_USAGE"
+        },
+        {
+          "enum": [
+            "10001"
+          ],
+          "title": "MAP_OVERLAY_COUNTRY_REALTIME"
+        },
+        {
+          "enum": [
+            "10002"
+          ],
+          "title": "MAP_OVERLAY_REGION_REALTIME"
+        },
+        {
+          "enum": [
+            "10003"
+          ],
+          "title": "MAP_OVERLAY_CITY_REALTIME"
+        },
+        {
+          "enum": [
+            "10004"
+          ],
+          "title": "PLATFORMS_REALTIME"
+        },
+        {
+          "enum": [
+            "10005"
+          ],
+          "title": "USERS_OVERVIEW_REALTIME"
+        },
+        {
+          "enum": [
+            "10006"
+          ],
+          "title": "QOS_OVERVIEW_REALTIME"
+        },
+        {
+          "enum": [
+            "10007"
+          ],
+          "title": "DISCOVERY_REALTIME"
+        },
+        {
+          "enum": [
+            "10008"
+          ],
+          "title": "ENTRY_LEVEL_USERS_DISCOVERY_REALTIME"
+        },
+        {
+          "enum": [
+            "10009"
+          ],
+          "title": "ENTRY_LEVEL_USERS_STATUS_REALTIME"
+        },
+        {
+          "enum": [
+            "10010"
+          ],
+          "title": "PLATFORMS_DISCOVERY_REALTIME"
+        },
+        {
+          "enum": [
+            "10011"
+          ],
+          "title": "PLAYBACK_TYPE_REALTIME"
+        },
+        {
+          "enum": [
+            "10012"
+          ],
+          "title": "CONTENT_REALTIME"
         }
       ],
       "title": "KalturaReportType"
@@ -150430,6 +151513,12 @@
             4
           ],
           "title": "AUDIO_DESCRIPTION"
+        },
+        {
+          "enum": [
+            5
+          ],
+          "title": "CHAPTERING"
         }
       ],
       "title": "KalturaVendorServiceFeature"
@@ -152734,6 +153823,11 @@
       "name": "INVALID_PARTNER_ID"
     },
     {
+      "code": "DIRECT_LOGIN_BLOCKED",
+      "message": "Direct login is blocked on this partner",
+      "name": "DIRECT_LOGIN_BLOCKED"
+    },
+    {
       "code": "INVALID_SERVICE_CONFIGURATION",
       "message": "Invalid service configuration. Unknown service [@SRV_NAME@:@ACTION_NAME@].",
       "name": "INVALID_SERVICE_CONFIGURATION"
@@ -154104,6 +155198,26 @@
       "name": "INVALID_OTP"
     },
     {
+      "code": "MISSING_OTP",
+      "message": "OTP is missing",
+      "name": "MISSING_OTP"
+    },
+    {
+      "code": "ERROR_IN_QR_GENERATION",
+      "message": "Could not generate QR code",
+      "name": "ERROR_IN_QR_GENERATION"
+    },
+    {
+      "code": "ERROR_IN_SEED_GENERATION",
+      "message": "Could not handle new seed generation",
+      "name": "ERROR_IN_SEED_GENERATION"
+    },
+    {
+      "code": "INVALID_HASH",
+      "message": "hashKey is not valid",
+      "name": "INVALID_HASH"
+    },
+    {
       "code": "CANNOT_CREATE_CLIP_FLAVOR_JOB",
       "message": "cannot create clip, flavor convert batch job returned as null",
       "name": "CANNOT_CREATE_CLIP_FLAVOR_JOB"
@@ -154769,6 +155883,11 @@
       "name": "CANNOT_CHANGE_OWN_ROLE"
     },
     {
+      "code": "NOT_ALLOWED_TO_CHANGE_ROLE",
+      "message": "User Is not allowed change roles",
+      "name": "NOT_ALLOWED_TO_CHANGE_ROLE"
+    },
+    {
       "code": "PERMISSION_NOT_FOUND",
       "message": "@ERR_TEXT@",
       "name": "PERMISSION_NOT_FOUND"
@@ -154887,6 +156006,11 @@
       "code": "DRUID_QUERY_TIMED_OUT",
       "message": "Query timed out",
       "name": "DRUID_QUERY_TIMED_OUT"
+    },
+    {
+      "code": "NEW_LOGIN_REQUIRED",
+      "message": "Switching to requested partner requires re-login",
+      "name": "NEW_LOGIN_REQUIRED"
     },
     {
       "code": "INTERNAL_SERVER_ERROR",
