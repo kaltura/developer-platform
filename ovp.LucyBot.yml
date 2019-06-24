@@ -448,11 +448,11 @@ operationNavigation:
       - tag: "adminUser"
         hide: true
       - tag: "auditTrail"
-  - title: "Optimize API Requests"
-    prerender: false
-    children:
-      - tag: "multirequest"
-      - tag: "responseProfile"
+    #- title: "Optimize API Requests"
+    #prerender: false
+    #children:
+    #  - tag: "multirequest"
+    #  - tag: "responseProfile"
   - title: "Integration, Scheduling and Hooks"
     prerender: false
     children:
