@@ -48,18 +48,18 @@ if (!process.env.DEVELOPMENT || process.env.USE_CACHE) {
       next();
     };
   }
-  App.use('/fonts',          cache('long'));
-  App.use('/img',            cache('long'));
-  App.use('/workflows',      cache('med'));
-  App.use('/kaltura_static', cache('med'));
-  App.use('/minified',       cache('med'));
-  App.use('/partials',       cache('med'));
-  App.use('/swagger.js',     cache('med'));
-  App.use('/swagger.json',   cache('med'));
+  App.use(BASE_PATH + '/fonts',          cache('long'));
+  App.use(BASE_PATH + '/img',            cache('long'));
+  App.use(BASE_PATH + '/workflows',      cache('med'));
+  App.use(BASE_PATH + '/kaltura_static', cache('med'));
+  App.use(BASE_PATH + '/minified',       cache('med'));
+  App.use(BASE_PATH + '/partials',       cache('med'));
+  App.use(BASE_PATH + '/swagger.js',     cache('med'));
+  App.use(BASE_PATH + '/swagger.json',   cache('med'));
 }
 
 var recipeRedirects = require('./recipe-redirects');
-App.use('/recipes/:recipe/embed', (req, res, next) => {
+App.use(BASE_PATH + '/recipes/:recipe/embed', (req, res, next) => {
   var redirect = recipeRedirects[req.params.recipe];
   if (!redirect) return next();
   res.redirect(redirect.redirect + '?embed=true');
@@ -83,19 +83,19 @@ if (BASE_PATH) {
   App.use(Express.static(STATIC_DIR));
 }
 
-const GH_PAGES_BASE = '/kaltura-recipes-v3';
+const GH_PAGES_BASE = BASE_PATH + '/kaltura-recipes-v3';
 App.use(GH_PAGES_BASE, (req, res, next) => {
   res.redirect(req.originalUrl.substring(GH_PAGES_BASE.length));
 })
 
-App.use('/quiz', require('./routes/quiz'))
-App.use('/discussion', require('./routes/discussion'));
+App.use(BASE_PATH + '/quiz', require('./routes/quiz'))
+App.use(BASE_PATH + '/discussion', require('./routes/discussion'));
 if (process.env.TARGET_API === 'ott') {
-  App.use('/auth', require('./routes/ott-auth.js'));
+  App.use(BASE_PATH + '/auth', require('./routes/ott-auth.js'));
 } else {
-  App.use('/auth', require('./routes/partner-auth.js'));
+  App.use(BASE_PATH + '/auth', require('./routes/partner-auth.js'));
 }
-App.use('/github', require('./routes/github.js'));
+App.use(BASE_PATH + '/github', require('./routes/github.js'));
 
 App.get('*', (req, res) => {
   if (req.originalUrl.endsWith('.html/')) {
