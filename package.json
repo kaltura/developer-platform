@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha",
     "build-homepage": "sass --no-source-map ./homepage/styles/styles.scss ./homepage/assets/styles.css && sass --no-source-map ./homepage/styles/footer.scss ./styles/footer.css",
-    "watch": "run-when-changed --watch './homepage/styles/*' --exec 'npm run build-homepage'"
+    "watch": "run-when-changed --watch './homepage/styles/*' --exec 'npm run build-homepage'",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "watch": {
     "build-homepage": {
@@ -36,6 +38,8 @@
     "pug": "^2.0.3",
     "request": "^2.88.0",
     "sass": "^1.15.1",
-    "swiftype": "^0.4.0"
-  }
+    "swiftype": "^0.4.0",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
