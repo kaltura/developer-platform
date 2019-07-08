@@ -34,6 +34,7 @@
     "kaltura": "file:lib/ott",
     "kaltura-client": "^1.0.10",
     "pug": "^2.0.3",
+    "querystring": "^0.2.0",
     "request": "^2.88.0",
     "sass": "^1.15.1",
     "swiftype": "^0.4.0"
