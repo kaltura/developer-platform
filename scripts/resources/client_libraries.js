@@ -1,6 +1,6 @@
 var fs = require('fs');
 var ejs = require('ejs');
-var version = 'v15.1.0';
+var version = 'v15.2.0';
 const MARKDOWN_DIR = __dirname + '/../../markdown';
 const TARGET = process.env.TARGET_API || 'ovp';
 const CLIENT_LANGS = {

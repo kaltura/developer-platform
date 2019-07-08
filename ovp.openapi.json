@@ -61538,6 +61538,10 @@
           "readOnly": true,
           "type": "string"
         },
+        "minimumChunkSize": {
+          "description": "`insertOnly`\n\nset the minimum size in bytes for each uploaded part of the file",
+          "type": "number"
+        },
         "partnerId": {
           "description": "`readOnly`\n\nPartner ID of the upload token",
           "readOnly": true,
@@ -67935,7 +67939,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.1.0"
+    "version": "15.2.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -113524,6 +113528,56 @@
         ]
       }
     },
+    "/service/thumbnail_thumbnail/action/transform": {
+      "post": {
+        "description": "Retrieves a thumbnail according to the required transformation",
+        "operationId": "thumbnail.transform",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "transformString": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "transformString"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "thumbnail"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "transformString"
+        ]
+      }
+    },
     "/service/thumbparams/action/add": {
       "post": {
         "description": "Add new Thumb Params",
@@ -118645,6 +118699,10 @@
     {
       "description": "Retrieve information and invoke actions on Thumb Asset",
       "name": "thumbAsset"
+    },
+    {
+      "name": "thumbnail",
+      "x-plugin": "thumbnail"
     },
     {
       "description": "Add & Manage Thumb Params",
