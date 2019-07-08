@@ -23,7 +23,7 @@ Router.use(require('body-parser').json());
 Router.post('/selectPartner', function(req, res) {
   var kaltura_conf = new kaltura.Configuration(req.body.partnerId);
   var client = new kaltura.Client(kaltura_conf);
-  kaltura.services.user.loginByLoginId(req.body.email, req.body.password, req.body.partnerId, LOGIN_EXPIRY, LOGIN_PERMISSIONS)
+  kaltura.services.user.loginByLoginId(req.body.email, req.body.password, req.body.partnerId, LOGIN_EXPIRY, LOGIN_PERMISSIONS, req.body.otp)
   .execute(client).then(function(ks){
     if (!ks) return res.send("Error logging in");
     client.setKs(ks);
@@ -41,7 +41,7 @@ Router.post('/login', function(req, res) {
   var kaltura_conf = new kaltura.Configuration(req.body.partnerId);
   var client = new kaltura.Client(kaltura_conf);
   var type = kaltura.enums.SessionType.ADMIN;
-  kaltura.services.user.loginByLoginId(req.body.email, req.body.password, req.body.partnerId, LOGIN_EXPIRY, LOGIN_PERMISSIONS)
+  kaltura.services.user.loginByLoginId(req.body.email, req.body.password, req.body.partnerId, LOGIN_EXPIRY, LOGIN_PERMISSIONS,  req.body.otp)
   .execute(client).then(function(ks) {
     if (!ks) return res.send("Error logging in");
     client.setKs(ks);
