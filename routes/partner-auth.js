@@ -28,7 +28,7 @@ Router.post('/selectPartner', function(req, res) {
     if (!ks) return res.send("Error logging in");
     client.setKs(ks);
     var type = kaltura.enums.SessionType.ADMIN;
-    kaltura.services.partner.getSecrets(req.body.partnerId, req.body.email, req.body.password)
+    kaltura.services.partner.getInfo(req.body.partnerId, req.body.email, req.body.password)
     .execute(client).then(function(secrets) {
       if (!secrets) return res.status(500).end();
       if (secrets.code && secrets.message) return res.status(500).send(secrets.message);
