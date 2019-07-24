@@ -147,6 +147,11 @@ operationNavigation:
         path: "/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html"
         discussionURL: null
 
+      - title: "API Client Library Generator"
+        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/client-library-generator.html
+        path: "/VPaaS-API-Getting-Started/client-library-generator.html"
+        discussionURL: null
+
       - title: "How to use Kaltura's API Abstract Classes"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html
         path: "/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html"
@@ -171,6 +176,11 @@ operationNavigation:
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html
         path: "/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html"
         discussionURL: null
+
+      - title: "API Usage Guideliness "
+        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/api-guidelines.html
+        path: "/VPaaS-API-Getting-Started/api-guidelines.html"
+        discussionURL: null   
 
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
