@@ -6783,9 +6783,11 @@
         "jobType": {
           "description": "`readOnly`\n\nEnum Type: `KalturaBatchJobType`",
           "enum": [
+            "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
             "contentDistribution.DistributionDelete",
+            "0",
             "contentDistribution.DistributionDisable",
             "contentDistribution.DistributionEnable",
             "contentDistribution.DistributionFetchReport",
@@ -6799,7 +6801,6 @@
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -6854,9 +6855,11 @@
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
+            "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
             "DISTRIBUTION_DELETE",
+            "CONVERT",
             "DISTRIBUTION_DISABLE",
             "DISTRIBUTION_ENABLE",
             "DISTRIBUTION_FETCH_REPORT",
@@ -6870,7 +6873,6 @@
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -7127,9 +7129,11 @@
         "jobTypeEqual": {
           "description": "Enum Type: `KalturaBatchJobType`",
           "enum": [
+            "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
             "contentDistribution.DistributionDelete",
+            "0",
             "contentDistribution.DistributionDisable",
             "contentDistribution.DistributionEnable",
             "contentDistribution.DistributionFetchReport",
@@ -7143,7 +7147,6 @@
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -7197,9 +7200,11 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
             "DISTRIBUTION_DELETE",
+            "CONVERT",
             "DISTRIBUTION_DISABLE",
             "DISTRIBUTION_ENABLE",
             "DISTRIBUTION_FETCH_REPORT",
@@ -7213,7 +7218,6 @@
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -7499,9 +7503,11 @@
         "jobType": {
           "description": "Enum Type: `KalturaBatchJobType`",
           "enum": [
+            "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
             "contentDistribution.DistributionDelete",
+            "0",
             "contentDistribution.DistributionDisable",
             "contentDistribution.DistributionEnable",
             "contentDistribution.DistributionFetchReport",
@@ -7515,7 +7521,6 @@
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -7569,9 +7574,11 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
             "DISTRIBUTION_DELETE",
+            "CONVERT",
             "DISTRIBUTION_DISABLE",
             "DISTRIBUTION_ENABLE",
             "DISTRIBUTION_FETCH_REPORT",
@@ -7585,7 +7592,6 @@
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -10361,14 +10367,16 @@
             "1",
             "2",
             "3",
-            "4"
+            "4",
+            "5"
           ],
           "type": "string",
           "x-enumLabels": [
             "SRT",
             "DFXP",
             "WEBVTT",
-            "CAP"
+            "CAP",
+            "SCC"
           ],
           "x-enumType": "KalturaCaptionType"
         },
@@ -11357,14 +11365,16 @@
             "1",
             "2",
             "3",
-            "4"
+            "4",
+            "5"
           ],
           "type": "string",
           "x-enumLabels": [
             "SRT",
             "DFXP",
             "WEBVTT",
-            "CAP"
+            "CAP",
+            "SCC"
           ],
           "x-enumType": "KalturaCaptionType"
         },
@@ -12145,14 +12155,16 @@
             "1",
             "2",
             "3",
-            "4"
+            "4",
+            "5"
           ],
           "type": "string",
           "x-enumLabels": [
             "SRT",
             "DFXP",
             "WEBVTT",
-            "CAP"
+            "CAP",
+            "SCC"
           ],
           "x-enumType": "KalturaCaptionType"
         },
@@ -12770,14 +12782,16 @@
             "1",
             "2",
             "3",
-            "4"
+            "4",
+            "5"
           ],
           "type": "string",
           "x-enumLabels": [
             "SRT",
             "DFXP",
             "WEBVTT",
-            "CAP"
+            "CAP",
+            "SCC"
           ],
           "x-enumType": "KalturaCaptionType"
         },
@@ -18188,6 +18202,32 @@
       "title": "KalturaConversionProfileListResponse",
       "type": "object"
     },
+    "KalturaConvertCaptionAssetJobData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaJobData"
+        }
+      ],
+      "properties": {
+        "captionAssetId": {
+          "type": "string"
+        },
+        "fileEncryptionKey": {
+          "type": "string"
+        },
+        "fileLocation": {
+          "type": "string"
+        },
+        "fromType": {
+          "type": "string"
+        },
+        "toType": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaConvertCaptionAssetJobData",
+      "type": "object"
+    },
     "KalturaConvertCollectionFlavorData": {
       "properties": {
         "audioBitrate": {
@@ -22190,6 +22230,19 @@
             "MANUAL"
           ],
           "x-enumType": "KalturaDistributionProfileActionStatus"
+        },
+        "distributeTrigger": {
+          "description": "Enum Type: `KalturaDistributeTrigger`\n\nThe event that trigger the automatic distribute",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "ENTRY_READY",
+            "MODERATION_APPROVED"
+          ],
+          "x-enumType": "KalturaDistributeTrigger"
         },
         "id": {
           "description": "`readOnly`\n\nAuto generated unique id",
@@ -26363,6 +26416,88 @@
       "type": "object",
       "x-abstract": true
     },
+    "KalturaESearchAggregation": {
+      "properties": {
+        "aggregations": {
+          "items": {
+            "$ref": "#/definitions/KalturaESearchAggregationItem"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaESearchAggregation",
+      "type": "object"
+    },
+    "KalturaESearchAggregationBucket": {
+      "properties": {
+        "count": {
+          "type": "integer"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaESearchAggregationBucket",
+      "type": "object"
+    },
+    "KalturaESearchAggregationItem": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchCategoryAggregationItem"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchCuepointsAggregationItem"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchEntryAggregationItem"
+        },
+        {
+          "$ref": "#/definitions/KalturaESearchMetadataAggregationItem"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaESearchCategoryAggregationItem",
+            "KalturaESearchCuepointsAggregationItem",
+            "KalturaESearchEntryAggregationItem",
+            "KalturaESearchMetadataAggregationItem"
+          ],
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        }
+      },
+      "title": "KalturaESearchAggregationItem",
+      "type": "object",
+      "x-abstract": true
+    },
+    "KalturaESearchAggregationResponse": {
+      "properties": {},
+      "title": "KalturaESearchAggregationResponse",
+      "type": "object"
+    },
+    "KalturaESearchAggregationResponseItem": {
+      "properties": {
+        "buckets": {
+          "items": {
+            "$ref": "#/definitions/KalturaESearchAggregationBucket"
+          },
+          "type": "array"
+        },
+        "fieldName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaESearchAggregationResponseItem",
+      "type": "object"
+    },
     "KalturaESearchBaseFilter": {
       "anyOf": [
         {
@@ -26542,6 +26677,28 @@
         }
       },
       "title": "KalturaESearchCaptionItemData",
+      "type": "object"
+    },
+    "KalturaESearchCategoryAggregationItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchAggregationItem"
+        }
+      ],
+      "properties": {
+        "fieldName": {
+          "description": "Enum Type: `KalturaESearchCategoryAggregateByFieldName`",
+          "enum": [
+            "category_name"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "CATEGORY_NAME"
+          ],
+          "x-enumType": "KalturaESearchCategoryAggregateByFieldName"
+        }
+      },
+      "title": "KalturaESearchCategoryAggregationItem",
       "type": "object"
     },
     "KalturaESearchCategoryBaseItem": {
@@ -26971,6 +27128,30 @@
       "title": "KalturaESearchCuePointItemData",
       "type": "object"
     },
+    "KalturaESearchCuepointsAggregationItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchAggregationItem"
+        }
+      ],
+      "properties": {
+        "fieldName": {
+          "description": "Enum Type: `KalturaESearchCuePointAggregateByFieldName`",
+          "enum": [
+            "tags",
+            "type"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "TAGS",
+            "TYPE"
+          ],
+          "x-enumType": "KalturaESearchCuePointAggregateByFieldName"
+        }
+      },
+      "title": "KalturaESearchCuepointsAggregationItem",
+      "type": "object"
+    },
     "KalturaESearchEntryAbstractNestedItem": {
       "allOf": [
         {
@@ -27031,6 +27212,34 @@
       "title": "KalturaESearchEntryAbstractNestedItem",
       "type": "object",
       "x-abstract": true
+    },
+    "KalturaESearchEntryAggregationItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchAggregationItem"
+        }
+      ],
+      "properties": {
+        "fieldName": {
+          "description": "Enum Type: `KalturaESearchEntryAggregateByFieldName`",
+          "enum": [
+            "access_control_profile_id",
+            "entry_type",
+            "media_type",
+            "tags"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "ACCESS_CONTROL_PROFILE",
+            "ENTRY_TYPE",
+            "MEDIA_TYPE",
+            "TAGS"
+          ],
+          "x-enumType": "KalturaESearchEntryAggregateByFieldName"
+        }
+      },
+      "title": "KalturaESearchEntryAggregationItem",
+      "type": "object"
     },
     "KalturaESearchEntryBaseItem": {
       "allOf": [
@@ -27154,6 +27363,7 @@
             "moderation_status",
             "name",
             "parent_id",
+            "partner_sort_value",
             "push_publish",
             "recorded_entry_id",
             "redirect_entry_id",
@@ -27191,6 +27401,7 @@
             "MODERATION_STATUS",
             "NAME",
             "PARENT_ENTRY_ID",
+            "PARTNER_SORT_VALUE",
             "PUSH_PUBLISH",
             "RECORDED_ENTRY_ID",
             "REDIRECT_ENTRY_ID",
@@ -27356,6 +27567,9 @@
         }
       ],
       "properties": {
+        "aggregations": {
+          "$ref": "#/definitions/KalturaESearchAggregation"
+        },
         "searchOperator": {
           "$ref": "#/definitions/KalturaESearchEntryOperator"
         }
@@ -27370,6 +27584,12 @@
         }
       ],
       "properties": {
+        "aggregations": {
+          "items": {
+            "$ref": "#/definitions/KalturaESearchAggregationResponseItem"
+          },
+          "type": "array"
+        },
         "objects": {
           "items": {
             "$ref": "#/definitions/KalturaESearchEntryResult"
@@ -27832,6 +28052,23 @@
         }
       },
       "title": "KalturaESearchLanguageItem",
+      "type": "object"
+    },
+    "KalturaESearchMetadataAggregationItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaESearchAggregationItem"
+        }
+      ],
+      "properties": {
+        "fieldName": {
+          "description": "Enum Type: `KalturaESearchMetadataAggregateByFieldName`",
+          "type": "string",
+          "x-enumLabels": [],
+          "x-enumType": "KalturaESearchMetadataAggregateByFieldName"
+        }
+      },
+      "title": "KalturaESearchMetadataAggregationItem",
       "type": "object"
     },
     "KalturaESearchMetadataItemData": {
@@ -33534,6 +33771,9 @@
           "$ref": "#/definitions/KalturaViewHistoryUserEntryFilter"
         },
         {
+          "$ref": "#/definitions/KalturaWatchLaterUserEntryFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaQuizUserEntryFilter"
         },
         {
@@ -34085,6 +34325,7 @@
             "KalturaLocationScheduleResourceFilter",
             "KalturaUserEntryFilter",
             "KalturaViewHistoryUserEntryFilter",
+            "KalturaWatchLaterUserEntryFilter",
             "KalturaQuizUserEntryFilter",
             "KalturaUserLoginDataFilter",
             "KalturaUserRoleFilter",
@@ -35961,9 +36202,11 @@
         "jobType": {
           "description": "`readOnly`\n\nEnum Type: `KalturaBatchJobType`",
           "enum": [
+            "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
             "contentDistribution.DistributionDelete",
+            "0",
             "contentDistribution.DistributionDisable",
             "contentDistribution.DistributionEnable",
             "contentDistribution.DistributionFetchReport",
@@ -35977,7 +36220,6 @@
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -36032,9 +36274,11 @@
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
+            "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
             "DISTRIBUTION_DELETE",
+            "CONVERT",
             "DISTRIBUTION_DISABLE",
             "DISTRIBUTION_ENABLE",
             "DISTRIBUTION_FETCH_REPORT",
@@ -36048,7 +36292,6 @@
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -39925,6 +40168,9 @@
           "$ref": "#/definitions/KalturaConvartableJobData"
         },
         {
+          "$ref": "#/definitions/KalturaConvertCaptionAssetJobData"
+        },
+        {
           "$ref": "#/definitions/KalturaConvertLiveSegmentJobData"
         },
         {
@@ -40133,6 +40379,7 @@
             "KalturaClipConcatJobData",
             "KalturaConcatJobData",
             "KalturaConvartableJobData",
+            "KalturaConvertCaptionAssetJobData",
             "KalturaConvertLiveSegmentJobData",
             "KalturaConvertProfileJobData",
             "KalturaCopyCaptionsJobData",
@@ -47339,6 +47586,9 @@
         "allowQuickEdit": {
           "type": "integer"
         },
+        "allowedFromEmailWhiteList": {
+          "type": "string"
+        },
         "appearInSearch": {
           "type": "integer"
         },
@@ -51809,6 +52059,9 @@
           "$ref": "#/definitions/KalturaViewHistoryUserEntryFilter"
         },
         {
+          "$ref": "#/definitions/KalturaWatchLaterUserEntryFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaQuizUserEntryFilter"
         },
         {
@@ -51928,6 +52181,7 @@
             "KalturaLocationScheduleResourceFilter",
             "KalturaUserEntryFilter",
             "KalturaViewHistoryUserEntryFilter",
+            "KalturaWatchLaterUserEntryFilter",
             "KalturaQuizUserEntryFilter",
             "KalturaUserLoginDataFilter",
             "KalturaUserRoleFilter",
@@ -54677,9 +54931,11 @@
         "workerType": {
           "description": "Enum Type: `KalturaBatchJobType`\n\nThe type of the job worker.",
           "enum": [
+            "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
             "contentDistribution.DistributionDelete",
+            "0",
             "contentDistribution.DistributionDisable",
             "contentDistribution.DistributionEnable",
             "contentDistribution.DistributionFetchReport",
@@ -54693,7 +54949,6 @@
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -54747,9 +55002,11 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
             "DISTRIBUTION_DELETE",
+            "CONVERT",
             "DISTRIBUTION_DISABLE",
             "DISTRIBUTION_ENABLE",
             "DISTRIBUTION_FETCH_REPORT",
@@ -54763,7 +55020,6 @@
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -54905,9 +55161,11 @@
         "type": {
           "description": "Enum Type: `KalturaBatchJobType`\n\nThe worker type",
           "enum": [
+            "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
             "contentDistribution.DistributionDelete",
+            "0",
             "contentDistribution.DistributionDisable",
             "contentDistribution.DistributionEnable",
             "contentDistribution.DistributionFetchReport",
@@ -54921,7 +55179,6 @@
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -54975,9 +55232,11 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
             "DISTRIBUTION_DELETE",
+            "CONVERT",
             "DISTRIBUTION_DISABLE",
             "DISTRIBUTION_ENABLE",
             "DISTRIBUTION_FETCH_REPORT",
@@ -54991,7 +55250,6 @@
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -62456,6 +62714,9 @@
         },
         {
           "$ref": "#/definitions/KalturaViewHistoryUserEntry"
+        },
+        {
+          "$ref": "#/definitions/KalturaWatchLaterUserEntry"
         }
       ],
       "description": "`abstract`",
@@ -62493,7 +62754,8 @@
         "objectType": {
           "enum": [
             "KalturaQuizUserEntry",
-            "KalturaViewHistoryUserEntry"
+            "KalturaViewHistoryUserEntry",
+            "KalturaWatchLaterUserEntry"
           ],
           "type": "string"
         },
@@ -62522,13 +62784,15 @@
           "description": "`readOnly`\n\nEnum Type: `KalturaUserEntryType`",
           "enum": [
             "quiz.QUIZ",
-            "viewHistory.VIEW_HISTORY"
+            "viewHistory.VIEW_HISTORY",
+            "watchLater.WATCH_LATER"
           ],
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
             "QUIZ",
-            "VIEW_HISTORY"
+            "VIEW_HISTORY",
+            "WATCH_LATER"
           ],
           "x-enumType": "KalturaUserEntryType"
         },
@@ -62558,6 +62822,9 @@
         },
         {
           "$ref": "#/definitions/KalturaViewHistoryUserEntryFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaWatchLaterUserEntryFilter"
         },
         {
           "$ref": "#/definitions/KalturaQuizUserEntryFilter"
@@ -62615,6 +62882,7 @@
           "enum": [
             "KalturaUserEntryFilter",
             "KalturaViewHistoryUserEntryFilter",
+            "KalturaWatchLaterUserEntryFilter",
             "KalturaQuizUserEntryFilter"
           ],
           "type": "string"
@@ -62638,12 +62906,14 @@
           "description": "Enum Type: `KalturaUserEntryType`",
           "enum": [
             "quiz.QUIZ",
-            "viewHistory.VIEW_HISTORY"
+            "viewHistory.VIEW_HISTORY",
+            "watchLater.WATCH_LATER"
           ],
           "type": "string",
           "x-enumLabels": [
             "QUIZ",
-            "VIEW_HISTORY"
+            "VIEW_HISTORY",
+            "WATCH_LATER"
           ],
           "x-enumType": "KalturaUserEntryType"
         },
@@ -62681,6 +62951,9 @@
           "$ref": "#/definitions/KalturaViewHistoryUserEntryFilter"
         },
         {
+          "$ref": "#/definitions/KalturaWatchLaterUserEntryFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaQuizUserEntryFilter"
         }
       ],
@@ -62704,6 +62977,7 @@
         "objectType": {
           "enum": [
             "KalturaViewHistoryUserEntryFilter",
+            "KalturaWatchLaterUserEntryFilter",
             "KalturaQuizUserEntryFilter"
           ],
           "type": "string"
@@ -66108,6 +66382,26 @@
       "title": "KalturaVoicebaseJobProviderData",
       "type": "object"
     },
+    "KalturaWatchLaterUserEntry": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaUserEntry"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaWatchLaterUserEntry",
+      "type": "object"
+    },
+    "KalturaWatchLaterUserEntryFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaUserEntryFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaWatchLaterUserEntryFilter",
+      "type": "object"
+    },
     "KalturaWebcamTokenResource": {
       "allOf": [
         {
@@ -66843,9 +67137,11 @@
         "jobType": {
           "description": "Enum Type: `KalturaBatchJobType`",
           "enum": [
+            "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
             "contentDistribution.DistributionDelete",
+            "0",
             "contentDistribution.DistributionDisable",
             "contentDistribution.DistributionEnable",
             "contentDistribution.DistributionFetchReport",
@@ -66859,7 +67155,6 @@
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -66913,9 +67208,11 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
             "DISTRIBUTION_DELETE",
+            "CONVERT",
             "DISTRIBUTION_DISABLE",
             "DISTRIBUTION_ENABLE",
             "DISTRIBUTION_FETCH_REPORT",
@@ -66929,7 +67226,6 @@
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -67935,7 +68231,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.1.0"
+    "version": "15.3.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -68033,6 +68329,7 @@
         "KalturaClipConcatJobData",
         "KalturaConcatJobData",
         "KalturaConvartableJobData",
+        "KalturaConvertCaptionAssetJobData",
         "KalturaConvertLiveSegmentJobData",
         "KalturaConvertProfileJobData",
         "KalturaCopyCaptionsJobData",
@@ -68188,6 +68485,7 @@
         "KalturaClipConcatJobData",
         "KalturaConcatJobData",
         "KalturaConvartableJobData",
+        "KalturaConvertCaptionAssetJobData",
         "KalturaConvertLiveSegmentJobData",
         "KalturaConvertProfileJobData",
         "KalturaCopyCaptionsJobData",
@@ -68310,6 +68608,7 @@
         "KalturaClipConcatJobData",
         "KalturaConcatJobData",
         "KalturaConvartableJobData",
+        "KalturaConvertCaptionAssetJobData",
         "KalturaConvertLiveSegmentJobData",
         "KalturaConvertProfileJobData",
         "KalturaCopyCaptionsJobData",
@@ -69286,6 +69585,9 @@
                 "newPassword": {
                   "type": "string"
                 },
+                "otp": {
+                  "type": "string"
+                },
                 "password": {
                   "type": "string",
                   "x-inputType": "password"
@@ -69307,7 +69609,7 @@
             }
           },
           "x-Errors": {
-            "description": "* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `ADMIN_KUSER_WRONG_OLD_PASSWORD`: Old password is wrong\n* `ADMIN_KUSER_NOT_FOUND`: The data you entered is invalid\n* `PASSWORD_STRUCTURE_INVALID`: The password you entered has an invalid structure.\nPasswords must obey the following rules :\n@RULES@\n* `PASSWORD_ALREADY_USED`: Chosen password has already been used\n* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `LOGIN_ID_ALREADY_USED`: Same login id is already in use"
+            "description": "* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `ADMIN_KUSER_WRONG_OLD_PASSWORD`: Old password is wrong\n* `ADMIN_KUSER_NOT_FOUND`: The data you entered is invalid\n* `PASSWORD_STRUCTURE_INVALID`: The password you entered has an invalid structure.\nPasswords must obey the following rules :\n@RULES@\n* `PASSWORD_ALREADY_USED`: Chosen password has already been used\n* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `LOGIN_ID_ALREADY_USED`: Same login id is already in use\n* `INVALID_OTP`: OTP provided failed to validate\n* `MISSING_OTP`: OTP is missing"
           }
         },
         "security": [],
@@ -69319,7 +69621,8 @@
           "email",
           "password",
           "newEmail",
-          "newPassword"
+          "newPassword",
+          "otp"
         ]
       }
     },
@@ -73120,9 +73423,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -73136,7 +73441,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -73190,9 +73494,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -73206,7 +73512,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -73380,9 +73685,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -73396,7 +73703,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -73450,9 +73756,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -73466,7 +73774,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -73593,9 +73900,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -73609,7 +73918,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -73663,9 +73971,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -73679,7 +73989,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -73989,9 +74298,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -74005,7 +74316,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -74059,9 +74369,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -74075,7 +74387,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -92031,9 +92342,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -92047,7 +92360,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -92101,9 +92413,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -92117,7 +92431,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -93176,9 +93489,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -93192,7 +93507,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -93246,9 +93560,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -93262,7 +93578,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -94380,9 +94695,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -94396,7 +94713,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -94450,9 +94766,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -94466,7 +94784,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -95116,9 +95433,11 @@
                 },
                 "jobType": {
                   "enum": [
+                    "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
                     "contentDistribution.DistributionDelete",
+                    "0",
                     "contentDistribution.DistributionDisable",
                     "contentDistribution.DistributionEnable",
                     "contentDistribution.DistributionFetchReport",
@@ -95132,7 +95451,6 @@
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -95186,9 +95504,11 @@
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
                     "DISTRIBUTION_DELETE",
+                    "CONVERT",
                     "DISTRIBUTION_DISABLE",
                     "DISTRIBUTION_ENABLE",
                     "DISTRIBUTION_FETCH_REPORT",
@@ -95202,7 +95522,6 @@
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -102170,6 +102489,9 @@
                 "cmsPassword": {
                   "type": "string"
                 },
+                "otp": {
+                  "type": "string"
+                },
                 "partnerId": {
                   "type": "integer"
                 }
@@ -102202,7 +102524,8 @@
         "x-kaltura-parameters": [
           "partnerId",
           "adminEmail",
-          "cmsPassword"
+          "cmsPassword",
+          "otp"
         ]
       }
     },
@@ -113524,6 +113847,56 @@
         ]
       }
     },
+    "/service/thumbnail_thumbnail/action/transform": {
+      "post": {
+        "description": "Retrieves a thumbnail according to the required transformation",
+        "operationId": "thumbnail.transform",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "transformString": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "transformString"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "thumbnail"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "transformString"
+        ]
+      }
+    },
     "/service/thumbparams/action/add": {
       "post": {
         "description": "Add new Thumb Params",
@@ -116135,6 +116508,9 @@
                 "oldLoginId": {
                   "type": "string"
                 },
+                "otp": {
+                  "type": "string"
+                },
                 "password": {
                   "type": "string",
                   "x-inputType": "password"
@@ -116153,7 +116529,7 @@
             "description": "Success"
           },
           "x-Errors": {
-            "description": "* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `LOGIN_DATA_NOT_FOUND`: Login id not found\n* `WRONG_OLD_PASSWORD`: old password is wrong\n* `PASSWORD_STRUCTURE_INVALID`: The password you entered has an invalid structure.\nPasswords must obey the following rules :\n@RULES@\n* `PASSWORD_ALREADY_USED`: Chosen password has already been used\n* `LOGIN_ID_ALREADY_USED`: Same login id is already in use"
+            "description": "* `INVALID_FIELD_VALUE`: value in field [@FIELD_NAME@] is not valid\n* `LOGIN_DATA_NOT_FOUND`: Login id not found\n* `WRONG_OLD_PASSWORD`: old password is wrong\n* `PASSWORD_STRUCTURE_INVALID`: The password you entered has an invalid structure.\nPasswords must obey the following rules :\n@RULES@\n* `PASSWORD_ALREADY_USED`: Chosen password has already been used\n* `LOGIN_ID_ALREADY_USED`: Same login id is already in use\n* `INVALID_OTP`: OTP provided failed to validate\n* `MISSING_OTP`: OTP is missing"
           }
         },
         "security": [],
@@ -116167,7 +116543,8 @@
           "newLoginId",
           "newPassword",
           "newFirstName",
-          "newLastName"
+          "newLastName",
+          "otp"
         ]
       }
     },
@@ -117323,7 +117700,16 @@
                 "enableRecordingUpload": {
                   "type": "boolean"
                 },
+                "handleParticipantMode": {
+                  "type": "integer"
+                },
                 "zoomCategory": {
+                  "type": "string"
+                },
+                "zoomUserMatchingMode": {
+                  "type": "integer"
+                },
+                "zoomUserPostfix": {
                   "type": "string"
                 }
               },
@@ -117332,7 +117718,9 @@
                 "zoomCategory",
                 "accountId",
                 "enableRecordingUpload",
-                "createUserIfNotExist"
+                "createUserIfNotExist",
+                "handleParticipantMode",
+                "zoomUserMatchingMode"
               ],
               "type": "object"
             }
@@ -117355,7 +117743,10 @@
           "zoomCategory",
           "accountId",
           "enableRecordingUpload",
-          "createUserIfNotExist"
+          "createUserIfNotExist",
+          "handleParticipantMode",
+          "zoomUserMatchingMode",
+          "zoomUserPostfix"
         ]
       }
     },
@@ -118645,6 +119036,10 @@
     {
       "description": "Retrieve information and invoke actions on Thumb Asset",
       "name": "thumbAsset"
+    },
+    {
+      "name": "thumbnail",
+      "x-plugin": "thumbnail"
     },
     {
       "description": "Add & Manage Thumb Params",
@@ -121576,6 +121971,12 @@
       "oneOf": [
         {
           "enum": [
+            "caption.convertcaptionasset"
+          ],
+          "title": "CONVERT_CAPTION_ASSET"
+        },
+        {
+          "enum": [
             "caption.parsemultilanguagecaptionasset"
           ],
           "title": "PARSE_MULTI_LANGUAGE_CAPTION_ASSET"
@@ -121591,6 +121992,12 @@
             "contentDistribution.DistributionDelete"
           ],
           "title": "DISTRIBUTION_DELETE"
+        },
+        {
+          "enum": [
+            "0"
+          ],
+          "title": "CONVERT"
         },
         {
           "enum": [
@@ -121669,12 +122076,6 @@
             "scheduledTask.ScheduledTask"
           ],
           "title": "SCHEDULED_TASK"
-        },
-        {
-          "enum": [
-            "0"
-          ],
-          "title": "CONVERT"
         },
         {
           "enum": [
@@ -122735,6 +123136,12 @@
             "4"
           ],
           "title": "CAP"
+        },
+        {
+          "enum": [
+            "5"
+          ],
+          "title": "SCC"
         }
       ],
       "title": "KalturaCaptionType"
@@ -125945,6 +126352,23 @@
       ],
       "title": "KalturaDirectoryRestrictionType"
     },
+    "KalturaDistributeTrigger": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "ENTRY_READY"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "MODERATION_APPROVED"
+        }
+      ],
+      "title": "KalturaDistributeTrigger"
+    },
     "KalturaDistributionAction": {
       "oneOf": [
         {
@@ -127738,6 +128162,17 @@
       ],
       "title": "KalturaESearchCaptionFieldName"
     },
+    "KalturaESearchCategoryAggregateByFieldName": {
+      "oneOf": [
+        {
+          "enum": [
+            "category_name"
+          ],
+          "title": "CATEGORY_NAME"
+        }
+      ],
+      "title": "KalturaESearchCategoryAggregateByFieldName"
+    },
     "KalturaESearchCategoryEntryFieldName": {
       "oneOf": [
         {
@@ -127980,6 +128415,23 @@
       ],
       "title": "KalturaESearchCategoryUserFieldName"
     },
+    "KalturaESearchCuePointAggregateByFieldName": {
+      "oneOf": [
+        {
+          "enum": [
+            "tags"
+          ],
+          "title": "TAGS"
+        },
+        {
+          "enum": [
+            "type"
+          ],
+          "title": "TYPE"
+        }
+      ],
+      "title": "KalturaESearchCuePointAggregateByFieldName"
+    },
     "KalturaESearchCuePointFieldName": {
       "oneOf": [
         {
@@ -128056,6 +128508,35 @@
         }
       ],
       "title": "KalturaESearchCuePointFieldName"
+    },
+    "KalturaESearchEntryAggregateByFieldName": {
+      "oneOf": [
+        {
+          "enum": [
+            "access_control_profile_id"
+          ],
+          "title": "ACCESS_CONTROL_PROFILE"
+        },
+        {
+          "enum": [
+            "entry_type"
+          ],
+          "title": "ENTRY_TYPE"
+        },
+        {
+          "enum": [
+            "media_type"
+          ],
+          "title": "MEDIA_TYPE"
+        },
+        {
+          "enum": [
+            "tags"
+          ],
+          "title": "TAGS"
+        }
+      ],
+      "title": "KalturaESearchEntryAggregateByFieldName"
     },
     "KalturaESearchEntryFieldName": {
       "oneOf": [
@@ -128190,6 +128671,12 @@
             "parent_id"
           ],
           "title": "PARENT_ENTRY_ID"
+        },
+        {
+          "enum": [
+            "partner_sort_value"
+          ],
+          "title": "PARTNER_SORT_VALUE"
         },
         {
           "enum": [
@@ -128727,6 +129214,10 @@
         }
       ],
       "title": "KalturaESearchLanguage"
+    },
+    "KalturaESearchMetadataAggregateByFieldName": {
+      "oneOf": [],
+      "title": "KalturaESearchMetadataAggregateByFieldName"
     },
     "KalturaESearchOperatorType": {
       "oneOf": [
@@ -144106,6 +144597,12 @@
         },
         {
           "enum": [
+            "FEATURE_LIVE_ENTRIES_IN_FEED"
+          ],
+          "title": "FEATURE_LIVE_ENTRIES_IN_FEED"
+        },
+        {
+          "enum": [
             "FEATURE_LIVE_STREAM"
           ],
           "title": "FEATURE_LIVE_STREAM"
@@ -150883,6 +151380,12 @@
             "viewHistory.VIEW_HISTORY"
           ],
           "title": "VIEW_HISTORY"
+        },
+        {
+          "enum": [
+            "watchLater.WATCH_LATER"
+          ],
+          "title": "WATCH_LATER"
         }
       ],
       "title": "KalturaUserEntryType"
@@ -155256,6 +155759,11 @@
       "code": "HOST_NAME_CONTAINS_ASTRIX",
       "message": "Host name contains *, use # instead {@HOST_NAME@}",
       "name": "HOST_NAME_CONTAINS_ASTRIX"
+    },
+    {
+      "code": "SEARCH_ITEM_TYPE_NOT_FOUND",
+      "message": " Search item type [@SEARCH_ITEM_TYPE@] not found for field: [@ELASTIC_FIELD_NAME@]",
+      "name": "SEARCH_ITEM_TYPE_NOT_FOUND"
     },
     {
       "code": "INTERNAL_DATABASE_ERROR",

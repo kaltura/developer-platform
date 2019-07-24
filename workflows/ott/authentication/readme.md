@@ -34,7 +34,21 @@ To generate a KS, you will need to login to the account using the user name and 
 {
   "method": "post",
   "path": "/service/ottuser/action/login",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "ks": {},
+          "username": {},
+          "password": {},
+          "udid": {}
+        }
+      },
+      "consoleDefault": "{\"version\":\"5.2.4.43067\"}"
+    }
+  ]
 }
 ```
 
@@ -46,7 +60,23 @@ You can validate your Kaltura session by calling session/action/get. you can use
 {
   "method": "post",
   "path": "/service/session/action/get",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "ks": {
+            "dynamicValue": {
+              "fromStep": 0,
+              "answer": "body.ks"
+            }
+          }
+        }
+      },
+      "consoleDefault": "{\"version\":\"5.2.4.43067\"}"
+    }
+  ]
 }
 ```
 

@@ -5,6 +5,7 @@ var http = require('http');
 var https = require('https');
 var path = require('path');
 var fs = require('fs');
+var qs = require('querystring');
 const TARGET_API = process.env.TARGET_API || 'ovp';
 const STATIC_DIR = __dirname + '/generated/' + TARGET_API;
 const DEFAULT_INDEX = fs.readFileSync(path.join(STATIC_DIR, 'default_index.html'), 'utf8');
@@ -74,7 +75,11 @@ v4Redirects.forEach(redirect => {
 })
 
 App.get('/api-docs', (req, res) => {
-  res.redirect(req.protocol + '://' + req.get('host') + '/api-docs/Overview');
+  let url = req.protocol + '://' + req.get('host') + '/api-docs/Overview';
+  if (Object.keys(req.query).length) {
+    url += '?' + qs.stringify(req.query);
+  }
+  res.redirect(url);
 })
 
 if (BASE_PATH) {

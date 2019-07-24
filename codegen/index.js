@@ -273,6 +273,11 @@ var language_opts = {
       }
       return c;
     },
+    assign: function(lval, rval) {
+      let isArr = lval.match(/^(.*)\[(\d+)\]$/);
+      if (!isArr) return lval + ' = ' + rval;
+      return isArr[1] + '.append(' + rval + ')';
+    },
     rewriteAction: function(s) {
       return replaceActionSuffix(s);
     },
@@ -280,8 +285,7 @@ var language_opts = {
       // e.g. name = captionAsset, id = caption_captionasset, should return caption.captionAsset
       let pieces = id.split('_');
       if (pieces.length === 1) return name;
-      let plugin = pieces[0];
-      if (plugin.toLowerCase() === name.toLowerCase()) plugin = name;
+      let plugin = this.swagger.tags.filter(t => t.name == name)[0]['x-plugin'];
       return plugin + '.' + name;
     },
     rewriteVariable: s => {
