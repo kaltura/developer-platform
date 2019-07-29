@@ -51,23 +51,31 @@ routes:
       explanations and documentation references.
 
       #### What do you want to do today?
-    title: Workflows
+    title: Kaltura API Workflows
     icons: offset
     meta:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
   /player:
+    title: Kaltura Player Documentation
     documentation: player
     markdownFile: "/assets/documentation/player-portal/player-home.html"
 
+  /player/web: 
+    title: Kaltura Web Player Documentation
+    documentation: documentation
+    navigation: webNavigation
+
   /player/ios:
+    title: Kaltura iOS Player Documentation
     documentation: documentation
     navigation: iosNavigation
 
-  /player/web: 
+  /player/android: 
+    title: Kaltura Android Player Documentation
     documentation: documentation
-    navigation: webNavigation
+    navigation: androidNavigation
 
   /new-workflow:
     ui: workflow
@@ -710,3 +718,34 @@ iosNavigation:
   - title: "Audio Mode"
     markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
     path: "/audio-mode-ios"
+
+ androidNavigation:
+  - title: "Getting Started with the Player SDK"
+    markdownURL: /assets/documentation/player-portal/android/getting-started-android.html
+    path: "/getting-started-android" 
+
+  - title: "Player Events"
+    markdownURL: /assets/documentation/player-portal/android/player-events-android.html
+    path: "/player-events-android"  
+
+  - title: "Player Settings"
+    markdownURL: /assets/documentation/player-portal/android/player-settings-android.html
+    path: "/player-settings-android" 
+
+  - title: "Player Configuration"
+    markdownURL: /assets/documentation/player-portal/android/player-configuration-android.html
+    path: "/player-configuration-androi" 
+
+  - title: "Security Provider"
+    markdownURL: /assets/documentation/player-portal/android/security-provider-android.html
+    path: "/security-provider-android" 
+
+  - title: "Download-to-go"
+  markdownURL: /assets/documentation/player-portal/android/Download-to-go-android.html
+  path: "/Download-to-go-android" 
+    
+  - title: "Player UI Tutorial"
+    markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
+    path: "/player-ui-android" 
+
+    
