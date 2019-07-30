@@ -762,7 +762,7 @@ iosNavigation:
 
   - title: "Player Configuration"
     markdownURL: /assets/documentation/player-portal/android/player-configuration-android.html
-    path: "/player-configuration-androi" 
+    path: "/player-configuration-android" 
 
   - title: "Security Provider"
     markdownURL: /assets/documentation/player-portal/android/security-provider-android.html
