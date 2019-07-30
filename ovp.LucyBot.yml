@@ -747,7 +747,7 @@ iosNavigation:
     markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
     path: "/audio-mode-ios"
 
- androidNavigation:
+androidNavigation:
   - title: "Getting Started with the Player SDK"
     markdownURL: /assets/documentation/player-portal/android/getting-started-android.html
     path: "/getting-started-android" 
