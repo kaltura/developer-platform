@@ -769,8 +769,8 @@ androidNavigation:
     path: "/security-provider-android" 
 
   - title: "Download-to-go"
-  markdownURL: /assets/documentation/player-portal/android/Download-to-go-android.html
-  path: "/Download-to-go-android" 
+    markdownURL: /assets/documentation/player-portal/android/Download-to-go-android.html
+    path: "/Download-to-go-android" 
     
   - title: "Player UI Tutorial"
     markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
