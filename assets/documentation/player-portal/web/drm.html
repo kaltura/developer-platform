@@ -1,8 +1,8 @@
-  <title>Debugging and Troubleshooting for Web Player</title>
+  <title>DRM System Selection</title>
 
   <meta name="description" content="VPaaS allows you to build cloud video services, supplies SDKs, and works on all devices, media workflows, and applications. Pay as you go. 
 ">
-    <meta property="st:title" content="Debugging and Troubleshooting for Web Player" >
+    <meta property="st:title" content="DRM System Selection" >
     <meta property="st:published_at" content="">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -103,20 +103,20 @@ rtp('get', 'campaign',true);
             <!-- INSERT JEKYLL CONTENT HERE -->
 
           	<header class="post-header">
-    			<h1 class="post-title">Debugging and Troubleshooting for Web Player</h1>
+    			<h1 class="post-title">DRM System Selection</h1>
   			</header>
 
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jul 30 07:41:42 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/debugging-web.md" target="_blank">Contribute to this page</a>
-				<!--tr><td>Created on: Wed May 1 14:04:39 2019, By: Avital</td></tr-->
-				<!--tr><td>Last commit: Tue Jul 30 07:41:42 2019, By <span class="commit-author">Avital</span></td></tr-->
+				<span>Updated: Tue Jul 30 06:50:46 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/drm.md" target="_blank">Contribute to this page</a>
+				<!--tr><td>Created on: Tue Jul 30 02:08:55 2019, By: Avital</td></tr-->
+				<!--tr><td>Last commit: Tue Jul 30 06:50:46 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Avital (4 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
+					<td>Avital (2 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -129,91 +129,92 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>In this section you’ll learn how to use debug mode to view explicit messages in the player to troubleshoot detected problems.</p>
-      <h2 id="running-the-player-in-debug-mode">
+		<p>Once the player gets an encrypted source to play, it will need to select a DRM system with which to run the source.  <br />
+The following guide explains the default selection, and how an application can force the selection using the configuration.</p>
+      <h3 id="default-selection">
         
         
-          Running the Player in Debug Mode <a href="#running-the-player-in-debug-mode"></a>
+          Default Selection <a href="#default-selection"></a>
         
         
-      </h2>
+      </h3>
 
-<p>To debug the player and view explicit messages in the console, you’ll need to run the player in debug mode using one of the following options:</p>
+<p>By default, the player selects the DRM system according the source type and the browser capabilities, as follows:</p>
 
-<p><strong>Option 1: Define a global window debug variable</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>dash on Chrome</th>
+      <th>dash on Firefox</th>
+      <th>dash on Edge</th>
+      <th>dash on IE</th>
+      <th>hls on Safari</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>WIDEVINE</td>
+      <td>WIDEVINE</td>
+      <td>PLAYREADY</td>
+      <td>PLAYREADY</td>
+      <td>FAIRPLAY</td>
+    </tr>
+  </tbody>
+</table>
+    
+      <h3 id="configuration">
+        
+        
+          Configuration <a href="#configuration"></a>
+        
+        
+      </h3>
 
-<p>In your application, define at the top of your page the following window debug variable:</p>
+<p>Sometimes, an application may want to force the player to select a specific DRM system, usually to support DRM on browser that’s not in the table above, or to prioritize between one of the supported DRM systems.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>window.DEBUG_KALTURA_PLAYER = true;
-</code></pre>
-</div>
+<p>Setting the desired DRM system is done by setting the DRM configuration. For example:</p>
 
-<p><strong>Option 2: Add a query string parameter to the page URL</strong></p>
-
-<p>In your page URL, add the <code class="highlighter-rouge">debugKalturaPlayer</code> query string parameter:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>http://my/page/url?debugKalturaPlayer
-</code></pre>
-</div>
-
-<p><strong>Options 3: Using Player Config</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var config = {
-    ...
-    logLevel: "DEBUG"
-    ...
+<p><code class="highlighter-rouge">ecmascript 6
+var config = {
+  drm: {
+    keySystem: playkit.core.DrmScheme.PLAYREADY // "com.microsoft.playready"
+  },
+  sources: {...}
 };
-var player = KalturaPlayer.setup(config);
-</code></pre>
-</div>
-    
-      <h2 id="about-player-logs">
-        
-        
-          About Player Logs <a href="#about-player-logs"></a>
-        
-        
-      </h2>
+var player = playkit.core.loadPlayer(config);
+</code></p>
 
-<p>After implementing one of the options above, open your browser developer tools and look at the player logs, for example:</p>
+<p><strong>Important</strong>:  <br />
+The player selects the DRM system <strong>after</strong> the <a href="https://developer.kaltura.com/player/web/player-events-web">source type selection</a>.  <br />
+Therefore, the DRM settings may <strong>not be applied</strong> when the source type cannot be played with the configured DRM system. For example:</p>
 
-<p><img src="./console-logs-example.png" alt="player console logs" /></p>
-    
-      <h3 id="log-conventions">
-        
-        
-          Log Conventions <a href="#log-conventions"></a>
-        
-        
-      </h3>
-
-<p>As you can see from the figure above, the player log conventions are built with the following template:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>[Component] Message
-</code></pre>
-</div>
-
-<blockquote>
-  <p>Note: Remember to stick to these conventions when building you application to ensure that debugging &amp; troubleshooting are easy to understand.</p>
-</blockquote>
-    
-      <h3 id="controlling-the-log-level">
-        
-        
-          Controlling the Log Level <a href="#controlling-the-log-level"></a>
-        
-        
-      </h3>
-
-<p>If you want to use different log level than <code class="highlighter-rouge">DEBUG</code>, you’ll need to configure the player with the desired log level. For example, to display only logs from a warning level and above in the console, use the following:</p>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">...</span>
-    <span class="na">logLevel</span><span class="p">:</span> <span class="s2">"WARN"</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Browser</th>
+      <th>Source Type</th>
+      <th>Default DRM System</th>
+      <th>Configured DRM System</th>
+      <th>Selected (reason)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chrome</td>
+      <td>dash</td>
+      <td>WIDEVINE</td>
+      <td>PLAYREADY</td>
+      <td>PLAYREADY (dash+PLAYREADY is valid)</td>
+    </tr>
+    <tr>
+      <td>Chrome</td>
+      <td>dash</td>
+      <td>WIDEVINE</td>
+      <td>FAIRPLAY</td>
+      <td>WIDEVINE (dash+FAIRPLAY is invalid)</td>
+    </tr>
+  </tbody>
+</table>
 		
 </article>
 

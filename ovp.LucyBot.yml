@@ -747,7 +747,7 @@ iosNavigation:
     markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
     path: "/audio-mode-ios"
 
- androidNavigation:
+androidNavigation:
   - title: "Getting Started with the Player SDK"
     markdownURL: /assets/documentation/player-portal/android/getting-started-android.html
     path: "/getting-started-android" 
@@ -769,8 +769,8 @@ iosNavigation:
     path: "/security-provider-android" 
 
   - title: "Download-to-go"
-  markdownURL: /assets/documentation/player-portal/android/Download-to-go-android.html
-  path: "/Download-to-go-android" 
+    markdownURL: /assets/documentation/player-portal/android/Download-to-go-android.html
+    path: "/Download-to-go-android" 
     
   - title: "Player UI Tutorial"
     markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
