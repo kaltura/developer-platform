@@ -762,18 +762,26 @@ androidNavigation:
 
   - title: "Player Configuration"
     markdownURL: /assets/documentation/player-portal/android/player-configuration-android.html
-    path: "/player-configuration-android" 
+    path: "/player-config-android" 
 
   - title: "Security Provider"
     markdownURL: /assets/documentation/player-portal/android/security-provider-android.html
     path: "/security-provider-android" 
 
   - title: "Download-to-go"
-    markdownURL: /assets/documentation/player-portal/android/Download-to-go-android.html
-    path: "/Download-to-go-android" 
+    markdownURL: /assets/documentation/player-portal/android/download-to-go-android.html
+    path: "/download-to-go-android" 
+
+  - title: "DRM Schemes"
+    markdownURL: /assets/documentation/player-portal/android/drm-android.html
+    path: "/drm-android" 
+
+   - title: "Ad Plugins"
+    markdownURL: /assets/documentation/player-portal/android/ads-android.html
+    path: "/ads-android"    
     
-  - title: "Player UI Tutorial"
-    markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
-    path: "/player-ui-android" 
+  # - title: "Player UI Tutorial"
+  #   markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
+  #   path: "/player-ui-android" 
 
     
