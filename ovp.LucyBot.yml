@@ -60,7 +60,7 @@ routes:
   /player:
     title: Kaltura Player Documentation
     documentation: player
-    markdownFile: "/assets/documentation/player-portal/player-home.html"
+    markdownFile: "/assets/documentation/player-portal/web/getting-started-web.html"
 
   /player/web: 
     title: Kaltura Web Player Documentation
