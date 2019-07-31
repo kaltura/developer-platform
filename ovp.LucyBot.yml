@@ -667,27 +667,27 @@ webNavigation:
     children:
 
         - title: "Player UI Configuration"
-          markdownURL: /assets/documentation/player-portal/web/ui/ui-configuration.html
+          markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/ui-configuration.html
           path: "/ui/ui-configuration"
 
         - title: "Player UI Events"
-          markdownURL: /assets/documentation/player-portal/web/ui/ui-events.html
+          markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/ui-events.html
           path: "/ui/ui-events"
 
         - title: "Player Components"
-          markdownURL: /assets/documentation/player-portal/web/ui/components.html
+          markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/components.html
           path: "/ui/components"
 
         - title: "Custom UI Presets"
-          markdownURL: /assets/documentation/player-portal/web/ui/custom-ui-presets.html
+          markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/custom-ui-presets.html
           path: "/ui/custom-ui-presets"
 
         - title: "Player Translation and Language"
-          markdownURL: /assets/documentation/player-portal/web/ui/translations.html
+          markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/translations.html
           path: "/ui/translations"
 
         - title: "Captions Menu Settings"
-          markdownURL: /assets/documentation/player-portal/web/ui/captions-menu.html
+          markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/captions-menu.html
           path: "/ui/captions-menu"
 
 iosNavigation:
