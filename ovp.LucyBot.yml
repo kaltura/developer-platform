@@ -776,7 +776,7 @@ androidNavigation:
     markdownURL: /assets/documentation/player-portal/android/drm-android.html
     path: "/drm-android" 
 
-   - title: "Ad Plugins"
+  - title: "Ad Plugins"
     markdownURL: /assets/documentation/player-portal/android/ads-android.html
     path: "/ads-android"    
     
