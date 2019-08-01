@@ -661,10 +661,9 @@ webNavigation:
   - title: "Coding Guidelines"
     markdownURL: /assets/documentation/player-portal/web/coding-guidelines-web.html
     path: "/coding-guidelines-web"
-  - title: "Player UI"
-    path: "ui"
-    children:
 
+  - title: "Player UI"
+    children:
       - title: "Player UI Configuration"
         markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/ui-configuration.html
         path: "/ui/ui-configuration"
