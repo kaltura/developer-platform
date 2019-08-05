@@ -157,7 +157,9 @@ Use ```eventNotificationTemplate.update``` to edit the properties of your newly 
               "value": "id"
             }
           },
-          "eventNotificationTemplate": {}
+          "eventNotificationTemplate": {
+            "$ref": "#/definitions/KalturaEventNotificationTemplate"
+          }
         }
       }
   }]
