@@ -759,7 +759,7 @@ androidNavigation:
     path: "/player-settings-android" 
 
   - title: "Player Configuration"
-    markdownURL: /assets/documentation/player-portal/android/player-configuration-android.html
+    markdownURL: /assets/documentation/player-portal/android/player-config-android.html
     path: "/player-config-android" 
 
   - title: "Security Provider"
