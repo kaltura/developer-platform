@@ -114,6 +114,21 @@ Use the form below to choose a template to clone
               "label": "name",
               "value": "id"
             }
+          },
+          "filter": {
+            "properties": {
+              "typeEqual": {
+                "enum": [
+                  "emailNotification.Email",
+                  "httpNotification.Http"
+                ],
+                "x-enumLabels": [
+                  "E-mail Template",
+                  "HTTP Template"
+                ]
+              }
+            },
+            "type": "object"
           }
         }
       }

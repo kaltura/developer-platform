@@ -51,23 +51,31 @@ routes:
       explanations and documentation references.
 
       #### What do you want to do today?
-    title: Workflows
+    title: Kaltura API Workflows
     icons: offset
     meta:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
   /player:
+    title: Kaltura Player Documentation
     documentation: player
-    markdownFile: "/assets/documentation/player-portal/player-home.html"
+    markdownFile: "/assets/documentation/player-portal/web/getting-started-web.html"
+
+  /player/web: 
+    title: Kaltura Web Player Documentation
+    documentation: documentation
+    navigation: webNavigation
 
   /player/ios:
+    title: Kaltura iOS Player Documentation
     documentation: documentation
     navigation: iosNavigation
 
-  /player/web: 
+  /player/android: 
+    title: Kaltura Android Player Documentation
     documentation: documentation
-    navigation: webNavigation
+    navigation: androidNavigation
 
   /new-workflow:
     ui: workflow
@@ -147,6 +155,11 @@ operationNavigation:
         path: "/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html"
         discussionURL: null
 
+      - title: "API Client Library Generator"
+        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/client-library-generator.html
+        path: "/VPaaS-API-Getting-Started/client-library-generator.html"
+        discussionURL: null
+
       - title: "How to use Kaltura's API Abstract Classes"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html
         path: "/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html"
@@ -171,6 +184,11 @@ operationNavigation:
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html
         path: "/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html"
         discussionURL: null
+
+      - title: "API Usage Guideliness "
+        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/api-guidelines.html
+        path: "/VPaaS-API-Getting-Started/api-guidelines.html"
+        discussionURL: null   
 
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
@@ -644,6 +662,32 @@ webNavigation:
     markdownURL: /assets/documentation/player-portal/web/coding-guidelines-web.html
     path: "/coding-guidelines-web"
 
+  - title: "Player UI"
+    children:
+      - title: "Player UI Configuration"
+        markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/ui-configuration.html
+        path: "/ui/ui-configuration"
+
+      - title: "Player UI Events"
+        markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/ui-events.html
+        path: "/ui/ui-events"
+
+      - title: "Player Components"
+        markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/components.html
+        path: "/ui/components"
+
+      - title: "Custom UI Presets"
+        markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/custom-ui-presets.html
+        path: "/ui/custom-ui-presets"
+
+      - title: "Player Translation and Language"
+        markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/translations.html
+        path: "/ui/translations"
+
+      - title: "Captions Menu Settings"
+        markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/captions-menu.html
+        path: "/ui/captions-menu"
+
 iosNavigation:
   - title: "Getting Started with the Player SDK"
     markdownURL: /assets/documentation/player-portal/ios/getting-started-ios.html
@@ -700,3 +744,42 @@ iosNavigation:
   - title: "Audio Mode"
     markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
     path: "/audio-mode-ios"
+
+androidNavigation:
+  - title: "Getting Started with the Player SDK"
+    markdownURL: /assets/documentation/player-portal/android/getting-started-android.html
+    path: "/getting-started-android" 
+
+  - title: "Player Events"
+    markdownURL: /assets/documentation/player-portal/android/player-events-android.html
+    path: "/player-events-android"  
+
+  - title: "Player Settings"
+    markdownURL: /assets/documentation/player-portal/android/player-settings-android.html
+    path: "/player-settings-android" 
+
+  - title: "Player Configuration"
+    markdownURL: /assets/documentation/player-portal/android/player-configuration-android.html
+    path: "/player-config-android" 
+
+  - title: "Security Provider"
+    markdownURL: /assets/documentation/player-portal/android/security-provider-android.html
+    path: "/security-provider-android" 
+
+  - title: "Download-to-go"
+    markdownURL: /assets/documentation/player-portal/android/download-to-go-android.html
+    path: "/download-to-go-android" 
+
+  - title: "DRM Schemes"
+    markdownURL: /assets/documentation/player-portal/android/drm-android.html
+    path: "/drm-android" 
+
+  - title: "Ad Plugins"
+    markdownURL: /assets/documentation/player-portal/android/ads-android.html
+    path: "/ads-android"    
+    
+  # - title: "Player UI Tutorial"
+  #   markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
+  #   path: "/player-ui-android" 
+
+    

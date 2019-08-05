@@ -1,8 +1,8 @@
-  <title>Debugging and Troubleshooting for Web Player</title>
+  <title>Captions Menu Settings</title>
 
   <meta name="description" content="VPaaS allows you to build cloud video services, supplies SDKs, and works on all devices, media workflows, and applications. Pay as you go. 
 ">
-    <meta property="st:title" content="Debugging and Troubleshooting for Web Player" >
+    <meta property="st:title" content="Captions Menu Settings" >
     <meta property="st:published_at" content="">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -103,20 +103,20 @@ rtp('get', 'campaign',true);
             <!-- INSERT JEKYLL CONTENT HERE -->
 
           	<header class="post-header">
-    			<h1 class="post-title">Debugging and Troubleshooting for Web Player</h1>
+    			<h1 class="post-title">Captions Menu Settings</h1>
   			</header>
 
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jul 30 07:41:42 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/debugging-web.md" target="_blank">Contribute to this page</a>
-				<!--tr><td>Created on: Wed May 1 14:04:39 2019, By: Avital</td></tr-->
-				<!--tr><td>Last commit: Tue Jul 30 07:41:42 2019, By <span class="commit-author">Avital</span></td></tr-->
+				<span>Updated: Tue Jul 30 02:08:55 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/playkit-js-ui/captions-menu.md" target="_blank">Contribute to this page</a>
+				<!--tr><td>Created on: Tue Jul 30 02:08:55 2019, By: Avital</td></tr-->
+				<!--tr><td>Last commit: Tue Jul 30 02:08:55 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Avital (4 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
+					<td>Avital (1 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -129,91 +129,73 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>In this section you’ll learn how to use debug mode to view explicit messages in the player to troubleshoot detected problems.</p>
-      <h2 id="running-the-player-in-debug-mode">
+		<h2 id="removing-style-settings-from-the-captions-menu">
         
         
-          Running the Player in Debug Mode <a href="#running-the-player-in-debug-mode"></a>
-        
-        
-      </h2>
-
-<p>To debug the player and view explicit messages in the console, you’ll need to run the player in debug mode using one of the following options:</p>
-
-<p><strong>Option 1: Define a global window debug variable</strong></p>
-
-<p>In your application, define at the top of your page the following window debug variable:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>window.DEBUG_KALTURA_PLAYER = true;
-</code></pre>
-</div>
-
-<p><strong>Option 2: Add a query string parameter to the page URL</strong></p>
-
-<p>In your page URL, add the <code class="highlighter-rouge">debugKalturaPlayer</code> query string parameter:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>http://my/page/url?debugKalturaPlayer
-</code></pre>
-</div>
-
-<p><strong>Options 3: Using Player Config</strong></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var config = {
-    ...
-    logLevel: "DEBUG"
-    ...
-};
-var player = KalturaPlayer.setup(config);
-</code></pre>
-</div>
-    
-      <h2 id="about-player-logs">
-        
-        
-          About Player Logs <a href="#about-player-logs"></a>
+          Removing style settings from the captions menu <a href="#removing-style-settings-from-the-captions-menu"></a>
         
         
       </h2>
 
-<p>After implementing one of the options above, open your browser developer tools and look at the player logs, for example:</p>
+<p>The player enables viewers to modify the captions style using the <strong>advanced captions settings</strong> in the language menu, and then clicking the <strong>set custom caption</strong> button.</p>
 
-<p><img src="./console-logs-example.png" alt="player console logs" /></p>
-    
-      <h3 id="log-conventions">
-        
-        
-          Log Conventions <a href="#log-conventions"></a>
-        
-        
-      </h3>
+<p>To prevent viewers from using these modifications, overload the style option’s class with:</p>
+<pre><code class="language-display:none```">
+For example, adding the line below will remove the ability to change the captions color:
 
-<p>As you can see from the figure above, the player log conventions are built with the following template:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>[Component] Message
 </code></pre>
-</div>
-
-<blockquote>
-  <p>Note: Remember to stick to these conventions when building you application to ensure that debugging &amp; troubleshooting are easy to understand.</p>
-</blockquote>
+<p>.playkit-font-color {<br />
+  display: none<br />
+}<br />
+```<br />
+See this list of caption settings classes below for detailed information about each class.</p>
     
-      <h3 id="controlling-the-log-level">
+      <h2 id="captions-settings-class-list">
         
         
-          Controlling the Log Level <a href="#controlling-the-log-level"></a>
+          Captions settings class list <a href="#captions-settings-class-list"></a>
         
         
-      </h3>
+      </h2>
 
-<p>If you want to use different log level than <code class="highlighter-rouge">DEBUG</code>, you’ll need to configure the player with the desired log level. For example, to display only logs from a warning level and above in the console, use the following:</p>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="p">...</span>
-    <span class="na">logLevel</span><span class="p">:</span> <span class="s2">"WARN"</span>
-    <span class="p">...</span>
-<span class="p">};</span>
-</code></pre>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Class Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">.playkit-font-size</code></td>
+      <td>Changes the size of the captions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.playkit-font-color</code></td>
+      <td>Changes the color of the captions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.playkit-font-family</code></td>
+      <td>Changes the font family of the captions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.playkit-font-style</code></td>
+      <td>Changes the weight of the captions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.playkit-font-opacity</code></td>
+      <td>Changes the opacity of the captions</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.playkit-background-color</code></td>
+      <td>Changes the color of the captions background</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.playkit-background-opacity</code></td>
+      <td>Changes the opacity of the captions background</td>
+    </tr>
+  </tbody>
+</table>
 		
 </article>
 
