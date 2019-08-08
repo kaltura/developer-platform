@@ -26,7 +26,7 @@ Once it's saved to GitHub, you can always come back to your workflow by clicking
 by going to the pull request you generated, choosing the recipe's `readme.md`
 file, and clicking 'Raw'.
 
-## Starting a Kaltura Session
+## Starting a Kaltura Session UPDATED
 To generate a KS, you will need to login to the account using the user name and password used to register.
 
 ### API Call
