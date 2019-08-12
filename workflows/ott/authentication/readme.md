@@ -40,13 +40,12 @@ To generate a KS, you will need to login to the account using the user name and 
       "schema": {
         "type": "object",
         "properties": {
-          "ks": {},
           "username": {},
           "password": {},
           "udid": {}
         }
       },
-      "consoleDefault": "{\"version\":\"5.2.4.43067\"}"
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
     }
   ]
 }
@@ -67,14 +66,11 @@ You can validate your Kaltura session by calling session/action/get. you can use
         "type": "object",
         "properties": {
           "ks": {
-            "dynamicValue": {
-              "fromStep": 0,
-              "answer": "body.ks"
-            }
+            "dynamicValue": null
           }
         }
       },
-      "consoleDefault": "{\"version\":\"5.2.4.43067\"}"
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
     }
   ]
 }
