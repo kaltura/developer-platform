@@ -26,7 +26,7 @@ Once it's saved to GitHub, you can always come back to your workflow by clicking
 by going to the pull request you generated, choosing the recipe's `readme.md`
 file, and clicking 'Raw'.
 
-## Starting a Kaltura Session UPDATED AGAIN
+## Starting a Kaltura Session
 To generate a KS, you will need to login to the account using the user name and password used to register.
 
 ### API Call
@@ -66,14 +66,11 @@ You can validate your Kaltura session by calling session/action/get. you can use
         "type": "object",
         "properties": {
           "ks": {
-            "dynamicValue": {
-              "fromStep": 0,
-              "answer": "body.ks"
-            }
+            "dynamicValue": null
           }
         }
       },
-      "consoleDefault": "{\"version\":\"5.2.4.43067\"}"
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
     }
   ]
 }
