@@ -26,7 +26,12 @@ Once it's saved to GitHub, you can always come back to your workflow by clicking
 by going to the pull request you generated, choosing the recipe's `readme.md`
 file, and clicking 'Raw'.
 
-## Get asset data
+## Get asset/EPG data
+This request returns the media or EPG program, according to the assetReferenceType provided. the available types are:
+1. MEDIA - media asset (include live assets)
+2. EPG_INTERNAL - EPG program that was ingested to the Kaltura backend.
+3. EPG_EXTERNAL - EPG program from an external source
+
 
 
 ### API Call
