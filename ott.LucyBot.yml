@@ -44,7 +44,7 @@ routes:
         workflow: authentication
         
      - title: Get asset data
-      icon: assets/img/icons/contact.png (set icon you want)
+      icon: assets/img/icons/contact.png
       workflow: get_asset_data
 
         
