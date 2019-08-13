@@ -602,6 +602,10 @@ webNavigation:
     markdownURL: /assets/documentation/player-portal/web/embed-types-web.html
     path: "/embed-types-web"
 
+  - title: "Embed for Angular"
+    markdownURL: /assets/documentation/player-portal/web/angular-embed.html
+    path: "/angular-embed-web"
+
   - title: "Player Setup"
     markdownURL: /assets/documentation/player-portal/web/player-setup-web.html
     path: "/player-setup-web"
