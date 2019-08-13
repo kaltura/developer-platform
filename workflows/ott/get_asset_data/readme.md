@@ -31,8 +31,7 @@ This request returns the media or EPG program, according to the assetReferenceTy
 1. MEDIA - media asset (include live assets)
 2. EPG_INTERNAL - EPG program that was ingested to the Kaltura backend.
 3. EPG_EXTERNAL - EPG program from an external source
-
-
+4. NPVR - recording id
 
 ### API Call
 ```json
