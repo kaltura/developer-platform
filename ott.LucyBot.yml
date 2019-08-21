@@ -46,6 +46,10 @@ routes:
       - title: Get asset data
         icon: assets/img/icons/contact.png
         workflow: get_asset_data
+        
+      - title: Purchase PPV
+        icon: assets/img/icons/contact.png
+        workflow: Purchase PPV
 
         
 
