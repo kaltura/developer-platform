@@ -44,3 +44,6 @@ Purchase the file. if the purchase was successful, the backend will return te tr
   "path": "/service/transaction/action/purchase"
 }
 ```
+
+## Finish
+You can learn more about the operations used in this workflow by visiting the API Console and Documentation
