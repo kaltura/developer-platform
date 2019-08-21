@@ -1,5 +1,7 @@
 <!--METADATA
-{}
+{
+  "summary": "Create hosuehold"
+}
 -->
 
 # Create household
