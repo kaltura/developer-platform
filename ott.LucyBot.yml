@@ -42,6 +42,10 @@ routes:
       - title: Authentication
         icon: assets/img/icons/contact.png
         workflow: authentication
+        
+      - title: Create an household
+        icon: assets/img/icons/contact.png
+        workflow: Create an household
        
     intro: |
       Interactive workflows on this page will help you dive straight
