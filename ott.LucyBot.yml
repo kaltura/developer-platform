@@ -43,12 +43,10 @@ routes:
         icon: assets/img/icons/contact.png
         workflow: authentication
         
-      - title: Get asset data
+      - title: Create an household
         icon: assets/img/icons/contact.png
-        workflow: get_asset_data
-
-        
-
+        workflow: create_an_household
+       
     intro: |
       Interactive workflows on this page will help you dive straight
       into coding the various building blocks of your application.
