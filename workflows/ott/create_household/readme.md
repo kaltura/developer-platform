@@ -4,7 +4,7 @@
 }
 -->
 
-# Create household
+# Create an household
 In this flow, we'll create a household with 2 users (master user and regular user) and we'll add a device
 
 ## Register user
