@@ -10,6 +10,13 @@ In this flow, we'll create a household with 2 users (master user and regular use
 ## Register user
 We'll start by creating a user that later will be the master user in the household
 
+```json
+{
+  "method": "post",
+  "path": "/service/ottuser/action/register"
+}
+```
+
 ## Login user
 User will log in to the account in order to retrieve a ks (we will use it in the next step)
 
