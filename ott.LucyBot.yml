@@ -45,7 +45,7 @@ routes:
         
       - title: Create an household
         icon: assets/img/icons/contact.png
-        workflow: Create an household
+        workflow: create_an_household
        
     intro: |
       Interactive workflows on this page will help you dive straight
