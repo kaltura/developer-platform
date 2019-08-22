@@ -3,7 +3,7 @@
   require_once('lib/KalturaClient.php');
 
   $config = new KalturaConfiguration(<%- codegen.constant(answers.partnerId) %>);
-  $config->serviceUrl = 'https://www.kaltura.com';
+  $config->setServiceUrl('https://www.kaltura.com');
   $client = new KalturaClient($config);
 <% if (!noSession) { -%>
   $ks = $client->session->start(
