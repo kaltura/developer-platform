@@ -42,15 +42,6 @@ routes:
       - title: Authentication
         icon: assets/img/icons/contact.png
         workflow: authentication
-        
-      - title: Get asset data
-        icon: assets/img/icons/contact.png
-        workflow: get_asset_data
-        
-      - title: Create household
-        icon: assets/img/icons/contact.png
-        workflow: Create household
-
        
     intro: |
       Interactive workflows on this page will help you dive straight
