@@ -1,8 +1,10 @@
 <!--METADATA
-{}
+{
+  "summary": "Get asset data"
+}
 -->
 
-# Only test
+# Get asset data
 Use the text editor to write a description of what your workflow
 will cover. You can use
 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
@@ -23,3 +25,34 @@ Once it's saved to GitHub, you can always come back to your workflow by clicking
 `Load` button in the same menu. You can get the URL for your saved workflow
 by going to the pull request you generated, choosing the recipe's `readme.md`
 file, and clicking 'Raw'.
+
+## Get asset/EPG data
+This request returns the media or EPG program, according to the assetReferenceType provided. the available types are:
+1. MEDIA - media asset (include live assets)
+2. EPG_INTERNAL - EPG program that was ingested to the Kaltura backend.
+3. EPG_EXTERNAL - EPG program from an external source
+4. NPVR - recording id
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/asset/action/get",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "ks": {},
+          "assetReferenceType": {
+            "consoleDefault": "media"
+          },
+          "id": {}
+        }
+      },
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
+    }
+  ]
+}
+```

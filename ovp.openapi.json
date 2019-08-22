@@ -13188,6 +13188,7 @@
             86400,
             172800,
             345600,
+            432000,
             864000
           ],
           "type": "integer",
@@ -13203,6 +13204,7 @@
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
             "FOUR_DAYS",
+            "FIVE_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -31116,6 +31118,23 @@
       "title": "KalturaEventNotificationDispatchJobData",
       "type": "object"
     },
+    "KalturaEventNotificationDispatchScope": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaEventNotificationScope"
+        }
+      ],
+      "properties": {
+        "dynamicValues": {
+          "items": {
+            "$ref": "#/definitions/KalturaKeyValue"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaEventNotificationDispatchScope",
+      "type": "object"
+    },
     "KalturaEventNotificationParameter": {
       "anyOf": [
         {
@@ -31162,8 +31181,24 @@
           "$ref": "#/definitions/KalturaScope"
         }
       ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaEventNotificationScope"
+        },
+        {
+          "$ref": "#/definitions/KalturaEventNotificationDispatchScope"
+        }
+      ],
+      "discriminator": "objectType",
       "properties": {
         "objectId": {
+          "type": "string"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaEventNotificationScope",
+            "KalturaEventNotificationDispatchScope"
+          ],
           "type": "string"
         },
         "scopeObjectType": {
@@ -51679,6 +51714,7 @@
             86400,
             172800,
             345600,
+            432000,
             864000
           ],
           "type": "integer",
@@ -51694,6 +51730,7 @@
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
             "FOUR_DAYS",
+            "FIVE_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -55432,6 +55469,9 @@
         },
         {
           "$ref": "#/definitions/KalturaEventNotificationScope"
+        },
+        {
+          "$ref": "#/definitions/KalturaEventNotificationDispatchScope"
         }
       ],
       "discriminator": "objectType",
@@ -55439,7 +55479,8 @@
         "objectType": {
           "enum": [
             "KalturaScope",
-            "KalturaEventNotificationScope"
+            "KalturaEventNotificationScope",
+            "KalturaEventNotificationDispatchScope"
           ],
           "type": "string"
         }
@@ -64267,6 +64308,9 @@
         }
       ],
       "properties": {
+        "clearAudioFlavorParamsId": {
+          "type": "integer"
+        },
         "flavorParamsId": {
           "type": "integer"
         },
@@ -64745,6 +64789,7 @@
             86400,
             172800,
             345600,
+            432000,
             864000
           ],
           "type": "integer",
@@ -64760,6 +64805,7 @@
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
             "FOUR_DAYS",
+            "FIVE_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -64902,6 +64948,7 @@
             86400,
             172800,
             345600,
+            432000,
             864000
           ],
           "type": "integer",
@@ -64917,6 +64964,7 @@
             "TWENTY_FOUR_HOURS",
             "FORTY_EIGHT_HOURS",
             "FOUR_DAYS",
+            "FIVE_DAYS",
             "TEN_DAYS"
           ],
           "x-enumType": "KalturaVendorServiceTurnAroundTime"
@@ -68360,7 +68408,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.3.0"
+    "version": "15.5.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -152225,6 +152273,12 @@
             345600
           ],
           "title": "FOUR_DAYS"
+        },
+        {
+          "enum": [
+            432000
+          ],
+          "title": "FIVE_DAYS"
         },
         {
           "enum": [

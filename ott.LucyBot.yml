@@ -38,10 +38,15 @@ routes:
       - title: Contact Us
         icon: assets/img/icons/contact.png
         isContact: true
+        
       - title: Authentication
         icon: assets/img/icons/contact.png
         workflow: authentication
-
+        
+      - title: Create an household
+        icon: assets/img/icons/contact.png
+        workflow: create_an_household
+       
     intro: |
       Interactive workflows on this page will help you dive straight
       into coding the various building blocks of your application.
