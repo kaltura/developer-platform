@@ -10,6 +10,13 @@ In this flow, we'll create a household with 2 users (master user and regular use
 ## Register user
 We'll start by creating a user that later will be the master user in the household
 
+```json
+{
+  "method": "post",
+  "path": "/service/ottuser/action/register"
+}
+```
+
 ## Login user
 User will log in to the account in order to retrieve a ks (we will use it in the next step)
 
@@ -65,3 +72,6 @@ We'll add a new device to the household.
   "path": "/service/householddevice/action/add"
 }
 ```
+
+## Finish
+You can learn more about the operations used in this workflow by visiting the API Console and Documentation
