@@ -17,9 +17,10 @@ git add . >> /dev/null
 echo "Added everything to commit"
 git commit -a -m "Build site" >> /dev/null
 echo "Committed everything"
-git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:$BRANCH >> /dev/null 2>&1
+set -x 
+git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:$BRANCH # >> /dev/null 2>&1
 echo "Pushed new site"
-
+set +x
 cd ../../
 
 echo "Building OTT Website..."
