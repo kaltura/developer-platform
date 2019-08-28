@@ -6,6 +6,7 @@ git config --global user.email "bobby.brennan@gmail.com"
 mkdir ./markdown/generated
 
 echo "Building OVP Website..."
+set -x 
 git clone https://github.com/kaltura/developer-platform-generated generated/ovp
 rm -rf generated/ovp/*
 TARGET_API=ovp ./scripts/resources/all.sh
@@ -17,7 +18,6 @@ git add . >> /dev/null
 echo "Added everything to commit"
 git commit -a -m "Build site" >> /dev/null
 echo "Committed everything"
-set -x 
 git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:$BRANCH # >> /dev/null 2>&1
 echo "Pushed new site"
 set +x
