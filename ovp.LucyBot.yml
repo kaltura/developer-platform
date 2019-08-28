@@ -131,11 +131,11 @@ operationNavigation:
       title: "Kaltura VPaaS API Overview"
       description: "Learn how to use the Kaltura VPaaS API"
 
-  - title: "VPaaS API Getting Started"
+  - title: "Getting Started"
     path: "/VPaaS-API-Getting-Started"
     children:
 
-      - title: "Get Started with Kaltura VPaaS"
+      - title: "Get Started with the Kaltura API"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html
         path: "/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html"
         discussionURL: null
@@ -150,6 +150,11 @@ operationNavigation:
         path: "/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html"
         discussionURL: null
 
+      - title: "Application Tokens"
+        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/application-tokens.html
+        path: "/VPaaS-API-Getting-Started/application-tokens.html"
+        discussionURL: null
+
       - title: "Introduction to Kaltura's Client Libraries"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html
         path: "/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html"
@@ -160,29 +165,9 @@ operationNavigation:
         path: "/VPaaS-API-Getting-Started/client-library-generator.html"
         discussionURL: null
 
-      - title: "How to use Kaltura's API Abstract Classes"
+      - title: "Kaltura's API Abstract Classes"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html
         path: "/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html"
-        discussionURL: null
-       
-      - title: "Application Token Session Management"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/application-token-session-management.html
-        path: "/VPaaS-API-Getting-Started/application-token-session-management.html"
-        discussionURL: null       
-
-      - title: "Creating an Application Token"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Account-Representative-Steps.html
-        path: "/VPaaS-API-Getting-Started/Account-Representative-Steps.html"
-        discussionURL: null
-
-      - title: "Authorizing with an Application Token"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Authorizing-With-Application-Token.html
-        path: "/VPaaS-API-Getting-Started/Authorizing-With-Application-Token.html"
-        discussionURL: null
-
-      - title: "Generating Kaltura Sessions with Application Tokens"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html
-        path: "/VPaaS-API-Getting-Started/Generating-KS-with-App-Tokens.html"
         discussionURL: null
 
       - title: "API Usage Guideliness "
