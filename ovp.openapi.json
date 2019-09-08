@@ -13066,9 +13066,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -13076,6 +13079,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -13095,9 +13099,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -13105,6 +13112,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -13127,9 +13135,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -13137,6 +13148,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -13156,9 +13168,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -13166,6 +13181,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -21663,9 +21679,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -21673,6 +21692,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -21692,9 +21712,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -21702,6 +21725,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -52736,7 +52760,28 @@
             "10009",
             "10010",
             "10011",
-            "10012"
+            "10012",
+            "20001",
+            "20002",
+            "20003",
+            "20004",
+            "20005",
+            "20006",
+            "20007",
+            "20008",
+            "20009",
+            "20010",
+            "20011",
+            "20012",
+            "20013",
+            "20014",
+            "20015",
+            "20016",
+            "20017",
+            "20018",
+            "20019",
+            "20020",
+            "20021"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -52798,7 +52843,28 @@
             "ENTRY_LEVEL_USERS_STATUS_REALTIME",
             "PLATFORMS_DISCOVERY_REALTIME",
             "PLAYBACK_TYPE_REALTIME",
-            "CONTENT_REALTIME"
+            "CONTENT_REALTIME",
+            "CONTENT_DROPOFF_VPAAS",
+            "TOP_SYNDICATION_VPAAS",
+            "USER_TOP_CONTENT_VPAAS",
+            "USER_USAGE_VPAAS",
+            "PLATFORMS_VPAAS",
+            "OPERATING_SYSTEM_VPAAS",
+            "BROWSERS_VPAAS",
+            "OPERATING_SYSTEM_FAMILIES_VPAAS",
+            "BROWSERS_FAMILIES_VPAAS",
+            "USER_ENGAGEMENT_TIMELINE_VPAAS",
+            "UNIQUE_USERS_PLAY_VPAAS",
+            "MAP_OVERLAY_COUNTRY_VPAAS",
+            "MAP_OVERLAY_REGION_VPAAS",
+            "MAP_OVERLAY_CITY_VPAAS",
+            "TOP_CONTENT_CREATOR_VPAAS",
+            "TOP_CONTENT_CONTRIBUTORS_VPAAS",
+            "TOP_SOURCES_VPAAS",
+            "CONTENT_REPORT_REASONS_VPAAS",
+            "PLAYER_RELATED_INTERACTIONS_VPAAS",
+            "PLAYBACK_RATE_VPAAS",
+            "PARTNER_USAGE_VPAAS"
           ],
           "x-enumType": "KalturaReportType"
         },
@@ -55873,6 +55939,9 @@
           "$ref": "#/definitions/KalturaViewHistoryUserEntryAdvancedFilter"
         },
         {
+          "$ref": "#/definitions/KalturaWatchLaterUserEntryAdvancedFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaBaseEntryCompareAttributeCondition"
         },
         {
@@ -55978,6 +56047,7 @@
             "KalturaSearchCondition",
             "KalturaSearchOperator",
             "KalturaViewHistoryUserEntryAdvancedFilter",
+            "KalturaWatchLaterUserEntryAdvancedFilter",
             "KalturaBaseEntryCompareAttributeCondition",
             "KalturaDataEntryCompareAttributeCondition",
             "KalturaDocumentEntryCompareAttributeCondition",
@@ -62272,6 +62342,9 @@
           "$ref": "#/definitions/KalturaUrlTokenizerKs"
         },
         {
+          "$ref": "#/definitions/KalturaUrlTokenizerL3"
+        },
+        {
           "$ref": "#/definitions/KalturaUrlTokenizerLevel3"
         },
         {
@@ -62311,6 +62384,7 @@
             "KalturaUrlTokenizerCht",
             "KalturaUrlTokenizerCloudFront",
             "KalturaUrlTokenizerKs",
+            "KalturaUrlTokenizerL3",
             "KalturaUrlTokenizerLevel3",
             "KalturaUrlTokenizerLimeLight",
             "KalturaUrlTokenizerUplynk",
@@ -62500,6 +62574,25 @@
         }
       },
       "title": "KalturaUrlTokenizerKs",
+      "type": "object"
+    },
+    "KalturaUrlTokenizerL3": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaUrlTokenizer"
+        }
+      ],
+      "properties": {
+        "gen": {
+          "description": "gen",
+          "type": "string"
+        },
+        "paramName": {
+          "description": "paramName",
+          "type": "string"
+        }
+      },
+      "title": "KalturaUrlTokenizerL3",
       "type": "object"
     },
     "KalturaUrlTokenizerLevel3": {
@@ -64240,9 +64333,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -64250,6 +64346,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -64269,9 +64366,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -64279,6 +64379,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -64328,9 +64429,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -64338,6 +64442,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -64357,9 +64462,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -64367,6 +64475,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -64457,9 +64566,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -64467,6 +64579,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -64486,9 +64599,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -64496,6 +64612,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -64574,9 +64691,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -64584,6 +64704,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -64603,9 +64724,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -64613,6 +64737,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -65115,9 +65240,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -65125,6 +65253,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -65144,9 +65273,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -65154,6 +65286,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -65261,9 +65394,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -65271,6 +65407,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -65290,9 +65427,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -65300,6 +65440,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -65346,9 +65487,12 @@
             "Finnish",
             "French",
             "German",
+            "Greek",
             "Hebrew",
             "Hindi",
+            "Hungarian",
             "Icelandic",
+            "Indonesian",
             "Italian",
             "Japanese",
             "Korean",
@@ -65356,6 +65500,7 @@
             "Norwegian",
             "Polish",
             "Portuguese",
+            "Romanian",
             "Russian",
             "Spanish",
             "Swedish",
@@ -65375,9 +65520,12 @@
             "FI",
             "FR",
             "DE",
+            "EL",
             "HE",
             "HI",
+            "HU",
             "IS",
+            "IN",
             "IT",
             "JA",
             "KO",
@@ -65385,6 +65533,7 @@
             "NO",
             "PL",
             "PT",
+            "RO",
             "RU",
             "ES",
             "SV",
@@ -66567,6 +66716,53 @@
       ],
       "properties": {},
       "title": "KalturaWatchLaterUserEntry",
+      "type": "object"
+    },
+    "KalturaWatchLaterUserEntryAdvancedFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaSearchItem"
+        }
+      ],
+      "properties": {
+        "extendedStatusEqual": {
+          "description": "Enum Type: `KalturaUserEntryExtendedStatus`",
+          "enum": [
+            "viewHistory.PLAYBACK_COMPLETE",
+            "viewHistory.PLAYBACK_STARTED",
+            "viewHistory.VIEWED"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "PLAYBACK_COMPLETE",
+            "PLAYBACK_STARTED",
+            "VIEWED"
+          ],
+          "x-enumType": "KalturaUserEntryExtendedStatus"
+        },
+        "extendedStatusIn": {
+          "type": "string"
+        },
+        "idEqual": {
+          "type": "integer"
+        },
+        "idIn": {
+          "type": "string"
+        },
+        "updatedAtGreaterThanOrEqual": {
+          "type": "integer"
+        },
+        "updatedAtLessThanOrEqual": {
+          "type": "integer"
+        },
+        "userIdEqual": {
+          "type": "string"
+        },
+        "userIdIn": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaWatchLaterUserEntryAdvancedFilter",
       "type": "object"
     },
     "KalturaWatchLaterUserEntryFilter": {
@@ -68408,7 +68604,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.5.0"
+    "version": "15.6.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -106970,7 +107166,28 @@
                     "10009",
                     "10010",
                     "10011",
-                    "10012"
+                    "10012",
+                    "20001",
+                    "20002",
+                    "20003",
+                    "20004",
+                    "20005",
+                    "20006",
+                    "20007",
+                    "20008",
+                    "20009",
+                    "20010",
+                    "20011",
+                    "20012",
+                    "20013",
+                    "20014",
+                    "20015",
+                    "20016",
+                    "20017",
+                    "20018",
+                    "20019",
+                    "20020",
+                    "20021"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -107032,7 +107249,28 @@
                     "ENTRY_LEVEL_USERS_STATUS_REALTIME",
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
-                    "CONTENT_REALTIME"
+                    "CONTENT_REALTIME",
+                    "CONTENT_DROPOFF_VPAAS",
+                    "TOP_SYNDICATION_VPAAS",
+                    "USER_TOP_CONTENT_VPAAS",
+                    "USER_USAGE_VPAAS",
+                    "PLATFORMS_VPAAS",
+                    "OPERATING_SYSTEM_VPAAS",
+                    "BROWSERS_VPAAS",
+                    "OPERATING_SYSTEM_FAMILIES_VPAAS",
+                    "BROWSERS_FAMILIES_VPAAS",
+                    "USER_ENGAGEMENT_TIMELINE_VPAAS",
+                    "UNIQUE_USERS_PLAY_VPAAS",
+                    "MAP_OVERLAY_COUNTRY_VPAAS",
+                    "MAP_OVERLAY_REGION_VPAAS",
+                    "MAP_OVERLAY_CITY_VPAAS",
+                    "TOP_CONTENT_CREATOR_VPAAS",
+                    "TOP_CONTENT_CONTRIBUTORS_VPAAS",
+                    "TOP_SOURCES_VPAAS",
+                    "CONTENT_REPORT_REASONS_VPAAS",
+                    "PLAYER_RELATED_INTERACTIONS_VPAAS",
+                    "PLAYBACK_RATE_VPAAS",
+                    "PARTNER_USAGE_VPAAS"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -107281,7 +107519,28 @@
                     "10009",
                     "10010",
                     "10011",
-                    "10012"
+                    "10012",
+                    "20001",
+                    "20002",
+                    "20003",
+                    "20004",
+                    "20005",
+                    "20006",
+                    "20007",
+                    "20008",
+                    "20009",
+                    "20010",
+                    "20011",
+                    "20012",
+                    "20013",
+                    "20014",
+                    "20015",
+                    "20016",
+                    "20017",
+                    "20018",
+                    "20019",
+                    "20020",
+                    "20021"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -107343,7 +107602,28 @@
                     "ENTRY_LEVEL_USERS_STATUS_REALTIME",
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
-                    "CONTENT_REALTIME"
+                    "CONTENT_REALTIME",
+                    "CONTENT_DROPOFF_VPAAS",
+                    "TOP_SYNDICATION_VPAAS",
+                    "USER_TOP_CONTENT_VPAAS",
+                    "USER_USAGE_VPAAS",
+                    "PLATFORMS_VPAAS",
+                    "OPERATING_SYSTEM_VPAAS",
+                    "BROWSERS_VPAAS",
+                    "OPERATING_SYSTEM_FAMILIES_VPAAS",
+                    "BROWSERS_FAMILIES_VPAAS",
+                    "USER_ENGAGEMENT_TIMELINE_VPAAS",
+                    "UNIQUE_USERS_PLAY_VPAAS",
+                    "MAP_OVERLAY_COUNTRY_VPAAS",
+                    "MAP_OVERLAY_REGION_VPAAS",
+                    "MAP_OVERLAY_CITY_VPAAS",
+                    "TOP_CONTENT_CREATOR_VPAAS",
+                    "TOP_CONTENT_CONTRIBUTORS_VPAAS",
+                    "TOP_SOURCES_VPAAS",
+                    "CONTENT_REPORT_REASONS_VPAAS",
+                    "PLAYER_RELATED_INTERACTIONS_VPAAS",
+                    "PLAYBACK_RATE_VPAAS",
+                    "PARTNER_USAGE_VPAAS"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -107480,7 +107760,28 @@
                     "10009",
                     "10010",
                     "10011",
-                    "10012"
+                    "10012",
+                    "20001",
+                    "20002",
+                    "20003",
+                    "20004",
+                    "20005",
+                    "20006",
+                    "20007",
+                    "20008",
+                    "20009",
+                    "20010",
+                    "20011",
+                    "20012",
+                    "20013",
+                    "20014",
+                    "20015",
+                    "20016",
+                    "20017",
+                    "20018",
+                    "20019",
+                    "20020",
+                    "20021"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -107542,7 +107843,28 @@
                     "ENTRY_LEVEL_USERS_STATUS_REALTIME",
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
-                    "CONTENT_REALTIME"
+                    "CONTENT_REALTIME",
+                    "CONTENT_DROPOFF_VPAAS",
+                    "TOP_SYNDICATION_VPAAS",
+                    "USER_TOP_CONTENT_VPAAS",
+                    "USER_USAGE_VPAAS",
+                    "PLATFORMS_VPAAS",
+                    "OPERATING_SYSTEM_VPAAS",
+                    "BROWSERS_VPAAS",
+                    "OPERATING_SYSTEM_FAMILIES_VPAAS",
+                    "BROWSERS_FAMILIES_VPAAS",
+                    "USER_ENGAGEMENT_TIMELINE_VPAAS",
+                    "UNIQUE_USERS_PLAY_VPAAS",
+                    "MAP_OVERLAY_COUNTRY_VPAAS",
+                    "MAP_OVERLAY_REGION_VPAAS",
+                    "MAP_OVERLAY_CITY_VPAAS",
+                    "TOP_CONTENT_CREATOR_VPAAS",
+                    "TOP_CONTENT_CONTRIBUTORS_VPAAS",
+                    "TOP_SOURCES_VPAAS",
+                    "CONTENT_REPORT_REASONS_VPAAS",
+                    "PLAYER_RELATED_INTERACTIONS_VPAAS",
+                    "PLAYBACK_RATE_VPAAS",
+                    "PARTNER_USAGE_VPAAS"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -107672,7 +107994,28 @@
                     "10009",
                     "10010",
                     "10011",
-                    "10012"
+                    "10012",
+                    "20001",
+                    "20002",
+                    "20003",
+                    "20004",
+                    "20005",
+                    "20006",
+                    "20007",
+                    "20008",
+                    "20009",
+                    "20010",
+                    "20011",
+                    "20012",
+                    "20013",
+                    "20014",
+                    "20015",
+                    "20016",
+                    "20017",
+                    "20018",
+                    "20019",
+                    "20020",
+                    "20021"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -107734,7 +108077,28 @@
                     "ENTRY_LEVEL_USERS_STATUS_REALTIME",
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
-                    "CONTENT_REALTIME"
+                    "CONTENT_REALTIME",
+                    "CONTENT_DROPOFF_VPAAS",
+                    "TOP_SYNDICATION_VPAAS",
+                    "USER_TOP_CONTENT_VPAAS",
+                    "USER_USAGE_VPAAS",
+                    "PLATFORMS_VPAAS",
+                    "OPERATING_SYSTEM_VPAAS",
+                    "BROWSERS_VPAAS",
+                    "OPERATING_SYSTEM_FAMILIES_VPAAS",
+                    "BROWSERS_FAMILIES_VPAAS",
+                    "USER_ENGAGEMENT_TIMELINE_VPAAS",
+                    "UNIQUE_USERS_PLAY_VPAAS",
+                    "MAP_OVERLAY_COUNTRY_VPAAS",
+                    "MAP_OVERLAY_REGION_VPAAS",
+                    "MAP_OVERLAY_CITY_VPAAS",
+                    "TOP_CONTENT_CREATOR_VPAAS",
+                    "TOP_CONTENT_CONTRIBUTORS_VPAAS",
+                    "TOP_SOURCES_VPAAS",
+                    "CONTENT_REPORT_REASONS_VPAAS",
+                    "PLAYER_RELATED_INTERACTIONS_VPAAS",
+                    "PLAYBACK_RATE_VPAAS",
+                    "PARTNER_USAGE_VPAAS"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -107879,7 +108243,28 @@
                     "10009",
                     "10010",
                     "10011",
-                    "10012"
+                    "10012",
+                    "20001",
+                    "20002",
+                    "20003",
+                    "20004",
+                    "20005",
+                    "20006",
+                    "20007",
+                    "20008",
+                    "20009",
+                    "20010",
+                    "20011",
+                    "20012",
+                    "20013",
+                    "20014",
+                    "20015",
+                    "20016",
+                    "20017",
+                    "20018",
+                    "20019",
+                    "20020",
+                    "20021"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -107941,7 +108326,28 @@
                     "ENTRY_LEVEL_USERS_STATUS_REALTIME",
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
-                    "CONTENT_REALTIME"
+                    "CONTENT_REALTIME",
+                    "CONTENT_DROPOFF_VPAAS",
+                    "TOP_SYNDICATION_VPAAS",
+                    "USER_TOP_CONTENT_VPAAS",
+                    "USER_USAGE_VPAAS",
+                    "PLATFORMS_VPAAS",
+                    "OPERATING_SYSTEM_VPAAS",
+                    "BROWSERS_VPAAS",
+                    "OPERATING_SYSTEM_FAMILIES_VPAAS",
+                    "BROWSERS_FAMILIES_VPAAS",
+                    "USER_ENGAGEMENT_TIMELINE_VPAAS",
+                    "UNIQUE_USERS_PLAY_VPAAS",
+                    "MAP_OVERLAY_COUNTRY_VPAAS",
+                    "MAP_OVERLAY_REGION_VPAAS",
+                    "MAP_OVERLAY_CITY_VPAAS",
+                    "TOP_CONTENT_CREATOR_VPAAS",
+                    "TOP_CONTENT_CONTRIBUTORS_VPAAS",
+                    "TOP_SOURCES_VPAAS",
+                    "CONTENT_REPORT_REASONS_VPAAS",
+                    "PLAYER_RELATED_INTERACTIONS_VPAAS",
+                    "PLAYBACK_RATE_VPAAS",
+                    "PARTNER_USAGE_VPAAS"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -123425,6 +123831,12 @@
         },
         {
           "enum": [
+            "Greek"
+          ],
+          "title": "EL"
+        },
+        {
+          "enum": [
             "Hebrew"
           ],
           "title": "HE"
@@ -123437,9 +123849,21 @@
         },
         {
           "enum": [
+            "Hungarian"
+          ],
+          "title": "HU"
+        },
+        {
+          "enum": [
             "Icelandic"
           ],
           "title": "IS"
+        },
+        {
+          "enum": [
+            "Indonesian"
+          ],
+          "title": "IN"
         },
         {
           "enum": [
@@ -123482,6 +123906,12 @@
             "Portuguese"
           ],
           "title": "PT"
+        },
+        {
+          "enum": [
+            "Romanian"
+          ],
+          "title": "RO"
         },
         {
           "enum": [
@@ -144501,6 +144931,12 @@
         },
         {
           "enum": [
+            "ESEARCH_READ_PERMISSION"
+          ],
+          "title": "ESEARCH_READ_PERMISSION"
+        },
+        {
+          "enum": [
             "FEATURE_508_PLAYERS"
           ],
           "title": "FEATURE_508_PLAYERS"
@@ -144822,6 +145258,12 @@
             "FEATURE_MOBILE_FLAVORS"
           ],
           "title": "FEATURE_MOBILE_FLAVORS"
+        },
+        {
+          "enum": [
+            "FEATURE_MULTI_ACCOUNT_ANALYTICS"
+          ],
+          "title": "FEATURE_MULTI_ACCOUNT_ANALYTICS"
         },
         {
           "enum": [
@@ -147918,6 +148360,132 @@
             "10012"
           ],
           "title": "CONTENT_REALTIME"
+        },
+        {
+          "enum": [
+            "20001"
+          ],
+          "title": "CONTENT_DROPOFF_VPAAS"
+        },
+        {
+          "enum": [
+            "20002"
+          ],
+          "title": "TOP_SYNDICATION_VPAAS"
+        },
+        {
+          "enum": [
+            "20003"
+          ],
+          "title": "USER_TOP_CONTENT_VPAAS"
+        },
+        {
+          "enum": [
+            "20004"
+          ],
+          "title": "USER_USAGE_VPAAS"
+        },
+        {
+          "enum": [
+            "20005"
+          ],
+          "title": "PLATFORMS_VPAAS"
+        },
+        {
+          "enum": [
+            "20006"
+          ],
+          "title": "OPERATING_SYSTEM_VPAAS"
+        },
+        {
+          "enum": [
+            "20007"
+          ],
+          "title": "BROWSERS_VPAAS"
+        },
+        {
+          "enum": [
+            "20008"
+          ],
+          "title": "OPERATING_SYSTEM_FAMILIES_VPAAS"
+        },
+        {
+          "enum": [
+            "20009"
+          ],
+          "title": "BROWSERS_FAMILIES_VPAAS"
+        },
+        {
+          "enum": [
+            "20010"
+          ],
+          "title": "USER_ENGAGEMENT_TIMELINE_VPAAS"
+        },
+        {
+          "enum": [
+            "20011"
+          ],
+          "title": "UNIQUE_USERS_PLAY_VPAAS"
+        },
+        {
+          "enum": [
+            "20012"
+          ],
+          "title": "MAP_OVERLAY_COUNTRY_VPAAS"
+        },
+        {
+          "enum": [
+            "20013"
+          ],
+          "title": "MAP_OVERLAY_REGION_VPAAS"
+        },
+        {
+          "enum": [
+            "20014"
+          ],
+          "title": "MAP_OVERLAY_CITY_VPAAS"
+        },
+        {
+          "enum": [
+            "20015"
+          ],
+          "title": "TOP_CONTENT_CREATOR_VPAAS"
+        },
+        {
+          "enum": [
+            "20016"
+          ],
+          "title": "TOP_CONTENT_CONTRIBUTORS_VPAAS"
+        },
+        {
+          "enum": [
+            "20017"
+          ],
+          "title": "TOP_SOURCES_VPAAS"
+        },
+        {
+          "enum": [
+            "20018"
+          ],
+          "title": "CONTENT_REPORT_REASONS_VPAAS"
+        },
+        {
+          "enum": [
+            "20019"
+          ],
+          "title": "PLAYER_RELATED_INTERACTIONS_VPAAS"
+        },
+        {
+          "enum": [
+            "20020"
+          ],
+          "title": "PLAYBACK_RATE_VPAAS"
+        },
+        {
+          "enum": [
+            "20021"
+          ],
+          "title": "PARTNER_USAGE_VPAAS"
         }
       ],
       "title": "KalturaReportType"
