@@ -10374,6 +10374,10 @@
           "description": "The Accuracy of the caption content",
           "type": "integer"
         },
+        "associatedTranscriptIds": {
+          "description": "List of associated transcript asset id's, comma separated",
+          "type": "string"
+        },
         "captionParamsId": {
           "description": "`insertOnly`\n\nThe Caption Params used to create this Caption Asset",
           "type": "integer"
@@ -33884,6 +33888,9 @@
           "$ref": "#/definitions/KalturaLocationScheduleResourceFilter"
         },
         {
+          "$ref": "#/definitions/KalturaSsoFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaUserEntryFilter"
         },
         {
@@ -34442,6 +34449,7 @@
             "KalturaCameraScheduleResourceFilter",
             "KalturaLiveEntryScheduleResourceFilter",
             "KalturaLocationScheduleResourceFilter",
+            "KalturaSsoFilter",
             "KalturaUserEntryFilter",
             "KalturaViewHistoryUserEntryFilter",
             "KalturaWatchLaterUserEntryFilter",
@@ -41078,6 +41086,9 @@
           "$ref": "#/definitions/KalturaShortLinkListResponse"
         },
         {
+          "$ref": "#/definitions/KalturaSsoListResponse"
+        },
+        {
           "$ref": "#/definitions/KalturaStorageProfileListResponse"
         },
         {
@@ -41206,6 +41217,7 @@
             "KalturaSchedulerWorkerListResponse",
             "KalturaServerNodeListResponse",
             "KalturaShortLinkListResponse",
+            "KalturaSsoListResponse",
             "KalturaStorageProfileListResponse",
             "KalturaTagListResponse",
             "KalturaThumbAssetListResponse",
@@ -52205,6 +52217,9 @@
           "$ref": "#/definitions/KalturaLocationScheduleResourceFilter"
         },
         {
+          "$ref": "#/definitions/KalturaSsoFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaUserEntryFilter"
         },
         {
@@ -52331,6 +52346,7 @@
             "KalturaCameraScheduleResourceFilter",
             "KalturaLiveEntryScheduleResourceFilter",
             "KalturaLocationScheduleResourceFilter",
+            "KalturaSsoFilter",
             "KalturaUserEntryFilter",
             "KalturaViewHistoryUserEntryFilter",
             "KalturaWatchLaterUserEntryFilter",
@@ -52748,6 +52764,8 @@
             "44",
             "45",
             "46",
+            "47",
+            "48",
             "201",
             "10001",
             "10002",
@@ -52831,6 +52849,8 @@
             "CONTENT_REPORT_REASONS",
             "PLAYER_RELATED_INTERACTIONS",
             "PLAYBACK_RATE",
+            "TOP_USER_CONTENT",
+            "USER_HIGHLIGHTS",
             "PARTNER_USAGE",
             "MAP_OVERLAY_COUNTRY_REALTIME",
             "MAP_OVERLAY_REGION_REALTIME",
@@ -57479,6 +57499,147 @@
         }
       },
       "title": "KalturaSshUrlResource",
+      "type": "object"
+    },
+    "KalturaSso": {
+      "properties": {
+        "applicationType": {
+          "type": "string"
+        },
+        "createdAt": {
+          "description": "`readOnly`\n\nCreation date as Unix timestamp (In seconds)",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "id": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "partnerId": {
+          "description": "`insertOnly`",
+          "type": "integer"
+        },
+        "redirectUrl": {
+          "description": "Redirect URL for a specific application type and (partner id or domain)",
+          "type": "string"
+        },
+        "status": {
+          "description": "Enum Type: `KalturaSsoStatus`",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "DISABLED",
+            "ACTIVE",
+            "DELETED"
+          ],
+          "x-enumType": "KalturaSsoStatus"
+        },
+        "updatedAt": {
+          "description": "`readOnly`\n\nLast update date as Unix timestamp (In seconds)",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "title": "KalturaSso",
+      "type": "object"
+    },
+    "KalturaSsoBaseFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaRelatedFilter"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaSsoFilter"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "applicationTypeEqual": {
+          "type": "string"
+        },
+        "createdAtGreaterThanOrEqual": {
+          "type": "integer"
+        },
+        "createdAtLessThanOrEqual": {
+          "type": "integer"
+        },
+        "domainEqual": {
+          "type": "string"
+        },
+        "idEqual": {
+          "type": "integer"
+        },
+        "idIn": {
+          "type": "string"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaSsoFilter"
+          ],
+          "type": "string"
+        },
+        "partnerIdEqual": {
+          "type": "integer"
+        },
+        "statusEqual": {
+          "description": "Enum Type: `KalturaSsoStatus`",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "DISABLED",
+            "ACTIVE",
+            "DELETED"
+          ],
+          "x-enumType": "KalturaSsoStatus"
+        },
+        "statusIn": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaSsoBaseFilter",
+      "type": "object",
+      "x-abstract": true
+    },
+    "KalturaSsoFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaSsoBaseFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaSsoFilter",
+      "type": "object"
+    },
+    "KalturaSsoListResponse": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaListResponse"
+        }
+      ],
+      "properties": {
+        "objects": {
+          "items": {
+            "$ref": "#/definitions/KalturaSso"
+          },
+          "type": "array"
+        }
+      },
+      "title": "KalturaSsoListResponse",
       "type": "object"
     },
     "KalturaStartWidgetSessionResponse": {
@@ -68604,7 +68765,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.6.0"
+    "version": "15.7.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -107154,6 +107315,8 @@
                     "44",
                     "45",
                     "46",
+                    "47",
+                    "48",
                     "201",
                     "10001",
                     "10002",
@@ -107237,6 +107400,8 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
+                    "TOP_USER_CONTENT",
+                    "USER_HIGHLIGHTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -107507,6 +107672,8 @@
                     "44",
                     "45",
                     "46",
+                    "47",
+                    "48",
                     "201",
                     "10001",
                     "10002",
@@ -107590,6 +107757,8 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
+                    "TOP_USER_CONTENT",
+                    "USER_HIGHLIGHTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -107748,6 +107917,8 @@
                     "44",
                     "45",
                     "46",
+                    "47",
+                    "48",
                     "201",
                     "10001",
                     "10002",
@@ -107831,6 +108002,8 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
+                    "TOP_USER_CONTENT",
+                    "USER_HIGHLIGHTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -107982,6 +108155,8 @@
                     "44",
                     "45",
                     "46",
+                    "47",
+                    "48",
                     "201",
                     "10001",
                     "10002",
@@ -108065,6 +108240,8 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
+                    "TOP_USER_CONTENT",
+                    "USER_HIGHLIGHTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -108231,6 +108408,8 @@
                     "44",
                     "45",
                     "46",
+                    "47",
+                    "48",
                     "201",
                     "10001",
                     "10002",
@@ -108314,6 +108493,8 @@
                     "CONTENT_REPORT_REASONS",
                     "PLAYER_RELATED_INTERACTIONS",
                     "PLAYBACK_RATE",
+                    "TOP_USER_CONTENT",
+                    "USER_HIGHLIGHTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -112123,6 +112304,354 @@
           "offset",
           "pageSize",
           "activeOnly"
+        ]
+      }
+    },
+    "/service/sso_sso/action/add": {
+      "post": {
+        "description": "Adds a new sso configuration.",
+        "operationId": "sso.add",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "sso": {
+                  "$ref": "#/definitions/KalturaSso"
+                }
+              },
+              "required": [
+                "sso"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaSso"
+            }
+          },
+          "x-Errors": {
+            "description": "* `DUPLICATE_SSO`: SSO with id [@ID@] already exists in system"
+          }
+        },
+        "tags": [
+          "sso"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "sso"
+        ]
+      }
+    },
+    "/service/sso_sso/action/delete": {
+      "post": {
+        "description": "Delete sso by ID",
+        "operationId": "sso.delete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "ssoId": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "ssoId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaSso"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_SSO_ID`: Invalid sso id - @ID@"
+          }
+        },
+        "tags": [
+          "sso"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "ssoId"
+        ]
+      }
+    },
+    "/service/sso_sso/action/get": {
+      "post": {
+        "description": "Retrieves sso object",
+        "operationId": "sso.get",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "ssoId": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "ssoId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaSso"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_SSO_ID`: Invalid sso id - @ID@"
+          }
+        },
+        "tags": [
+          "sso"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "ssoId"
+        ]
+      }
+    },
+    "/service/sso_sso/action/list": {
+      "post": {
+        "description": "Lists sso objects that are associated with an account.",
+        "operationId": "sso.list",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "filter": {
+                  "$ref": "#/definitions/KalturaSsoFilter"
+                },
+                "pager": {
+                  "$ref": "#/definitions/KalturaFilterPager"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaSsoListResponse"
+            }
+          }
+        },
+        "tags": [
+          "sso"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "filter",
+          "pager"
+        ]
+      }
+    },
+    "/service/sso_sso/action/login": {
+      "post": {
+        "description": "Login with SSO, getting redirect url according to application type and partner Id\n\nor according to application type and domain",
+        "operationId": "sso.login",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "applicationType": {
+                  "type": "string"
+                },
+                "partnerId": {
+                  "type": "integer"
+                },
+                "userId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "userId",
+                "applicationType"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "x-Errors": {
+            "description": "* `SSO_NOT_FOUND`"
+          }
+        },
+        "tags": [
+          "sso"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "userId",
+          "applicationType",
+          "partnerId"
+        ]
+      }
+    },
+    "/service/sso_sso/action/update": {
+      "post": {
+        "description": "Update sso by ID",
+        "operationId": "sso.update",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "sso": {
+                  "$ref": "#/definitions/KalturaSso"
+                },
+                "ssoId": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "ssoId",
+                "sso"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaSso"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_SSO_ID`: Invalid sso id - @ID@"
+          }
+        },
+        "tags": [
+          "sso"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "ssoId",
+          "sso"
         ]
       }
     },
@@ -119592,6 +120121,10 @@
       "description": "Short link service",
       "name": "shortLink",
       "x-plugin": "shortLink"
+    },
+    {
+      "name": "sso",
+      "x-plugin": "sso"
     },
     {
       "description": "Stats Service",
@@ -145519,6 +146052,12 @@
         },
         {
           "enum": [
+            "SSO_ADMIN_PERMISSION"
+          ],
+          "title": "SSO_ADMIN_PERMISSION"
+        },
+        {
+          "enum": [
             "STUDIO_ADD_UICONF"
           ],
           "title": "STUDIO_ADD_UICONF"
@@ -148285,6 +148824,18 @@
         },
         {
           "enum": [
+            "47"
+          ],
+          "title": "TOP_USER_CONTENT"
+        },
+        {
+          "enum": [
+            "48"
+          ],
+          "title": "USER_HIGHLIGHTS"
+        },
+        {
+          "enum": [
             "201"
           ],
           "title": "PARTNER_USAGE"
@@ -150070,6 +150621,29 @@
         }
       ],
       "title": "KalturaSshDropFolderOrderBy"
+    },
+    "KalturaSsoStatus": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "DISABLED"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "ACTIVE"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "DELETED"
+        }
+      ],
+      "title": "KalturaSsoStatus"
     },
     "KalturaStatsEventType": {
       "oneOf": [
@@ -158073,6 +158647,26 @@
       "code": "DUPLICATE_GROUP_BY_ID",
       "message": "Group with id [@ID@] already exists in system",
       "name": "DUPLICATE_GROUP_BY_ID"
+    },
+    {
+      "code": "INVALID_SSO_ID",
+      "message": "Invalid sso id - @ID@",
+      "name": "INVALID_SSO_ID"
+    },
+    {
+      "code": "DUPLICATE_SSO",
+      "message": "SSO with id [@ID@] already exists in system",
+      "name": "DUPLICATE_SSO"
+    },
+    {
+      "code": "SSO_NOT_FOUND",
+      "message": "",
+      "name": "SSO_NOT_FOUND"
+    },
+    {
+      "code": "PROPERTY_PARTNER_CANNOT_BE_0",
+      "message": "Property partner id cannot be 0",
+      "name": "PROPERTY_PARTNER_CANNOT_BE_0"
     }
   ]
 }
