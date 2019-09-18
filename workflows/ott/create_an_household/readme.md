@@ -5,7 +5,7 @@
 -->
 
 # Create an household
-In this flow, we'll create a household with 2 users (master user and regular user) and we'll add a device
+In this flow, we'll create a household with 2 users (master user and regular user) and we'll add a device.
 
 ## Register user
 We'll start by creating a user that later will be the master user in the household
