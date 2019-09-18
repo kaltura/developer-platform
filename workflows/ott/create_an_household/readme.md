@@ -52,12 +52,15 @@ Create household
         "properties": {
           "household": {
             "name": {},
-            "description": {},
-            "externalId": {}
+            "type": "object",
+            "properties": {
+              "description": {},
+              "externalId": {},
+            }
           }
         }
       },
-      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
+      "consoleDefault": "{\"version\":\"3.6.287.20720\"}"
     }
   ]
 }
