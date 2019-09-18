@@ -50,9 +50,11 @@ Create household
       "schema": {
         "type": "object",
         "properties": {
-          "name": {},
-          "description": {},
-          "externalId": {}
+          "household":{
+            "name": {},
+            "description": {},
+            "externalId": {}
+          }
         }
       },
       "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
