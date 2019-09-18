@@ -50,7 +50,7 @@ Create household
       "schema": {
         "type": "object",
         "properties": {
-          "household":{
+          "household": {
             "name": {},
             "description": {},
             "externalId": {}
