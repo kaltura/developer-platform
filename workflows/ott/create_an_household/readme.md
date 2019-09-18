@@ -36,5 +36,30 @@ We'll start by creating a user that later will be the master user in the househo
 }
 ```
 
+## Create household
+Create household
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/household/action/add",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {},
+          "description": {},
+          "externalId": {}
+        }
+      },
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
+    }
+  ]
+}
+```
+
 ## Finish
 You can learn more about the operations used in this workflow by visiting the API Console and Documentation
