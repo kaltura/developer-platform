@@ -52,13 +52,10 @@ Create household
         "properties": {
           "household": {
             "name": {},
-            "description": {},
-            "externalId": {},
             "type": "object",
             "properties": {
               "description": {},
               "externalId": {},
-              "name": {}
             }
           }
         }
