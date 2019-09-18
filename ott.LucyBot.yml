@@ -78,6 +78,7 @@ operationNavigation:
     discussionURL: null
   - title: test
     markdownFile: ./markdown/generated/ott.md
+    discussionURL: null
     
 github:
   repo: "kaltura/developer-platform"
