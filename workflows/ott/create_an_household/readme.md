@@ -10,6 +10,7 @@ In this flow, we'll create a household with 2 users (master user and regular use
 ## Register user
 We'll start by creating a user that later will be the master user in the household
 
+### API Call
 ```json
 {
   "method": "post",
