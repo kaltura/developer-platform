@@ -46,6 +46,10 @@ routes:
       - title: Create an household
         icon: assets/img/icons/contact.png
         workflow: create_an_household
+        
+      - title: search assets
+        icon: assets/img/icons/contact.png
+        workflow: search_assets
        
     intro: |
       Interactive workflows on this page will help you dive straight
