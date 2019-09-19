@@ -60,7 +60,33 @@ Create household
           }
         }
       },
-      "consoleDefault": "{\"version\":\"3.6.287.20720\"}"
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
+    }
+  ]
+}
+```
+
+## Login user
+Login user (created in the previous step) to receive a valid session ks
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/ottuser/action/login",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "partnerId": {},
+          "password": {},
+          "udid": {},
+          "extraParams": {}
+        }
+      },
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
     }
   ]
 }
