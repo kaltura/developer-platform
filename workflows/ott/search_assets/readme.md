@@ -42,12 +42,16 @@ search for drama movies in the catalog
         "properties": {
           "filter": {
             "properties": {
-              "kSql": {}
-            }
+              "kSql": {},
+              "objectType": {
+                "consoleDefault": "KalturaSearchAssetFilter"
+              }
+            },
+            "type": "object"
           }
         }
       },
-      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
+      "consoleDefault": "{\"version\":\"3.6.287.20720\"}"
     }
   ]
 }
