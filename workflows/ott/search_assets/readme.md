@@ -33,6 +33,26 @@ search for drama movies in the catalog
 ```json
 {
   "method": "post",
-  "path": "/service/asset/action/list"
+  "path": "/service/asset/action/list",
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "properties": {
+              "kSql": {},
+              "objectType": {
+                "consoleDefault": "KalturaAssetFilter"
+              }
+            },
+            "type": "object"
+          }
+        }
+      },
+      "consoleDefault": "{\"version\":\"3.6.287.20720\"}"
+    }
+  ]
 }
 ```
