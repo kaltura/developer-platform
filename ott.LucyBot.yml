@@ -77,7 +77,7 @@ operationNavigation:
     markdownFile: ./markdown/generated/client_libraries.md
     discussionURL: null
   - title: test
-    markdownFile: ./markdown/generated/ott.md
+    markdownFile: assets/documentation/test1.md
     discussionURL: null
     
 github:
