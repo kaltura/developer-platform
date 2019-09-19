@@ -50,10 +50,6 @@ Create household
       "schema": {
         "type": "object",
         "properties": {
-          "ks": {},
-          "version": {
-            "consoleDefault": "5.2.5.17649"
-          },
           "household": {
             "type": "object",
             "properties": {
