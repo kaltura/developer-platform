@@ -44,7 +44,7 @@ search for drama movies in the catalog
             "properties": {
               "kSql": {},
               "objectType": {
-                "consoleDefault": "KalturaAssetFilter"
+                "consoleDefault": "KalturaSearchAssetFilter"
               }
             },
             "type": "object"
