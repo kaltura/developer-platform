@@ -5,11 +5,9 @@
 -->
 
 # Parental control (playback)
-
 A flow that demonstrate parental control verification prior to playback
 
 ## Retrieve all user asset rules
-
 Client invokes userassetrule/action/list API request (providing the asset id) to get all user asset rules
 relevant to the specific asset id.
 
@@ -43,31 +41,16 @@ relevant to the specific asset id.
 }
 ```
 
-## Client checks if parental rule return in the response
-If parental rule return in the response, the client will ask the user to enter a parental pin.
-
 ## Validate parental PIN
-The client will send pin/action/validate API request to validate if the pin entered by the user is correct.
-* If the pin is correct, the backend will return a valid response and the client will continue with the playback flow
-* If the pin is not correct, the backend will return an exception, and the client will respond accordingly (displaying again a message to the end-user to type the pin again, etc.)
+After the user enters the pin, the client will invoke pin/action/validate API request to validate the entered pin.
+
+If the PIN is correct - the client will continue with the playback flow.
+If not correct - depends on the specific client functionality ( i.e - prompt the user to enter the PIN again).
 
 ### API Call
 ```json
 {
   "method": "post",
-  "path": "/service/pin/action/validate",
-  "parameters": [
-    {
-      "name": "body",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "type": {},
-          "ruleId": {}
-        }
-      },
-      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
-    }
-  ]
+  "path": "/service/pin/action/validate"
 }
 ```
