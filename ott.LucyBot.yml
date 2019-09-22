@@ -79,19 +79,17 @@ routes:
 
 operationNavigation:
 
-  - title: KnowledgeOwl
-    markdownFile: assets/documentation/OTT/knowledgeOwl/knowledgeOwl.md 
+   
 
   - title: Overview
     markdownFile: assets/documentation/Kaltura-OTT-Backend-API-Overview.md
     discussionURL: null
 
+  - title: KnowledgeOwl
+    markdownFile: assets/documentation/OTT/knowledgeOwl/knowledgeOwl.md
+
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
-    discussionURL: null
-
-  - title: test
-    markdownFile: /assets/documentation/test1.md
     discussionURL: null
 
   - title: "Generate API Sessions"
