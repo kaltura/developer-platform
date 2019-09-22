@@ -74,12 +74,18 @@ routes:
 
 
 operationNavigation:
+
+  - title: KnowledgeOwl
+    markdownFile: http://kaltura-sandbox.knowledgeowl.com
+
   - title: Overview
     markdownFile: asset/documentation/Kaltura-OTT-Backend-API-Overview.md
     discussionURL: null
+
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
     discussionURL: null
+
   - title: test
     markdownFile: /assets/documentation/test1.md
     discussionURL: null
