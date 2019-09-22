@@ -75,7 +75,7 @@ routes:
 
 operationNavigation:
   - title: Overview
-    markdownFile: ./markdown/generated/ott.md
+    markdownFile: /assets/documentation/overview.html
     discussionURL: null
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
