@@ -83,6 +83,19 @@ operationNavigation:
   - title: test
     markdownFile: /assets/documentation/test1.md
     discussionURL: null
+
+  - title: "Generate API Sessions"
+    children:
+    - title: "login"
+        tag: "login"
+        children:
+          - operation: "ottUser.login"
+    - title: "session"
+        tag: "session"
+        children:
+          - operation: "session.get"
+          - operation: "session.revoke"
+          - operation: "session.switchUser"
     
 github:
   repo: "kaltura/developer-platform"
