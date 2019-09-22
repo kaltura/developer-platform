@@ -97,6 +97,7 @@ operationNavigation:
       - title: "login"
         tag: "login"
         children:
+          - markdownFile: assets/documentation/OTT/authentication/login.md
           - operation: "ottUser.login"
       - title: "session"
         tag: "session"
