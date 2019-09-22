@@ -92,11 +92,11 @@ operationNavigation:
 
   - title: "Generate API Sessions"
     children:
-    - title: "login"
+      - title: "login"
         tag: "login"
         children:
           - operation: "ottUser.login"
-    - title: "session"
+      - title: "session"
         tag: "session"
         children:
           - operation: "session.get"
