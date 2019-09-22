@@ -5,9 +5,11 @@
 -->
 
 # Parental control (playback)
-A flow that demonstrates parental control verification prior to playback
+
+A flow that demonstrate parental control verification prior to playback
 
 ## Retrieve all user asset rules
+
 Client invokes userassetrule/action/list API request (providing the asset id) to get all user asset rules
 relevant to the specific asset id.
 
@@ -60,16 +62,11 @@ The client will send pin/action/validate API request to validate if the pin ente
       "schema": {
         "type": "object",
         "properties": {
-          "pin": {},
-          "ks": {}
+          "type": {},
+          "ruleId": {}
         }
-      }
-    },
-    {
-      "name": "Accept"
-    },
-    {
-      "name": "Accept"
+      },
+      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
     }
   ]
 }

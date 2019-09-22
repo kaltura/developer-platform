@@ -50,6 +50,10 @@ routes:
       - title: search assets
         icon: assets/img/icons/contact.png
         workflow: search_assets
+
+      - title: playback_asset (parental)
+        icon: assets/img/icons/contact.png
+        workflow: playback_asset (parental)
        
     intro: |
       Interactive workflows on this page will help you dive straight
@@ -74,15 +78,34 @@ routes:
 
 
 operationNavigation:
+
+  - title: KnowledgeOwl
+    markdownFile: assets/documentation/OTT/knowledgeOwl/knowledgeOwl.md 
+
   - title: Overview
-    markdownFile: ./markdown/generated/ott.md
+    markdownFile: assets/documentation/Kaltura-OTT-Backend-API-Overview.md
     discussionURL: null
+
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
     discussionURL: null
+
   - title: test
     markdownFile: /assets/documentation/test1.md
     discussionURL: null
+
+  - title: "Generate API Sessions"
+    children:
+      - title: "login"
+        tag: "login"
+        children:
+          - operation: "ottUser.login"
+      - title: "session"
+        tag: "session"
+        children:
+          - operation: "session.get"
+          - operation: "session.revoke"
+          - operation: "session.switchUser"
     
 github:
   repo: "kaltura/developer-platform"
