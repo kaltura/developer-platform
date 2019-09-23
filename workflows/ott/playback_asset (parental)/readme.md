@@ -5,7 +5,9 @@
 -->
 
 # Parental control (playback)
-A flow that demonstrate parental control verification prior to playback
+A flow that demonstrate parental control verification prior to playback.
+
+![ScreenShot](/assets/documentation/OTT/image flows/parental control flow.PNG)
 
 ## Retrieve all user asset rules
 Client invokes userassetrule/action/list API request (providing the asset id) to get all user asset rules
