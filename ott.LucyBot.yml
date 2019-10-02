@@ -46,6 +46,14 @@ routes:
       - title: Create an household
         icon: assets/img/icons/contact.png
         workflow: create_an_household
+        
+      - title: search assets
+        icon: assets/img/icons/contact.png
+        workflow: search_assets
+
+      - title: playback_asset (parental)
+        icon: assets/img/icons/contact.png
+        workflow: playback_asset (parental)
        
     intro: |
       Interactive workflows on this page will help you dive straight
@@ -70,15 +78,33 @@ routes:
 
 
 operationNavigation:
+
+   
+
   - title: Overview
-    markdownFile: ./markdown/generated/ott.md
+    markdownFile: assets/documentation/Kaltura-OTT-Backend-API-Overview.md
     discussionURL: null
+
+  - title: KnowledgeOwl
+    markdownFile: assets/documentation/OTT/knowledgeOwl/knowledgeOwl.md
+
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
     discussionURL: null
-  - title: test
-    markdownFile: ./markdown/generated/ott.md
-    discussionURL: null
+
+  - title: "Generate API Sessions"
+    children:
+      - title: "login"
+        tag: "login"
+        children:
+          - markdownFile: assets/documentation/OTT/authentication/login.md
+          - operation: "ottUser.login"
+      - title: "session"
+        tag: "session"
+        children:
+          - operation: "session.get"
+          - operation: "session.revoke"
+          - operation: "session.switchUser"
     
 github:
   repo: "kaltura/developer-platform"
