@@ -59,3 +59,7 @@ pre code {
 operation-documentation .input-output-box h4 {
   font-size: 21px;
 }
+img {
+  max-width:100%; 
+}
+
