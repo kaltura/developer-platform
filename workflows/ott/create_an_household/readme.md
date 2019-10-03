@@ -27,14 +27,16 @@ the master user of the household (see next step)
         "properties": {
           "partnerId": {},
           "user": {
-            "username": {},
-            "firstName": {},
-            "lastName": {}
-          },
-          "password": {}
-        }
-      },
-      "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
+            "type": "object",
+            "properties": {
+              "userName": {},
+              "firstName": {}
+            },
+            "password": {}
+          }
+        },
+        "consoleDefault": "{\"version\":\"5.2.5.17649\"}"
+      }
     }
   ]
 }
