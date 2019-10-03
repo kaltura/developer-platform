@@ -19,6 +19,11 @@ routes:
       title: "Kaltura OTT API Documentation"
       description: "Full documentation for the Kaltura OTT API"
 
+  /player:
+    title: Kaltura Player Documentation
+    documentation: player
+    markdownFile: assets/documentation/OTT/knowledgeOwl/knowledgeOwl.md
+
   /console:
     ui: console
     for: ott
