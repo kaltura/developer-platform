@@ -3648,3 +3648,6 @@ ul.code-tab li a {
 /* Create an active/current tablink class */
 /*ul.code-tab li a:focus, .active {background-color: #ccc;}*/
 
+img {
+  max-width:100%; 
+}
