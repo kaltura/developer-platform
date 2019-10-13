@@ -39,16 +39,15 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
           },
           "userId": {
             "fromSecrets": true,
-            "default": "user@example.com",
-            "consoleDefault": "assaf.berkovitz@kaltura.com"
+            "default": "user@example.com"
           },
           "secret": {
             "fromSecrets": true,
-            "consoleDefault": "Farfur123!"
+            "consoleDefault": ""
           },
           "type": {
             "default": 2,
-            "consoleDefault": 0
+            "consoleDefault": 2
           },
           "privileges": {}
         }
