@@ -535,7 +535,7 @@ workflowNavigation:
     icon: users
     children:
       - workflow: group_management
-- title: Ingest and Upload Media
+  - title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
     children: 
       - workflow: upload
