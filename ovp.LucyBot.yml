@@ -535,9 +535,13 @@ workflowNavigation:
     icon: users
     children:
       - workflow: group_management
-  - title: Ingest and Upload Media
+- title: Ingest and Upload Media
     icon: assets/img/icons/upload.png
-    workflow: upload
+    children: 
+      - workflow: upload
+      - workflow: youtube_ingestion
+  - title: Enrich and Organize Metadata
+    icon: assets/img/icons/distribute.png
   - title: Enrich and Organize Metadata
     icon: assets/img/icons/distribute.png
     children:
