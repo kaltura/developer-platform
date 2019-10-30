@@ -542,8 +542,6 @@ workflowNavigation:
       - workflow: youtube_ingestion
   - title: Enrich and Organize Metadata
     icon: assets/img/icons/distribute.png
-  - title: Enrich and Organize Metadata
-    icon: assets/img/icons/distribute.png
     children:
       - workflow: metadata
       - workflow: captions
