@@ -5,7 +5,7 @@
 -->
 
 # Authentication
-Authentication
+Authentication UPDATED
 
 ## Starting a Kaltura Session
 To generate a KS, you will need to login to the account using the user name and password used to register.

@@ -27423,6 +27423,7 @@
           "enum": [
             "access_control_id",
             "admin_tags",
+            "captions_content",
             "conversion_profile_id",
             "created_at",
             "creator_kuser_id",
@@ -27461,6 +27462,7 @@
           "x-enumLabels": [
             "ACCESS_CONTROL_ID",
             "ADMIN_TAGS",
+            "CAPTIONS_CONTENT",
             "CONVERSION_PROFILE_ID",
             "CREATED_AT",
             "CREATOR_ID",
@@ -30630,6 +30632,11 @@
           "description": "Err description provided by provider in case job execution has failed",
           "type": "string"
         },
+        "expectedFinishTime": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
         "finishTime": {
           "description": "`readOnly`",
           "readOnly": true,
@@ -30675,6 +30682,40 @@
         "reachProfileId": {
           "description": "`insertOnly`\n\nThe profile id from which this task base config is taken from",
           "type": "integer"
+        },
+        "serviceFeature": {
+          "description": "`readOnly`\n\nEnum Type: `KalturaVendorServiceFeature`",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "readOnly": true,
+          "type": "integer",
+          "x-enumLabels": [
+            "CAPTIONS",
+            "TRANSLATION",
+            "ALIGNMENT",
+            "AUDIO_DESCRIPTION",
+            "CHAPTERING"
+          ],
+          "x-enumType": "KalturaVendorServiceFeature"
+        },
+        "serviceType": {
+          "description": "`readOnly`\n\nEnum Type: `KalturaVendorServiceType`",
+          "enum": [
+            1,
+            2
+          ],
+          "readOnly": true,
+          "type": "integer",
+          "x-enumLabels": [
+            "HUMAN",
+            "MACHINE"
+          ],
+          "x-enumType": "KalturaVendorServiceType"
         },
         "status": {
           "description": "Enum Type: `KalturaEntryVendorTaskStatus`",
@@ -30859,6 +30900,12 @@
         }
       ],
       "properties": {
+        "expectedFinishTimeGreaterThanOrEqual": {
+          "type": "integer"
+        },
+        "expectedFinishTimeLessThanOrEqual": {
+          "type": "integer"
+        },
         "freeText": {
           "type": "string"
         },
@@ -49510,6 +49557,9 @@
         "lastPlayedAtLessThanOrEqual": {
           "type": "integer"
         },
+        "lastPlayedAtLessThanOrEqualOrNull": {
+          "type": "integer"
+        },
         "objectType": {
           "enum": [
             "KalturaPlayableEntryFilter",
@@ -61326,6 +61376,19 @@
         }
       ],
       "properties": {
+        "assetsType": {
+          "description": "Enum Type: `KalturaTvinciAssetsType`",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "REGULAR",
+            "VIRTUAL"
+          ],
+          "x-enumType": "KalturaTvinciAssetsType"
+        },
         "ingestUrl": {
           "type": "string"
         },
@@ -68765,7 +68828,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.7.0"
+    "version": "15.9.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -129697,6 +129760,12 @@
         },
         {
           "enum": [
+            "captions_content"
+          ],
+          "title": "CAPTIONS_CONTENT"
+        },
+        {
+          "enum": [
             "conversion_profile_id"
           ],
           "title": "CONVERSION_PROFILE_ID"
@@ -152221,6 +152290,23 @@
         }
       ],
       "title": "KalturaTubeMogulSyndicationFeedOrderBy"
+    },
+    "KalturaTvinciAssetsType": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "REGULAR"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "VIRTUAL"
+        }
+      ],
+      "title": "KalturaTvinciAssetsType"
     },
     "KalturaTvinciDistributionField": {
       "oneOf": [

@@ -19,6 +19,11 @@ routes:
       title: "Kaltura OTT API Documentation"
       description: "Full documentation for the Kaltura OTT API"
 
+  /player:
+    title: Kaltura Player Documentation
+    documentation: player
+    markdownFile: assets/documentation/OTT/knowledgeOwl/knowledgeOwl.md
+
   /console:
     ui: console
     for: ott
@@ -47,9 +52,9 @@ routes:
         icon: assets/img/icons/contact.png
         workflow: create_an_household
         
-      - title: search assets
-        icon: assets/img/icons/contact.png
-        workflow: search_assets
+      # - title: search assets
+      #   icon: assets/img/icons/contact.png
+      #   workflow: search_assets
 
       - title: playback_asset (parental)
         icon: assets/img/icons/contact.png
