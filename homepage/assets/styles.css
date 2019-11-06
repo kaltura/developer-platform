@@ -9337,16 +9337,23 @@ hr.separator {
     text-align: center;
   }
 }
-
 .player-home {
   width: auto;
   overflow-x: hidden; 
 }
-.player-home .bg-yellow {
-  background-color: #f1db63 !important; 
-}
-.player-home .hero-player .kaltura-player-container {
+.player-home .bg-yellow,
+.player-home .hero-player .kaltura-player-container,
+.player-home .hero-player .playkit-black-cover,
+.player-home .hero-player .playkit-poster{
   background-color: #f1db63 !important;
+}
+@media only screen and (max-width: 600px) {
+  .player-home .bg-yellow,
+  .player-home .hero-player .kaltura-player-container,
+  .player-home .hero-player .playkit-black-cover,
+  .player-home .hero-player .playkit-poster{
+    background-color: #f0d759 !important; 
+  }
 }
 .player-home h2 {
   font-family: "Soho", sans-serif;
