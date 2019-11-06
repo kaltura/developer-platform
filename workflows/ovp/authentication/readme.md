@@ -18,7 +18,7 @@ This recipe will guide you through the steps necessary to create a Kaltura Sessi
 ## Starting a Kaltura Session
 This recipe shows how to work with Kaltura Sessions (aka `KS`).  To generate a KS, you will need your API secret keys.
 
-To retrieve these secret keys, visit the "Integration Settings" tab inside the [Kaltura Management Console](http://kmc.kaltura.com/index.php/kmc/kmc4#account|integration).
+To retrieve these secret keys, visit the "Integration Settings" tab inside the [Kaltura Management Console](https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings).
 
 To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.kaltura.com)
 
@@ -42,14 +42,17 @@ To sign up for a Kaltura VPaaS account, visit [vpaas.kaltura.com](https://vpaas.
             "default": "user@example.com"
           },
           "secret": {
-            "fromSecrets": true
+            "fromSecrets": true,
+            "consoleDefault": ""
           },
           "type": {
-            "default": 2
+            "default": 2,
+            "consoleDefault": 2
           },
           "privileges": {}
         }
-      }
+      },
+      "consoleDefault": "{\"expiry\":86400,\"type\":0}"
     }
   ]
 }
