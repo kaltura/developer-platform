@@ -9337,3 +9337,162 @@ hr.separator {
     text-align: center;
   }
 }
+
+.player-home {
+  width: auto;
+  overflow-x: hidden; 
+}
+.player-home .bg-yellow {
+  background-color: #f1db63 !important; 
+}
+.player-home .hero-player .kaltura-player-container {
+  background-color: #f1db63 !important;
+}
+.player-home h2 {
+  font-family: "Soho", sans-serif;
+  font-weight: bold; 
+  font-style: italic;
+} 
+.player-home .hero-text {
+  position: relative; 
+  z-index: 1;
+  top: 25%; 
+}
+.player-home .hero-text h2 {
+  padding-bottom: 2%; 
+  max-width: 480px;
+}
+@media (max-width: 950px) {
+  .player-home .hero-text h2 {
+    font-size: 1rem; 
+  }
+}
+
+@media (max-width: 680px) {
+  .player-home .hero-text h2 {
+    font-size: .7rem; 
+  }
+}
+.player-home .hero-text .get-started{
+  display: block; 
+  position: absolute;
+  color: #00A9CB; 
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 800; 
+  padding-bottom: 3%; 
+  text-transform: none !important; 
+}
+@media (max-width: 950px) {
+  .player-home .hero-text .get-started {
+    font-size: 1.2rem; 
+  }
+}
+@media (max-width: 680px) {
+  .player-home .hero-text .get-started {
+    font-size: .7rem; 
+  }
+}
+.player-home .hero-text .btn-watch {
+  background: none; 
+  font-size: 1.2rem; 
+  width: auto; 
+  position: relative;
+  border-color: black; 
+  color: black; 
+  text-decoration: none; 
+  padding: 2% 4%; 
+}
+.player-home .hero-text .btn-watch:hover {
+  background-color: #c3c8cd; 
+  border: none; 
+}
+@media (max-width: 950px) {
+  .player-home .hero-text .btn-watch{
+    font-size: .7rem; 
+  }
+}
+@media (max-width: 680px) {
+  .player-home .hero-text .btn-watch{
+    font-size: .5rem; 
+  }
+} 
+.player-home .welcome {
+  padding: 6% 0 3% 0; 
+}
+@media (max-width: 680px) {
+  .player-home .welcome h2 {
+    font-size: 1rem; 
+  }
+}
+.player-home .welcome .subtitle {
+  font-size: 1.4rem;
+  padding-bottom: 2%;
+  font-family: "Soho", sans-serif;
+  font-style: italic;
+}
+@media (max-width: 680px) {
+  .player-home .welcome .subtitle {
+    font-size: .8rem; 
+  }
+}
+.player-home .welcome .platform-icon {
+  display: inline-block; 
+  height: 1.3em; 
+  vertical-align: bottom; 
+  margin-right: 10px; 
+  margin-bottom: 4px; 
+}
+.player-home .welcome .btn-platform {
+  line-height: 1.3;
+  color: #fff;
+  margin: 20px; 
+  width: 65%;
+  max-width: 75%;
+  height: auto;
+  font-size: 2.3vw;
+  vertical-align: bottom; 
+  padding: 4% 5% !important; 
+}
+.player-home .welcome .btn-platform:hover {
+  background-color: gray; 
+  color: white; 
+}
+.player-home .welcome .btn-web {
+  background-color: #fd7e14;
+}
+.player-home .welcome .btn-ios {
+  background-color: #00A9CB;
+}
+.player-home .welcome .btn-android {
+  background-color: #28a745;
+}
+.player-video .modal-backdrop.in {
+  filter: alpha(opacity=7);
+  opacity: 0.7;
+}
+.player-video .modal-content {
+  background: none;
+  border: 0;
+  -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+  -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+}
+.player-video .modal-body {
+  padding: 0 25px 25px 25px;
+}
+.player-video .modal-header {
+  padding: 25px 25px 15px 25px;
+  text-align: right;
+}
+.player-video .modal-header, .modal-footer {
+  border: 0;
+}
+.player-video .modal-header .close {
+  float: none;
+  margin: 0;
+  font-size: 36px;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: none;
+  opacity: 1;
+}

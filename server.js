@@ -38,6 +38,13 @@ if (process.env.ENABLE_HOMEPAGE === 'true') {
   })
 }
 
+App.get('/player', (req, res) => {
+  res.render('player-index', {}, (err, html) => {
+    if (err) res.status(500).send(err.toString());
+    res.send(html);
+  });
+})
+
 if (!process.env.DEVELOPMENT || process.env.USE_CACHE) {
   var cache = function(age) {
     age = age || 'med';
