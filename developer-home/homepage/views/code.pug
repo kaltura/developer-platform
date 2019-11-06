@@ -1,0 +1,43 @@
+hr.separator
+h3.section-title
+  span No messy URLs. Write native code.
+.container-fluid
+  .row
+    .col.col.xs-12.col-lg-6
+      .code-box
+        mixin code-link(name, label, isExtra)
+          li.nav-item(class=isExtra ? name + " extra" : name)
+            a.nav-link(onclick="setCode('" + name + "')")
+              span=label
+        ul.nav.nav-tabs.nav-justified
+          +code-link('php', 'PHP')
+          +code-link('java', 'Java')
+          +code-link('python', 'Python')
+          +code-link('node', 'Node', true)
+          +code-link('csharp', 'C#', true)
+          +code-link('ruby', 'Ruby', true)
+          li.nav-item.dropdown.visible-xs
+            a.nav-link.dropdown-toggle(data-toggle="dropdown")
+              i.fa.fa-plus-circle
+            .dropdown-menu
+              a.dropdown-item(onclick="setCode('node')") Node
+              a.dropdown-item(onclick="setCode('csharp')") C#
+              a.dropdown-item(onclick="setCode('ruby')") Ruby
+        pre
+          code.hljs.php
+          code.hljs.java
+          code.hljs.python
+          code.hljs.node.javascript
+          code.hljs.csharp.cs
+          code.hljs.ruby
+    .col.col.xs-12.col-lg-6
+      .code-details
+        h4.title
+        p.description
+        p
+          a.btn.btn-default(onclick="nextCodeSection()")
+            span Show me another example
+        p
+          a.console-link(href="/console")
+            span Or try it in our console
+            i.fa.fa-right.fa-chevron-right

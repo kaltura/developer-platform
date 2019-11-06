@@ -1,0 +1,118 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.fa-right {
+  margin-left: 8px;
+}
+.fa-left {
+  margin-right: 8px;
+}
+
+a {
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn {
+  padding: 15px 20px;
+  font-weight: bold;
+}
+
+.bg-primary {
+  color: #fff;
+}
+
+.page {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.background {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  font-weight: bold;
+  img {
+    height: 40px;
+  }
+  .brand-subtitle {
+    font-family: "Soho";
+    text-transform: none;
+    display: inline;
+    padding-left: 13px;
+    font-weight: 500;
+    border-left: 1px solid #ccc;
+    margin-left: 15px;
+    height: 40px;
+    vertical-align: middle;
+  }
+  @media (max-width: 380px) {
+    .brand-subtitle {
+      display: none;
+    }
+  }
+  .navbar-nav {
+    .btn {
+      color: #fff !important;
+      padding: 4px 20px;
+      margin-left: 15px;
+      margin-top: 3px;
+      height: 32px;
+      font-size: 14px;
+    }
+    .nav-link {
+      cursor: pointer;
+      color: #4A4A4A !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+    .nav-link:hover {
+      opacity: .7;
+    }
+  }
+  .navbar-toggler {
+    border: none;
+  }
+}
+
+.section-title {
+  font-family: 'Soho';
+  font-weight: 800;
+  font-style: italic;
+}
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  color: theme-color("secondary");
+  span {
+    max-width: 500px;
+    display: inline-block;
+  }
+}
+
+
+hr {
+  border-radius: 4px;
+}
+
+hr.separator {
+  width: 100px;
+  height: 4px;
+  margin-bottom: 15px;
+  background-color: theme-color("secondary");
+}
+
+.page-inverse {
+  hr.separator {
+    background-color: #fff;
+  }
+  .section-title {
+    color: #fff;
+  }
+}
+

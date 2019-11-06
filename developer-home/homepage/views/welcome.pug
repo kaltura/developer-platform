@@ -1,0 +1,27 @@
+.responsive-video
+  #kaltura-player.welcome-video.video-player.video-bg-white
+script.
+  var kalturaPlayer = KalturaPlayer.setup({
+  targetId: "kaltura-player",
+    provider: {
+      partnerId: 2421271,
+      uiConfId: 43006971
+    },
+    playback: {
+      preload: 'auto',
+      autoplay: true,
+      loop: true
+    }
+  });
+  kalturaPlayer.loadMedia({entryId: '1_fjqtp7ki'}).then(function() {
+    kalturaPlayer.load();
+  });
+
+div.welcome.text-center.bg-primary
+  h2 Everything video. Built by you.
+  p.subtitle
+    span.
+      Integrate rich video experiences into existing applications,
+      business workflows, and environments
+  p
+    a.btn.btn-success(href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website") Sign up for free

@@ -1,0 +1,92 @@
+.container-fluid.px-0.m-0.bg-yellow 
+  .row.m-0
+    .col-6.embed-responsive.embed-responsive-16by9.mt-3
+      #hero-player.hero-player.embed-responsive-item.ml-3
+    .col-6
+        .hero-text  
+          h2 Customizable video player for all your video needs
+          a.get-started(href="https://vpaas.kaltura.com/register.php") Get started now
+          a.btn.btn-watch(href="#" data-modal-id="modal-video" class='launch-modal') Watch Video
+.player-video 
+  #modal-video.modal.py-4.fade(tabindex="-1" role="dialog" arialabelledyby="modal-video-label")
+    .modal-dialog.modal-lg(role="document")
+      .modal-content 
+        .modal-body
+            .embed-responsive.embed-responsive-16by9
+              #full-video.embed-responsive-item
+              
+
+script.
+  var heroPlayer = KalturaPlayer.setup({
+  targetId: "hero-player",
+    provider: {
+      partnerId: 2421271,
+      uiConfId: 43006971
+    },
+    playback: {
+      preload: 'auto',
+      autoplay: true,
+      loop: true
+    }, 
+    ui: {
+      disable: true
+    }
+  });
+  heroPlayer.loadMedia({entryId: '0_lxceuqj9'}).then(function() {
+    heroPlayer.load();
+  });
+
+.container-fluid.px-0.bg-white
+  .player-home.welcome.text-center
+    h2 Adaptive, Lightweight, and Seamless
+    .subtitle
+      span.
+        No matter which platform you're using
+    .row.platform-buttons
+      .col-sm-4
+        a.btn.btn-platform.btn-web(href="https://developer.kaltura.com/player/web/getting-started-web") 
+          img.platform-icon(src="/assets/images/platforms/web.png") 
+          span Web
+      .col-sm-4
+        a.btn.btn-platform.btn-ios(href="https://developer.kaltura.com/player/ios/getting-started-ios/")
+          img.platform-icon(src="/assets/images/platforms/apple.png") 
+          span iOS
+      .col-sm-4
+        a.btn.btn-platform.btn-android(href="https://developer.kaltura.com/player/android/getting-started-android/")
+          img.platform-icon(src="/assets/images/platforms/android.png")
+          span Android 
+
+  
+script.
+  var modalPlayer = KalturaPlayer.setup({
+  targetId: "full-video",
+    provider: {
+      partnerId: 2421271,
+      uiConfId: 43006971
+    },
+    playback: {
+      preload: 'auto',
+      autoplay: false,
+      muted: false,
+      loop: true
+    }
+  });
+  modalPlayer.loadMedia({entryId: '1_23yaxsca'}).then(function() {
+    modalPlayer.load();
+  });
+
+  $('.launch-modal').on('click', function(e){
+    e.preventDefault();
+    $( '#' + $(this).data('modal-id') ).modal();
+    heroPlayer.pause();
+    modalPlayer.play();
+  });
+
+  $('#modal-video').on('hide.bs.modal', function (e) {
+    heroPlayer.play();
+    modalPlayer.pause();
+    modalPlayer.currentTime=0; 
+  })
+
+
+  

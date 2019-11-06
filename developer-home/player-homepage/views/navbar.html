@@ -1,0 +1,202 @@
+<div id="KalturaSignInModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Log in to your Kaltura.com account</h3>
+      </div>
+      <form onsubmit="startKalturaLogin(); return false">
+        <div class="modal-body">
+          <div style="display:none" class="alert alert-danger">
+            There was an error signing in. Please check your account details and try again.
+          </div>
+          <p>Log into your Kaltura account using your e-mail and password</p>
+          <label>E-mail</label>
+          <div class="form-group">
+            <input class="form-control" type="text" name="KalturaEmail">
+          </div>
+          <div class="partner-id-input">
+            <label>Partner ID</label>
+            <div class="form-group">
+              <input class="form-control" type="number" name="KalturaPartnerId">
+            </div>
+          </div>
+          <label>Password</label>
+          <div class="form-group">
+            <input class="form-control" type="password" name="KalturaPassword">
+          </div>
+          <label>One Time Authentication code</label>
+          <div class="form-group">
+            <input class="form-control" type="password" name="OTP">
+          </div>
+          <hr>
+          <p>Or use a pre-generated Kaltura Session</p>
+          <label>Kaltura Session ID (ks)</label>
+          <div class="form-group">
+            <input class="form-control" type="text" name="KalturaSession">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p class="text-left">Need an account? <a href="https://vpaas.kaltura.com/register.php?utm_source=developertools&utm_campaign=login&utm_medium=website">Try Kaltura for free!</a></p>
+          <button id="KalturaSignInButton" type="submit" class="btn btn-primary">Log In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="KalturaPartnerIDModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Choose a Kaltura Account</h3>
+      </div>
+      <div class="modal-body">
+        <p>Please choose a Kaltura Account ID (aka Partner ID) to use</p>
+        <div class="dropdown">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">Account ID <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu"><li><i class="fa fa-spin fa-refresh"></i></li></ul>
+        </div>
+        <h1 class="text-center kaltura-loading"><i class="fa fa-spin fa-refresh"></i></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="KalturaContinueSessionModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Your session is about to expire</h3>
+      </div>
+      <div class="modal-body">
+        <p>Would you like to continue your session?</p>
+        <p>
+          <div class="btn-toolbar">
+            <a class="btn btn-primary" onclick="kalturaUser && kalturaUser.ks ? setKalturaUser(kalturaUser) : jquery('#KalturaSignInModal').modal('show')" data-dismiss="modal">Continue</a>
+            <a class="btn btn-default" onclick="setKalturaUser(null)" data-dismiss="modal">Sign out</a>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="KalturaSecretsModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Account Secrets</h3>
+      </div>
+      <div class="modal-body">
+        <p><label>User Secret:&nbsp;</label><span class="kalturaUserSecret"></span></p>
+        <p><label>Admin Secret:&nbsp;</label><span class="kalturaAdminSecret"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav id="KalturaNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#NavbarCollapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img src="/assets/images/Kaltura-logo.png">
+        <span class="brand-subtitle">Developer</span>
+      </a>
+    </div>
+    <div id="NavbarCollapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="navbar-link">
+          <a href="api-docs">API Docs</a>
+        </li>
+        <li class="navbar-link">
+          <a href="player/web">Player</a>
+        </li>
+        <li class="navbar-link">
+          <a href="console">Console</a>
+        </li>
+        <li class="navbar-link workflows-link">
+          <a href="workflows">Workflows</a>
+        </li>
+        <li class="navbar-link">
+          <a href="api-docs/Client_Libraries">Client Libraries</a>
+        </li>
+        <li class="navbar-link">
+          <a href="https://medium.com/kaltura-developer">Blog</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="KalturaSidebar">
+  <div class="sidebar-content">
+    <div class="section">
+      <h4>Admin</h4>
+      <hr>
+      <div class="not-logged-in">
+        <p><i>Log in to see your account details</i></p>
+      </div>
+      <div class="logged-in" style="display:none">
+        <p><label>Partner ID:&nbsp;</label><span class="partnerId"></span></p>
+        <p id="KalturaShowSecrets">
+          <a onclick="window.jquery('#KalturaSecrets').show(); window.jquery('#KalturaShowSecrets').hide()">Show secrets</a>
+        </p>
+        <div id="KalturaSecrets" style="display:none">
+          <p><label>User Secret:&nbsp;</label><span class="kalturaUserSecret"></span></p>
+          <p><label>Admin Secret:&nbsp;</label><span class="kalturaAdminSecret"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <h4>Resources</h4>
+      <hr>
+      <p><a target="_blank" href="api-docs">API Docs</a></p>
+      <p><a target="_blank" href="console">API Console</a></p>
+    </div>
+
+    <div class="section">
+      <h4>From our blog</h4>
+      <hr>
+      <div id="KalturaBlogContent"></div>
+    </div>
+  </div>
+  <div class="sidebar-button">
+    <a class="hide-sidebar" onclick="hideKalturaSidebar()"><i class="fa fa-times"></i></a>
+    <a class="show-sidebar" style="display: none" onclick="showKalturaSidebar()">
+      <img src="assets/img/notes.svg">
+    </a>
+  </div>
+</div>
+
+<script>
+var keepNav = true;
+var keepSidebar = true;
+if (window.lucybot.embed) {
+  keepNav = false;
+  if (!window.lucybot.showNavigation) {
+    keepSidebar = false;
+  }
+}
+
+if (!keepNav) {
+  var elem = document.getElementById('KalturaNav');
+  if (elem) elem.remove();
+} else {
+  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-nav';
+}
+if (!keepSidebar) {
+  var elem = document.getElementById('KalturaSidebar');
+  if (elem) elem.remove();
+} else {
+  document.getElementsByTagName('body')[0].className += ' spaced-for-kaltura-sidebar';
+}
+</script>
+
