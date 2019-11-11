@@ -35,7 +35,7 @@ script.
 
   // Changes hero elements to a yellow that matches how the hero video is displayed on non-mac OS. 
   var alternativeYellow = '#f5d156';
-  if (navigator.platform.indexOf('Mac') < -1) {
+  if (navigator.platform.indexOf('Mac') == -1) {
     $('.player-home .bg-yellow').css('background-color', alternativeYellow);
     $('.player-home .hero-player .playkit-poster').css('background-color', alternativeYellow);
     $('.player-home .hero-player .playkit-black-cover').css('background-color', alternativeYellow);
