@@ -1,7 +1,7 @@
 .container-fluid.px-0.m-0.bg-yellow 
   .row.m-0
     .col-6.embed-responsive.embed-responsive-16by9.mt-3
-      #hero-player.hero-player.embed-responsive-item.ml-3
+      #hero-player.hero-player.embed-responsive-item
     .col-6
         .hero-text  
           h2 Customizable video player for all your video needs
@@ -9,13 +9,12 @@
           a.btn.btn-watch(href="#" data-modal-id="modal-video" class='launch-modal') Watch Video
 .player-video 
   #modal-video.modal.py-4.fade(tabindex="-1" role="dialog" arialabelledyby="modal-video-label")
-    .modal-dialog.modal-lg(role="document")
+    .modal-dialog.modal-lg.modal-xl(role="document")
       .modal-content 
         .modal-body
             .embed-responsive.embed-responsive-16by9
               #full-video.embed-responsive-item
               
-
 script.
   var heroPlayer = KalturaPlayer.setup({
   targetId: "hero-player",
@@ -32,9 +31,14 @@ script.
       disable: true
     }
   });
-  heroPlayer.loadMedia({entryId: '0_lxceuqj9'}).then(function() {
-    heroPlayer.load();
-  });
+  heroPlayer.loadMedia({entryId: '0_lxceuqj9'});
+
+  if (navigator.userAgent.indexOf('Mac OS X') < 0) {
+    $('.player-home .bg-yellow').css('background-color', '#f5d156');
+    $('.player-home .hero-player .playkit-poster').css('background-color', '#f5d156');
+    $('.player-home .hero-player .playkit-black-cover').css('background-color', '#f5d156');
+    $('.player-home .hero-player .kaltura-player-container').css('background-color', '#f5d156');
+  }
 
 .container-fluid.px-0.bg-white
   .player-home.welcome.text-center
@@ -56,7 +60,6 @@ script.
           img.platform-icon(src="/homepage/assets/images/platforms/android.png")
           span Android 
 
-  
 script.
   var modalPlayer = KalturaPlayer.setup({
   targetId: "full-video",
@@ -71,9 +74,7 @@ script.
       loop: true
     }
   });
-  modalPlayer.loadMedia({entryId: '1_23yaxsca'}).then(function() {
-    modalPlayer.load();
-  });
+  modalPlayer.loadMedia({entryId: '1_23yaxsca'});
 
   $('.launch-modal').on('click', function(e){
     e.preventDefault();
@@ -87,6 +88,3 @@ script.
     modalPlayer.pause();
     modalPlayer.currentTime=0; 
   })
-
-
-  

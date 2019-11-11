@@ -9345,14 +9345,14 @@ hr.separator {
 .player-home .hero-player .kaltura-player-container,
 .player-home .hero-player .playkit-black-cover,
 .player-home .hero-player .playkit-poster{
-  background-color: #f1db63 !important;
+  background-color: #f1db63;
 }
 @media only screen and (max-width: 600px) {
   .player-home .bg-yellow,
   .player-home .hero-player .kaltura-player-container,
   .player-home .hero-player .playkit-black-cover,
   .player-home .hero-player .playkit-poster{
-    background-color: #f0d759 !important; 
+    background-color: #f0d759; 
   }
 }
 .player-home h2 {
@@ -9502,4 +9502,14 @@ hr.separator {
   font-weight: 300;
   text-shadow: none;
   opacity: 1;
+}
+@media (min-width: 1200px) {
+  .player-video .modal-xl {
+    max-width: 1000px; 
+  }
+}
+@media (min-width: 1000px) {
+  .player-video .modal-xl {
+    width: auto; 
+  }
 }
