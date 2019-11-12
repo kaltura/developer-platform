@@ -881,15 +881,19 @@
           "enum": [
             "+createdAt",
             "+id",
+            "+updatedAt",
             "-createdAt",
-            "-id"
+            "-id",
+            "-updatedAt"
           ],
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT_ASC",
             "ID_ASC",
+            "UPDATED_AT_ASC",
             "CREATED_AT_DESC",
-            "ID_DESC"
+            "ID_DESC",
+            "UPDATED_AT_DESC"
           ],
           "x-enumType": "KalturaAdminUserOrderBy"
         }
@@ -1577,6 +1581,20 @@
         }
       },
       "title": "KalturaAnswerCuePointFilter",
+      "type": "object"
+    },
+    "KalturaApFeedDropFolder": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaFeedDropFolder"
+        }
+      ],
+      "properties": {
+        "apApiKey": {
+          "type": "string"
+        }
+      },
+      "title": "KalturaApFeedDropFolder",
       "type": "object"
     },
     "KalturaApiActionPermissionItem": {
@@ -6607,6 +6625,143 @@
       },
       "title": "KalturaBaseUser",
       "type": "object"
+    },
+    "KalturaBaseUserBaseFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaRelatedFilter"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaUserFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaGroupFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaAdminUserFilter"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "createdAtGreaterThanOrEqual": {
+          "type": "integer"
+        },
+        "createdAtLessThanOrEqual": {
+          "type": "integer"
+        },
+        "emailLike": {
+          "type": "string"
+        },
+        "emailStartsWith": {
+          "type": "string"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaUserFilter",
+            "KalturaGroupFilter",
+            "KalturaAdminUserFilter"
+          ],
+          "type": "string"
+        },
+        "partnerIdEqual": {
+          "type": "integer"
+        },
+        "screenNameLike": {
+          "type": "string"
+        },
+        "screenNameStartsWith": {
+          "type": "string"
+        },
+        "statusEqual": {
+          "description": "Enum Type: `KalturaUserStatus`",
+          "enum": [
+            0,
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "BLOCKED",
+            "ACTIVE",
+            "DELETED"
+          ],
+          "x-enumType": "KalturaUserStatus"
+        },
+        "statusIn": {
+          "type": "string"
+        },
+        "tagsMultiLikeAnd": {
+          "type": "string"
+        },
+        "tagsMultiLikeOr": {
+          "type": "string"
+        },
+        "updatedAtGreaterThanOrEqual": {
+          "type": "integer"
+        },
+        "updatedAtLessThanOrEqual": {
+          "type": "integer"
+        }
+      },
+      "title": "KalturaBaseUserBaseFilter",
+      "type": "object",
+      "x-abstract": true
+    },
+    "KalturaBaseUserFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBaseUserBaseFilter"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaUserFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaGroupFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaAdminUserFilter"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaUserFilter",
+            "KalturaGroupFilter",
+            "KalturaAdminUserFilter"
+          ],
+          "type": "string"
+        },
+        "orderBy": {
+          "enum": [
+            "+createdAt",
+            "+id",
+            "+updatedAt",
+            "-createdAt",
+            "-id",
+            "-updatedAt"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "CREATED_AT_ASC",
+            "ID_ASC",
+            "UPDATED_AT_ASC",
+            "CREATED_AT_DESC",
+            "ID_DESC",
+            "UPDATED_AT_DESC"
+          ],
+          "x-enumType": "KalturaBaseUserOrderBy"
+        }
+      },
+      "title": "KalturaBaseUserFilter",
+      "type": "object",
+      "x-abstract": true
     },
     "KalturaBaseVendorCredit": {
       "anyOf": [
@@ -24981,6 +25136,9 @@
           "$ref": "#/definitions/KalturaWebexDropFolder"
         },
         {
+          "$ref": "#/definitions/KalturaApFeedDropFolder"
+        },
+        {
           "$ref": "#/definitions/KalturaFtpDropFolder"
         },
         {
@@ -25112,6 +25270,7 @@
             "KalturaDropFolder",
             "KalturaFeedDropFolder",
             "KalturaWebexDropFolder",
+            "KalturaApFeedDropFolder",
             "KalturaFtpDropFolder",
             "KalturaScpDropFolder",
             "KalturaSftpDropFolder",
@@ -25152,6 +25311,7 @@
         "type": {
           "description": "Enum Type: `KalturaDropFolderType`",
           "enum": [
+            "ApFeedDropFolder.AP_FEED",
             "FeedDropFolder.FEED",
             "TrRdsSyncDropFolder.TR_RDS_COMPANY",
             "TrRdsSyncDropFolder.TR_RDS_TMCTERM",
@@ -25164,6 +25324,7 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "AP_FEED",
             "FEED",
             "TR_RDS_COMPANY",
             "TR_RDS_TMCTERM",
@@ -25357,6 +25518,7 @@
         "typeEqual": {
           "description": "Enum Type: `KalturaDropFolderType`",
           "enum": [
+            "ApFeedDropFolder.AP_FEED",
             "FeedDropFolder.FEED",
             "TrRdsSyncDropFolder.TR_RDS_COMPANY",
             "TrRdsSyncDropFolder.TR_RDS_TMCTERM",
@@ -25369,6 +25531,7 @@
           ],
           "type": "string",
           "x-enumLabels": [
+            "AP_FEED",
             "FEED",
             "TR_RDS_COMPANY",
             "TR_RDS_TMCTERM",
@@ -25662,6 +25825,7 @@
         "type": {
           "description": "`readOnly`\n\nEnum Type: `KalturaDropFolderType`",
           "enum": [
+            "ApFeedDropFolder.AP_FEED",
             "FeedDropFolder.FEED",
             "TrRdsSyncDropFolder.TR_RDS_COMPANY",
             "TrRdsSyncDropFolder.TR_RDS_TMCTERM",
@@ -25675,6 +25839,7 @@
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
+            "AP_FEED",
             "FEED",
             "TR_RDS_COMPANY",
             "TR_RDS_TMCTERM",
@@ -27439,12 +27604,14 @@
             "is_live",
             "is_quiz",
             "kuser_id",
+            "last_played_at",
             "length_in_msecs",
             "media_type",
             "moderation_status",
             "name",
             "parent_id",
             "partner_sort_value",
+            "plays",
             "push_publish",
             "recorded_entry_id",
             "redirect_entry_id",
@@ -27478,12 +27645,14 @@
             "IS_LIVE",
             "IS_QUIZ",
             "USER_ID",
+            "LAST_PLAYED_AT",
             "LENGTH_IN_MSECS",
             "MEDIA_TYPE",
             "MODERATION_STATUS",
             "NAME",
             "PARENT_ENTRY_ID",
             "PARTNER_SORT_VALUE",
+            "PLAYS",
             "PUSH_PUBLISH",
             "RECORDED_ENTRY_ID",
             "REDIRECT_ENTRY_ID",
@@ -32703,12 +32872,28 @@
           "$ref": "#/definitions/KalturaDropFolder"
         }
       ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaFeedDropFolder"
+        },
+        {
+          "$ref": "#/definitions/KalturaApFeedDropFolder"
+        }
+      ],
+      "discriminator": "objectType",
       "properties": {
         "feedItemInfo": {
           "$ref": "#/definitions/KalturaFeedItemInfo"
         },
         "itemHandlingLimit": {
           "type": "integer"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaFeedDropFolder",
+            "KalturaApFeedDropFolder"
+          ],
+          "type": "string"
         }
       },
       "title": "KalturaFeedDropFolder",
@@ -52829,6 +53014,7 @@
             "10010",
             "10011",
             "10012",
+            "10013",
             "20001",
             "20002",
             "20003",
@@ -52914,6 +53100,7 @@
             "PLATFORMS_DISCOVERY_REALTIME",
             "PLAYBACK_TYPE_REALTIME",
             "CONTENT_REALTIME",
+            "DISCOVERY_VIEW_REALTIME",
             "CONTENT_DROPOFF_VPAAS",
             "TOP_SYNDICATION_VPAAS",
             "USER_TOP_CONTENT_VPAAS",
@@ -57561,6 +57748,9 @@
           "readOnly": true,
           "type": "integer"
         },
+        "data": {
+          "type": "string"
+        },
         "domain": {
           "type": "string"
         },
@@ -57641,6 +57831,9 @@
         },
         "partnerIdEqual": {
           "type": "integer"
+        },
+        "redirectUrlEqual": {
+          "type": "string"
         },
         "statusEqual": {
           "description": "Enum Type: `KalturaSsoStatus`",
@@ -63064,7 +63257,7 @@
     "KalturaUserBaseFilter": {
       "allOf": [
         {
-          "$ref": "#/definitions/KalturaRelatedFilter"
+          "$ref": "#/definitions/KalturaBaseUserFilter"
         }
       ],
       "anyOf": [
@@ -63081,18 +63274,6 @@
       "description": "`abstract`",
       "discriminator": "objectType",
       "properties": {
-        "createdAtGreaterThanOrEqual": {
-          "type": "integer"
-        },
-        "createdAtLessThanOrEqual": {
-          "type": "integer"
-        },
-        "emailLike": {
-          "type": "string"
-        },
-        "emailStartsWith": {
-          "type": "string"
-        },
         "firstNameStartsWith": {
           "type": "string"
         },
@@ -63120,39 +63301,6 @@
             "KalturaGroupFilter",
             "KalturaAdminUserFilter"
           ],
-          "type": "string"
-        },
-        "partnerIdEqual": {
-          "type": "integer"
-        },
-        "screenNameLike": {
-          "type": "string"
-        },
-        "screenNameStartsWith": {
-          "type": "string"
-        },
-        "statusEqual": {
-          "description": "Enum Type: `KalturaUserStatus`",
-          "enum": [
-            0,
-            1,
-            2
-          ],
-          "type": "integer",
-          "x-enumLabels": [
-            "BLOCKED",
-            "ACTIVE",
-            "DELETED"
-          ],
-          "x-enumType": "KalturaUserStatus"
-        },
-        "statusIn": {
-          "type": "string"
-        },
-        "tagsMultiLikeAnd": {
-          "type": "string"
-        },
-        "tagsMultiLikeOr": {
           "type": "string"
         },
         "typeEqual": {
@@ -63582,15 +63730,19 @@
           "enum": [
             "+createdAt",
             "+id",
+            "+updatedAt",
             "-createdAt",
-            "-id"
+            "-id",
+            "-updatedAt"
           ],
           "type": "string",
           "x-enumLabels": [
             "CREATED_AT_ASC",
             "ID_ASC",
+            "UPDATED_AT_ASC",
             "CREATED_AT_DESC",
-            "ID_DESC"
+            "ID_DESC",
+            "UPDATED_AT_DESC"
           ],
           "x-enumType": "KalturaUserOrderBy"
         },
@@ -68828,7 +68980,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.9.0"
+    "version": "15.10.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -107393,6 +107545,7 @@
                     "10010",
                     "10011",
                     "10012",
+                    "10013",
                     "20001",
                     "20002",
                     "20003",
@@ -107478,6 +107631,7 @@
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
                     "CONTENT_REALTIME",
+                    "DISCOVERY_VIEW_REALTIME",
                     "CONTENT_DROPOFF_VPAAS",
                     "TOP_SYNDICATION_VPAAS",
                     "USER_TOP_CONTENT_VPAAS",
@@ -107750,6 +107904,7 @@
                     "10010",
                     "10011",
                     "10012",
+                    "10013",
                     "20001",
                     "20002",
                     "20003",
@@ -107835,6 +107990,7 @@
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
                     "CONTENT_REALTIME",
+                    "DISCOVERY_VIEW_REALTIME",
                     "CONTENT_DROPOFF_VPAAS",
                     "TOP_SYNDICATION_VPAAS",
                     "USER_TOP_CONTENT_VPAAS",
@@ -107995,6 +108151,7 @@
                     "10010",
                     "10011",
                     "10012",
+                    "10013",
                     "20001",
                     "20002",
                     "20003",
@@ -108080,6 +108237,7 @@
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
                     "CONTENT_REALTIME",
+                    "DISCOVERY_VIEW_REALTIME",
                     "CONTENT_DROPOFF_VPAAS",
                     "TOP_SYNDICATION_VPAAS",
                     "USER_TOP_CONTENT_VPAAS",
@@ -108233,6 +108391,7 @@
                     "10010",
                     "10011",
                     "10012",
+                    "10013",
                     "20001",
                     "20002",
                     "20003",
@@ -108318,6 +108477,7 @@
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
                     "CONTENT_REALTIME",
+                    "DISCOVERY_VIEW_REALTIME",
                     "CONTENT_DROPOFF_VPAAS",
                     "TOP_SYNDICATION_VPAAS",
                     "USER_TOP_CONTENT_VPAAS",
@@ -108486,6 +108646,7 @@
                     "10010",
                     "10011",
                     "10012",
+                    "10013",
                     "20001",
                     "20002",
                     "20003",
@@ -108571,6 +108732,7 @@
                     "PLATFORMS_DISCOVERY_REALTIME",
                     "PLAYBACK_TYPE_REALTIME",
                     "CONTENT_REALTIME",
+                    "DISCOVERY_VIEW_REALTIME",
                     "CONTENT_DROPOFF_VPAAS",
                     "TOP_SYNDICATION_VPAAS",
                     "USER_TOP_CONTENT_VPAAS",
@@ -120672,6 +120834,12 @@
         },
         {
           "enum": [
+            "+updatedAt"
+          ],
+          "title": "UPDATED_AT_ASC"
+        },
+        {
+          "enum": [
             "-createdAt"
           ],
           "title": "CREATED_AT_DESC"
@@ -120681,6 +120849,12 @@
             "-id"
           ],
           "title": "ID_DESC"
+        },
+        {
+          "enum": [
+            "-updatedAt"
+          ],
+          "title": "UPDATED_AT_DESC"
         }
       ],
       "title": "KalturaAdminUserOrderBy"
@@ -122667,6 +122841,47 @@
         }
       ],
       "title": "KalturaBaseSyndicationFeedOrderBy"
+    },
+    "KalturaBaseUserOrderBy": {
+      "oneOf": [
+        {
+          "enum": [
+            "+createdAt"
+          ],
+          "title": "CREATED_AT_ASC"
+        },
+        {
+          "enum": [
+            "+id"
+          ],
+          "title": "ID_ASC"
+        },
+        {
+          "enum": [
+            "+updatedAt"
+          ],
+          "title": "UPDATED_AT_ASC"
+        },
+        {
+          "enum": [
+            "-createdAt"
+          ],
+          "title": "CREATED_AT_DESC"
+        },
+        {
+          "enum": [
+            "-id"
+          ],
+          "title": "ID_DESC"
+        },
+        {
+          "enum": [
+            "-updatedAt"
+          ],
+          "title": "UPDATED_AT_DESC"
+        }
+      ],
+      "title": "KalturaBaseUserOrderBy"
     },
     "KalturaBatchJobAppErrors": {
       "oneOf": [
@@ -129151,6 +129366,12 @@
       "oneOf": [
         {
           "enum": [
+            "ApFeedDropFolder.AP_FEED"
+          ],
+          "title": "AP_FEED"
+        },
+        {
+          "enum": [
             "FeedDropFolder.FEED"
           ],
           "title": "FEED"
@@ -129856,6 +130077,12 @@
         },
         {
           "enum": [
+            "last_played_at"
+          ],
+          "title": "LAST_PLAYED_AT"
+        },
+        {
+          "enum": [
             "length_in_msecs"
           ],
           "title": "LENGTH_IN_MSECS"
@@ -129889,6 +130116,12 @@
             "partner_sort_value"
           ],
           "title": "PARTNER_SORT_VALUE"
+        },
+        {
+          "enum": [
+            "plays"
+          ],
+          "title": "PLAYS"
         },
         {
           "enum": [
@@ -148983,6 +149216,12 @@
         },
         {
           "enum": [
+            "10013"
+          ],
+          "title": "DISCOVERY_VIEW_REALTIME"
+        },
+        {
+          "enum": [
             "20001"
           ],
           "title": "CONTENT_DROPOFF_VPAAS"
@@ -152858,6 +153097,12 @@
         },
         {
           "enum": [
+            "+updatedAt"
+          ],
+          "title": "UPDATED_AT_ASC"
+        },
+        {
+          "enum": [
             "-createdAt"
           ],
           "title": "CREATED_AT_DESC"
@@ -152867,6 +153112,12 @@
             "-id"
           ],
           "title": "ID_DESC"
+        },
+        {
+          "enum": [
+            "-updatedAt"
+          ],
+          "title": "UPDATED_AT_DESC"
         }
       ],
       "title": "KalturaUserOrderBy"
