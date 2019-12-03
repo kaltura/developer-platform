@@ -57,11 +57,6 @@ routes:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
-  /player:
-    title: Kaltura Player Documentation
-    documentation: player
-    markdownFile: "/assets/documentation/player-portal/web/getting-started-web.html"
-
   /player/web: 
     title: Kaltura Web Player Documentation
     documentation: documentation
