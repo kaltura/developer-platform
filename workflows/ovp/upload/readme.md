@@ -11,10 +11,10 @@
 }
 -->
 
-# Upload a Media Files
+# Uploading Media Files
 This recipe will walk you through the process of uploading new videos using the Kaltura API. Video files can be located on disk, or be specified as an HTML file input. If you're working in a web environment, we highly recommend using the [jQuery Chunked File Upload Library](https://github.com/kaltura/chunked-file-upload-jquery). This library handles chunking files in Javascript, automatically determining the optimal chunk size and number of parallel uploaded chunks, as well as handle pause-and-resume and retry in case of temporary network failures. It completely abstracts and simplifies working with the [uploadToken](https://developer.kaltura.com/api-docs/#/uploadToken) service and file upload flow.
 
-## Uploading Files - Create an Upload Token
+## Uploading Media Files - Create an Upload Token
 Use the uploadToken service to upload a new video file to the Kaltura API. First you'll need to use `uploadToken.add` to create a new upload token.
 
 If you're working in JavaScript, the [jQuery File Upload widget](https://github.com/kaltura/jQuery-File-Upload) will take care of this step for you.
@@ -85,7 +85,7 @@ auto
 auto
 ```
 
-## Uploading Files - Send the Data
+## Uploading Media Files - Upload the Binary Data
 Now we'll use the newly created Upload Token to upload the media file (video, image, video).
 If you're working in JavaScript, you can simply use the [jQuery File Upload widget](https://github.com/kaltura/jQuery-File-Upload)
 
@@ -204,7 +204,7 @@ auto
 auto
 ```
 
-## Creating a Media Entry
+## Creating a Kaltura Media Entry
 Now we'll create a Media Entry to hold our video. Use the form below to enter your video's details.
 
 1. Select `entry` of type `KalturaMediaEntry`.
@@ -240,12 +240,13 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
 }
 ```
 
-## Attach the Uploaded File to the Media Entry
+## Attaching the Uploaded File to the Kaltura Media Entry
 Now that you've created a new Media Entry, you need to associate the uploaded video with it:
 
 1. Select `resource` of type `KalturaUploadedFileResourceToken`.
 2. Confirm the `entryId` from the previous step, and the `token` from the first step.
 
+After this step, the media you've uploaded will be processed and transcoded automatically. If any enrichment services or event notifications were configured on your Kaltura account, these will execute after transcoding is complete. For example, if Email notifications were configured on your account, you will recieve the email as soon as the transcoding is complete.
 
 ### API Call
 ```json
