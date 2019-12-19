@@ -7,11 +7,11 @@
     "media"
   ],
   "keywords": [],
-  "summary": "Learn how to upload a video to your video library"
+  "summary": "Upload a video, image or audio asset to your Kaltura media library by generating an upload token, creating an Entry and executing the media transcoding and enrichment processes automatically."
 }
 -->
 
-# Upload a Video
+# Upload a Media Files
 This recipe will walk you through the process of uploading new videos using the Kaltura API. Video files can be located on disk, or be specified as an HTML file input. If you're working in a web environment, we highly recommend using the [jQuery Chunked File Upload Library](https://github.com/kaltura/chunked-file-upload-jquery). This library handles chunking files in Javascript, automatically determining the optimal chunk size and number of parallel uploaded chunks, as well as handle pause-and-resume and retry in case of temporary network failures. It completely abstracts and simplifies working with the [uploadToken](https://developer.kaltura.com/api-docs/#/uploadToken) service and file upload flow.
 
 ## Uploading Files - Create an Upload Token
@@ -86,7 +86,7 @@ auto
 ```
 
 ## Uploading Files - Send the Data
-Now we'll use the newly created Upload Token to upload a video file.
+Now we'll use the newly created Upload Token to upload the media file (video, image, video).
 If you're working in JavaScript, you can simply use the [jQuery File Upload widget](https://github.com/kaltura/jQuery-File-Upload)
 
 Kaltura supports uploading big media files in chunks.
@@ -240,7 +240,7 @@ Now we'll create a Media Entry to hold our video. Use the form below to enter yo
 }
 ```
 
-## Attach the Video
+## Attach the Uploaded File to the Media Entry
 Now that you've created a new Media Entry, you need to associate the uploaded video with it:
 
 1. Select `resource` of type `KalturaUploadedFileResourceToken`.
@@ -287,75 +287,3 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
 }
 ```
 
-## Viewing your Video
-You can use kWidget to embed your video in HTML. </br>
-Depending on your source, transcoding may take a while. You can poll the entry's status with `media.get` by hitting 'Send Request'.</br> 
-For a list of entry status codes, please see: https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaEntryStatus
-
-### API Call
-```json
-{
-  "method": "post",
-  "path": "/service/media/action/get",
-  "parameters": [
-    {
-      "name": "uiConf",
-      "dynamicEnum": {
-        "path": "/service/uiconf/action/list",
-        "method": "post",
-        "array": "objects",
-        "value": "id",
-        "label": "name",
-        "parameters": [
-          {
-            "name": "body",
-            "value": "{\"filter\":{\"objTypeEqual\":1}}"
-          }
-        ]
-      }
-    },
-    {
-      "name": "body",
-      "in": "body",
-      "schema": {
-        "type": "object",
-        "properties": {
-          "entryId": {
-            "dynamicValue": {
-              "fromStep": 2,
-              "value": "id"
-            },
-            "hidden": true
-          }
-        }
-      },
-      "hidden": true
-    }
-  ]
-}
-```
-
-### Demo
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Kaltura Player External Skin Overrides</title>
-  <script src="//cdnapisec.kaltura.com/p/<%- answers.partnerId  %>/sp/<%- answers.partnerId  %>00/embedIframeJs/uiconf_id/<%-  answers.uiConf  %>/partner_id/<%- answers.partnerId  %>"></script>
-</head>
-<body>
-
-  <div id="kaltura_player" style="width: 560px; height: 395px;"></div>
-  <script>
-    kWidget.embed({
-          "targetId": "kaltura_player",
-          "wid": "_<%- answers.partnerId  %>",
-          "uiconf_id": <%-  answers.uiConf  %>,
-          "flashvars": {},
-          "entry_id": "<%- answers.entryId %>"
-        });
-  </script>
-
-</body>
-</html>
-```
