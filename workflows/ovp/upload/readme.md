@@ -246,7 +246,7 @@ Now that you've created a new Media Entry, you need to associate the uploaded vi
 1. Select `resource` of type `KalturaUploadedFileResourceToken`.
 2. Confirm the `entryId` from the previous step, and the `token` from the first step.
 
-After this step, the media you've uploaded will be processed and transcoded automatically. If any enrichment services or event notifications were configured on your Kaltura account, these will execute after transcoding is complete. For example, if Email notifications were configured on your account, you will recieve the email as soon as the transcoding is complete.
+After this step, the media you've uploaded will be processed and transcoded automatically. If any enrichment services or event notifications were configured on your Kaltura account, these will execute after transcoding is complete. For example, if Email notifications were configured on your account, you will receive the email as soon as the transcoding is complete.
 
 ### API Call
 ```json
