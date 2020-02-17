@@ -21746,6 +21746,9 @@
           "$ref": "#/definitions/KalturaEdgeServerNode"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNode"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNode"
         }
       ],
@@ -21765,6 +21768,7 @@
         "objectType": {
           "enum": [
             "KalturaEdgeServerNode",
+            "KalturaLiveClusterMediaServerNode",
             "KalturaWowzaMediaServerNode"
           ],
           "type": "string"
@@ -21791,6 +21795,12 @@
           "$ref": "#/definitions/KalturaMediaServerNodeFilter"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
         }
       ],
@@ -21802,6 +21812,8 @@
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter"
           ],
           "type": "string"
@@ -21828,6 +21840,12 @@
           "$ref": "#/definitions/KalturaMediaServerNodeFilter"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
         }
       ],
@@ -21838,6 +21856,8 @@
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter"
           ],
           "type": "string"
@@ -29635,6 +29655,32 @@
       "title": "KalturaEndUserReportInputFilter",
       "type": "object"
     },
+    "KalturaEntryCaptionAdvancedFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaSearchItem"
+        }
+      ],
+      "properties": {
+        "hasCaption": {
+          "description": "Enum Type: `KalturaNullableBoolean`",
+          "enum": [
+            -1,
+            0,
+            1
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "NULL_VALUE",
+            "FALSE_VALUE",
+            "TRUE_VALUE"
+          ],
+          "x-enumType": "KalturaNullableBoolean"
+        }
+      },
+      "title": "KalturaEntryCaptionAdvancedFilter",
+      "type": "object"
+    },
     "KalturaEntryCaptionAssetSearchItem": {
       "allOf": [
         {
@@ -30759,6 +30805,9 @@
         "serverNodeIdEqual": {
           "type": "integer"
         },
+        "serverNodeIdIn": {
+          "type": "string"
+        },
         "serverTypeEqual": {
           "description": "Enum Type: `KalturaEntryServerNodeType`",
           "enum": [
@@ -30775,6 +30824,9 @@
           "x-enumType": "KalturaEntryServerNodeType"
         },
         "serverTypeIn": {
+          "type": "string"
+        },
+        "serverTypeNotIn": {
           "type": "string"
         },
         "statusEqual": {
@@ -34736,6 +34788,12 @@
           "$ref": "#/definitions/KalturaMediaServerNodeFilter"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
         },
         {
@@ -35010,6 +35068,8 @@
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter",
             "KalturaSipServerNodeFilter",
             "KalturaShortLinkFilter",
@@ -42255,6 +42315,53 @@
       "title": "KalturaLiveChannelSegmentListResponse",
       "type": "object"
     },
+    "KalturaLiveClusterMediaServerNode": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaMediaServerNode"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaLiveClusterMediaServerNode",
+      "type": "object"
+    },
+    "KalturaLiveClusterMediaServerNodeBaseFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaMediaServerNodeFilter"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
+        }
+      ],
+      "discriminator": "objectType",
+      "properties": {
+        "objectType": {
+          "enum": [
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaLiveClusterMediaServerNodeBaseFilter",
+      "type": "object"
+    },
+    "KalturaLiveClusterMediaServerNodeFilter": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaLiveClusterMediaServerNodeFilter",
+      "type": "object"
+    },
     "KalturaLiveEntry": {
       "allOf": [
         {
@@ -42468,6 +42575,9 @@
       ],
       "properties": {
         "liveEntryId": {
+          "type": "string"
+        },
+        "vodEntryId": {
           "type": "string"
         }
       },
@@ -42774,6 +42884,9 @@
     "KalturaLiveEntryRecordingOptions": {
       "description": "A representation of a live stream recording entry configuration",
       "properties": {
+        "archiveVodSuffixTimezone": {
+          "type": "string"
+        },
         "nonDeletedCuePointsTags": {
           "type": "string"
         },
@@ -43660,6 +43773,105 @@
       "title": "KalturaLiveStreamConfiguration",
       "type": "object"
     },
+    "KalturaLiveStreamDetails": {
+      "properties": {
+        "broadcastStatus": {
+          "description": "Enum Type: `KalturaLiveStreamBroadcastStatus`",
+          "enum": [
+            1,
+            2,
+            3
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "OFFLINE",
+            "PREVIEW",
+            "LIVE"
+          ],
+          "x-enumType": "KalturaLiveStreamBroadcastStatus"
+        },
+        "primaryStreamStatus": {
+          "description": "Enum Type: `KalturaEntryServerNodeStatus`\n\nThe status of the primary stream",
+          "enum": [
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "ERROR",
+            "STOPPED",
+            "PLAYABLE",
+            "BROADCASTING",
+            "AUTHENTICATED",
+            "MARKED_FOR_DELETION",
+            "TASK_PENDING",
+            "TASK_QUEUED",
+            "TASK_PROCESSING",
+            "TASK_UPLOADING",
+            "TASK_FINISHED"
+          ],
+          "x-enumType": "KalturaEntryServerNodeStatus"
+        },
+        "secondaryStreamStatus": {
+          "description": "Enum Type: `KalturaEntryServerNodeStatus`\n\nThe status of the secondary stream",
+          "enum": [
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "ERROR",
+            "STOPPED",
+            "PLAYABLE",
+            "BROADCASTING",
+            "AUTHENTICATED",
+            "MARKED_FOR_DELETION",
+            "TASK_PENDING",
+            "TASK_QUEUED",
+            "TASK_PROCESSING",
+            "TASK_UPLOADING",
+            "TASK_FINISHED"
+          ],
+          "x-enumType": "KalturaEntryServerNodeStatus"
+        },
+        "viewMode": {
+          "description": "Enum Type: `KalturaViewMode`",
+          "enum": [
+            0,
+            1
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "PREVIEW",
+            "ALLOW_ALL"
+          ],
+          "x-enumType": "KalturaViewMode"
+        },
+        "wasBroadcast": {
+          "type": "boolean"
+        }
+      },
+      "title": "KalturaLiveStreamDetails",
+      "type": "object"
+    },
     "KalturaLiveStreamEntry": {
       "allOf": [
         {
@@ -43707,6 +43919,9 @@
         "primaryRtspBroadcastingUrl": {
           "type": "string"
         },
+        "primarySecuredBroadcastingUrl": {
+          "type": "string"
+        },
         "primaryServerNodeId": {
           "description": "`readOnly`\n\nThe Streams primary server node id",
           "readOnly": true,
@@ -43716,6 +43931,9 @@
           "type": "string"
         },
         "secondaryRtspBroadcastingUrl": {
+          "type": "string"
+        },
+        "secondarySecuredBroadcastingUrl": {
           "type": "string"
         },
         "sipToken": {
@@ -45772,6 +45990,9 @@
         "colorPrimaries": {
           "type": "string"
         },
+        "colorSpace": {
+          "type": "string"
+        },
         "colorTransfer": {
           "type": "string"
         },
@@ -45981,6 +46202,9 @@
       ],
       "anyOf": [
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNode"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNode"
         }
       ],
@@ -46005,6 +46229,7 @@
         },
         "objectType": {
           "enum": [
+            "KalturaLiveClusterMediaServerNode",
             "KalturaWowzaMediaServerNode"
           ],
           "type": "string"
@@ -46025,6 +46250,12 @@
           "$ref": "#/definitions/KalturaMediaServerNodeFilter"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
         }
       ],
@@ -46034,6 +46265,8 @@
         "objectType": {
           "enum": [
             "KalturaMediaServerNodeFilter",
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter"
           ],
           "type": "string"
@@ -46054,6 +46287,12 @@
           "$ref": "#/definitions/KalturaMediaServerNodeFilter"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
         }
       ],
@@ -46062,6 +46301,8 @@
         "objectType": {
           "enum": [
             "KalturaMediaServerNodeFilter",
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter"
           ],
           "type": "string"
@@ -53483,7 +53724,23 @@
             "30045",
             "30046",
             "30047",
-            "30048"
+            "30048",
+            "30049",
+            "30050",
+            "30051",
+            "30052",
+            "30053",
+            "30054",
+            "30055",
+            "30056",
+            "30057",
+            "30058",
+            "30059",
+            "30060",
+            "30061",
+            "30062",
+            "30063",
+            "30064"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -53621,7 +53878,23 @@
             "QOE_ERROR_TRACKING_PLAYER_VERSION",
             "QOE_ERROR_TRACKING_ENTRY",
             "QOE_VOD_SESSION_FLOW",
-            "QOE_LIVE_SESSION_FLOW"
+            "QOE_LIVE_SESSION_FLOW",
+            "QOE_EXPERIENCE_CUSTOM_VAR1",
+            "QOE_EXPERIENCE_CUSTOM_VAR2",
+            "QOE_EXPERIENCE_CUSTOM_VAR3",
+            "QOE_ENGAGEMENT_CUSTOM_VAR1",
+            "QOE_ENGAGEMENT_CUSTOM_VAR2",
+            "QOE_ENGAGEMENT_CUSTOM_VAR3",
+            "QOE_STREAM_QUALITY_CUSTOM_VAR1",
+            "QOE_STREAM_QUALITY_CUSTOM_VAR2",
+            "QOE_STREAM_QUALITY_CUSTOM_VAR3",
+            "QOE_ERROR_TRACKING_CUSTOM_VAR1",
+            "QOE_ERROR_TRACKING_CUSTOM_VAR2",
+            "QOE_ERROR_TRACKING_CUSTOM_VAR3",
+            "QOE_EXPERIENCE_APPLICATION_VERSION",
+            "QOE_ENGAGEMENT_APPLICATION_VERSION",
+            "QOE_STREAM_QUALITY_APPLICATION_VERSION",
+            "QOE_ERROR_TRACKING_APPLICATION_VERSION"
           ],
           "x-enumType": "KalturaReportType"
         },
@@ -53791,8 +54064,16 @@
       ],
       "discriminator": "objectType",
       "properties": {
+        "applicationVersionIn": {
+          "description": "filter by application version",
+          "type": "string"
+        },
         "browserFamilyIn": {
           "description": "Filter by browser family",
+          "type": "string"
+        },
+        "browserIn": {
+          "description": "Filter by browser",
           "type": "string"
         },
         "categories": {
@@ -53841,6 +54122,10 @@
         "entryOperator": {
           "$ref": "#/definitions/KalturaESearchEntryOperator"
         },
+        "errorCodeIn": {
+          "description": "filter by error code",
+          "type": "string"
+        },
         "interval": {
           "description": "Enum Type: `KalturaReportInterval`\n\nAggregated results according to interval",
           "enum": [
@@ -53862,6 +54147,10 @@
           ],
           "x-enumType": "KalturaReportInterval"
         },
+        "ispIn": {
+          "description": "filter by isp",
+          "type": "string"
+        },
         "keywords": {
           "description": "Search keywords to filter objects",
           "type": "string"
@@ -53882,6 +54171,10 @@
           "description": "Filter by operating system family",
           "type": "string"
         },
+        "operatingSystemIn": {
+          "description": "Filter by operating system",
+          "type": "string"
+        },
         "ownerIdsIn": {
           "description": "Filter by entry owner",
           "type": "string"
@@ -53891,6 +54184,10 @@
           "type": "string"
         },
         "playbackTypeIn": {
+          "type": "string"
+        },
+        "playerVersionIn": {
+          "description": "filter by player version",
           "type": "string"
         },
         "regionIn": {
@@ -56686,6 +56983,9 @@
           "$ref": "#/definitions/KalturaContentDistributionSearchItem"
         },
         {
+          "$ref": "#/definitions/KalturaEntryCaptionAdvancedFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaEntryCaptionAssetSearchItem"
         },
         {
@@ -56812,6 +57112,7 @@
             "KalturaCategoryEntryAdvancedFilter",
             "KalturaCategoryUserAdvancedFilter",
             "KalturaContentDistributionSearchItem",
+            "KalturaEntryCaptionAdvancedFilter",
             "KalturaEntryCaptionAssetSearchItem",
             "KalturaEntryCuePointSearchFilter",
             "KalturaEntryTranscriptAssetSearchItem",
@@ -57128,6 +57429,9 @@
           "$ref": "#/definitions/KalturaEdgeServerNode"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNode"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNode"
         }
       ],
@@ -57174,6 +57478,7 @@
             "KalturaConferenceServerNode",
             "KalturaSipServerNode",
             "KalturaEdgeServerNode",
+            "KalturaLiveClusterMediaServerNode",
             "KalturaWowzaMediaServerNode"
           ],
           "type": "string"
@@ -57219,6 +57524,7 @@
           "description": "`readOnly`\n\nEnum Type: `KalturaServerNodeType`",
           "enum": [
             "conference.CONFERENCE_SERVER",
+            "liveCluster.LIVE_CLUSTER_MEDIA_SERVER",
             "sip.SIP_SERVER",
             "wowza.WOWZA_MEDIA_SERVER",
             "1"
@@ -57227,6 +57533,7 @@
           "type": "string",
           "x-enumLabels": [
             "CONFERENCE_SERVER",
+            "LIVE_CLUSTER_MEDIA_SERVER",
             "SIP_SERVER",
             "WOWZA_MEDIA_SERVER",
             "EDGE"
@@ -57264,6 +57571,12 @@
         },
         {
           "$ref": "#/definitions/KalturaMediaServerNodeFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
         },
         {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
@@ -57327,6 +57640,8 @@
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter",
             "KalturaSipServerNodeFilter"
           ],
@@ -57382,6 +57697,7 @@
           "description": "Enum Type: `KalturaServerNodeType`",
           "enum": [
             "conference.CONFERENCE_SERVER",
+            "liveCluster.LIVE_CLUSTER_MEDIA_SERVER",
             "sip.SIP_SERVER",
             "wowza.WOWZA_MEDIA_SERVER",
             "1"
@@ -57389,6 +57705,7 @@
           "type": "string",
           "x-enumLabels": [
             "CONFERENCE_SERVER",
+            "LIVE_CLUSTER_MEDIA_SERVER",
             "SIP_SERVER",
             "WOWZA_MEDIA_SERVER",
             "EDGE"
@@ -57432,6 +57749,12 @@
           "$ref": "#/definitions/KalturaMediaServerNodeFilter"
         },
         {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeBaseFilter"
+        },
+        {
+          "$ref": "#/definitions/KalturaLiveClusterMediaServerNodeFilter"
+        },
+        {
           "$ref": "#/definitions/KalturaWowzaMediaServerNodeFilter"
         },
         {
@@ -57447,6 +57770,8 @@
             "KalturaDeliveryServerNodeFilter",
             "KalturaEdgeServerNodeFilter",
             "KalturaMediaServerNodeFilter",
+            "KalturaLiveClusterMediaServerNodeBaseFilter",
+            "KalturaLiveClusterMediaServerNodeFilter",
             "KalturaWowzaMediaServerNodeFilter",
             "KalturaSipServerNodeFilter"
           ],
@@ -62873,10 +63198,6 @@
           "type": "integer"
         },
         "fromDate": {
-          "type": "integer",
-          "x-inputType": "datetime"
-        },
-        "toDate": {
           "type": "integer",
           "x-inputType": "datetime"
         }
@@ -69521,7 +69842,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.15.0"
+    "version": "15.17.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -77158,6 +77479,7 @@
     },
     "/service/bulkupload/action/add": {
       "post": {
+        "deprecated": true,
         "description": "Add new bulk upload batch job\n\nConversion profile id can be specified in the API or in the CSV file, the one in the CSV file will be stronger.\n\nIf no conversion profile was specified, partner's default will be used",
         "operationId": "bulkUpload.add",
         "parameters": [
@@ -98662,10 +98984,14 @@
               "properties": {
                 "liveEntryId": {
                   "type": "string"
+                },
+                "vodEntryId": {
+                  "type": "string"
                 }
               },
               "required": [
-                "liveEntryId"
+                "liveEntryId",
+                "vodEntryId"
               ],
               "type": "object"
             }
@@ -98684,7 +99010,8 @@
         ],
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
-          "liveEntryId"
+          "liveEntryId",
+          "vodEntryId"
         ]
       }
     },
@@ -99106,6 +99433,62 @@
         "x-kaltura-parameters": [
           "entryId",
           "version"
+        ]
+      }
+    },
+    "/service/livestream/action/getDetails": {
+      "post": {
+        "description": "Delivering the status of a live stream (on-air/offline) if it is possible",
+        "operationId": "liveStream.getDetails",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaLiveStreamDetails"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_ENTRY_ID`: Invalid entry id [\"@ID@\"]"
+          }
+        },
+        "tags": [
+          "liveStream"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "id"
         ]
       }
     },
@@ -108812,7 +109195,23 @@
                     "30045",
                     "30046",
                     "30047",
-                    "30048"
+                    "30048",
+                    "30049",
+                    "30050",
+                    "30051",
+                    "30052",
+                    "30053",
+                    "30054",
+                    "30055",
+                    "30056",
+                    "30057",
+                    "30058",
+                    "30059",
+                    "30060",
+                    "30061",
+                    "30062",
+                    "30063",
+                    "30064"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -108950,7 +109349,23 @@
                     "QOE_ERROR_TRACKING_PLAYER_VERSION",
                     "QOE_ERROR_TRACKING_ENTRY",
                     "QOE_VOD_SESSION_FLOW",
-                    "QOE_LIVE_SESSION_FLOW"
+                    "QOE_LIVE_SESSION_FLOW",
+                    "QOE_EXPERIENCE_CUSTOM_VAR1",
+                    "QOE_EXPERIENCE_CUSTOM_VAR2",
+                    "QOE_EXPERIENCE_CUSTOM_VAR3",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR1",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR2",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR3",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR1",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR2",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR3",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR1",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR2",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR3",
+                    "QOE_EXPERIENCE_APPLICATION_VERSION",
+                    "QOE_ENGAGEMENT_APPLICATION_VERSION",
+                    "QOE_STREAM_QUALITY_APPLICATION_VERSION",
+                    "QOE_ERROR_TRACKING_APPLICATION_VERSION"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -109275,7 +109690,23 @@
                     "30045",
                     "30046",
                     "30047",
-                    "30048"
+                    "30048",
+                    "30049",
+                    "30050",
+                    "30051",
+                    "30052",
+                    "30053",
+                    "30054",
+                    "30055",
+                    "30056",
+                    "30057",
+                    "30058",
+                    "30059",
+                    "30060",
+                    "30061",
+                    "30062",
+                    "30063",
+                    "30064"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -109413,7 +109844,23 @@
                     "QOE_ERROR_TRACKING_PLAYER_VERSION",
                     "QOE_ERROR_TRACKING_ENTRY",
                     "QOE_VOD_SESSION_FLOW",
-                    "QOE_LIVE_SESSION_FLOW"
+                    "QOE_LIVE_SESSION_FLOW",
+                    "QOE_EXPERIENCE_CUSTOM_VAR1",
+                    "QOE_EXPERIENCE_CUSTOM_VAR2",
+                    "QOE_EXPERIENCE_CUSTOM_VAR3",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR1",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR2",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR3",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR1",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR2",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR3",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR1",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR2",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR3",
+                    "QOE_EXPERIENCE_APPLICATION_VERSION",
+                    "QOE_ENGAGEMENT_APPLICATION_VERSION",
+                    "QOE_STREAM_QUALITY_APPLICATION_VERSION",
+                    "QOE_ERROR_TRACKING_APPLICATION_VERSION"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -109626,7 +110073,23 @@
                     "30045",
                     "30046",
                     "30047",
-                    "30048"
+                    "30048",
+                    "30049",
+                    "30050",
+                    "30051",
+                    "30052",
+                    "30053",
+                    "30054",
+                    "30055",
+                    "30056",
+                    "30057",
+                    "30058",
+                    "30059",
+                    "30060",
+                    "30061",
+                    "30062",
+                    "30063",
+                    "30064"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -109764,7 +110227,23 @@
                     "QOE_ERROR_TRACKING_PLAYER_VERSION",
                     "QOE_ERROR_TRACKING_ENTRY",
                     "QOE_VOD_SESSION_FLOW",
-                    "QOE_LIVE_SESSION_FLOW"
+                    "QOE_LIVE_SESSION_FLOW",
+                    "QOE_EXPERIENCE_CUSTOM_VAR1",
+                    "QOE_EXPERIENCE_CUSTOM_VAR2",
+                    "QOE_EXPERIENCE_CUSTOM_VAR3",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR1",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR2",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR3",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR1",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR2",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR3",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR1",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR2",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR3",
+                    "QOE_EXPERIENCE_APPLICATION_VERSION",
+                    "QOE_ENGAGEMENT_APPLICATION_VERSION",
+                    "QOE_STREAM_QUALITY_APPLICATION_VERSION",
+                    "QOE_ERROR_TRACKING_APPLICATION_VERSION"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -109970,7 +110449,23 @@
                     "30045",
                     "30046",
                     "30047",
-                    "30048"
+                    "30048",
+                    "30049",
+                    "30050",
+                    "30051",
+                    "30052",
+                    "30053",
+                    "30054",
+                    "30055",
+                    "30056",
+                    "30057",
+                    "30058",
+                    "30059",
+                    "30060",
+                    "30061",
+                    "30062",
+                    "30063",
+                    "30064"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -110108,7 +110603,23 @@
                     "QOE_ERROR_TRACKING_PLAYER_VERSION",
                     "QOE_ERROR_TRACKING_ENTRY",
                     "QOE_VOD_SESSION_FLOW",
-                    "QOE_LIVE_SESSION_FLOW"
+                    "QOE_LIVE_SESSION_FLOW",
+                    "QOE_EXPERIENCE_CUSTOM_VAR1",
+                    "QOE_EXPERIENCE_CUSTOM_VAR2",
+                    "QOE_EXPERIENCE_CUSTOM_VAR3",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR1",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR2",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR3",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR1",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR2",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR3",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR1",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR2",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR3",
+                    "QOE_EXPERIENCE_APPLICATION_VERSION",
+                    "QOE_ENGAGEMENT_APPLICATION_VERSION",
+                    "QOE_STREAM_QUALITY_APPLICATION_VERSION",
+                    "QOE_ERROR_TRACKING_APPLICATION_VERSION"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -110329,7 +110840,23 @@
                     "30045",
                     "30046",
                     "30047",
-                    "30048"
+                    "30048",
+                    "30049",
+                    "30050",
+                    "30051",
+                    "30052",
+                    "30053",
+                    "30054",
+                    "30055",
+                    "30056",
+                    "30057",
+                    "30058",
+                    "30059",
+                    "30060",
+                    "30061",
+                    "30062",
+                    "30063",
+                    "30064"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -110467,7 +110994,23 @@
                     "QOE_ERROR_TRACKING_PLAYER_VERSION",
                     "QOE_ERROR_TRACKING_ENTRY",
                     "QOE_VOD_SESSION_FLOW",
-                    "QOE_LIVE_SESSION_FLOW"
+                    "QOE_LIVE_SESSION_FLOW",
+                    "QOE_EXPERIENCE_CUSTOM_VAR1",
+                    "QOE_EXPERIENCE_CUSTOM_VAR2",
+                    "QOE_EXPERIENCE_CUSTOM_VAR3",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR1",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR2",
+                    "QOE_ENGAGEMENT_CUSTOM_VAR3",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR1",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR2",
+                    "QOE_STREAM_QUALITY_CUSTOM_VAR3",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR1",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR2",
+                    "QOE_ERROR_TRACKING_CUSTOM_VAR3",
+                    "QOE_EXPERIENCE_APPLICATION_VERSION",
+                    "QOE_ENGAGEMENT_APPLICATION_VERSION",
+                    "QOE_STREAM_QUALITY_APPLICATION_VERSION",
+                    "QOE_ERROR_TRACKING_APPLICATION_VERSION"
                   ],
                   "x-enumType": "KalturaReportType"
                 },
@@ -143897,6 +144440,29 @@
       ],
       "title": "KalturaLiveStreamAdminEntryOrderBy"
     },
+    "KalturaLiveStreamBroadcastStatus": {
+      "oneOf": [
+        {
+          "enum": [
+            1
+          ],
+          "title": "OFFLINE"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "PREVIEW"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "LIVE"
+        }
+      ],
+      "title": "KalturaLiveStreamBroadcastStatus"
+    },
     "KalturaLiveStreamEntryCompareAttribute": {
       "oneOf": [
         {
@@ -151486,6 +152052,102 @@
             "30048"
           ],
           "title": "QOE_LIVE_SESSION_FLOW"
+        },
+        {
+          "enum": [
+            "30049"
+          ],
+          "title": "QOE_EXPERIENCE_CUSTOM_VAR1"
+        },
+        {
+          "enum": [
+            "30050"
+          ],
+          "title": "QOE_EXPERIENCE_CUSTOM_VAR2"
+        },
+        {
+          "enum": [
+            "30051"
+          ],
+          "title": "QOE_EXPERIENCE_CUSTOM_VAR3"
+        },
+        {
+          "enum": [
+            "30052"
+          ],
+          "title": "QOE_ENGAGEMENT_CUSTOM_VAR1"
+        },
+        {
+          "enum": [
+            "30053"
+          ],
+          "title": "QOE_ENGAGEMENT_CUSTOM_VAR2"
+        },
+        {
+          "enum": [
+            "30054"
+          ],
+          "title": "QOE_ENGAGEMENT_CUSTOM_VAR3"
+        },
+        {
+          "enum": [
+            "30055"
+          ],
+          "title": "QOE_STREAM_QUALITY_CUSTOM_VAR1"
+        },
+        {
+          "enum": [
+            "30056"
+          ],
+          "title": "QOE_STREAM_QUALITY_CUSTOM_VAR2"
+        },
+        {
+          "enum": [
+            "30057"
+          ],
+          "title": "QOE_STREAM_QUALITY_CUSTOM_VAR3"
+        },
+        {
+          "enum": [
+            "30058"
+          ],
+          "title": "QOE_ERROR_TRACKING_CUSTOM_VAR1"
+        },
+        {
+          "enum": [
+            "30059"
+          ],
+          "title": "QOE_ERROR_TRACKING_CUSTOM_VAR2"
+        },
+        {
+          "enum": [
+            "30060"
+          ],
+          "title": "QOE_ERROR_TRACKING_CUSTOM_VAR3"
+        },
+        {
+          "enum": [
+            "30061"
+          ],
+          "title": "QOE_EXPERIENCE_APPLICATION_VERSION"
+        },
+        {
+          "enum": [
+            "30062"
+          ],
+          "title": "QOE_ENGAGEMENT_APPLICATION_VERSION"
+        },
+        {
+          "enum": [
+            "30063"
+          ],
+          "title": "QOE_STREAM_QUALITY_APPLICATION_VERSION"
+        },
+        {
+          "enum": [
+            "30064"
+          ],
+          "title": "QOE_ERROR_TRACKING_APPLICATION_VERSION"
         }
       ],
       "title": "KalturaReportType"
@@ -152614,6 +153276,12 @@
             "conference.CONFERENCE_SERVER"
           ],
           "title": "CONFERENCE_SERVER"
+        },
+        {
+          "enum": [
+            "liveCluster.LIVE_CLUSTER_MEDIA_SERVER"
+          ],
+          "title": "LIVE_CLUSTER_MEDIA_SERVER"
         },
         {
           "enum": [
@@ -160508,6 +161176,11 @@
       "name": "NO_PERMISSION_ON_ENTRY"
     },
     {
+      "code": "NO_PERMISSION_TO_COPY_CUE_POINT_TO_ENTRY",
+      "message": "No permissions to copy cue point [@ID@] to entry [@ENTRY_ID@]",
+      "name": "NO_PERMISSION_TO_COPY_CUE_POINT_TO_ENTRY"
+    },
+    {
       "code": "END_TIME_CANNOT_BE_LESS_THAN_START_TIME",
       "message": "End time cannot be less than start time",
       "name": "END_TIME_CANNOT_BE_LESS_THAN_START_TIME"
@@ -160956,6 +161629,11 @@
       "code": "NO_MORE_RETAKES_ALLOWED",
       "message": "No Retakes left for the given user-id and entry-id [@ENTRY_ID@]. cannot retake quiz",
       "name": "NO_MORE_RETAKES_ALLOWED"
+    },
+    {
+      "code": "ANSWER_ALREADY_EXISTS",
+      "message": "Answer for question [@PARENT_ID@] for user entry [@USER_ENTRY@] already exists ",
+      "name": "ANSWER_ALREADY_EXISTS"
     },
     {
       "code": "INVALID_SCHEDULE_END_BEFORE_START",
