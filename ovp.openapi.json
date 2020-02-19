@@ -80384,7 +80384,9 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
-          "fileData"
+          "fileData",
+          "bulkUploadData",
+          "bulkUploadCategoryData"
         ],
         "x-parameterGroups": [
           {
@@ -81308,7 +81310,9 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
-          "fileData"
+          "fileData",
+          "bulkUploadData",
+          "bulkUploadCategoryEntryData"
         ],
         "x-parameterGroups": [
           {
@@ -81496,7 +81500,9 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
-          "fileData"
+          "fileData",
+          "bulkUploadData",
+          "bulkUploadCategoryUserData"
         ],
         "x-parameterGroups": [
           {
@@ -101117,7 +101123,9 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
-          "fileData"
+          "fileData",
+          "bulkUploadData",
+          "bulkUploadEntryData"
         ],
         "x-parameterGroups": [
           {
@@ -103496,6 +103504,7 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
+          "metadataProfile",
           "xsdFile",
           "viewsFile"
         ],
@@ -111673,7 +111682,8 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
-          "fileData"
+          "fileData",
+          "bulkUploadData"
         ],
         "x-parameterGroups": [
           {
@@ -112460,7 +112470,8 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
-          "fileData"
+          "fileData",
+          "bulkUploadData"
         ],
         "x-parameterGroups": [
           {
@@ -119012,7 +119023,9 @@
         ],
         "x-kaltura-format": "file",
         "x-kaltura-parameters": [
-          "fileData"
+          "fileData",
+          "bulkUploadData",
+          "bulkUploadUserData"
         ],
         "x-parameterGroups": [
           {

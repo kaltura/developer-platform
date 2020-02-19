@@ -33,6 +33,13 @@ describe('Sample Code', function() {
       showSetup: true,
     }
   }, {
+    name: 'bulk_upload',
+    service: 'media',
+    action: 'bulkUploadAdd',
+    input: {
+      answers: {partnerId: 12345},
+    }
+  }, {
     name: 'abstract_class',
     service: 'cuepoint_cuepoint',
     action: 'add',
