@@ -6974,13 +6974,13 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
+            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -7031,7 +7031,8 @@
             "48",
             "49",
             "50",
-            "51"
+            "51",
+            "52"
           ],
           "readOnly": true,
           "type": "string",
@@ -7047,13 +7048,13 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
+            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -7104,7 +7105,8 @@
             "COPY_CUE_POINTS",
             "EXPORT_CSV",
             "REPORT_EXPORT",
-            "LIVE_ENTRY_ARCHIVE"
+            "LIVE_ENTRY_ARCHIVE",
+            "STORAGE_UPDATE"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -7322,13 +7324,13 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
+            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -7379,7 +7381,8 @@
             "48",
             "49",
             "50",
-            "51"
+            "51",
+            "52"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -7394,13 +7397,13 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
+            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -7451,7 +7454,8 @@
             "COPY_CUE_POINTS",
             "EXPORT_CSV",
             "REPORT_EXPORT",
-            "LIVE_ENTRY_ARCHIVE"
+            "LIVE_ENTRY_ARCHIVE",
+            "STORAGE_UPDATE"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -7699,13 +7703,13 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
+            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -7756,7 +7760,8 @@
             "48",
             "49",
             "50",
-            "51"
+            "51",
+            "52"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -7771,13 +7776,13 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
+            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -7828,7 +7833,8 @@
             "COPY_CUE_POINTS",
             "EXPORT_CSV",
             "REPORT_EXPORT",
-            "LIVE_ENTRY_ARCHIVE"
+            "LIVE_ENTRY_ARCHIVE",
+            "STORAGE_UPDATE"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -30808,6 +30814,9 @@
         "serverNodeIdIn": {
           "type": "string"
         },
+        "serverNodeIdNotIn": {
+          "type": "string"
+        },
         "serverTypeEqual": {
           "description": "Enum Type: `KalturaEntryServerNodeType`",
           "enum": [
@@ -36822,13 +36831,13 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
+            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -36879,7 +36888,8 @@
             "48",
             "49",
             "50",
-            "51"
+            "51",
+            "52"
           ],
           "readOnly": true,
           "type": "string",
@@ -36895,13 +36905,13 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
+            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -36952,7 +36962,8 @@
             "COPY_CUE_POINTS",
             "EXPORT_CSV",
             "REPORT_EXPORT",
-            "LIVE_ENTRY_ARCHIVE"
+            "LIVE_ENTRY_ARCHIVE",
+            "STORAGE_UPDATE"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -44942,6 +44953,7 @@
             "84",
             "85",
             "86",
+            "87",
             "110",
             "111",
             "112",
@@ -44993,6 +45005,7 @@
             "MAIL_TYPE_VIDEO_SERVICE_NOTICE_ACCOUNT_DELETED",
             "MAIL_TYPE_VIDEO_SERVICE_NOTICE_UPGRADE_OFFER",
             "MAIL_TYPE_ACCOUNT_REACTIVE_CONFIRM",
+            "MAIL_TYPE_EXTENDED_FREE_TRIAL_ENDS_WARNING",
             "MAIL_TYPE_SYSTEM_USER_RESET_PASSWORD",
             "MAIL_TYPE_SYSTEM_USER_RESET_PASSWORD_SUCCESS",
             "MAIL_TYPE_SYSTEM_USER_NEW_PASSWORD",
@@ -48594,11 +48607,37 @@
           },
           "type": "array"
         },
+        "eightyPercentWarning": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
         "embedCodeTypes": {
           "items": {
             "$ref": "#/definitions/KalturaPlayerEmbedCodeType"
           },
           "type": "array"
+        },
+        "extendedFreeTrail": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "extendedFreeTrailEndsWarning": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "boolean"
+        },
+        "extendedFreeTrailExpiryDate": {
+          "description": "`readOnly`\n\nUnix timestamp (In seconds)",
+          "readOnly": true,
+          "type": "integer",
+          "x-inputType": "datetime"
+        },
+        "extendedFreeTrailExpiryReason": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
         },
         "firstName": {
           "description": "firstName and lastName replace the old (deprecated) adminName",
@@ -48627,6 +48666,11 @@
         "landingPage": {
           "type": "string"
         },
+        "lastFreeTrialNotificationDay": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
         "lastName": {
           "description": "lastName and firstName replace the old (deprecated) adminName",
           "type": "string"
@@ -48640,6 +48684,11 @@
           "type": "integer"
         },
         "mergeEntryLists": {
+          "type": "integer"
+        },
+        "monitorUsage": {
+          "description": "`readOnly`",
+          "readOnly": true,
           "type": "integer"
         },
         "name": {
@@ -48773,6 +48822,11 @@
           ],
           "x-enumType": "KalturaPartnerType"
         },
+        "usageLimitWarning": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        },
         "userLandingPage": {
           "type": "string"
         },
@@ -48814,6 +48868,9 @@
         },
         "idNotIn": {
           "type": "string"
+        },
+        "monitorUsageEqual": {
+          "type": "integer"
         },
         "nameEqual": {
           "type": "string"
@@ -56209,13 +56266,13 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
+            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -56266,7 +56323,8 @@
             "48",
             "49",
             "50",
-            "51"
+            "51",
+            "52"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -56281,13 +56339,13 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
+            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -56338,7 +56396,8 @@
             "COPY_CUE_POINTS",
             "EXPORT_CSV",
             "REPORT_EXPORT",
-            "LIVE_ENTRY_ARCHIVE"
+            "LIVE_ENTRY_ARCHIVE",
+            "STORAGE_UPDATE"
           ],
           "x-enumType": "KalturaBatchJobType"
         }
@@ -56441,13 +56500,13 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
+            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -56498,7 +56557,8 @@
             "48",
             "49",
             "50",
-            "51"
+            "51",
+            "52"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -56513,13 +56573,13 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
+            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -56570,7 +56630,8 @@
             "COPY_CUE_POINTS",
             "EXPORT_CSV",
             "REPORT_EXPORT",
-            "LIVE_ENTRY_ARCHIVE"
+            "LIVE_ENTRY_ARCHIVE",
+            "STORAGE_UPDATE"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -68757,13 +68818,13 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
+            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
             "reach.EntryVendorTasksCsv",
             "reach.SyncReachCreditTask",
             "scheduledTask.ScheduledTask",
-            "0",
             "tagSearch.IndexTagsByPrivacyContext",
             "tagSearch.TagResolve",
             "virusScan.VirusScan",
@@ -68814,7 +68875,8 @@
             "48",
             "49",
             "50",
-            "51"
+            "51",
+            "52"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -68829,13 +68891,13 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
+            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
             "ENTRY_VENDOR_TASK_CSV",
             "SYNC_REACH_CREDIT_TASK",
             "SCHEDULED_TASK",
-            "CONVERT",
             "INDEX_TAGS",
             "TAG_RESOLVE",
             "VIRUS_SCAN",
@@ -68886,7 +68948,8 @@
             "COPY_CUE_POINTS",
             "EXPORT_CSV",
             "REPORT_EXPORT",
-            "LIVE_ENTRY_ARCHIVE"
+            "LIVE_ENTRY_ARCHIVE",
+            "STORAGE_UPDATE"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -69842,7 +69905,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.17.0"
+    "version": "15.19.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -75054,13 +75117,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -75111,7 +75174,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -75126,13 +75190,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -75183,7 +75247,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -75318,13 +75383,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -75375,7 +75440,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -75390,13 +75456,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -75447,7 +75513,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -75535,13 +75602,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -75592,7 +75659,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -75607,13 +75675,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -75664,7 +75732,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -75935,13 +76004,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -75992,7 +76061,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -76007,13 +76077,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -76064,7 +76134,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -94334,13 +94405,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -94391,7 +94462,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -94406,13 +94478,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -94463,7 +94535,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -95483,13 +95556,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -95540,7 +95613,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -95555,13 +95629,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -95612,7 +95686,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -96691,13 +96766,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -96748,7 +96823,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -96763,13 +96839,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -96820,7 +96896,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -97431,13 +97508,13 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
+                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
                     "reach.EntryVendorTasksCsv",
                     "reach.SyncReachCreditTask",
                     "scheduledTask.ScheduledTask",
-                    "0",
                     "tagSearch.IndexTagsByPrivacyContext",
                     "tagSearch.TagResolve",
                     "virusScan.VirusScan",
@@ -97488,7 +97565,8 @@
                     "48",
                     "49",
                     "50",
-                    "51"
+                    "51",
+                    "52"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -97503,13 +97581,13 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
+                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
                     "ENTRY_VENDOR_TASK_CSV",
                     "SYNC_REACH_CREDIT_TASK",
                     "SCHEDULED_TASK",
-                    "CONVERT",
                     "INDEX_TAGS",
                     "TAG_RESOLVE",
                     "VIRUS_SCAN",
@@ -97560,7 +97638,8 @@
                     "COPY_CUE_POINTS",
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
-                    "LIVE_ENTRY_ARCHIVE"
+                    "LIVE_ENTRY_ARCHIVE",
+                    "STORAGE_UPDATE"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -125746,6 +125825,12 @@
         },
         {
           "enum": [
+            "0"
+          ],
+          "title": "CONVERT"
+        },
+        {
+          "enum": [
             "dropFolder.DropFolderWatcher"
           ],
           "title": "DROP_FOLDER_WATCHER"
@@ -125779,12 +125864,6 @@
             "scheduledTask.ScheduledTask"
           ],
           "title": "SCHEDULED_TASK"
-        },
-        {
-          "enum": [
-            "0"
-          ],
-          "title": "CONVERT"
         },
         {
           "enum": [
@@ -126091,6 +126170,12 @@
             "51"
           ],
           "title": "LIVE_ENTRY_ARCHIVE"
+        },
+        {
+          "enum": [
+            "52"
+          ],
+          "title": "STORAGE_UPDATE"
         }
       ],
       "title": "KalturaBatchJobType"
@@ -145263,6 +145348,12 @@
             "86"
           ],
           "title": "MAIL_TYPE_ACCOUNT_REACTIVE_CONFIRM"
+        },
+        {
+          "enum": [
+            "87"
+          ],
+          "title": "MAIL_TYPE_EXTENDED_FREE_TRIAL_ENDS_WARNING"
         },
         {
           "enum": [
