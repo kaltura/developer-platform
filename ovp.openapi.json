@@ -5761,6 +5761,48 @@
       "title": "KalturaBaseEntryMatchAttributeCondition",
       "type": "object"
     },
+    "KalturaBaseInteractivity": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaInteractivity"
+        },
+        {
+          "$ref": "#/definitions/KalturaVolatileInteractivity"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "data": {
+          "type": "string"
+        },
+        "entryId": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "string"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaInteractivity",
+            "KalturaVolatileInteractivity"
+          ],
+          "type": "string"
+        },
+        "updatedAt": {
+          "description": "`readOnly`\n\nInteractivity update date as Unix timestamp (In seconds)",
+          "readOnly": true,
+          "type": "integer"
+        },
+        "version": {
+          "description": "`readOnly`",
+          "readOnly": true,
+          "type": "integer"
+        }
+      },
+      "title": "KalturaBaseInteractivity",
+      "type": "object",
+      "x-abstract": true
+    },
     "KalturaBaseResponseProfile": {
       "anyOf": [
         {
@@ -13385,7 +13427,9 @@
             28800,
             43200,
             86400,
+            129600,
             172800,
+            216000,
             345600,
             432000,
             864000
@@ -13401,7 +13445,9 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
+            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
+            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -40739,6 +40785,16 @@
       "type": "object",
       "x-abstract": true
     },
+    "KalturaInteractivity": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBaseInteractivity"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaInteractivity",
+      "type": "object"
+    },
     "KalturaIpAddressCondition": {
       "allOf": [
         {
@@ -52669,7 +52725,9 @@
             28800,
             43200,
             86400,
+            129600,
             172800,
+            216000,
             345600,
             432000,
             864000
@@ -52685,7 +52743,9 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
+            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
+            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -53727,6 +53787,7 @@
             "50",
             "51",
             "52",
+            "53",
             "201",
             "10001",
             "10002",
@@ -53882,6 +53943,7 @@
             "INTERACTIVE_VIDEO_TOP_NODES",
             "LATEST_PLAYED_ENTRIES",
             "CATEGORY_HIGHLIGHTS",
+            "SUB_CATEGORIES",
             "PARTNER_USAGE",
             "MAP_OVERLAY_COUNTRY_REALTIME",
             "MAP_OVERLAY_REGION_REALTIME",
@@ -54165,6 +54227,10 @@
         },
         "categories": {
           "description": "Search objects in specified categories",
+          "type": "string"
+        },
+        "categoriesAncestorIdIn": {
+          "description": "filter by categories ancestor",
           "type": "string"
         },
         "categoriesIdsIn": {
@@ -67173,7 +67239,9 @@
             28800,
             43200,
             86400,
+            129600,
             172800,
+            216000,
             345600,
             432000,
             864000
@@ -67189,7 +67257,9 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
+            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
+            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -67332,7 +67402,9 @@
             28800,
             43200,
             86400,
+            129600,
             172800,
+            216000,
             345600,
             432000,
             864000
@@ -67348,7 +67420,9 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
+            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
+            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -68967,6 +69041,16 @@
         }
       },
       "title": "KalturaVoicebaseJobProviderData",
+      "type": "object"
+    },
+    "KalturaVolatileInteractivity": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBaseInteractivity"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaVolatileInteractivity",
       "type": "object"
     },
     "KalturaWatchLaterUserEntry": {
@@ -70965,7 +71049,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "15.20.0"
+    "version": "16.0.1"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -76133,6 +76217,61 @@
         "x-kaltura-parameters": [
           "bulkUploadJobId",
           "bulkUploadObjectType"
+        ]
+      }
+    },
+    "/service/batch/action/extendLockExpiration": {
+      "post": {
+        "description": "batch extendLockExpiration action allows to extend the expiration of  a BatchJobLock by job id",
+        "operationId": "batch.extendLockExpiration",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "jobId": {
+                  "type": "integer"
+                },
+                "maxExecutionTime": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "jobId",
+                "maxExecutionTime"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "batch"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "jobId",
+          "maxExecutionTime"
         ]
       }
     },
@@ -95053,6 +95192,454 @@
         ]
       }
     },
+    "/service/interactivity_interactivity/action/add": {
+      "post": {
+        "description": "Add a interactivity object",
+        "operationId": "interactivity.add",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                },
+                "kalturaInteractivity": {
+                  "$ref": "#/definitions/KalturaInteractivity"
+                }
+              },
+              "required": [
+                "entryId",
+                "kalturaInteractivity"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaInteractivity"
+            }
+          }
+        },
+        "tags": [
+          "interactivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId",
+          "kalturaInteractivity"
+        ]
+      }
+    },
+    "/service/interactivity_interactivity/action/delete": {
+      "post": {
+        "description": "Delete a interactivity object by entry id",
+        "operationId": "interactivity.delete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "entryId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "interactivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId"
+        ]
+      }
+    },
+    "/service/interactivity_interactivity/action/get": {
+      "post": {
+        "description": "Retrieve a interactivity object by entry id",
+        "operationId": "interactivity.get",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "entryId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaInteractivity"
+            }
+          }
+        },
+        "tags": [
+          "interactivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId"
+        ]
+      }
+    },
+    "/service/interactivity_interactivity/action/update": {
+      "post": {
+        "description": "Update an existing interactivity object",
+        "operationId": "interactivity.update",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                },
+                "kalturaInteractivity": {
+                  "$ref": "#/definitions/KalturaInteractivity"
+                },
+                "version": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "entryId",
+                "version",
+                "kalturaInteractivity"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaInteractivity"
+            }
+          }
+        },
+        "tags": [
+          "interactivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId",
+          "version",
+          "kalturaInteractivity"
+        ]
+      }
+    },
+    "/service/interactivity_volatileinteractivity/action/add": {
+      "post": {
+        "description": "add a volatile interactivity object",
+        "operationId": "volatileInteractivity.add",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                },
+                "kalturaVolatileInteractivity": {
+                  "$ref": "#/definitions/KalturaVolatileInteractivity"
+                }
+              },
+              "required": [
+                "entryId",
+                "kalturaVolatileInteractivity"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaVolatileInteractivity"
+            }
+          }
+        },
+        "tags": [
+          "volatileInteractivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId",
+          "kalturaVolatileInteractivity"
+        ]
+      }
+    },
+    "/service/interactivity_volatileinteractivity/action/delete": {
+      "post": {
+        "description": "Delete a volatile interactivity object by entry id",
+        "operationId": "volatileInteractivity.delete",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "entryId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "tags": [
+          "volatileInteractivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId"
+        ]
+      }
+    },
+    "/service/interactivity_volatileinteractivity/action/get": {
+      "post": {
+        "description": "Retrieve a volatile interactivity object by entry id",
+        "operationId": "volatileInteractivity.get",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "entryId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaVolatileInteractivity"
+            }
+          }
+        },
+        "tags": [
+          "volatileInteractivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId"
+        ]
+      }
+    },
+    "/service/interactivity_volatileinteractivity/action/update": {
+      "post": {
+        "description": "Update a volatile interactivity object",
+        "operationId": "volatileInteractivity.update",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "entryId": {
+                  "type": "string"
+                },
+                "kalturaVolatileInteractivity": {
+                  "$ref": "#/definitions/KalturaVolatileInteractivity"
+                },
+                "version": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "entryId",
+                "version",
+                "kalturaVolatileInteractivity"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaVolatileInteractivity"
+            }
+          }
+        },
+        "tags": [
+          "volatileInteractivity"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "entryId",
+          "version",
+          "kalturaVolatileInteractivity"
+        ]
+      }
+    },
     "/service/jobs/action/abortBulkUpload": {
       "post": {
         "description": "batch abortBulkUploadAction aborts and returns the status of bulk upload task",
@@ -109878,6 +110465,55 @@
         ]
       }
     },
+    "/service/reach_vendorcatalogitem/action/getServeUrl": {
+      "post": {
+        "operationId": "vendorCatalogItem.getServeUrl",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "vendorPartnerId": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "vendorCatalogItem"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "vendorPartnerId"
+        ]
+      }
+    },
     "/service/reach_vendorcatalogitem/action/list": {
       "post": {
         "description": "List KalturaVendorCatalogItem objects",
@@ -109929,6 +110565,55 @@
         "x-kaltura-parameters": [
           "filter",
           "pager"
+        ]
+      }
+    },
+    "/service/reach_vendorcatalogitem/action/serve": {
+      "post": {
+        "operationId": "vendorCatalogItem.serve",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "vendorPartnerId": {
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string"
+            }
+          }
+        },
+        "tags": [
+          "vendorCatalogItem"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "vendorPartnerId"
         ]
       }
     },
@@ -110261,6 +110946,7 @@
                     "50",
                     "51",
                     "52",
+                    "53",
                     "201",
                     "10001",
                     "10002",
@@ -110416,6 +111102,7 @@
                     "INTERACTIVE_VIDEO_TOP_NODES",
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
+                    "SUB_CATEGORIES",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -110758,6 +111445,7 @@
                     "50",
                     "51",
                     "52",
+                    "53",
                     "201",
                     "10001",
                     "10002",
@@ -110913,6 +111601,7 @@
                     "INTERACTIVE_VIDEO_TOP_NODES",
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
+                    "SUB_CATEGORIES",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -111143,6 +111832,7 @@
                     "50",
                     "51",
                     "52",
+                    "53",
                     "201",
                     "10001",
                     "10002",
@@ -111298,6 +111988,7 @@
                     "INTERACTIVE_VIDEO_TOP_NODES",
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
+                    "SUB_CATEGORIES",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -111521,6 +112212,7 @@
                     "50",
                     "51",
                     "52",
+                    "53",
                     "201",
                     "10001",
                     "10002",
@@ -111676,6 +112368,7 @@
                     "INTERACTIVE_VIDEO_TOP_NODES",
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
+                    "SUB_CATEGORIES",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -111914,6 +112607,7 @@
                     "50",
                     "51",
                     "52",
+                    "53",
                     "201",
                     "10001",
                     "10002",
@@ -112069,6 +112763,7 @@
                     "INTERACTIVE_VIDEO_TOP_NODES",
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
+                    "SUB_CATEGORIES",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -124307,6 +125002,10 @@
       "x-plugin": "integration"
     },
     {
+      "name": "interactivity",
+      "x-plugin": "interactivity"
+    },
+    {
       "description": "batch service lets you handle different batch process from remote machines.\n As opposed to other objects in the system, locking mechanism is critical in this case.\n For this reason the GetExclusiveXX, UpdateExclusiveXX and FreeExclusiveXX actions are important for the system's integrity.\n In general - updating batch object should be done only using the UpdateExclusiveXX which in turn can be called only after \n acuiring a batch objet properly (using  GetExclusiveXX).\n If an object was aquired and should be returned to the pool in it's initial state - use the FreeExclusiveXX action \n Terminology:\n LocationId\n ServerID\n ParternGroups",
       "name": "jobs"
     },
@@ -124592,6 +125291,10 @@
       "description": "Virus scan profile service",
       "name": "virusScanProfile",
       "x-plugin": "virusScan"
+    },
+    {
+      "name": "volatileInteractivity",
+      "x-plugin": "interactivity"
     },
     {
       "description": "WidevineDrmService serves as a license proxy to a Widevine license server",
@@ -153468,6 +154171,12 @@
         },
         {
           "enum": [
+            "53"
+          ],
+          "title": "SUB_CATEGORIES"
+        },
+        {
+          "enum": [
             "201"
           ],
           "title": "PARTNER_USAGE"
@@ -158570,9 +159279,21 @@
         },
         {
           "enum": [
+            129600
+          ],
+          "title": "ONE_BUSINESS_DAY"
+        },
+        {
+          "enum": [
             172800
           ],
           "title": "FORTY_EIGHT_HOURS"
+        },
+        {
+          "enum": [
+            216000
+          ],
+          "title": "TWO_BUSINESS_DAYS"
         },
         {
           "enum": [
