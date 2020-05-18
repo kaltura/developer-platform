@@ -3616,6 +3616,7 @@
             "MetadataProfile",
             "Partner",
             "Permission",
+            "ReachProfile",
             "UploadToken",
             "UserLoginData",
             "UserRole",
@@ -3649,6 +3650,7 @@
             "METADATA_PROFILE",
             "PARTNER",
             "PERMISSION",
+            "REACH_PROFILE",
             "UPLOAD_TOKEN",
             "USER_LOGIN_DATA",
             "USER_ROLE",
@@ -3766,6 +3768,7 @@
             "MetadataProfile",
             "Partner",
             "Permission",
+            "ReachProfile",
             "UploadToken",
             "UserLoginData",
             "UserRole",
@@ -3799,6 +3802,7 @@
             "METADATA_PROFILE",
             "PARTNER",
             "PERMISSION",
+            "REACH_PROFILE",
             "UPLOAD_TOKEN",
             "USER_LOGIN_DATA",
             "USER_ROLE",
@@ -3917,6 +3921,7 @@
             "MetadataProfile",
             "Partner",
             "Permission",
+            "ReachProfile",
             "UploadToken",
             "UserLoginData",
             "UserRole",
@@ -3950,6 +3955,7 @@
             "METADATA_PROFILE",
             "PARTNER",
             "PERMISSION",
+            "REACH_PROFILE",
             "UPLOAD_TOKEN",
             "USER_LOGIN_DATA",
             "USER_ROLE",
@@ -4078,6 +4084,7 @@
             "MetadataProfile",
             "Partner",
             "Permission",
+            "ReachProfile",
             "UploadToken",
             "UserLoginData",
             "UserRole",
@@ -4111,6 +4118,7 @@
             "METADATA_PROFILE",
             "PARTNER",
             "PERMISSION",
+            "REACH_PROFILE",
             "UPLOAD_TOKEN",
             "USER_LOGIN_DATA",
             "USER_ROLE",
@@ -7005,6 +7013,7 @@
         "jobType": {
           "description": "`readOnly`\n\nEnum Type: `KalturaBatchJobType`",
           "enum": [
+            "0",
             "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
@@ -7016,7 +7025,6 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
-            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
@@ -7074,11 +7082,13 @@
             "49",
             "50",
             "51",
-            "52"
+            "52",
+            "53"
           ],
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
+            "CONVERT",
             "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
@@ -7090,7 +7100,6 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
-            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
@@ -7148,7 +7157,8 @@
             "EXPORT_CSV",
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
-            "STORAGE_UPDATE"
+            "STORAGE_UPDATE",
+            "STORAGE_PERIODIC_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -7355,6 +7365,7 @@
         "jobTypeEqual": {
           "description": "Enum Type: `KalturaBatchJobType`",
           "enum": [
+            "0",
             "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
@@ -7366,7 +7377,6 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
-            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
@@ -7424,10 +7434,12 @@
             "49",
             "50",
             "51",
-            "52"
+            "52",
+            "53"
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT",
             "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
@@ -7439,7 +7451,6 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
-            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
@@ -7497,7 +7508,8 @@
             "EXPORT_CSV",
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
-            "STORAGE_UPDATE"
+            "STORAGE_UPDATE",
+            "STORAGE_PERIODIC_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -7734,6 +7746,7 @@
         "jobType": {
           "description": "Enum Type: `KalturaBatchJobType`",
           "enum": [
+            "0",
             "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
@@ -7745,7 +7758,6 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
-            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
@@ -7803,10 +7815,12 @@
             "49",
             "50",
             "51",
-            "52"
+            "52",
+            "53"
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT",
             "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
@@ -7818,7 +7832,6 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
-            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
@@ -7876,7 +7889,8 @@
             "EXPORT_CSV",
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
-            "STORAGE_UPDATE"
+            "STORAGE_UPDATE",
+            "STORAGE_PERIODIC_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -8554,7 +8568,8 @@
             "3",
             "4",
             "5",
-            "6"
+            "6",
+            "7"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -8566,7 +8581,8 @@
             "USER",
             "CATEGORY_USER",
             "CATEGORY_ENTRY",
-            "USER_ENTRY"
+            "USER_ENTRY",
+            "VENDOR_CATALOG_ITEM"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -8722,7 +8738,8 @@
             "3",
             "4",
             "5",
-            "6"
+            "6",
+            "7"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -8734,7 +8751,8 @@
             "USER",
             "CATEGORY_USER",
             "CATEGORY_ENTRY",
-            "USER_ENTRY"
+            "USER_ENTRY",
+            "VENDOR_CATALOG_ITEM"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -8997,7 +9015,8 @@
             "3",
             "4",
             "5",
-            "6"
+            "6",
+            "7"
           ],
           "readOnly": true,
           "type": "string",
@@ -9010,7 +9029,8 @@
             "USER",
             "CATEGORY_USER",
             "CATEGORY_ENTRY",
-            "USER_ENTRY"
+            "USER_ENTRY",
+            "VENDOR_CATALOG_ITEM"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -9144,6 +9164,9 @@
         },
         {
           "$ref": "#/definitions/KalturaBulkUploadUserData"
+        },
+        {
+          "$ref": "#/definitions/KalturaBulkUploadVendorCatalogItemData"
         }
       ],
       "description": "`abstract`\n\nThis class represents object-specific data passed to the \n bulk upload job.",
@@ -9155,7 +9178,8 @@
             "KalturaBulkUploadCategoryEntryData",
             "KalturaBulkUploadCategoryUserData",
             "KalturaBulkUploadEntryData",
-            "KalturaBulkUploadUserData"
+            "KalturaBulkUploadUserData",
+            "KalturaBulkUploadVendorCatalogItemData"
           ],
           "type": "string"
         }
@@ -9207,6 +9231,9 @@
         },
         {
           "$ref": "#/definitions/KalturaBulkUploadResultUserEntry"
+        },
+        {
+          "$ref": "#/definitions/KalturaBulkUploadResultVendorCatalogItem"
         }
       ],
       "discriminator": "objectType",
@@ -9222,7 +9249,8 @@
             "5",
             "6",
             "7",
-            "8"
+            "8",
+            "9"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -9234,7 +9262,8 @@
             "TRANSFORM_XSLT",
             "ADD_OR_UPDATE",
             "ACTIVATE",
-            "REJECT"
+            "REJECT",
+            "UPDATE_STATUS"
           ],
           "x-enumType": "KalturaBulkUploadAction"
         },
@@ -9253,7 +9282,8 @@
             "3",
             "4",
             "5",
-            "6"
+            "6",
+            "7"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -9265,7 +9295,8 @@
             "USER",
             "CATEGORY_USER",
             "CATEGORY_ENTRY",
-            "USER_ENTRY"
+            "USER_ENTRY",
+            "VENDOR_CATALOG_ITEM"
           ],
           "x-enumType": "KalturaBulkUploadObjectType"
         },
@@ -9307,7 +9338,8 @@
             "KalturaBulkUploadResultScheduleEvent",
             "KalturaBulkUploadResultScheduleResource",
             "KalturaBulkUploadResultUser",
-            "KalturaBulkUploadResultUserEntry"
+            "KalturaBulkUploadResultUserEntry",
+            "KalturaBulkUploadResultVendorCatalogItem"
           ],
           "type": "string"
         },
@@ -9707,6 +9739,288 @@
       "title": "KalturaBulkUploadResultUserEntry",
       "type": "object"
     },
+    "KalturaBulkUploadResultVendorCatalogItem": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadResult"
+        }
+      ],
+      "properties": {
+        "clearAudioFlavorParamsId": {
+          "type": "integer"
+        },
+        "enableSpeakerId": {
+          "description": "Enum Type: `KalturaNullableBoolean`",
+          "enum": [
+            -1,
+            0,
+            1
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "NULL_VALUE",
+            "FALSE_VALUE",
+            "TRUE_VALUE"
+          ],
+          "x-enumType": "KalturaNullableBoolean"
+        },
+        "fixedPriceAddons": {
+          "type": "integer"
+        },
+        "flavorParamsId": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "outputFormat": {
+          "description": "Enum Type: `KalturaVendorCatalogItemOutputFormat`",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "SRT",
+            "DFXP"
+          ],
+          "x-enumType": "KalturaVendorCatalogItemOutputFormat"
+        },
+        "pricing": {
+          "$ref": "#/definitions/KalturaVendorCatalogItemPricing"
+        },
+        "serviceFeature": {
+          "description": "Enum Type: `KalturaVendorServiceFeature`",
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "CAPTIONS",
+            "TRANSLATION",
+            "ALIGNMENT",
+            "AUDIO_DESCRIPTION",
+            "CHAPTERING"
+          ],
+          "x-enumType": "KalturaVendorServiceFeature"
+        },
+        "serviceType": {
+          "description": "Enum Type: `KalturaVendorServiceType`",
+          "enum": [
+            1,
+            2
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "HUMAN",
+            "MACHINE"
+          ],
+          "x-enumType": "KalturaVendorServiceType"
+        },
+        "sourceLanguage": {
+          "description": "Enum Type: `KalturaCatalogItemLanguage`",
+          "enum": [
+            "Arabic",
+            "Cantonese",
+            "Chinese",
+            "Danish",
+            "Dutch",
+            "English",
+            "English (American)",
+            "English (British)",
+            "Finnish",
+            "French",
+            "German",
+            "Greek",
+            "Hebrew",
+            "Hindi",
+            "Hungarian",
+            "Icelandic",
+            "Indonesian",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Mandarin Chinese",
+            "Norwegian",
+            "Polish",
+            "Portuguese",
+            "Romanian",
+            "Russian",
+            "Spanish",
+            "Swedish",
+            "Thai",
+            "Turkish"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "AR",
+            "YUE",
+            "ZH",
+            "DA",
+            "NL",
+            "EN",
+            "EN_US",
+            "EN_GB",
+            "FI",
+            "FR",
+            "DE",
+            "EL",
+            "HE",
+            "HI",
+            "HU",
+            "IS",
+            "IN",
+            "IT",
+            "JA",
+            "KO",
+            "CMN",
+            "NO",
+            "PL",
+            "PT",
+            "RO",
+            "RU",
+            "ES",
+            "SV",
+            "TH",
+            "TR"
+          ],
+          "x-enumType": "KalturaCatalogItemLanguage"
+        },
+        "systemName": {
+          "type": "string"
+        },
+        "targetLanguage": {
+          "description": "Enum Type: `KalturaCatalogItemLanguage`",
+          "enum": [
+            "Arabic",
+            "Cantonese",
+            "Chinese",
+            "Danish",
+            "Dutch",
+            "English",
+            "English (American)",
+            "English (British)",
+            "Finnish",
+            "French",
+            "German",
+            "Greek",
+            "Hebrew",
+            "Hindi",
+            "Hungarian",
+            "Icelandic",
+            "Indonesian",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Mandarin Chinese",
+            "Norwegian",
+            "Polish",
+            "Portuguese",
+            "Romanian",
+            "Russian",
+            "Spanish",
+            "Swedish",
+            "Thai",
+            "Turkish"
+          ],
+          "type": "string",
+          "x-enumLabels": [
+            "AR",
+            "YUE",
+            "ZH",
+            "DA",
+            "NL",
+            "EN",
+            "EN_US",
+            "EN_GB",
+            "FI",
+            "FR",
+            "DE",
+            "EL",
+            "HE",
+            "HI",
+            "HU",
+            "IS",
+            "IN",
+            "IT",
+            "JA",
+            "KO",
+            "CMN",
+            "NO",
+            "PL",
+            "PT",
+            "RO",
+            "RU",
+            "ES",
+            "SV",
+            "TH",
+            "TR"
+          ],
+          "x-enumType": "KalturaCatalogItemLanguage"
+        },
+        "turnAroundTime": {
+          "description": "Enum Type: `KalturaVendorServiceTurnAroundTime`",
+          "enum": [
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            1800,
+            7200,
+            10800,
+            21600,
+            28800,
+            43200,
+            86400,
+            172800,
+            345600,
+            432000,
+            864000
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "BEST_EFFORT",
+            "IMMEDIATE",
+            "ONE_BUSINESS_DAY",
+            "TWO_BUSINESS_DAYS",
+            "THREE_BUSINESS_DAYS",
+            "FOUR_BUSINESS_DAYS",
+            "FIVE_BUSINESS_DAYS",
+            "SIX_BUSINESS_DAYS",
+            "SEVEN_BUSINESS_DAYS",
+            "THIRTY_MINUTES",
+            "TWO_HOURS",
+            "THREE_HOURS",
+            "SIX_HOURS",
+            "EIGHT_HOURS",
+            "TWELVE_HOURS",
+            "TWENTY_FOUR_HOURS",
+            "FORTY_EIGHT_HOURS",
+            "FOUR_DAYS",
+            "FIVE_DAYS",
+            "TEN_DAYS"
+          ],
+          "x-enumType": "KalturaVendorServiceTurnAroundTime"
+        },
+        "vendorCatalogItemId": {
+          "type": "integer"
+        },
+        "vendorPartnerId": {
+          "type": "integer"
+        }
+      },
+      "title": "KalturaBulkUploadResultVendorCatalogItem",
+      "type": "object"
+    },
     "KalturaBulkUploadScheduleEventCsvJobData": {
       "allOf": [
         {
@@ -9779,6 +10093,17 @@
       "description": "This class represents object-specific data passed to the \n bulk upload job.",
       "properties": {},
       "title": "KalturaBulkUploadUserData",
+      "type": "object"
+    },
+    "KalturaBulkUploadVendorCatalogItemData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaBulkUploadObjectData"
+        }
+      ],
+      "description": "This class represents object-specific data passed to the\n bulk upload job.",
+      "properties": {},
+      "title": "KalturaBulkUploadVendorCatalogItemData",
       "type": "object"
     },
     "KalturaBulkUploadXmlJobData": {
@@ -13420,6 +13745,13 @@
           "enum": [
             -1,
             0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
             1800,
             7200,
             10800,
@@ -13427,9 +13759,7 @@
             28800,
             43200,
             86400,
-            129600,
             172800,
-            216000,
             345600,
             432000,
             864000
@@ -13438,6 +13768,13 @@
           "x-enumLabels": [
             "BEST_EFFORT",
             "IMMEDIATE",
+            "ONE_BUSINESS_DAY",
+            "TWO_BUSINESS_DAYS",
+            "THREE_BUSINESS_DAYS",
+            "FOUR_BUSINESS_DAYS",
+            "FIVE_BUSINESS_DAYS",
+            "SIX_BUSINESS_DAYS",
+            "SEVEN_BUSINESS_DAYS",
             "THIRTY_MINUTES",
             "TWO_HOURS",
             "THREE_HOURS",
@@ -13445,9 +13782,7 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
-            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
-            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -31181,6 +31516,56 @@
         "taskJobData": {
           "$ref": "#/definitions/KalturaVendorTaskData"
         },
+        "turnAroundTime": {
+          "description": "`readOnly`\n\nEnum Type: `KalturaVendorServiceTurnAroundTime`",
+          "enum": [
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            1800,
+            7200,
+            10800,
+            21600,
+            28800,
+            43200,
+            86400,
+            172800,
+            345600,
+            432000,
+            864000
+          ],
+          "readOnly": true,
+          "type": "integer",
+          "x-enumLabels": [
+            "BEST_EFFORT",
+            "IMMEDIATE",
+            "ONE_BUSINESS_DAY",
+            "TWO_BUSINESS_DAYS",
+            "THREE_BUSINESS_DAYS",
+            "FOUR_BUSINESS_DAYS",
+            "FIVE_BUSINESS_DAYS",
+            "SIX_BUSINESS_DAYS",
+            "SEVEN_BUSINESS_DAYS",
+            "THIRTY_MINUTES",
+            "TWO_HOURS",
+            "THREE_HOURS",
+            "SIX_HOURS",
+            "EIGHT_HOURS",
+            "TWELVE_HOURS",
+            "TWENTY_FOUR_HOURS",
+            "FORTY_EIGHT_HOURS",
+            "FOUR_DAYS",
+            "FIVE_DAYS",
+            "TEN_DAYS"
+          ],
+          "x-enumType": "KalturaVendorServiceTurnAroundTime"
+        },
         "updatedAt": {
           "description": "`readOnly`",
           "readOnly": true,
@@ -33777,6 +34162,12 @@
           "description": "`readOnly`",
           "readOnly": true,
           "type": "integer"
+        },
+        "srcEncKey": {
+          "type": "string"
+        },
+        "srcPath": {
+          "type": "string"
         },
         "status": {
           "description": "Enum Type: `KalturaFileSyncStatus`",
@@ -36874,6 +37265,7 @@
         "jobType": {
           "description": "`readOnly`\n\nEnum Type: `KalturaBatchJobType`",
           "enum": [
+            "0",
             "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
@@ -36885,7 +37277,6 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
-            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
@@ -36943,11 +37334,13 @@
             "49",
             "50",
             "51",
-            "52"
+            "52",
+            "53"
           ],
           "readOnly": true,
           "type": "string",
           "x-enumLabels": [
+            "CONVERT",
             "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
@@ -36959,7 +37352,6 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
-            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
@@ -37017,7 +37409,8 @@
             "EXPORT_CSV",
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
-            "STORAGE_UPDATE"
+            "STORAGE_UPDATE",
+            "STORAGE_PERIODIC_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -50807,13 +51200,15 @@
           "enum": [
             3,
             10,
-            101
+            101,
+            102
           ],
           "type": "integer",
           "x-enumLabels": [
             "STATIC_LIST",
             "DYNAMIC",
-            "EXTERNAL"
+            "EXTERNAL",
+            "PATH"
           ],
           "x-enumType": "KalturaPlaylistType"
         },
@@ -50967,6 +51362,26 @@
             "WEIGHT_DESC"
           ],
           "x-enumType": "KalturaPlaylistOrderBy"
+        },
+        "playListTypeEqual": {
+          "description": "Enum Type: `KalturaPlaylistType`",
+          "enum": [
+            3,
+            10,
+            101,
+            102
+          ],
+          "type": "integer",
+          "x-enumLabels": [
+            "STATIC_LIST",
+            "DYNAMIC",
+            "EXTERNAL",
+            "PATH"
+          ],
+          "x-enumType": "KalturaPlaylistType"
+        },
+        "playListTypeIn": {
+          "type": "string"
         }
       },
       "title": "KalturaPlaylistFilter",
@@ -52718,6 +53133,13 @@
           "enum": [
             -1,
             0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
             1800,
             7200,
             10800,
@@ -52725,9 +53147,7 @@
             28800,
             43200,
             86400,
-            129600,
             172800,
-            216000,
             345600,
             432000,
             864000
@@ -52736,6 +53156,13 @@
           "x-enumLabels": [
             "BEST_EFFORT",
             "IMMEDIATE",
+            "ONE_BUSINESS_DAY",
+            "TWO_BUSINESS_DAYS",
+            "THREE_BUSINESS_DAYS",
+            "FOUR_BUSINESS_DAYS",
+            "FIVE_BUSINESS_DAYS",
+            "SIX_BUSINESS_DAYS",
+            "SEVEN_BUSINESS_DAYS",
             "THIRTY_MINUTES",
             "TWO_HOURS",
             "THREE_HOURS",
@@ -52743,9 +53170,7 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
-            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
-            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -53788,6 +54213,8 @@
             "51",
             "52",
             "53",
+            "54",
+            "55",
             "201",
             "10001",
             "10002",
@@ -53944,6 +54371,8 @@
             "LATEST_PLAYED_ENTRIES",
             "CATEGORY_HIGHLIGHTS",
             "SUB_CATEGORIES",
+            "INTERACTIVE_VIDEO_NODE_TOP_HOTSPOTS",
+            "INTERCATIVE_VIDEO_NODE_SWITCH_TOP_HOTSPOTS",
             "PARTNER_USAGE",
             "MAP_OVERLAY_COUNTRY_REALTIME",
             "MAP_OVERLAY_REGION_REALTIME",
@@ -56355,6 +56784,7 @@
         "workerType": {
           "description": "Enum Type: `KalturaBatchJobType`\n\nThe type of the job worker.",
           "enum": [
+            "0",
             "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
@@ -56366,7 +56796,6 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
-            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
@@ -56424,10 +56853,12 @@
             "49",
             "50",
             "51",
-            "52"
+            "52",
+            "53"
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT",
             "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
@@ -56439,7 +56870,6 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
-            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
@@ -56497,7 +56927,8 @@
             "EXPORT_CSV",
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
-            "STORAGE_UPDATE"
+            "STORAGE_UPDATE",
+            "STORAGE_PERIODIC_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         }
@@ -56589,6 +57020,7 @@
         "type": {
           "description": "Enum Type: `KalturaBatchJobType`\n\nThe worker type",
           "enum": [
+            "0",
             "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
@@ -56600,7 +57032,6 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
-            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
@@ -56658,10 +57089,12 @@
             "49",
             "50",
             "51",
-            "52"
+            "52",
+            "53"
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT",
             "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
@@ -56673,7 +57106,6 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
-            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
@@ -56731,7 +57163,8 @@
             "EXPORT_CSV",
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
-            "STORAGE_UPDATE"
+            "STORAGE_UPDATE",
+            "STORAGE_PERIODIC_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -59506,6 +59939,12 @@
         "desciption": {
           "type": "string"
         },
+        "excludedFlavorParamsIds": {
+          "type": "string"
+        },
+        "exportPeriodically": {
+          "type": "boolean"
+        },
         "flavorParamsIds": {
           "type": "string"
         },
@@ -59513,9 +59952,6 @@
           "description": "`readOnly`",
           "readOnly": true,
           "type": "integer"
-        },
-        "mappedPackagerUrl": {
-          "type": "string"
         },
         "maxConcurrentConnections": {
           "type": "integer"
@@ -59535,6 +59971,9 @@
             "KalturaAmazonS3StorageProfile",
             "KalturaKontikiStorageProfile"
           ],
+          "type": "string"
+        },
+        "packagerUrl": {
           "type": "string"
         },
         "partnerId": {
@@ -59596,14 +60035,14 @@
           ],
           "x-enumType": "KalturaStorageProfileReadyBehavior"
         },
-        "regularPackagerUrl": {
-          "type": "string"
-        },
         "rules": {
           "items": {
             "$ref": "#/definitions/KalturaRule"
           },
           "type": "array"
+        },
+        "shouldExportCaptions": {
+          "type": "boolean"
         },
         "shouldExportThumbs": {
           "type": "boolean"
@@ -67232,6 +67671,13 @@
           "enum": [
             -1,
             0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
             1800,
             7200,
             10800,
@@ -67239,9 +67685,7 @@
             28800,
             43200,
             86400,
-            129600,
             172800,
-            216000,
             345600,
             432000,
             864000
@@ -67250,6 +67694,13 @@
           "x-enumLabels": [
             "BEST_EFFORT",
             "IMMEDIATE",
+            "ONE_BUSINESS_DAY",
+            "TWO_BUSINESS_DAYS",
+            "THREE_BUSINESS_DAYS",
+            "FOUR_BUSINESS_DAYS",
+            "FIVE_BUSINESS_DAYS",
+            "SIX_BUSINESS_DAYS",
+            "SEVEN_BUSINESS_DAYS",
             "THIRTY_MINUTES",
             "TWO_HOURS",
             "THREE_HOURS",
@@ -67257,9 +67708,7 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
-            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
-            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -67395,6 +67844,13 @@
           "enum": [
             -1,
             0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
             1800,
             7200,
             10800,
@@ -67402,9 +67858,7 @@
             28800,
             43200,
             86400,
-            129600,
             172800,
-            216000,
             345600,
             432000,
             864000
@@ -67413,6 +67867,13 @@
           "x-enumLabels": [
             "BEST_EFFORT",
             "IMMEDIATE",
+            "ONE_BUSINESS_DAY",
+            "TWO_BUSINESS_DAYS",
+            "THREE_BUSINESS_DAYS",
+            "FOUR_BUSINESS_DAYS",
+            "FIVE_BUSINESS_DAYS",
+            "SIX_BUSINESS_DAYS",
+            "SEVEN_BUSINESS_DAYS",
             "THIRTY_MINUTES",
             "TWO_HOURS",
             "THREE_HOURS",
@@ -67420,9 +67881,7 @@
             "EIGHT_HOURS",
             "TWELVE_HOURS",
             "TWENTY_FOUR_HOURS",
-            "ONE_BUSINESS_DAY",
             "FORTY_EIGHT_HOURS",
-            "TWO_BUSINESS_DAYS",
             "FOUR_DAYS",
             "FIVE_DAYS",
             "TEN_DAYS"
@@ -69855,6 +70314,7 @@
         "jobType": {
           "description": "Enum Type: `KalturaBatchJobType`",
           "enum": [
+            "0",
             "caption.convertcaptionasset",
             "caption.parsemultilanguagecaptionasset",
             "captionSearch.parseCaptionAsset",
@@ -69866,7 +70326,6 @@
             "contentDistribution.DistributionSync",
             "contentDistribution.DistributionUpdate",
             "dropFolder.DropFolderContentProcessor",
-            "0",
             "dropFolder.DropFolderWatcher",
             "eventNotification.EventNotificationHandler",
             "integration.Integration",
@@ -69924,10 +70383,12 @@
             "49",
             "50",
             "51",
-            "52"
+            "52",
+            "53"
           ],
           "type": "string",
           "x-enumLabels": [
+            "CONVERT",
             "CONVERT_CAPTION_ASSET",
             "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
             "PARSE_CAPTION_ASSET",
@@ -69939,7 +70400,6 @@
             "DISTRIBUTION_SYNC",
             "DISTRIBUTION_UPDATE",
             "DROP_FOLDER_CONTENT_PROCESSOR",
-            "CONVERT",
             "DROP_FOLDER_WATCHER",
             "EVENT_NOTIFICATION_HANDLER",
             "INTEGRATION",
@@ -69997,7 +70457,8 @@
             "EXPORT_CSV",
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
-            "STORAGE_UPDATE"
+            "STORAGE_UPDATE",
+            "STORAGE_PERIODIC_EXPORT"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -71049,7 +71510,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "16.0.1"
+    "version": "16.2.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -71058,7 +71519,8 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadCategoryData[objectType]",
@@ -71071,7 +71533,8 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadCategoryEntryData[objectType]",
@@ -71084,7 +71547,8 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadCategoryUserData[objectType]",
@@ -71132,7 +71596,8 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadData[objectData][objectType]",
@@ -71256,7 +71721,8 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadEntryData[objectType]",
@@ -71290,7 +71756,8 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadData[objectData][objectType]",
@@ -71415,7 +71882,8 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadData[objectData][objectType]",
@@ -71518,12 +71986,27 @@
         "KalturaBulkUploadCategoryEntryData",
         "KalturaBulkUploadCategoryUserData",
         "KalturaBulkUploadEntryData",
-        "KalturaBulkUploadUserData"
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
       ],
       "in": "query",
       "name": "bulkUploadUserData[objectType]",
       "type": "string",
       "x-group": "bulkUploadUserData"
+    },
+    "KalturaBulkUploadVendorCatalogItemData:bulkUploadVendorCatalogItemData[objectType]": {
+      "enum": [
+        "KalturaBulkUploadCategoryData",
+        "KalturaBulkUploadCategoryEntryData",
+        "KalturaBulkUploadCategoryUserData",
+        "KalturaBulkUploadEntryData",
+        "KalturaBulkUploadUserData",
+        "KalturaBulkUploadVendorCatalogItemData"
+      ],
+      "in": "query",
+      "name": "bulkUploadVendorCatalogItemData[objectType]",
+      "type": "string",
+      "x-group": "bulkUploadVendorCatalogItemData"
     },
     "KalturaMetadataProfile:metadataProfile[createMode]": {
       "description": "Enum Type: `KalturaMetadataProfileCreateMode`",
@@ -76175,7 +76658,8 @@
                     "3",
                     "4",
                     "5",
-                    "6"
+                    "6",
+                    "7"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -76187,7 +76671,8 @@
                     "USER",
                     "CATEGORY_USER",
                     "CATEGORY_ENTRY",
-                    "USER_ENTRY"
+                    "USER_ENTRY",
+                    "VENDOR_CATALOG_ITEM"
                   ],
                   "x-enumType": "KalturaBulkUploadObjectType"
                 }
@@ -76305,6 +76790,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -76316,7 +76802,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -76374,10 +76859,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -76389,7 +76876,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -76447,7 +76933,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -76571,6 +77058,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -76582,7 +77070,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -76640,10 +77127,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -76655,7 +77144,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -76713,7 +77201,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -76790,6 +77279,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -76801,7 +77291,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -76859,10 +77348,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -76874,7 +77365,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -76932,7 +77422,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -77192,6 +77683,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -77203,7 +77695,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -77261,10 +77752,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -77276,7 +77769,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -77334,7 +77826,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -80274,6 +80767,67 @@
         "x-kaltura-format": "post",
         "x-kaltura-parameters": [
           "captionAssetId"
+        ]
+      }
+    },
+    "/service/caption_captionasset/action/export": {
+      "post": {
+        "description": "manually export an asset",
+        "operationId": "captionAsset.export",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "assetId": {
+                  "type": "string"
+                },
+                "storageProfileId": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "assetId",
+                "storageProfileId"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaFlavorAsset"
+            }
+          },
+          "x-Errors": {
+            "description": "* `INVALID_FLAVOR_ASSET_ID`:  Invalid flavor asset id @FLAV_ASSET_ID@\n* `STORAGE_PROFILE_ID_NOT_FOUND`: Storage profile id @ID@ not found\n* `INTERNAL_SERVERL_ERROR`: Internal server error occurred"
+          }
+        },
+        "tags": [
+          "captionAsset"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "assetId",
+          "storageProfileId"
         ]
       }
     },
@@ -96041,6 +96595,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -96052,7 +96607,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -96110,10 +96664,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -96125,7 +96681,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -96183,7 +96738,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -97192,6 +97748,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -97203,7 +97760,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -97261,10 +97817,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -97276,7 +97834,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -97334,7 +97891,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -98402,6 +98960,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -98413,7 +98972,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -98471,10 +99029,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -98486,7 +99046,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -98544,7 +99103,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -99144,6 +99704,7 @@
                 },
                 "jobType": {
                   "enum": [
+                    "0",
                     "caption.convertcaptionasset",
                     "caption.parsemultilanguagecaptionasset",
                     "captionSearch.parseCaptionAsset",
@@ -99155,7 +99716,6 @@
                     "contentDistribution.DistributionSync",
                     "contentDistribution.DistributionUpdate",
                     "dropFolder.DropFolderContentProcessor",
-                    "0",
                     "dropFolder.DropFolderWatcher",
                     "eventNotification.EventNotificationHandler",
                     "integration.Integration",
@@ -99213,10 +99773,12 @@
                     "49",
                     "50",
                     "51",
-                    "52"
+                    "52",
+                    "53"
                   ],
                   "type": "string",
                   "x-enumLabels": [
+                    "CONVERT",
                     "CONVERT_CAPTION_ASSET",
                     "PARSE_MULTI_LANGUAGE_CAPTION_ASSET",
                     "PARSE_CAPTION_ASSET",
@@ -99228,7 +99790,6 @@
                     "DISTRIBUTION_SYNC",
                     "DISTRIBUTION_UPDATE",
                     "DROP_FOLDER_CONTENT_PROCESSOR",
-                    "CONVERT",
                     "DROP_FOLDER_WATCHER",
                     "EVENT_NOTIFICATION_HANDLER",
                     "INTEGRATION",
@@ -99286,7 +99847,8 @@
                     "EXPORT_CSV",
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
-                    "STORAGE_UPDATE"
+                    "STORAGE_UPDATE",
+                    "STORAGE_PERIODIC_EXPORT"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -107648,13 +108210,15 @@
                   "enum": [
                     3,
                     10,
-                    101
+                    101,
+                    102
                   ],
                   "type": "integer",
                   "x-enumLabels": [
                     "STATIC_LIST",
                     "DYNAMIC",
-                    "EXTERNAL"
+                    "EXTERNAL",
+                    "PATH"
                   ],
                   "x-enumType": "KalturaPlaylistType"
                 }
@@ -107857,13 +108421,15 @@
                   "enum": [
                     3,
                     10,
-                    101
+                    101,
+                    102
                   ],
                   "type": "integer",
                   "x-enumLabels": [
                     "STATIC_LIST",
                     "DYNAMIC",
-                    "EXTERNAL"
+                    "EXTERNAL",
+                    "PATH"
                   ],
                   "x-enumType": "KalturaPlaylistType"
                 }
@@ -110356,6 +110922,85 @@
         ]
       }
     },
+    "/service/reach_vendorcatalogitem/action/addFromBulkUpload": {
+      "post": {
+        "operationId": "vendorCatalogItem.addFromBulkUpload",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "in": "formData",
+            "name": "fileData",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[objectType]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[fileName]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[objectData][objectType]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[emailRecipients]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[numOfErrorObjects]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadJobData:bulkUploadData[privileges]"
+          },
+          {
+            "$ref": "#/parameters/KalturaBulkUploadVendorCatalogItemData:bulkUploadVendorCatalogItemData[objectType]"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaBulkUpload"
+            }
+          }
+        },
+        "tags": [
+          "vendorCatalogItem"
+        ],
+        "x-kaltura-format": "file",
+        "x-kaltura-parameters": [
+          "fileData",
+          "bulkUploadData",
+          "bulkUploadVendorCatalogItemData"
+        ],
+        "x-parameterGroups": [
+          {
+            "description": "Object Type: `KalturaBulkUploadJobData`",
+            "name": "bulkUploadData",
+            "schema": {
+              "$ref": "#/definitions/KalturaBulkUploadJobData"
+            },
+            "subGroups": [
+              {
+                "name": "bulkUploadData[objectData]"
+              }
+            ]
+          },
+          {
+            "description": "Object Type: `KalturaBulkUploadVendorCatalogItemData`",
+            "name": "bulkUploadVendorCatalogItemData",
+            "schema": {
+              "$ref": "#/definitions/KalturaBulkUploadVendorCatalogItemData"
+            },
+            "subGroups": []
+          }
+        ]
+      }
+    },
     "/service/reach_vendorcatalogitem/action/delete": {
       "post": {
         "description": "Delete vedor catalog item object",
@@ -110947,6 +111592,8 @@
                     "51",
                     "52",
                     "53",
+                    "54",
+                    "55",
                     "201",
                     "10001",
                     "10002",
@@ -111103,6 +111750,8 @@
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
                     "SUB_CATEGORIES",
+                    "INTERACTIVE_VIDEO_NODE_TOP_HOTSPOTS",
+                    "INTERCATIVE_VIDEO_NODE_SWITCH_TOP_HOTSPOTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -111446,6 +112095,8 @@
                     "51",
                     "52",
                     "53",
+                    "54",
+                    "55",
                     "201",
                     "10001",
                     "10002",
@@ -111602,6 +112253,8 @@
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
                     "SUB_CATEGORIES",
+                    "INTERACTIVE_VIDEO_NODE_TOP_HOTSPOTS",
+                    "INTERCATIVE_VIDEO_NODE_SWITCH_TOP_HOTSPOTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -111833,6 +112486,8 @@
                     "51",
                     "52",
                     "53",
+                    "54",
+                    "55",
                     "201",
                     "10001",
                     "10002",
@@ -111989,6 +112644,8 @@
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
                     "SUB_CATEGORIES",
+                    "INTERACTIVE_VIDEO_NODE_TOP_HOTSPOTS",
+                    "INTERCATIVE_VIDEO_NODE_SWITCH_TOP_HOTSPOTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -112213,6 +112870,8 @@
                     "51",
                     "52",
                     "53",
+                    "54",
+                    "55",
                     "201",
                     "10001",
                     "10002",
@@ -112369,6 +113028,8 @@
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
                     "SUB_CATEGORIES",
+                    "INTERACTIVE_VIDEO_NODE_TOP_HOTSPOTS",
+                    "INTERCATIVE_VIDEO_NODE_SWITCH_TOP_HOTSPOTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -112608,6 +113269,8 @@
                     "51",
                     "52",
                     "53",
+                    "54",
+                    "55",
                     "201",
                     "10001",
                     "10002",
@@ -112764,6 +113427,8 @@
                     "LATEST_PLAYED_ENTRIES",
                     "CATEGORY_HIGHLIGHTS",
                     "SUB_CATEGORIES",
+                    "INTERACTIVE_VIDEO_NODE_TOP_HOTSPOTS",
+                    "INTERCATIVE_VIDEO_NODE_SWITCH_TOP_HOTSPOTS",
                     "PARTNER_USAGE",
                     "MAP_OVERLAY_COUNTRY_REALTIME",
                     "MAP_OVERLAY_REGION_REALTIME",
@@ -117398,6 +118063,78 @@
         "x-kaltura-parameters": [
           "filter",
           "pager"
+        ]
+      }
+    },
+    "/service/storageprofile/action/lockPendingFileSyncs": {
+      "post": {
+        "description": "storage profile lockPendingFileSyncs action locks file syncs for export by the file sync periodic worker",
+        "operationId": "storageProfile.lockPendingFileSyncs",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "filter": {
+                  "$ref": "#/definitions/KalturaFileSyncFilter"
+                },
+                "maxCount": {
+                  "type": "integer"
+                },
+                "maxSize": {
+                  "type": "integer"
+                },
+                "storageProfileId": {
+                  "type": "integer"
+                },
+                "workerId": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "filter",
+                "workerId",
+                "storageProfileId",
+                "maxCount"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaLockFileSyncsResponse"
+            }
+          }
+        },
+        "tags": [
+          "storageProfile"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "filter",
+          "workerId",
+          "storageProfileId",
+          "maxCount",
+          "maxSize"
         ]
       }
     },
@@ -127021,6 +127758,12 @@
         },
         {
           "enum": [
+            "ReachProfile"
+          ],
+          "title": "REACH_PROFILE"
+        },
+        {
+          "enum": [
             "UploadToken"
           ],
           "title": "UPLOAD_TOKEN"
@@ -128210,6 +128953,12 @@
       "oneOf": [
         {
           "enum": [
+            "0"
+          ],
+          "title": "CONVERT"
+        },
+        {
+          "enum": [
             "caption.convertcaptionasset"
           ],
           "title": "CONVERT_CAPTION_ASSET"
@@ -128273,12 +129022,6 @@
             "dropFolder.DropFolderContentProcessor"
           ],
           "title": "DROP_FOLDER_CONTENT_PROCESSOR"
-        },
-        {
-          "enum": [
-            "0"
-          ],
-          "title": "CONVERT"
         },
         {
           "enum": [
@@ -128627,6 +129370,12 @@
             "52"
           ],
           "title": "STORAGE_UPDATE"
+        },
+        {
+          "enum": [
+            "53"
+          ],
+          "title": "STORAGE_PERIODIC_EXPORT"
         }
       ],
       "title": "KalturaBatchJobType"
@@ -128854,6 +129603,12 @@
             "8"
           ],
           "title": "REJECT"
+        },
+        {
+          "enum": [
+            "9"
+          ],
+          "title": "UPDATE_STATUS"
         }
       ],
       "title": "KalturaBulkUploadAction"
@@ -128936,6 +129691,12 @@
             "6"
           ],
           "title": "USER_ENTRY"
+        },
+        {
+          "enum": [
+            "7"
+          ],
+          "title": "VENDOR_CATALOG_ITEM"
         }
       ],
       "title": "KalturaBulkUploadObjectType"
@@ -135913,6 +136674,12 @@
     },
     "KalturaEntryCapability": {
       "oneOf": [
+        {
+          "enum": [
+            "interactivity.interactivity"
+          ],
+          "title": "KALTURA_INTERACTIVITY_CAPABILITY_NAME"
+        },
         {
           "enum": [
             "quiz.quiz"
@@ -152946,6 +153713,12 @@
             101
           ],
           "title": "EXTERNAL"
+        },
+        {
+          "enum": [
+            102
+          ],
+          "title": "PATH"
         }
       ],
       "title": "KalturaPlaylistType"
@@ -154174,6 +154947,18 @@
             "53"
           ],
           "title": "SUB_CATEGORIES"
+        },
+        {
+          "enum": [
+            "54"
+          ],
+          "title": "INTERACTIVE_VIDEO_NODE_TOP_HOTSPOTS"
+        },
+        {
+          "enum": [
+            "55"
+          ],
+          "title": "INTERCATIVE_VIDEO_NODE_SWITCH_TOP_HOTSPOTS"
         },
         {
           "enum": [
@@ -159237,6 +160022,48 @@
         },
         {
           "enum": [
+            1
+          ],
+          "title": "ONE_BUSINESS_DAY"
+        },
+        {
+          "enum": [
+            2
+          ],
+          "title": "TWO_BUSINESS_DAYS"
+        },
+        {
+          "enum": [
+            3
+          ],
+          "title": "THREE_BUSINESS_DAYS"
+        },
+        {
+          "enum": [
+            4
+          ],
+          "title": "FOUR_BUSINESS_DAYS"
+        },
+        {
+          "enum": [
+            5
+          ],
+          "title": "FIVE_BUSINESS_DAYS"
+        },
+        {
+          "enum": [
+            6
+          ],
+          "title": "SIX_BUSINESS_DAYS"
+        },
+        {
+          "enum": [
+            7
+          ],
+          "title": "SEVEN_BUSINESS_DAYS"
+        },
+        {
+          "enum": [
             1800
           ],
           "title": "THIRTY_MINUTES"
@@ -159279,21 +160106,9 @@
         },
         {
           "enum": [
-            129600
-          ],
-          "title": "ONE_BUSINESS_DAY"
-        },
-        {
-          "enum": [
             172800
           ],
           "title": "FORTY_EIGHT_HOURS"
-        },
-        {
-          "enum": [
-            216000
-          ],
-          "title": "TWO_BUSINESS_DAYS"
         },
         {
           "enum": [
@@ -163390,6 +164205,11 @@
       "code": "INVALID_PLAYLIST_TYPE",
       "message": "Invalid playlist type",
       "name": "INVALID_PLAYLIST_TYPE"
+    },
+    {
+      "code": "CLONING_PATH_PLAYLIST_NOT_SUPPORTED",
+      "message": "Cloning Path playlist is not supported",
+      "name": "CLONING_PATH_PLAYLIST_NOT_SUPPORTED"
     },
     {
       "code": "DOWNLOAD_ERROR",
