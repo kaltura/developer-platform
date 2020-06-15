@@ -994,14 +994,10 @@
     "KalturaAlignmentVendorTaskData": {
       "allOf": [
         {
-          "$ref": "#/definitions/KalturaVendorTaskData"
+          "$ref": "#/definitions/KalturaVendorTaskDataCaptionAsset"
         }
       ],
       "properties": {
-        "captionAssetId": {
-          "description": "`insertOnly`\n\nOptional - The id of the caption asset object the vendor should update once alignment task processing is done",
-          "type": "string"
-        },
         "jsonTranscriptAssetId": {
           "description": "`insertOnly`\n\nOptional - The id of the json transcript object the vendor should update once alignment task processing is done",
           "type": "string"
@@ -1051,6 +1047,9 @@
           "type": "string"
         },
         "sseType": {
+          "type": "string"
+        },
+        "storageClass": {
           "type": "string"
         }
       },
@@ -5609,6 +5608,9 @@
           "description": "All entries within this categoy or in child categories",
           "type": "string"
         },
+        "excludedFreeTextGroups": {
+          "type": "string"
+        },
         "freeText": {
           "type": "string"
         },
@@ -7083,7 +7085,9 @@
             "50",
             "51",
             "52",
-            "53"
+            "53",
+            "54",
+            "55"
           ],
           "readOnly": true,
           "type": "string",
@@ -7158,7 +7162,9 @@
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
             "STORAGE_UPDATE",
-            "STORAGE_PERIODIC_EXPORT"
+            "STORAGE_PERIODIC_EXPORT",
+            "STORAGE_PERIODIC_PURGE",
+            "STORAGE_PERIODIC_DELETE_LOCAL"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -7435,7 +7441,9 @@
             "50",
             "51",
             "52",
-            "53"
+            "53",
+            "54",
+            "55"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -7509,7 +7517,9 @@
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
             "STORAGE_UPDATE",
-            "STORAGE_PERIODIC_EXPORT"
+            "STORAGE_PERIODIC_EXPORT",
+            "STORAGE_PERIODIC_PURGE",
+            "STORAGE_PERIODIC_DELETE_LOCAL"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -7816,7 +7826,9 @@
             "50",
             "51",
             "52",
-            "53"
+            "53",
+            "54",
+            "55"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -7890,7 +7902,9 @@
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
             "STORAGE_UPDATE",
-            "STORAGE_PERIODIC_EXPORT"
+            "STORAGE_PERIODIC_EXPORT",
+            "STORAGE_PERIODIC_PURGE",
+            "STORAGE_PERIODIC_DELETE_LOCAL"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -19089,6 +19103,9 @@
         },
         "remoteMediaId": {
           "type": "string"
+        },
+        "userCpu": {
+          "type": "integer"
         }
       },
       "title": "KalturaConvertJobData",
@@ -34188,6 +34205,9 @@
           ],
           "x-enumType": "KalturaFileSyncStatus"
         },
+        "storageClass": {
+          "type": "string"
+        },
         "syncTime": {
           "description": "`readOnly`",
           "readOnly": true,
@@ -37335,7 +37355,9 @@
             "50",
             "51",
             "52",
-            "53"
+            "53",
+            "54",
+            "55"
           ],
           "readOnly": true,
           "type": "string",
@@ -37410,7 +37432,9 @@
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
             "STORAGE_UPDATE",
-            "STORAGE_PERIODIC_EXPORT"
+            "STORAGE_PERIODIC_EXPORT",
+            "STORAGE_PERIODIC_PURGE",
+            "STORAGE_PERIODIC_DELETE_LOCAL"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -56854,7 +56878,9 @@
             "50",
             "51",
             "52",
-            "53"
+            "53",
+            "54",
+            "55"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -56928,7 +56954,9 @@
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
             "STORAGE_UPDATE",
-            "STORAGE_PERIODIC_EXPORT"
+            "STORAGE_PERIODIC_EXPORT",
+            "STORAGE_PERIODIC_PURGE",
+            "STORAGE_PERIODIC_DELETE_LOCAL"
           ],
           "x-enumType": "KalturaBatchJobType"
         }
@@ -57090,7 +57118,9 @@
             "50",
             "51",
             "52",
-            "53"
+            "53",
+            "54",
+            "55"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -57164,7 +57194,9 @@
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
             "STORAGE_UPDATE",
-            "STORAGE_PERIODIC_EXPORT"
+            "STORAGE_PERIODIC_EXPORT",
+            "STORAGE_PERIODIC_PURGE",
+            "STORAGE_PERIODIC_DELETE_LOCAL"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -59777,8 +59809,14 @@
       ],
       "discriminator": "objectType",
       "properties": {
+        "assetId": {
+          "type": "string"
+        },
         "createLink": {
           "type": "boolean"
+        },
+        "externalUrl": {
+          "type": "string"
         },
         "force": {
           "type": "boolean"
@@ -63809,6 +63847,16 @@
         }
       },
       "title": "KalturaTransformMetadataResponse",
+      "type": "object"
+    },
+    "KalturaTranslationVendorTaskData": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaVendorTaskDataCaptionAsset"
+        }
+      ],
+      "properties": {},
+      "title": "KalturaTranslationVendorTaskData",
       "type": "object"
     },
     "KalturaTubeMogulSyndicationFeed": {
@@ -68151,6 +68199,9 @@
       "anyOf": [
         {
           "$ref": "#/definitions/KalturaAlignmentVendorTaskData"
+        },
+        {
+          "$ref": "#/definitions/KalturaTranslationVendorTaskData"
         }
       ],
       "description": "`abstract`",
@@ -68158,12 +68209,46 @@
       "properties": {
         "objectType": {
           "enum": [
-            "KalturaAlignmentVendorTaskData"
+            "KalturaAlignmentVendorTaskData",
+            "KalturaTranslationVendorTaskData"
           ],
           "type": "string"
         }
       },
       "title": "KalturaVendorTaskData",
+      "type": "object",
+      "x-abstract": true
+    },
+    "KalturaVendorTaskDataCaptionAsset": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/KalturaVendorTaskData"
+        }
+      ],
+      "anyOf": [
+        {
+          "$ref": "#/definitions/KalturaAlignmentVendorTaskData"
+        },
+        {
+          "$ref": "#/definitions/KalturaTranslationVendorTaskData"
+        }
+      ],
+      "description": "`abstract`",
+      "discriminator": "objectType",
+      "properties": {
+        "captionAssetId": {
+          "description": "`insertOnly`\n\nOptional - The id of the caption asset object",
+          "type": "string"
+        },
+        "objectType": {
+          "enum": [
+            "KalturaAlignmentVendorTaskData",
+            "KalturaTranslationVendorTaskData"
+          ],
+          "type": "string"
+        }
+      },
+      "title": "KalturaVendorTaskDataCaptionAsset",
       "type": "object",
       "x-abstract": true
     },
@@ -70384,7 +70469,9 @@
             "50",
             "51",
             "52",
-            "53"
+            "53",
+            "54",
+            "55"
           ],
           "type": "string",
           "x-enumLabels": [
@@ -70458,7 +70545,9 @@
             "REPORT_EXPORT",
             "LIVE_ENTRY_ARCHIVE",
             "STORAGE_UPDATE",
-            "STORAGE_PERIODIC_EXPORT"
+            "STORAGE_PERIODIC_EXPORT",
+            "STORAGE_PERIODIC_PURGE",
+            "STORAGE_PERIODIC_DELETE_LOCAL"
           ],
           "x-enumType": "KalturaBatchJobType"
         },
@@ -71510,7 +71599,7 @@
   "info": {
     "description": "The Kaltura VPaaS API",
     "title": "Kaltura VPaaS",
-    "version": "16.2.0"
+    "version": "16.4.0"
   },
   "parameters": {
     "KalturaBulkUploadCategoryData:bulkUploadCategoryData[objectType]": {
@@ -76860,7 +76949,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -76934,7 +77025,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -77128,7 +77221,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -77202,7 +77297,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -77349,7 +77446,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -77423,7 +77522,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -77753,7 +77854,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -77827,7 +77930,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -93341,6 +93446,79 @@
         ]
       }
     },
+    "/service/filesync_filesync/action/deleteLocalFileSyncs": {
+      "post": {
+        "description": "Delete local file syncs by filter",
+        "operationId": "fileSync.deleteLocalFileSyncs",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "filter": {
+                  "$ref": "#/definitions/KalturaFileSyncFilter"
+                },
+                "lockExpiryTimeout": {
+                  "type": "integer"
+                },
+                "relativeTimeDeletionLimit": {
+                  "type": "integer"
+                },
+                "relativeTimeRange": {
+                  "type": "integer"
+                },
+                "workerId": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "filter",
+                "workerId",
+                "relativeTimeDeletionLimit",
+                "relativeTimeRange",
+                "lockExpiryTimeout"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaFileSyncListResponse"
+            }
+          }
+        },
+        "tags": [
+          "fileSync"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "filter",
+          "workerId",
+          "relativeTimeDeletionLimit",
+          "relativeTimeRange",
+          "lockExpiryTimeout"
+        ]
+      }
+    },
     "/service/filesync_filesync/action/list": {
       "post": {
         "description": "List file syce objects by filter and pager",
@@ -93392,6 +93570,84 @@
         "x-kaltura-parameters": [
           "filter",
           "pager"
+        ]
+      }
+    },
+    "/service/filesync_filesync/action/lockFileSyncs": {
+      "post": {
+        "description": "lockFileSyncs action locks file syncs for the file sync periodic worker",
+        "operationId": "fileSync.lockFileSyncs",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "filter": {
+                  "$ref": "#/definitions/KalturaFileSyncFilter"
+                },
+                "lockExpiryTimeout": {
+                  "type": "integer"
+                },
+                "maxCount": {
+                  "type": "integer"
+                },
+                "relativeTimeLimit": {
+                  "type": "integer"
+                },
+                "relativeTimeRange": {
+                  "type": "integer"
+                },
+                "workerId": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "filter",
+                "workerId",
+                "relativeTimeLimit",
+                "relativeTimeRange",
+                "lockExpiryTimeout",
+                "maxCount"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaLockFileSyncsResponse"
+            }
+          }
+        },
+        "tags": [
+          "fileSync"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "filter",
+          "workerId",
+          "relativeTimeLimit",
+          "relativeTimeRange",
+          "lockExpiryTimeout",
+          "maxCount"
         ]
       }
     },
@@ -96665,7 +96921,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -96739,7 +96997,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -97818,7 +98078,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -97892,7 +98154,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -99030,7 +99294,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -99104,7 +99370,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 },
@@ -99774,7 +100042,9 @@
                     "50",
                     "51",
                     "52",
-                    "53"
+                    "53",
+                    "54",
+                    "55"
                   ],
                   "type": "string",
                   "x-enumLabels": [
@@ -99848,7 +100118,9 @@
                     "REPORT_EXPORT",
                     "LIVE_ENTRY_ARCHIVE",
                     "STORAGE_UPDATE",
-                    "STORAGE_PERIODIC_EXPORT"
+                    "STORAGE_PERIODIC_EXPORT",
+                    "STORAGE_PERIODIC_PURGE",
+                    "STORAGE_PERIODIC_DELETE_LOCAL"
                   ],
                   "x-enumType": "KalturaBatchJobType"
                 }
@@ -118098,6 +118370,7 @@
                   "type": "integer"
                 },
                 "maxSize": {
+                  "default": 9223372036854776000,
                   "type": "integer"
                 },
                 "storageProfileId": {
@@ -123471,6 +123744,62 @@
           "newFirstName",
           "newLastName",
           "otp"
+        ]
+      }
+    },
+    "/service/user/action/validateHashKey": {
+      "post": {
+        "description": "Validate hash key",
+        "operationId": "user.validateHashKey",
+        "parameters": [
+          {
+            "$ref": "#/parameters/ks"
+          },
+          {
+            "$ref": "#/parameters/format"
+          },
+          {
+            "$ref": "#/parameters/clientTag"
+          },
+          {
+            "$ref": "#/parameters/partnerId"
+          },
+          {
+            "$ref": "#/parameters/responseProfile"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "properties": {
+                "hashKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "hashKey"
+              ],
+              "type": "object"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/KalturaAuthentication"
+            }
+          },
+          "x-Errors": {
+            "description": "* `LOGIN_DATA_NOT_FOUND`: Login id not found\n* `NEW_PASSWORD_HASH_KEY_INVALID`: Given hash key is invalid\n* `NEW_PASSWORD_HASH_KEY_EXPIRED`: Given hash key has expired\n* `INVALID_ACCESS_TO_PARTNER_SPECIFIC_SEARCH`: Invalid access to PARTNER_SPECIFIC search from partner [@PID@]\n* `INTERNAL_SERVERL_ERROR`: Internal server error occurred"
+          }
+        },
+        "tags": [
+          "user"
+        ],
+        "x-kaltura-format": "post",
+        "x-kaltura-parameters": [
+          "hashKey"
         ]
       }
     },
@@ -129376,6 +129705,18 @@
             "53"
           ],
           "title": "STORAGE_PERIODIC_EXPORT"
+        },
+        {
+          "enum": [
+            "54"
+          ],
+          "title": "STORAGE_PERIODIC_PURGE"
+        },
+        {
+          "enum": [
+            "55"
+          ],
+          "title": "STORAGE_PERIODIC_DELETE_LOCAL"
         }
       ],
       "title": "KalturaBatchJobType"
