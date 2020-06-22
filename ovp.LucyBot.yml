@@ -632,6 +632,10 @@ webNavigation:
     markdownURL: /assets/documentation/player-portal/web/api-web.html
     path: "/api-web" 
 
+  - title: "Player Plugins"
+    markdownURL: /assets/documentation/player-portal/web/building-plugins-web.html
+    path: "/plugins-web" 
+
   - title: "Handling Player Errors"
     markdownURL: /assets/documentation/player-portal/web/errors-web.html
     path: "/errors-web"
