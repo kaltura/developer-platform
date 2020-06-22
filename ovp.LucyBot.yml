@@ -242,6 +242,11 @@ operationNavigation:
         path: "/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html"
         discussionURL: null
 
+      - title: "Kaltura Express Recorder"
+        markdownURL: /assets/documentation/Ingest_and_Upload_Media/express-recorder.html
+        path: "/Ingest_and_Upload_Media/express-recorder.html"
+        discussionURL: null
+
       - tag: "uploadToken"
       - tag: "media"
       - tag: "captionAsset"
@@ -715,7 +720,7 @@ iosNavigation:
     markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
     path: "/download-to-go-ios"
 
-  - title: "Casting"
+  - title: "Casting for iOS"
     markdownURL: /assets/documentation/player-portal/ios/casting-ios.html
     path: "/casting-ios"   
 
@@ -764,7 +769,7 @@ androidNavigation:
     markdownURL: /assets/documentation/player-portal/android/download-to-go-android.html
     path: "/download-to-go-android" 
 
-  - title: "Casting"
+  - title: "Casting for Android"
     markdownURL: /assets/documentation/player-portal/android/casting-android.html
     path: "/casting-android" 
 
