@@ -781,6 +781,10 @@ androidNavigation:
     markdownURL: /assets/documentation/player-portal/android/ads-android.html
     path: "/ads-android"    
     
+  - title: "Playlist Configuration"
+    markdownURL: /assets/documentation/player-portal/android/playlist-android.html
+    path: "/playlist-android"
+
   # - title: "Player UI Tutorial"
   #   markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
   #   path: "/player-ui-android" 
