@@ -711,6 +711,10 @@ iosNavigation:
     markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
     path: "/download-to-go-ios"
 
+  - title: "Casting"
+    markdownURL: /assets/documentation/player-portal/ios/casting-ios.html
+    path: "/casting-ios"   
+
   - title: "Offline Assets"
     markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
     path: "/offline-assets-ios"
@@ -755,6 +759,10 @@ androidNavigation:
   - title: "Download-to-go"
     markdownURL: /assets/documentation/player-portal/android/download-to-go-android.html
     path: "/download-to-go-android" 
+
+  - title: "Casting"
+    markdownURL: /assets/documentation/player-portal/android/casting-android.html
+    path: "/casting-android" 
 
   - title: "DRM Schemes"
     markdownURL: /assets/documentation/player-portal/android/drm-android.html
