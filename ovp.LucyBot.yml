@@ -168,7 +168,12 @@ operationNavigation:
       - title: "API Usage Guideliness "
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/api-guidelines.html
         path: "/VPaaS-API-Getting-Started/api-guidelines.html"
-        discussionURL: null   
+        discussionURL: null 
+
+      - title: "Supported Devices"
+        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/supported-devices.html
+        path: "/VPaaS-API-Getting-Started/supported-devices.html"
+        discussionURL: null  
 
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
