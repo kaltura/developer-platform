@@ -242,6 +242,11 @@ operationNavigation:
         path: "/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html"
         discussionURL: null
 
+      - title: "Kaltura Express Recorder"
+        markdownURL: /assets/documentation/Ingest_and_Upload_Media/express-recorder.html
+        path: "/Ingest_and_Upload_Media/express-recorder.html"
+        discussionURL: null
+
       - tag: "uploadToken"
       - tag: "media"
       - tag: "captionAsset"
@@ -632,6 +637,10 @@ webNavigation:
     markdownURL: /assets/documentation/player-portal/web/api-web.html
     path: "/api-web" 
 
+  - title: "Player Plugins"
+    markdownURL: /assets/documentation/player-portal/web/building-plugins-web.html
+    path: "/plugins-web" 
+
   - title: "Handling Player Errors"
     markdownURL: /assets/documentation/player-portal/web/errors-web.html
     path: "/errors-web"
@@ -711,6 +720,10 @@ iosNavigation:
     markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
     path: "/download-to-go-ios"
 
+  - title: "Casting for iOS"
+    markdownURL: /assets/documentation/player-portal/ios/casting-ios.html
+    path: "/casting-ios"   
+
   - title: "Offline Assets"
     markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
     path: "/offline-assets-ios"
@@ -756,6 +769,10 @@ androidNavigation:
     markdownURL: /assets/documentation/player-portal/android/download-to-go-android.html
     path: "/download-to-go-android" 
 
+  - title: "Casting for Android"
+    markdownURL: /assets/documentation/player-portal/android/casting-android.html
+    path: "/casting-android" 
+
   - title: "DRM Schemes"
     markdownURL: /assets/documentation/player-portal/android/drm-android.html
     path: "/drm-android" 
@@ -767,9 +784,3 @@ androidNavigation:
   - title: "Playlist Configuration"
     markdownURL: /assets/documentation/player-portal/android/playlist-android.html
     path: "/playlist-android"
-
-  # - title: "Player UI Tutorial"
-  #   markdownURL: /assets/documentation/player-portal/android/player-ui-android.html
-  #   path: "/player-ui-android" 
-
-    
