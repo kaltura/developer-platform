@@ -452,6 +452,7 @@ operationNavigation:
       - tag: "permissionItem"
       # `accessControl` service was deprecated in favour of `accessControlProfile`  
       - tag: "accessControl"
+      - tag: "conference"
         hide: true
       - tag: "adminUser"
         hide: true
