@@ -455,6 +455,8 @@ operationNavigation:
         hide: true
       - tag: "adminUser"
         hide: true
+      - tag: "conference"
+        hide: true
       - tag: "auditTrail"
     #- title: "Optimize API Requests"
     #prerender: false

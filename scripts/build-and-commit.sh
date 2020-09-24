@@ -27,8 +27,8 @@ rm -rf generated/ott/*
 TARGET_API=ott ./scripts/resources/all.sh
 TARGET_API=ott lucybot build --prerender --destination generated/ott
 
-cd generated/ott
-echo "Commiting OTT build"
-git add . >> /dev/null
-git commit -a -m "Build site" >> /dev/null
-git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/ott-developer-platform-generated HEAD:$BRANCH >> /dev/null 2>&1
+#cd generated/ott
+#echo "Commiting OTT build"
+#git add . >> /dev/null
+#git commit -a -m "Build site" >> /dev/null
+#git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/ott-developer-platform-generated HEAD:$BRANCH >> /dev/null 2>&1
