@@ -453,8 +453,6 @@ operationNavigation:
       # `accessControl` service was deprecated in favour of `accessControlProfile`  
       - tag: "accessControl"
         hide: true
-      - tag: "conference"
-        hide: true
       - tag: "adminUser"
         hide: true
       - tag: "auditTrail"
