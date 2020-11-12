@@ -524,6 +524,13 @@ operationNavigation:
     searchable: true
     autoselect: false
 
+  - title: "Sample applications"
+    children:
+      - title: "Video social network"
+        markdownURL: /assets/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html
+        path: "/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html"
+        discussionURL: null
+
   - title: "Contribute"
     children:
       - title: "Article Style and Structure Guidelines
