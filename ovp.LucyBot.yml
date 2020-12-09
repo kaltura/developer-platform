@@ -530,6 +530,10 @@ operationNavigation:
         markdownURL: /assets/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html
         path: "/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html"
         discussionURL: null
+      - title: "Meetabout: Kaltura Virtual Rooms Example"
+        markdownURL: /assets/documentation/Inspiring-Examples/Meetabout-Virtual-Rooms-App.html
+        path: "/Inspiring-Examples/Meetabout-Virtual-Rooms-App.html"
+        discussionURL: null
 
   - title: "Contribute"
     children:
