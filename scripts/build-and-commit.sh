@@ -12,6 +12,7 @@ TARGET_API=ovp ./scripts/resources/all.sh
 TARGET_API=ovp lucybot build --prerender --destination generated/ovp
 
 cd generated/ovp
+git pull
 echo "Commiting OVP build"
 git add . >> /dev/null
 echo "Added everything to commit"
