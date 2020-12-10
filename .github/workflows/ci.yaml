@@ -26,8 +26,7 @@ jobs:
         repository: LucyBot-Inc/documentation-generator 
         token: ${{ secrets.LB_GITHUB_ACCESS_TOKEN }} 
         path: lb
-    - run: cd lb && ls -al && git fetch --all && git tag && git checkout v4.8.12 && npm install -g
-    #- run: npm install -g https://$LB_GITHUB_ACCESS_TOKEN@github.com/LucyBot-Inc/documentation-generator#v4.8.12
+    - run: cd lb && git fetch --all && git tag && git checkout v4.8.12 && npm install -g
     - run: npm install
     - run: ./scripts/build-and-commit.sh
     env:
