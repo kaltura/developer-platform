@@ -1,6 +1,9 @@
 name: Node.js CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -19,8 +22,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g https://${{secrets.LB_GITHUB_ACCESS_TOKEN}}@github.com/LucyBot-Inc/documentation-generator#v4.8.12
     - run: npm install
-    - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-    - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
     - ./scripts/build-and-commit.sh
     env:
       CI: true
