@@ -17,7 +17,7 @@ git add . >> /dev/null
 echo "Added everything to commit"
 git commit -a -m "Build site" >> /dev/null
 echo "Committed everything"
-git push -q -u https://$KALT_GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:$BRANCH # >> /dev/null 2>&1
+git push -q -u https://$KALT_GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:${GITHUB_REF##*/} # >> /dev/null 2>&1
 echo "Pushed new site"
 cd ../../
 
