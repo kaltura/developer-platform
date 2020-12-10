@@ -20,8 +20,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install -g https://${{secrets.LB_GITHUB_ACCESS_TOKEN}}@github.com/LucyBot-Inc/documentation-generator#v4.8.12
+    - run: npm install -g https://$LB_GITHUB_ACCESS_TOKEN@github.com/LucyBot-Inc/documentation-generator#v4.8.12
     - run: npm install
     - run: ./scripts/build-and-commit.sh
     env:
       CI: true
+      LB_GITHUB_ACCESS_TOKEN: ${{secrets.LB_GITHUB_ACCESS_TOKEN}}
+
