@@ -44,7 +44,7 @@ App.get('/player', (req, res) => {
     res.send(html);
   });
 })
-App.get('/marketing', (req, res) => {
+App.get('/vpaas_for_devs', (req, res) => {
   res.render('marketing-index', {}, (err, html) => {
     if (err) res.status(500).send(err.toString());
     res.send(html);
