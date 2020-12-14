@@ -45,7 +45,7 @@ App.get('/player', (req, res) => {
   });
 })
 App.get('/vpaas_for_devs', (req, res) => {
-  res.render('marketing-index', {}, (err, html) => {
+  res.render('marketing-index', {utm_source: req.query.utm_source,utm_campaign:req.query.utm_campaign, utm_medium:req.query.utm_medium}, (err, html) => {
     if (err) res.status(500).send(err.toString());
     res.send(html);
   });
