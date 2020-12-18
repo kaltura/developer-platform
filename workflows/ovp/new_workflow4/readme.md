@@ -102,6 +102,22 @@ API response. For example:
 {
   "method": "post",
   "path": "/service/session/action/start",
-  "parameters": []
+  "parameters": [
+    {
+      "name": "body",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "privileges": {
+            "dynamicValue": {
+              "fromStep": 0,
+              "value": "id"
+            }
+          }
+        }
+      },
+      "consoleDefault": "{\"expiry\":86400,\"type\":0}"
+    }
+  ]
 }
 ```
