@@ -73,12 +73,9 @@ API response. For example:
     {
       "name": "body",
       "schema": {
-        "type": "object",
-        "properties": {
-          "scheduleResource": {}
-        }
+        "type": "object"
       },
-      "consoleDefault": "{}"
+      "consoleDefault": "{\"scheduleResource\":{\"objectType\":\"KalturaLocationScheduleResource\"}}"
     }
   ]
 }
