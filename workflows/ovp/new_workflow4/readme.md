@@ -4,7 +4,7 @@
 }
 -->
 
-# New Workflow4
+# Think I got it
 Use the text editor to write a description of what your workflow
 will cover. You can use
 [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
@@ -80,7 +80,10 @@ API response. For example:
               "objectType": {
                 "consoleDefault": "KalturaLocationScheduleResource"
               },
-              "name": {}
+              "name": {},
+              "tags": {
+                "consoleDefault": "vcprovider:newrow"
+              }
             }
           }
         }
@@ -88,5 +91,17 @@ API response. For example:
       "consoleDefault": "{}"
     }
   ]
+}
+```
+
+## 2
+
+
+### API Call
+```json
+{
+  "method": "post",
+  "path": "/service/session/action/start",
+  "parameters": []
 }
 ```
