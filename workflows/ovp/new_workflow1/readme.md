@@ -26,8 +26,8 @@ Once it's saved to GitHub, you can always come back to your workflow by clicking
 by going to the pull request you generated, choosing the recipe's `readme.md`
 file, and clicking 'Raw'.
 
-## New Step
-## Adding your first step
+## New Step k
+## Adding your first step DONE
 Each step of the recipe should describe a single task, usually an API call.
 Use this area to tell the user what's happening, and how this step relates to the
 workflow as a whole.
@@ -83,5 +83,5 @@ API response. For example:
 
 ### Demo
 ```html
-tt
+tt k?
 ```
