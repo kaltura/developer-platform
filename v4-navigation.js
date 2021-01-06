@@ -1,6 +1,7 @@
 const TARGET_API = process.env.TARGET_API || 'ovp';
 const openapi = require('./' + TARGET_API + '.openapi.json');
 const fs = require('fs');
+const FULL_PRERENDER = process.env.FULL_PRERENDER === "1";
 
 function getOperations(tag) {
   let ops = [];
@@ -22,6 +23,7 @@ module.exports = function(config) {
   function setPathForItem(item, oldPath='') {
     let nextPath = oldPath;
     if (item.tag) {
+      item.prerender = FULL_PRERENDER;
       nextPath += '/' + item.tag;
       item.path = '/service/' + item.tag;
       addRedirect(nextPath, item.path);
@@ -31,6 +33,7 @@ module.exports = function(config) {
         })
       }
     } else if (item.operation) {
+      item.prerender = FULL_PRERENDER;
       nextPath += '/' + item.operation.replace(/\W+/g, '_');
       let [service, action] = item.operation.split('.');
       item.path = '/service/' + service + '/action/' + action;
