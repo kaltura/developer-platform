@@ -1,7 +1,7 @@
 set -e
 
 git config --global user.name "Travis CI"
-git config --global user.email "bobby.brennan@gmail.com"
+git config --global user.email "jess.portnoy@kaltura.com"
 
 mkdir ./markdown/generated
 
@@ -11,6 +11,7 @@ full_prerender=0
 if [ "$(git log -1 --pretty=format:'%an %s')" == *"[full build]"* ]; then
   rm -rf generated/ovp/*
   full_prerender=1
+  echo "Full build requested. All docs will be rendered anew."
 fi
 TARGET_API=ovp ./scripts/resources/all.sh
 TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination generated/ovp
