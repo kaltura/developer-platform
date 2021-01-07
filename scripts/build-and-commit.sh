@@ -7,9 +7,13 @@ mkdir ./markdown/generated
 
 echo "Building OVP Website..."
 git clone https://github.com/kaltura/developer-platform-generated generated/ovp
-rm -rf generated/ovp/*
+full_prerender=0
+if [ "$(git log -1 --pretty=format:'%an %s')" == *"[full build]"* ]; then
+  rm -rf generated/ovp/*
+  full_prerender=1
+fi
 TARGET_API=ovp ./scripts/resources/all.sh
-TARGET_API=ovp lucybot build --prerender --destination generated/ovp
+TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination generated/ovp
 
 cd generated/ovp
 git pull
