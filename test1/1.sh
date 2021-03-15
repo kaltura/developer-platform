@@ -14,7 +14,7 @@
 #===============================================================================
 
 #set -o nounset                              # Treat unset variables as an error
-if [ $# lt 7];then
-    echo "This will result in a parse err"
+if [ $# -lt 7 ];then
+    echo "This will not result in a parse err"
 fi
 

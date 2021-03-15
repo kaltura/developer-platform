@@ -8,7 +8,7 @@
 							"warn": "10s",
 							"trace": "500ms",
 							"debug": "2s",
-							"info": "5s",
+							"info": "5s"
 
 						},
 						"query": {

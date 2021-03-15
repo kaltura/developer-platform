@@ -6,7 +6,7 @@
         <clientTag>Stand alone php 1.0.0</clientTag>
         <curlTimeout>30</curlTimeout>
         <userAgent>Stand alone php 1.0.0</userAgent>
-    </config
+    </config>
     
 	<session>
         <partnerId>-2</partnerId>
