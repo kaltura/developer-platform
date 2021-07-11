@@ -6,6 +6,7 @@ uiOptions:
   discussionTitle: 'User contributed notes & discussion'
   redirectHashURLs: true
   embedConsoleInDocumentation: true
+  optionalizeHost: true
   messages:
     beta: "Please note: this action is experimental."
     deprecated: |
