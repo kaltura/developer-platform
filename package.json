@@ -33,7 +33,7 @@
     "jsonwebtoken": "^8.5.1",
     "kaltura": "file:lib/ott",
     "kaltura-client": "^15.5.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "querystring": "^0.2.0",
     "request": "^2.88.0",
     "sass": "^1.22.10",
