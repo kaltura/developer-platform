@@ -121,7 +121,6 @@ routes:
 operationNavigation:
   - title: "Overview"
     markdownURL: /assets/documentation/overview.html
-    icon: Homepage
     discussionURL: null
     meta:
       title: "Kaltura VPaaS API Overview"
@@ -129,7 +128,6 @@ operationNavigation:
 
   - title: "Getting Started"
     path: "/VPaaS-API-Getting-Started"
-    icon: GettingStarted
     children:
 
       - title: "Get Started with the Kaltura API"
@@ -177,9 +175,8 @@ operationNavigation:
         path: "/VPaaS-API-Getting-Started/supported-devices.html"
         discussionURL: null  
 
-  - title: "Media Management & Streaming"
+  - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
-    icon: Media
     disableEditLink: true
     discussionURL: null
     meta:
@@ -189,9 +186,8 @@ operationNavigation:
       - title: "Support Matrix"
         markdownFile: ./markdown/generated/support_matrix.md
         disableEditLink: true
-  - title: "Media Management & Streaming"
+  - title: "XML Schemas"
     markdownFile: ./markdown/schemas.md
-    icon: VideoPlayer
     children:
       - title: 'Syndication Feed'
         markdownURL: /assets/markdown/generated/syndication.md
@@ -211,8 +207,7 @@ operationNavigation:
       - title: 'Drop Folder'
         markdownURL: /assets/markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         disableEditLink: true
-  - title: "Live Webcasting"
-    icon: LiveWebcasting
+  - title: "Generate API Sessions"
     children:
       - title: "session"
         tag: "session"
@@ -225,8 +220,7 @@ operationNavigation:
           - operation: "session.startWidgetSession"
       - tag: "appToken"
       - operation: 'user.loginByLoginId'
-  - title: "Real-Time Conferencing"
-    icon: Conferencing
+  - title: "Ingest and Upload Media"
     children:
       - title: "Introduction to Content Preparation & Transcoding"
         markdownURL: /assets/documentation/Ingest_and_Upload_Media/Content-Ingestion-Transcoding.html
@@ -268,8 +262,7 @@ operationNavigation:
       # `upload` service was deprecated in favour of `UploadToken`  
       - tag: "upload"
         hide: true
-  - title: "Analytics & Reporting"
-    icon: Reporting
+  - title: "Execute Bulk Ingest and Updates"
     prerender: false
     children:
       - operation: "media.bulkUploadAdd"
@@ -289,8 +282,7 @@ operationNavigation:
       # `bulkUpload` service was deprecated in favour of `bulk`  
       - tag: "bulkUpload"
         hide: true
-  - title: "Video Experiences"
-    icon: VideoExperiences
+  - title: "Convert and Transcode Media"
     children:
       - title: "How to use the API to Add a New Conversion Profile"
         markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html
@@ -312,6 +304,245 @@ operationNavigation:
       - tag: "conversionProfile"
       - tag: "conversionProfileAssetParams"
       - tag: "mediaInfo"
+  - title: "Live Stream and Broadcast"
+    prerender: false
+    children:
+      - tag: "liveStream"
+  - title: "Enrich and Organize Metadata"
+    children:
+      - title: "How to Retrieve Metadata of a Media Entry using the API?"
+        markdownURL: /assets/documentation/Enrich-and-Organize-Metadata/how-retrieve-metadata-media-entry-using-api.html
+        path: "/Enrich-and-Organize-Metadata/how-retrieve-metadata-media-entry-using-api.html"
+        discussionURL: null
+      - tag: "baseEntry"
+      - tag: "category"
+      - tag: "categoryEntry"
+      - tag: "categoryUser"
+      - tag: "media"
+      - tag: "metadata"
+      - tag: "metadataProfile"
+      - tag: "captionAsset"
+      - tag: "captionParams"
+      - tag: "captionAssetItem"
+      - tag: "attachmentAsset"
+      - tag: "thumbAsset"
+      - tag: "thumbParams"
+      - tag: "tag"
+  - title: "Search, Discover and Personalize"
+    children:
+      - title: "Searching with Kaltura eSearch API"
+        markdownURL: /assets/documentation/Search--Discover-and-Personalize/search.html
+        path: "/Search--Discover-and-Personalize/esearch.html"
+        discussionURL: null        
+      - title: "How to perform AND, OR, NOT and Exact Match searches in API"
+        markdownURL: /assets/documentation/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html
+        path: "/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html"
+        discussionURL: null
+      - operation: "baseEntry.list"
+      - tag: "media"
+      - tag: "captionAssetItem"
+      - tag: "playlist"
+      - tag: "like"
+      - tag: "shortLink"
+      - tag: "tag"
+      - tag: "user"
+      - tag: "groupUser"
+  - title: "Engage and Publish"
+    children:
+      - title: "Adding a Thumbnail Flavor Parameter that Supports Resizing Auto-generated Thumbnails"
+        markdownURL: /assets/documentation/Engage_and_Publish/how-add-thumbnail-flavor-param-supports-resizing-auto-generated-thumbnails-transcoding-profile.html
+        path: "/Engage_and_Publish/how-add-thumbnail-flavor-param-supports-resizing-auto-generated-thumbnails-transcoding-profile.html"
+        discussionURL: null
+
+      - title: "How To Create a Video Thumbnail Rotator in JavaScript"
+        markdownURL: /assets/documentation/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html
+        path: "/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html"
+        discussionURL: null
+
+      - title: "Kaltura Video Thumbnail and Image Transformation API"
+        markdownURL: /assets/documentation/Engage_and_Publish/kaltura-thumbnail-api.html
+        path: "/Engage_and_Publish/kaltura-thumbnail-api.html"
+        discussionURL: null
+      - tag: "playlist"
+      - tag: "thumbAsset"
+      - tag: "cuePoint"
+      - tag: "quiz"
+      - tag: "userEntry"
+      - tag: "like"
+      - tag: "uiConf"
+      - tag: "annotation"
+        hide: true
+  - title: "Media Analytics"
+    prerender: false
+    children:
+      - title: "How to Generate Interactive Video Quiz Reports Using the Kaltura API?"
+        markdownURL: /assets/documentation/Video-Analytics-and-Insights/how-generate-interactive-video-quiz-reports-using-kaltura-api.html
+        path: "/Video-Analytics-and-Insights/how-generate-interactive-video-quiz-reports-using-kaltura-api.html"
+        discussionURL: null
+
+      - title: "Kaltura's Media Analytics"
+        markdownURL: /assets/documentation/Video-Analytics-and-Insights/media-analytics.html
+        path: "/Video-Analytics-and-Insights/media-analytics.html"
+        discussionURL: null
+      - tag: "analytics"
+      - tag: "report"
+      - tag: "liveReports"
+      - tag: "liveStats"
+      - tag: "stats"
+  - title: "Deliver and Distribute Media"
+    prerender: false
+    children:
+      - title: "Video Search Engine Optimization (SEO)"
+        markdownURL: /assets/documentation/Deliver-and-Distribute-Media/videoSEO.html
+        path: "/Deliver-and-Distribute-Media/videoSEO.html"
+        discussionURL: null
+
+      - title: "The playManifest Service: Streaming API for Videos and Playlists"
+        markdownURL: /assets/documentation/Deliver-and-Distribute-Media/playManifest-streaming-api.html
+        path: "/Deliver-and-Distribute-Media/playManifest-streaming-api.html"
+        discussionURL: null
+      - tag: "playManifest"
+      - tag: "syndicationFeed"
+      - tag: "entryDistribution"
+      - tag: "distributionProfile"
+      - tag: "distributionProvider"
+      - tag: "deliveryProfile"
+        hide: true
+      - tag: "storageProfile"
+  - title: "Secure, Control and Govern"
+    children:
+      - title: "Content Categories Management"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Categories-Management.html
+        path: "/Secure_Control_and_Govern/Content-Categories-Management.html"
+        discussionURL: null
+        seeAlso:
+          - operation: "category.add"
+          - operation: "categoryEntry.add"
+          - operation: "categoryEntry.delete"
+
+      - title: "Content Entitlements and Privacy Enforcement"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html
+        path: "/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html"
+        discussionURL: null
+
+      - title: "Access Control and Content Retrieval on Connected Devices"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html
+        path: "/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html"
+        discussionURL: null
+
+      - title: "The Kaltura Media Access Control Model"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/kaltura-media-access-control-model.html
+        path: "/Secure_Control_and_Govern/kaltura-media-access-control-model.html"
+        discussionURL: null
+
+      - title: "Kaltura Audit-Trail - Viewer Example Application"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html
+        path: "/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html"
+        discussionURL: null
+
+
+      - tag: "partner"
+      - tag: "user"
+      - tag: "userRole"
+      - tag: "groupUser"
+      - tag: "accessControlProfile"
+      - tag: "categoryEntry"
+      - tag: "categoryUser"
+      - tag: "permission"
+      - tag: "permissionItem"
+      # `accessControl` service was deprecated in favour of `accessControlProfile`  
+      - tag: "accessControl"
+        hide: true
+      - tag: "adminUser"
+        hide: true
+      - tag: "conference"
+        hide: true
+      - tag: "auditTrail"
+    #- title: "Optimize API Requests"
+    #prerender: false
+    #children:
+    #  - tag: "multirequest"
+    #  - tag: "responseProfile"
+  - title: "Integration, Scheduling and Hooks"
+    prerender: false
+    children:
+      - title: "Recorded and Live Stream Events Scheduling and iCal API"
+        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html
+        path: "/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html"
+        discussionURL: null
+      - title: "Scheduling Triggers using iCal"
+        markdownFile: ./markdown/scheduling.md
+        children:
+          - tag: "scheduleEvent"
+          - tag: "scheduleEventResource"
+          - tag: "scheduleResource"
+
+      - title: "How To Handle Kaltura Server Notifications in PHP"
+        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html
+        path: "/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html"
+        discussionURL: null
+
+      - tag: "eventNotificationTemplate"
+      - tag: "scheduledTaskProfile"
+      - tag: "integration"
+      - tag: "businessProcessCase"
+      # `notification` service was deprecated in favour of `eventNotificationTemplate`  
+      - tag: "notification"
+        hide: true
+  - title: "Encrypt and License Content"
+    prerender: false
+    children:
+      - tag: "drmLicenseAccess"
+      - tag: "drmPolicy"
+      - tag: "drmProfile"
+      - tag: "playReadyDrm"
+      - tag: "widevineDrm"
+      - tag: "deliveryProfile"
+        hide: true
+  - title: "Manage Documents and Other Assets"
+    prerender: false
+    children:
+      - tag: "baseEntry"
+      - tag: "data"
+      - tag: "documents"
+  - title: "Manage and Deliver Apps and Widgets"
+    prerender: false
+    children:
+      - tag: "uiConf"
+      - tag: "widget"
+      - tag: "fileAsset"
+      - tag: "captureSpace"
+  - title: "Manage Backend and Storage"
+    prerender: false
+    children:
+      - tag: "system"
+      - tag: "storageProfile"
+  - title: "Miscellaneous"
+    prerender: false
+    isMiscellaneous: true
+    hide: true
+    searchable: true
+    autoselect: false
+
+  - title: "Sample applications"
+    children:
+      - title: "Video social network"
+        markdownURL: /assets/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html
+        path: "/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html"
+        discussionURL: null
+      - title: "Meetabout: Kaltura Virtual Rooms Example"
+        markdownURL: /assets/documentation/Inspiring-Examples/Meetabout-Virtual-Rooms-App.html
+        path: "/Inspiring-Examples/Meetabout-Virtual-Rooms-App.html"
+        discussionURL: null
+
+  - title: "Contribute"
+    children:
+      - title: "Article Style and Structure Guidelines
+  VPaaS Website Sample Article"
+        markdownURL: /assets/documentation/Contribute/Article-Style-Structure-Guidelines.html
+        path: "/Contribute/Article-Style-Structure-Guidelines.html"
+        discussionURL: null
+
 workflowNavigation:
   - title: Generate API Sessions
     icon: assets/img/icons/administrative.png
