@@ -50,9 +50,9 @@ pre code {
   font-size: 12px;
 }
 
-.footer {
+/* .footer {
   margin-top: 50px;
-}
+} */
 .collapse.in {
   display: block !important;
 }

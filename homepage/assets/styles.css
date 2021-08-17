@@ -9206,16 +9206,11 @@ hr.separator {
 }
 
 .footer {
-  background-color: #131313;
   color: #777;
-  padding-top: 10px;
   font-family: "Source Sans Pro", sans-serif;
 }
 .footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6 {
   font-family: "Source Sans Pro", sans-serif;
-}
-.footer .container {
-  padding: 0px;
 }
 .footer a {
   color: #777;
