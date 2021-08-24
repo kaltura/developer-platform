@@ -85,3 +85,15 @@ body.spaced-for-kaltura-nav {
 #KalturaBlogContent a {
   color: #fff;
 }
+
+.has-search .form-control-feedback {
+  right: initial;
+  left: 0;
+  color: #ccc;
+}
+
+.has-search .form-control {
+  padding-right: 12px;
+  padding-left: 34px;
+  width: 350px;
+}
