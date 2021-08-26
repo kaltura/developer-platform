@@ -50,9 +50,9 @@ pre code {
   font-size: 12px;
 }
 
-.footer {
+/* .footer {
   margin-top: 50px;
-}
+} */
 .collapse.in {
   display: block !important;
 }
@@ -63,3 +63,25 @@ img {
   max-width:100%; 
 }
 
+/* nav tabs header*/
+.nav-tabs-b {
+  font-size: 1em;
+  color: #006efa;
+  position: relative;
+  top: -3px;
+}
+.nav-tabs-b > span > a {
+  color: #006efa;
+}
+.nav-tabs-b > span > a:hover {
+  text-decoration: none;
+}
+.nav-tabs-b > span {
+  margin-right: 12px;
+  padding-bottom: 12px;
+}
+.nav-tabs-b > span.active {
+  margin-right: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #006efa;
+}
