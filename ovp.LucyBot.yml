@@ -119,7 +119,7 @@ routes:
     redirect: '/workflows/Enrich_and_Organize_Metadata/Serve_WebVTT_Captions'
 
 operationNavigation:
-  - title: "Overview"
+  - title: "Home"
     markdownURL: /assets/documentation/overview.html
     icon: Homepage
     discussionURL: null
