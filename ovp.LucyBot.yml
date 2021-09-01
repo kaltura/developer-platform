@@ -120,8 +120,16 @@ routes:
 
 operationNavigation:
   - title: "Home"
-    markdownURL: /assets/documentation/overview.html
+    markdownURL: /assets/documentation/home.html
     icon: Homepage
+    discussionURL: null
+    meta:
+      title: "Kaltura VPaaS API Overview"
+      description: "Learn how to use the Kaltura VPaaS API"
+
+  - title: "Overview"
+    markdownURL: /assets/documentation/overview.html
+    icon: Reporting
     discussionURL: null
     meta:
       title: "Kaltura VPaaS API Overview"
