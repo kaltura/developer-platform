@@ -102,15 +102,32 @@
         </div>
         <div class="nav-tabs-b">
             <span class="active"><a href="">PHP</a></span>
-            <span><a href="">Java</a></span>
-            <span><a href="">Python</a></span>
-            <span><a href="">Node</a></span>
-            <span><a href="">C#</a></span>
-            <span><a href="">Ruby</a></span>
+            <span class="inactive"><a href="">Java</a></span>
+            <span class="inactive"><a href="">Python</a></span>
+            <span class="inactive"><a href="">Node</a></span>
+            <span class="inactive"><a href="">C#</a></span>
+            <span class="inactive"><a href="">Ruby</a></span>
         </div>
         <div class="row">
             <div class="col col-lg-8">
                 <div class="code">
+                    <!--
+                    <pre>
+                        <code class="language-php-template">
+                            "<?php
+                            $entry = new KalturaMediaEntry();
+                            $entry->mediaType = KalturaMediaType::VIDEO;
+                            $entry->name = "Cat";
+                            $entryResult = $client->media->add($entry);
+                            $entryId = $entryResult->id;
+                            $resource = new KalturaUrlResource();
+                            $resource->url = "https://example.com/catVideo.mp4";
+                            $result = $client->media->addContent($entryId, $resource);
+                            var_dump($result);
+                          ?>"
+                        </code>
+                    </pre>
+                    -->
                     <div><span class="tag">&lt;?php</span></div>
                     <div><span class="indent">&nbsp;&nbsp;&nbsp;</span>$entry = <span class="keyword">new</span> KalturaMediaEntry();</div>
                     <div><span class="indent">&nbsp;&nbsp;&nbsp;</span>$entry-&gt;mediaType = KalturaMediaType::VIDEO;</div>
@@ -124,6 +141,7 @@
                     <div><span class="indent">&nbsp;&nbsp;&nbsp;</span>var_dump($result);</div>
                     <div><span class="tag">?&gt;</span></div>
                 </div>
+                <img class="btn-copy" src="assets/icons/btn-cp.svg" alt="copy">
             </div>
             <div class="col col-lg-4">
                 <div class="card">
