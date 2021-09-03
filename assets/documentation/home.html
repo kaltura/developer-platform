@@ -101,12 +101,12 @@
             <span>Your Work, Sorted.</span>
         </div>
         <div class="nav-tabs-b">
-            <span class="active"><a href="">PHP</a></span>
-            <span class="inactive"><a href="">Java</a></span>
-            <span class="inactive"><a href="">Python</a></span>
-            <span class="inactive"><a href="">Node</a></span>
-            <span class="inactive"><a href="">C#</a></span>
-            <span class="inactive"><a href="">Ruby</a></span>
+            <span class="active" lang="php"><a href="">PHP</a></span>
+            <span class="inactive" lang="java"><a href="">Java</a></span>
+            <span class="inactive" lang="python"><a href="">Python</a></span>
+            <span class="inactive" lang="javascript"><a href="">Node</a></span>
+            <span class="inactive" lang="csharp"><a href="">C#</a></span>
+            <span class="inactive" lang="ruby"><a href="">Ruby</a></span>
         </div>
         <div class="row">
             <div class="col col-lg-8">
@@ -309,11 +309,12 @@ $( document ).ready(function() {
     hljs.initHighlighting();
 });
 $('.nav-tabs-b>span').on('click', function(evt) {
-    console.log('click');
-    // evt.preventDefault();
-    // if (!$(this).hasClass('active')) {
-    //   $('.nav-tabs-b>span').removeClass('active');
-    //   $(this).addClass('active');
-    // }
+    evt.preventDefault();
+    const lang = $(this).attr('lang');
+    $('div.code').hide();
+    $('div.code.' + lang).show();
+    // tabs
+    $('div.code-container > div.nav-tabs-b > span').addClass('inactive');
+    $(this).removeClass('inactive');
   });
 </script>
