@@ -175,8 +175,8 @@ img {
 
 .home-container .code-container img.btn-copy {
   position: absolute;
-  top: 8%;
-  left: 80%;
+  top: 22px;
+  right: 26px;
   cursor: pointer;
 }
 
