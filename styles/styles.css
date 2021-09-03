@@ -149,6 +149,14 @@ img {
   border-radius: 5px;
 }
 
+.home-container .code pre {
+  border: none;
+}
+
+.home-container .code code {
+  background-color: #f4f4f4;
+}
+
 .code span.tag {
   color: #e55866;
 }
@@ -159,6 +167,10 @@ img {
 
 .code span.const {
   color: #00e74e;
+}
+
+.code.java, .code.python, .code.csharp, .code.javascript, .code.ruby {
+  display: none;
 }
 
 .home-container .code-container img.btn-copy {
@@ -189,3 +201,4 @@ img {
 .home-container .btm span.disabed {
   color: gray;
 }
+
