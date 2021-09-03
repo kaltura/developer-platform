@@ -136,6 +136,7 @@ img {
   border: 1px solid #cccccc;
   padding: 20px;
   margin-bottom: 22px;
+  min-height: 195px;
 }
 
 .home-container .explore-container .card p.card-text {
