@@ -72,6 +72,7 @@ img {
 }
 .nav-tabs-b > span > a {
   color: #006efa;
+  text-decoration: none;
 }
 .nav-tabs-b > span > a:hover {
   text-decoration: none;
