@@ -59,7 +59,7 @@ body.spaced-for-kaltura-nav {
 #KalturaNav.navbar li.dropdown > a,
 #KalturaNav.navbar li.dropdown > a:hover,
 #KalturaNav.navbar li.navbar-link > a:not(.btn) {
-  color: #4A4A4A;
+  color: #006efa;
   background-color: #fff;
 }
 #KalturaNav.navbar li.navbar-link:hover > a:not(.btn) {
@@ -76,6 +76,8 @@ body.spaced-for-kaltura-nav {
   padding: 4px 20px;
   margin-top: 7px;
   margin-left: 15px;
+  color: #006efa;
+  border: 2px solid;
 }
 
 #KalturaNav ul.nav {

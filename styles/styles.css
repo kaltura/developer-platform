@@ -72,6 +72,7 @@ img {
 }
 .nav-tabs-b > span > a {
   color: #006efa;
+  text-decoration: none;
 }
 .nav-tabs-b > span > a:hover {
   text-decoration: none;
@@ -81,7 +82,125 @@ img {
   padding-bottom: 12px;
 }
 .nav-tabs-b > span.active {
-  margin-right: 12px;
-  padding-bottom: 12px;
   border-bottom: 2px solid #006efa;
 }
+.nav-tabs-b > span.inactive > a {
+  color: black;
+}
+
+
+/* home */
+.home-container {
+  padding: 10px;
+}
+
+.home-container .title-container {
+  background-image: url("assets/images/interactive-video.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 26%;
+  background-position-y: 72px;
+  padding-right: 210px;
+  padding-bottom: 30px;
+}
+
+.home-container .title-container h5.card-title {
+  font-size: 2.8em;
+}
+
+.home-container .title-container a.btn-primary {
+  margin-right: 20px;
+}
+
+.home-container .title-container a.btn-outline-primary {
+  border: 1px solid #006efa;
+}
+
+.home-container .title-container p.card-text {
+  padding: 10px 0;
+}
+
+.home-container .title {
+  margin-bottom: 20px;
+}
+
+.home-container .title span {
+  font-size: 1.7em;
+}
+
+.home-container .title a {
+  color: #006efa;
+  float: right;
+}
+
+.home-container .explore-container .card {
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-bottom: 22px;
+  min-height: 195px;
+}
+
+.home-container .explore-container .card p.card-text {
+  font-size: 0.9em;
+}
+
+.home-container .code {
+  margin-top: 10px;
+  padding: 16px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.home-container .code pre {
+  border: none;
+}
+
+.home-container .code code {
+  background-color: #f4f4f4;
+}
+
+.code span.tag {
+  color: #e55866;
+}
+
+.code span.keyword {
+  color: #ef4df2;
+}
+
+.code span.const {
+  color: #00e74e;
+}
+
+.code.java, .code.python, .code.csharp, .code.javascript, .code.ruby {
+  display: none;
+}
+
+.home-container .code-container img.btn-copy {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  cursor: pointer;
+}
+
+.home-container .code-container .card .card-title {
+  font-weight: bold;
+}
+
+.home-container .code-container .card p.card-text {
+  font-size: 0.9em;
+  padding: 10px 0;
+}
+
+.home-container .btm {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-container .btm span {
+  margin: 0 10px;
+}
+
+.home-container .btm span.disabed {
+  color: gray;
+}
+
