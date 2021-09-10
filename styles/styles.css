@@ -204,3 +204,29 @@ img {
   color: gray;
 }
 
+/* navbar */
+.navbar-header .has-search {
+  display: inline-block;
+  margin-left:18px;
+}
+
+.side-menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .navbar-header .has-search {
+    display: none;
+  }
+
+  .side-menu-toggle {
+    display: block;
+    color: #006efa;
+    background-color: white;
+    position: relative;
+    top: 8px;
+    border: none;
+    float: left;
+    padding-right: 10px;
+  }
+}
