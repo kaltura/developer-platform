@@ -95,13 +95,11 @@ img {
 }
 
 .home-container .title-container {
-  background-image: url("assets/images/interactive-video.png");
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: 26%;
-  background-position-y: 72px;
-  padding-right: 210px;
-  padding-bottom: 30px;
+  padding: 20px;
+}
+
+.home-container .diagram {
+  padding: 20px;
 }
 
 .home-container .title-container h5.card-title {
@@ -177,7 +175,7 @@ img {
 
 .home-container .code-container img.btn-copy {
   position: absolute;
-  top: 22px;
+  top: 15px;
   right: 26px;
   cursor: pointer;
 }

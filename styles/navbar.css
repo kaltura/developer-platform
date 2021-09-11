@@ -61,6 +61,7 @@ body.spaced-for-kaltura-nav {
 #KalturaNav.navbar li.navbar-link > a:not(.btn) {
   color: #006efa;
   background-color: #fff;
+  margin-top: 0px;
 }
 #KalturaNav.navbar li.navbar-link:hover > a:not(.btn) {
   opacity: .7;
