@@ -175,7 +175,7 @@ img {
 
 .home-container .code-container img.btn-copy {
   position: absolute;
-  top: 15px;
+  top: 20px;
   right: 26px;
   cursor: pointer;
 }
@@ -212,7 +212,7 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
   .navbar-header .has-search {
     display: none;
   }
@@ -227,4 +227,8 @@ img {
     float: left;
     padding-right: 10px;
   }
+
+  .home-container .code-container img.btn-copy {
+    top: 15px;
+  }  
 }
