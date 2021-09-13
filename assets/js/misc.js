@@ -16,4 +16,8 @@ $(window).on('load', function() {
       $(this).addClass('active');
     }
   });
+
+  $('.side-menu-toggle').on('click', function() {
+    window.sideMenuComponent.toggle();
+  });
 });
