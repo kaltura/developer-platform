@@ -5,8 +5,7 @@ window.lucybot.formatDatetime = function(date) {
 $(window).on('load', function() {
   console.log('init...');
   $('input.g-search-box').on('input', function() {
-    window.searchService.query = $(this).val();
-    window.searchService.performSearch();
+    window.globalSearch($(this).val());
   });
 
   $('.nav-tabs-b>span').on('click', function(evt) {
@@ -20,6 +19,6 @@ $(window).on('load', function() {
   });
 
   $('.side-menu-toggle').on('click', function() {
-    window.sideMenuComponent.toggle();
+    window.toggleSideMenu();
   });
 });
