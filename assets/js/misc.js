@@ -15,6 +15,8 @@ $(window).on('load', function() {
       $('.nav-tabs-b>span').removeClass('active');
       $(this).addClass('active');
     }
+    // nav
+    window.markdownNavigation($(this).attr('data-to'));
   });
 
   $('.side-menu-toggle').on('click', function() {
