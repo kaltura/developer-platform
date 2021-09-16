@@ -125,6 +125,7 @@
 .footer .kaltura-links .social-icon-container {
     text-align: center;
   }
+
 }
 
 
@@ -154,4 +155,38 @@
 
 .desc { 
   color: #9e9e9e;
+}
+
+.kaltura-foot-links {
+  background-color: #006efa;
+  color: white; 
+  padding: 50px 70px;
+}
+
+.kaltura-foot-links .title {
+  font-weight: bold;
+}
+
+.kaltura-foot-links .link {
+  padding-top: 12px;
+}
+
+.kaltura-foot-links .link a {
+  color: white;
+  font-size:0.9em;
+}
+
+@media (max-width: 412px) {
+
+  .kaltura-foot-links {
+    padding: 50px 50px;
+  }  
+
+  .kaltura-foot-links .title {
+    padding-top: 15px;
+  }
+
+  .footera {
+    padding: 40px 50px;
+  }
 }
