@@ -129,7 +129,7 @@
 }
 
 
-.footera {
+.footer-section .footer-container {
   background-color: #f4f4f4;
   padding: 40px 80px;
   width: 100%;
@@ -186,7 +186,7 @@
     padding-top: 15px;
   }
 
-  .footera {
+  .footer-section .footer-container {
     padding: 40px 50px;
   }
 }
