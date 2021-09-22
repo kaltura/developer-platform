@@ -149,16 +149,19 @@ guideNavigation:
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html
         path: "/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html"
         discussionURL: null
+        badge: "Guide"
 
       - title: "How to Create a Kaltura Session"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html
         path: "/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html"
         discussionURL: null
+        badge: "Workflow"
 
       - title: "Kaltura API Authentication and Security"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html
         path: "/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html"
         discussionURL: null
+        badge: "Workflow"
 
       - title: "Application Tokens"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/application-tokens.html
