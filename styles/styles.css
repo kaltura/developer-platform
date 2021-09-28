@@ -66,12 +66,12 @@ img {
 /* nav tabs header*/
 .nav-tabs-b {
   font-size: 1em;
-  color: #006efa;
+  color: black;
   position: relative;
   top: -3px;
 }
 .nav-tabs-b > span > a {
-  color: #006efa;
+  color: black;
   text-decoration: none;
 }
 .nav-tabs-b > span > a:hover {
@@ -82,7 +82,11 @@ img {
   padding-bottom: 12px;
 }
 .nav-tabs-b > span.active {
+  color: #006efa;
   border-bottom: 2px solid #006efa;
+}
+.nav-tabs-b > span.active > a {
+  color: #006efa;
 }
 .nav-tabs-b > span.inactive > a {
   color: black;
@@ -135,7 +139,7 @@ img {
   border: 1px solid #cccccc;
   padding: 20px;
   margin-bottom: 22px;
-  min-height: 195px;
+  min-height: 220px;
 }
 
 .home-container .explore-container .card p.card-text {
