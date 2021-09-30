@@ -15,13 +15,18 @@ sitemap:
 routes:
   default: /404-not-found
 
-  /:
-    redirect: '/api-docs'
-
   /404-not-found:
     title: Page not found
     ui: markdown
     markdownFile: './markdown/404.html'
+
+  /:
+    title: Kaltura API Documentation
+    for: kaltura
+    navigation: guideNavigation
+    meta:
+      title: "Kaltura VPaaS API Documentation"
+      description: "Full documentation for the Kaltura VPaaS API"
 
   /api-docs:
     title: Kaltura API Documentation
@@ -118,30 +123,26 @@ routes:
   /recipes/webvtt_captions:
     redirect: '/workflows/Enrich_and_Organize_Metadata/Serve_WebVTT_Captions'
 
-operationNavigation:
-  - title: "Overview"
-    markdownURL: /assets/documentation/overview.html
+guideNavigation:
+  - title: "Home"
+    markdownURL: /assets/documentation/home.html
+    icon: Homepage
     discussionURL: null
     meta:
       title: "Kaltura VPaaS API Overview"
       description: "Learn how to use the Kaltura VPaaS API"
 
-  - title: "Introduction to Kaltura Media Services"
-    path: "/Introduction-to-Kaltura-Media-Services"
-    children:
+  - title: "Overview"
+    markdownURL: /assets/documentation/overview.html
+    icon: Reporting
+    discussionURL: null
+    meta:
+      title: "Kaltura VPaaS API Overview"
+      description: "Learn how to use the Kaltura VPaaS API"
 
-      - title: "What is Kaltura Media Services and What can I build with it?"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html
-        path: "/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html"
-        discussionURL: null
-
-      - title: "How do I use the Kaltura API?"
-        markdownURL: /assets/documentation/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.html
-        path: "/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.html"
-        discussionURL: null
-
-  - title: "Getting Started Building Video Applications"
-    path: "/Getting-Started-Building-Video-Applications"
+  - title: "Getting Started"
+    path: "/VPaaS-API-Getting-Started"
+    icon: GettingStarted
     children:
       - title: "How to Create a Kaltura Session"
         markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Authenticating-and-Using-Kaltura-Sessions.html
@@ -170,6 +171,7 @@ operationNavigation:
 
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
+    icon: Media
     disableEditLink: true
     discussionURL: null
     meta:
@@ -180,7 +182,7 @@ operationNavigation:
         markdownFile: ./markdown/generated/support_matrix.md
         disableEditLink: true
 
-  - title: "XML Schemas"
+  - title: "Schemas"
     markdownFile: ./markdown/schemas.md
     children:
       - title: 'Syndication Feed'
@@ -203,6 +205,7 @@ operationNavigation:
         disableEditLink: true
 
   - title: "Video On Demand and Digital Assets Management"
+    icon: VideoPlayer
     path: "/Video-On-Demand-and-Digital-Assets-Management"
     children:
       - title: "Upload and Import Video Files via API"
@@ -294,6 +297,7 @@ operationNavigation:
       - tag: "externalMedia"
 
   - title: "Live Video Webcasting"
+    icon: LiveWebcasting
     path: "/Live-Video-Webcasting"
     children:
       - title: "Creating & Managing Live Webcasts"
@@ -307,6 +311,7 @@ operationNavigation:
         discussionURL: null
 
   - title: "Real-time Video Meetings Experience"
+    icon: Conferencing
     path: "/Real-time-Video-Meetings-Experience"
     children:
       - title: "Integrating the Embedded Meetings Experience App"
@@ -333,6 +338,7 @@ operationNavigation:
         discussionURL: null
 
   - title: "Scheduling Recorded and Live Stream Events"
+    icon: VideoExperiences
     path: "/Scheduling-Recorded-and-Live-Stream-Events"
     children:
       - title: "Introduction to Scheduling and Managing Resources"
@@ -355,7 +361,6 @@ operationNavigation:
         path: "/Streaming-and-Publishing/iCal-API-and-Calendar-Integrations.html"
         discussionURL: null
 
-
   - title: "SEO, Syndication & Distribution"
     path: "/SEO-Syndication-and-Distribution"
     children:
@@ -375,6 +380,8 @@ operationNavigation:
         discussionURL: null
 
   - title: "Analytics & Reporting"
+    icon: Reporting
+    prerender: false
     path: "/Analytics-and-Reporting"
     children:
       - title: "Intro to Kaltura Video Analytics & Best Practices"
@@ -396,6 +403,254 @@ operationNavigation:
         markdownURL: /assets/documentation/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.html
         path: "/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.html"
         discussionURL: null  
+
+      - operation: "media.bulkUploadAdd"
+      - operation: "user.addFromBulkUpload"
+      - operation: "category.addFromBulkUpload"
+      - operation: "cuePoint.addFromBulk"
+      - operation: "categoryEntry.addFromBulkUpload"
+      - operation: "categoryUser.addFromBulkUpload"
+      - tag: "bulk"
+      - tag: "schema"
+      - tag: "dropFolder"
+      - tag: "dropFolderFile"
+      - tag: "virusScanProfile"
+        hide: true
+      - tag: "aspera"
+        hide: true
+      # `bulkUpload` service was deprecated in favour of `bulk`  
+      - tag: "bulkUpload"
+        hide: true
+
+operationNavigation:
+  - title: "Generate API Sessions"
+    children:
+      - title: "session"
+        tag: "session"
+        children:
+          - operation: "session.start"
+          - operation: "session.end"
+          - operation: "session.get"
+          - operation: "session.impersonate"
+          - operation: "session.impersonateByKs"
+          - operation: "session.startWidgetSession"
+      - tag: "appToken"
+      - operation: 'user.loginByLoginId'
+  - title: "Ingest and Upload Media"
+    children:
+      - tag: "uploadToken"
+      - tag: "media"
+      - tag: "captionAsset"
+      - tag: "captionParams"
+      - tag: "thumbAsset"
+      - tag: "attachmentAsset"
+      - tag: "externalMedia"
+      # `upload` service was deprecated in favour of `UploadToken`  
+      - tag: "upload"
+        hide: true
+  - title: "Execute Bulk Ingest and Updates"
+    prerender: false
+    children:
+      - operation: "media.bulkUploadAdd"
+      - operation: "user.addFromBulkUpload"
+      - operation: "category.addFromBulkUpload"
+      - operation: "cuePoint.addFromBulk"
+      - operation: "categoryEntry.addFromBulkUpload"
+      - operation: "categoryUser.addFromBulkUpload"
+      - tag: "bulk"
+      - tag: "schema"
+      - tag: "dropFolder"
+      - tag: "dropFolderFile"
+      - tag: "virusScanProfile"
+        hide: true
+      - tag: "aspera"
+        hide: true
+      # `bulkUpload` service was deprecated in favour of `bulk`  
+      - tag: "bulkUpload"
+        hide: true
+  - title: "Convert and Transcode Media"
+    children:
+      - tag: "flavorAsset"
+      - tag: "flavorParams"
+      - tag: "flavorParamsOutput"
+      - tag: "conversionProfile"
+      - tag: "conversionProfileAssetParams"
+      - tag: "mediaInfo"
+  - title: "Live Stream and Broadcast"
+    prerender: false
+    children:
+      - tag: "liveStream"
+  - title: "Enrich and Organize Metadata"
+    children:
+      - tag: "baseEntry"
+      - tag: "category"
+      - tag: "categoryEntry"
+      - tag: "categoryUser"
+      - tag: "media"
+      - tag: "metadata"
+      - tag: "metadataProfile"
+      - tag: "captionAsset"
+      - tag: "captionParams"
+      - tag: "captionAssetItem"
+      - tag: "attachmentAsset"
+      - tag: "thumbAsset"
+      - tag: "thumbParams"
+      - tag: "tag"
+  - title: "Search, Discover and Personalize"
+    children:
+      - operation: "baseEntry.list"
+      - tag: "media"
+      - tag: "captionAssetItem"
+      - tag: "playlist"
+      - tag: "like"
+      - tag: "shortLink"
+      - tag: "tag"
+      - tag: "user"
+      - tag: "groupUser"
+  - title: "Engage and Publish"
+    children:
+      - tag: "playlist"
+      - tag: "thumbAsset"
+      - tag: "cuePoint"
+      - tag: "quiz"
+      - tag: "userEntry"
+      - tag: "like"
+      - tag: "uiConf"
+      - tag: "annotation"
+        hide: true
+  - title: "Media Analytics"
+    prerender: false
+    children:
+      - tag: "analytics"
+      - tag: "report"
+      - tag: "liveReports"
+      - tag: "liveStats"
+      - tag: "stats"
+  - title: "Deliver and Distribute Media"
+    prerender: false
+    children:
+      - tag: "playManifest"
+      - tag: "syndicationFeed"
+      - tag: "entryDistribution"
+      - tag: "distributionProfile"
+      - tag: "distributionProvider"
+      - tag: "deliveryProfile"
+        hide: true
+      - tag: "storageProfile"
+  - title: "Secure, Control and Govern"
+    children:
+      - title: "Content Categories Management"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Categories-Management.html
+        path: "/Secure_Control_and_Govern/Content-Categories-Management.html"
+        discussionURL: null
+        seeAlso:
+          - operation: "category.add"
+          - operation: "categoryEntry.add"
+          - operation: "categoryEntry.delete"
+
+      - title: "Content Entitlements and Privacy Enforcement"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html
+        path: "/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html"
+        discussionURL: null
+
+      - title: "Access Control and Content Retrieval on Connected Devices"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html
+        path: "/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html"
+        discussionURL: null
+
+      - title: "The Kaltura Media Access Control Model"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/kaltura-media-access-control-model.html
+        path: "/Secure_Control_and_Govern/kaltura-media-access-control-model.html"
+        discussionURL: null
+
+      - title: "Kaltura Audit-Trail - Viewer Example Application"
+        markdownURL: /assets/documentation/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html
+        path: "/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html"
+        discussionURL: null
+
+
+      - tag: "partner"
+      - tag: "user"
+      - tag: "userRole"
+      - tag: "groupUser"
+      - tag: "accessControlProfile"
+      - tag: "categoryEntry"
+      - tag: "categoryUser"
+      - tag: "permission"
+      - tag: "permissionItem"
+      # `accessControl` service was deprecated in favour of `accessControlProfile`  
+      - tag: "accessControl"
+        hide: true
+      - tag: "adminUser"
+        hide: true
+      - tag: "conference"
+        hide: true
+      - tag: "auditTrail"
+    #- title: "Optimize API Requests"
+    #prerender: false
+    #children:
+    #  - tag: "multirequest"
+    #  - tag: "responseProfile"
+  - title: "Integration, Scheduling and Hooks"
+    prerender: false
+    children:
+      - title: "Recorded and Live Stream Events Scheduling and iCal API"
+        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html
+        path: "/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html"
+        discussionURL: null
+      - title: "Scheduling Triggers using iCal"
+        markdownFile: ./markdown/scheduling.md
+        children:
+          - tag: "scheduleEvent"
+          - tag: "scheduleEventResource"
+          - tag: "scheduleResource"
+
+      - title: "How To Handle Kaltura Server Notifications in PHP"
+        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html
+        path: "/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html"
+        discussionURL: null
+
+      - tag: "eventNotificationTemplate"
+      - tag: "scheduledTaskProfile"
+      - tag: "integration"
+      - tag: "businessProcessCase"
+      # `notification` service was deprecated in favour of `eventNotificationTemplate`  
+      - tag: "notification"
+        hide: true
+  - title: "Encrypt and License Content"
+    prerender: false
+    children:
+      - tag: "drmLicenseAccess"
+      - tag: "drmPolicy"
+      - tag: "drmProfile"
+      - tag: "playReadyDrm"
+      - tag: "widevineDrm"
+      - tag: "deliveryProfile"
+        hide: true
+  - title: "Manage Documents and Other Assets"
+    prerender: false
+    children:
+      - tag: "baseEntry"
+      - tag: "data"
+      - tag: "documents"
+  - title: "Manage and Deliver Apps and Widgets"
+    prerender: false
+    children:
+      - tag: "uiConf"
+      - tag: "widget"
+      - tag: "fileAsset"
+      - tag: "captureSpace"
+  - title: "Manage Backend and Storage"
+    prerender: false
+    children:
+      - tag: "system"
+      - tag: "storageProfile"
+  - title: "Miscellaneous"
+    prerender: false
+    isMiscellaneous: true
+    hide: true
+    searchable: true
+    autoselect: false
 
   - title: "Sample applications"
     children:
