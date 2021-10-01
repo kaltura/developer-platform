@@ -404,9 +404,6 @@ guideNavigation:
         path: "/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.html"
         discussionURL: null  
 
-      - operation: "media.bulkUploadAdd"
-      - operation: "user.addFromBulkUpload"
-      - operation: "category.addFromBulkUpload"
       - operation: "cuePoint.addFromBulk"
       - operation: "categoryEntry.addFromBulkUpload"
       - operation: "categoryUser.addFromBulkUpload"
@@ -454,9 +451,6 @@ operationNavigation:
       - operation: "media.bulkUploadAdd"
       - operation: "user.addFromBulkUpload"
       - operation: "category.addFromBulkUpload"
-      - operation: "cuePoint.addFromBulk"
-      - operation: "categoryEntry.addFromBulkUpload"
-      - operation: "categoryUser.addFromBulkUpload"
       - tag: "bulk"
       - tag: "schema"
       - tag: "dropFolder"
