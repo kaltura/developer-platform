@@ -15,18 +15,13 @@ sitemap:
 routes:
   default: /404-not-found
 
+  /:
+    redirect: '/api-docs'
+
   /404-not-found:
     title: Page not found
     ui: markdown
     markdownFile: './markdown/404.html'
-
-  /:
-    title: Kaltura API Documentation
-    for: kaltura
-    navigation: guideNavigation
-    meta:
-      title: "Kaltura VPaaS API Documentation"
-      description: "Full documentation for the Kaltura VPaaS API"
 
   /api-docs:
     title: Kaltura API Documentation
@@ -123,18 +118,9 @@ routes:
   /recipes/webvtt_captions:
     redirect: '/workflows/Enrich_and_Organize_Metadata/Serve_WebVTT_Captions'
 
-guideNavigation:
-  - title: "Home"
-    markdownURL: /assets/documentation/home.html
-    icon: Homepage
-    discussionURL: null
-    meta:
-      title: "Kaltura VPaaS API Overview"
-      description: "Learn how to use the Kaltura VPaaS API"
-
+operationNavigation:
   - title: "Overview"
     markdownURL: /assets/documentation/overview.html
-    icon: Reporting
     discussionURL: null
     meta:
       title: "Kaltura VPaaS API Overview"
@@ -142,26 +128,22 @@ guideNavigation:
 
   - title: "Getting Started"
     path: "/VPaaS-API-Getting-Started"
-    icon: GettingStarted
     children:
 
       - title: "Get Started with the Kaltura API"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html
         path: "/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html"
         discussionURL: null
-        badge: "Guide"
 
       - title: "How to Create a Kaltura Session"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html
         path: "/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html"
         discussionURL: null
-        badge: "Workflow"
 
       - title: "Kaltura API Authentication and Security"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html
         path: "/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html"
         discussionURL: null
-        badge: "Workflow"
 
       - title: "Application Tokens"
         markdownURL: /assets/documentation/VPaaS-API-Getting-Started/application-tokens.html
@@ -193,9 +175,8 @@ guideNavigation:
         path: "/VPaaS-API-Getting-Started/supported-devices.html"
         discussionURL: null  
 
-  - title: "Media Management & Streaming"
+  - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
-    icon: Media
     disableEditLink: true
     discussionURL: null
     meta:
@@ -205,9 +186,8 @@ guideNavigation:
       - title: "Support Matrix"
         markdownFile: ./markdown/generated/support_matrix.md
         disableEditLink: true
-  - title: "Media Management & Streaming"
+  - title: "XML Schemas"
     markdownFile: ./markdown/schemas.md
-    icon: VideoPlayer
     children:
       - title: 'Syndication Feed'
         markdownURL: /assets/markdown/generated/syndication.md
@@ -227,8 +207,7 @@ guideNavigation:
       - title: 'Drop Folder'
         markdownURL: /assets/markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         disableEditLink: true
-  - title: "Live Webcasting"
-    icon: LiveWebcasting
+  - title: "Generate API Sessions"
     children:
       - title: "session"
         tag: "session"
@@ -241,8 +220,7 @@ guideNavigation:
           - operation: "session.startWidgetSession"
       - tag: "appToken"
       - operation: 'user.loginByLoginId'
-  - title: "Real-Time Conferencing"
-    icon: Conferencing
+  - title: "Ingest and Upload Media"
     children:
       - title: "Introduction to Content Preparation & Transcoding"
         markdownURL: /assets/documentation/Ingest_and_Upload_Media/Content-Ingestion-Transcoding.html
@@ -284,77 +262,6 @@ guideNavigation:
       # `upload` service was deprecated in favour of `UploadToken`  
       - tag: "upload"
         hide: true
-  - title: "Analytics & Reporting"
-    icon: Reporting
-    prerender: false
-    children:
-      - operation: "media.bulkUploadAdd"
-      - operation: "user.addFromBulkUpload"
-      - operation: "category.addFromBulkUpload"
-      - operation: "cuePoint.addFromBulk"
-      - operation: "categoryEntry.addFromBulkUpload"
-      - operation: "categoryUser.addFromBulkUpload"
-      - tag: "bulk"
-      - tag: "schema"
-      - tag: "dropFolder"
-      - tag: "dropFolderFile"
-      - tag: "virusScanProfile"
-        hide: true
-      - tag: "aspera"
-        hide: true
-      # `bulkUpload` service was deprecated in favour of `bulk`  
-      - tag: "bulkUpload"
-        hide: true
-  - title: "Video Experiences"
-    icon: VideoExperiences
-    children:
-      - title: "How to use the API to Add a New Conversion Profile"
-        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html
-        path: "/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html"
-        discussionURL: null
-
-      - title: "How to use the API to Add New Flavor Params"
-        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html
-        path: "/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html"
-        discussionURL: null
-
-      - title: "How to Use the API to Create a New Flavor Asset for an Existing Entry"
-        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html
-        path: "/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html"
-        discussionURL: null
-      - tag: "flavorAsset"
-      - tag: "flavorParams"
-      - tag: "flavorParamsOutput"
-      - tag: "conversionProfile"
-      - tag: "conversionProfileAssetParams"
-      - tag: "mediaInfo"
-
-operationNavigation:
-  - title: "Generate API Sessions"
-    children:
-      - title: "session"
-        tag: "session"
-        children:
-          - operation: "session.start"
-          - operation: "session.end"
-          - operation: "session.get"
-          - operation: "session.impersonate"
-          - operation: "session.impersonateByKs"
-          - operation: "session.startWidgetSession"
-      - tag: "appToken"
-      - operation: 'user.loginByLoginId'
-  - title: "Ingest and Upload Media"
-    children:
-      - tag: "uploadToken"
-      - tag: "media"
-      - tag: "captionAsset"
-      - tag: "captionParams"
-      - tag: "thumbAsset"
-      - tag: "attachmentAsset"
-      - tag: "externalMedia"
-      # `upload` service was deprecated in favour of `UploadToken`  
-      - tag: "upload"
-        hide: true
   - title: "Execute Bulk Ingest and Updates"
     prerender: false
     children:
@@ -377,6 +284,20 @@ operationNavigation:
         hide: true
   - title: "Convert and Transcode Media"
     children:
+      - title: "How to use the API to Add a New Conversion Profile"
+        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html
+        path: "/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html"
+        discussionURL: null
+
+      - title: "How to use the API to Add New Flavor Params"
+        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html
+        path: "/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html"
+        discussionURL: null
+
+      - title: "How to Use the API to Create a New Flavor Asset for an Existing Entry"
+        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html
+        path: "/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html"
+        discussionURL: null
       - tag: "flavorAsset"
       - tag: "flavorParams"
       - tag: "flavorParamsOutput"
@@ -389,6 +310,10 @@ operationNavigation:
       - tag: "liveStream"
   - title: "Enrich and Organize Metadata"
     children:
+      - title: "How to Retrieve Metadata of a Media Entry using the API?"
+        markdownURL: /assets/documentation/Enrich-and-Organize-Metadata/how-retrieve-metadata-media-entry-using-api.html
+        path: "/Enrich-and-Organize-Metadata/how-retrieve-metadata-media-entry-using-api.html"
+        discussionURL: null
       - tag: "baseEntry"
       - tag: "category"
       - tag: "categoryEntry"
@@ -405,6 +330,14 @@ operationNavigation:
       - tag: "tag"
   - title: "Search, Discover and Personalize"
     children:
+      - title: "Searching with Kaltura eSearch API"
+        markdownURL: /assets/documentation/Search--Discover-and-Personalize/search.html
+        path: "/Search--Discover-and-Personalize/esearch.html"
+        discussionURL: null        
+      - title: "How to perform AND, OR, NOT and Exact Match searches in API"
+        markdownURL: /assets/documentation/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html
+        path: "/Search--Discover-and-Personalize/how-search-kaltura-works-how-perform-and-or-not-and-exact-match-searches-api.html"
+        discussionURL: null
       - operation: "baseEntry.list"
       - tag: "media"
       - tag: "captionAssetItem"
@@ -416,6 +349,20 @@ operationNavigation:
       - tag: "groupUser"
   - title: "Engage and Publish"
     children:
+      - title: "Adding a Thumbnail Flavor Parameter that Supports Resizing Auto-generated Thumbnails"
+        markdownURL: /assets/documentation/Engage_and_Publish/how-add-thumbnail-flavor-param-supports-resizing-auto-generated-thumbnails-transcoding-profile.html
+        path: "/Engage_and_Publish/how-add-thumbnail-flavor-param-supports-resizing-auto-generated-thumbnails-transcoding-profile.html"
+        discussionURL: null
+
+      - title: "How To Create a Video Thumbnail Rotator in JavaScript"
+        markdownURL: /assets/documentation/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html
+        path: "/Engage_and_Publish/how-create-video-thumbnail-rotator-javascript.html"
+        discussionURL: null
+
+      - title: "Kaltura Video Thumbnail and Image Transformation API"
+        markdownURL: /assets/documentation/Engage_and_Publish/kaltura-thumbnail-api.html
+        path: "/Engage_and_Publish/kaltura-thumbnail-api.html"
+        discussionURL: null
       - tag: "playlist"
       - tag: "thumbAsset"
       - tag: "cuePoint"
@@ -428,6 +375,15 @@ operationNavigation:
   - title: "Media Analytics"
     prerender: false
     children:
+      - title: "How to Generate Interactive Video Quiz Reports Using the Kaltura API?"
+        markdownURL: /assets/documentation/Video-Analytics-and-Insights/how-generate-interactive-video-quiz-reports-using-kaltura-api.html
+        path: "/Video-Analytics-and-Insights/how-generate-interactive-video-quiz-reports-using-kaltura-api.html"
+        discussionURL: null
+
+      - title: "Kaltura's Media Analytics"
+        markdownURL: /assets/documentation/Video-Analytics-and-Insights/media-analytics.html
+        path: "/Video-Analytics-and-Insights/media-analytics.html"
+        discussionURL: null
       - tag: "analytics"
       - tag: "report"
       - tag: "liveReports"
@@ -436,6 +392,15 @@ operationNavigation:
   - title: "Deliver and Distribute Media"
     prerender: false
     children:
+      - title: "Video Search Engine Optimization (SEO)"
+        markdownURL: /assets/documentation/Deliver-and-Distribute-Media/videoSEO.html
+        path: "/Deliver-and-Distribute-Media/videoSEO.html"
+        discussionURL: null
+
+      - title: "The playManifest Service: Streaming API for Videos and Playlists"
+        markdownURL: /assets/documentation/Deliver-and-Distribute-Media/playManifest-streaming-api.html
+        path: "/Deliver-and-Distribute-Media/playManifest-streaming-api.html"
+        discussionURL: null
       - tag: "playManifest"
       - tag: "syndicationFeed"
       - tag: "entryDistribution"

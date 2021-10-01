@@ -50,9 +50,9 @@ pre code {
   font-size: 12px;
 }
 
-.footer {
+/* .footer {
   margin-top: 50px;
-}
+} */
 .collapse.in {
   display: block !important;
 }
@@ -63,3 +63,176 @@ img {
   max-width:100%; 
 }
 
+/* nav tabs header*/
+.nav-tabs-b {
+  font-size: 1em;
+  color: black;
+  position: relative;
+  top: -3px;
+}
+.nav-tabs-b > span > a {
+  color: black;
+  text-decoration: none;
+}
+.nav-tabs-b > span > a:hover {
+  text-decoration: none;
+}
+.nav-tabs-b > span {
+  margin-right: 12px;
+  padding-bottom: 12px;
+}
+.nav-tabs-b > span.active {
+  color: #006efa;
+  border-bottom: 2px solid #006efa;
+}
+.nav-tabs-b > span.active > a {
+  color: #006efa;
+}
+.nav-tabs-b > span.inactive > a {
+  color: black;
+}
+
+
+/* home */
+.home-container {
+  padding: 10px;
+}
+
+.home-container .title-container {
+  padding: 20px;
+}
+
+.home-container .diagram {
+  padding: 20px;
+}
+
+.home-container .title-container h5.card-title {
+  font-size: 2.8em;
+}
+
+.home-container .title-container a.btn-primary {
+  margin-right: 20px;
+}
+
+.home-container .title-container a.btn-outline-primary {
+  border: 1px solid #006efa;
+}
+
+.home-container .title-container p.card-text {
+  padding: 10px 0;
+}
+
+.home-container .title {
+  margin-bottom: 20px;
+}
+
+.home-container .title span {
+  font-size: 1.7em;
+}
+
+.home-container .title a {
+  color: #006efa;
+  float: right;
+}
+
+.home-container .explore-container .card {
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-bottom: 22px;
+  min-height: 220px;
+}
+
+.home-container .explore-container .card p.card-text {
+  font-size: 0.9em;
+}
+
+.home-container .code {
+  margin-top: 10px;
+  padding: 16px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+.home-container .code pre {
+  border: none;
+}
+
+.home-container .code code {
+  background-color: #f4f4f4;
+}
+
+.code span.tag {
+  color: #e55866;
+}
+
+.code span.keyword {
+  color: #ef4df2;
+}
+
+.code span.const {
+  color: #00e74e;
+}
+
+.code.java, .code.python, .code.csharp, .code.javascript, .code.ruby {
+  display: none;
+}
+
+.home-container .code-container img.btn-copy {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  cursor: pointer;
+}
+
+.home-container .code-container .card .card-title {
+  font-weight: bold;
+}
+
+.home-container .code-container .card p.card-text {
+  font-size: 0.9em;
+  padding: 10px 0;
+}
+
+.home-container .btm {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-container .btm span {
+  margin: 0 10px;
+}
+
+.home-container .btm span.disabed {
+  color: gray;
+}
+
+/* navbar */
+.navbar-header .has-search {
+  display: inline-block;
+  margin-left:18px;
+}
+
+.side-menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-header .has-search {
+    display: none;
+  }
+
+  .side-menu-toggle {
+    display: block;
+    color: #006efa;
+    background-color: white;
+    position: relative;
+    top: 8px;
+    border: none;
+    float: left;
+    padding-right: 10px;
+  }
+
+  .home-container .code-container img.btn-copy {
+    top: 15px;
+  }  
+}

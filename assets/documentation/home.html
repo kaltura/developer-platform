@@ -1,0 +1,337 @@
+<div class="home-container">
+    <div class="row">
+        <div class="col col-sm-8 title-container">
+            <div class="card"">
+                <div class="card-body">
+                    <h5 class="card-title">The Media APIs Handbook</h5>
+                    <p class="card-text">Documentation, Guides, and Samples to get you started quickly, make serious progress, find inspiration, or all of the above.</p>
+                    <a href="#" class="btn btn-primary">Get Started</a><a href="#" class="btn btn-outline-primary">Create an Account</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4 diagram">
+            <img src="assets/images/interactive-video.png" alt="diagram">
+        </div>
+    </div>
+    <div class="explore-container">
+        <div class="title">
+            <span>Explore Kaltura Guides</span>
+            <a href="#">See All</a>
+        </div>
+        <div class="body">
+            <div class="row">
+                <div class="col col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Media Management & Streaming
+                            </h5>
+                            <p class="card-text">
+                                Build a media hub to manage digital assets and stream any video anywhere
+                            </p>
+                        </div>
+                        <div class="card-footer home-card-footer">
+                            <a href="#">Start Playing <img src="assets/icons/ArrowRight.svg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Video Player
+                            </h5>
+                            <p class="card-text">
+                                Use our video player for users to play your videos, whether on the web or mobile
+                            </p>
+                        </div>
+                        <div class="card-footer home-card-footer">
+                            <a href="#">Start Playing <img src="assets/icons/ArrowRight.svg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Live Webcasting
+                            </h5>
+                            <p class="card-text">
+                                ALive stream to any size audience, anytime and anywhere, with one single API
+                            </p>
+                        </div>
+                        <div class="card-footer home-card-footer">
+                            <a href="#">Start Playing <img src="assets/icons/ArrowRight.svg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Real-Time Conferencing
+                            </h5>
+                            <p class="card-text">
+                                Integrate a virtual meeting room or classroom into any app and fit it to any need
+                            </p>
+                        </div>
+                        <div class="card-footer home-card-footer">
+                            <a href="#">Start Playing <img src="assets/icons/ArrowRight.svg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Analytics & Reporting
+                            </h5>
+                            <p class="card-text">
+                                Add measurement and reporting tools to your videos to track your viewership and their engagement
+                            </p>
+                        </div>
+                        <div class="card-footer home-card-footer">
+                            <a href="#">Start Playing <img src="assets/icons/ArrowRight.svg"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Embedded Experience Components
+                            </h5>
+                            <p class="card-text">
+                                Put on any of our ready-to-play experitence modules, including the recorder, video composer, and more
+                            </p>
+                        </div>
+                        <div class="card-footer home-card-footer">
+                            <a href="#">Start Playing <img src="assets/icons/ArrowRight.svg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="code-container">
+        <div class="title">
+            <span>Your Work, Sorted.</span>
+        </div>
+        <div class="nav-tabs-b">
+            <span class="active" lang="php"><a href="">PHP</a></span>
+            <span class="inactive" lang="java"><a href="">Java</a></span>
+            <span class="inactive" lang="python"><a href="">Python</a></span>
+            <span class="inactive" lang="javascript"><a href="">Node</a></span>
+            <span class="inactive" lang="csharp"><a href="">C#</a></span>
+            <span class="inactive" lang="ruby"><a href="">Ruby</a></span>
+        </div>
+        <div class="row">
+            <div class="col col-lg-8">
+                <div class="code php">
+                    <pre>
+                        <code class="php">
+&lt;?php
+$entry = new KalturaMediaEntry();
+$entry->mediaType = KalturaMediaType::VIDEO;
+$entry->name = "Cat";
+$entryResult = $client->media->add($entry);
+$entryId = $entryResult->id;
+$resource = new KalturaUrlResource();
+$resource->url = "https://example.com/catVideo.mp4";
+$result = $client->media->addContent($entryId, $resource);
+var_dump($result);
+?&gt;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code java">
+                    <pre>
+                        <code class="java">
+public class Factorial
+{
+    public static void main(String[] args)
+    {	final int NUM_FACTS = 100;
+        for(int i = 0; i < NUM_FACTS; i++)
+            System.out.println( i + "! is " + factorial(i));
+    }
+    
+    public static int factorial(int n)
+    {	int result = 1;
+        for(int i = 2; i <= n; i++)
+            result *= i;
+        return result;
+    }
+}
+                        </code>
+                    </pre>
+                </div>
+                <div class="code python">
+                    <pre>
+                        <code class="python">
+# Taking kilometers input from the user
+kilometers = float(input("Enter value in kilometers: "))
+
+# conversion factor
+conv_fac = 0.621371
+
+# calculate miles
+miles = kilometers * conv_fac
+print('%0.2f kilometers is equal to %0.2f miles' %(kilometers,miles))
+                        </code>
+                    </pre>
+                </div>
+                <div class="code javascript">
+                    <pre>
+                        <code class="javascript">
+var fs = require("fs");
+var data = '';
+
+// Create a readable stream
+var readerStream = fs.createReadStream('input.txt');
+
+// Set the encoding to be utf8. 
+readerStream.setEncoding('UTF8');
+
+// Handle stream events --> data, end, and error
+readerStream.on('data', function(chunk) {
+    data += chunk;
+});
+
+readerStream.on('end',function() {
+    console.log(data);
+});
+
+readerStream.on('error', function(err) {
+    console.log(err.stack);
+});
+
+console.log("Program Ended");
+                        </code>
+                    </pre>
+                </div>
+                <div class="code csharp">
+                    <pre>
+                        <code class="csharp">
+var names = new List<string>() { "John", "Tom", "Peter" };
+    foreach (string name in names)
+    {
+        if (name == "Tom")
+        {
+            continue;
+        }
+        Console.WriteLine(name);
+    }
+                        </code>
+                    </pre>
+                </div>
+                <div class="code ruby">
+                    <pre>
+                        <code class="ruby">
+for i in (1..10)
+    rno = rand(100) + 1
+    msg = case rno
+        when 42: "The ultimate result."
+        when 1..10: "Way too small."
+        when 11..15,19,27: "Sorry, too small"
+        when 80..99: "Way to large"
+        when 100:
+                print "TOPS\n"
+                "Really way too large"
+        else "Just wrong"
+    end
+    print "Result: ", rno, ": ", msg, "\n"
+end
+                        </code>
+                    </pre>
+                </div>
+                <img class="btn-copy" src="assets/icons/btn-cp.svg" alt="copy">
+            </div>
+            <div class="col col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Upload & ingest media with ease
+                        </h5>
+                        <p class="card-text">
+                            Uploading videos to Kaltura using the API is super simple. Videos can be located on disk, or be specified as an HTML file input. Our jQuery upload widget provides a chunked upload with pause and resume functionality and optimization for file size.
+                        </p>
+                        <a href="#" class="btn btn-primary">View Workflows</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btm">
+            <span class="disabled">&lt;</span>
+            <span>Next Item Name</span>
+            <span>&gt;</span>
+        </div>
+    </div>
+    <div class="video-container">
+        <div class="title">
+            <span>You Can Make a Quick Video Player Stack</span>
+        </div>
+        <div class="video-player-wrapper">
+            <div id="dummy" class="video-margin"></div>
+            
+            <style>
+              .video-player {
+                background-color: #000;
+                width: 100%;
+                max-width: 800px;
+                height: 372px;
+              }
+            </style>
+            
+            <div id="kaltura_player_1_zxnf9ha7_42923951" class="video-player"></div>
+            </div>
+            
+            
+            <script src="https://cdnapisec.kaltura.com/p/2421271/sp/242127100/embedPlaykitJs/uiconf_id/43473121/partner_id/2421271"></script>
+            <script>
+            window.kalturaIntroVideoLoaded = false;
+            function embedVideo() {
+              if (window.kalturaIntroVideoLoaded) return;
+              if (!window.lucyBotReady || !window.PathKalturaPlayer) return setTimeout(embedVideo, 100);
+              window.kalturaIntroVideoLoaded = true;
+            
+              var kconfig = {
+                    targetId: 'kaltura_player_1_zxnf9ha7_42923951',
+                    playback:{
+                            autoplay:false,
+                            preload:"auto"
+                    },
+                    provider: {
+                            partnerId: 2421271,
+                            uiConfId: 43473121
+                    },
+                   rapt:{}
+              };
+              var raptPlayer = PathKalturaPlayer.setup(kconfig);
+              raptPlayer.loadMedia({playlistId: '1_zxnf9ha7'});
+            }
+            embedVideo();
+            
+            </script>
+
+        <div class="btm">
+            <span class="disabled">&lt;</span>
+            <span>Next Item Name</span>
+            <span>&gt;</span>
+        </div>
+    </div>
+</div>
+
+<script>
+$( document ).ready(function() {
+    hljs.initHighlighting();
+});
+$('.nav-tabs-b>span').on('click', function(evt) {
+    evt.preventDefault();
+    const lang = $(this).attr('lang');
+    $('div.code').hide();
+    $('div.code.' + lang).show();
+    // tabs
+    $('div.code-container > div.nav-tabs-b > span').addClass('inactive');
+    $(this).removeClass('inactive');
+  });
+</script>

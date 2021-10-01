@@ -22,7 +22,7 @@ body.spaced-for-kaltura-nav {
 }
 
 #KalturaNav .navbar-brand img {
-  height: 40px;
+  height: 30px;
   display: inline;
 }
 #KalturaNav .brand-subtitle {
@@ -59,8 +59,9 @@ body.spaced-for-kaltura-nav {
 #KalturaNav.navbar li.dropdown > a,
 #KalturaNav.navbar li.dropdown > a:hover,
 #KalturaNav.navbar li.navbar-link > a:not(.btn) {
-  color: #4A4A4A;
+  color: #006efa;
   background-color: #fff;
+  margin-top: 0px;
 }
 #KalturaNav.navbar li.navbar-link:hover > a:not(.btn) {
   opacity: .7;
@@ -76,6 +77,8 @@ body.spaced-for-kaltura-nav {
   padding: 4px 20px;
   margin-top: 7px;
   margin-left: 15px;
+  color: #006efa;
+  border: 2px solid;
 }
 
 #KalturaNav ul.nav {
@@ -84,4 +87,16 @@ body.spaced-for-kaltura-nav {
 
 #KalturaBlogContent a {
   color: #fff;
+}
+
+.has-search .form-control-feedback {
+  right: initial;
+  left: 0;
+  color: #ccc;
+}
+
+.has-search .form-control {
+  padding-right: 12px;
+  padding-left: 34px;
+  width: 350px;
 }
