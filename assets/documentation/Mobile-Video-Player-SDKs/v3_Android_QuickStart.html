@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_QuickStart.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_QuickStart.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -156,17 +156,15 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>1 . Clone the SDK  from https://github.com/kaltura/playkit-android and locate it next to your application code. If you want to be able to review the code as standalone, open the playkit-android folder in the Android Studio. <br />
+<p>1 . Clone the SDK  from https://github.com/kaltura/playkit-android and locate it next to your application code. If you want to be able to review the code as standalone, open the playkit-android folder in the Android Studio. 
 2 . In the setting.gradle, add the SDK project settings as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">include</span> <span class="err">'</span><span class="o">:</span><span class="n">playkit</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="o">:</span><span class="n">playkitdemo</span><span class="err">'</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">include</span> <span class="err">'</span><span class="o">:</span><span class="n">playkit</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="o">:</span><span class="n">playkitdemo</span><span class="err">'</span>
+</code></pre></div></div>
 <p>3 . In your build.gradle file, add the dependency for the SDK:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="nl">path:</span> <span class="err">'</span><span class="o">:</span><span class="n">playkit</span><span class="err">'</span><span class="o">)</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">compile</span> <span class="nf">project</span><span class="o">(</span><span class="nl">path:</span> <span class="err">'</span><span class="o">:</span><span class="n">playkit</span><span class="err">'</span><span class="o">)</span>
+</code></pre></div></div>
     
       <h2 id="create-the-player-instance-and-start-playback">
         
@@ -178,27 +176,23 @@ rtp('get', 'campaign',true);
 
 <p>1 . To create the instance of the player, add the following line to your Activity/Fragment to pass the <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/PlayerConfig.java">PlayerConfig</a> object and Android Context:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="n">PlayKitManager</span><span class="o">.</span><span class="na">loadPlayer</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Player</span> <span class="n">player</span> <span class="o">=</span> <span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">loadPlayer</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+</code></pre></div></div>
 <p>2 . Next, add the player view to the view hierarchy as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">View</span> <span class="n">playerView</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getView</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">View</span> <span class="n">playerView</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getView</span><span class="o">();</span>
 <span class="n">yourLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">playerView</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>3 . Now that you have an instance of the player and its view is attached to your layout, start the playback by calling the following:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
+</code></pre></div></div>
 
 <p>4 . To pause the playback call:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="na">pause</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="na">pause</span><span class="o">();</span>
+</code></pre></div></div>
     
       <h2 id="more-about-playerconfig">
         
@@ -230,81 +224,79 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>1 . Take take the JsonObject and parse it with your provider. <br />
+<p>1 . Take take the JsonObject and parse it with your provider. 
 2 . Next, let’s assume that you have this JsonObject saved locally in your project assets directory, with the name entries.playkit.json:</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">	</span><span class="s2">"dash"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entryId"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of the source"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">	</span><span class="nl">"dash"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entryId"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Name of the source"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sourceId"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/dash+xml"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourUrl.mpd"</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sourceId"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/dash+xml"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yourUrl.mpd"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 <p>3 . You now want the <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/backend/mock/MockMediaProvider.java">MockMediaProvider</a> to provide you with the PlayerConfig.Media object. Therefore, you need to create a new instance of it, and pass to the constructor the location of the file, the Android context, and the ID of the media you’re interested in:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code> 	<span class="nd">@Override</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 	<span class="nd">@Override</span>
  	<span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
    	 <span class="c1">//create mock provider. </span>
-	<span class="n">MockMediaProvider</span> <span class="n">mockProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MockMediaProvider</span><span class="o">(</span><span class="s">"entries.playkit.json"</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="s">"entryId"</span><span class="o">);</span>
+	<span class="nc">MockMediaProvider</span> <span class="n">mockProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MockMediaProvider</span><span class="o">(</span><span class="s">"entries.playkit.json"</span><span class="o">,</span> <span class="k">this</span><span class="o">,</span> <span class="s">"entryId"</span><span class="o">);</span>
 	
 	<span class="c1">//load PKMediaEntry from json file.</span>
-	<span class="n">mockProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="n">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
+	<span class="n">mockProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="nc">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">ResultElement</span><span class="o">&lt;</span><span class="n">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nc">ResultElement</span><span class="o">&lt;</span><span class="nc">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
                 <span class="k">if</span> <span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">())</span> <span class="o">{</span>
                    
                    <span class="c1">//Create config object.</span>
-                   <span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
+                   <span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
                    
                    <span class="c1">//Set mediaEntry that was received from provider.</span>
-                   <span class="n">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getResponse</span><span class="o">();</span>
+                   <span class="nc">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getResponse</span><span class="o">();</span>
                    <span class="n">config</span><span class="o">.</span><span class="na">media</span><span class="o">.</span><span class="na">setMediaEntry</span><span class="o">(</span><span class="n">mediaEntry</span><span class="o">);</span>
                    
                    <span class="c1">//Apply additional configurations on the media.</span>
                    <span class="n">playerConfig</span><span class="o">.</span><span class="na">media</span><span class="o">.</span><span class="na">setStartPosition</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span>
                    
                    <span class="c1">//Create player instance, using config object.</span>
-                   <span class="n">player</span> <span class="o">=</span> <span class="n">PlayKitManager</span><span class="o">.</span><span class="na">loadPlayer</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+                   <span class="n">player</span> <span class="o">=</span> <span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">loadPlayer</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
                    
                    <span class="c1">//Add player view to the layout.</span>
-                   <span class="n">View</span> <span class="n">playerView</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getView</span><span class="o">();</span>
+                   <span class="nc">View</span> <span class="n">playerView</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getView</span><span class="o">();</span>
                    <span class="n">yourLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">playerView</span><span class="o">);</span>
                    
                    <span class="c1">//Start the playback of the media.</span>
                    <span class="n">player</span><span class="o">.</span><span class="na">play</span><span class="o">();</span>
                    
                 <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-               		<span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"Failed to obtain media entry. "</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">getError</span><span class="o">().</span><span class="na">getMessage</span><span class="o">());</span>
+               		<span class="nc">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"Failed to obtain media entry. "</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="na">getError</span><span class="o">().</span><span class="na">getMessage</span><span class="o">());</span>
                 <span class="o">}</span>
                
             <span class="o">}</span>
         <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>4 . Once completed (onComplete), you’ll receive the PKMediaEntry object with which you can populate the PlayerConfig.Media, create a player, and pass the configuration object into it.<br />
+<p>4 . Once completed (onComplete), you’ll receive the PKMediaEntry object with which you can populate the PlayerConfig.Media, create a player, and pass the configuration object into it.
 5 . If you have all the neccessary data for playback (your own MediaProvider), you can manually populate the media object by calling setters on the PlayerConfig.Media object in the following way:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nd">@Override</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Override</span>
 <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
 	<span class="c1">//Create config object</span>
-	<span class="n">PlayerConfig</span> <span class="n">playerConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
+	<span class="nc">PlayerConfig</span> <span class="n">playerConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
 	
 	<span class="c1">//Create new mediaEntry object.</span>
-	<span class="n">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKMediaEntry</span><span class="o">();</span>
+	<span class="nc">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKMediaEntry</span><span class="o">();</span>
 	
 	<span class="c1">//Create list for PKMediaSources.</span>
-	<span class="n">List</span><span class="o">&lt;</span><span class="n">PKMediaSource</span><span class="o">&gt;</span> <span class="n">mediaSourcesList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
+	<span class="nc">List</span><span class="o">&lt;</span><span class="nc">PKMediaSource</span><span class="o">&gt;</span> <span class="n">mediaSourcesList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">();</span>
 	
 	<span class="c1">//Create PKMediaSource.</span>
-	<span class="n">PKMediaSource</span> <span class="n">mediaSource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKMediaSource</span><span class="o">();</span>
+	<span class="nc">PKMediaSource</span> <span class="n">mediaSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKMediaSource</span><span class="o">();</span>
 	
 	<span class="c1">//Set your data to the media source.</span>
 	<span class="n">mediaSource</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">yourId</span><span class="o">);</span>
@@ -324,15 +316,14 @@ rtp('get', 'campaign',true);
 	<span class="n">playerConfig</span><span class="o">.</span><span class="na">media</span><span class="o">.</span><span class="na">setStartPosition</span><span class="o">(</span><span class="mi">30</span><span class="o">);</span> <span class="c1">// player will start the playback from the 30 second of the media.</span>
 	
 	<span class="c1">//Create player instance.</span>
-    <span class="n">player</span> <span class="o">=</span> <span class="n">PlayKitManager</span><span class="o">.</span><span class="na">loadPlayer</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
+    <span class="n">player</span> <span class="o">=</span> <span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">loadPlayer</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">context</span><span class="o">);</span>
                    
    	<span class="c1">//Add player view to the layout.</span>
-   	<span class="n">View</span> <span class="n">playerView</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getView</span><span class="o">();</span>
+   	<span class="nc">View</span> <span class="n">playerView</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getView</span><span class="o">();</span>
    	<span class="n">yourLayout</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">playerView</span><span class="o">);</span>
 
 	<span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>and pass it to the PlayerConfig object.</p>
 

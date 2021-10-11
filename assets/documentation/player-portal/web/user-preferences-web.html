@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/user-preferences-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/user-preferences-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed May 1 14:04:39 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Jun 9 07:47:37 2020, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -164,22 +164,22 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>When a player instantiates, a partial configuration is created internally by the <code class="highlighter-rouge">StorageManager</code> and supplied to the player using the saved values found in the local storage.</p>
+<p>When a player instantiates, a partial configuration is created internally by the <code class="language-plaintext highlighter-rouge">StorageManager</code> and supplied to the player using the saved values found in the local storage.</p>
 
 <p>The structure of this initial configuration is as follows:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
 <span class="nl">muted</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
-<span class="nx">volume</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
-<span class="nx">audioLanguage</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-<span class="nx">textLanguage</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-<span class="nx">textStyle</span><span class="err">:</span> <span class="nx">TextStyle</span>
+<span class="nx">volume</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+<span class="nx">audioLanguage</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+<span class="nx">textLanguage</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+<span class="nx">textStyle</span><span class="p">:</span> <span class="nx">TextStyle</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The following flow-chart diagram shows a high-level workflow of this scenario:<br />
+<p>The following flow-chart diagram shows a high-level workflow of this scenario:
 <img src="/assets/images/setup-flow-local-storage.jpg" alt="setup-flow-local-storage" /></p>
 
-<p>After the player starts to to play, the <code class="highlighter-rouge">StorageManager</code> will track any user interaction with the UI and update the storage value accordingly, as you can see in the following sequence diagram:</p>
+<p>After the player starts to to play, the <code class="language-plaintext highlighter-rouge">StorageManager</code> will track any user interaction with the UI and update the storage value accordingly, as you can see in the following sequence diagram:</p>
 
 <p><img src="/assets/images/save-value-flow-local-storage.png" alt="save-value-flow-local-storage" /></p>
     
@@ -218,11 +218,11 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The user preference configuration is enabled by default. To disable it, you’ll need to configure the <a href="https://developer.kaltura.com/player/web/configuration-web#configdisableusercache"><code class="highlighter-rouge">disableUserCache</code></a> value as <strong>True</strong> when creating the player instance.</p>
+<p>The user preference configuration is enabled by default. To disable it, you’ll need to configure the <a href="https://developer.kaltura.com/player/web/configuration-web#configdisableusercache"><code class="language-plaintext highlighter-rouge">disableUserCache</code></a> value as <strong>True</strong> when creating the player instance.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
   <span class="p">...</span>
-  <span class="nl">disableUserCache</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">// Disable user preferences</span>
+  <span class="nx">disableUserCache</span><span class="p">:</span> <span class="kc">true</span> <span class="c1">// Disable user preferences</span>
   <span class="p">...</span>
 <span class="p">}</span></code></pre></figure>
     
@@ -234,7 +234,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The user preference feature works on all browsers that support the localStorage option.<br />
+<p>The user preference feature works on all browsers that support the localStorage option.
 For a complete list of browsers that support localStorage, see <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">here</a>.</p>
 		
 </article>

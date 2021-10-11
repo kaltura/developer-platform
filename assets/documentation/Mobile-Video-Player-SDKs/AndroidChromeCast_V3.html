@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/AndroidChromeCast_V3.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/AndroidChromeCast_V3.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Fri Sep 30 06:31:32 2016, By: Gilad Nadav</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -176,8 +176,8 @@ rtp('get', 'campaign',true);
       </h2>
 
 <ul>
-  <li><code class="highlighter-rouge">Sender</code> - A Cast enabled Kaltura Player running inside of a iOS Application; the Kaltura Player requires a Sender App ID.</li>
-  <li><code class="highlighter-rouge">Receiver</code> - A Kaltura Player Receiver App that runs on the Chromecast device.</li>
+  <li><code class="language-plaintext highlighter-rouge">Sender</code> - A Cast enabled Kaltura Player running inside of a iOS Application; the Kaltura Player requires a Sender App ID.</li>
+  <li><code class="language-plaintext highlighter-rouge">Receiver</code> - A Kaltura Player Receiver App that runs on the Chromecast device.</li>
 </ul>
     
       <h3 id="getting-started">
@@ -191,14 +191,14 @@ rtp('get', 'campaign',true);
 <p>To begin casting, follow these steps:</p>
 
 <ol>
-  <li>Create the <code class="highlighter-rouge">KPPlayerConfig config</code> as follows:<br />
-     <code class="highlighter-rouge">
+  <li>Create the <code class="language-plaintext highlighter-rouge">KPPlayerConfig config</code> as follows:
+     <code class="language-plaintext highlighter-rouge">
      KPPlayerConfig config = new KPPlayerConfig("{your-server-id}", "{your-ui-conf-id}", "{your-pqrtner-id}").setEntryId("{your-entry_id}");
     </code></li>
-  <li>Next, add the following to your <code class="highlighter-rouge">config</code> instance:</li>
+  <li>Next, add the following to your <code class="language-plaintext highlighter-rouge">config</code> instance:</li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>config.addConfig("chromecast.plugin", "true");
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config.addConfig("chromecast.plugin", "true");
 config.addConfig("chromecast.useKalturaPlayer", "true"); 
 config.addConfig("chromecast.applicationID",getString(R.string.app_id));
 config.addConfig("chromecast.useKalturaPlayer", "true");
@@ -208,8 +208,7 @@ config.addConfig("chromecast", "{\"proxyData\":" + proxyDataReceiver + "}");  //
 config.addConfig("strings.mwe-chromecast-loading", "Loading to CC");  // Set Loading message
 config.addConfig("chromecast.logoUrl", "Your Logo")
             
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="scanningconnecting-chromecast-devices">
         
@@ -221,10 +220,9 @@ config.addConfig("chromecast.logoUrl", "Your Logo")
 
 <p>This version does not require device scannig and connection methods this is achived now by Cast V3 MediaRouteButton that should be attached to the Activity</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> mMediaRouteButton = (MediaRouteButton) findViewById(R.id.media_route_button);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mMediaRouteButton = (MediaRouteButton) findViewById(R.id.media_route_button);
  CastButtonFactory.setUpMediaRouteButton(getApplicationContext(), mMediaRouteButton);
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="casting-media">
         
@@ -234,13 +232,12 @@ config.addConfig("chromecast.logoUrl", "Your Logo")
         
       </h4>
 
-<p>To cast media, set the <code class="highlighter-rouge">mCastProvider</code> property under <code class="highlighter-rouge">PlayerViewController</code> with the <code class="highlighter-rouge">KCastProvider</code> object you created as follows:</p>
+<p>To cast media, set the <code class="language-plaintext highlighter-rouge">mCastProvider</code> property under <code class="language-plaintext highlighter-rouge">PlayerViewController</code> with the <code class="language-plaintext highlighter-rouge">KCastProvider</code> object you created as follows:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> mCastProvider = (KCastProviderV3Impl) KCastFactory.createCastProvider(MainActivity.this, getString(R.string.app_id), getString(R.string.cast_logo_url));
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mCastProvider = (KCastProviderV3Impl) KCastFactory.createCastProvider(MainActivity.this, getString(R.string.app_id), getString(R.string.cast_logo_url));
  mCastProvider.addCastStateListener(mCastStateListener);
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="setting-cast-provider">
         
@@ -250,7 +247,7 @@ config.addConfig("chromecast.logoUrl", "Your Logo")
         
       </h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>   mPlayer.setCastProvider(mCastProvider);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   mPlayer.setCastProvider(mCastProvider);
    mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener() {
           @Override
           public void onCastMediaRemoteControlReady(KCastMediaRemoteControl castMediaRemoteControl) {
@@ -262,8 +259,7 @@ config.addConfig("chromecast.logoUrl", "Your Logo")
                  LOGE(TAG, "onCastReceiverError errorMsg = " + errorMsg + " errorCode = "  + errorCode);
            }
     });
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="disconnecting-from-a-device">
         
@@ -277,9 +273,8 @@ config.addConfig("chromecast.logoUrl", "Your Logo")
 
 <p>You can disconnect using the mediaRouterButton or programatically:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mCastProvider.disconnectFromDevcie();
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mCastProvider.disconnectFromDevcie();
+</code></pre></div></div>
     
       <h3 id="using-the-media-remote-control">
         
@@ -289,13 +284,13 @@ config.addConfig("chromecast.logoUrl", "Your Logo")
         
       </h3>
 
-<p>The <code class="highlighter-rouge">KCastProvider</code> includes a <code class="highlighter-rouge">mCastProvider.getCastMediaRemoteControl()</code> instance that controls the playback of the video being cast.</p>
+<p>The <code class="language-plaintext highlighter-rouge">KCastProvider</code> includes a <code class="language-plaintext highlighter-rouge">mCastProvider.getCastMediaRemoteControl()</code> instance that controls the playback of the video being cast.</p>
 
-<p>At the app level you may add listener to the <br />
-<code class="highlighter-rouge">onCastMediaRemoteControlReady</code><br />
-and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
+<p>At the app level you may add listener to the 
+<code class="language-plaintext highlighter-rouge">onCastMediaRemoteControlReady</code>
+and the <code class="language-plaintext highlighter-rouge">onCastReceiverError</code> Events.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>public interface KCastProvider {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public interface KCastProvider {
     void startReceiver(Context context, boolean guestModeEnabled);
     void startReceiver(Context context);
     void disconnectFromCastDevice();
@@ -312,8 +307,7 @@ and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
     }
 }
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="change-media">
         
@@ -332,9 +326,8 @@ and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
         
         
       </h5>
-<div class="highlighter-rouge"><pre class="highlight"><code>mPlayer.changeMedia("Entry ID");
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mPlayer.changeMedia("Entry ID");
+</code></pre></div></div>
     
       <h5 id="ott">
         
@@ -344,7 +337,7 @@ and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
         
       </h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>String URL = "Your thumbnail url";
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String URL = "Your thumbnail url";
 //if proxy data for CC has to be different than the player
 mPlayer.setKDPAttribute("chromecast","proxyData",getChromecatProxyDataJson(entryID));
 //for changing the thumbnail of the minicontroller for current media id 
@@ -352,8 +345,7 @@ mPlayer.setKDPAttribute("chromecast","defaultThumbnail","'" + URL + "'");
 //for updating mini controller png
 mPlayer.getConfig().addConfig("chromecast.defaultThumbnail", URL);
 mPlayer.changeMedia(proxyData JSON Object);
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="it-is-required-to-set-castprovider-again-in-case-that-player-activity-or-fragment-was-destroyed">
         
@@ -371,7 +363,7 @@ mPlayer.changeMedia(proxyData JSON Object);
         
       </h3>
 
-<p>A best practice sample application, which demonstrates the code that is required for a proper casting experience, can be found in this <br />
+<p>A best practice sample application, which demonstrates the code that is required for a proper casting experience, can be found in this 
 <a href="https://github.com/kaltura/player-sdk-native-android/tree/develop/KalturaDemos/CCPlayerDemo">demo Android</a>.</p>
 		
 </article>

@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Wed Feb 15 12:07:48 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_Plugins.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Wed Feb 15 12:07:48 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_Plugins.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Jan 30 07:36:11 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Wed Feb 15 12:07:48 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -189,21 +189,19 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SamplePluginConfig</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SamplePluginConfig</span> <span class="p">{</span>
     <span class="k">var</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span>
     <span class="k">var</span> <span class="nv">param</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="when-to-pass-the-plugin-configuration">
         
@@ -213,7 +211,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>The plugin configuration is passed via the <code class="highlighter-rouge">load</code> function, will be explained later.</p>
+<p>The plugin configuration is passed via the <code class="language-plaintext highlighter-rouge">load</code> function, will be explained later.</p>
     
       <h2 id="building-plugins">
         
@@ -229,7 +227,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SamplePlugin</span><span class="p">:</span> <span class="kt">PKPlugin</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">SamplePlugin</span><span class="p">:</span> <span class="kt">PKPlugin</span> <span class="p">{</span>
     
     <span class="kd">static</span> <span class="k">var</span> <span class="nv">pluginName</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
         <span class="k">return</span> <span class="s">"SamplePlugin"</span>
@@ -247,11 +245,10 @@ rtp('get', 'campaign',true);
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
-  <p>Note: Remember to use the <code class="highlighter-rouge">import PlayKit</code>function.</p>
+  <p>Note: Remember to use the <code class="language-plaintext highlighter-rouge">import PlayKit</code>function.</p>
 </blockquote>
     
       <h2 id="register-the-plugin">
@@ -262,13 +259,13 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>You should register the plugin once on your <code class="highlighter-rouge">AppDelegate</code> or see below:</p>
+<p>You should register the plugin once on your <code class="language-plaintext highlighter-rouge">AppDelegate</code> or see below:</p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">UIKit</span>
 <span class="kd">import</span> <span class="kt">PlayKit</span>
 
 <span class="kd">@UIApplicationMain</span>
@@ -282,13 +279,12 @@ rtp('get', 'campaign',true);
     <span class="o">...</span>
     
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import "AppDelegate.h"
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import "AppDelegate.h"
 #import "PlayKit-Swift.h"
 </span>
 <span class="k">@implementation</span> <span class="nc">AppDelegate</span>
@@ -301,8 +297,7 @@ rtp('get', 'campaign',true);
 <span class="p">...</span>
 
 <span class="k">@end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="add-the-plugin-configuration">
         
@@ -316,13 +311,13 @@ rtp('get', 'campaign',true);
   <p><a href="">Read About PluginConfig</a></p>
 </blockquote>
 
-<p>To get your plugin’s configuration, you’ll need to add it to the <code class="highlighter-rouge">pluginConfig</code> instance as follows.</p>
+<p>To get your plugin’s configuration, you’ll need to add it to the <code class="language-plaintext highlighter-rouge">pluginConfig</code> instance as follows.</p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 
     <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
@@ -344,16 +339,14 @@ rtp('get', 'campaign',true);
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="have-questions-or-need-help">
         

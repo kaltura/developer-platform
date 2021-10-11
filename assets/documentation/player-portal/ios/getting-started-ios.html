@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jul 30 02:08:55 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/ios/getting-started-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jul 30 02:08:55 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/getting-started-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Jul 30 02:08:55 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
@@ -135,7 +135,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>This guide will walk you through the steps for adding a Kaltura video player to your iOS mobile application. You’ll learn how to import the SDK, find the necessary credentials, and load the player with your Entry ID of choice. <strong>Because the player is focused on performance and giving you the simplest integration possible, it does not contain a UI.</strong> That being said, this guide will show you how to listen to events in order to manage the player state, as well as examples for adding play/pause buttons and a slider to the player. <br />
+		<p>This guide will walk you through the steps for adding a Kaltura video player to your iOS mobile application. You’ll learn how to import the SDK, find the necessary credentials, and load the player with your Entry ID of choice. <strong>Because the player is focused on performance and giving you the simplest integration possible, it does not contain a UI.</strong> That being said, this guide will show you how to listen to events in order to manage the player state, as well as examples for adding play/pause buttons and a slider to the player. 
 Lastly, this guide will cover how to add plugins to the application, specifically the Kaltura Video Analytics plugin.</p>
       <h2 id="before-you-begin">
         
@@ -177,7 +177,7 @@ Lastly, this guide will cover how to add plugins to the application, specificall
   <li>The <a href="https://cocoapods.org/pods/PlayKitProviders">PlatKitProviders Pod</a> adds the Media Entry Providers, which are responsible from bringing in media data from Kaltura</li>
 </ul>
 
-<p>If you don’t already have a Podfile, go to your project directory and run <code class="highlighter-rouge">pod init</code>. This will create a new Podfile for you, where you should add the desired pods (see example above) and then run <code class="highlighter-rouge">pod install</code> from the command line. You might need to close and reopen Xcode.</p>
+<p>If you don’t already have a Podfile, go to your project directory and run <code class="language-plaintext highlighter-rouge">pod init</code>. This will create a new Podfile for you, where you should add the desired pods (see example above) and then run <code class="language-plaintext highlighter-rouge">pod install</code> from the command line. You might need to close and reopen Xcode.</p>
     
       <h2 id="add-a-basic-kaltura-player">
         
@@ -233,17 +233,17 @@ Lastly, this guide will cover how to add plugins to the application, specificall
         
       </h3>
 
-<p>Inside the class, below the <code class="highlighter-rouge">ks</code> declaration, add a declaration for the Player.</p>
+<p>Inside the class, below the <code class="language-plaintext highlighter-rouge">ks</code> declaration, add a declaration for the Player.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">var</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">Player</span><span class="p">?</span></code></pre></figure>
 
-<p>Now lets create our video player. Head over to the Storyboard and create a new PlayerView of the desired size. Add a referencing outlet to your ViewController named playerContainer. Create a new function called <code class="highlighter-rouge">playerSetup</code> and set the player variable to equal the new playerContainer</p>
+<p>Now lets create our video player. Head over to the Storyboard and create a new PlayerView of the desired size. Add a referencing outlet to your ViewController named playerContainer. Create a new function called <code class="language-plaintext highlighter-rouge">playerSetup</code> and set the player variable to equal the new playerContainer</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">setupPlayer</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="p">?</span><span class="o">.</span><span class="n">view</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">playerContainer</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Now in the <code class="highlighter-rouge">viewDidLoad</code> function, load the player. We’ll start without a pluginConfig, but we will cover adding plugins later in this guide.</p>
+<p>Now in the <code class="language-plaintext highlighter-rouge">viewDidLoad</code> function, load the player. We’ll start without a pluginConfig, but we will cover adding plugins later in this guide.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="kt">PlayKitManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">loadPlayer</span><span class="p">(</span><span class="nv">pluginConfig</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
  </code></pre></figure>
@@ -252,20 +252,20 @@ Lastly, this guide will cover how to add plugins to the application, specificall
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">self</span><span class="o">.</span><span class="nf">setupPlayer</span><span class="p">()</span></code></pre></figure>
 
-<p>Now create and call a new function called <code class="highlighter-rouge">loadMedia</code>.</p>
+<p>Now create and call a new function called <code class="language-plaintext highlighter-rouge">loadMedia</code>.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">self</span><span class="o">.</span><span class="nf">loadMedia</span><span class="p">()</span></code></pre></figure>
 
-<p>In the loadMedia function, you’ll use the <code class="highlighter-rouge">SimpleSessionProvider</code> and <code class="highlighter-rouge">OVPMediaProvider</code> objects.</p>
+<p>In the loadMedia function, you’ll use the <code class="language-plaintext highlighter-rouge">SimpleSessionProvider</code> and <code class="language-plaintext highlighter-rouge">OVPMediaProvider</code> objects.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">sessionProvider</span> <span class="o">=</span> <span class="kt">SimpleSessionProvider</span><span class="p">(</span><span class="nv">serverURL</span><span class="p">:</span> <span class="kt">SERVER_BASE_URL</span><span class="p">,</span> <span class="nv">partnerId</span><span class="p">:</span> <span class="kt">Int64</span><span class="p">(</span><span class="kt">PARTNER_ID</span><span class="p">),</span> <span class="nv">ks</span><span class="p">:</span> <span class="n">ks</span><span class="p">)</span>
 <span class="k">let</span> <span class="nv">mediaProvider</span><span class="p">:</span> <span class="kt">OVPMediaProvider</span> <span class="o">=</span> <span class="kt">OVPMediaProvider</span><span class="p">(</span><span class="n">sessionProvider</span><span class="p">)</span></code></pre></figure>
 
-<p>Now set your entry ID on that <code class="highlighter-rouge">mediaProvider</code></p>
+<p>Now set your entry ID on that <code class="language-plaintext highlighter-rouge">mediaProvider</code></p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">mediaProvider</span><span class="o">.</span><span class="n">entryId</span> <span class="o">=</span> <span class="kt">ENTRY_ID</span></code></pre></figure>
 
-<p>Load the media by creating a <code class="highlighter-rouge">MediaConfig</code> with a video start time of zero seconds, and then passing that config to <code class="highlighter-rouge">player.prepare()</code></p>
+<p>Load the media by creating a <code class="language-plaintext highlighter-rouge">MediaConfig</code> with a video start time of zero seconds, and then passing that config to <code class="language-plaintext highlighter-rouge">player.prepare()</code></p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">mediaProvider</span><span class="o">.</span><span class="n">loadMedia</span> <span class="p">{</span> <span class="p">(</span><span class="n">mediaEntry</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">me</span> <span class="o">=</span> <span class="n">mediaEntry</span><span class="p">,</span> <span class="n">error</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
@@ -276,7 +276,7 @@ Lastly, this guide will cover how to add plugins to the application, specificall
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>The <code class="highlighter-rouge">loadMedia</code> function should now look like this:</p>
+<p>The <code class="language-plaintext highlighter-rouge">loadMedia</code> function should now look like this:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">loadMedia</span><span class="p">()</span> <span class="p">{</span>
 

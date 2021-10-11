@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri May 4 05:42:39 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-Getting-Started.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Fri May 4 05:42:39 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-Getting-Started.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Fri May 4 05:42:39 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -168,9 +168,8 @@ rtp('get', 'campaign',true);
 
 <p>The easiest way to install the Kaltura Player-SDK is by using <a href="https://cocoapods.org/">CocoaPods</a>, by adding the following line to your Podfile:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>pod 'KalturaPlayerSDK'
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'KalturaPlayerSDK'
+</code></pre></div></div>
     
       <h2 id="traditional-sdk-installation">
         
@@ -181,9 +180,8 @@ rtp('get', 'campaign',true);
       </h2>
 
 <p>To install the Kaltura Player-SDK using a traditional installation, follow these steps:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/kaltura/player-sdk-native-ios.git
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/kaltura/player-sdk-native-ios.git
+</code></pre></div></div>
     
       <h3 id="step-1-add-the-static-librarys-xcodeproj-to-the-applications-project">
         
@@ -195,10 +193,10 @@ rtp('get', 'campaign',true);
 
 <ol>
   <li>
-    <p>Locate the <code class="highlighter-rouge">KALTURAPlayerSDK.xcodeproj</code> from the subproject folder in Finder, and drag it into the Xcode’s Navigator tree. Alternatively, add the file with the Xcode’s Add Files File menu item. <img src="https://camo.githubusercontent.com/1e3d845d0728b62beb23e474ae30d2b8370867db/687474703a2f2f6b6e6f776c656467652e6b616c747572612e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f6c617267652f7075626c69632f6164645f66696c65732e706e67" alt="add xcodeproj" />.</p>
+    <p>Locate the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK.xcodeproj</code> from the subproject folder in Finder, and drag it into the Xcode’s Navigator tree. Alternatively, add the file with the Xcode’s Add Files File menu item. <img src="https://camo.githubusercontent.com/1e3d845d0728b62beb23e474ae30d2b8370867db/687474703a2f2f6b6e6f776c656467652e6b616c747572612e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f6c617267652f7075626c69632f6164645f66696c65732e706e67" alt="add xcodeproj" />.</p>
   </li>
-  <li>Make sure to add the <code class="highlighter-rouge">KALTURAPlayerSDK.xcodeproj</code> file only, <strong>not the entire directory</strong>. You cannot have the same project open in two different Xcode windows. If you find that you are unable to navigate around the library project, verify that you do not have it open in another Xcode window.</li>
-  <li>After you have added the subproject, it should appear below the main project in the Xcode’s Navigator tree:<br />
+  <li>Make sure to add the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK.xcodeproj</code> file only, <strong>not the entire directory</strong>. You cannot have the same project open in two different Xcode windows. If you find that you are unable to navigate around the library project, verify that you do not have it open in another Xcode window.</li>
+  <li>After you have added the subproject, it should appear below the main project in the Xcode’s Navigator tree:
 <img src="https://camo.githubusercontent.com/1f46c83ca7f3e9c76f1509ddc041e3964e63f3c7/687474703a2f2f6b6e6f776c656467652e6b616c747572612e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f6c617267652f7075626c69632f78636f6465747265652e706e67" alt="Xcode navigator tree" /></li>
 </ol>
     
@@ -210,12 +208,12 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>You will need to get the main project to build and link to the <code class="highlighter-rouge">KALTURAPlayerSDK</code> library.</p>
+<p>You will need to get the main project to build and link to the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK</code> library.</p>
 
 <ol>
-  <li>In the main project application’s target settings, find the <code class="highlighter-rouge">Build Phases</code> section. This is where you will configure the <code class="highlighter-rouge">KALTURAPlayerSDK</code> target to automatically build and link to the <code class="highlighter-rouge">KALTURAPlayerSDK</code> library.</li>
-  <li>After you find the <code class="highlighter-rouge">Build Phases</code> section, open the <code class="highlighter-rouge">Target Dependencies</code> block and click the <code class="highlighter-rouge">+</code>button.</li>
-  <li>In the project hierarchy displayed, the <code class="highlighter-rouge">KALTURAPlayerSDK</code> target from the <code class="highlighter-rouge">KALTURAPlayerSDK</code> project should be listed. Select the project and click <code class="highlighter-rouge">add</code>.</li>
+  <li>In the main project application’s target settings, find the <code class="language-plaintext highlighter-rouge">Build Phases</code> section. This is where you will configure the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK</code> target to automatically build and link to the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK</code> library.</li>
+  <li>After you find the <code class="language-plaintext highlighter-rouge">Build Phases</code> section, open the <code class="language-plaintext highlighter-rouge">Target Dependencies</code> block and click the <code class="language-plaintext highlighter-rouge">+</code>button.</li>
+  <li>In the project hierarchy displayed, the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK</code> target from the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK</code> project should be listed. Select the project and click <code class="language-plaintext highlighter-rouge">add</code>.</li>
 </ol>
 
 <p><img src="https://camo.githubusercontent.com/d35c79ce9a0d01ad3a45a94362da413ed4afa403/687474703a2f2f6b6e6f776c656467652e6b616c747572612e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f6c617267652f7075626c69632f616464446570656e64656e6369652e6a7067" alt="Xcode target config" /></p>
@@ -231,12 +229,12 @@ rtp('get', 'campaign',true);
 <p>You will need to set the application to link to the library when it is built - just as you would a system framework you want to use.</p>
 
 <ol>
-  <li>Open the <code class="highlighter-rouge">Link Binary With Libraries</code> section, located below the <code class="highlighter-rouge">Target Dependencies</code> section, and click <code class="highlighter-rouge">+</code>.</li>
+  <li>Open the <code class="language-plaintext highlighter-rouge">Link Binary With Libraries</code> section, located below the <code class="language-plaintext highlighter-rouge">Target Dependencies</code> section, and click <code class="language-plaintext highlighter-rouge">+</code>.</li>
   <li>
-    <p>At the top of the list you should be able to see the <code class="highlighter-rouge">libKALTURAPlayerSDK.a</code> static library that the main project target produces. Choose it and click <code class="highlighter-rouge">Add</code>.<br />
+    <p>At the top of the list you should be able to see the <code class="language-plaintext highlighter-rouge">libKALTURAPlayerSDK.a</code> static library that the main project target produces. Choose it and click <code class="language-plaintext highlighter-rouge">Add</code>.
 <img src="https://camo.githubusercontent.com/acea3bcfbe47b0cc2e37796807d23c617723822f/687474703a2f2f6b6e6f776c656467652e6b616c747572612e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f6c617267652f7075626c69632f6c696e6b546f53444b2e6a7067" alt="Xcode target config2" />.</p>
   </li>
-  <li>Because we are using Objective-C, you will need to add a couple of linker flags to the main project application’s target to ensure that ObjC static libraries like ours are linked correctly. In the main project target’s <code class="highlighter-rouge">Build Settings</code> find the <code class="highlighter-rouge">Other Linker Flags</code> line, and add <code class="highlighter-rouge">-ObjC</code>.</li>
+  <li>Because we are using Objective-C, you will need to add a couple of linker flags to the main project application’s target to ensure that ObjC static libraries like ours are linked correctly. In the main project target’s <code class="language-plaintext highlighter-rouge">Build Settings</code> find the <code class="language-plaintext highlighter-rouge">Other Linker Flags</code> line, and add <code class="language-plaintext highlighter-rouge">-ObjC</code>.</li>
 </ol>
 
 <p><img src="https://camo.githubusercontent.com/a79c30cac8e6ff20b85c2db05391fb5888706966/687474703a2f2f6b6e6f776c656467652e6b616c747572612e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f6c617267652f7075626c69632f616464696e674f626a435f666c61672e6a7067" alt="Xcode objC flag" /></p>
@@ -251,7 +249,7 @@ rtp('get', 'campaign',true);
 
 <ol>
   <li>Choose the application target from the Targets section.</li>
-  <li>Go to the <code class="highlighter-rouge">Products</code> folder and drag the <code class="highlighter-rouge">KALTURAPlayerSDK.bundle</code> to <code class="highlighter-rouge">Copy Bundle Resources</code> section.</li>
+  <li>Go to the <code class="language-plaintext highlighter-rouge">Products</code> folder and drag the <code class="language-plaintext highlighter-rouge">KALTURAPlayerSDK.bundle</code> to <code class="language-plaintext highlighter-rouge">Copy Bundle Resources</code> section.</li>
 </ol>
 
 <p><img src="https://camo.githubusercontent.com/bd7958d4ca8e7c7ce8ca1dac1a6b1c1c6c08c078/687474703a2f2f6b6e6f776c656467652e6b616c747572612e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f6c617267652f7075626c69632f42756e646c652e706e67" alt="Adding resource bundle" /></p>
@@ -265,7 +263,7 @@ rtp('get', 'campaign',true);
         
         
       </h3>
-<div class="highlighter-rouge"><pre class="highlight"><code>• SystemConfiguration
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>• SystemConfiguration
 • QuartzCore
 • CoreMedia
 • AVFoundation
@@ -282,8 +280,7 @@ rtp('get', 'campaign',true);
 • libxml2.dylib
 • libxml2.2.dylib
 • libc++.dylib
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="application-transport-security-atl">
         
@@ -313,9 +310,8 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import &lt;KALTURAPlayerSDK/KPViewController.h&gt;
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;KALTURAPlayerSDK/KPViewController.h&gt;
+</code></pre></div></div>
     
       <h3 id="create-a-kpviewcontroller-instance">
         
@@ -325,9 +321,8 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">KPViewController</span> <span class="o">*</span><span class="n">player</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@property (retain, nonatomic) KPViewController *player;
+</code></pre></div></div>
     
       <h3 id="initialize-playerviewcontroller-for-fullscreen">
         
@@ -337,30 +332,29 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">KPViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">player</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">KPViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">player</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_player</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Account Params
-</span>        <span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="n">config</span> <span class="o">=</span> <span class="p">[[</span><span class="n">KPPlayerConfig</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithServer</span><span class="p">:</span><span class="s">@"https://cdnapisec.kaltura.com"</span>
-                                                         <span class="nf">uiConfID</span><span class="p">:</span><span class="s">@"26698911"</span>
-                                                         <span class="n">partnerId</span><span class="o">:</span><span class="s">@"1831271"</span><span class="p">];</span>
+        <span class="c1">// Account Params</span>
+        <span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="n">config</span> <span class="o">=</span> <span class="p">[[</span><span class="n">KPPlayerConfig</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithServer</span><span class="p">:</span><span class="s">@"https://cdnapisec.kaltura.com"</span>
+                                                         <span class="nl">uiConfID:</span><span class="s">@"26698911"</span>
+                                                         <span class="nl">partnerId:</span><span class="s">@"1831271"</span><span class="p">];</span>
 
 
-        <span class="c1">// Video Entry
-</span>        <span class="n">config</span><span class="p">.</span><span class="n">entryId</span> <span class="o">=</span>  <span class="s">@"1_o426d3i4"</span><span class="p">;</span>
+        <span class="c1">// Video Entry</span>
+        <span class="n">config</span><span class="p">.</span><span class="n">entryId</span> <span class="o">=</span>  <span class="s">@"1_o426d3i4"</span><span class="p">;</span>
 
-        <span class="c1">// Setting this property will cache the html pages in the limit size
-</span>        <span class="n">config</span><span class="p">.</span><span class="n">cacheSize</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// in MB
-</span>        <span class="n">_player</span> <span class="o">=</span> <span class="p">[[</span><span class="n">KPViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithConfiguration</span><span class="p">:</span><span class="n">config</span><span class="p">];</span>
+        <span class="c1">// Setting this property will cache the html pages in the limit size</span>
+        <span class="n">config</span><span class="p">.</span><span class="n">cacheSize</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// in MB</span>
+        <span class="n">_player</span> <span class="o">=</span> <span class="p">[[</span><span class="n">KPViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithConfiguration</span><span class="p">:</span><span class="n">config</span><span class="p">];</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">_player</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidAppear</span><span class="o">:</span><span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">animated</span> <span class="p">{</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidAppear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidAppear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
     <span class="p">[</span><span class="n">self</span> <span class="nf">presentViewController</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span> <span class="n">completion</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><img src="assets/images/iOS-fullscreen-embed.png" alt="iOS-fullscreen" /></p>
     
       <h3 id="initialize-playerviewcontroller-for-inline">

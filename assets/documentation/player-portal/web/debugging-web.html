@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/debugging-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/debugging-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed May 1 14:04:39 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Jun 9 07:47:37 2020, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -150,28 +150,25 @@ rtp('get', 'campaign',true);
 
 <p>In your application, define at the top of your page the following window debug variable:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>window.DEBUG_KALTURA_PLAYER = true;
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>window.DEBUG_KALTURA_PLAYER = true;
+</code></pre></div></div>
 
 <p><strong>Option 2: Add a query string parameter to the page URL</strong></p>
 
-<p>In your page URL, add the <code class="highlighter-rouge">debugKalturaPlayer</code> query string parameter:</p>
+<p>In your page URL, add the <code class="language-plaintext highlighter-rouge">debugKalturaPlayer</code> query string parameter:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>http://my/page/url?debugKalturaPlayer
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://my/page/url?debugKalturaPlayer
+</code></pre></div></div>
 
 <p><strong>Options 3: Using Player Config</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var config = {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var config = {
     ...
     logLevel: "DEBUG"
     ...
 };
 var player = KalturaPlayer.setup(config);
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="about-player-logs">
         
@@ -195,9 +192,8 @@ var player = KalturaPlayer.setup(config);
 
 <p>As you can see from the figure above, the player log conventions are built with the following template:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[Component] Message
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Component] Message
+</code></pre></div></div>
 
 <blockquote>
   <p>Note: Remember to stick to these conventions when building you application to ensure that debugging &amp; troubleshooting are easy to understand.</p>
@@ -211,15 +207,14 @@ var player = KalturaPlayer.setup(config);
         
       </h3>
 
-<p>If you want to use different log level than <code class="highlighter-rouge">DEBUG</code>, you’ll need to configure the player with the desired log level. For example, to display only logs from a warning level and above in the console, use the following:</p>
+<p>If you want to use different log level than <code class="language-plaintext highlighter-rouge">DEBUG</code>, you’ll need to configure the player with the desired log level. For example, to display only logs from a warning level and above in the console, use the following:</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="p">...</span>
-    <span class="na">logLevel</span><span class="p">:</span> <span class="s2">"WARN"</span>
+    <span class="na">logLevel</span><span class="p">:</span> <span class="dl">"</span><span class="s2">WARN</span><span class="dl">"</span>
     <span class="p">...</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 		
 </article>
 

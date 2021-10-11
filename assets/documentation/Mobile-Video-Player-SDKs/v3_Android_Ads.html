@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Wed Feb 15 12:07:48 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Ads.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Wed Feb 15 12:07:48 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Ads.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Wed Feb 15 12:07:48 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -164,9 +164,8 @@ rtp('get', 'campaign',true);
 
 <p>Register the IMA Plugin as inside your application as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="n">IMAPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="nc">IMAPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h3 id="configure-the-plugin-configuration-object">
         
@@ -176,14 +175,13 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To configure the plugin, add the following configuration to your <code class="highlighter-rouge">pluginConfig</code> file as follows:</p>
+<p>To configure the plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">pluginConfig</code> file as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureIMAPlugin</span><span class="o">(</span><span class="n">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">String</span> <span class="n">adTagUrl</span> <span class="o">=</span> <span class="n">VIOAdUtil</span><span class="o">.</span><span class="na">getCastAdTag</span><span class="o">(</span><span class="n">mVideoDetailsModel</span><span class="o">);</span>
-    <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">videoMimeTypes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-    <span class="n">IMAConfig</span> <span class="n">adsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IMAConfig</span><span class="o">(</span><span class="s">"en"</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">videoMimeTypes</span><span class="o">,</span> <span class="n">adTagUrl</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureIMAPlugin</span><span class="o">(</span><span class="nc">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">adTagUrl</span> <span class="o">=</span> <span class="nc">VIOAdUtil</span><span class="o">.</span><span class="na">getCastAdTag</span><span class="o">(</span><span class="n">mVideoDetailsModel</span><span class="o">);</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">videoMimeTypes</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="nc">IMAConfig</span> <span class="n">adsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IMAConfig</span><span class="o">(</span><span class="s">"en"</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> <span class="n">videoMimeTypes</span><span class="o">,</span> <span class="n">adTagUrl</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h3 id="imconfig-constructor">
         
@@ -193,9 +191,8 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">IMAConfig</span><span class="o">(</span><span class="n">String</span> <span class="n">language</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">enableBackgroundPlayback</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">autoPlayAdBreaks</span><span class="o">,</span> <span class="kt">int</span> <span class="n">videoBitrate</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">videoMimeTypes</span><span class="o">,</span> <span class="n">String</span> <span class="n">adTagUrl</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">adAttribution</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">adCountDown</span><span class="o">)</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">IMAConfig</span><span class="o">(</span><span class="nc">String</span> <span class="n">language</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">enableBackgroundPlayback</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">autoPlayAdBreaks</span><span class="o">,</span> <span class="kt">int</span> <span class="n">videoBitrate</span><span class="o">,</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">videoMimeTypes</span><span class="o">,</span> <span class="nc">String</span> <span class="n">adTagUrl</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">adAttribution</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">adCountDown</span><span class="o">)</span>
+</code></pre></div></div>
     
       <h2 id="set-the-plugin-configuration-to-the-ima-plugin">
         
@@ -207,11 +204,10 @@ rtp('get', 'campaign',true);
 
 <p>For the IMA Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
-<span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
-<span class="n">pluginConfig</span><span class="o">.</span><span class="na">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="n">IMAPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">adsConfig</span><span class="o">.</span><span class="na">toJSONObject</span><span class="o">());</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
+<span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<span class="n">pluginConfig</span><span class="o">.</span><span class="na">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="nc">IMAPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">adsConfig</span><span class="o">.</span><span class="na">toJSONObject</span><span class="o">());</span>
+</code></pre></div></div>
     
       <h2 id="register-to-the-ad-started-event">
         
@@ -221,19 +217,18 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The Ad Started event includes the <code class="highlighter-rouge">AdInfo</code> playload. You can fetch this data in the following way:</p>
+<p>The Ad Started event includes the <code class="language-plaintext highlighter-rouge">AdInfo</code> playload. You can fetch this data in the following way:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"AD_STARTED"</span><span class="o">);</span>
-                <span class="n">mAdStartedEventInfo</span> <span class="o">=</span> <span class="o">(</span><span class="n">AdEvent</span><span class="o">.</span><span class="na">AdStartedEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">;</span>
-                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
+                <span class="n">mAdStartedEventInfo</span> <span class="o">=</span> <span class="o">(</span><span class="nc">AdEvent</span><span class="o">.</span><span class="na">AdStartedEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">;</span>
+                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="nc">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
             <span class="o">}</span>
-        <span class="o">},</span> <span class="n">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">STARTED</span><span class="o">);</span>
+        <span class="o">},</span> <span class="nc">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">STARTED</span><span class="o">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="adinfo-api">
         
@@ -243,20 +238,19 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">String</span>   <span class="nf">getAdDescription</span><span class="o">();</span>
-    <span class="n">String</span>   <span class="nf">getAdId</span><span class="o">();</span>
-    <span class="n">String</span>   <span class="nf">getAdSystem</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nc">String</span>   <span class="nf">getAdDescription</span><span class="o">();</span>
+    <span class="nc">String</span>   <span class="nf">getAdId</span><span class="o">();</span>
+    <span class="nc">String</span>   <span class="nf">getAdSystem</span><span class="o">();</span>
     <span class="kt">boolean</span>  <span class="nf">isAdSkippable</span><span class="o">();</span>
-    <span class="n">String</span>   <span class="nf">getAdTitle</span><span class="o">();</span>
-    <span class="n">String</span>   <span class="nf">getAdContentType</span><span class="o">();</span>
+    <span class="nc">String</span>   <span class="nf">getAdTitle</span><span class="o">();</span>
+    <span class="nc">String</span>   <span class="nf">getAdContentType</span><span class="o">();</span>
     <span class="kt">int</span>      <span class="nf">getAdWidth</span><span class="o">();</span>
     <span class="kt">int</span>      <span class="nf">getAdHeight</span><span class="o">();</span>
     <span class="kt">int</span>      <span class="nf">getAdPodCount</span><span class="o">();</span>
     <span class="kt">int</span>      <span class="nf">getAdPodPosition</span><span class="o">();</span>
     <span class="kt">long</span>     <span class="nf">getAdPodTimeOffset</span><span class="o">();</span>
     <span class="kt">long</span>     <span class="nf">getAdDuration</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="ad-eventserror-registration-example">
         
@@ -266,36 +260,35 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"AD_CONTENT_PAUSE_REQUESTED"</span><span class="o">);</span>
-                <span class="n">PKAdInfo</span> <span class="n">adInfo</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getAdInfo</span><span class="o">();</span>
-                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">VISIBLE</span><span class="o">);</span>
+                <span class="nc">PKAdInfo</span> <span class="n">adInfo</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="na">getAdInfo</span><span class="o">();</span>
+                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="nc">View</span><span class="o">.</span><span class="na">VISIBLE</span><span class="o">);</span>
             <span class="o">}</span>
-        <span class="o">},</span> <span class="n">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">CONTENT_PAUSE_REQUESTED</span><span class="o">);</span>
+        <span class="o">},</span> <span class="nc">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">CONTENT_PAUSE_REQUESTED</span><span class="o">);</span>
         
-        <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"Ad Event AD_RESUMED"</span><span class="o">);</span>
                 <span class="n">nowPlaying</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
+                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="nc">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
             <span class="o">}</span>
-        <span class="o">},</span> <span class="n">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">RESUMED</span><span class="o">);</span>
-        <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="o">},</span> <span class="nc">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">RESUMED</span><span class="o">);</span>
+        <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"Ad Event AD_ALL_ADS_COMPLETED"</span><span class="o">);</span>
-                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
+                <span class="n">appProgressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="nc">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
             <span class="o">}</span>
-        <span class="o">},</span> <span class="n">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">ALL_ADS_COMPLETED</span><span class="o">);</span>
-        <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="o">},</span> <span class="nc">AdEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">ALL_ADS_COMPLETED</span><span class="o">);</span>
+        <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"Ad Error Event VAST_LOAD_TIMEOUT"</span><span class="o">);</span>
             <span class="o">}</span>
-        <span class="o">},</span> <span class="n">AdError</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">VAST_LOAD_TIMEOUT</span><span class="o">);</span>
-</code></pre>
-</div>
+        <span class="o">},</span> <span class="nc">AdError</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">VAST_LOAD_TIMEOUT</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h2 id="ad-events">
         
@@ -307,28 +300,27 @@ rtp('get', 'campaign',true);
 
 <p>The IMA Plugin supports the following ad events:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">STARTED</span><span class="o">,</span>
-        <span class="n">PAUSED</span><span class="o">,</span>
-        <span class="n">RESUMED</span><span class="o">,</span>
-        <span class="n">COMPLETED</span><span class="o">,</span>
-        <span class="n">FIRST_QUARTILE</span><span class="o">,</span>
-        <span class="n">MIDPOINT</span><span class="o">,</span>
-        <span class="n">THIRD_QUARTILE</span><span class="o">,</span>
-        <span class="n">SKIPPED</span><span class="o">(),</span>
-        <span class="n">CLICKED</span><span class="o">,</span>
-        <span class="n">TAPPED</span><span class="o">,</span>
-        <span class="n">ICON_TAPPED</span><span class="o">,</span>
-        <span class="n">AD_BREAK_READY</span><span class="o">,</span>
-        <span class="n">AD_PROGRESS</span><span class="o">,</span>
-        <span class="n">AD_BREAK_STARTED</span><span class="o">,</span>
-        <span class="n">AD_BREAK_ENDED</span><span class="o">,</span>
-        <span class="n">CUEPOINTS_CHANGED</span><span class="o">,</span>
-        <span class="n">LOADED</span><span class="o">,</span>
-        <span class="n">CONTENT_PAUSE_REQUESTED</span><span class="o">,</span>
-        <span class="n">CONTENT_RESUME_REQUESTED</span><span class="o">,</span>
-        <span class="n">ALL_ADS_COMPLETED</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="no">STARTED</span><span class="o">,</span>
+        <span class="no">PAUSED</span><span class="o">,</span>
+        <span class="no">RESUMED</span><span class="o">,</span>
+        <span class="no">COMPLETED</span><span class="o">,</span>
+        <span class="no">FIRST_QUARTILE</span><span class="o">,</span>
+        <span class="no">MIDPOINT</span><span class="o">,</span>
+        <span class="no">THIRD_QUARTILE</span><span class="o">,</span>
+        <span class="no">SKIPPED</span><span class="o">(),</span>
+        <span class="no">CLICKED</span><span class="o">,</span>
+        <span class="no">TAPPED</span><span class="o">,</span>
+        <span class="no">ICON_TAPPED</span><span class="o">,</span>
+        <span class="no">AD_BREAK_READY</span><span class="o">,</span>
+        <span class="no">AD_PROGRESS</span><span class="o">,</span>
+        <span class="no">AD_BREAK_STARTED</span><span class="o">,</span>
+        <span class="no">AD_BREAK_ENDED</span><span class="o">,</span>
+        <span class="no">CUEPOINTS_CHANGED</span><span class="o">,</span>
+        <span class="no">LOADED</span><span class="o">,</span>
+        <span class="no">CONTENT_PAUSE_REQUESTED</span><span class="o">,</span>
+        <span class="no">CONTENT_RESUME_REQUESTED</span><span class="o">,</span>
+        <span class="no">ALL_ADS_COMPLETED</span>
+</code></pre></div></div>
     
       <h2 id="ad-error-events">
         
@@ -340,27 +332,26 @@ rtp('get', 'campaign',true);
 
 <p>The IMA Plugin supports the following ad error events:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">INTERNAL_ERROR</span><span class="o">(</span><span class="mi">2000</span><span class="o">),</span>
-        <span class="n">VAST_MALFORMED_RESPONSE</span><span class="o">(</span><span class="mi">2001</span><span class="o">),</span>
-        <span class="n">UNKNOWN_AD_RESPONSE</span><span class="o">(</span><span class="mi">2002</span><span class="o">),</span>
-        <span class="n">VAST_LOAD_TIMEOUT</span><span class="o">(</span><span class="mi">2003</span><span class="o">),</span>
-        <span class="n">VAST_TOO_MANY_REDIRECTS</span><span class="o">(</span><span class="mi">2004</span><span class="o">),</span>
-        <span class="n">VIDEO_PLAY_ERROR</span><span class="o">(</span><span class="mi">2005</span><span class="o">),</span>
-        <span class="n">VAST_MEDIA_LOAD_TIMEOUT</span><span class="o">(</span><span class="mi">2006</span><span class="o">),</span>
-        <span class="n">VAST_LINEAR_ASSET_MISMATCH</span><span class="o">(</span><span class="mi">2007</span><span class="o">),</span>
-        <span class="n">OVERLAY_AD_PLAYING_FAILED</span><span class="o">(</span><span class="mi">2008</span><span class="o">),</span>
-        <span class="n">OVERLAY_AD_LOADING_FAILED</span><span class="o">(</span><span class="mi">2009</span><span class="o">),</span>
-        <span class="n">VAST_NONLINEAR_ASSET_MISMATCH</span><span class="o">(</span><span class="mi">2010</span><span class="o">),</span>
-        <span class="n">COMPANION_AD_LOADING_FAILED</span><span class="o">(</span><span class="mi">2011</span><span class="o">),</span>
-        <span class="n">UNKNOWN_ERROR</span><span class="o">(</span><span class="mi">2012</span><span class="o">),</span>
-        <span class="n">VAST_EMPTY_RESPONSE</span><span class="o">(</span><span class="mi">2013</span><span class="o">),</span>
-        <span class="n">FAILED_TO_REQUEST_ADS</span><span class="o">(</span><span class="mi">2014</span><span class="o">),</span>
-        <span class="n">VAST_ASSET_NOT_FOUND</span><span class="o">(</span><span class="mi">2015</span><span class="o">),</span>
-        <span class="n">ADS_REQUEST_NETWORK_ERROR</span><span class="o">(</span><span class="mi">2016</span><span class="o">),</span>
-        <span class="n">INVALID_ARGUMENTS</span><span class="o">(</span><span class="mi">2017</span><span class="o">),</span>
-        <span class="n">PLAYLIST_NO_CONTENT_TRACKING</span><span class="o">(</span><span class="mi">2018</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="no">INTERNAL_ERROR</span><span class="o">(</span><span class="mi">2000</span><span class="o">),</span>
+        <span class="no">VAST_MALFORMED_RESPONSE</span><span class="o">(</span><span class="mi">2001</span><span class="o">),</span>
+        <span class="no">UNKNOWN_AD_RESPONSE</span><span class="o">(</span><span class="mi">2002</span><span class="o">),</span>
+        <span class="no">VAST_LOAD_TIMEOUT</span><span class="o">(</span><span class="mi">2003</span><span class="o">),</span>
+        <span class="no">VAST_TOO_MANY_REDIRECTS</span><span class="o">(</span><span class="mi">2004</span><span class="o">),</span>
+        <span class="no">VIDEO_PLAY_ERROR</span><span class="o">(</span><span class="mi">2005</span><span class="o">),</span>
+        <span class="no">VAST_MEDIA_LOAD_TIMEOUT</span><span class="o">(</span><span class="mi">2006</span><span class="o">),</span>
+        <span class="no">VAST_LINEAR_ASSET_MISMATCH</span><span class="o">(</span><span class="mi">2007</span><span class="o">),</span>
+        <span class="no">OVERLAY_AD_PLAYING_FAILED</span><span class="o">(</span><span class="mi">2008</span><span class="o">),</span>
+        <span class="no">OVERLAY_AD_LOADING_FAILED</span><span class="o">(</span><span class="mi">2009</span><span class="o">),</span>
+        <span class="no">VAST_NONLINEAR_ASSET_MISMATCH</span><span class="o">(</span><span class="mi">2010</span><span class="o">),</span>
+        <span class="no">COMPANION_AD_LOADING_FAILED</span><span class="o">(</span><span class="mi">2011</span><span class="o">),</span>
+        <span class="no">UNKNOWN_ERROR</span><span class="o">(</span><span class="mi">2012</span><span class="o">),</span>
+        <span class="no">VAST_EMPTY_RESPONSE</span><span class="o">(</span><span class="mi">2013</span><span class="o">),</span>
+        <span class="no">FAILED_TO_REQUEST_ADS</span><span class="o">(</span><span class="mi">2014</span><span class="o">),</span>
+        <span class="no">VAST_ASSET_NOT_FOUND</span><span class="o">(</span><span class="mi">2015</span><span class="o">),</span>
+        <span class="no">ADS_REQUEST_NETWORK_ERROR</span><span class="o">(</span><span class="mi">2016</span><span class="o">),</span>
+        <span class="no">INVALID_ARGUMENTS</span><span class="o">(</span><span class="mi">2017</span><span class="o">),</span>
+        <span class="no">PLAYLIST_NO_CONTENT_TRACKING</span><span class="o">(</span><span class="mi">2018</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h2 id="have-questions-or-need-help">
         

@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Thu Mar 16 03:05:59 2017</span>, By <span class="commit-author">Gal Orlanczyk</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_EventsAndStates.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Thu Mar 16 03:05:59 2017</span>, By <span class="commit-author">Gal Orlanczyk</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_EventsAndStates.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 15 18:30:05 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Thu Mar 16 03:05:59 2017, By <span class="commit-author">Gal Orlanczyk</span></td></tr-->
 			
@@ -175,7 +175,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// add observer to list of different events</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// add observer to list of different events</span>
 <span class="c1">// don't forget to use weak self to prevent retain cycles when needed</span>
 <span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">playing</span><span class="p">,</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">durationChanged</span><span class="p">,</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">stateChanged</span><span class="p">])</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">event</span> <span class="k">in</span>
      <span class="k">if</span> <span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span> <span class="o">==</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">playing</span> <span class="p">{</span>
@@ -188,28 +188,26 @@ rtp('get', 'campaign',true);
      <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// don't forget to use weak self to prevent retain cycles when needed
-</span><span class="n">__weak</span> <span class="n">__typeof</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="n">weakSelf</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// don't forget to use weak self to prevent retain cycles when needed</span>
+<span class="n">__weak</span> <span class="n">__typeof</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="n">weakSelf</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
 
-<span class="c1">// add observer to list of different events
-</span><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">,</span> <span class="n">PlayerEvent</span><span class="p">.</span><span class="n">durationChanged</span><span class="p">,</span> <span class="n">PlayerEvent</span><span class="p">.</span><span class="n">stateChanged</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// add observer to list of different events</span>
+<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">,</span> <span class="n">PlayerEvent</span><span class="p">.</span><span class="n">durationChanged</span><span class="p">,</span> <span class="n">PlayerEvent</span><span class="p">.</span><span class="n">stateChanged</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">])</span> <span class="p">{</span>
-        <span class="c1">// handle playing event
-</span>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">durationChanged</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// handle playing event</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">durationChanged</span><span class="p">])</span> <span class="p">{</span>
         <span class="n">NSNumber</span> <span class="o">*</span><span class="n">duration</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">duration</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">stateChanged</span><span class="p">])</span> <span class="p">{</span>
         <span class="n">PlayerState</span> <span class="n">oldState</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">oldState</span><span class="p">;</span>
         <span class="n">PlayerState</span> <span class="n">newState</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">newState</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="removing-observers">
         
@@ -223,16 +221,14 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">removeObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">playing</span><span class="p">])</span>
-</code></pre>
-</div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">removeObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">playing</span><span class="p">])</span>
+</code></pre></div></div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">removeObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">]];</span>
-</code></pre>
-</div>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">removeObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">]];</span>
+</code></pre></div></div>
 
 <blockquote>
   <p>Note: To get a complete list of supported player events, refer to the <a href="https://kaltura.github.io/playkit/api/ios/Classes/PlayerEvents.html">Player Events page</a>.</p>
@@ -250,7 +246,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">addEvents</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">addEvents</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// observe single event</span>
     <span class="k">self</span><span class="o">.</span><span class="n">playerController</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">stateChanged</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
         <span class="c1">// handle state changed event</span>
@@ -265,30 +261,28 @@ rtp('get', 'campaign',true);
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">addEvents</span> <span class="p">{</span>
-    <span class="c1">// observe single event
-</span>    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">stateChanged</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// handle state changed event
-</span>    <span class="p">}];</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">addEvents</span> <span class="p">{</span>
+    <span class="c1">// observe single event</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">stateChanged</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// handle state changed event</span>
+    <span class="p">}];</span>
     
-    <span class="c1">// observe array of events
-</span>    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">,</span> <span class="n">PlayerEvent</span><span class="p">.</span><span class="n">pause</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// observe array of events</span>
+    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">,</span> <span class="n">PlayerEvent</span><span class="p">.</span><span class="n">pause</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playing</span><span class="p">])</span> <span class="p">{</span>
-            <span class="c1">// handle playing event
-</span>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="c1">// handle pause event
-</span>        <span class="p">}</span>
+            <span class="c1">// handle playing event</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="c1">// handle pause event</span>
+        <span class="p">}</span>
     <span class="p">}];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>Note: To get a complete list of supported player states, refer to the <a href="https://kaltura.github.io/playkit/api/ios/Enums/PlayerState.html">Player States page</a>.</p>
@@ -302,14 +296,14 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Observe timed metadata and filter by key. <br />
+<p>Observe timed metadata and filter by key. 
 for more ways how to handle metadata see <a href="https://developer.apple.com/reference/avfoundation/avmetadataitem">AVMetadataItem</a></p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">timedMetadata</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">timedMetadata</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">timedMetadata</span><span class="p">:</span> <span class="p">[</span><span class="kt">AVMetadataItem</span><span class="p">]</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">timedMetadata</span> <span class="p">{</span> 
         <span class="c1">// filter the array by specific key</span>
         <span class="k">let</span> <span class="nv">filteredMetadata</span> <span class="o">=</span> <span class="kt">AVMetadataItem</span><span class="o">.</span><span class="nf">metadataItems</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">timedMetadata</span><span class="p">,</span> <span class="nv">withKey</span><span class="p">:</span> <span class="s">"YOUR_KEY"</span><span class="p">,</span> <span class="nv">keySpace</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
@@ -322,20 +316,19 @@ for more ways how to handle metadata see <a href="https://developer.apple.com/re
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">timedMetadata</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">timedMetadata</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">AVMetadataItem</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">timedMetadata</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">timedMetadata</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">timedMetadata</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// filter the array by specific key
-</span>        <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">AVMetadataItem</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">filteredMetadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVMetadataItem</span> <span class="nf">metadataItemsFromArray</span><span class="p">:</span><span class="n">timedMetadata</span> <span class="nf">withKey</span><span class="p">:</span><span class="s">@"YOUR_KEY"</span> <span class="n">keySpace</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
-        <span class="c1">// get values from metadata with the type you need
-</span>        <span class="k">for</span> <span class="p">(</span><span class="n">AVMetadataItem</span> <span class="o">*</span> <span class="n">metadataItem</span> <span class="k">in</span> <span class="n">filteredMetadata</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// filter the array by specific key</span>
+        <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">AVMetadataItem</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">filteredMetadata</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVMetadataItem</span> <span class="nf">metadataItemsFromArray</span><span class="p">:</span><span class="n">timedMetadata</span> <span class="nf">withKey</span><span class="p">:</span><span class="s">@"YOUR_KEY"</span> <span class="n">keySpace</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
+        <span class="c1">// get values from metadata with the type you need</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">AVMetadataItem</span> <span class="o">*</span> <span class="n">metadataItem</span> <span class="k">in</span> <span class="n">filteredMetadata</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">NSString</span> <span class="o">*</span><span class="n">stringValue</span> <span class="o">=</span> <span class="n">metadataItem</span><span class="p">.</span><span class="n">stringValue</span><span class="p">;</span>
             <span class="n">NSData</span> <span class="o">*</span><span class="n">dataValue</span> <span class="o">=</span> <span class="n">metadataItem</span><span class="p">.</span><span class="n">dataValue</span><span class="p">;</span>
             <span class="n">NSDate</span> <span class="o">*</span><span class="n">dateValue</span> <span class="o">=</span> <span class="n">metadataItem</span><span class="p">.</span><span class="n">dateValue</span><span class="p">;</span>
@@ -343,8 +336,7 @@ for more ways how to handle metadata see <a href="https://developer.apple.com/re
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}];</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="have-questions-or-need-help">
         

@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jun 9 07:10:03 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/ios/offline-assets-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jun 9 07:10:03 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/offline-assets-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Jun 9 07:10:03 2020, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -144,7 +144,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The PlayKit component responsible for local/offline/downloaded assets is <code class="highlighter-rouge">LocalAssetsManager</code>.</p>
+<p>The PlayKit component responsible for local/offline/downloaded assets is <code class="language-plaintext highlighter-rouge">LocalAssetsManager</code>.</p>
     
       <h3 id="select-a-source-to-download">
         
@@ -154,12 +154,12 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>A <code class="highlighter-rouge">PKMediaEntry</code> typically has more than one PKMediaSource, so the first step is selecting the most suitable source.<br />
-Call <code class="highlighter-rouge">LocalAssetsManager.getPreferredDownloadableMediaSource(for:)</code>, passing a PKMediaEntry. It will try to find a downloadable <br />
+<p>A <code class="language-plaintext highlighter-rouge">PKMediaEntry</code> typically has more than one PKMediaSource, so the first step is selecting the most suitable source.
+Call <code class="language-plaintext highlighter-rouge">LocalAssetsManager.getPreferredDownloadableMediaSource(for:)</code>, passing a PKMediaEntry. It will try to find a downloadable 
 source.</p>
 
-<p>There are two mechanisms for downloading HLS assets: Kaltura’s DownloadToGo (DTG) library and Apple’s <code class="highlighter-rouge">AVAssetDownloadTask</code>. <br />
-In most cases, <strong>DTG</strong> should be used. The only case in which <code class="highlighter-rouge">AVAssetDownloadTask</code> must be used, is when downloading <strong>FairPlay</strong> on iOS 10.0-10.2.</p>
+<p>There are two mechanisms for downloading HLS assets: Kaltura’s DownloadToGo (DTG) library and Apple’s <code class="language-plaintext highlighter-rouge">AVAssetDownloadTask</code>. 
+In most cases, <strong>DTG</strong> should be used. The only case in which <code class="language-plaintext highlighter-rouge">AVAssetDownloadTask</code> must be used, is when downloading <strong>FairPlay</strong> on iOS 10.0-10.2.</p>
 
 <blockquote>
   <p>NOTE: We recommend that apps restrict FairPlay downloads to iOS 10.3 and up and use DTG.</p>
@@ -178,18 +178,17 @@ In most cases, <strong>DTG</strong> should be used. The only case in which <code
 <p><img src="./offline-dtg.svg" alt="" /></p>
 
 <div hidden="">
- <p><img src="assets/uml/be972b9fa99829d2b15c72af4c225d94.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+ <p><object data="/uml/be972b9fa99829d2b15c72af4c225d94.svg" type="image/svg+xml" class="plantuml"></object></p>
 </div>
 
 <p>This flow works for clear and AES HLS assets on iOS 8 and up. It also works for FairPlay assets on iOS 10.3 and up.</p>
 
 <blockquote>
-  <p>NOTE: If the asset is FairPlay-protected, the master playlist MUST contain a EXT-X-SESSION-KEY tag with the asset’s <code class="highlighter-rouge">skd</code> URL. Without it, LocalAssetsManager won’t be able to install a FairPlay license. Example (replace ASSET_ID below with the actual id):</p>
+  <p>NOTE: If the asset is FairPlay-protected, the master playlist MUST contain a EXT-X-SESSION-KEY tag with the asset’s <code class="language-plaintext highlighter-rouge">skd</code> URL. Without it, LocalAssetsManager won’t be able to install a FairPlay license. Example (replace ASSET_ID below with the actual id):</p>
 </blockquote>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#EXT-X-SESSION-KEY:METHOD=SAMPLE-AES,URI="skd://ASSET_ID",KEYFORMAT="com.apple.streamingkeydelivery",KEYFORMATVERSIONS="1"
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#EXT-X-SESSION-KEY:METHOD=SAMPLE-AES,URI="skd://ASSET_ID",KEYFORMAT="com.apple.streamingkeydelivery",KEYFORMATVERSIONS="1"
+</code></pre></div></div>
 
 <blockquote>
   <p>In <strong>Kaltura’s backend</strong>, this is done by enabling “Allow Fairplay Offline” in the <em>VOD_PACKAGER_HLS</em> delivery profile. See <a href="Offline-FairPlay-delivery-profile.png">screenshot</a>.</p>
@@ -206,13 +205,13 @@ In most cases, <strong>DTG</strong> should be used. The only case in which <code
 <p>AVAssetDownloadTask is a facility added to iOS in version 10.0. It can download HLS assets, with and without FairPlay protection. It can also download mp4 assets.</p>
 
 <blockquote>
-  <p>NOTE: As mentioned above, the only case in which <code class="highlighter-rouge">AVAssetDownloadTask</code> must be used, is when downloading <strong>FairPlay</strong> on iOS 10.0-10.2. We recommend avoiding FairPlay downloads on those iOS versions.</p>
+  <p>NOTE: As mentioned above, the only case in which <code class="language-plaintext highlighter-rouge">AVAssetDownloadTask</code> must be used, is when downloading <strong>FairPlay</strong> on iOS 10.0-10.2. We recommend avoiding FairPlay downloads on those iOS versions.</p>
 </blockquote>
 
 <p><img src="./offline-AVAssetDownloadTask.svg" alt="" /></p>
 
 <div hidden="">
-<p><img src="assets/uml/87eac4d93bb0110d1dda801a204075e8.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/87eac4d93bb0110d1dda801a204075e8.svg" type="image/svg+xml" class="plantuml"></object></p>
 </div>
 
 <p>See PlayKit’s <a href="https://github.com/kaltura/playkit-ios-samples/tree/develop/OfflineSampleSwift">OfflineSample</a> and Apple’s <a href="https://developer.apple.com/library/content/samplecode/HLSCatalog/Introduction/Intro.html">HLSCatalog</a> for help with using AVAssetDownloadTask.</p>
@@ -225,7 +224,7 @@ In most cases, <strong>DTG</strong> should be used. The only case in which <code
         
       </h2>
 
-<p>Call <code class="highlighter-rouge">LocalAssetsManager.createLocalMediaEntry(for:localURL:)</code>, returns a PKMediaEntry ready to play.</p>
+<p>Call <code class="language-plaintext highlighter-rouge">LocalAssetsManager.createLocalMediaEntry(for:localURL:)</code>, returns a PKMediaEntry ready to play.</p>
     
       <h3 id="dtg">
         
@@ -235,7 +234,7 @@ In most cases, <strong>DTG</strong> should be used. The only case in which <code
         
       </h3>
 
-<p>Call <code class="highlighter-rouge">ContentManager.itemPlaybackUrl(id:)</code> to get the playback URL. This is what should be passed as the <code class="highlighter-rouge">localURL</code> above.</p>
+<p>Call <code class="language-plaintext highlighter-rouge">ContentManager.itemPlaybackUrl(id:)</code> to get the playback URL. This is what should be passed as the <code class="language-plaintext highlighter-rouge">localURL</code> above.</p>
     
       <h3 id="avassetdownloadtask-1">
         

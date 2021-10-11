@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri Jun 26 15:42:02 2020</span>, By <span class="commit-author">jbrule</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/playkit-js-ui/ui-configuration.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Fri Jun 26 15:42:02 2020</span>, By <span class="commit-author">jbrule</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/playkit-js-ui/ui-configuration.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Jul 30 02:08:55 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Fri Jun 26 15:42:02 2020, By <span class="commit-author">jbrule</span></td></tr-->
 			
@@ -143,12 +143,11 @@ rtp('get', 'campaign',true);
     		
 		<p>Configuration parameters could be provided upon instantiation of the UI manager instance.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// Configuration here</span>
 <span class="p">};</span>
 <span class="kd">var</span> <span class="nx">uiManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">playkit</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">UIManager</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
       <h4 id="configuration-structure">
         
         
@@ -157,25 +156,18 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="err">targetId:</span><span class="w"> </span><span class="err">string,</span><span class="w">
-  </span><span class="err">debugActions:</span><span class="w"> </span><span class="err">boolean,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
-  </span><span class="err">forceTouchUI:</span><span class="w"> </span><span class="err">boolean,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
-  </span><span class="err">logLevel:</span><span class="w"> </span><span class="err">string,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
-  </span><span class="err">components:</span><span class="w"> </span><span class="err">Object,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
-  </span><span class="err">translations:</span><span class="w"> </span><span class="err">Object,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
-  </span><span class="err">locale:</span><span class="w"> </span><span class="err">Object</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-    
-      <h1>
-        
-        
-          #
-        
-        
-      </h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  targetId: string,
+  debugActions: boolean, // optional
+  forceTouchUI: boolean, // optional
+  logLevel: string, // optional
+  components: Object, // optional
+  translations: Object, // optional
+  locale: Object // optional
+}
+</code></pre></div></div>
+
+<p>##</p>
     
       <h3 id="configtargetid">
         
@@ -188,7 +180,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-string">
         
         
-          Type: <code class="highlighter-rouge">string</code> <a href="#type-string"></a>
+          Type: <code class="language-plaintext highlighter-rouge">string</code> <a href="#type-string"></a>
         
         
       </h5>
@@ -196,7 +188,7 @@ rtp('get', 'campaign',true);
       <h5 id="default--">
         
         
-          Default: <code class="highlighter-rouge">-</code> <a href="#default--"></a>
+          Default: <code class="language-plaintext highlighter-rouge">-</code> <a href="#default--"></a>
         
         
       </h5>
@@ -222,7 +214,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-boolean">
         
         
-          Type: <code class="highlighter-rouge">boolean</code> <a href="#type-boolean"></a>
+          Type: <code class="language-plaintext highlighter-rouge">boolean</code> <a href="#type-boolean"></a>
         
         
       </h5>
@@ -230,7 +222,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-false">
         
         
-          Default: <code class="highlighter-rouge">false</code> <a href="#default-false"></a>
+          Default: <code class="language-plaintext highlighter-rouge">false</code> <a href="#default-false"></a>
         
         
       </h5>
@@ -254,7 +246,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-boolean-1">
         
         
-          Type: <code class="highlighter-rouge">boolean</code> <a href="#type-boolean-1"></a>
+          Type: <code class="language-plaintext highlighter-rouge">boolean</code> <a href="#type-boolean-1"></a>
         
         
       </h5>
@@ -262,7 +254,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-false-1">
         
         
-          Default: <code class="highlighter-rouge">false</code> <a href="#default-false-1"></a>
+          Default: <code class="language-plaintext highlighter-rouge">false</code> <a href="#default-false-1"></a>
         
         
       </h5>
@@ -288,7 +280,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-string-1">
         
         
-          Type: <code class="highlighter-rouge">string</code> <a href="#type-string-1"></a>
+          Type: <code class="language-plaintext highlighter-rouge">string</code> <a href="#type-string-1"></a>
         
         
       </h5>
@@ -296,7 +288,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-error">
         
         
-          Default: <code class="highlighter-rouge">"ERROR"</code> <a href="#default-error"></a>
+          Default: <code class="language-plaintext highlighter-rouge">"ERROR"</code> <a href="#default-error"></a>
         
         
       </h5>
@@ -309,7 +301,7 @@ rtp('get', 'campaign',true);
         
       </h5>
 
-<p>Possible values: <code class="highlighter-rouge">"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"</code></p>
+<p>Possible values: <code class="language-plaintext highlighter-rouge">"DEBUG", "INFO", "TIME", "WARN", "ERROR", "OFF"</code></p>
     
       <h3 id="configtranslations">
         
@@ -322,7 +314,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-langkey-string-object">
         
         
-          Type: <code class="highlighter-rouge"><span class="p">{</span><span class="err">[langKey:</span><span class="w"> </span><span class="err">string]:</span><span class="w"> </span><span class="err">Object</span><span class="p">}</span></code> <a href="#type-langkey-string-object"></a>
+          Type: <code class="language-plaintext highlighter-rouge">{[langKey: string]: Object}</code> <a href="#type-langkey-string-object"></a>
         
         
       </h5>
@@ -330,7 +322,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-see-enjson">
         
         
-          Default: <code class="highlighter-rouge">see en.json</code> <a href="#default-see-enjson"></a>
+          Default: <code class="language-plaintext highlighter-rouge">see en.json</code> <a href="#default-see-enjson"></a>
         
         
       </h5>
@@ -343,7 +335,7 @@ rtp('get', 'campaign',true);
         
       </h5>
 
-<p>Optional components to configure: <code class="highlighter-rouge">watermark</code>,<code class="highlighter-rouge">seekbar</code>, <code class="highlighter-rouge">fullscreen</code></p>
+<p>Optional components to configure: <code class="language-plaintext highlighter-rouge">watermark</code>,<code class="language-plaintext highlighter-rouge">seekbar</code>, <code class="language-plaintext highlighter-rouge">fullscreen</code></p>
     
       <h3 id="configlocale">
         
@@ -356,7 +348,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-string-2">
         
         
-          Type: <code class="highlighter-rouge">string</code> <a href="#type-string-2"></a>
+          Type: <code class="language-plaintext highlighter-rouge">string</code> <a href="#type-string-2"></a>
         
         
       </h5>
@@ -364,7 +356,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-en">
         
         
-          Default: <code class="highlighter-rouge">en</code> <a href="#default-en"></a>
+          Default: <code class="language-plaintext highlighter-rouge">en</code> <a href="#default-en"></a>
         
         
       </h5>
@@ -390,7 +382,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-object">
         
         
-          Type: <code class="highlighter-rouge">Object</code> <a href="#type-object"></a>
+          Type: <code class="language-plaintext highlighter-rouge">Object</code> <a href="#type-object"></a>
         
         
       </h5>
@@ -398,7 +390,7 @@ rtp('get', 'campaign',true);
       <h5 id="default---1">
         
         
-          Default: <code class="highlighter-rouge">-</code> <a href="#default---1"></a>
+          Default: <code class="language-plaintext highlighter-rouge">-</code> <a href="#default---1"></a>
         
         
       </h5>
@@ -411,7 +403,7 @@ rtp('get', 'campaign',true);
         
       </h5>
 
-<p>Optional components to configure: <code class="highlighter-rouge">watermark</code>,<code class="highlighter-rouge">seekbar</code>, <code class="highlighter-rouge">fullscreen</code></p>
+<p>Optional components to configure: <code class="language-plaintext highlighter-rouge">watermark</code>,<code class="language-plaintext highlighter-rouge">seekbar</code>, <code class="language-plaintext highlighter-rouge">fullscreen</code></p>
     
       <h3 id="configcomponentswatermark">
         
@@ -424,19 +416,18 @@ rtp('get', 'campaign',true);
       <h5 id="type-object-1">
         
         
-          Type: <code class="highlighter-rouge">Object</code> <a href="#type-object-1"></a>
+          Type: <code class="language-plaintext highlighter-rouge">Object</code> <a href="#type-object-1"></a>
         
         
       </h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="err">img:</span><span class="w"> </span><span class="err">string,</span><span class="w">
-   </span><span class="err">url:</span><span class="w"> </span><span class="err">string,</span><span class="w">
-   </span><span class="err">placement:</span><span class="w"> </span><span class="err">string,</span><span class="w">
-   </span><span class="err">timeout:</span><span class="w"> </span><span class="err">number</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+   img: string,
+   url: string,
+   placement: string,
+   timeout: number
+}
+</code></pre></div></div>
     
       <h5 id="default">
         
@@ -446,14 +437,13 @@ rtp('get', 'campaign',true);
         
       </h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="err">img:</span><span class="w"> </span><span class="err">'',</span><span class="w">
-   </span><span class="err">url:</span><span class="w"> </span><span class="err">'',</span><span class="w">
-   </span><span class="err">placement:</span><span class="w"> </span><span class="err">'top-left',</span><span class="w">
-   </span><span class="err">timeout:</span><span class="w"> </span><span class="err">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+   img: '',
+   url: '',
+   placement: 'top-left',
+   timeout: 0
+}
+</code></pre></div></div>
     
       <h5 id="description-defines-a-watermark-component">
         
@@ -474,7 +464,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-string-3">
         
         
-          Type: <code class="highlighter-rouge">string</code> <a href="#type-string-3"></a>
+          Type: <code class="language-plaintext highlighter-rouge">string</code> <a href="#type-string-3"></a>
         
         
       </h5>
@@ -482,7 +472,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-">
         
         
-          Default: <code class="highlighter-rouge">''</code> <a href="#default-"></a>
+          Default: <code class="language-plaintext highlighter-rouge">''</code> <a href="#default-"></a>
         
         
       </h5>
@@ -506,7 +496,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-string-4">
         
         
-          Type: <code class="highlighter-rouge">string</code> <a href="#type-string-4"></a>
+          Type: <code class="language-plaintext highlighter-rouge">string</code> <a href="#type-string-4"></a>
         
         
       </h5>
@@ -514,7 +504,7 @@ rtp('get', 'campaign',true);
       <h5 id="default--1">
         
         
-          Default: <code class="highlighter-rouge">''</code> <a href="#default--1"></a>
+          Default: <code class="language-plaintext highlighter-rouge">''</code> <a href="#default--1"></a>
         
         
       </h5>
@@ -538,7 +528,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-string-5">
         
         
-          Type: <code class="highlighter-rouge">string</code> <a href="#type-string-5"></a>
+          Type: <code class="language-plaintext highlighter-rouge">string</code> <a href="#type-string-5"></a>
         
         
       </h5>
@@ -546,7 +536,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-top-left">
         
         
-          Default: <code class="highlighter-rouge">'top-left'</code> <a href="#default-top-left"></a>
+          Default: <code class="language-plaintext highlighter-rouge">'top-left'</code> <a href="#default-top-left"></a>
         
         
       </h5>
@@ -559,7 +549,7 @@ rtp('get', 'campaign',true);
         
       </h5>
 
-<p>Possible values: <code class="highlighter-rouge">'top-left', 'top-right', 'bottom-left', 'bottom-right'</code></p>
+<p>Possible values: <code class="language-plaintext highlighter-rouge">'top-left', 'top-right', 'bottom-left', 'bottom-right'</code></p>
     
       <h3 id="configcomponentswatermarktimeout">
         
@@ -572,7 +562,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-number">
         
         
-          Type: <code class="highlighter-rouge">number</code> <a href="#type-number"></a>
+          Type: <code class="language-plaintext highlighter-rouge">number</code> <a href="#type-number"></a>
         
         
       </h5>
@@ -580,7 +570,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-0">
         
         
-          Default: <code class="highlighter-rouge">0</code> <a href="#default-0"></a>
+          Default: <code class="language-plaintext highlighter-rouge">0</code> <a href="#default-0"></a>
         
         
       </h5>
@@ -604,18 +594,17 @@ rtp('get', 'campaign',true);
       <h5 id="type-object-2">
         
         
-          Type: <code class="highlighter-rouge">Object</code> <a href="#type-object-2"></a>
+          Type: <code class="language-plaintext highlighter-rouge">Object</code> <a href="#type-object-2"></a>
         
         
       </h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="err">thumbsSprite:</span><span class="w"> </span><span class="err">string,</span><span class="w">
-   </span><span class="err">thumbsWidth:</span><span class="w"> </span><span class="err">number,</span><span class="w">
-   </span><span class="err">thumbsSlices:</span><span class="w"> </span><span class="err">number</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+   thumbsSprite: string,
+   thumbsWidth: number,
+   thumbsSlices: number
+}
+</code></pre></div></div>
     
       <h5 id="description-defines-the-seekbar-component-optional-configuration">
         
@@ -636,7 +625,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-string-6">
         
         
-          Type: <code class="highlighter-rouge">string</code> <a href="#type-string-6"></a>
+          Type: <code class="language-plaintext highlighter-rouge">string</code> <a href="#type-string-6"></a>
         
         
       </h5>
@@ -644,7 +633,7 @@ rtp('get', 'campaign',true);
       <h5 id="default---2">
         
         
-          Default: <code class="highlighter-rouge">-</code> <a href="#default---2"></a>
+          Default: <code class="language-plaintext highlighter-rouge">-</code> <a href="#default---2"></a>
         
         
       </h5>
@@ -668,7 +657,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-number-1">
         
         
-          Type: <code class="highlighter-rouge">number</code> <a href="#type-number-1"></a>
+          Type: <code class="language-plaintext highlighter-rouge">number</code> <a href="#type-number-1"></a>
         
         
       </h5>
@@ -676,7 +665,7 @@ rtp('get', 'campaign',true);
       <h5 id="default---3">
         
         
-          Default: <code class="highlighter-rouge">-</code> <a href="#default---3"></a>
+          Default: <code class="language-plaintext highlighter-rouge">-</code> <a href="#default---3"></a>
         
         
       </h5>
@@ -700,7 +689,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-number-2">
         
         
-          Type: <code class="highlighter-rouge">number</code> <a href="#type-number-2"></a>
+          Type: <code class="language-plaintext highlighter-rouge">number</code> <a href="#type-number-2"></a>
         
         
       </h5>
@@ -708,7 +697,7 @@ rtp('get', 'campaign',true);
       <h5 id="default---4">
         
         
-          Default: <code class="highlighter-rouge">-</code> <a href="#default---4"></a>
+          Default: <code class="language-plaintext highlighter-rouge">-</code> <a href="#default---4"></a>
         
         
       </h5>
@@ -740,16 +729,15 @@ rtp('get', 'campaign',true);
       <h5 id="type-object-3">
         
         
-          Type: <code class="highlighter-rouge">Object</code> <a href="#type-object-3"></a>
+          Type: <code class="language-plaintext highlighter-rouge">Object</code> <a href="#type-object-3"></a>
         
         
       </h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="err">inBrowserFullscreenForIOS:</span><span class="w"> </span><span class="err">boolean;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  inBrowserFullscreenForIOS: boolean;
+}
+</code></pre></div></div>
     
       <h5 id="default-1">
         
@@ -759,11 +747,10 @@ rtp('get', 'campaign',true);
         
       </h5>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="err">inBrowserFullscreenForIOS:</span><span class="w"> </span><span class="err">false;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  inBrowserFullscreenForIOS: false;
+}
+</code></pre></div></div>
     
       <h5 id="description-defines-a-fullscreen-component">
         
@@ -784,7 +771,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-boolean-2">
         
         
-          Type: <code class="highlighter-rouge">boolean</code> <a href="#type-boolean-2"></a>
+          Type: <code class="language-plaintext highlighter-rouge">boolean</code> <a href="#type-boolean-2"></a>
         
         
       </h5>
@@ -792,7 +779,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-false-2">
         
         
-          Default: <code class="highlighter-rouge">false</code> <a href="#default-false-2"></a>
+          Default: <code class="language-plaintext highlighter-rouge">false</code> <a href="#default-false-2"></a>
         
         
       </h5>

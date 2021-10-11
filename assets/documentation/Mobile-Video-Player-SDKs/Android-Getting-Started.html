@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Wed Jul 19 12:23:35 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Android-Getting-Started.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Wed Jul 19 12:23:35 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Android-Getting-Started.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Wed Jul 19 12:23:35 2017, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -186,34 +186,32 @@ rtp('get', 'campaign',true);
 
 <ol>
   <li>Clone the Android SDK and make sure that it resides in the <strong>same</strong> folder as your application:
-    <div class="highlighter-rouge"><pre class="highlight"><code> git clone https://github.com/kaltura/player-sdk-native-android.git
-</code></pre>
-    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone https://github.com/kaltura/player-sdk-native-android.git
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>Next, edit the <code class="highlighter-rouge">Setting.gradle</code> file as follows:</p>
+    <p>Next, edit the <code class="language-plaintext highlighter-rouge">Setting.gradle</code> file as follows:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code> include ':googlemediaframework'
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> include ':googlemediaframework'
  project(':googlemediaframework').projectDir=new File('../player-sdk-native-android/googlemediaframework')
 
  include ':playerSDK'
  project(':playerSDK').projectDir=new File('../player-sdk-native-android/playerSDK')
-</code></pre>
-    </div>
+</code></pre></div>    </div>
     <p><img src="assets/images/settings.gradle.png" alt="settings.gradle" /></p>
   </li>
   <li>
-    <p>Synchronize the project with the updated gradle:<br />
+    <p>Synchronize the project with the updated gradle:
  <img src="assets/images/SyncProjectWithGradleProject.png" alt="SyncProjectWithGradleProject" /></p>
   </li>
   <li>
-    <p>Make sure that you cloned the <code class="highlighter-rouge">player-sdk-native-android</code> project to the same folder of your project; if you prefer to clone it in another location, remember to update the <code class="highlighter-rouge">settings.gradle</code> with the relevant path.</p>
+    <p>Make sure that you cloned the <code class="language-plaintext highlighter-rouge">player-sdk-native-android</code> project to the same folder of your project; if you prefer to clone it in another location, remember to update the <code class="language-plaintext highlighter-rouge">settings.gradle</code> with the relevant path.</p>
   </li>
   <li>
-    <p>Right-click your application folder and select <code class="highlighter-rouge">Open Module Settings</code>.<br />
+    <p>Right-click your application folder and select <code class="language-plaintext highlighter-rouge">Open Module Settings</code>.
  <img src="assets/images/OpenModuleSetting.png" alt="OpenModuleSetting" /></p>
   </li>
-  <li>Select the <code class="highlighter-rouge">Dependencies</code> tab, click the <code class="highlighter-rouge">+</code> button and then choose the playerSDK as <code class="highlighter-rouge">module dependency</code>.<br />
+  <li>Select the <code class="language-plaintext highlighter-rouge">Dependencies</code> tab, click the <code class="language-plaintext highlighter-rouge">+</code> button and then choose the playerSDK as <code class="language-plaintext highlighter-rouge">module dependency</code>.
  <img src="assets/images/Dependencies.png" alt="Dependencies" /></li>
 </ol>
 		

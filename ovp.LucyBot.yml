@@ -128,72 +128,256 @@ guideNavigation:
     markdownURL: /assets/documentation/home.html
     icon: Homepage
     discussionURL: null
-    meta:
-      title: "Kaltura VPaaS API Overview"
-      description: "Learn how to use the Kaltura VPaaS API"
 
-  - title: "Overview"
+  - title: "Introduction to Kaltura Media Services"
     markdownURL: /assets/documentation/overview.html
     icon: Reporting
     discussionURL: null
-    meta:
-      title: "Kaltura VPaaS API Overview"
-      description: "Learn how to use the Kaltura VPaaS API"
-
-  - title: "Getting Started"
-    path: "/VPaaS-API-Getting-Started"
-    icon: GettingStarted
     children:
 
-      - title: "Get Started with the Kaltura API"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html
-        path: "/VPaaS-API-Getting-Started/Getting-Started-VPaaS-API.html"
+      - title: "How do I use the Kaltura API?"
+        markdownURL: /assets/documentation/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.html
+        path: "/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.html"
         discussionURL: null
-        badge: "Guide"
 
+  - title: "Getting Started"
+    path: "/Getting-Started-Building-Video-Applications"
+    icon: GettingStarted
+    children:
       - title: "How to Create a Kaltura Session"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html
-        path: "/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html"
-        discussionURL: null
-        badge: "Workflow"
-
-      - title: "Kaltura API Authentication and Security"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html
-        path: "/VPaaS-API-Getting-Started/Kaltura_API_Authentication_and_Security.html"
-        discussionURL: null
-        badge: "Workflow"
-
-      - title: "Application Tokens"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/application-tokens.html
-        path: "/VPaaS-API-Getting-Started/application-tokens.html"
+        markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Authenticating-and-Using-Kaltura-Sessions.html
+        path: "/Getting-Started-Building-Video-Applications/Authenticating-and-Using-Kaltura-Sessions.html"
         discussionURL: null
 
-      - title: "Introduction to Kaltura's Client Libraries"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html
-        path: "/VPaaS-API-Getting-Started/introduction-kaltura-client-libraries.html"
+      - title: "Deep-Dive: The Kaltura API Authentication and Security"
+        markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Deep-Dive-The-Kaltura-API-Authentication-and-Security.html
+        path: "/Getting-Started-Building-Video-Applications/Deep-Dive-The-Kaltura-API-Authentication-and-Security.html"
         discussionURL: null
 
-      - title: "API Client Library Generator"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/client-library-generator.html
-        path: "/VPaaS-API-Getting-Started/client-library-generator.html"
+      - title: "HTTP and Email Webhooks / Event Notifications"
+        markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/HTTP-and-Email-Webhooks--Event-Notifications.html
+        path: "/Getting-Started-Building-Video-Applications/HTTP-and-Email-Webhooks--Event-Notifications.html"
         discussionURL: null
 
-      - title: "Kaltura's API Abstract Classes"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html
-        path: "/VPaaS-API-Getting-Started/how-use-kaltura-api-abstract-classes.html"
+      - title: "Manage Kaltura Sub-Accounts"
+        markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Manage-Kaltura-Sub-Accounts.html
+        path: "/Getting-Started-Building-Video-Applications/Manage-Kaltura-Sub-Accounts.html"
         discussionURL: null
 
-      - title: "API Usage Guideliness "
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/api-guidelines.html
-        path: "/VPaaS-API-Getting-Started/api-guidelines.html"
-        discussionURL: null 
+      - title: "Working with Multi Request"
+        markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Working-with-Multi-Request.html
+        path: "/Getting-Started-Building-Video-Applications/Working-with-Multi-Request.html"
+        discussionURL: null
 
-      - title: "Supported Devices"
-        markdownURL: /assets/documentation/VPaaS-API-Getting-Started/supported-devices.html
-        path: "/VPaaS-API-Getting-Started/supported-devices.html"
+  - title: "Video On Demand and Digital Assets Management"
+    icon: VideoPlayer
+    path: "/Video-On-Demand-and-Digital-Assets-Management"
+    children:
+      - title: "Upload and Import Video Files via API"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Upload-and-Import-Video-Files-via-API.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Upload-and-Import-Video-Files-via-API.html"
+        discussionURL: null
+
+      - title: "Express Recorder"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/express-recorder.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/express-recorder.html"
+        discussionURL: null
+
+      - title: "Video Editor"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Video-Editor.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Video-Editor.html"
+        discussionURL: null
+
+      - title: "Captions"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Embeddable-Captions-Editor.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Embeddable-Captions-Editor.html"
+        discussionURL: null
+
+      - title: "Enrichment Services"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Enrichment-Services.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Enrichment-Services.html"
+        discussionURL: null
+
+      - title: "Personal Video Capture"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Personal-Video-Capture.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Personal-Video-Capture.html"
+        discussionURL: null
+
+      - title: "Import Video Files via Bulk Upload"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Import-Video-Files-via-Bulk-Upload.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Import-Video-Files-via-Bulk-Upload.html"
+        discussionURL: null
+
+      - title: "Creating & Managing Custom Metadata Fields"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Creating-and-Managing-Custom-Metadata-Fields.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Creating-and-Managing-Custom-Metadata-Fields.html"
+        discussionURL: null
+
+      - title: "On-the-fly Video Thumbnails and Image Transformations"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Image-Transformations-and-On-the-fly-Video-Thumbnails.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Image-Transformations-and-On-the-fly-Video-Thumbnails.html"
+        discussionURL: null
+
+      - title: "Searching for Media Entries"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Searching-for-Media-Entries.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Searching-for-Media-Entries.html"
+        discussionURL: null
+
+      - title: "Categories & Entitlement Rules"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Categories-and-Entitlement-Rules.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Categories-and-Entitlement-Rules.html"
+        discussionURL: null
+
+      - title: "Hardening Security with Media Access Control Rules"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.html"
+        discussionURL: null
+
+      - title: "Hardening Security with Media Access Control Rules"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.html"
+        discussionURL: null
+
+      - title: "Implementing Playlists"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Implementing-Playlists.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Implementing-Playlists.html"
+        discussionURL: null
+
+      - title: "Working with Documents and Data Assets"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Working-with-Documents-and-Data-Assets.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Working-with-Documents-and-Data-Assets.html"
+        discussionURL: null
+
+      - title: "Transcoding"
+        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Transcoding.html
+        path: "/Video-On-Demand-and-Digital-Assets-Management/Transcoding.html"
+        discussionURL: null
+
+
+  - title: "Live Video Webcasting"
+    icon: LiveWebcasting
+    path: "/Live-Video-Webcasting"
+    children:
+      - title: "Creating & Managing Live Webcasts"
+        markdownURL: /assets/documentation/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.html
+        path: "/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.html"
+        discussionURL: null
+
+      - title: "Connecting to a Webcast Stream via SIP"
+        markdownURL: /assets/documentation/Live-Video-Webcasting/Ingest-Live-Stream-via-SIP.html
+        path: "/Live-Video-Webcasting/Ingest-Live-Stream-via-SIP.html"
+        discussionURL: null
+
+  - title: "Real-time Video Meetings Experience"
+    icon: Conferencing
+    path: "/Real-time-Video-Meetings-Experience"
+    children:
+      - title: "Integrating the Embedded Meetings Experience App"
+        markdownURL: /assets/documentation/Real-time-Video-Meetings-Experience/Integrating-the-Embedded-Meetings-Experience-App.html
+        path: "/Real-time-Video-Meetings-Experience/Integrating-the-Embedded-Meetings-Experience-App.html"
+        discussionURL: null
+
+      - title: "Webcasting from a Meeting Experience"
+        markdownURL: /assets/documentation/Real-time-Video-Meetings-Experience/Webcasting-from-a-Meeting-Experience.html
+        path: "/Real-time-Video-Meetings-Experience/Webcasting-from-a-Meeting-Experience.html"
+        discussionURL: null
+
+  - title: "Streaming & Publishing"
+    path: "/Streaming-and-Publishing"
+    children:
+      - title: "Play Manifests, HLS and DASH Streaming"
+        markdownURL: /assets/documentation/Streaming-and-Publishing/Play-Manifests-HLS-and-DASH-Streaming.html
+        path: "/Streaming-and-Publishing/Play-Manifests-HLS-and-DASH-Streaming.html"
+        discussionURL: null
+
+      - title: "Asset Download URLs"
+        markdownURL: /assets/documentation/Streaming-and-Publishing/Asset-Download-URLs.html
+        path: "/Streaming-and-Publishing/Asset-Download-URLs.html"
+        discussionURL: null
+
+  - title: "Scheduling Recorded and Live Stream Events"
+    icon: VideoExperiences
+    path: "/Scheduling-Recorded-and-Live-Stream-Events"
+    children:
+      - title: "Introduction to Scheduling and Managing Resources"
+        markdownURL: /assets/documentation/Scheduling-Recorded-and-Live-Stream-Events/Introduction-to-Scheduling-and-Managing-Resources.html
+        path: "/Streaming-and-Publishing/Introduction-to-Scheduling-and-Managing-Resources.html"
+        discussionURL: null
+
+      - title: "Scheduling Simulive Sessions"
+        markdownURL: /assets/documentation/Scheduling-Recorded-and-Live-Stream-Events/Simulive.html
+        path: "/Streaming-and-Publishing/Simulive.html"
+        discussionURL: null
+
+      - title: "Manage Blackout Events"
+        markdownURL: /assets/documentation/Scheduling-Recorded-and-Live-Stream-Events/Manage-Blackout-Events.html
+        path: "/Streaming-and-Publishing/Manage-Blackout-Events.html"
+        discussionURL: null
+
+      - title: "iCal API and Calendar Integrations"
+        markdownURL: /assets/documentation/Scheduling-Recorded-and-Live-Stream-Events/iCal-API-and-Calendar-Integrations.html
+        path: "/Streaming-and-Publishing/iCal-API-and-Calendar-Integrations.html"
+        discussionURL: null
+
+  - title: "SEO, Syndication & Distribution"
+    path: "/SEO-Syndication-and-Distribution"
+    children:
+      - title: "Best Practices for Video SEO"
+        markdownURL: /assets/documentation/SEO-Syndication-and-Distribution/Best-Practices-for-Video-SEO.html
+        path: "/SEO-Syndication-and-Distribution/Best-Practices-for-Video-SEO.html"
+        discussionURL: null  
+   
+      - title: "Working with Syndication Feeds (MRSS, Sitemaps, etc)"
+        markdownURL: /assets/documentation/SEO-Syndication-and-Distribution/Working-with-Syndication-Feeds.html
+        path: "/SEO-Syndication-and-Distribution/Working-with-Syndication-Feeds.html"
+        discussionURL: null
+
+      - title: "Working with Distribution Connectors"
+        markdownURL: /assets/documentation/SEO-Syndication-and-Distribution/Working-with-Syndication-Feeds.html
+        path: "/SEO-Syndication-and-Distribution/Working-with-Syndication-Feeds.html"
+        discussionURL: null
+
+  - title: "Analytics & Reporting"
+    icon: Reporting
+    prerender: false
+    path: "/Analytics-and-Reporting"
+    children:
+      - title: "Intro to Kaltura Video Analytics & Best Practices"
+        markdownURL: /assets/documentation/Analytics-and-Reporting/Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html
+        path: "/Analytics-and-Reporting/Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html"
+        discussionURL: null
+
+      - title: "Common Analytics Reports"
+        markdownURL: /assets/documentation/Analytics-and-Reporting/Common-Analytics-Reports.html
+        path: "/Analytics-and-Reporting/Common-Analytics-Reports.html"
         discussionURL: null  
 
-  - title: "Media Management & Streaming"
+      - title: "Embedded Analytics Component"
+        markdownURL: /assets/documentation/Analytics-and-Reporting/Embedded-Analytics-Component.html
+        path: "/Analytics-and-Reporting/Embedded-Analytics-Component.html"
+        discussionURL: null  
+             
+      - title: "Enriching Player Analytics with Custom Event Data"
+        markdownURL: /assets/documentation/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.html
+        path: "/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.html"
+        discussionURL: null  
+
+      - operation: "cuePoint.addFromBulk"
+      - operation: "categoryEntry.addFromBulkUpload"
+      - operation: "categoryUser.addFromBulkUpload"
+      - tag: "bulk"
+      - tag: "schema"
+      - tag: "dropFolder"
+      - tag: "dropFolderFile"
+      - tag: "virusScanProfile"
+        hide: true
+      - tag: "aspera"
+        hide: true
+      # `bulkUpload` service was deprecated in favour of `bulk`  
+      - tag: "bulkUpload"
+        hide: true
+ 
+  - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
     icon: Media
     disableEditLink: true
@@ -205,9 +389,9 @@ guideNavigation:
       - title: "Support Matrix"
         markdownFile: ./markdown/generated/support_matrix.md
         disableEditLink: true
-  - title: "Media Management & Streaming"
+
+  - title: "Schemas"
     markdownFile: ./markdown/schemas.md
-    icon: VideoPlayer
     children:
       - title: 'Syndication Feed'
         markdownURL: /assets/markdown/generated/syndication.md
@@ -227,108 +411,13 @@ guideNavigation:
       - title: 'Drop Folder'
         markdownURL: /assets/markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
         disableEditLink: true
-  - title: "Live Webcasting"
-    icon: LiveWebcasting
+  
+  - title: "Contribute"
     children:
-      - title: "session"
-        tag: "session"
-        children:
-          - operation: "session.start"
-          - operation: "session.end"
-          - operation: "session.get"
-          - operation: "session.impersonate"
-          - operation: "session.impersonateByKs"
-          - operation: "session.startWidgetSession"
-      - tag: "appToken"
-      - operation: 'user.loginByLoginId'
-  - title: "Real-Time Conferencing"
-    icon: Conferencing
-    children:
-      - title: "Introduction to Content Preparation & Transcoding"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/Content-Ingestion-Transcoding.html
-        path: "/Ingest_and_Upload_Media/Content-Ingestion-Transcoding.html"
+      - title: "Article Style and Structure Guidelines"
+        markdownURL: /assets/documentation/Contribute/Article-Style-Structure-Guidelines.html
+        path: "/Contribute/Article-Style-Structure-Guidelines.html"
         discussionURL: null
-
-      - title: "Playlist Management"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/playlist-management.html
-        path: "/Ingest_and_Upload_Media/playlist-management.html"
-        discussionURL: null
-
-      - title: "Bulk Content Ingestion API"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html
-        path: "/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html"
-        discussionURL: null
-
-      - title: "How to Ingest a Media File Bundled with Metadata (CSV, XML, API)"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html
-        path: "/Ingest_and_Upload_Media/how-ingest-media-file-bundled-metadata-csv-xml-api.html"
-        discussionURL: null
-
-      - title: "Create a New Kaltura Entry and Upload Video File using the Kaltura API"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html
-        path: "/Ingest_and_Upload_Media/create-new-kaltura-entry-and-upload-video-file-using-kaltura-api.html"
-        discussionURL: null
-
-      - title: "Kaltura Express Recorder"
-        markdownURL: /assets/documentation/Ingest_and_Upload_Media/express-recorder.html
-        path: "/Ingest_and_Upload_Media/express-recorder.html"
-        discussionURL: null
-
-      - tag: "uploadToken"
-      - tag: "media"
-      - tag: "captionAsset"
-      - tag: "captionParams"
-      - tag: "thumbAsset"
-      - tag: "attachmentAsset"
-      - tag: "externalMedia"
-      # `upload` service was deprecated in favour of `UploadToken`  
-      - tag: "upload"
-        hide: true
-  - title: "Analytics & Reporting"
-    icon: Reporting
-    prerender: false
-    children:
-      - operation: "media.bulkUploadAdd"
-      - operation: "user.addFromBulkUpload"
-      - operation: "category.addFromBulkUpload"
-      - operation: "cuePoint.addFromBulk"
-      - operation: "categoryEntry.addFromBulkUpload"
-      - operation: "categoryUser.addFromBulkUpload"
-      - tag: "bulk"
-      - tag: "schema"
-      - tag: "dropFolder"
-      - tag: "dropFolderFile"
-      - tag: "virusScanProfile"
-        hide: true
-      - tag: "aspera"
-        hide: true
-      # `bulkUpload` service was deprecated in favour of `bulk`  
-      - tag: "bulkUpload"
-        hide: true
-  - title: "Video Experiences"
-    icon: VideoExperiences
-    children:
-      - title: "How to use the API to Add a New Conversion Profile"
-        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html
-        path: "/Convert-and-Transcode-Media/how-use-api-add-new-conversion-profile.html"
-        discussionURL: null
-
-      - title: "How to use the API to Add New Flavor Params"
-        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html
-        path: "/Convert-and-Transcode-Media/how-use-api-add-new-flavor-params.html"
-        discussionURL: null
-
-      - title: "How to Use the API to Create a New Flavor Asset for an Existing Entry"
-        markdownURL: /assets/documentation/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html
-        path: "/Convert-and-Transcode-Media/how-use-api-create-new-flavor-asset-existing-entry.html"
-        discussionURL: null
-      - tag: "flavorAsset"
-      - tag: "flavorParams"
-      - tag: "flavorParamsOutput"
-      - tag: "conversionProfile"
-      - tag: "conversionProfileAssetParams"
-      - tag: "mediaInfo"
-
 operationNavigation:
   - title: "Generate API Sessions"
     children:
@@ -361,9 +450,6 @@ operationNavigation:
       - operation: "media.bulkUploadAdd"
       - operation: "user.addFromBulkUpload"
       - operation: "category.addFromBulkUpload"
-      - operation: "cuePoint.addFromBulk"
-      - operation: "categoryEntry.addFromBulkUpload"
-      - operation: "categoryUser.addFromBulkUpload"
       - tag: "bulk"
       - tag: "schema"
       - tag: "dropFolder"
@@ -383,6 +469,7 @@ operationNavigation:
       - tag: "conversionProfile"
       - tag: "conversionProfileAssetParams"
       - tag: "mediaInfo"
+      
   - title: "Live Stream and Broadcast"
     prerender: false
     children:
@@ -446,36 +533,7 @@ operationNavigation:
       - tag: "storageProfile"
   - title: "Secure, Control and Govern"
     children:
-      - title: "Content Categories Management"
-        markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Categories-Management.html
-        path: "/Secure_Control_and_Govern/Content-Categories-Management.html"
-        discussionURL: null
-        seeAlso:
-          - operation: "category.add"
-          - operation: "categoryEntry.add"
-          - operation: "categoryEntry.delete"
-
-      - title: "Content Entitlements and Privacy Enforcement"
-        markdownURL: /assets/documentation/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html
-        path: "/Secure_Control_and_Govern/Content-Entitlements-Privacy-Enforcement.html"
-        discussionURL: null
-
-      - title: "Access Control and Content Retrieval on Connected Devices"
-        markdownURL: /assets/documentation/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html
-        path: "/Secure_Control_and_Govern/Access-Control-and-Content-Retrieval-on-Connected-Devices.html"
-        discussionURL: null
-
-      - title: "The Kaltura Media Access Control Model"
-        markdownURL: /assets/documentation/Secure_Control_and_Govern/kaltura-media-access-control-model.html
-        path: "/Secure_Control_and_Govern/kaltura-media-access-control-model.html"
-        discussionURL: null
-
-      - title: "Kaltura Audit-Trail - Viewer Example Application"
-        markdownURL: /assets/documentation/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html
-        path: "/Secure_Control_and_Govern/Kaltura_Audit-Trail_Viewer_Example_Application.html"
-        discussionURL: null
-
-
+      - tag: "category"
       - tag: "partner"
       - tag: "user"
       - tag: "userRole"
@@ -501,22 +559,10 @@ operationNavigation:
   - title: "Integration, Scheduling and Hooks"
     prerender: false
     children:
-      - title: "Recorded and Live Stream Events Scheduling and iCal API"
-        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html
-        path: "/Integration-Scheduling-and-Hooks/recorded-and-live-event-scheduling.html"
-        discussionURL: null
-      - title: "Scheduling Triggers using iCal"
-        markdownFile: ./markdown/scheduling.md
-        children:
-          - tag: "scheduleEvent"
-          - tag: "scheduleEventResource"
-          - tag: "scheduleResource"
-
-      - title: "How To Handle Kaltura Server Notifications in PHP"
-        markdownURL: /assets/documentation/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html
-        path: "/Integration-Scheduling-and-Hooks/how-handle-kaltura-server-notifications-in-php.html"
-        discussionURL: null
-
+  
+      - tag: "scheduleEvent"
+      - tag: "scheduleEventResource"
+      - tag: "scheduleResource"
       - tag: "eventNotificationTemplate"
       - tag: "scheduledTaskProfile"
       - tag: "integration"
@@ -558,25 +604,6 @@ operationNavigation:
     hide: true
     searchable: true
     autoselect: false
-
-  - title: "Sample applications"
-    children:
-      - title: "Video social network"
-        markdownURL: /assets/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html
-        path: "/Inspiring-Examples/TikRok-FaceFilter-Social-Network.html"
-        discussionURL: null
-      - title: "Meetabout: Kaltura Virtual Rooms Example"
-        markdownURL: /assets/documentation/Inspiring-Examples/Meetabout-Virtual-Rooms-App.html
-        path: "/Inspiring-Examples/Meetabout-Virtual-Rooms-App.html"
-        discussionURL: null
-
-  - title: "Contribute"
-    children:
-      - title: "Article Style and Structure Guidelines
-  VPaaS Website Sample Article"
-        markdownURL: /assets/documentation/Contribute/Article-Style-Structure-Guidelines.html
-        path: "/Contribute/Article-Style-Structure-Guidelines.html"
-        discussionURL: null
 
 workflowNavigation:
   - title: Generate API Sessions

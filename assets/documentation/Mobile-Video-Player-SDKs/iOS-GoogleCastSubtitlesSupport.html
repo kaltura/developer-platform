@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-GoogleCastSubtitlesSupport.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-GoogleCastSubtitlesSupport.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 13 09:49:20 2016, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -166,11 +166,10 @@ rtp('get', 'campaign',true);
 
 <p>To get subtitles dictionary you should implement the following delegate method:</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">castProvider</span><span class="p">:(</span><span class="n">KCastProvider</span> <span class="o">*</span><span class="p">)</span><span class="nv">provider</span> <span class="nf">availableTextTracks</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">subtitles</span> <span class="p">{</span>
-    <span class="c1">// here you get subtitles
-</span><span class="p">}</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">castProvider</span><span class="p">:(</span><span class="n">KCastProvider</span> <span class="o">*</span><span class="p">)</span><span class="nv">provider</span> <span class="nf">availableTextTracks</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">subtitles</span> <span class="p">{</span>
+    <span class="c1">// here you get subtitles</span>
+<span class="p">}</span>
+</code></pre></div></div>
     
       <h2 id="set-switch-subtitle">
         
@@ -182,9 +181,8 @@ rtp('get', 'campaign',true);
 
 <p>To set/ switch chosen subtitle from your menu on Chromecast device please use:</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">_player</span><span class="p">.</span><span class="n">castProvider</span> <span class="nf">switchTextTrack</span><span class="p">:{</span><span class="n">selected_index</span><span class="p">}];</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">_player</span><span class="p">.</span><span class="n">castProvider</span> <span class="nf">switchTextTrack</span><span class="p">:{</span><span class="n">selected_index</span><span class="p">}];</span>
+</code></pre></div></div>
 		
 </article>
 

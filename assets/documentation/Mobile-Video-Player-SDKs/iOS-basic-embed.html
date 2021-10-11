@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri May 4 05:42:39 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-basic-embed.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Fri May 4 05:42:39 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-basic-embed.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Fri May 4 05:42:39 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -154,9 +154,8 @@ rtp('get', 'campaign',true);
 
 <p>To import the KPViewController, use the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#import &lt;KALTURAPlayerSDK/KPViewController.h&gt;
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#import &lt;KALTURAPlayerSDK/KPViewController.h&gt;
+</code></pre></div></div>
     
       <h2 id="creating-a-kpviewcontroller-instance">
         
@@ -168,9 +167,8 @@ rtp('get', 'campaign',true);
 
 <p>To create a KPViewController instance, use the following command:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">KPViewController</span> <span class="o">*</span><span class="n">player</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@property (retain, nonatomic) KPViewController *player;
+</code></pre></div></div>
     
       <h2 id="initializing-the-playerviewcontroller-for-fullscreen">
         
@@ -182,30 +180,29 @@ rtp('get', 'campaign',true);
 
 <p>To initialize the a PlayerViewController for fullscreen, use the following command:</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">KPViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">player</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">KPViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">player</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">_player</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// Account Params
-</span>        <span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="n">config</span> <span class="o">=</span> <span class="p">[[</span><span class="n">KPPlayerConfig</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithServer</span><span class="p">:</span><span class="s">@"https://cdnapisec.kaltura.com"</span>
-                                                         <span class="nf">uiConfID</span><span class="p">:</span><span class="s">@"26698911"</span>
-                                                         <span class="n">partnerId</span><span class="o">:</span><span class="s">@"1831271"</span><span class="p">];</span>
+        <span class="c1">// Account Params</span>
+        <span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="n">config</span> <span class="o">=</span> <span class="p">[[</span><span class="n">KPPlayerConfig</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithServer</span><span class="p">:</span><span class="s">@"https://cdnapisec.kaltura.com"</span>
+                                                         <span class="nl">uiConfID:</span><span class="s">@"26698911"</span>
+                                                         <span class="nl">partnerId:</span><span class="s">@"1831271"</span><span class="p">];</span>
         
         
-        <span class="c1">// Video Entry
-</span>        <span class="n">config</span><span class="p">.</span><span class="n">entryId</span> <span class="o">=</span>  <span class="s">@"1_o426d3i4"</span><span class="p">;</span>
+        <span class="c1">// Video Entry</span>
+        <span class="n">config</span><span class="p">.</span><span class="n">entryId</span> <span class="o">=</span>  <span class="s">@"1_o426d3i4"</span><span class="p">;</span>
         
-        <span class="c1">// Setting this property will cache the html pages in the limit size
-</span>        <span class="n">config</span><span class="p">.</span><span class="n">cacheSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">;</span>
+        <span class="c1">// Setting this property will cache the html pages in the limit size</span>
+        <span class="n">config</span><span class="p">.</span><span class="n">cacheSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">8</span><span class="p">;</span>
         <span class="n">_player</span> <span class="o">=</span> <span class="p">[[</span><span class="n">KPViewController</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithConfiguration</span><span class="p">:</span><span class="n">config</span><span class="p">];</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">_player</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidAppear</span><span class="o">:</span><span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">animated</span> <span class="p">{</span>
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidAppear</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">animated</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidAppear</span><span class="p">:</span><span class="n">animated</span><span class="p">];</span>
     <span class="p">[</span><span class="n">self</span> <span class="nf">presentViewController</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">animated</span><span class="p">:</span><span class="nb">YES</span> <span class="n">completion</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><img src="assets/images/iOS-fullscreen-embed.png" alt="iOS-fullscreen" /></p>
     
       <h2 id="initializing-the-playerviewcontroller-for-inline">

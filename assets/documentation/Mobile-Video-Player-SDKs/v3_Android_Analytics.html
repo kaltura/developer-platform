@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Analytics.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Analytics.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -207,9 +207,8 @@ rtp('get', 'campaign',true);
 
 <p>To enable the Kaltura Analytics Plugin in Android devices, register the plugin inside your application as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="n">KalturaAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="nc">KalturaAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h3 id="configure-the-plugin-configuration-object-for-the-kaltura-analytics-plugin">
         
@@ -219,17 +218,16 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To configure the plugin, add the following configuration to your <code class="highlighter-rouge">pluginConfig</code> file as follows:</p>
+<p>To configure the plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">pluginConfig</code> file as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureKalturaStatsPlugin</span><span class="o">(</span><span class="n">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JsonObject</span> <span class="n">kalturaAnalyticsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureKalturaStatsPlugin</span><span class="o">(</span><span class="nc">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">JsonObject</span> <span class="n">kalturaAnalyticsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
         <span class="n">kalturaAnalyticsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"sessionId"</span><span class="o">,</span> <span class="n">sessionId</span><span class="o">);</span>
         <span class="n">kalturaAnalyticsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"uiconfId"</span><span class="o">,</span> <span class="n">uiconfId</span><span class="o">);</span>
         <span class="n">kalturaAnalyticsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"baseUrl"</span><span class="o">,</span> <span class="n">baseUrl</span><span class="o">);</span>
         <span class="n">kalturaAnalyticsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"partnerId"</span><span class="o">,</span> <span class="n">partnerId</span><span class="o">);</span> 
         <span class="n">kalturaAnalyticsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"timerInterval"</span><span class="o">,</span> <span class="n">timerInterval</span><span class="o">);</span> <span class="c1">//Timer interval to check progress of the media in milliseconds- recommended value - short media - 10000, long media - 30000</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="set-the-plugin-configuration-to-initiate-onload-of-the-kaltura-analytics-plugin">
         
@@ -241,11 +239,10 @@ rtp('get', 'campaign',true);
 
 <p>To enable the Kaltura Analytics Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
-<span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
+<span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
 <span class="n">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="s">"KalturaAnalytics"</span><span class="o">,</span> <span class="n">kalturaAnalyticsConfig</span><span class="o">);</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="kaltura-analytics-plugin-supported-events">
         
@@ -257,37 +254,36 @@ rtp('get', 'campaign',true);
 
 <p>The Kaltura Analytics Plugin supports the following events:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">IMPRESSION</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="no">IMPRESSION</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span>
 
-       <span class="n">PLAY_REQUEST</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span>
+       <span class="no">PLAY_REQUEST</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span>
 
-       <span class="n">PLAY</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span>
+       <span class="no">PLAY</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span>
         
-       <span class="n">RESUME</span><span class="o">(</span><span class="mi">4</span><span class="o">),</span>
+       <span class="no">RESUME</span><span class="o">(</span><span class="mi">4</span><span class="o">),</span>
         
-       <span class="n">PLAY_25PERCENT</span><span class="o">(</span><span class="mi">11</span><span class="o">),</span>
+       <span class="no">PLAY_25PERCENT</span><span class="o">(</span><span class="mi">11</span><span class="o">),</span>
         
-       <span class="n">PLAY_50PERCENT</span><span class="o">(</span><span class="mi">12</span><span class="o">),</span>
+       <span class="no">PLAY_50PERCENT</span><span class="o">(</span><span class="mi">12</span><span class="o">),</span>
         
-       <span class="n">PLAY_75PERCENT</span><span class="o">(</span><span class="mi">13</span><span class="o">),</span>
+       <span class="no">PLAY_75PERCENT</span><span class="o">(</span><span class="mi">13</span><span class="o">),</span>
         
-       <span class="n">PLAY_100PERCENT</span><span class="o">(</span><span class="mi">14</span><span class="o">),</span>
+       <span class="no">PLAY_100PERCENT</span><span class="o">(</span><span class="mi">14</span><span class="o">),</span>
         
-       <span class="n">PAUSE</span><span class="o">(</span><span class="mi">33</span><span class="o">),</span>
+       <span class="no">PAUSE</span><span class="o">(</span><span class="mi">33</span><span class="o">),</span>
         
-       <span class="n">REPLAY</span><span class="o">(</span><span class="mi">34</span><span class="o">),</span>
+       <span class="no">REPLAY</span><span class="o">(</span><span class="mi">34</span><span class="o">),</span>
        
-       <span class="n">SEEK</span><span class="o">(</span><span class="mi">35</span><span class="o">),</span>
+       <span class="no">SEEK</span><span class="o">(</span><span class="mi">35</span><span class="o">),</span>
         
-       <span class="n">SOURCE_SELECTED</span><span class="o">(</span><span class="mi">39</span><span class="o">),</span>
+       <span class="no">SOURCE_SELECTED</span><span class="o">(</span><span class="mi">39</span><span class="o">),</span>
         
-       <span class="n">INFO</span><span class="o">(</span><span class="mi">40</span><span class="o">),</span>
+       <span class="no">INFO</span><span class="o">(</span><span class="mi">40</span><span class="o">),</span>
         
-       <span class="n">SPEED</span><span class="o">(</span><span class="mi">41</span><span class="o">),</span>
+       <span class="no">SPEED</span><span class="o">(</span><span class="mi">41</span><span class="o">),</span>
         
-       <span class="n">VIEW</span><span class="o">(</span><span class="mi">99</span><span class="o">);</span>
-</code></pre>
-</div>
+       <span class="no">VIEW</span><span class="o">(</span><span class="mi">99</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h2 id="kaltura-stats-plugin">
         
@@ -309,9 +305,8 @@ rtp('get', 'campaign',true);
 
 <p>To enable the Kaltura Stats Plugin, register the plugin inside your application as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="n">KalturaStatsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="nc">KalturaStatsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h3 id="configure-the-plugin-configuration-object-for-the-kaltura-stats-plugin">
         
@@ -321,17 +316,16 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To configure the Kaltura Stats Plugin, add the following configuration to your <code class="highlighter-rouge">pluginConfig</code> file as follows:</p>
+<p>To configure the Kaltura Stats Plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">pluginConfig</code> file as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureKalturaStatsPlugin</span><span class="o">(</span><span class="n">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JsonObject</span> <span class="n">kalturaStatsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureKalturaStatsPlugin</span><span class="o">(</span><span class="nc">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">JsonObject</span> <span class="n">kalturaStatsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
         <span class="n">kalturaStatsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"sessionId"</span><span class="o">,</span> <span class="n">sessionId</span><span class="o">);</span>
         <span class="n">kalturaStatsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"uiconfId"</span><span class="o">,</span> <span class="n">uiconfId</span><span class="o">);</span>
         <span class="n">kalturaStatsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"baseUrl"</span><span class="o">,</span> <span class="n">baseUrl</span><span class="o">);</span>
         <span class="n">kalturaStatsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"partnerId"</span><span class="o">,</span> <span class="n">partnerId</span><span class="o">);</span> 
         <span class="n">kalturaStatsConfig</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"timerInterval"</span><span class="o">,</span> <span class="n">timerInterval</span><span class="o">);</span> <span class="c1">//Timer interval to check progress of the media in milliseconds- recommended value - short media - 10000, long media - 30000</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="set-the-plugin-configuration-to-initiate-onload-of-the-kaltura-stats-plugin">
         
@@ -343,11 +337,10 @@ rtp('get', 'campaign',true);
 
 <p>To enable the Kaltura Stats Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
-<span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
+<span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
 <span class="n">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="s">"KalturaStats"</span><span class="o">,</span> <span class="n">kalturaStatsConfig</span><span class="o">);</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="kaltura-stats-plugin-supported-events">
         
@@ -359,61 +352,60 @@ rtp('get', 'campaign',true);
 
 <p>The Kaltura Stats Plugin supports the following events:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="n">WIDGET_LOADED</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="no">WIDGET_LOADED</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span>
 
- <span class="n">MEDIA_LOADED</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span>
+ <span class="no">MEDIA_LOADED</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span>
 
- <span class="n">PLAY</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span>
+ <span class="no">PLAY</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span>
 
- <span class="n">PLAY_REACHED_25</span><span class="o">(</span><span class="mi">4</span><span class="o">),</span>
+ <span class="no">PLAY_REACHED_25</span><span class="o">(</span><span class="mi">4</span><span class="o">),</span>
 
- <span class="n">PLAY_REACHED_50</span><span class="o">(</span><span class="mi">5</span><span class="o">),</span>
+ <span class="no">PLAY_REACHED_50</span><span class="o">(</span><span class="mi">5</span><span class="o">),</span>
 
- <span class="n">PLAY_REACHED_75</span><span class="o">(</span><span class="mi">6</span><span class="o">),</span>
+ <span class="no">PLAY_REACHED_75</span><span class="o">(</span><span class="mi">6</span><span class="o">),</span>
 
- <span class="n">PLAY_REACHED_100</span><span class="o">(</span><span class="mi">7</span><span class="o">),</span>
+ <span class="no">PLAY_REACHED_100</span><span class="o">(</span><span class="mi">7</span><span class="o">),</span>
 
- <span class="n">BUFFER_START</span><span class="o">(</span><span class="mi">12</span><span class="o">),</span>
+ <span class="no">BUFFER_START</span><span class="o">(</span><span class="mi">12</span><span class="o">),</span>
 
- <span class="n">BUFFER_END</span><span class="o">(</span><span class="mi">13</span><span class="o">),</span>
+ <span class="no">BUFFER_END</span><span class="o">(</span><span class="mi">13</span><span class="o">),</span>
 
- <span class="n">REPLAY</span><span class="o">(</span><span class="mi">16</span><span class="o">),</span>
+ <span class="no">REPLAY</span><span class="o">(</span><span class="mi">16</span><span class="o">),</span>
 
- <span class="n">SEEK</span><span class="o">(</span><span class="mi">17</span><span class="o">),</span>
+ <span class="no">SEEK</span><span class="o">(</span><span class="mi">17</span><span class="o">),</span>
 
- <span class="n">PREROLL_STARTED</span><span class="o">(</span><span class="mi">24</span><span class="o">),</span>
+ <span class="no">PREROLL_STARTED</span><span class="o">(</span><span class="mi">24</span><span class="o">),</span>
 
- <span class="n">MIDROLL_STARTED</span><span class="o">(</span><span class="mi">25</span><span class="o">),</span>
+ <span class="no">MIDROLL_STARTED</span><span class="o">(</span><span class="mi">25</span><span class="o">),</span>
 
- <span class="n">POSTROLL_STARTED</span><span class="o">(</span><span class="mi">26</span><span class="o">),</span>
+ <span class="no">POSTROLL_STARTED</span><span class="o">(</span><span class="mi">26</span><span class="o">),</span>
 
- <span class="n">PREROLL_CLICKED</span><span class="o">(</span><span class="mi">28</span><span class="o">),</span>
+ <span class="no">PREROLL_CLICKED</span><span class="o">(</span><span class="mi">28</span><span class="o">),</span>
 
- <span class="n">MIDROLL_CLICKED</span><span class="o">(</span><span class="mi">29</span><span class="o">),</span>
+ <span class="no">MIDROLL_CLICKED</span><span class="o">(</span><span class="mi">29</span><span class="o">),</span>
 
- <span class="n">POSTROLL_CLICKED</span><span class="o">(</span><span class="mi">30</span><span class="o">),</span>
+ <span class="no">POSTROLL_CLICKED</span><span class="o">(</span><span class="mi">30</span><span class="o">),</span>
 
- <span class="n">PREROLL_25</span><span class="o">(</span><span class="mi">32</span><span class="o">),</span>
+ <span class="no">PREROLL_25</span><span class="o">(</span><span class="mi">32</span><span class="o">),</span>
 
- <span class="n">PREROLL_50</span><span class="o">(</span><span class="mi">33</span><span class="o">),</span>
+ <span class="no">PREROLL_50</span><span class="o">(</span><span class="mi">33</span><span class="o">),</span>
 
- <span class="n">PREROLL_75</span><span class="o">(</span><span class="mi">34</span><span class="o">),</span>
+ <span class="no">PREROLL_75</span><span class="o">(</span><span class="mi">34</span><span class="o">),</span>
 
- <span class="n">MIDROLL_25</span><span class="o">(</span><span class="mi">35</span><span class="o">),</span>
+ <span class="no">MIDROLL_25</span><span class="o">(</span><span class="mi">35</span><span class="o">),</span>
 
- <span class="n">MIDROLL_50</span><span class="o">(</span><span class="mi">36</span><span class="o">),</span>
+ <span class="no">MIDROLL_50</span><span class="o">(</span><span class="mi">36</span><span class="o">),</span>
 
- <span class="n">MIDROLL_75</span><span class="o">(</span><span class="mi">37</span><span class="o">),</span>
+ <span class="no">MIDROLL_75</span><span class="o">(</span><span class="mi">37</span><span class="o">),</span>
 
- <span class="n">POSTROLL_25</span><span class="o">(</span><span class="mi">38</span><span class="o">),</span>
+ <span class="no">POSTROLL_25</span><span class="o">(</span><span class="mi">38</span><span class="o">),</span>
 
- <span class="n">POSTROLL_50</span><span class="o">(</span><span class="mi">39</span><span class="o">),</span>
+ <span class="no">POSTROLL_50</span><span class="o">(</span><span class="mi">39</span><span class="o">),</span>
 
- <span class="n">POSTROLL_75</span><span class="o">(</span><span class="mi">40</span><span class="o">),</span>
+ <span class="no">POSTROLL_75</span><span class="o">(</span><span class="mi">40</span><span class="o">),</span>
 
- <span class="n">ERROR</span><span class="o">(</span><span class="mi">99</span><span class="o">);</span>
-</code></pre>
-</div>
+ <span class="no">ERROR</span><span class="o">(</span><span class="mi">99</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h2 id="tvpapi-stats-plugin">
         
@@ -435,9 +427,8 @@ rtp('get', 'campaign',true);
 
 <p>Register the TVPAPI Stats Plugin in your application as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="n">TVPAPIAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>               
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="nc">TVPAPIAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>               
+</code></pre></div></div>
     
       <h3 id="configure-the-plugin-configuration-object-for-the-tvpapi-stats-plugin">
         
@@ -447,16 +438,15 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To configure the TVPAPI Stats Plugin, add the following configuration to your <code class="highlighter-rouge">pluginConfig</code> file as follows:</p>
+<p>To configure the TVPAPI Stats Plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">pluginConfig</code> file as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureTVPAPIPlugin</span><span class="o">(</span><span class="n">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
-<span class="n">JsonObject</span> <span class="n">TVPAPIConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
-<span class="n">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"fileId"</span><span class="o">,</span> <span class="s">"fileId"</span><span class="o">);</span>
-<span class="n">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"baseUrl"</span><span class="o">,</span> <span class="s">"base url"</span><span class="o">);</span> <span class="c1">//Sample url - http://tvpapi-     preprod.ott.kaltura.com/v3_9/gateways/jsonpostgw.aspx?</span>
-<span class="n">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"timerInterval"</span><span class="o">,</span> <span class="n">timer</span> <span class="n">value</span> <span class="k">for</span> <span class="n">HIT</span> <span class="n">events</span> <span class="o">-</span> <span class="n">in</span> <span class="n">milliseconds</span><span class="o">);</span><span class="c1">//Default value - 30000</span>
-<span class="n">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"initObj"</span><span class="o">,</span> <span class="n">initObj</span><span class="o">);</span> <span class="c1">// must be a valid initObj of TVPAPI</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureTVPAPIPlugin</span><span class="o">(</span><span class="nc">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
+<span class="nc">JsonObject</span> <span class="nc">TVPAPIConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
+<span class="nc">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"fileId"</span><span class="o">,</span> <span class="s">"fileId"</span><span class="o">);</span>
+<span class="nc">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"baseUrl"</span><span class="o">,</span> <span class="s">"base url"</span><span class="o">);</span> <span class="c1">//Sample url - http://tvpapi-     preprod.ott.kaltura.com/v3_9/gateways/jsonpostgw.aspx?</span>
+<span class="nc">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"timerInterval"</span><span class="o">,</span> <span class="n">timer</span> <span class="n">value</span> <span class="k">for</span> <span class="no">HIT</span> <span class="n">events</span> <span class="o">-</span> <span class="n">in</span> <span class="n">milliseconds</span><span class="o">);</span><span class="c1">//Default value - 30000</span>
+<span class="nc">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"initObj"</span><span class="o">,</span> <span class="n">initObj</span><span class="o">);</span> <span class="c1">// must be a valid initObj of TVPAPI</span>
+</code></pre></div></div>
     
       <h3 id="set-the-plugin-configuration-to-the-tvpapi-stats-plugin">
         
@@ -468,11 +458,10 @@ rtp('get', 'campaign',true);
 
 <p>To ensure that the TVPAPI Stats Plugin starts loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
-<span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
-<span class="n">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="s">"TVPAPIAnalytics"</span> <span class="o">,</span> <span class="n">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span> 
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
+<span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<span class="n">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="s">"TVPAPIAnalytics"</span> <span class="o">,</span> <span class="nc">TVPAPIConfigEntry</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span> 
+</code></pre></div></div>
     
       <h3 id="tvpapi-stats-plugin-supported-events">
         
@@ -484,12 +473,11 @@ rtp('get', 'campaign',true);
 
 <p>The TVPAPI Stats Plugin supports the following events:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">TVPAPI</span> <span class="n">action</span> <span class="n">Types</span><span class="o">{</span>
-<span class="n">MediaHit</span><span class="o">,</span> <span class="c1">//outputs every interval time</span>
- <span class="n">MediaMark</span> <span class="c1">//Outputs in the following events - {PLAY,STOP,PAUSE,FIRST_PLAY,LOAD,FINISH,BITRATE_CHANGE,ERROR}</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">TVPAPI</span> <span class="n">action</span> <span class="nc">Types</span><span class="o">{</span>
+<span class="nc">MediaHit</span><span class="o">,</span> <span class="c1">//outputs every interval time</span>
+ <span class="nc">MediaMark</span> <span class="c1">//Outputs in the following events - {PLAY,STOP,PAUSE,FIRST_PLAY,LOAD,FINISH,BITRATE_CHANGE,ERROR}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="concurrency-handler">
         
@@ -501,16 +489,15 @@ rtp('get', 'campaign',true);
 
 <p>To receive concurrency events from the TVPAPI Stats Plugin, you’ll need to add a listener to the following event:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-	<span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="k">instanceof</span> <span class="n">OttEvent</span><span class="o">){</span>
-	<span class="err">\\</span><span class="n">Handle</span> <span class="n">concurrency</span> <span class="n">events</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="k">instanceof</span> <span class="nc">OttEvent</span><span class="o">){</span>
+	<span class="err">\\</span><span class="nc">Handle</span> <span class="n">concurrency</span> <span class="n">events</span>
 	<span class="o">}</span>
 <span class="o">}</span>
-<span class="o">},</span> <span class="n">OttEvent</span><span class="o">.</span><span class="na">OttEventType</span><span class="o">.</span><span class="na">Concurrency</span><span class="o">);</span>                    
-</code></pre>
-</div>
+<span class="o">},</span> <span class="nc">OttEvent</span><span class="o">.</span><span class="na">OttEventType</span><span class="o">.</span><span class="na">Concurrency</span><span class="o">);</span>                    
+</code></pre></div></div>
     
       <h2 id="phoenix-stats-plugin">
         
@@ -532,9 +519,8 @@ rtp('get', 'campaign',true);
 
 <p>Register the Phoenix Stats Plugin inside your application as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="n">PhoenixAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="nc">PhoenixAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h3 id="configure-the-plugin-configuration-object-for-the-phoenix-stats-plugin">
         
@@ -544,17 +530,16 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To configure the Phoenix Stats Plugin, add the following configuration to your <code class="highlighter-rouge">pluginConfig</code> file as follows:</p>
+<p>To configure the Phoenix Stats Plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">pluginConfig</code> file as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configurePhoenixPlugin</span><span class="o">(</span><span class="n">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JsonObject</span> <span class="n">phoenixConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configurePhoenixPlugin</span><span class="o">(</span><span class="nc">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">JsonObject</span> <span class="n">phoenixConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
         <span class="n">phoenixConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"fileId"</span><span class="o">,</span> <span class="s">"fileId"</span><span class="o">);</span>
         <span class="n">phoenixConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"partnerId"</span><span class="o">,</span> <span class="s">"partner id"</span><span class="o">);</span>
         <span class="n">phoenixConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"baseUrl"</span><span class="o">,</span> <span class="s">"base url"</span><span class="o">);</span>
         <span class="n">phoenixConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"ks"</span><span class="o">,</span> <span class="n">ks</span><span class="o">);</span> 
-        <span class="n">phoenixConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"timerInterval"</span><span class="o">,</span> <span class="n">timer</span> <span class="n">value</span> <span class="k">for</span> <span class="n">HIT</span> <span class="n">events</span> <span class="o">-</span> <span class="n">in</span> <span class="n">milliseconds</span><span class="o">);</span><span class="c1">//Default value - 30000</span>
-</code></pre>
-</div>
+        <span class="n">phoenixConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"timerInterval"</span><span class="o">,</span> <span class="n">timer</span> <span class="n">value</span> <span class="k">for</span> <span class="no">HIT</span> <span class="n">events</span> <span class="o">-</span> <span class="n">in</span> <span class="n">milliseconds</span><span class="o">);</span><span class="c1">//Default value - 30000</span>
+</code></pre></div></div>
     
       <h3 id="set-the-plugin-configuration-to-the-phoenix-stats-plugin">
         
@@ -566,11 +551,10 @@ rtp('get', 'campaign',true);
 
 <p>For the  Phoenix Stats Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
-<span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
+<span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
 <span class="n">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="s">"PhoenixAnalytics"</span> <span class="o">,</span> <span class="n">phoenixConfigEntry</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="phoenix-stats-plugin-supported-events">
         
@@ -582,25 +566,24 @@ rtp('get', 'campaign',true);
 
 <p>The following events are supported by the Phoenix Stats Plugin:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="n">HIT</span><span class="o">,</span> <span class="c1">//outputs every interval time</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="no">HIT</span><span class="o">,</span> <span class="c1">//outputs every interval time</span>
  
- <span class="n">PLAY</span><span class="o">,</span> 
+ <span class="no">PLAY</span><span class="o">,</span> 
  
- <span class="n">STOP</span><span class="o">,</span>
+ <span class="no">STOP</span><span class="o">,</span>
  
- <span class="n">PAUSE</span><span class="o">,</span>
+ <span class="no">PAUSE</span><span class="o">,</span>
  
- <span class="n">FIRST_PLAY</span><span class="o">,</span>
+ <span class="no">FIRST_PLAY</span><span class="o">,</span>
  
- <span class="n">LOAD</span><span class="o">,</span>
+ <span class="no">LOAD</span><span class="o">,</span>
  
- <span class="n">FINISH</span><span class="o">,</span>
+ <span class="no">FINISH</span><span class="o">,</span>
  
- <span class="n">BITRATE_CHANGE</span><span class="o">,</span>
+ <span class="no">BITRATE_CHANGE</span><span class="o">,</span>
  
- <span class="n">ERROR</span>
-</code></pre>
-</div>
+ <span class="no">ERROR</span>
+</code></pre></div></div>
     
       <h3 id="concurrency-handler-1">
         
@@ -612,17 +595,16 @@ rtp('get', 'campaign',true);
 
 <p>To receive concurrency events from the Phoenix Stats Plugin, you’ll need to add a listener to the following event:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
                         <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="k">instanceof</span> <span class="n">OttEvent</span><span class="o">){</span>
-                                <span class="err">\\</span><span class="n">Handle</span> <span class="n">concurrency</span> <span class="n">events</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="k">instanceof</span> <span class="nc">OttEvent</span><span class="o">){</span>
+                                <span class="err">\\</span><span class="nc">Handle</span> <span class="n">concurrency</span> <span class="n">events</span>
                             <span class="o">}</span>
                         <span class="o">}</span>
-                    <span class="o">},</span> <span class="n">OttEvent</span><span class="o">.</span><span class="na">OttEventType</span><span class="o">.</span><span class="na">Concurrency</span><span class="o">);</span>
+                    <span class="o">},</span> <span class="nc">OttEvent</span><span class="o">.</span><span class="na">OttEventType</span><span class="o">.</span><span class="na">Concurrency</span><span class="o">);</span>
                     
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="youbora-plugin">
         
@@ -646,9 +628,8 @@ rtp('get', 'campaign',true);
 
 <p>To enable the Youbora Plugin in Android devices, register the plugin inside your application as follows</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="n">YouboraPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="nc">YouboraPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h3 id="configure-the-plugin-configuration-object-for-the-youbora-plugin">
         
@@ -658,29 +639,29 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To configure the Youbora Plugin, add the following configuration to your <code class="highlighter-rouge">pluginConfig</code> file as follows:</p>
+<p>To configure the Youbora Plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">pluginConfig</code> file as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureYouboraPlugin</span><span class="o">(</span><span class="n">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">JsonObject</span> <span class="n">youboraConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureYouboraPlugin</span><span class="o">(</span><span class="nc">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">JsonObject</span> <span class="n">youboraConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
         <span class="n">youboraConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"accountCode"</span><span class="o">,</span> <span class="s">"your youbora account code"</span><span class="o">);</span>
         <span class="n">youboraConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"username"</span><span class="o">,</span> <span class="s">"user name for youbora"</span><span class="o">);</span> <span class="c1">//Optional</span>
         <span class="n">youboraConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"haltOnError"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
         <span class="n">youboraConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"enableAnalytics"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span> <span class="c1">//If you want to enable youbora ads analytics</span>
 
-        <span class="n">JsonObject</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+        <span class="nc">JsonObject</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
         <span class="n">mediaEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"title"</span><span class="o">,</span> <span class="s">"media title"</span><span class="o">);</span>
 
-        <span class="n">JsonObject</span> <span class="n">adsEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span> <span class="c1">//If you have ads support in your app</span>
+        <span class="nc">JsonObject</span> <span class="n">adsEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span> <span class="c1">//If you have ads support in your app</span>
         <span class="n">adsEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"adsExpected"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
         <span class="n">adsEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"title"</span><span class="o">,</span> <span class="s">"ad title"</span><span class="o">);</span>
         <span class="n">adsEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"campaign"</span><span class="o">,</span> <span class="s">"ad campaign"</span><span class="o">);</span>
 
-        <span class="n">JsonObject</span> <span class="n">extraParamEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span> <span class="c1">// You can define upto 10 configurable params "param1" to "param10"</span>
+        <span class="nc">JsonObject</span> <span class="n">extraParamEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span> <span class="c1">// You can define upto 10 configurable params "param1" to "param10"</span>
         <span class="n">extraParamEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"param1"</span><span class="o">,</span> <span class="s">"Configurable"</span><span class="o">);</span>
         <span class="n">extraParamEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"param2"</span><span class="o">,</span> <span class="s">"playKitPlayer"</span><span class="o">);</span>
         <span class="n">extraParamEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"param3"</span><span class="o">,</span> <span class="s">"Configurable"</span><span class="o">);</span>
 
-        <span class="n">JsonObject</span> <span class="n">propertiesEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+        <span class="nc">JsonObject</span> <span class="n">propertiesEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
         <span class="n">propertiesEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"genre"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
         <span class="n">propertiesEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"type"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
         <span class="n">propertiesEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"transaction_type"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
@@ -696,11 +677,10 @@ rtp('get', 'campaign',true);
         <span class="n">propertiesEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"device"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
         <span class="n">propertiesEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"quality"</span><span class="o">,</span> <span class="s">""</span><span class="o">);</span>
 
-        <span class="n">ConverterYoubora</span> <span class="n">converterYoubora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConverterYoubora</span><span class="o">(</span><span class="n">youboraConfigEntry</span><span class="o">,</span> <span class="n">mediaEntry</span><span class="o">,</span>
+        <span class="nc">ConverterYoubora</span> <span class="n">converterYoubora</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ConverterYoubora</span><span class="o">(</span><span class="n">youboraConfigEntry</span><span class="o">,</span> <span class="n">mediaEntry</span><span class="o">,</span>
                 <span class="n">adsEntry</span><span class="o">,</span> <span class="n">extraParamEntry</span><span class="o">,</span> <span class="n">propertiesEntry</span><span class="o">);</span> <span class="c1">// you set the coverterYoubora.toJson() as the plugin config object</span>
                 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="set-the-plugin-configuration-to-the-youbora-plugin">
         
@@ -712,11 +692,10 @@ rtp('get', 'campaign',true);
 
 <p>For the Youbora Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
-        <span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
+        <span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
         <span class="n">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="s">"Youbora"</span><span class="o">,</span> <span class="n">converterYoubora</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="analyze-the-youbora-plugin-requests">
         
@@ -730,21 +709,18 @@ rtp('get', 'campaign',true);
 
 <p>1 . Data request event - /data: The response will contain the URL, while all other events will be send to:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="nl">http:</span><span class="c1">//nqs.nice264.com/data?system=kalturatest&amp;pluginName=playkit%2Fandroid-0.0.3&amp;timemark=1481719756186&amp;pluginVersion=5.3.0-   playkit%2Fandroid-0.0.3&amp;outputformat=jsonp</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nl">http:</span><span class="c1">//nqs.nice264.com/data?system=kalturatest&amp;pluginName=playkit%2Fandroid-0.0.3&amp;timemark=1481719756186&amp;pluginVersion=5.3.0-   playkit%2Fandroid-0.0.3&amp;outputformat=jsonp</span>
+</code></pre></div></div>
 
 <p>2 . Start event /start: After pressing <strong>Play</strong> or if auto-play is on, the following will occur:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="nl">http:</span><span class="c1">//test-nqs-lw2.nice264.com/start?          deviceId=&amp;cdn=&amp;param6=&amp;duration=15&amp;user=&amp;param10=&amp;code=V_19210_apk0b5rp2e5bq0gm_0&amp;resource=http%3A%2F%2Flbd.kaltura.com%3A8002%2Fedash%2Fp%2F552741%2Fsp%2F55274100%2FserveFlavor%2FentryId%2F1_a2qor9cc%2Fv%2F1%2FflavorId%2F1_%2C93t0pa0f%2Cnr0yylo6%2C644jy89i%2C%2Fforceproxy%2Ftrue%2Fname%2Fa.mp4.urlset%2Fmanifest.mpd&amp;adsExpected=true&amp;param1=playkit%2Fandroid-0.0.3&amp;param7=&amp;param2=&amp;timemark=1481719912433&amp;isp=&amp;pingTime=5&amp;playerVersion=playkit%2Fandroid-0.0.3&amp;system=kalturatest&amp;properties=%7B%22device%22%3A%22%22%2C%22audioType%22%3A%22%22%2C%22rating%22%3A%22%22%2C%22cast%22%3A%22joe+joe%22%2C%22quality%22%3A%22%22%2C%22owner%22%3A%22%22%2C%22year%22%3A%222000%22%2C%22parental%22%3A%22%22%2C%22genre%22%3A%22action%22%2C%22price%22%3A%22%22%2C%22transaction_type%22%3A%22%22%2C%22audioChannels%22%3A%22%22%2C%22type%22%3A%22video%22%2C%22director%22%3A%22henry%22%7D&amp;live=false&amp;param8=&amp;param4=&amp;pluginVersion=5.3.0-playkit%2Fandroid-0.0.3&amp;param9=&amp;rendition=&amp;title=&amp;transcode=&amp;param3=&amp;hashTitle=true&amp;ip=&amp;player=playkit%2Fandroid-0.0.3&amp;param5=</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">http:</span><span class="c1">//test-nqs-lw2.nice264.com/start?          deviceId=&amp;cdn=&amp;param6=&amp;duration=15&amp;user=&amp;param10=&amp;code=V_19210_apk0b5rp2e5bq0gm_0&amp;resource=http%3A%2F%2Flbd.kaltura.com%3A8002%2Fedash%2Fp%2F552741%2Fsp%2F55274100%2FserveFlavor%2FentryId%2F1_a2qor9cc%2Fv%2F1%2FflavorId%2F1_%2C93t0pa0f%2Cnr0yylo6%2C644jy89i%2C%2Fforceproxy%2Ftrue%2Fname%2Fa.mp4.urlset%2Fmanifest.mpd&amp;adsExpected=true&amp;param1=playkit%2Fandroid-0.0.3&amp;param7=&amp;param2=&amp;timemark=1481719912433&amp;isp=&amp;pingTime=5&amp;playerVersion=playkit%2Fandroid-0.0.3&amp;system=kalturatest&amp;properties=%7B%22device%22%3A%22%22%2C%22audioType%22%3A%22%22%2C%22rating%22%3A%22%22%2C%22cast%22%3A%22joe+joe%22%2C%22quality%22%3A%22%22%2C%22owner%22%3A%22%22%2C%22year%22%3A%222000%22%2C%22parental%22%3A%22%22%2C%22genre%22%3A%22action%22%2C%22price%22%3A%22%22%2C%22transaction_type%22%3A%22%22%2C%22audioChannels%22%3A%22%22%2C%22type%22%3A%22video%22%2C%22director%22%3A%22henry%22%7D&amp;live=false&amp;param8=&amp;param4=&amp;pluginVersion=5.3.0-playkit%2Fandroid-0.0.3&amp;param9=&amp;rendition=&amp;title=&amp;transcode=&amp;param3=&amp;hashTitle=true&amp;ip=&amp;player=playkit%2Fandroid-0.0.3&amp;param5=</span>
+</code></pre></div></div>
 
 <p>3 . Join event /join. After the media starts playing the following will occur:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>        <span class="nl">http:</span><span class="c1">//test-nqs-lw2.nice264.com/joinTime?timemark=1481719912435&amp;eventTime=0.0&amp;mediaDuration=15.0&amp;time=3&amp;code=V_19210_apk0b5rp2e5bq0gm_0</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nl">http:</span><span class="c1">//test-nqs-lw2.nice264.com/joinTime?timemark=1481719912435&amp;eventTime=0.0&amp;mediaDuration=15.0&amp;time=3&amp;code=V_19210_apk0b5rp2e5bq0gm_0</span>
+</code></pre></div></div>
 
 <p>4 . Ping event /ping: This will ping the event every five seconds.</p>
 

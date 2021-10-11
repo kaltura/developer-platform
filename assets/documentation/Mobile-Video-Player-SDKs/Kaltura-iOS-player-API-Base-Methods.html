@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Kaltura-iOS-player-API-Base-Methods.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Kaltura-iOS-player-API-Base-Methods.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Sat Jan 14 11:07:27 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -158,7 +158,7 @@ rtp('get', 'campaign',true);
   <li>Listen and respond to Player events (addJsListener/removeJsListener): Enables you to react to internal Player events, such as beginning, playing, and pausing.</li>
 </ul>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cm">/*!
  * @function addEventListener:eventID:handler:
  *
@@ -184,14 +184,13 @@ rtp('get', 'campaign',true);
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeKPlayerEventListener</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">event</span> <span class="nf">eventID</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">eventID</span><span class="p">;</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>Invoke player actions (sendNotification): Enables you to tell the Player to perform an action, such as play or pause media.</li>
 </ul>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cm">/*!
  * @function sendNotification:expressionID:forName
  *
@@ -204,13 +203,12 @@ rtp('get', 'campaign',true);
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">sendNotification</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">notificationName</span> <span class="nf">withParams</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">params</span><span class="p">;</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li>Retrieve information in runtime (evaluate): Enables you to obtain information about a Player, such as the media that is loaded in the Player and the flashVars that the Player passes.</li>
 </ul>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cm">/*!
  * @function asyncEvaluate:expressionID:handler
  *
@@ -224,13 +222,12 @@ rtp('get', 'campaign',true);
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">asyncEvaluate</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">expression</span> <span class="nf">expressionID</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">expressionID</span> <span class="nf">handler</span><span class="p">:(</span><span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">value</span><span class="p">))</span><span class="nv">handler</span><span class="p">;</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <ul>
   <li>Change Player attributes in runtime (setKDPAttribute): Modifies Player attributes, such as a label on a Player UI.</li>
 </ul>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="cm">/*!
  * @function setKDPAttribute:propertyName:value
  *
@@ -244,8 +241,7 @@ rtp('get', 'campaign',true);
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setKDPAttribute</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">pluginName</span> <span class="nf">propertyName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">propertyName</span> <span class="nf">value</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">value</span><span class="p">;</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="receiving-a-notification-when-the-player-api-is-ready">
         
@@ -257,7 +253,7 @@ rtp('get', 'campaign',true);
 
 <p>To receive a notification when the Player API is ready, use the following objective:</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*!
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*!
  * @function registerReadyEvent
  *
  * @abstract
@@ -277,8 +273,7 @@ rtp('get', 'campaign',true);
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">registerReadyEvent</span><span class="p">:(</span><span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="p">)())</span><span class="nv">handler</span><span class="p">;</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="implementing-player-api-base-methods">
         
@@ -290,7 +285,7 @@ rtp('get', 'campaign',true);
 
 <p>To implement the Player API base methods, use the following objective:</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*!
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*!
  @method        play:
  @abstract      Initiates playback of the current item. (required)
  
@@ -298,20 +293,18 @@ rtp('get', 'campaign',true);
  If a Kaltura Player is not prepared for playback when you call this method, this method first prepares the Kaltura Player and then starts playback. To minimize playback delay, call the prepareToPlay method before you call this method.
  */</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">play</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*!
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*!
  @method        pause:
  @abstract      Pauses playback of the current item. (required)
  
  If playback is not currently underway, this method has no effect. To resume playback of the current item from the pause point, call the play method.
  */</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">pause</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*!
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*!
  @method        replay:
  @abstract      replay playback of the current item. (required)
  
@@ -319,24 +312,21 @@ rtp('get', 'campaign',true);
  */</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">replay</span><span class="p">;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*!
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*!
  @method        seek:
  @abstract      Begins seeking through the media content.
  */</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">seek</span><span class="p">:(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nv">playbackTime</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="cm">/*!
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*!
  @method        seek:completionHandler:
  @abstract      Begins seeking through the media content.
  */</span>
 <span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">seek</span><span class="p">:(</span><span class="n">NSTimeInterval</span><span class="p">)</span><span class="nv">playbackTime</span> <span class="nf">completionHandler</span><span class="p">:(</span><span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="p">)())</span><span class="nv">handler</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="player-states">
         
@@ -356,7 +346,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">NS_ENUM</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">,</span> <span class="n">KPMediaPlaybackState</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">NS_ENUM</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">,</span> <span class="n">KPMediaPlaybackState</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">KPMediaPlaybackStateUnknown</span><span class="p">,</span>
     <span class="n">KPMediaPlaybackStateLoaded</span><span class="p">,</span>
     <span class="n">KPMediaPlaybackStateReady</span><span class="p">,</span>
@@ -366,8 +356,8 @@ rtp('get', 'campaign',true);
     <span class="n">KPMediaPlaybackStatePaused</span><span class="p">,</span>
     <span class="cm">/* Playback is currently ended. */</span>
     <span class="n">KPMediaPlaybackStateEnded</span><span class="p">,</span>
-    <span class="c1">///@todo
-</span>    <span class="cm">/* Playback is temporarily interrupted, perhaps because the buffer ran out of content. */</span>
+    <span class="c1">///@todo</span>
+    <span class="cm">/* Playback is temporarily interrupted, perhaps because the buffer ran out of content. */</span>
     <span class="n">KPMediaPlaybackStateInterrupted</span><span class="p">,</span>
     <span class="cm">/* The movie player is currently seeking towards the end of the movie. */</span>
     <span class="n">KPMediaPlaybackStateSeekingForward</span><span class="p">,</span>
@@ -375,8 +365,7 @@ rtp('get', 'campaign',true);
     <span class="n">KPMediaPlaybackStateSeekingBackward</span>
 <span class="p">};</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="kpmedialoadstate">
         
@@ -386,18 +375,17 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">NS_OPTIONS</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">,</span> <span class="n">KPMediaLoadState</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">NS_OPTIONS</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">,</span> <span class="n">KPMediaLoadState</span><span class="p">)</span> <span class="p">{</span>
     <span class="cm">/* The load state is not known. */</span>
     <span class="n">KPMediaLoadStateUnknown</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
     <span class="cm">/* The buffer has enough data that playback can begin, but it may run out of data before playback finishes. */</span>
     <span class="n">KPMediaLoadStatePlayable</span>       <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span>
     <span class="cm">/* Enough data has been buffered for playback to continue uninterrupted. */</span>
-    <span class="n">KPMediaLoadStatePlaythroughOK</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// Playback will be automatically started in this state when shouldAutoplay is YES
-</span>    <span class="cm">/* The buffering of data has stalled. */</span>
-    <span class="n">KPMediaLoadStateStalled</span>        <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// Playback will be automatically paused in this state, if started
-</span><span class="p">};</span>
-</code></pre>
-</div>
+    <span class="n">KPMediaLoadStatePlaythroughOK</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">// Playback will be automatically started in this state when shouldAutoplay is YES</span>
+    <span class="cm">/* The buffering of data has stalled. */</span>
+    <span class="n">KPMediaLoadStateStalled</span>        <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// Playback will be automatically paused in this state, if started</span>
+<span class="p">};</span>
+</code></pre></div></div>
 		
 </article>
 

@@ -109,14 +109,20 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Thu May 2 16:31:57 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/player-setup-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Sep 27 05:03:14 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/player-setup-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed May 1 14:04:39 2019, By: Avital</td></tr-->
-				<!--tr><td>Last commit: Thu May 2 16:31:57 2019, By <span class="commit-author">Avital</span></td></tr-->
+				<!--tr><td>Last commit: Mon Sep 27 05:03:14 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
 					<td>Avital (2 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
+				</tr> -->
+
+				<!-- 
+				
+				<tr>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -138,9 +144,8 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//PATH/TO/PLAYER/LIB/FILENAME.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-</div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//PATH/TO/PLAYER/LIB/FILENAME.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
     
       <h3 id="step-2---create-the-player-container">
         
@@ -150,9 +155,8 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"player-container"</span><span class="nt">&gt;&lt;/div&gt;</span>
-</code></pre>
-</div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"player-container"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
     
       <h3 id="step-3---define-your-configuration">
         
@@ -162,8 +166,8 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">targetId</span><span class="p">:</span> <span class="s2">"player-container"</span><span class="p">,</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">targetId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">player-container</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">playback</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span> <span class="c1">// playback configuration</span>
   <span class="na">sources</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span> <span class="c1">// sources configuration</span>
   <span class="na">plugins</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span> <span class="c1">// plugins configuration</span>
@@ -175,8 +179,7 @@ rtp('get', 'campaign',true);
   <span class="p">},</span>
   <span class="na">ui</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="c1">// ui configuration</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The following sections are examples of common (and important) configurations for the player setup.</p>
     
@@ -190,20 +193,19 @@ rtp('get', 'campaign',true);
 
 <p>If you need to use a KS for your media requests, configure it inside your provider configuration:</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
     <span class="p">...</span>
     <span class="na">partnerId</span><span class="p">:</span> <span class="nx">YOUR_PARTNER_ID</span><span class="p">,</span>
-    <span class="na">ks</span><span class="p">:</span> <span class="s1">'YOUR_KS'</span>
+    <span class="na">ks</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_KS</span><span class="dl">'</span>
     <span class="p">...</span>
   <span class="p">}</span>
   <span class="p">...</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>See this <a href="https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html">article</a> to learn more about how to create a KS.</p>
+<p>See <a href="../../Getting-Started-Building-Video-Applications /Authenticating-and-Using-Kaltura-Sessions.html">Authenticating-and-Using-Kaltura-Sessions</a> to learn more about how to create a KS.</p>
     
       <h4 id="example-using-server-configuration">
         
@@ -213,9 +215,9 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<p>If you want to use a server configuration, you’ll need to provide the <code class="highlighter-rouge">uiConfId</code> in your provider configuration:</p>
+<p>If you want to use a server configuration, you’ll need to provide the <code class="language-plaintext highlighter-rouge">uiConfId</code> in your provider configuration:</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
     <span class="p">...</span>
@@ -225,8 +227,7 @@ rtp('get', 'campaign',true);
   <span class="p">}</span>
   <span class="p">...</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="example-using-an-environment">
         
@@ -238,20 +239,19 @@ rtp('get', 'campaign',true);
 
 <p>If you want to refer to a specific backend URL, you can specify it in your provider configuration:</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="p">...</span>
   <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
     <span class="p">...</span>
     <span class="na">partnerId</span><span class="p">:</span> <span class="nx">YOUR_PARTNER_ID</span><span class="p">,</span>
     <span class="na">env</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">serviceUrl</span><span class="p">:</span> <span class="s1">'YOUR_SERVICE_URL'</span>
+        <span class="na">serviceUrl</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_SERVICE_URL</span><span class="dl">'</span>
       <span class="p">}</span>
     <span class="p">...</span>
   <span class="p">}</span>
   <span class="p">...</span>
 <span class="p">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>For full configuration details see <a href="">this</a> document.</p>
@@ -265,11 +265,10 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To get your player instance, use the <code class="highlighter-rouge">setup</code> factory method and pass it your player configuration:</p>
+<p>To get your player instance, use the <code class="language-plaintext highlighter-rouge">setup</code> factory method and pass it your player configuration:</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
+</code></pre></div></div>
 		
 </article>
 

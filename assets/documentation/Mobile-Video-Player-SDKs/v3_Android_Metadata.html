@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Metadata.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Metadata.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Apr 4 09:37:34 2017, By: anton.afanasiev</td></tr-->
 				<!--tr><td>Last commit: Tue Aug 8 13:28:22 2017, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -168,7 +168,7 @@ rtp('get', 'campaign',true);
 
 <p>You will need to subscribe to the corresponding event called METADATA_AVAILABLE. We recommend reading this article on <a href="/api-docs/Mobile-Video-Player-SDKs/v3_Android_EventsAndStates.html">event subscriptions</a> for more information.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>player.addEventListener(new PKEvent.Listener() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>player.addEventListener(new PKEvent.Listener() {
     @Override
     public void onEvent(PKEvent event) {
 				//Obtain the Metadata object.
@@ -176,8 +176,7 @@ rtp('get', 'campaign',true);
     //Subscribe to the events you are interested in.
 }, PlayerEvent.Type.METADATA_AVAILABLE);
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="obtaining-the-metadata-object">
         
@@ -189,14 +188,13 @@ rtp('get', 'campaign',true);
 
 <p>The METADATA_AVAILABLE event holds data objects with Metadata. To get this object, you’ll first need to cast the event to PlayerEvent.MetadataAvailable, and then apply a getter to it.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Cast received event to MetadataAvailable event, which holds the data object with actual metadata.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Cast received event to MetadataAvailable event, which holds the data object with actual metadata.
 PlayerEvent.MetadataAvailable metadataAvailableEvent = (PlayerEvent.MetadataAvailable) event;
 
 //Retrieve the metadata object itself.
 Metadata metadata = metadataAvailableEvent.getMetadata();
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="getting-the-metadata">
         
@@ -208,7 +206,7 @@ Metadata metadata = metadataAvailableEvent.getMetadata();
 
 <p>Each media entry can have more than one type of metadata object, which are called frames. To receive the frame you are interested in, you’ll need to review all the entries in the Metadata object to locate the relevant instance. In the next section, you’ll find a list of all available types of metadata. Use the following code to get the metadata you need.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>//Iterate through all entries in metadata object.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Iterate through all entries in metadata object.
 for (int i = 0; i &lt; metadata.length(); i++) {
     Metadata.Entry metadataEntry = metadata.get(i);
 
@@ -222,8 +220,7 @@ for (int i = 0; i &lt; metadata.length(); i++) {
 	Log.d(TAG, "metadata text information: " + textInformationFrame.value);
     }
 }
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="available-metadata-types">
         
