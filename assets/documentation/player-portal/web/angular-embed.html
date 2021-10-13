@@ -109,10 +109,16 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Aug 26 09:22:04 2019</span>, By <span class="commit-author">tzubeli</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/angular-embed.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/angular-embed.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Aug 8 00:30:26 2019, By: tzubeli</td></tr-->
-				<!--tr><td>Last commit: Mon Aug 26 09:22:04 2019, By <span class="commit-author">tzubeli</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
+				<!-- 
+				
+				<tr>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+				</tr> -->
+
 				<!-- 
 				
 				<tr>
@@ -131,7 +137,7 @@ rtp('get', 'campaign',true);
     		
 		<p>If you’ve tried embedding the Kaltura Player in your Angular app, you may have come across <a href="https://github.com/angular/angular/issues/4903">the issue</a> where Angular deletes javascript <strong>script</strong> tags. In the embed examples below, we add the player to the Typescript project dynamically, or by creating the embed script <em>after</em> the component has been created or initialize, as described in <a href="https://stackoverflow.com/questions/35570746/angular2-including-thirdparty-js-scripts-in-component0">this workaround</a>.</p>
 
-<p>If you are not looking for angular solutions, check out the Player embed-types <a href="https://developer.kaltura.com/player/web/embed-types-web/">here</a>.</p>
+<p>If you are not looking for angular solutions, check out the Player embed-types <a href="/player/web/embed-types-web/">here</a>.</p>
       <h2 id="dynamic-embed">
         
         
@@ -174,7 +180,7 @@ rtp('get', 'campaign',true);
 <p>Be sure to fill in the missing information needed in the player script:</p>
 <ul>
   <li><strong>partner_id</strong>:found in the <a href="https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings">KMC Integration Settings</a></li>
-  <li><strong>uiConf_id</strong> or player ID, found in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v2">KMC studio</a> or, if you’re using the API, by calling <a href="https://developer.kaltura.com/console/service/uiConf/action/list">uiConf.list</a> to see a full list of existing players.</li>
+  <li><strong>uiConf_id</strong> or player ID, found in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v2">KMC studio</a> or, if you’re using the API, by calling <a href="/console/service/uiConf/action/list">uiConf.list</a> to see a full list of existing players.</li>
   <li><strong>player_placeholder</strong> that corresponds to the div in the HTML code</li>
   <li><strong>entry_id</strong> of the video that you wish to show in the player.</li>
 </ul>

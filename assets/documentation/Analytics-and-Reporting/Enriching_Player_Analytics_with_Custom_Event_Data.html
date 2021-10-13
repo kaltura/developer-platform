@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -157,7 +157,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>First check in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">KMC</a> to make sure the KAVA plugin is enabled on your <a href="https://developer.kaltura.com/player/web/getting-started-web">player</a>: it is enabled by default.</p>
+<p>First check in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">KMC</a> to make sure the KAVA plugin is enabled on your <a href="/player/web/getting-started-web">player</a>: it is enabled by default.</p>
 
 <p><img src="/assets/images/kmc_kava.png" alt="kmc_kava" style="zoom:65%;" /></p>
 
@@ -185,7 +185,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>If you refer to the <a href="https://developer.kaltura.com/player/ios/analytics-plugins-ios">iOS analytics</a> documentation, you will notice the <code class="language-plaintext highlighter-rouge">createKavaConfig</code> method below accepts <code class="language-plaintext highlighter-rouge">customVar[123]</code></p>
+<p>If you refer to the <a href="/player/ios/analytics-plugins-ios">iOS analytics</a> documentation, you will notice the <code class="language-plaintext highlighter-rouge">createKavaConfig</code> method below accepts <code class="language-plaintext highlighter-rouge">customVar[123]</code></p>
 
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">createKavaConfig</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">KavaPluginConfig</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kt">KavaPluginConfig</span><span class="p">(</span><span class="nv">partnerId</span><span class="p">:</span> <span class="kt">PARTNER_ID</span><span class="p">,</span> <span class="nv">entryId</span><span class="p">:</span> <span class="n">entryId</span><span class="p">,</span> <span class="nv">ks</span><span class="p">:</span> <span class="n">ks</span><span class="p">,</span> <span class="nv">playbackContext</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">referrer</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">applicationVersion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">playlistId</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar1</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar2</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar3</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
@@ -200,7 +200,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Refer to the <a href="https://developer.kaltura.com/player/android/getting-started-android">android player setup page</a> which also links to the <a href="https://github.com/kaltura/playkit-android-kava">Android KAVA demo</a></p>
+<p>Refer to the <a href="/player/android/getting-started-android">android player setup page</a> which also links to the <a href="https://github.com/kaltura/playkit-android-kava">Android KAVA demo</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            //Set your configurations.
             KavaAnalyticsConfig kavaConfig = new KavaAnalyticsConfig()
@@ -233,7 +233,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Using the <a href="https://developer.kaltura.com/console/service/report/action/getTable">report.getTable</a> API call, as shown below, a <code class="language-plaintext highlighter-rouge">reportType</code> of <code class="language-plaintext highlighter-rouge">TOP_CONTENT</code> is produced and it allows you to filter by string via the <code class="language-plaintext highlighter-rouge">customVar1In</code> field of <code class="language-plaintext highlighter-rouge">reportInputFilter</code></p>
+<p>Using the <a href="/console/service/report/action/getTable">report.getTable</a> API call, as shown below, a <code class="language-plaintext highlighter-rouge">reportType</code> of <code class="language-plaintext highlighter-rouge">TOP_CONTENT</code> is produced and it allows you to filter by string via the <code class="language-plaintext highlighter-rouge">customVar1In</code> field of <code class="language-plaintext highlighter-rouge">reportInputFilter</code></p>
 
 <p><img src="/assets/images/customVar_topContent.png" alt="customVar_topContent" style="zoom:40%;" /></p>
 

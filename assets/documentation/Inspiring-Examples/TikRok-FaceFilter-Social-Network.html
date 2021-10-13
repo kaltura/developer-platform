@@ -109,9 +109,9 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Sep 27 05:03:14 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Oct 29 11:16:37 2020, By: Hunter Peress</td></tr-->
-				<!--tr><td>Last commit: Mon Sep 27 05:03:14 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
@@ -134,7 +134,7 @@ rtp('get', 'campaign',true);
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!-- 
@@ -191,7 +191,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Many shortcuts were taken in order to give you the barebones, simplest implementation of this concept aka an MVP. I chose a web front end to give a low barrier to entry across any platform. While recording does not work on all mobile browsers, the face filters do, and a more robust implementation could make use of Kaltura’s many <a href="https://developer.kaltura.com/api-docs/Client_Libraries">Client Libraries</a></p>
+<p>Many shortcuts were taken in order to give you the barebones, simplest implementation of this concept aka an MVP. I chose a web front end to give a low barrier to entry across any platform. While recording does not work on all mobile browsers, the face filters do, and a more robust implementation could make use of Kaltura’s many <a href="/api-docs/Client_Libraries">Client Libraries</a></p>
     
       <h2 id="this-is-just-a-kernel">
         
@@ -381,12 +381,12 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>In <code class="language-plaintext highlighter-rouge">views/record.ejs</code> we will use the <a href="https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a>, which has the option to record a canvas element and combine it with your webcam’s audio.</p>
+<p>In <code class="language-plaintext highlighter-rouge">views/record.ejs</code> we will use the <a href="/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a>, which has the option to record a canvas element and combine it with your webcam’s audio.</p>
 
 <p><strong>Note</strong>:The github for TikRok includes a forked “canvas” version of express recorder named <code class="language-plaintext highlighter-rouge">kaltura-canvas-express-recorder.js</code></p>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">&lt;div id="controls"</code> is where the <a href="https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> controls will be injected. These elements must all have the same video size to render properly. Now to instantiate the express recorder:</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;div id="controls"</code> is where the <a href="/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> controls will be injected. These elements must all have the same video size to render properly. Now to instantiate the express recorder:</li>
 </ol>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			 <span class="kd">const</span> <span class="nx">expressRec</span> <span class="o">=</span> <span class="nx">Kaltura</span><span class="p">.</span><span class="nx">ExpressRecorder</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="dl">'</span><span class="s1">controls</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
@@ -401,7 +401,7 @@ rtp('get', 'campaign',true);
         <span class="p">});</span>
 </code></pre></div></div>
 
-<p>We have supplied all relevant id strings from node,  and we specify the canvas to record via <code class="language-plaintext highlighter-rouge">canvasId</code> <a href="https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> has many more configuration options and event listeners.</p>
+<p>We have supplied all relevant id strings from node,  and we specify the canvas to record via <code class="language-plaintext highlighter-rouge">canvasId</code> <a href="/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> has many more configuration options and event listeners.</p>
 
 <ol>
   <li>We will also use the express recorder’s event listener interface to create a better UX:</li>
@@ -441,9 +441,9 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>We are taking a very MVP approach to displaying the gallery with a simplifying assumption: this app will be the only source of videos connected to your account. If you want more control over how to organize videos, check out <a href="https://developer.kaltura.com/api-docs/service/playlist">Playlists</a></p>
+<p>We are taking a very MVP approach to displaying the gallery with a simplifying assumption: this app will be the only source of videos connected to your account. If you want more control over how to organize videos, check out <a href="/api-docs/service/playlist">Playlists</a></p>
 
-<p>The express recorder creates a <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaMediaEntry">Kaltura Media Entry</a> for your video and associates it with your user id. Our approach will simply list all media in our account via the <a href="https://developer.kaltura.com/console/service/media/action/list">Media.list</a> API call</p>
+<p>The express recorder creates a <a href="/api-docs/General_Objects/Objects/KalturaMediaEntry">Kaltura Media Entry</a> for your video and associates it with your user id. Our approach will simply list all media in our account via the <a href="/console/service/media/action/list">Media.list</a> API call</p>
     
       <h3 id="kaltura-api-console">
         
@@ -453,7 +453,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>When you look at <a href="https://developer.kaltura.com/console/service/media/action/list">Media.list</a> in the console:</p>
+<p>When you look at <a href="/console/service/media/action/list">Media.list</a> in the console:</p>
 
 <p><img src="/assets/images/tikrok/MEDIALIST.png" alt="MEDIALIST" /></p>
 
@@ -513,7 +513,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To display a users videos, We will use <a href="https://developer.kaltura.com/console/service/media/action/list">Media.list</a> but this time we will filter by userId. You can build this query using the API Console:</p>
+<p>To display a users videos, We will use <a href="/console/service/media/action/list">Media.list</a> but this time we will filter by userId. You can build this query using the API Console:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">MediaEntryFilter</span>
 <span class="nx">filter</span><span class="p">.</span><span class="nx">orderBy</span> <span class="o">=</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">enums</span><span class="p">.</span><span class="nx">MediaEntryOrderBy</span><span class="p">.</span><span class="nx">UPDATED_AT_DESC</span><span class="p">;</span>
@@ -537,7 +537,7 @@ rtp('get', 'campaign',true);
 
 <p>in <code class="language-plaintext highlighter-rouge">views/user.ejs</code></p>
 
-<p>We will be following the steps to set up a player from https://developer.kaltura.com/player/web/getting-started-web</p>
+<p>We will be following the steps to set up a player from /player/web/getting-started-web</p>
 
 <pre><code class="language-ejs">&lt;script type="text/javascript" 
 src="https://cdnapisec.kaltura.com/p/&lt;%=partnerId %&gt;/embedPlaykitJs/uiconf_id/&lt;%=playerId%&gt;"&gt;

@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/SEO-Syndication-and-Distribution/Working-With-Distribution-Connectors.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/SEO-Syndication-and-Distribution/Working-With-Distribution-Connectors.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Sep 26 22:21:43 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -133,7 +133,7 @@ rtp('get', 'campaign',true);
 
 <p>As an example, if one of your entries <code class="language-plaintext highlighter-rouge">entryId</code> is already distributed to Youtube and you want to retrieve the id of the content on the Youtube, the following example illustrates how:</p>
 
-<p>First query <a href="https://developer.kaltura.com/console/service/distributionProfile/action/list">distributionProfile.list</a> to find the <code class="language-plaintext highlighter-rouge">id</code> of the Youtube distribution profile. Provide this <code class="language-plaintext highlighter-rouge">id</code> to the <code class="language-plaintext highlighter-rouge">distributionProfileIdEqual</code> and filter as well by <code class="language-plaintext highlighter-rouge">entryIdEqual</code>. The result will look like this:</p>
+<p>First query <a href="/console/service/distributionProfile/action/list">distributionProfile.list</a> to find the <code class="language-plaintext highlighter-rouge">id</code> of the Youtube distribution profile. Provide this <code class="language-plaintext highlighter-rouge">id</code> to the <code class="language-plaintext highlighter-rouge">distributionProfileIdEqual</code> and filter as well by <code class="language-plaintext highlighter-rouge">entryIdEqual</code>. The result will look like this:</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -170,37 +170,37 @@ rtp('get', 'campaign',true);
 
 <p>There are many ways to access the distribution api. Refer to these resources for a complete list:</p>
 
-<p>https://developer.kaltura.com/console/service/entryDistribution</p>
+<p>/console/service/entryDistribution</p>
 
 <ul>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/add">entryDistribution.add</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/delete">entryDistribution.delete</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/get">entryDistribution.get</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/list">entryDistribution.list</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/retrySubmit">entryDistribution.retrySubmit</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/serveReturnedData">entryDistribution.serveReturnedData</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/serveSentData">entryDistribution.serveSentData</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitAdd">entryDistribution.submitAdd</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitDelete">entryDistribution.submitDelete</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitFetchReport">entryDistribution.submitFetchReport</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitUpdate">entryDistribution.submitUpdate</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/update">entryDistribution.update</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/validate">entryDistribution.validate</a></li>
+  <li><a href="/console/service/entryDistribution/action/add">entryDistribution.add</a></li>
+  <li><a href="/console/service/entryDistribution/action/delete">entryDistribution.delete</a></li>
+  <li><a href="/console/service/entryDistribution/action/get">entryDistribution.get</a></li>
+  <li><a href="/console/service/entryDistribution/action/list">entryDistribution.list</a></li>
+  <li><a href="/console/service/entryDistribution/action/retrySubmit">entryDistribution.retrySubmit</a></li>
+  <li><a href="/console/service/entryDistribution/action/serveReturnedData">entryDistribution.serveReturnedData</a></li>
+  <li><a href="/console/service/entryDistribution/action/serveSentData">entryDistribution.serveSentData</a></li>
+  <li><a href="/console/service/entryDistribution/action/submitAdd">entryDistribution.submitAdd</a></li>
+  <li><a href="/console/service/entryDistribution/action/submitDelete">entryDistribution.submitDelete</a></li>
+  <li><a href="/console/service/entryDistribution/action/submitFetchReport">entryDistribution.submitFetchReport</a></li>
+  <li><a href="/console/service/entryDistribution/action/submitUpdate">entryDistribution.submitUpdate</a></li>
+  <li><a href="/console/service/entryDistribution/action/update">entryDistribution.update</a></li>
+  <li><a href="/console/service/entryDistribution/action/validate">entryDistribution.validate</a></li>
 </ul>
 
-<p>https://developer.kaltura.com/console/service/distributionProfile</p>
+<p>/console/service/distributionProfile</p>
 
 <ul>
-  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/add">distributionProfile.add</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/delete">distributionProfile.delete</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/get">distributionProfile.get</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/list">distributionProfile.list</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/listByPartner">distributionProfile.listByPartner</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/update">distributionProfile.update</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/updateStatus">distributionProfile.updateStatus</a></li>
+  <li><a href="/console/service/distributionProfile/action/add">distributionProfile.add</a></li>
+  <li><a href="/console/service/distributionProfile/action/delete">distributionProfile.delete</a></li>
+  <li><a href="/console/service/distributionProfile/action/get">distributionProfile.get</a></li>
+  <li><a href="/console/service/distributionProfile/action/list">distributionProfile.list</a></li>
+  <li><a href="/console/service/distributionProfile/action/listByPartner">distributionProfile.listByPartner</a></li>
+  <li><a href="/console/service/distributionProfile/action/update">distributionProfile.update</a></li>
+  <li><a href="/console/service/distributionProfile/action/updateStatus">distributionProfile.updateStatus</a></li>
 </ul>
 
-<p>https://developer.kaltura.com/console/service/distributionProvider</p>
+<p>/console/service/distributionProvider</p>
 		
 </article>
 

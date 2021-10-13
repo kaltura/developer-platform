@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Sep 26 22:21:43 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -155,7 +155,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 
 <p>See the https://github.com/kaltura-vpaas/embeddable_analytics project which has an entry for webcasting under the “livestream” tab</p>
 
-<p>Kaltura also has a rich Analytics API that can allow you to generate your own reports for your webcasts. You can get started with https://developer.kaltura.com/console/service/report/action/getTable and selecting LIVE in the reportType dropdown.</p>
+<p>Kaltura also has a rich Analytics API that can allow you to generate your own reports for your webcasts. You can get started with /console/service/report/action/getTable and selecting LIVE in the reportType dropdown.</p>
     
       <h2 id="creating-a-livestream-object">
         
@@ -165,7 +165,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h2>
 
-<p>At the basis of a Kaltura Webcast is a Live Stream (non-interactive live broadcast). To create a webcast stream you’ll first need to create a <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaLiveStreamEntry">LiveStream</a> object, which we’ll do using the <a href="https://developer.kaltura.com/console/service/liveStream/action/add">liveStream.add</a> action. Then we’ll add some configurations in order to turn this live stream into an interactive webcast.</p>
+<p>At the basis of a Kaltura Webcast is a Live Stream (non-interactive live broadcast). To create a webcast stream you’ll first need to create a <a href="/api-docs/General_Objects/Objects/KalturaLiveStreamEntry">LiveStream</a> object, which we’ll do using the <a href="/console/service/liveStream/action/add">liveStream.add</a> action. Then we’ll add some configurations in order to turn this live stream into an interactive webcast.</p>
 
 <p>We’ll be creating an object with <strong><code class="language-plaintext highlighter-rouge">sourceType</code></strong> of <code class="language-plaintext highlighter-rouge">LIVE_STREAM [32]</code> with the parameters described here:</p>
     
@@ -253,7 +253,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 <blockquote>
   <ul>
     <li><strong>explicitLive</strong> : If set to true, only a KS with the <code class="language-plaintext highlighter-rouge">restrictexplicitliveview</code> privilege will be allowed to watch the stream before it is live (determined by the <code class="language-plaintext highlighter-rouge">isLive</code> flag). If set to false, the preview will not be available to any viewers, and <code class="language-plaintext highlighter-rouge">isLive</code> will be set automatically when the broadcast begins.</li>
-    <li><strong>conversionProfileId</strong>: Use <a href="https://developer.kaltura.com/console/service/conversionProfile/action/list"><code class="language-plaintext highlighter-rouge">conversionProfile.list</code></a> with filter of <code class="language-plaintext highlighter-rouge">typeEqual = KalturaConversionProfileType.LIVE_STREAM[2]</code> to find the profile IDs for cloud transcoding or passthrough</li>
+    <li><strong>conversionProfileId</strong>: Use <a href="/console/service/conversionProfile/action/list"><code class="language-plaintext highlighter-rouge">conversionProfile.list</code></a> with filter of <code class="language-plaintext highlighter-rouge">typeEqual = KalturaConversionProfileType.LIVE_STREAM[2]</code> to find the profile IDs for cloud transcoding or passthrough</li>
   </ul>
 </blockquote>
     
@@ -392,7 +392,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h3>
 
-<p>The auto-generated profiles are created with the names <code class="language-plaintext highlighter-rouge">KMS_KWEBCAST2</code> and <code class="language-plaintext highlighter-rouge">KMS_EVENTS3</code>. In order to use these profiles, you’ll need the specific instances found in your account, so we’ll use the <a href="https://developer.kaltura.com/console/service/metadataProfile/action/list">metadataProfile.list</a> API to filter on the <strong>systemName</strong> and get the respective profile IDs.</p>
+<p>The auto-generated profiles are created with the names <code class="language-plaintext highlighter-rouge">KMS_KWEBCAST2</code> and <code class="language-plaintext highlighter-rouge">KMS_EVENTS3</code>. In order to use these profiles, you’ll need the specific instances found in your account, so we’ll use the <a href="/console/service/metadataProfile/action/list">metadataProfile.list</a> API to filter on the <strong>systemName</strong> and get the respective profile IDs.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaMetadataProfileFilter</span><span class="p">()</span>
 <span class="nb">filter</span><span class="p">.</span><span class="n">systemNameEqual</span> <span class="o">=</span> <span class="s">"KMS_KWEBCAST2"</span>
@@ -418,7 +418,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 <p>The XML defined by the KMS_KWEBCAST2 schema contains the following fields:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">SlidesDocEntryId</code>: Representing Entry ID of the presentation slides entry (read more about <a href="https://developer.kaltura.com/api-docs/service/documents">documents</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">SlidesDocEntryId</code>: Representing Entry ID of the presentation slides entry (read more about <a href="/api-docs/service/documents">documents</a>)</li>
   <li><code class="language-plaintext highlighter-rouge">IsKwebcastEntry</code> - Boolean (0/1) indicates whether this is a live stream entry of type Interactive Webcast</li>
   <li><code class="language-plaintext highlighter-rouge">IsSelfServe</code> - Boolean (0/1) indicates whether WebRTC-based self-broadcast should be enabled inside the Webcasting Studio Application (if set to false, the webcasting app will enable the use of an external encoder).</li>
 </ul>
@@ -439,7 +439,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 <span class="nt">&lt;/metadata&gt;</span>
 </code></pre></div></div>
 
-<p>The custom metadata is then updated using <a href="https://developer.kaltura.com/console/service/metadata/action/add"><code class="language-plaintext highlighter-rouge">metadata.add</code></a>:</p>
+<p>The custom metadata is then updated using <a href="/console/service/metadata/action/add"><code class="language-plaintext highlighter-rouge">metadata.add</code></a>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">metadata_profile_id</span> <span class="o">=</span> <span class="s">"&lt;metadata profile ID retrieved above&gt;"</span>
 <span class="n">object_type</span> <span class="o">=</span> <span class="n">KalturaMetadataObjectType</span><span class="p">.</span><span class="n">ENTRY</span>
@@ -449,7 +449,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 <span class="n">client</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">metadata_profile_id</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">object_id</span><span class="p">,</span> <span class="n">xml_data</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>That will return an object with a <code class="language-plaintext highlighter-rouge">metadataRecordId</code>, which you can use at any point for an update using <a href="https://developer.kaltura.com/console/service/metadata/action/update"><code class="language-plaintext highlighter-rouge">metadata.update</code></a>:</p>
+<p>That will return an object with a <code class="language-plaintext highlighter-rouge">metadataRecordId</code>, which you can use at any point for an update using <a href="/console/service/metadata/action/update"><code class="language-plaintext highlighter-rouge">metadata.update</code></a>:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">saved_metadata</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">metadata_record_id</span><span class="p">,</span> <span class="n">xml_data</span><span class="p">)</span>
 </code></pre></div></div>
@@ -462,7 +462,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h4>
 
-<p>Similarly, you’ll need the ID of the metadata profile, which we’ll retrieve using its name in the <a href="https://developer.kaltura.com/console/service/metadataProfile/action/list">metadataProfile.list</a> API:</p>
+<p>Similarly, you’ll need the ID of the metadata profile, which we’ll retrieve using its name in the <a href="/console/service/metadataProfile/action/list">metadataProfile.list</a> API:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaMetadataProfileFilter</span><span class="p">()</span>
 <span class="nb">filter</span><span class="p">.</span><span class="n">systemNameEqual</span> <span class="o">=</span> <span class="s">"KMS_EVENTS3"</span>
@@ -489,7 +489,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 <span class="nt">&lt;/metadata&gt;</span>
 </code></pre></div></div>
 
-<p>Like the first schema, the XML is populated with the relevant values and added to the liveStream entry with the <a href="https://developer.kaltura.com/console/service/metadata/action/add"><code class="language-plaintext highlighter-rouge">metadata.add</code></a> API as seen above.</p>
+<p>Like the first schema, the XML is populated with the relevant values and added to the liveStream entry with the <a href="/console/service/metadata/action/add"><code class="language-plaintext highlighter-rouge">metadata.add</code></a> API as seen above.</p>
     
       <h2 id="the-webcasting-studio-app">
         
@@ -507,7 +507,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h3>
 
-<p>The admins, or person presenting, will need to download and use the Kaltura Webcasting Desktop Application. To add download links to your webpage for the Kaltura Webcasting Studio, we’ll make a call to the <a href="https://developer.kaltura.com/console/service/uiConf/action/listTemplates">systemUIConf.listTemplates</a> API to list instances of Webcasting UI Configs and grab the first one. 
+<p>The admins, or person presenting, will need to download and use the Kaltura Webcasting Desktop Application. To add download links to your webpage for the Kaltura Webcasting Studio, we’ll make a call to the <a href="/console/service/uiConf/action/listTemplates">systemUIConf.listTemplates</a> API to list instances of Webcasting UI Configs and grab the first one. 
 Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaUiConfFilter</span><span class="p">()</span>
@@ -576,7 +576,7 @@ Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
         
       </h4>
 
-<p>You’ll create a type USER session using the <a href="https://developer.kaltura.com/console/service/session/action/start"><code class="language-plaintext highlighter-rouge">session.start</code></a> API, with privileges to the given entry and role of WEBCAST_PRODUCER_DEVICE_ROLE.</p>
+<p>You’ll create a type USER session using the <a href="/console/service/session/action/start"><code class="language-plaintext highlighter-rouge">session.start</code></a> API, with privileges to the given entry and role of WEBCAST_PRODUCER_DEVICE_ROLE.</p>
 
 <p>Partner ID and Admin Secret can be found in your KMC <a href="https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings">Integration Settings</a>.</p>
 
@@ -601,7 +601,7 @@ Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
         
       </h4>
 
-<p>Most likely you were given the correct UiConf when Webcasting was enabled on your account, but if you’re not sure which it is, you can use the <a href="https://developer.kaltura.com/console/service/uiConf/action/list">uiConf.list</a> API to find it. 
+<p>Most likely you were given the correct UiConf when Webcasting was enabled on your account, but if you’re not sure which it is, you can use the <a href="/console/service/uiConf/action/list">uiConf.list</a> API to find it. 
 Just filter on <code class="language-plaintext highlighter-rouge">filter.nameLike = "MediaSpace Webcast Player"</code> and grab that ID.</p>
     
       <h4 id="presentation-conversion-profile-id">
@@ -613,7 +613,7 @@ Just filter on <code class="language-plaintext highlighter-rouge">filter.nameLik
       </h4>
 
 <p>This is needed in the case that a presenter chooses to upload a presentation. <em>It will not work if you don’t have a conversion profile ID.</em> 
-You can find it with the <a href="https://developer.kaltura.com/console/service/conversionProfile/action/list">conversionProfile.list</a> API, by grabbing the first item in the results.</p>
+You can find it with the <a href="/console/service/conversionProfile/action/list">conversionProfile.list</a> API, by grabbing the first item in the results.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaConversionProfileFilter</span><span class="p">()</span>
 <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
@@ -699,7 +699,7 @@ You can find it with the <a href="https://developer.kaltura.com/console/service/
 
 <p>When the broadcast is live, there’s a delay of about thirty seconds before it is available to the viewer. During this time, if the liveStream’s “explicitLive” value is set to true, the preview is available to a user with a Kaltura Session that contains <code class="language-plaintext highlighter-rouge">restrictexplicitliveview</code> in the privilege string (for moderators who are involved in testing)</p>
 
-<p>Do determine whether an entry is live, you can call the <a href="https://developer.kaltura.com/console/service/liveStream/action/isLive">isLive</a> with the entry ID. 
+<p>Do determine whether an entry is live, you can call the <a href="/console/service/liveStream/action/isLive">isLive</a> with the entry ID. 
 The Kaltura Player does this automatically for live entries, but we’ll want to determine whether to play the live entry, or whether to replace it with the recorded entry if the Live Event is already complete.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_live</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">liveStream</span><span class="p">.</span><span class="n">isLive</span><span class="p">(</span><span class="n">entry_id</span><span class="p">,</span> <span class="n">KalturaPlaybackProtocol</span><span class="p">.</span><span class="n">AUTO</span><span class="p">)</span>
@@ -710,7 +710,7 @@ The Kaltura Player does this automatically for live entries, but we’ll want to
         <span class="n">entry_id</span> <span class="o">=</span> <span class="n">livestream</span><span class="p">.</span><span class="n">recordedEntryId</span>
 </code></pre></div></div>
 
-<p>For the case of <code class="language-plaintext highlighter-rouge">PER_SESSION</code> recording, a new recording is created for every session, which means that the <code class="language-plaintext highlighter-rouge">recordedEntryId</code> field on the livestream Entry will be reset immediately to make room for a new recordedEntry. We find the entry by using <a href="https://developer.kaltura.com/console/service/baseEntry/action/list"><code class="language-plaintext highlighter-rouge">baseEntry.list</code></a> with the <strong>rootEntryId</strong> equal to our livestream entry:</p>
+<p>For the case of <code class="language-plaintext highlighter-rouge">PER_SESSION</code> recording, a new recording is created for every session, which means that the <code class="language-plaintext highlighter-rouge">recordedEntryId</code> field on the livestream Entry will be reset immediately to make room for a new recordedEntry. We find the entry by using <a href="/console/service/baseEntry/action/list"><code class="language-plaintext highlighter-rouge">baseEntry.list</code></a> with the <strong>rootEntryId</strong> equal to our livestream entry:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">else</span><span class="p">:</span>
         <span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaBaseEntryFilter</span><span class="p">()</span>
@@ -729,7 +729,7 @@ The string looks something like this - using the format tool to concatenate valu
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">privileges</span> <span class="o">=</span> <span class="s">"sview:{},enableentitlement,appid:{},appdomain:{},sessionkey:{}"</span> \
   <span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">entry_id</span><span class="p">,</span> <span class="n">entry_id</span><span class="p">,</span> <span class="n">config</span><span class="p">.</span><span class="n">app_id</span><span class="p">,</span> <span class="n">config</span><span class="p">.</span><span class="n">app_domain</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
 </code></pre></div></div>
-<p>With that privilege string, we create a USER Kaltura Session using the <a href="https://developer.kaltura.com/console/service/session/action/start"><code class="language-plaintext highlighter-rouge">session.start</code></a> API as seen above.</p>
+<p>With that privilege string, we create a USER Kaltura Session using the <a href="/console/service/session/action/start"><code class="language-plaintext highlighter-rouge">session.start</code></a> API as seen above.</p>
 
 <blockquote>
   <p>Now that we have a Kaltura Session, we can embed the player in an HTML page. We recommend using the v7 player, which is built for speed and performance. However, the functionality for powerpoint slides in the livestream is not yet supported in player v7, so if this is something that is required in your webcasting flow, see Player V2 embed below.</p>
@@ -743,7 +743,7 @@ The string looks something like this - using the format tool to concatenate valu
         
       </h3>
 
-<p>You can create a new player in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">Studio</a> and grab its ID, which is referred to as the UI Conf ID. You’ll need to edit it using the <a href="https://developer.kaltura.com/console/service/uiConf/action/update">uiconf.update</a> API by passing the ID of the player and the confvars below:</p>
+<p>You can create a new player in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">Studio</a> and grab its ID, which is referred to as the UI Conf ID. You’ll need to edit it using the <a href="/console/service/uiConf/action/update">uiconf.update</a> API by passing the ID of the player and the confvars below:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">id</span> <span class="o">=</span> <span class="s">"UI CONF ID"</span>
 <span class="n">ui_conf</span> <span class="o">=</span> <span class="n">KalturaUiConf</span><span class="p">()</span>
@@ -938,7 +938,7 @@ It requires the base URL and a series of query parameters, which include a Kaltu
         
       </h2>
 
-<p>Assuming that recording is enabled (<code class="language-plaintext highlighter-rouge">recordStatus</code> in the livestream creation), your recordings can be found in the <a href="https://kmc.kaltura.com/index.php/kmcng/content/entries/lis">KMC</a>. You can also retrieve with the API by using the livestream Entry ID as the root entry, which will return all recordings that resulted from this entry. You’ll use the <a href="https://developer.kaltura.com/console/service/baseEntry/action/list">baseEntry.list</a> API, and note that it requires an ADMIN type Kaltura Session:</p>
+<p>Assuming that recording is enabled (<code class="language-plaintext highlighter-rouge">recordStatus</code> in the livestream creation), your recordings can be found in the <a href="https://kmc.kaltura.com/index.php/kmcng/content/entries/lis">KMC</a>. You can also retrieve with the API by using the livestream Entry ID as the root entry, which will return all recordings that resulted from this entry. You’ll use the <a href="/console/service/baseEntry/action/list">baseEntry.list</a> API, and note that it requires an ADMIN type Kaltura Session:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaBaseEntryFilter</span><span class="p">()</span>
 <span class="nb">filter</span><span class="p">.</span><span class="n">rootEntryIdEqual</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">ENTRY</span> <span class="n">ID</span><span class="o">&gt;</span>

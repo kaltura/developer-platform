@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Categories-and-Entitlement-Rules.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Categories-and-Entitlement-Rules.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -154,9 +154,9 @@ You can configure the Kaltura system to be more restrictive or open in allowing 
       </h2>
 
 <p>Media entries can be organized in categories. Categories are structured in a tree-like hierarchy where each category can include multiple sub-categories.<br />
-You can add, remove and edit categories using the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/category">category service</a>. You can assign a media entry to a specific category using the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry">categoryEntry service</a>. <br />
+You can add, remove and edit categories using the <a href="/api-docs/Enrich_and_Organize_Metadata/category">category service</a>. You can assign a media entry to a specific category using the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryEntry">categoryEntry service</a>. <br />
 Categories provide a logical structure for your site and assist with content management. You can assign custom metadata to categories. Then, using filters you can create robust search and discovery workflows, playlists and more.<br />
-Categories may also be used to set content entitlements for end-users in various applications using the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryUser">categoryUser service</a>.</p>
+Categories may also be used to set content entitlements for end-users in various applications using the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryUser">categoryUser service</a>.</p>
     
       <h3 id="quick-summary">
         
@@ -177,7 +177,7 @@ Categories may also be used to set content entitlements for end-users in various
 </ul>
 
 <blockquote>
-  <p><strong>Backward Compatibility</strong> - The <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaBaseEntry">KalturaBaseEntry</a> exposes the two properties <code class="language-plaintext highlighter-rouge">categories</code> and <code class="language-plaintext highlighter-rouge">categoriesIds</code>. These properties can only be used when your categories are not configured with Entitlement settings. It is always best to rely on the <code class="language-plaintext highlighter-rouge">categoryEntry</code> service to retrieve a full list of categories per Entry. Avoid using the <code class="language-plaintext highlighter-rouge">categories</code> and <code class="language-plaintext highlighter-rouge">categoriesIds</code> properties.</p>
+  <p><strong>Backward Compatibility</strong> - The <a href="/api-docs/General_Objects/Objects/KalturaBaseEntry">KalturaBaseEntry</a> exposes the two properties <code class="language-plaintext highlighter-rouge">categories</code> and <code class="language-plaintext highlighter-rouge">categoriesIds</code>. These properties can only be used when your categories are not configured with Entitlement settings. It is always best to rely on the <code class="language-plaintext highlighter-rouge">categoryEntry</code> service to retrieve a full list of categories per Entry. Avoid using the <code class="language-plaintext highlighter-rouge">categories</code> and <code class="language-plaintext highlighter-rouge">categoriesIds</code> properties.</p>
 </blockquote>
     
       <h2 id="creating-and-managing-categories">
@@ -188,11 +188,11 @@ Categories may also be used to set content entitlements for end-users in various
         
       </h2>
 
-<p>To add, list, delete, edit, move and manage categories, use the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/category"><code class="language-plaintext highlighter-rouge">category service</code></a>.</p>
+<p>To add, list, delete, edit, move and manage categories, use the <a href="/api-docs/Enrich_and_Organize_Metadata/category"><code class="language-plaintext highlighter-rouge">category service</code></a>.</p>
 
 <ul>
-  <li>Categories are always associated with an owner user ID. This is the user who created the category (determined by the Kaltura Session used when calling <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/category/category_add"><code class="language-plaintext highlighter-rouge">category.add</code></a>).</li>
-  <li>To retrieve a category’s full parent’s tree path (until the root parent) use	the	<a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory">KalturaCategory.fullName</a> and <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory">KalturaCategory.fullIds</a> fields.</li>
+  <li>Categories are always associated with an owner user ID. This is the user who created the category (determined by the Kaltura Session used when calling <a href="/api-docs/Enrich_and_Organize_Metadata/category/category_add"><code class="language-plaintext highlighter-rouge">category.add</code></a>).</li>
+  <li>To retrieve a category’s full parent’s tree path (until the root parent) use	the	<a href="/api-docs/General_Objects/Objects/KalturaCategory">KalturaCategory.fullName</a> and <a href="/api-docs/General_Objects/Objects/KalturaCategory">KalturaCategory.fullIds</a> fields.</li>
 </ul>
     
       <h2 id="managing-entries-inside-categories">
@@ -203,11 +203,11 @@ Categories may also be used to set content entitlements for end-users in various
         
       </h2>
 
-<p>With a category structure in place, use the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry"><code class="language-plaintext highlighter-rouge">categoryEntry service</code></a> to add, delete and move entries in and out of categories.</p>
+<p>With a category structure in place, use the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryEntry"><code class="language-plaintext highlighter-rouge">categoryEntry service</code></a> to add, delete and move entries in and out of categories.</p>
 
-<p>To add an entry to a category, simply call the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_add">categoryEntry.add</a> providing a <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry/">KalturaCategoryEntry</a> object. In the <code class="language-plaintext highlighter-rouge">KalturaCategoryEntry</code> object, set the id of the entry and the id of the category you want to associate it to.</p>
+<p>To add an entry to a category, simply call the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_add">categoryEntry.add</a> providing a <a href="/api-docs/Enrich_and_Organize_Metadata/categoryEntry/">KalturaCategoryEntry</a> object. In the <code class="language-plaintext highlighter-rouge">KalturaCategoryEntry</code> object, set the id of the entry and the id of the category you want to associate it to.</p>
 
-<p>To remove an entry from a category, call the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_delete">categoryEntry.delete</a> action and provide the id of the entry (<code class="language-plaintext highlighter-rouge">entryId</code>) and the id of the category (<code class="language-plaintext highlighter-rouge">categoryId</code>) from which to remove the entry.</p>
+<p>To remove an entry from a category, call the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_delete">categoryEntry.delete</a> action and provide the id of the entry (<code class="language-plaintext highlighter-rouge">entryId</code>) and the id of the category (<code class="language-plaintext highlighter-rouge">categoryId</code>) from which to remove the entry.</p>
     
       <h2 id="category-content-moderation">
         
@@ -220,15 +220,15 @@ Categories may also be used to set content entitlements for end-users in various
 <p>By default, every entry may be added to a category, however, you may choose to moderate content.<br />
 Setting the <code class="language-plaintext highlighter-rouge">moderation</code> property to 1 (true) places new entries into a virtual moderation queue. Entries in the moderation queue must be approved by a user with Manager or Moderator permission level, before they are officially associated with the category.</p>
 
-<p>The membership of users in a category is defined with the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryUser">categoryUser</a> service. Use the <code class="language-plaintext highlighter-rouge">add</code> action to associate a user with a category.</p>
+<p>The membership of users in a category is defined with the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryUser">categoryUser</a> service. Use the <code class="language-plaintext highlighter-rouge">add</code> action to associate a user with a category.</p>
 
-<p>The relationship of user permissions in a specific category is configured with the <code class="language-plaintext highlighter-rouge">permissionLevel</code> property when calling the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryUser/categoryUser_add"><code class="language-plaintext highlighter-rouge">categoryUser.add</code></a> action. (The options for <code class="language-plaintext highlighter-rouge">permissionLevel</code> are available in <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaCategoryUserPermissionLevel"><code class="language-plaintext highlighter-rouge">KalturaCategoryUserPermissionLevel</code></a>).</p>
+<p>The relationship of user permissions in a specific category is configured with the <code class="language-plaintext highlighter-rouge">permissionLevel</code> property when calling the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryUser/categoryUser_add"><code class="language-plaintext highlighter-rouge">categoryUser.add</code></a> action. (The options for <code class="language-plaintext highlighter-rouge">permissionLevel</code> are available in <a href="/api-docs/General_Objects/Enums/KalturaCategoryUserPermissionLevel"><code class="language-plaintext highlighter-rouge">KalturaCategoryUserPermissionLevel</code></a>).</p>
 
-<p>Moderation is governed with the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_activate">categoryEntry.activate</a> and <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_reject">categoryEntry.reject</a> actions, that allow moderator users to approve (<code class="language-plaintext highlighter-rouge">activate</code>) or reject the addition of an entry to the category.</p>
+<p>Moderation is governed with the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_activate">categoryEntry.activate</a> and <a href="/api-docs/Enrich_and_Organize_Metadata/categoryEntry/categoryEntry_reject">categoryEntry.reject</a> actions, that allow moderator users to approve (<code class="language-plaintext highlighter-rouge">activate</code>) or reject the addition of an entry to the category.</p>
 
-<p>The <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory"><code class="language-plaintext highlighter-rouge">contributionPolicy</code></a> determines if users are required to have a contributor level permission to be allowed to add or even suggest entries to the category. By default, all users are allowed to contribute (suggest) entries to be added. By setting the <code class="language-plaintext highlighter-rouge">contributionPolicy</code> to <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaContributionPolicyType"><code class="language-plaintext highlighter-rouge">KalturaContributionPolicyType.MEMBERS_WITH_CONTRIBUTION_PERMISSION</code></a>, only users that are given a contributor role or above will be allowed to suggest entries.</p>
+<p>The <a href="/api-docs/General_Objects/Objects/KalturaCategory"><code class="language-plaintext highlighter-rouge">contributionPolicy</code></a> determines if users are required to have a contributor level permission to be allowed to add or even suggest entries to the category. By default, all users are allowed to contribute (suggest) entries to be added. By setting the <code class="language-plaintext highlighter-rouge">contributionPolicy</code> to <a href="/api-docs/General_Objects/Enums/KalturaContributionPolicyType"><code class="language-plaintext highlighter-rouge">KalturaContributionPolicyType.MEMBERS_WITH_CONTRIBUTION_PERMISSION</code></a>, only users that are given a contributor role or above will be allowed to suggest entries.</p>
 
-<p>Use the <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory"><code class="language-plaintext highlighter-rouge">userJoinPolicy</code></a> and <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaUserJoinPolicyType"><code class="language-plaintext highlighter-rouge">KalturaUserJoinPolicyType</code></a> to set whether users:</p>
+<p>Use the <a href="/api-docs/General_Objects/Objects/KalturaCategory"><code class="language-plaintext highlighter-rouge">userJoinPolicy</code></a> and <a href="/api-docs/General_Objects/Enums/KalturaUserJoinPolicyType"><code class="language-plaintext highlighter-rouge">KalturaUserJoinPolicyType</code></a> to set whether users:</p>
 
 <ul>
   <li>can add themselves to the category (<code class="language-plaintext highlighter-rouge">AUTO_JOIN</code>)</li>
@@ -270,10 +270,10 @@ Example use-cases based on content entitlements:</p>
 
 <ul>
   <li>Who has access to content associated with the category</li>
-  <li>Whether the content will be available to the user in global search results (e.g. when calling <a href="https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/media/media_list"><code class="language-plaintext highlighter-rouge">media.list</code></a>)</li>
+  <li>Whether the content will be available to the user in global search results (e.g. when calling <a href="/api-docs/Ingest_and_Upload_Media/media/media_list"><code class="language-plaintext highlighter-rouge">media.list</code></a>)</li>
 </ul>
 
-<p>Content Privacy is configured in the Category’s <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory">privacy</a> property. The available options are defined in <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaPrivacyType"><code class="language-plaintext highlighter-rouge">KalturaPrivacyType</code></a>.</p>
+<p>Content Privacy is configured in the Category’s <a href="/api-docs/General_Objects/Objects/KalturaCategory">privacy</a> property. The available options are defined in <a href="/api-docs/General_Objects/Enums/KalturaPrivacyType"><code class="language-plaintext highlighter-rouge">KalturaPrivacyType</code></a>.</p>
     
       <h4 id="available-options-for-privacy">
         
@@ -314,7 +314,7 @@ search (e.g. using <code class="language-plaintext highlighter-rouge">media.list
         
       </h2>
 
-<p>To configure how Kaltura enforces entitlement and handles entitlement conflicts, use the <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaPartner"><code class="language-plaintext highlighter-rouge">defaultEntitlementEnforcement</code></a> property of <code class="language-plaintext highlighter-rouge">KalturaPartner</code>.</p>
+<p>To configure how Kaltura enforces entitlement and handles entitlement conflicts, use the <a href="/api-docs/General_Objects/Objects/KalturaPartner"><code class="language-plaintext highlighter-rouge">defaultEntitlementEnforcement</code></a> property of <code class="language-plaintext highlighter-rouge">KalturaPartner</code>.</p>
 
 <ul>
   <li>When <code class="language-plaintext highlighter-rouge">defaultEntitlementEnforcement</code> is set to true (default): Access to content under categories where privacy and privacyContext are configured is only allowed for API calls that provide a KS (Kaltura Session) that specify the correct privacyContext and a userId that is a member of the category.</li>
@@ -335,7 +335,7 @@ search (e.g. using <code class="language-plaintext highlighter-rouge">media.list
 
 <p>Categories expose properties to control whether to, and who can find the categories and the entries associated with them.</p>
 
-<p><a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory">privacy</a>, defined to one of its ENUM options <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaPrivacyType"><code class="language-plaintext highlighter-rouge">KalturaPrivacyType</code></a> sets whether entries that are associated with the category can be seen by users:</p>
+<p><a href="/api-docs/General_Objects/Objects/KalturaCategory">privacy</a>, defined to one of its ENUM options <a href="/api-docs/General_Objects/Enums/KalturaPrivacyType"><code class="language-plaintext highlighter-rouge">KalturaPrivacyType</code></a> sets whether entries that are associated with the category can be seen by users:</p>
 
 <ul>
   <li>ALL: Category will be visible to all users.</li>
@@ -351,13 +351,13 @@ search (e.g. using <code class="language-plaintext highlighter-rouge">media.list
         
       </h3>
 
-<p>To configure entitlements on a category, you will need to set a “Privacy Context” (<a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaCategory"><code class="language-plaintext highlighter-rouge">category.privacyContext</code></a> property) for the desired category.<br />
+<p>To configure entitlements on a category, you will need to set a “Privacy Context” (<a href="/api-docs/General_Objects/Objects/KalturaCategory"><code class="language-plaintext highlighter-rouge">category.privacyContext</code></a> property) for the desired category.<br />
 Privacy Context is a free text label (English character string; commas and spaces are not allowed) that indicates to which application the entitlement settings apply, for example, “MySuperAwesomeVideoApp”.</p>
 
 <p>To allow access to an entitled category, follow these steps:</p>
 
 <ol>
-  <li>The end user must be added as a member of the category by using the <a href="https://developer.kaltura.com/api-docs/Enrich_and_Organize_Metadata/categoryUser"><code class="language-plaintext highlighter-rouge">CategoryUser</code></a> service.</li>
+  <li>The end user must be added as a member of the category by using the <a href="/api-docs/Enrich_and_Organize_Metadata/categoryUser"><code class="language-plaintext highlighter-rouge">CategoryUser</code></a> service.</li>
   <li>The privacy context should be passed in the application session (KS) whenever making API requests in the <a href="https://knowledge.kaltura.com/node/229#privacycontext"><code class="language-plaintext highlighter-rouge">privacycontext</code> KS privileges</a>.</li>
 </ol>
 

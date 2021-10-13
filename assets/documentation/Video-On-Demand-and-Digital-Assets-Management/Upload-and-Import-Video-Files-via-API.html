@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Upload-and-Import-Video-Files-via-API.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Upload-and-Import-Video-Files-via-API.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Sep 20 21:08:31 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -141,14 +141,14 @@ rtp('get', 'campaign',true);
 Find the suitable ingestion methodologies for your workflow below:</p>
 
 <ul>
-  <li><a href="https://developer.kaltura.com/workflows/Ingest_and_Upload_Media">File Upload and Import REST APIs</a>
+  <li><a href="/workflows/Ingest_and_Upload_Media">File Upload and Import REST APIs</a>
     <ul>
       <li><a href="https://github.com/kaltura/chunked-file-upload-jquery">Web Upload in JavaScript/jQuery (with chunked parallel pause-resume support)</a></li>
       <li><a href="https://github.com/kaltura/Sample-Kaltura-Chunked-Upload-Java">Upload in Java</a></li>
     </ul>
   </li>
   <li><a href="/api-docs/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html">Bulk Upload XML and CSV formats</a></li>
-  <li><a href="https://developer.kaltura.com/workflows/Live_Stream_and_Broadcast">Live Streaming and Webcam Recording</a></li>
+  <li><a href="/workflows/Live_Stream_and_Broadcast">Live Streaming and Webcam Recording</a></li>
   <li><a href="https://knowledge.kaltura.com/node/737">Drop Folders and Aspera</a></li>
 </ul>
     
@@ -164,7 +164,7 @@ Find the suitable ingestion methodologies for your workflow below:</p>
 
 <p><strong>Step 1: Create an Upload Token</strong></p>
 
-<p>You’ll use <a href="https://developer.kaltura.com/console/service/uploadToken/action/add"><code class="language-plaintext highlighter-rouge">uploadToken.add</code></a> to create an uploadToken for your new video.</p>
+<p>You’ll use <a href="/console/service/uploadToken/action/add"><code class="language-plaintext highlighter-rouge">uploadToken.add</code></a> to create an uploadToken for your new video.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
@@ -231,7 +231,7 @@ kaltura.services.uploadToken.add(uploadToken)
 
 <p><strong>Step 2: Upload the File Data</strong></p>
 
-<p>We’ll call <a href="https://developer.kaltura.com/console/service/uploadToken/action/upload"><code class="language-plaintext highlighter-rouge">uploadToken.upload</code></a> to upload a new video file using the newly created token. If you don’t have a video file handy, you can right-click <a href="http://cfvod.kaltura.com/pd/p/811441/sp/81144100/serveFlavor/entryId/1_2bjlk7qb/v/2/flavorId/1_d1ft34uv/fileName/Kaltura_Logo_Animation.flv/name/a.flv">this link</a> to save a sample video of Kaltura’s logo. In the case of large files, <code class="language-plaintext highlighter-rouge">resume</code> should be set to <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">finalChunk</code> is set to <code class="language-plaintext highlighter-rouge">false</code> until the final chunk. <code class="language-plaintext highlighter-rouge">resumeAt</code> determines at which byte to chunk the next fragment.</p>
+<p>We’ll call <a href="/console/service/uploadToken/action/upload"><code class="language-plaintext highlighter-rouge">uploadToken.upload</code></a> to upload a new video file using the newly created token. If you don’t have a video file handy, you can right-click <a href="http://cfvod.kaltura.com/pd/p/811441/sp/81144100/serveFlavor/entryId/1_2bjlk7qb/v/2/flavorId/1_d1ft34uv/fileName/Kaltura_Logo_Animation.flv/name/a.flv">this link</a> to save a sample video of Kaltura’s logo. In the case of large files, <code class="language-plaintext highlighter-rouge">resume</code> should be set to <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">finalChunk</code> is set to <code class="language-plaintext highlighter-rouge">false</code> until the final chunk. <code class="language-plaintext highlighter-rouge">resumeAt</code> determines at which byte to chunk the next fragment.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
@@ -302,7 +302,7 @@ kaltura.services.uploadToken.add(uploadToken)
 
 <p><strong>Step 3: Creating the Kaltura Media Entry</strong></p>
 
-<p>Here’s where you’ll set your video’s name and description use <a href="https://developer.kaltura.com/console/service/media/action/add"><code class="language-plaintext highlighter-rouge">media.add</code></a> to create the entry.</p>
+<p>Here’s where you’ll set your video’s name and description use <a href="/console/service/media/action/add"><code class="language-plaintext highlighter-rouge">media.add</code></a> to create the entry.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
@@ -389,7 +389,7 @@ kaltura.services.uploadToken.add(uploadToken)
 
 <p><strong>Step 4: Attach the Video</strong></p>
 
-<p>Now that you have your entry, you need to associate it with the uploaded video token using <a href="https://developer.kaltura.com/console/service/media/action/addContent"><code class="language-plaintext highlighter-rouge">media.addContent</code></a>.</p>
+<p>Now that you have your entry, you need to associate it with the uploaded video token using <a href="/console/service/media/action/addContent"><code class="language-plaintext highlighter-rouge">media.addContent</code></a>.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">

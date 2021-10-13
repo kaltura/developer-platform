@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Sep 27 03:06:08 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (4 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -133,8 +133,8 @@ rtp('get', 'campaign',true);
 
 <ol>
   <li><a href="#The Kaltura API">The Kaltura API</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/Client_Libraries/">Kaltura API Client Libraries</a></li>
-  <li><a href="https://developer.kaltura.com/player/">Mobile Player SDK’s</a></li>
+  <li><a href="/api-docs/Client_Libraries/">Kaltura API Client Libraries</a></li>
+  <li><a href="/player/">Mobile Player SDK’s</a></li>
   <li>Experience Components</li>
 </ol>
       <h2 id="before-you-begin">
@@ -159,21 +159,21 @@ You can also find them at any time in the KMC’s (Kaltura Management Console) b
 
 <p>The Kaltura API structure consists of a list of services, represented by service objects. Each service object consists of different actions, represented by a method in the service object in the following format:</p>
 
-<p>For example the <a href="https://developer.kaltura.com/console/service/media">media</a> service has many different actions like:</p>
+<p>For example the <a href="/console/service/media">media</a> service has many different actions like:</p>
 
 <ol>
-  <li><a href="https://developer.kaltura.com/console/service/media/action/get">media.get</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/media/action/list">media.list</a></li>
-  <li><a href="https://developer.kaltura.com/console/service/media/action/add">media.add</a></li>
+  <li><a href="/console/service/media/action/get">media.get</a></li>
+  <li><a href="/console/service/media/action/list">media.list</a></li>
+  <li><a href="/console/service/media/action/add">media.add</a></li>
 </ol>
 
-<p>All of these actions read or write to a common <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaMediaEntry">KalturaMediaEntry</a> object.</p>
+<p>All of these actions read or write to a common <a href="/api-docs/General_Objects/Objects/KalturaMediaEntry">KalturaMediaEntry</a> object.</p>
 
-<p>For any service’s action, click the “Learn More” button in the <a href="https://developer.kaltura.com/console">developer console</a> to see the expected return object type. Try it with <a href="https://developer.kaltura.com/console/service/media/action/get">media.get</a></p>
+<p>For any service’s action, click the “Learn More” button in the <a href="/console">developer console</a> to see the expected return object type. Try it with <a href="/console/service/media/action/get">media.get</a></p>
 
 <p><img src="/assets/images/learnmore.png" alt="learnmore" /></p>
 
-<p>The simplest way to make requests to the Kaltura REST API is by using one of the <a href="https://developer.kaltura.com/api-docs/Client_Libraries/">Kaltura API Client Libraries</a>. We don’t recommend making REST API requests directly, as your URL requests might get really long and tricky.</p>
+<p>The simplest way to make requests to the Kaltura REST API is by using one of the <a href="/api-docs/Client_Libraries/">Kaltura API Client Libraries</a>. We don’t recommend making REST API requests directly, as your URL requests might get really long and tricky.</p>
 
 <p>Once you’ve downloaded the client library, you’ll need to import the library and instantiate a KalturaClient object with which you’ll make calls to the API. 
 Setup looks like this:</p>
@@ -227,7 +227,7 @@ const client = new kaltura.Client(config);</code></pre>
         
       </h2>
 
-<p>Every API call in the <a href="https://developer.kaltura.com/console">developer console</a> is able to generate code in all languages that Kaltura supports. See this example for the <a href="https://developer.kaltura.com/console/service/media/action/list">media.list</a> API call:</p>
+<p>Every API call in the <a href="/console">developer console</a> is able to generate code in all languages that Kaltura supports. See this example for the <a href="/console/service/media/action/list">media.list</a> API call:</p>
 
 <p><img src="/assets/images/codegen.png" alt="codegen" /></p>
     
@@ -239,7 +239,7 @@ const client = new kaltura.Client(config);</code></pre>
         
       </h3>
 
-<p>At this point you could follow the <a href="https://developer.kaltura.com/workflows/Ingest_and_Upload_Media/Uploading_Media_Files">Uploading Media Files workflow</a> or you can continue to learn about some basic API calls.</p>
+<p>At this point you could follow the <a href="/workflows/Ingest_and_Upload_Media/Uploading_Media_Files">Uploading Media Files workflow</a> or you can continue to learn about some basic API calls.</p>
     
       <h2 id="finding-entries">
         
@@ -249,7 +249,7 @@ const client = new kaltura.Client(config);</code></pre>
         
       </h2>
 
-<p>To retrieve your newly uploaded entry, or one of the default entries that comes with your account we’ll use <a href="https://developer.kaltura.com/console/service/media/action/list">media.list</a>. If you inspect that API in the console, and expand the filter object, you’ll see a whole bunch of options for filtering down to the entries you want.</p>
+<p>To retrieve your newly uploaded entry, or one of the default entries that comes with your account we’ll use <a href="/console/service/media/action/list">media.list</a>. If you inspect that API in the console, and expand the filter object, you’ll see a whole bunch of options for filtering down to the entries you want.</p>
     
       <h3 id="finding-entries-by-name">
         
@@ -377,9 +377,9 @@ kaltura.services.media.listAction(filter, pager)
   <p>Note that Kaltura Sessions with limited privileges might get limited results when making a <code class="language-plaintext highlighter-rouge">media.list</code> API call.</p>
 </blockquote>
 
-<p>To conduct a more thorough search, for example, <strong>if you want to search within captions or metadata</strong>, use the <a href="https://developer.kaltura.com/console/service/eSearch/action/searchEntry">Kaltura Search API</a>. Read about it <a href="../Video-On-Demand-and-Digital-Assets-Management/Searching-for-Media-Entries.html">here</a></p>
+<p>To conduct a more thorough search, for example, <strong>if you want to search within captions or metadata</strong>, use the <a href="/console/service/eSearch/action/searchEntry">Kaltura Search API</a>. Read about it <a href="../Video-On-Demand-and-Digital-Assets-Management/Searching-for-Media-Entries.html">here</a></p>
 
-<p>Learn about other embed types <a href="https://developer.kaltura.com/player/web/embed-types-web/">here.</a></p>
+<p>Learn about other embed types <a href="/player/web/embed-types-web/">here.</a></p>
     
       <h2 id="wrapping-up">
         
@@ -398,7 +398,7 @@ kaltura.services.media.listAction(filter, pager)
   <li>Analyze Engagement <a href="../Analytics-and-Reporting /Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html">Analytics</a></li>
 </ul>
 
-<p>You can find more API resources in our <a href="https://developer.kaltura.com/api-docs/">docs</a>, play around in the <a href="https://developer.kaltura.com/console">console</a>, or enjoy full interactive experiences with our <a href="https://developer.kaltura.com/workflows">workflows</a>.</p>
+<p>You can find more API resources in our <a href="/api-docs/">docs</a>, play around in the <a href="/console">console</a>, or enjoy full interactive experiences with our <a href="/workflows">workflows</a>.</p>
 
 <p>And of course, feel free to reach out at vpaas@kaltura.com if you have any questions.</p>
 		

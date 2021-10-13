@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Transcoding.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Transcoding.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -146,14 +146,14 @@ rtp('get', 'campaign',true);
 
 <p>To make your video accessible and play on any device, Kaltura provides robust API for media transcoding. When transcoding your video, you can control a wide range of parameters, including; output file type, bit-rate, GOP size (keyframe-frequency), frame-rate, frame dimensions, and much more. You can use Kaltura’s transcoding services to prepare transcoded videos for optimized playback, download, editing, broadcasting, archive and more.</p>
 
-<p>Flavors are versions of an uploaded source video that was transcoded by Kaltura. You can generate multiple flavors per uploaded file. There is no limit to the number of flavors you can define and use in Kaltura. Each flavor is a single output video file on its own. Flavors are represented in Kaltura by the <a href="https://developer.kaltura.com/api-docs/#/flavorAsset">flavorAsset service</a>.<br />
-For a list of all the available parameters and options you can set for your transcoded flavors see: <a href="https://developer.kaltura.com/api-docs/#/KalturaFlavorParams">KalturaFlavorParams</a>.</p>
+<p>Flavors are versions of an uploaded source video that was transcoded by Kaltura. You can generate multiple flavors per uploaded file. There is no limit to the number of flavors you can define and use in Kaltura. Each flavor is a single output video file on its own. Flavors are represented in Kaltura by the <a href="/api-docs/#/flavorAsset">flavorAsset service</a>.<br />
+For a list of all the available parameters and options you can set for your transcoded flavors see: <a href="/api-docs/#/KalturaFlavorParams">KalturaFlavorParams</a>.</p>
 
 <p>Your Kaltura account comes with a default set of flavors preconfigured to seamlessly support any device or browser your users are likely to use. You can choose to enable or disable any of them at any time. To add and configure new flavors to your account use the <a href="http://developer.kaltura.com/api-docs/#/flavorParams">flavorParams</a> service.</p>
 
-<p>The “source flavor”, is the original file that was uploaded to Kaltura. The source flavor represents the highest quality available for that specific video entry. Normally, you would store your source file in Kaltura to continue to generate new flavors from it, cut thumbnails and more. It is also possible to delete the source flavor and mark any of the transcoded flavors as the new source by calling the <a href="https://developer.kaltura.com/api-docs/#/flavorAsset.setAsSource">flavorAsset.setAsSource action</a>.</p>
+<p>The “source flavor”, is the original file that was uploaded to Kaltura. The source flavor represents the highest quality available for that specific video entry. Normally, you would store your source file in Kaltura to continue to generate new flavors from it, cut thumbnails and more. It is also possible to delete the source flavor and mark any of the transcoded flavors as the new source by calling the <a href="/api-docs/#/flavorAsset.setAsSource">flavorAsset.setAsSource action</a>.</p>
 
-<p>When a video is uploaded to Kaltura, the video is associated with a <a href="https://developer.kaltura.com/api-docs/#/conversionProfile">conversionProfile</a>, also known as a Transcoding Profile. A Conversion Profile may be comprised of a single or multiple flavors. For each upload session, you can select the Conversion Profile you’d like apply with the uploaded videos. You can also set a default Conversion Profile to be executed automatically when videos are uploaded to your account.</p>
+<p>When a video is uploaded to Kaltura, the video is associated with a <a href="/api-docs/#/conversionProfile">conversionProfile</a>, also known as a Transcoding Profile. A Conversion Profile may be comprised of a single or multiple flavors. For each upload session, you can select the Conversion Profile you’d like apply with the uploaded videos. You can also set a default Conversion Profile to be executed automatically when videos are uploaded to your account.</p>
     
       <h2 id="add-a-new-conversion-profile">
         
@@ -163,7 +163,7 @@ For a list of all the available parameters and options you can set for your tran
         
       </h2>
 
-<p>To add a conversion profile, call the <a href="https://developer.kaltura.com/api-docs/#/conversionProfile.add">conversionProfile.add</a> API action:</p>
+<p>To add a conversion profile, call the <a href="/api-docs/#/conversionProfile.add">conversionProfile.add</a> API action:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
 <span class="k">require_once</span><span class="p">(</span><span class="s1">'lib/KalturaClient.php'</span><span class="p">);</span> 
@@ -191,7 +191,7 @@ For a list of all the available parameters and options you can set for your tran
 
 </blockquote>
 
-<p>To add flavor params, call the <a href="https://developer.kaltura.com/api-docs/#/flavorParams.add">flavorParams.add</a> API action:</p>
+<p>To add flavor params, call the <a href="/api-docs/#/flavorParams.add">flavorParams.add</a> API action:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span><span class="p">(</span><span class="s1">'lib/KalturaClient.php'</span><span class="p">);</span>
@@ -216,7 +216,7 @@ For a list of all the available parameters and options you can set for your tran
         
       </h2>
 
-<p>To create a new flavor asset for an existing entry, call the <a href="https://developer.kaltura.com/api-docs/#/flavorAsset.convert">flavorAsset.convert</a> API action.</p>
+<p>To create a new flavor asset for an existing entry, call the <a href="/api-docs/#/flavorAsset.convert">flavorAsset.convert</a> API action.</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> <span class="k">require_once</span><span class="p">(</span><span class="s1">'lib/KalturaClient.php'</span><span class="p">);</span> 
 <span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KalturaConfiguration</span><span class="p">(</span><span class="nv">$partnerId</span><span class="p">);</span> 
@@ -339,17 +339,17 @@ Failed transcoding jobs are not counted or billed.</p>
         
       </h2>
 
-<p><a href="https://developer.kaltura.com/api-docs/service/flavorAsset">flavorAsset</a></p>
+<p><a href="/api-docs/service/flavorAsset">flavorAsset</a></p>
 
-<p><a href="https://developer.kaltura.com/api-docs/service/flavorParams">flavorParams</a></p>
+<p><a href="/api-docs/service/flavorParams">flavorParams</a></p>
 
-<p><a href="https://developer.kaltura.com/api-docs/service/flavorParamsOutput">flavorParamsOutput</a></p>
+<p><a href="/api-docs/service/flavorParamsOutput">flavorParamsOutput</a></p>
 
-<p><a href="https://developer.kaltura.com/api-docs/service/conversionProfile">conversionProfile</a></p>
+<p><a href="/api-docs/service/conversionProfile">conversionProfile</a></p>
 
-<p><a href="https://developer.kaltura.com/api-docs/service/conversionProfileAssetParams">conversionProfileAssetParams</a></p>
+<p><a href="/api-docs/service/conversionProfileAssetParams">conversionProfileAssetParams</a></p>
 
-<p><a href="https://developer.kaltura.com/api-docs/service/mediaInfo">mediaInfo</a></p>
+<p><a href="/api-docs/service/mediaInfo">mediaInfo</a></p>
 		
 </article>
 

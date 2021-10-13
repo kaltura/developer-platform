@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Creating-and-Managing-Custom-Metadata-Fields.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Creating-and-Managing-Custom-Metadata-Fields.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -145,7 +145,7 @@ rtp('get', 'campaign',true);
       </h4>
 
 <ol>
-  <li>https://developer.kaltura.com/workflows/Enrich_and_Organize_Metadata/Working_with_metadata</li>
+  <li>/workflows/Enrich_and_Organize_Metadata/Working_with_metadata</li>
   <li>https://knowledge.kaltura.com/help/custom-data</li>
   <li>https://learning.kaltura.com/media/How+to+reate+and+pply+a+ustom+Metadata+Schema/1_8gofc71k</li>
   <li>https://knowledge.kaltura.com/help/how-to-add-a-kaltura-custom-metadata-schema-profile</li>
@@ -161,7 +161,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p><a href="https://developer.kaltura.com/console/service/metadataProfile/action/add">metadataProfile.add</a>: manages schema profiles per account</p>
+<p><a href="/console/service/metadataProfile/action/add">metadataProfile.add</a>: manages schema profiles per account</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">metadataProfile</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">metadataProfile</span><span class="p">,</span><span class="nx">xsdData</span><span class="p">,</span><span class="nx">viewsData</span><span class="p">)</span>
 </code></pre></div></div>
@@ -172,14 +172,14 @@ rtp('get', 'campaign',true);
 
 <p>The Profile is then parsed, indexed and used to build the new fields on the selected object</p>
 
-<p><a href="https://developer.kaltura.com/console/service/metadata/action/add">metadata.add</a>: manages metadata xml per object per profile</p>
+<p><a href="/console/service/metadata/action/add">metadata.add</a>: manages metadata xml per object per profile</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">metadata</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">profileId</span><span class="p">,</span><span class="nx">KalturaMetadataObjectType</span><span class="p">,</span><span class="nx">objectId</span><span class="p">,</span> <span class="nx">xml</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><code class="language-plaintext highlighter-rouge">profileId</code>–to which metadata profile this relates</p>
 
-<p><code class="language-plaintext highlighter-rouge">KalturaMetadataObjectType</code> – see dropdown at <a href="https://developer.kaltura.com/console/service/metadata/action/add">metadata.add</a></p>
+<p><code class="language-plaintext highlighter-rouge">KalturaMetadataObjectType</code> – see dropdown at <a href="/console/service/metadata/action/add">metadata.add</a></p>
 
 <p><code class="language-plaintext highlighter-rouge">objectId</code> –the id of the object to add values to</p>
 
@@ -266,13 +266,13 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Search objects via metadata using the <a href="https://developer.kaltura.com/console/service/media/action/list">list action</a></p>
+<p>Search objects via metadata using the <a href="/console/service/media/action/list">list action</a></p>
 
 <p>In the filter parameter, set advancedSearch to KalturaMetadataSearchItem</p>
 
 <p><img src="/assets/images/metadatasearch.png" alt="metadatasearch" style="zoom:30%;" /></p>
 
-<p>Use <a href="https://developer.kaltura.com/console/service/metadataProfile/action/listFields">metadataProfile.listFields</a> to get all searchable <code class="language-plaintext highlighter-rouge">xPath</code> fields</p>
+<p>Use <a href="/console/service/metadataProfile/action/listFields">metadataProfile.listFields</a> to get all searchable <code class="language-plaintext highlighter-rouge">xPath</code> fields</p>
 		
 </article>
 

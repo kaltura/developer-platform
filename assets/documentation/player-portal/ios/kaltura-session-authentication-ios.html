@@ -109,9 +109,9 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Sep 27 05:03:14 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/kaltura-session-authentication-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/kaltura-session-authentication-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
-				<!--tr><td>Last commit: Mon Sep 27 05:03:14 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
@@ -122,7 +122,7 @@ rtp('get', 'campaign',true);
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!-- 
@@ -159,20 +159,20 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>You can create an appToken with the <a href="https://developer.kaltura.com/console/service/appToken/action/add">appToken.add</a> action. Once you’ve created it, hold on to its token and ID as you’ll need those to create the session. You can also see a list of all available appTokens by using <a href="https://developer.kaltura.com/console/service/appToken/action/list">appToken.list</a>.</p>
+<p>You can create an appToken with the <a href="/console/service/appToken/action/add">appToken.add</a> action. Once you’ve created it, hold on to its token and ID as you’ll need those to create the session. You can also see a list of all available appTokens by using <a href="/console/service/appToken/action/list">appToken.list</a>.</p>
 
 <p>There are a few steps to creating a KS with an appToken.</p>
 <ol>
   <li><strong>Generate a basic kaltura session:</strong> because all calls to the API <em>must</em> include a Kaltura Session, we first use the session API to create what is called a <strong>widget session</strong>, which has limited functionality and is used in the following steps</li>
   <li><strong>Create a Token Hash</strong> of the appToken token and the widget session, combined.</li>
   <li><strong>Call the appToken.startSession API</strong> with the widget session, the appToken ID, and the hash string. 
-You can see all these steps interactively with <a href="https://developer.kaltura.com/workflows/Generate_API_Sessions/App_Token_Authentication">this workflow</a>, or read the guide <a href="../../Getting-Started-Building-Video-Applications /Application-Tokens.html">here</a> but examples below are written for client-side swift code.</li>
+You can see all these steps interactively with <a href="/workflows/Generate_API_Sessions/App_Token_Authentication">this workflow</a>, or read the guide <a href="../../Getting-Started-Building-Video-Applications /Application-Tokens.html">here</a> but examples below are written for client-side swift code.</li>
 </ol>
 
 <p>Let’s get started. If you’re already creating a Kaltura Session on the server side, you can skip these steps.</p>
 
 <p><strong>Step 1: Generate a widget session</strong> 
-To get a basic KS, we need to construct a URL request to the <a href="https://developer.kaltura.com/api-docs/service/session/action/startWidgetSession">session.startWidgetSession</a> service. It needs your widget ID, which is basically just your partnerID with an underscore prefix. 
+To get a basic KS, we need to construct a URL request to the <a href="/api-docs/service/session/action/startWidgetSession">session.startWidgetSession</a> service. It needs your widget ID, which is basically just your partnerID with an underscore prefix. 
 So let’s create a function called <code class="language-plaintext highlighter-rouge">generateWidgetSession()</code> and form that URL.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="nf">generateWidgetSession</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
@@ -209,7 +209,7 @@ So let’s create a function called <code class="language-plaintext highlighter-
 
 <p><strong>Step 3: Get the Kaltura Session</strong></p>
 
-<p>Once you have that hash string, you can now form the URL, make the call to <a href="https://developer.kaltura.com/console/service/appToken/action/startSession">appToken.startSession</a>, and extract the KS from the response. Again, a proper application should include error handling when making calls to the API.</p>
+<p>Once you have that hash string, you can now form the URL, make the call to <a href="/console/service/appToken/action/startSession">appToken.startSession</a>, and extract the KS from the response. Again, a proper application should include error handling when making calls to the API.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">URLString</span> <span class="o">=</span> <span class="kt">NSString</span><span class="p">(</span><span class="nv">format</span><span class="p">:</span><span class="s">"https://www.kaltura.com/api_v3/service/apptoken/action/startsession?ks=%@&amp;userId=%@&amp;id=%@&amp;tokenHash=%@&amp;format=1"</span><span class="p">,</span><span class="n">widgetKs</span><span class="p">,</span><span class="n">userId</span><span class="p">,</span><span class="n">appTokenId</span><span class="p">,</span><span class="n">tokenHash</span><span class="p">)</span>
 

@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Live-Video-Webcasting/Ingest-Live-Stream-via-SIP.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Live-Video-Webcasting/Ingest-Live-Stream-via-SIP.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Sep 26 22:21:43 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (4 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -138,7 +138,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Using the <a href="https://developer.kaltura.com/console/service/permission/action/list">permission.list</a> API Call here are the parameters needed:</p>
+<p>Using the <a href="/console/service/permission/action/list">permission.list</a> API Call here are the parameters needed:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://www.kaltura.com/api_v3/service/permission/action/list <span class="se">\</span>
 
@@ -158,7 +158,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p><a href="https://developer.kaltura.com/console/service/liveStream/action/get">liveStream.get</a></p>
+<p><a href="/console/service/liveStream/action/get">liveStream.get</a></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://www.kaltura.com/api_v3/service/livestream/action/get <span class="se">\</span>
     <span class="nt">-d</span> <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
@@ -176,7 +176,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p><a href="https://developer.kaltura.com/console/service/pexip/action/generateSipUrl">pexip.generateSipUrl</a></p>
+<p><a href="/console/service/pexip/action/generateSipUrl">pexip.generateSipUrl</a></p>
 
 <p>Based on the result of previous step, if the entry already has a sipToken, and you wish to regenerate a new one – make sure to pass true in the regenerate param below. If the entry does not yet have a sipToken, pass false in regenerate below.</p>
 

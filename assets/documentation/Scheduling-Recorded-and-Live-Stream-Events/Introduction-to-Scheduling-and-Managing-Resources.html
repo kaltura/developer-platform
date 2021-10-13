@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Scheduling-Recorded-and-Live-Stream-Events/Introduction-to-Scheduling-and-Managing-Resources.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Scheduling-Recorded-and-Live-Stream-Events/Introduction-to-Scheduling-and-Managing-Resources.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -132,14 +132,14 @@ rtp('get', 'campaign',true);
 		<p>The Kaltura Video Scheduling API enables Encoding and Capture devices to leverage the Kaltura platform to schedule events for devices, and to use information from those events to trigger live events, and ingest recorded content back to Kaltura with related metadata. Scheduling of events and retrieving the scheduled events calendar via the API is discussed in this article.</p>
 
 <blockquote>
-  <p>The Kaltura Scheduled Events API allows for scheduling conflicting resources and blackout dates. To get and resolve conflicting events and resources, use the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</p>
+  <p>The Kaltura Scheduled Events API allows for scheduling conflicting resources and blackout dates. To get and resolve conflicting events and resources, use the <a href="/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</p>
 </blockquote>
 
 <p>Kaltura MediaSpace and KAF (Kaltura Applications Framework) views also provide UI workflows to create, and manage scheduled events (read more about the UI in the <a href="https://knowledge.kaltura.com/kaltura-recording-scheduling-management">Scheduled Events User Manual</a>, and to get access to the scheduling module in your MediaSpace instance, contact your Kaltura representative).</p>
 
 <p>The Scheduled Events API is also exposed as a standard <a href="https://en.wikipedia.org/wiki/ICalendar">iCal format</a>. This provides backend support for calendar definition, including importing and exporting using the iCal standard. Importing into the Kaltura platform is done either though bulk-upload or drop-folders.</p>
 
-<p>The Kaltura Scheduled Events API support 3 types of Events (see <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaScheduleEventType"><code class="language-plaintext highlighter-rouge">KalturaScheduleEventType</code></a>):</p>
+<p>The Kaltura Scheduled Events API support 3 types of Events (see <a href="/api-docs/General_Objects/Enums/KalturaScheduleEventType"><code class="language-plaintext highlighter-rouge">KalturaScheduleEventType</code></a>):</p>
 
 <ol>
   <li><strong>Recorded Events</strong>  - Schedule the recording of an event that will be uploaded to Kaltura after the event ends.</li>
@@ -204,9 +204,9 @@ rtp('get', 'campaign',true);
 <p>Kaltura Event Scheduling is implemented as 3 API services:</p>
 
 <ol>
-  <li><a href="https://developer.kaltura.com/console/service/scheduleEvent"><code class="language-plaintext highlighter-rouge">scheduleEvent</code></a> - Representing the Event being scheduled (either Live, Recorded or Blackout).</li>
-  <li><a href="https://developer.kaltura.com/console/service/scheduleResource"><code class="language-plaintext highlighter-rouge">scheduleResource</code></a> - Representing the devices to be used during the scheduled event (Camera, Live Entry, or Location). Kaltura will log scheduling conflicts between scheduled events trying to use the same resources (resources are uniquely identified using the <code class="language-plaintext highlighter-rouge">systemName</code> field). To get conflicting events call the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
-  <li><a href="https://developer.kaltura.com/console/service/scheduleEventResource"><code class="language-plaintext highlighter-rouge">scheduleEventResource</code></a> - Manages the association of particular resources (Camera, Live Entry, or Location) to Scheduled Events.</li>
+  <li><a href="/console/service/scheduleEvent"><code class="language-plaintext highlighter-rouge">scheduleEvent</code></a> - Representing the Event being scheduled (either Live, Recorded or Blackout).</li>
+  <li><a href="/console/service/scheduleResource"><code class="language-plaintext highlighter-rouge">scheduleResource</code></a> - Representing the devices to be used during the scheduled event (Camera, Live Entry, or Location). Kaltura will log scheduling conflicts between scheduled events trying to use the same resources (resources are uniquely identified using the <code class="language-plaintext highlighter-rouge">systemName</code> field). To get conflicting events call the <a href="/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
+  <li><a href="/console/service/scheduleEventResource"><code class="language-plaintext highlighter-rouge">scheduleEventResource</code></a> - Manages the association of particular resources (Camera, Live Entry, or Location) to Scheduled Events.</li>
 </ol>
 
 <p>The below example shows scheduling  a live event, creating a live stream resource for the event, and associating the resource with the event:</p>
@@ -313,15 +313,15 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>All Kaltura list actions, including <a href="https://developer.kaltura.com/api-docs/Integration_Scheduling_and_Hooks/Scheduling_Triggers_using_iCal/scheduleEvent/scheduleEvent_list">scheduleEvent.list</a>, accept the <a href="https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaFilterPager">KalturaFilterPager</a>.</p>
+<p>All Kaltura list actions, including <a href="/api-docs/Integration_Scheduling_and_Hooks/Scheduling_Triggers_using_iCal/scheduleEvent/scheduleEvent_list">scheduleEvent.list</a>, accept the <a href="/api-docs/General_Objects/Filters/KalturaFilterPager">KalturaFilterPager</a>.</p>
 
 <blockquote>
   <p>By default, the Kaltura pager returns 30 results. Use the <code class="language-plaintext highlighter-rouge">pageIndex</code> to loop through result pages, or <code class="language-plaintext highlighter-rouge">pageSize</code> to increase the amount of results returned per call. Note that the maximum is 500 results per call (“page”).</p>
 </blockquote>
 
-<p>The maximum number of returned results is 10,000 total (across all pages in the given filter). To retrieve more than 10,000 results, you will need to use a filter instead of pager. For example using the date filter in a loop: <a href="https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaAccessControlBaseFilter">createdAtGreaterThanOrEqual</a>.</p>
+<p>The maximum number of returned results is 10,000 total (across all pages in the given filter). To retrieve more than 10,000 results, you will need to use a filter instead of pager. For example using the date filter in a loop: <a href="/api-docs/General_Objects/Filters/KalturaAccessControlBaseFilter">createdAtGreaterThanOrEqual</a>.</p>
 
-<p>The results can be filtered on any of the filter parameters. For the list of available filter parameters see: <a href="https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaScheduleEventFilter">KalturaScheduleEventFilter</a>.  More than one filter can be applied to each request.</p>
+<p>The results can be filtered on any of the filter parameters. For the list of available filter parameters see: <a href="/api-docs/General_Objects/Filters/KalturaScheduleEventFilter">KalturaScheduleEventFilter</a>.  More than one filter can be applied to each request.</p>
 
 <p>For example:</p>
 
@@ -374,7 +374,7 @@ The time is measured in seconds since 1970, also known as a UNIX timestamp; howe
       </h2>
 
 <p>Capture devices as well as rooms and Live Stream entries can be mapped to resource objects in Kaltura. This is similar to booking a conference room using a calendar application. 
-Multiple resources can be defined for an event. Resources can be added using the API (e.g. automatic creation of a matching resource by the device itself) or bulk uploaded in advance using the CSV format (see <a href="https://developer.kaltura.com/api-docs/service/scheduleResource/action/addFromBulkUpload">scheduleResource.addFromBulkUpload</a>).</p>
+Multiple resources can be defined for an event. Resources can be added using the API (e.g. automatic creation of a matching resource by the device itself) or bulk uploaded in advance using the CSV format (see <a href="/api-docs/service/scheduleResource/action/addFromBulkUpload">scheduleResource.addFromBulkUpload</a>).</p>
 
 <p>Kaltura’s Bulk Upload CSV format supports mixed orders, and not all fields are required; the fields are defined by the user using an asterisk at the beginning of the line.</p>
     
@@ -396,7 +396,7 @@ Multiple resources can be defined for an event. Resources can be added using the
   <tbody>
     <tr>
       <td>action</td>
-      <td>Default to add (<code class="language-plaintext highlighter-rouge">1</code>).  One of the options defined by <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a></td>
+      <td>Default to add (<code class="language-plaintext highlighter-rouge">1</code>).  One of the options defined by <a href="/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a></td>
     </tr>
     <tr>
       <td>resourceId</td>
@@ -437,7 +437,7 @@ Multiple resources can be defined for an event. Resources can be added using the
   <p>Note that resources can have a hierarchy (e.g., a room with cameras), which is defined using the parent type and name.</p>
 </blockquote>
 
-<p>The possible values for the action column (the first column in the example above) are listed in <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a>. The common actions are:</p>
+<p>The possible values for the action column (the first column in the example above) are listed in <a href="/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a>. The common actions are:</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">1</code> (Default) - adds a new resource</li>
@@ -463,8 +463,8 @@ Multiple resources can be defined for an event. Resources can be added using the
       </h2>
 
 <ul>
-  <li>Conflicting events: At present, Kaltura does not prevent conflicting events. The user will need to ensure that there is no resource conflict when scheduling the event. Devices should be able to handle resource conflicts and ensure operations in such case. To retrieve and handle conflicting events call the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
-  <li>Recurring events: When retrieving a recurring event via the API, both the series and the breakdown of each occurrence will be provided. Devices can filter based on  <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaScheduleEventRecurrenceType">KalturaScheduleEventRecurrenceType</a> to receive only the series (<code class="language-plaintext highlighter-rouge">RECURRING</code>) or single events (<code class="language-plaintext highlighter-rouge">RECURRENCE</code>), or to receive single events and breakdown of series. The choice between the options depends on the capability of the device.</li>
+  <li>Conflicting events: At present, Kaltura does not prevent conflicting events. The user will need to ensure that there is no resource conflict when scheduling the event. Devices should be able to handle resource conflicts and ensure operations in such case. To retrieve and handle conflicting events call the <a href="/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
+  <li>Recurring events: When retrieving a recurring event via the API, both the series and the breakdown of each occurrence will be provided. Devices can filter based on  <a href="/api-docs/General_Objects/Enums/KalturaScheduleEventRecurrenceType">KalturaScheduleEventRecurrenceType</a> to receive only the series (<code class="language-plaintext highlighter-rouge">RECURRING</code>) or single events (<code class="language-plaintext highlighter-rouge">RECURRENCE</code>), or to receive single events and breakdown of series. The choice between the options depends on the capability of the device.</li>
   <li>There’s only one schedule per Kaltura account managed. Multiple scheduling systems will need to be merged into one Kaltura schedule.</li>
 </ul>
 		

@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Scheduling-Recorded-and-Live-Stream-Events/Manage-Blackout-Events.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Scheduling-Recorded-and-Live-Stream-Events/Manage-Blackout-Events.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -138,11 +138,11 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>At <a href="https://developer.kaltura.com/console/service/scheduleEvent/action/add">scheduleEvent.add</a> one of the main scheduleEvent types is KalturaBlackoutScheduleEvent</p>
+<p>At <a href="/console/service/scheduleEvent/action/add">scheduleEvent.add</a> one of the main scheduleEvent types is KalturaBlackoutScheduleEvent</p>
 
 <p><img src="/assets/images/blackout.png" style="zoom:30%;" /></p>
 
-<p>Simply choose the time period of your blackout event and call <a href="https://developer.kaltura.com/console/service/scheduleEvent/action/add">scheduleEvent.add</a> with necessary parameters.</p>
+<p>Simply choose the time period of your blackout event and call <a href="/console/service/scheduleEvent/action/add">scheduleEvent.add</a> with necessary parameters.</p>
     
       <h2 id="handle-blackout-event">
         
@@ -174,7 +174,7 @@ rtp('get', 'campaign',true);
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$scheduleEventConflictType</span> <span class="o">=</span> <span class="nc">KalturaScheduleEventConflictType</span><span class="o">::</span><span class="no">BOTH</span><span class="p">;</span>
 </code></pre></div></div>
 
-<p>Which relies on the result of <a href="https://developer.kaltura.com/console/service/scheduleEvent/action/getConflicts">scheduleEvent.getConflicts</a></p>
+<p>Which relies on the result of <a href="/console/service/scheduleEvent/action/getConflicts">scheduleEvent.getConflicts</a></p>
 
 <p>Where BOTH handles a RESOURCE_CONFLICT and a BLACKOUT_CONFLICT. Using an approach similar to this, you have the ability to distinguish BLACKOUT_CONFLICTS and could handle each CONFLICT type separately if needed.</p>
 		

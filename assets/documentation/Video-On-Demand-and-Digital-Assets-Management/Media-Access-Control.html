@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Sep 27 01:37:10 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (4 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -155,7 +155,7 @@ rtp('get', 'campaign',true);
 
 <p>When using the scheduling mechanism, setting the scheduling window on an entry, either via KMC, or via API, will have the access control logic enforced cross-device.</p>
 
-<p>To provide a better UX than just a black screen when accessing content outside its scheduling window, for example, display a message as “This video cannot be played at this time” or “Video can only be accessed between X – Y, try again in T hours”, you should also use the <a href="https://developer.kaltura.com/api-docs/#/baseEntry.getContextData">baseEntry.getContextData</a> API method. This method allows retrieving the scheduling window and presenting a message dialog to the end user when <a href="https://developer.kaltura.com/api-docs/#/KalturaEntryContextDataResult">isScheduledNow</a> is returned false.</p>
+<p>To provide a better UX than just a black screen when accessing content outside its scheduling window, for example, display a message as “This video cannot be played at this time” or “Video can only be accessed between X – Y, try again in T hours”, you should also use the <a href="/api-docs/#/baseEntry.getContextData">baseEntry.getContextData</a> API method. This method allows retrieving the scheduling window and presenting a message dialog to the end user when <a href="/api-docs/#/KalturaEntryContextDataResult">isScheduledNow</a> is returned false.</p>
     
       <h2 id="advanced-access-control">
         
@@ -177,24 +177,24 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>The access control API service <a href="https://developer.kaltura.com/api-docs/#/accessControlProfile" target="_blank">accessControlProfile</a>  provides the following actions:</p>
+<p>The access control API service <a href="/api-docs/#/accessControlProfile" target="_blank">accessControlProfile</a>  provides the following actions:</p>
 
-<p><strong><a href="https://developer.kaltura.com/api-docs/#/accessControlProfile" target="_blank">accessControlProfile</a></strong></p>
+<p><strong><a href="/api-docs/#/accessControlProfile" target="_blank">accessControlProfile</a></strong></p>
 
 <ul>
-  <li><a href="https://developer.kaltura.com/api-docs/#/accessControlProfile.add" target="_blank">addAction</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/accessControlProfile.get" target="_blank">getAction</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/accessControlProfile.update">updateAction</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/accessControlProfile.delete" target="_blank">deleteAction</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/accessControlProfile.list" target="_blank">listAction</a></li>
+  <li><a href="/api-docs/#/accessControlProfile.add" target="_blank">addAction</a></li>
+  <li><a href="/api-docs/#/accessControlProfile.get" target="_blank">getAction</a></li>
+  <li><a href="/api-docs/#/accessControlProfile.update">updateAction</a></li>
+  <li><a href="/api-docs/#/accessControlProfile.delete" target="_blank">deleteAction</a></li>
+  <li><a href="/api-docs/#/accessControlProfile.list" target="_blank">listAction</a></li>
 </ul>
 
-<p><strong><a href="https://developer.kaltura.com/api-docs/#/KalturaAccessControlProfile" target="_blank">KalturaAccessControlProfile </a></strong></p>
+<p><strong><a href="/api-docs/#/KalturaAccessControlProfile" target="_blank">KalturaAccessControlProfile </a></strong></p>
 
-<p>The API object <a href="https://developer.kaltura.com/api-docs/#/KalturaAccessControlProfile" target="_blank">KalturaAccessControlProfile </a>is composed of an ordered set of rules of type <a href="https://developer.kaltura.com/api-docs/#/KalturaRule" target="_blank">KalturaRule</a>.</p>
+<p>The API object <a href="/api-docs/#/KalturaAccessControlProfile" target="_blank">KalturaAccessControlProfile </a>is composed of an ordered set of rules of type <a href="/api-docs/#/KalturaRule" target="_blank">KalturaRule</a>.</p>
 
 <p class="Subheading">
-  <a href="https://developer.kaltura.com/api-docs/#/KalturaRule" target="_blank">KalturaRule</a>
+  <a href="/api-docs/#/KalturaRule" target="_blank">KalturaRule</a>
 </p>
 
 <p>The KalturaRule type contains the following attributes:</p>
@@ -242,7 +242,7 @@ rtp('get', 'campaign',true);
   </tbody>
 </table>
 
-<p>Rules are evaluated according to their order and evaluated only if they are configured to run in the current context, according to their contexts attribute. A KalturaRule is considered  fulfilled only if all its conditions are evaluated as true. The available context types are in the<a href="https://developer.kaltura.com/api-docs/#/KalturaAccessControlContextType"> KalturaAccessControlContextType</a>.</p>
+<p>Rules are evaluated according to their order and evaluated only if they are configured to run in the current context, according to their contexts attribute. A KalturaRule is considered  fulfilled only if all its conditions are evaluated as true. The available context types are in the<a href="/api-docs/#/KalturaAccessControlContextType"> KalturaAccessControlContextType</a>.</p>
 
 <p><strong>KalturaAccessControlContextType</strong></p>
 
@@ -273,16 +273,16 @@ rtp('get', 'campaign',true);
   </tbody>
 </table>
 
-<p>All rules are evaluated, unless one of the rule’s stop processing flag is true and the rule condition was fulfilled. Each rule that matches the conditions, adds the actions to the outcome actions and its message to the outcome messages. All of the actions are performed for rules that are evaluated and their conditions are true. Each rule is composed of a set of conditions <a href="https://developer.kaltura.com/api-docs/#/KalturaConditionArray" target="_blank">KalturaCondition</a>  and an action <a href="https://developer.kaltura.com/api-docs/#/KalturaAccessControlAction">KalturaAccessControlAction.</a>  The action types are described in <a href="https://developer.kaltura.com/api-docs/#/KalturaAccessControlActionType" target="_blank">KalturaAccessControlActionType. </a>The logical relation between the set of conditions in a single rule uses the AND operator, meaning that all conditions must be evaluated to true in order to consider the rule as fulfilled.</p>
+<p>All rules are evaluated, unless one of the rule’s stop processing flag is true and the rule condition was fulfilled. Each rule that matches the conditions, adds the actions to the outcome actions and its message to the outcome messages. All of the actions are performed for rules that are evaluated and their conditions are true. Each rule is composed of a set of conditions <a href="/api-docs/#/KalturaConditionArray" target="_blank">KalturaCondition</a>  and an action <a href="/api-docs/#/KalturaAccessControlAction">KalturaAccessControlAction.</a>  The action types are described in <a href="/api-docs/#/KalturaAccessControlActionType" target="_blank">KalturaAccessControlActionType. </a>The logical relation between the set of conditions in a single rule uses the AND operator, meaning that all conditions must be evaluated to true in order to consider the rule as fulfilled.</p>
 
 <p class="Subheading">
-  <a href="https://developer.kaltura.com/api-docs/#/KalturaConditionArray" target="_blank">KalturaCondition </a>
+  <a href="/api-docs/#/KalturaConditionArray" target="_blank">KalturaCondition </a>
 </p>
 
 <p>The condition types are:</p>
 
 <p class="Subheading">
-  <a href="https://developer.kaltura.com/api-docs/#/KalturaConditionArray" target="_blank">KalturaConditionType</a> 
+  <a href="/api-docs/#/KalturaConditionArray" target="_blank">KalturaConditionType</a> 
 </p>
 
 <table>
@@ -355,15 +355,15 @@ rtp('get', 'campaign',true);
 <p> The objects available that implement the condition objects are:</p>
 
 <ul>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaAuthenticatedCondition" target="_blank">KalturaAuthenticatedCondition</a> **Note: **This object should be configured only on an entry level access control objects.</li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaCompareMetadataCondition" target="_blank">KalturaCompareMetadataCondition</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaFieldCompareCondition" target="_blank">KalturaFieldCompareCondition</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaCountryCondition">KalturaCountryCondition</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaFieldMatchCondition" target="_blank">KalturaFieldMatchCondition</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaIpAddressCondition" target="_blank">KalturaIpAddressCondition</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaMatchMetadataCondition" target="_blank">KalturaMatchMetadataCondition</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaUserAgentCondition" target="_blank">KalturaUserAgentCondition</a></li>
-  <li><a href="https://developer.kaltura.com/api-docs/#/KalturaSiteCondition" target="_blank">KalturaSiteCondition</a></li>
+  <li><a href="/api-docs/#/KalturaAuthenticatedCondition" target="_blank">KalturaAuthenticatedCondition</a> **Note: **This object should be configured only on an entry level access control objects.</li>
+  <li><a href="/api-docs/#/KalturaCompareMetadataCondition" target="_blank">KalturaCompareMetadataCondition</a></li>
+  <li><a href="/api-docs/#/KalturaFieldCompareCondition" target="_blank">KalturaFieldCompareCondition</a></li>
+  <li><a href="/api-docs/#/KalturaCountryCondition">KalturaCountryCondition</a></li>
+  <li><a href="/api-docs/#/KalturaFieldMatchCondition" target="_blank">KalturaFieldMatchCondition</a></li>
+  <li><a href="/api-docs/#/KalturaIpAddressCondition" target="_blank">KalturaIpAddressCondition</a></li>
+  <li><a href="/api-docs/#/KalturaMatchMetadataCondition" target="_blank">KalturaMatchMetadataCondition</a></li>
+  <li><a href="/api-docs/#/KalturaUserAgentCondition" target="_blank">KalturaUserAgentCondition</a></li>
+  <li><a href="/api-docs/#/KalturaSiteCondition" target="_blank">KalturaSiteCondition</a></li>
 </ul>
 
 <p>For example:</p>
@@ -424,9 +424,9 @@ For example: myElementName will be searched as //myElementName</li>
   <li>**KalturaAccessControlPreviewAction - **Preview – play only the first X seconds of a video</li>
 </ol>
 
-<p><strong><a href="https://developer.kaltura.com/api-docs/#/KalturaAccessControlScope" target="_blank">KalturaAccessControlScope</a></strong></p>
+<p><strong><a href="/api-docs/#/KalturaAccessControlScope" target="_blank">KalturaAccessControlScope</a></strong></p>
 
-<p>The <strong><a href="https://developer.kaltura.com/api-docs/#/KalturaAccessControlScope" target="_blank">KalturaAccessControlScope</a></strong>API contains a predefined list of context variables: </p>
+<p>The <strong><a href="/api-docs/#/KalturaAccessControlScope" target="_blank">KalturaAccessControlScope</a></strong>API contains a predefined list of context variables: </p>
 
 <table>
   <thead>
