@@ -169,6 +169,11 @@ guideNavigation:
         path: "/Getting-Started-Building-Video-Applications/Working-with-Multi-Request.html"
         discussionURL: null
 
+      - title: "Application Tokens"
+        markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Application-Tokens.html
+        path: "/Getting-Started-Building-Video-Applications/Application-Tokens.html"
+        discussionURL: null
+
   - title: "Video On Demand and Digital Assets Management"
     icon: VideoPlayer
     path: "/Video-On-Demand-and-Digital-Assets-Management"
@@ -226,11 +231,6 @@ guideNavigation:
       - title: "Categories & Entitlement Rules"
         markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Categories-and-Entitlement-Rules.html
         path: "/Video-On-Demand-and-Digital-Assets-Management/Categories-and-Entitlement-Rules.html"
-        discussionURL: null
-
-      - title: "Hardening Security with Media Access Control Rules"
-        markdownURL: /assets/documentation/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.html
-        path: "/Video-On-Demand-and-Digital-Assets-Management/Media-Access-Control.html"
         discussionURL: null
 
       - title: "Hardening Security with Media Access Control Rules"
@@ -361,21 +361,6 @@ guideNavigation:
         markdownURL: /assets/documentation/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.html
         path: "/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.html"
         discussionURL: null  
-
-      - operation: "cuePoint.addFromBulk"
-      - operation: "categoryEntry.addFromBulkUpload"
-      - operation: "categoryUser.addFromBulkUpload"
-      - tag: "bulk"
-      - tag: "schema"
-      - tag: "dropFolder"
-      - tag: "dropFolderFile"
-      - tag: "virusScanProfile"
-        hide: true
-      - tag: "aspera"
-        hide: true
-      # `bulkUpload` service was deprecated in favour of `bulk`  
-      - tag: "bulkUpload"
-        hide: true
  
   - title: "Client Libraries"
     markdownFile: ./markdown/generated/client_libraries.md
@@ -418,6 +403,8 @@ guideNavigation:
         markdownURL: /assets/documentation/Contribute/Article-Style-Structure-Guidelines.html
         path: "/Contribute/Article-Style-Structure-Guidelines.html"
         discussionURL: null
+
+        
 operationNavigation:
   - title: "Generate API Sessions"
     children:
