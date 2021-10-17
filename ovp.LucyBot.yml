@@ -140,6 +140,11 @@ guideNavigation:
         path: "/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.html"
         discussionURL: null
 
+      - title: "Kaltura Experience Components"
+        markdownURL: /assets/documentation/Introduction-to-Kaltura-Media-Services/Experience-Components.html
+        path: "/Introduction-to-Kaltura-Media-Services/Experience-Components.html"
+        discussionURL: null
+
   - title: "Getting Started"
     path: "/Getting-Started-Building-Video-Applications"
     icon: GettingStarted
