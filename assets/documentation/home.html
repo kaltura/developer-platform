@@ -60,7 +60,7 @@ window.jQuery = window.jquery;
                                 Real-Time Conferencing
                             </h5>
                             <p class="card-text">
-                                Integrate a virtual meeting room or classroom into any app and fit it to any need
+                                Integrate a virtual meeting room or classroom into any app for any need
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
@@ -75,7 +75,7 @@ window.jQuery = window.jquery;
                                 Live Webcasting
                             </h5>
                             <p class="card-text">
-                                ALive stream to any size audience, anytime and anywhere, with one single API
+                                A live stream for any size audience, anytime and anywhere, with one single API
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
@@ -133,117 +133,133 @@ window.jQuery = window.jquery;
                 <div class="code php">
                     <pre>
                         <code class="php">
-&lt;?php
-$entry = new KalturaMediaEntry();
-$entry->mediaType = KalturaMediaType::VIDEO;
-$entry->name = "Cat";
-$entryResult = $client->media->add($entry);
-$entryId = $entryResult->id;
-$resource = new KalturaUrlResource();
-$resource->url = "https://example.com/catVideo.mp4";
-$result = $client->media->addContent($entryId, $resource);
-var_dump($result);
-?&gt;
+                            <?php
+                            require_once('lib/KalturaClient.php');
+                          
+                            $config = new KalturaConfiguration();
+                            $config->setServiceUrl('https://www.kaltura.com');
+                            $client = new KalturaClient($config);
+
+                            $entry = new KalturaMediaEntry();
+                            $entry->name = "My First Video";
+                          
+                            try {
+                              $result = $client->media->add($entry);
+                              var_dump($result);
+                            } catch (Exception $e) {
+                              echo $e->getMessage();
+                            }
+                          ?>
                         </code>
                     </pre>
                 </div>
                 <div class="code java">
                     <pre>
                         <code class="java">
-public class Factorial
-{
-    public static void main(String[] args)
-    {	final int NUM_FACTS = 100;
-        for(int i = 0; i < NUM_FACTS; i++)
-            System.out.println( i + "! is " + factorial(i));
-    }
-    
-    public static int factorial(int n)
-    {	int result = 1;
-        for(int i = 2; i <= n; i++)
-            result *= i;
-        return result;
-    }
-}
+                            package com.kaltura.code.example;
+                            import com.kaltura.client.enums.*;
+
+                            class CodeExample {
+                                public static void main(String[] args) {
+                                    Client client = CodeExample.generateKalturaClient();
+                                    MediaEntry entry = new MediaEntry();
+                                    entry.setName("My First Video");
+                            
+                                    AddMediaBuilder requestBuilder = MediaService.add(entry)
+                                        .setCompletion(new OnCompletion<Response<MediaEntry>>() {
+                                            @Override
+                                            public void onComplete(Response<MediaEntry> result) {
+                                                System.out.println(result);
+                                            }
+                                        });
+                            
+                                    APIOkRequestsExecutor.getExecutor().queue(requestBuilder.build(client));
+                                }
+                            }
                         </code>
                     </pre>
                 </div>
                 <div class="code python">
                     <pre>
                         <code class="python">
-# Taking kilometers input from the user
-kilometers = float(input("Enter value in kilometers: "))
-
-# conversion factor
-conv_fac = 0.621371
-
-# calculate miles
-miles = kilometers * conv_fac
-print('%0.2f kilometers is equal to %0.2f miles' %(kilometers,miles))
+                            from KalturaClient import *
+                            from KalturaClient.Plugins.Core import *
+                            
+                            config = KalturaConfiguration()
+                            config.serviceUrl = "https://www.kaltura.com/"
+                            client = KalturaClient(config)
+                            entry = KalturaMediaEntry()
+                            entry.name = "My First Video"
+                            
+                            result = client.media.add(entry)
+                            print(result)
                         </code>
                     </pre>
                 </div>
                 <div class="code javascript">
                     <pre>
                         <code class="javascript">
-var fs = require("fs");
-var data = '';
-
-// Create a readable stream
-var readerStream = fs.createReadStream('input.txt');
-
-// Set the encoding to be utf8. 
-readerStream.setEncoding('UTF8');
-
-// Handle stream events --> data, end, and error
-readerStream.on('data', function(chunk) {
-    data += chunk;
-});
-
-readerStream.on('end',function() {
-    console.log(data);
-});
-
-readerStream.on('error', function(err) {
-    console.log(err.stack);
-});
-
-console.log("Program Ended");
+                            const kaltura = require('kaltura-client');
+                            const config = new kaltura.Configuration();
+                            config.serviceUrl = 'https://www.kaltura.com';
+                            const client = new kaltura.Client(config);
+         
+                            let entry = new kaltura.objects.MediaEntry();
+                            entry.name = "My First Video";
+                            
+                            kaltura.services.media.add(entry)
+                                .execute(client)
+                                .then(result => {
+                                    console.log(result);
+                                });
+                            
+                            })
+                            .execute(client);
                         </code>
                     </pre>
                 </div>
                 <div class="code csharp">
                     <pre>
                         <code class="csharp">
-var names = new List<string>() { "John", "Tom", "Peter" };
-    foreach (string name in names)
-    {
-        if (name == "Tom")
-        {
-            continue;
-        }
-        Console.WriteLine(name);
-    }
+                            using Kaltura;
+    
+                            namespace Kaltura {
+                              class CodeExample {
+                                static void Main(string[] args) {
+                                  Client client = CodeExample.createKalturaClient();
+                                  bool done = false;
+                                  MediaEntry entry = new MediaEntry();
+                                  entry.Name = "My First Video";
+                            
+                                  OnCompletedHandler<MediaEntry> handler = new OnCompletedHandler<MediaEntry>(
+                                        (MediaEntry result, Exception e) =>
+                                        {
+                                          CodeExample.PrintObject(result);
+                                          done = true;
+                                        });
+                                  MediaService.Add(entry)
+                                     .SetCompletion(handler)
+                                     .Execute(client);
+                                }
+                            }
                         </code>
                     </pre>
                 </div>
                 <div class="code ruby">
                     <pre>
                         <code class="ruby">
-for i in (1..10)
-    rno = rand(100) + 1
-    msg = case rno
-        when 42: "The ultimate result."
-        when 1..10: "Way too small."
-        when 11..15,19,27: "Sorry, too small"
-        when 80..99: "Way to large"
-        when 100:
-                print "TOPS\n"
-                "Really way too large"
-        else "Just wrong"
-    end
-    print "Result: ", rno, ": ", msg, "\n"
-end
+                            require 'kaltura'
+                            include Kaltura
+                            
+                            config = KalturaConfiguration.new()
+                            config.service_url = 'https://www.kaltura.com'
+                            client = KalturaClient.new(config);  
+                            
+                            entry = KalturaMediaEntry.new()
+                            entry.name = "My First Video"
+                            
+                            results = client.media_service.add(entry)
+                            puts results.inspect
                         </code>
                     </pre>
                 </div>
