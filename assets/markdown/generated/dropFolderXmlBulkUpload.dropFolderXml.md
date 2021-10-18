@@ -543,6 +543,7 @@ table th {
         <xs:simpleType>
           <xs:restriction base="xs:string">
             <xs:enumeration value="update"></xs:enumeration>
+            <xs:enumeration value="replace"></xs:enumeration>
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
@@ -555,6 +556,7 @@ table th {
       <xs:choice minOccurs="1" maxOccurs="1">
         <xs:element ref="serverFileContentResource" minOccurs="1" maxOccurs="1"></xs:element>
         <xs:element ref="urlContentResource" minOccurs="1" maxOccurs="1"></xs:element>
+        <xs:element ref="sshUrlContentResource" minOccurs="1" maxOccurs="1"></xs:element>
         <xs:element ref="remoteStorageContentResource" minOccurs="1" maxOccurs="1"></xs:element>
         <xs:element ref="remoteStorageContentResources" minOccurs="1" maxOccurs="1"></xs:element>
         <xs:element ref="entryContentResource" minOccurs="1" maxOccurs="1"></xs:element>
@@ -902,6 +904,7 @@ table th {
       <xs:enumeration value="Fiji"></xs:enumeration>
       <xs:enumeration value="Finnish"></xs:enumeration>
       <xs:enumeration value="French"></xs:enumeration>
+      <xs:enumeration value="French (Canada)"></xs:enumeration>
       <xs:enumeration value="Frisian"></xs:enumeration>
       <xs:enumeration value="Galician"></xs:enumeration>
       <xs:enumeration value="Gaelic (Scottish)"></xs:enumeration>
@@ -963,6 +966,7 @@ table th {
       <xs:enumeration value="Pashto (Pushto)"></xs:enumeration>
       <xs:enumeration value="Polish"></xs:enumeration>
       <xs:enumeration value="Portuguese"></xs:enumeration>
+      <xs:enumeration value="Portuguese (Brazil)"></xs:enumeration>
       <xs:enumeration value="Punjabi"></xs:enumeration>
       <xs:enumeration value="Quechua"></xs:enumeration>
       <xs:enumeration value="Rhaeto-Romance"></xs:enumeration>
@@ -983,6 +987,7 @@ table th {
       <xs:enumeration value="Slovenian"></xs:enumeration>
       <xs:enumeration value="Somali"></xs:enumeration>
       <xs:enumeration value="Spanish"></xs:enumeration>
+      <xs:enumeration value="Spanish (Latin America)"></xs:enumeration>
       <xs:enumeration value="Sundanese"></xs:enumeration>
       <xs:enumeration value="Swahili (Kiswahili)"></xs:enumeration>
       <xs:enumeration value="Swedish"></xs:enumeration>
@@ -1012,6 +1017,7 @@ table th {
       <xs:enumeration value="Yiddish"></xs:enumeration>
       <xs:enumeration value="Yoruba"></xs:enumeration>
       <xs:enumeration value="Zulu"></xs:enumeration>
+      <xs:enumeration value="Taiwanese Mandarin"></xs:enumeration>
       <xs:enumeration value="No linguistic content"></xs:enumeration>
       <xs:enumeration value="Multilingual"></xs:enumeration>
       <xs:enumeration value="Afade"></xs:enumeration>
@@ -5094,13 +5100,20 @@ tK1yWx3LOnxokoJUtNRSdEi</privateKey>
 <td>
 <span class="child-element-description"><xs:documentation xmlns:xs="http://www.w3.org/2001/XMLSchema">
 						The action to apply:<br>
-						Update - Update existing subtitles<br>
+						Update - Update existing subtitle(s). Requires captionAssetId or captionParamsId<br>
+						Replace - Replace all subtitles. When &quot;lang&quot; is provided, replace only subtitles with the given language. If &quot;tags&quot; are also provided, replace only subtitles with the given language and tags. 
 					</xs:documentation></span><br>
 </td>
 <td>No</td>
 <td>1</td>
 <td>string</td>
-<td class="last"></td>
+<td class="last">
+			Acceptable values:
+			<ul>
+<li>update</li>
+<li>replace</li>
+</ul>
+</td>
 </tr>
 <tr class>
 <td class="first" colspan="2"><span>subTitle</span></td>
@@ -5286,8 +5299,19 @@ tK1yWx3LOnxokoJUtNRSdEi</privateKey>
 <td class="last"></td>
 </tr>
 <tr class="choice">
-<td class="first"><span>remoteStorageContentResource</span></td>
+<td class="first"><span>sshUrlContentResource</span></td>
 <td rowspan="1">Option 3</td>
+<td>
+<span class="child-element-description"><xs:documentation xmlns:xs="http://www.w3.org/2001/XMLSchema">Specifies that the content file location is a URL (scp/sftp)</xs:documentation></span><br>
+</td>
+<td>Yes</td>
+<td>1</td>
+<td></td>
+<td class="last"></td>
+</tr>
+<tr class="choice">
+<td class="first"><span>remoteStorageContentResource</span></td>
+<td rowspan="1">Option 4</td>
 <td>
 <span class="child-element-description"><xs:documentation xmlns:xs="http://www.w3.org/2001/XMLSchema">Specifies that content file location is a path within a Kaltura defined remote storage</xs:documentation></span><br>
 </td>
@@ -5298,7 +5322,7 @@ tK1yWx3LOnxokoJUtNRSdEi</privateKey>
 </tr>
 <tr class="choice">
 <td class="first"><span>remoteStorageContentResources</span></td>
-<td rowspan="1">Option 4</td>
+<td rowspan="1">Option 5</td>
 <td>
 <span class="child-element-description"><xs:documentation xmlns:xs="http://www.w3.org/2001/XMLSchema">Set of content files within several Kaltura defined remote storages</xs:documentation></span><br>
 </td>
@@ -5309,7 +5333,7 @@ tK1yWx3LOnxokoJUtNRSdEi</privateKey>
 </tr>
 <tr class="choice">
 <td class="first"><span>entryContentResource</span></td>
-<td rowspan="1">Option 5</td>
+<td rowspan="1">Option 6</td>
 <td>
 <span class="child-element-description"><xs:documentation xmlns:xs="http://www.w3.org/2001/XMLSchema">Specifies that content is a Kaltura entry</xs:documentation></span><br>
 </td>
@@ -5320,7 +5344,7 @@ tK1yWx3LOnxokoJUtNRSdEi</privateKey>
 </tr>
 <tr class="choice">
 <td class="first"><span>assetContentResource</span></td>
-<td rowspan="1">Option 6</td>
+<td rowspan="1">Option 7</td>
 <td>
 <span class="child-element-description"><xs:documentation xmlns:xs="http://www.w3.org/2001/XMLSchema">Specifies that content is a Kaltura asset</xs:documentation></span><br>
 </td>
@@ -5331,7 +5355,7 @@ tK1yWx3LOnxokoJUtNRSdEi</privateKey>
 </tr>
 <tr class="choice">
 <td class="first extensions-title">Extensions:</td>
-<td rowspan="2" class="last-rowspan">Option 7</td>
+<td rowspan="2" class="last-rowspan">Option 8</td>
 <td colspan="5" class="last extensions-title"></td>
 </tr>
 <tr class="extension choice choice-end">
