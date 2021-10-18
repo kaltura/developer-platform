@@ -146,9 +146,10 @@ guideNavigation:
         discussionURL: null
 
   - title: "Getting Started"
+    markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Authenticating-and-Using-Kaltura-Sessions.html
     path: "/Getting-Started-Building-Video-Applications"
     icon: GettingStarted
-    children:
+    children: 
       - title: "How to Create a Kaltura Session"
         markdownURL: /assets/documentation/Getting-Started-Building-Video-Applications/Authenticating-and-Using-Kaltura-Sessions.html
         path: "/Getting-Started-Building-Video-Applications/Authenticating-and-Using-Kaltura-Sessions.html"
@@ -260,6 +261,7 @@ guideNavigation:
 
 
   - title: "Live Video Webcasting"
+    markdownURL: /assets/documentation/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.html    
     icon: LiveWebcasting
     path: "/Live-Video-Webcasting"
     children:
@@ -274,6 +276,7 @@ guideNavigation:
         discussionURL: null
 
   - title: "Real-time Video Meetings Experience"
+    markdownURL: /assets/documentation/Real-time-Video-Meetings-Experience/Integrating-the-Embedded-Meetings-Experience-App.html   
     icon: Conferencing
     path: "/Real-time-Video-Meetings-Experience"
     children:
@@ -288,6 +291,7 @@ guideNavigation:
         discussionURL: null
 
   - title: "Streaming & Publishing"
+    markdownURL: /assets/documentation/Streaming-and-Publishing/Play-Manifests-HLS-and-DASH-Streaming.html    
     path: "/Streaming-and-Publishing"
     children:
       - title: "Play Manifests, HLS and DASH Streaming"
@@ -301,6 +305,7 @@ guideNavigation:
         discussionURL: null
 
   - title: "Scheduling Recorded and Live Stream Events"
+    markdownURL: /assets/documentation/Scheduling-Recorded-and-Live-Stream-Events/Introduction-to-Scheduling-and-Managing-Resources.html    
     icon: VideoExperiences
     path: "/Scheduling-Recorded-and-Live-Stream-Events"
     children:
@@ -325,6 +330,7 @@ guideNavigation:
         discussionURL: null
 
   - title: "SEO, Syndication & Distribution"
+    markdownURL: /assets/documentation/SEO-Syndication-and-Distribution/Best-Practices-for-Video-SEO.html      
     path: "/SEO-Syndication-and-Distribution"
     children:
       - title: "Best Practices for Video SEO"
@@ -343,6 +349,7 @@ guideNavigation:
         discussionURL: null
 
   - title: "Analytics & Reporting"
+    markdownURL: /assets/documentation/Analytics-and-Reporting/Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html    
     icon: Reporting
     prerender: false
     path: "/Analytics-and-Reporting"
