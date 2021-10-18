@@ -130,7 +130,7 @@ guideNavigation:
     discussionURL: null
 
   - title: "Introduction to Kaltura Media Services"
-    markdownURL: /assets/documentation/overview.html
+    markdownURL: /assets/documentation/Introduction-to-Kaltura-Media-Services/How-do-I-use-the-Kaltura-API.html
     icon: Reporting
     discussionURL: null
     children:
