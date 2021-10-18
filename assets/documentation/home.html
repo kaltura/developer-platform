@@ -9,7 +9,8 @@ window.jQuery = window.jquery;
                 <div class="card-body">
                     <h5 class="card-title">The Media APIs Handbook</h5>
                     <p class="card-text">Documentation, Guides, and Samples to get you started quickly, make serious progress, find inspiration, or all of the above.</p>
-                    <a href="#" class="btn btn-primary">Get Started</a><a href="#" class="btn btn-outline-primary">Create an Account</a>
+                    <a href="/Introduction_to_Kaltura_Media_Services" class="btn btn-primary">Get Started</a>
+                    <a href="https://corp.kaltura.com/video-paas/registration/?utm_source=developertools&utm_campaign=login&utm_medium=website" class="btn btn-outline-primary">Create an Account</a>
                 </div>
             </div>
         </div>
@@ -133,133 +134,133 @@ window.jQuery = window.jquery;
                 <div class="code php">
                     <pre>
                         <code class="php">
-                            <?php
-                            require_once('lib/KalturaClient.php');
-                          
-                            $config = new KalturaConfiguration();
-                            $config->setServiceUrl('https://www.kaltura.com');
-                            $client = new KalturaClient($config);
+<?php
+require_once('lib/KalturaClient.php');
 
-                            $entry = new KalturaMediaEntry();
-                            $entry->name = "My First Video";
-                          
-                            try {
-                              $result = $client->media->add($entry);
-                              var_dump($result);
-                            } catch (Exception $e) {
-                              echo $e->getMessage();
-                            }
-                          ?>
+$config = new KalturaConfiguration();
+$config->setServiceUrl('https://www.kaltura.com');
+$client = new KalturaClient($config);
+
+$entry = new KalturaMediaEntry();
+$entry->name = "My First Video";
+
+try {
+    $result = $client->media->add($entry);
+    var_dump($result);
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+?>
                         </code>
                     </pre>
                 </div>
                 <div class="code java">
                     <pre>
                         <code class="java">
-                            package com.kaltura.code.example;
-                            import com.kaltura.client.enums.*;
+package com.kaltura.code.example;
+import com.kaltura.client.enums.*;
 
-                            class CodeExample {
-                                public static void main(String[] args) {
-                                    Client client = CodeExample.generateKalturaClient();
-                                    MediaEntry entry = new MediaEntry();
-                                    entry.setName("My First Video");
-                            
-                                    AddMediaBuilder requestBuilder = MediaService.add(entry)
-                                        .setCompletion(new OnCompletion<Response<MediaEntry>>() {
-                                            @Override
-                                            public void onComplete(Response<MediaEntry> result) {
-                                                System.out.println(result);
-                                            }
-                                        });
-                            
-                                    APIOkRequestsExecutor.getExecutor().queue(requestBuilder.build(client));
-                                }
-                            }
+class CodeExample {
+    public static void main(String[] args) {
+        Client client = CodeExample.generateKalturaClient();
+        MediaEntry entry = new MediaEntry();
+        entry.setName("My First Video");
+
+        AddMediaBuilder requestBuilder = MediaService.add(entry)
+            .setCompletion(new OnCompletion<Response<MediaEntry>>() {
+                @Override
+                public void onComplete(Response<MediaEntry> result) {
+                    System.out.println(result);
+                }
+            });
+
+        APIOkRequestsExecutor.getExecutor().queue(requestBuilder.build(client));
+    }
+}
                         </code>
                     </pre>
                 </div>
                 <div class="code python">
                     <pre>
                         <code class="python">
-                            from KalturaClient import *
-                            from KalturaClient.Plugins.Core import *
-                            
-                            config = KalturaConfiguration()
-                            config.serviceUrl = "https://www.kaltura.com/"
-                            client = KalturaClient(config)
-                            entry = KalturaMediaEntry()
-                            entry.name = "My First Video"
-                            
-                            result = client.media.add(entry)
-                            print(result)
+from KalturaClient import *
+from KalturaClient.Plugins.Core import *
+
+config = KalturaConfiguration()
+config.serviceUrl = "https://www.kaltura.com/"
+client = KalturaClient(config)
+entry = KalturaMediaEntry()
+entry.name = "My First Video"
+
+result = client.media.add(entry)
+print(result)
                         </code>
                     </pre>
                 </div>
                 <div class="code javascript">
                     <pre>
                         <code class="javascript">
-                            const kaltura = require('kaltura-client');
-                            const config = new kaltura.Configuration();
-                            config.serviceUrl = 'https://www.kaltura.com';
-                            const client = new kaltura.Client(config);
-         
-                            let entry = new kaltura.objects.MediaEntry();
-                            entry.name = "My First Video";
-                            
-                            kaltura.services.media.add(entry)
-                                .execute(client)
-                                .then(result => {
-                                    console.log(result);
-                                });
-                            
-                            })
-                            .execute(client);
+const kaltura = require('kaltura-client');
+const config = new kaltura.Configuration();
+config.serviceUrl = 'https://www.kaltura.com';
+const client = new kaltura.Client(config);
+
+let entry = new kaltura.objects.MediaEntry();
+entry.name = "My First Video";
+
+kaltura.services.media.add(entry)
+    .execute(client)
+    .then(result => {
+        console.log(result);
+    });
+
+})
+.execute(client);
                         </code>
                     </pre>
                 </div>
                 <div class="code csharp">
                     <pre>
                         <code class="csharp">
-                            using Kaltura;
-    
-                            namespace Kaltura {
-                              class CodeExample {
-                                static void Main(string[] args) {
-                                  Client client = CodeExample.createKalturaClient();
-                                  bool done = false;
-                                  MediaEntry entry = new MediaEntry();
-                                  entry.Name = "My First Video";
-                            
-                                  OnCompletedHandler<MediaEntry> handler = new OnCompletedHandler<MediaEntry>(
-                                        (MediaEntry result, Exception e) =>
-                                        {
-                                          CodeExample.PrintObject(result);
-                                          done = true;
-                                        });
-                                  MediaService.Add(entry)
-                                     .SetCompletion(handler)
-                                     .Execute(client);
-                                }
-                            }
+using Kaltura;
+
+namespace Kaltura {
+    class CodeExample {
+    static void Main(string[] args) {
+        Client client = CodeExample.createKalturaClient();
+        bool done = false;
+        MediaEntry entry = new MediaEntry();
+        entry.Name = "My First Video";
+
+        OnCompletedHandler<MediaEntry> handler = new OnCompletedHandler<MediaEntry>(
+            (MediaEntry result, Exception e) =>
+            {
+                CodeExample.PrintObject(result);
+                done = true;
+            });
+        MediaService.Add(entry)
+            .SetCompletion(handler)
+            .Execute(client);
+    }
+}
                         </code>
                     </pre>
                 </div>
                 <div class="code ruby">
                     <pre>
                         <code class="ruby">
-                            require 'kaltura'
-                            include Kaltura
-                            
-                            config = KalturaConfiguration.new()
-                            config.service_url = 'https://www.kaltura.com'
-                            client = KalturaClient.new(config);  
-                            
-                            entry = KalturaMediaEntry.new()
-                            entry.name = "My First Video"
-                            
-                            results = client.media_service.add(entry)
-                            puts results.inspect
+require 'kaltura'
+include Kaltura
+
+config = KalturaConfiguration.new()
+config.service_url = 'https://www.kaltura.com'
+client = KalturaClient.new(config);  
+
+entry = KalturaMediaEntry.new()
+entry.name = "My First Video"
+
+results = client.media_service.add(entry)
+puts results.inspect
                         </code>
                     </pre>
                 </div>
