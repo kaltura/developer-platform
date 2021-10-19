@@ -1,1 +1,1 @@
- [Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md](Analytics-and-Reporting/Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md) 
+ [Import-Video-Files-via-Bulk-Upload](Video-On-Demand-and-Digital-Assets-Management/Import-Video-Files-via-Bulk-Upload.html) 
