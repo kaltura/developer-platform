@@ -38,6 +38,8 @@ if (TARGET_API === 'ott') {
   let tagItems = openapi.tags.map(t => ({tag: t.name}));
   config.operationNavigation.push({children: tagItems, title: 'Services'});
 } else {
+  let tagItems = openapi.tags.map(t => ({tag: t.name}));
+  config.operationNavigation.push({children: tagItems, title: 'Services'});
   config.javascript = [
     'assets/mixpanel.js',
     'assets/tracker.js',

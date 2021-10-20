@@ -595,6 +595,7 @@ table th {
       <xs:enumeration value="Fiji"></xs:enumeration>
       <xs:enumeration value="Finnish"></xs:enumeration>
       <xs:enumeration value="French"></xs:enumeration>
+      <xs:enumeration value="French (Canada)"></xs:enumeration>
       <xs:enumeration value="Frisian"></xs:enumeration>
       <xs:enumeration value="Galician"></xs:enumeration>
       <xs:enumeration value="Gaelic (Scottish)"></xs:enumeration>
@@ -656,6 +657,7 @@ table th {
       <xs:enumeration value="Pashto (Pushto)"></xs:enumeration>
       <xs:enumeration value="Polish"></xs:enumeration>
       <xs:enumeration value="Portuguese"></xs:enumeration>
+      <xs:enumeration value="Portuguese (Brazil)"></xs:enumeration>
       <xs:enumeration value="Punjabi"></xs:enumeration>
       <xs:enumeration value="Quechua"></xs:enumeration>
       <xs:enumeration value="Rhaeto-Romance"></xs:enumeration>
@@ -676,6 +678,7 @@ table th {
       <xs:enumeration value="Slovenian"></xs:enumeration>
       <xs:enumeration value="Somali"></xs:enumeration>
       <xs:enumeration value="Spanish"></xs:enumeration>
+      <xs:enumeration value="Spanish (Latin America)"></xs:enumeration>
       <xs:enumeration value="Sundanese"></xs:enumeration>
       <xs:enumeration value="Swahili (Kiswahili)"></xs:enumeration>
       <xs:enumeration value="Swedish"></xs:enumeration>
@@ -705,6 +708,7 @@ table th {
       <xs:enumeration value="Yiddish"></xs:enumeration>
       <xs:enumeration value="Yoruba"></xs:enumeration>
       <xs:enumeration value="Zulu"></xs:enumeration>
+      <xs:enumeration value="Taiwanese Mandarin"></xs:enumeration>
       <xs:enumeration value="No linguistic content"></xs:enumeration>
       <xs:enumeration value="Multilingual"></xs:enumeration>
       <xs:enumeration value="Afade"></xs:enumeration>
