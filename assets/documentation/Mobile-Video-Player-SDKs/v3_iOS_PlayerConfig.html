@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_PlayerConfig.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_PlayerConfig.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 15 18:30:05 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -175,10 +175,9 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">PlayerConfig</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">config</span> <span class="o">=</span> <span class="kt">PlayerConfig</span><span class="p">()</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>objc</p>
 </blockquote>
@@ -188,7 +187,7 @@ rtp('get', 'campaign',true);
 </code></pre>
 
 <blockquote>
-  <p>Note: To initialize the player configuration, you’ll need a <code class="highlighter-rouge">MediaEntry</code>.</p>
+  <p>Note: To initialize the player configuration, you’ll need a <code class="language-plaintext highlighter-rouge">MediaEntry</code>.</p>
 </blockquote>
     
       <h3 id="about-the-media-entry">
@@ -202,17 +201,17 @@ rtp('get', 'campaign',true);
 <p>The MediaEntry can be created using one of the following methods:</p>
 
 <ul>
-  <li>Manually, by instantiating a new <code class="highlighter-rouge">PKMediaEntry</code> instance and filling the fields.</li>
-  <li>Using a <code class="highlighter-rouge">MockMediaProvider</code> to create a <code class="highlighter-rouge">PKMediaEntry</code> from a JSON input file or JsonObject.</li>
-  <li>Using a remote media provider, provided the <code class="highlighter-rouge">MediaEntryProvider</code> implementations:
+  <li>Manually, by instantiating a new <code class="language-plaintext highlighter-rouge">PKMediaEntry</code> instance and filling the fields.</li>
+  <li>Using a <code class="language-plaintext highlighter-rouge">MockMediaProvider</code> to create a <code class="language-plaintext highlighter-rouge">PKMediaEntry</code> from a JSON input file or JsonObject.</li>
+  <li>Using a remote media provider, provided the <code class="language-plaintext highlighter-rouge">MediaEntryProvider</code> implementations:
     <ul>
-      <li>For OVP environments, use <code class="highlighter-rouge">KalturaOvpMediaProvider</code></li>
-      <li>For OTT environments, use <code class="highlighter-rouge">PhoenixMediaProvider</code></li>
+      <li>For OVP environments, use <code class="language-plaintext highlighter-rouge">KalturaOvpMediaProvider</code></li>
+      <li>For OTT environments, use <code class="language-plaintext highlighter-rouge">PhoenixMediaProvider</code></li>
     </ul>
   </li>
 </ul>
 
-<p>Once you have a <code class="highlighter-rouge">MediaEntry</code> ready, you can build the player configuration and plugins, and continue to prepare the Kaltura Mobile Video Player for play.</p>
+<p>Once you have a <code class="language-plaintext highlighter-rouge">MediaEntry</code> ready, you can build the player configuration and plugins, and continue to prepare the Kaltura Mobile Video Player for play.</p>
 
 <blockquote>
   <p>Note: To view additional information about the Media Entry, see the <a href="https://kaltura.github.io/playkit/api/ios/Classes/MediaEntry.html">Player Config API documentation</a>.</p>

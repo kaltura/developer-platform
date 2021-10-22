@@ -109,14 +109,20 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jul 30 06:50:46 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/getting-started-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/getting-started-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Mar 28 10:44:51 2019, By: Avital</td></tr-->
-				<!--tr><td>Last commit: Tue Jul 30 06:50:46 2019, By <span class="commit-author">Avital</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
 					<td>Avital (9 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
+				</tr> -->
+
+				<!-- 
+				
+				<tr>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!-- 
@@ -135,7 +141,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>Looking for Native Mobile SDKs? Check out the docs for the <a href="https://developer.kaltura.com/player/ios/getting-started-ios/">iOS Player SDK</a> or the <a href="https://developer.kaltura.com/player/android/getting-started-android/">Android Player SDK</a>.</p>
+		<p>Looking for Native Mobile SDKs? Check out the docs for the <a href="/player/ios/getting-started-ios/">iOS Player SDK</a> or the <a href="/player/android/getting-started-android/">Android Player SDK</a>.</p>
       <h2 id="before-you-begin">
         
         
@@ -231,7 +237,7 @@ rtp('get', 'campaign',true);
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
   <span class="k">try</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">kalturaPlayer</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
-      <span class="na">targetId</span><span class="p">:</span> <span class="s2">"kalturaPlayer"</span><span class="p">,</span>
+      <span class="na">targetId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kalturaPlayer</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">partnerId</span><span class="p">:</span> <span class="mi">0000000</span><span class="p">,</span>
         <span class="na">uiConfId</span><span class="p">:</span> <span class="mi">22222222</span>
@@ -240,7 +246,7 @@ rtp('get', 'campaign',true);
         <span class="na">autoplay</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">}</span>
     <span class="p">});</span>
-    <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="s1">'1_p2bzzzz6'</span><span class="p">});</span>
+    <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1_p2bzzzz6</span><span class="dl">'</span><span class="p">});</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
   <span class="p">}</span>
@@ -263,7 +269,7 @@ rtp('get', 'campaign',true);
   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
   <span class="k">try</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="nx">kalturaPlayer</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
-      <span class="na">targetId</span><span class="p">:</span> <span class="s2">"kalturaPlayer"</span><span class="p">,</span>
+      <span class="na">targetId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kalturaPlayer</span><span class="dl">"</span><span class="p">,</span>
       <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">partnerId</span><span class="p">:</span> <span class="mi">0000000</span><span class="p">,</span>
         <span class="na">uiConfId</span><span class="p">:</span> <span class="mi">22222222</span>
@@ -272,7 +278,7 @@ rtp('get', 'campaign',true);
         <span class="na">autoplay</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">}</span>
     <span class="p">});</span>
-    <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="s1">'1_p2bzzzz6'</span><span class="p">});</span>
+    <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">1_p2bzzzz6</span><span class="dl">'</span><span class="p">});</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
   <span class="p">}</span>
@@ -283,7 +289,7 @@ rtp('get', 'campaign',true);
 
 <p>Congrats! Running that page should show you a Kaltura Player loaded with the entry that you chose.</p>
 
-<p>Notice that this method is the <strong>Dynamic Embed</strong>, which is different than the aforementioned <strong>auto embed</strong> code, and is useful for cases when you want control runtime configuration dynamically. Click <a href="https://developer.kaltura.com/player/web/embed-types-web">here</a> to read more about embed types.</p>
+<p>Notice that this method is the <strong>Dynamic Embed</strong>, which is different than the aforementioned <strong>auto embed</strong> code, and is useful for cases when you want control runtime configuration dynamically. Click <a href="/player/web/embed-types-web">here</a> to read more about embed types.</p>
     
       <h2 id="configuring-the-player">
         
@@ -293,7 +299,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>After creating a player and embedding it in your site, you may want to configure it using the wide range of configuration options. Click <a href="https://developer.kaltura.com/player/web/configuration-web">here</a> to learn more about the various ways of configuring your player.</p>
+<p>After creating a player and embedding it in your site, you may want to configure it using the wide range of configuration options. Click <a href="/player/web/configuration-web">here</a> to learn more about the various ways of configuring your player.</p>
 		
 </article>
 

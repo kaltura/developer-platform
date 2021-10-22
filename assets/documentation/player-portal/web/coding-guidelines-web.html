@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri Jun 26 15:50:31 2020</span>, By <span class="commit-author">jbrule</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/coding-guidelines-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Fri Jun 26 15:50:31 2020</span>, By <span class="commit-author">jbrule</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/coding-guidelines-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed May 1 14:04:39 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Fri Jun 26 15:50:31 2020, By <span class="commit-author">jbrule</span></td></tr-->
 			
@@ -156,31 +156,31 @@ rtp('get', 'campaign',true);
   <tbody>
     <tr>
       <td>Function</td>
-      <td><code class="highlighter-rouge">functionNamesLikeThis</code></td>
+      <td><code class="language-plaintext highlighter-rouge">functionNamesLikeThis</code></td>
     </tr>
     <tr>
       <td>Variable</td>
-      <td><code class="highlighter-rouge">variableNamesLikeThis</code></td>
+      <td><code class="language-plaintext highlighter-rouge">variableNamesLikeThis</code></td>
     </tr>
     <tr>
       <td>Class</td>
-      <td><code class="highlighter-rouge">ClassNamesLikeThis</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ClassNamesLikeThis</code></td>
     </tr>
     <tr>
       <td>Enum</td>
-      <td><code class="highlighter-rouge">EnumNamesLikeThis</code></td>
+      <td><code class="language-plaintext highlighter-rouge">EnumNamesLikeThis</code></td>
     </tr>
     <tr>
       <td>Constant</td>
-      <td><code class="highlighter-rouge">CONSTANT_VALUES_LIKE_THIS</code></td>
+      <td><code class="language-plaintext highlighter-rouge">CONSTANT_VALUES_LIKE_THIS</code></td>
     </tr>
     <tr>
       <td>Private</td>
-      <td>Private properties and methods should be named <strong>with</strong> a leading underscore: <code class="highlighter-rouge">_myPrivateVar</code></td>
+      <td>Private properties and methods should be named <strong>with</strong> a leading underscore: <code class="language-plaintext highlighter-rouge">_myPrivateVar</code></td>
     </tr>
     <tr>
       <td>Public</td>
-      <td>Public properties and methods should be named <strong>without</strong> a leading underscore: <code class="highlighter-rouge">myPublicVar</code>.</td>
+      <td>Public properties and methods should be named <strong>without</strong> a leading underscore: <code class="language-plaintext highlighter-rouge">myPublicVar</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -193,13 +193,12 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Prefer <code class="highlighter-rouge">'</code> over <code class="highlighter-rouge">"</code></p>
+<p>Prefer <code class="language-plaintext highlighter-rouge">'</code> over <code class="language-plaintext highlighter-rouge">"</code></p>
 
 <p>For consistency’s sake, single-quotes (‘) are preferable to double-quotes (“). This is especially important when creating strings that include HTML:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">h1</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;This is some HTML&lt;/h1&gt;'</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">h1</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">&lt;h1&gt;This is some HTML&lt;/h1&gt;</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
     
       <h2 id="functions">
         
@@ -219,9 +218,8 @@ rtp('get', 'campaign',true);
 
 <p>Function parameters must be declared with their types:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">exampleFunction</span><span class="p">(</span><span class="nx">text</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">obj</span><span class="err">:</span> <span class="nb">Object</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">exampleFunction</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">obj</span><span class="p">:</span> <span class="nb">Object</span><span class="p">,</span> <span class="p">...</span> <span class="p">)</span>
+</code></pre></div></div>
 
 <p>Function parameters must be typed with JSDoc annotations in the JSDoc preceding the function’s definition.</p>
     
@@ -235,11 +233,10 @@ rtp('get', 'campaign',true);
 
 <p>The functions return value type <em>must</em> be appear in the function declaration:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">exampleFunction</span><span class="p">(</span> <span class="p">...</span> <span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;*&gt;</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">exampleFunction</span><span class="p">(</span> <span class="p">...</span> <span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;*&gt;</span> <span class="p">{</span>
   <span class="p">...</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The function return types must be specified in the JSDoc directly above the function definition.</p>
     
@@ -252,8 +249,8 @@ rtp('get', 'campaign',true);
       </h3>
 
 <ul>
-  <li>It’s better to use arrow functions over <code class="highlighter-rouge">f.bind(this)</code>, and especially over <code class="highlighter-rouge">kalt.bind(f, this)</code>.</li>
-  <li>Avoid writing <code class="highlighter-rouge">var self = this</code>.</li>
+  <li>It’s better to use arrow functions over <code class="language-plaintext highlighter-rouge">f.bind(this)</code>, and especially over <code class="language-plaintext highlighter-rouge">kalt.bind(f, this)</code>.</li>
+  <li>Avoid writing <code class="language-plaintext highlighter-rouge">var self = this</code>.</li>
   <li>Arrow functions are particularly useful for callbacks, which sometimes pass unexpected additional arguments.</li>
 </ul>
     
@@ -265,25 +262,23 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Braces are requires for all control structures (e.g., <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else</code>, <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">do</code>, <code class="highlighter-rouge">while</code> as well as any others), even if the body contains only a single statement. The first statement of a non-empty block must begin in its own line.</p>
+<p>Braces are requires for all control structures (e.g., <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">else</code>, <code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">do</code>, <code class="language-plaintext highlighter-rouge">while</code> as well as any others), even if the body contains only a single statement. The first statement of a non-empty block must begin in its own line.</p>
 
 <p>Short if statements that look like this are ill-advised:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">someCondition</span><span class="p">)</span> <span class="nx">doSomething</span><span class="p">();</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">someCondition</span><span class="p">)</span> <span class="nx">doSomething</span><span class="p">();</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">foo</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">foo</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Instead use brackets like this:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">someCondition</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">someCondition</span><span class="p">)</span> <span class="p">{</span>
 
    <span class="nx">doSomething</span><span class="p">();</span>
 
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="block-indentation">
         
@@ -305,10 +300,9 @@ rtp('get', 'campaign',true);
 
 <p>Type names must start with a Capital letter (pascal case), e.g.:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">CategoryType</span> <span class="o">=</span> <span class="p">{[</span><span class="na">category</span><span class="p">:</span> <span class="nx">string</span><span class="p">]:</span> <span class="nx">number</span><span class="p">};</span>
-<span class="kr">export</span> <span class="nx">type</span> <span class="p">{</span><span class="nx">CategoryType</span><span class="p">};</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">type</span> <span class="nx">CategoryType</span> <span class="o">=</span> <span class="p">{[</span><span class="na">category</span><span class="p">:</span> <span class="nx">string</span><span class="p">]:</span> <span class="nx">number</span><span class="p">};</span>
+<span class="k">export</span> <span class="nx">type</span> <span class="p">{</span><span class="nx">CategoryType</span><span class="p">};</span>
+</code></pre></div></div>
 		
 </article>
 

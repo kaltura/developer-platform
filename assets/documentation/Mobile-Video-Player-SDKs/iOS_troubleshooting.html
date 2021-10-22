@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS_troubleshooting.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS_troubleshooting.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Jan 3 07:14:12 2017, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Sat Jan 14 11:07:27 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -144,11 +144,11 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>iOS 9 and above include a security feature that, by default, blocks all non-TLS connections. However, since many servers still do not support TLS, there are exclusion keys that can be set in the app’s <code class="highlighter-rouge">Info.plist</code> file.</p>
+<p>iOS 9 and above include a security feature that, by default, blocks all non-TLS connections. However, since many servers still do not support TLS, there are exclusion keys that can be set in the app’s <code class="language-plaintext highlighter-rouge">Info.plist</code> file.</p>
 
-<p>The most permissive setting is to disable ATS entirely. This is done by setting <code class="highlighter-rouge">NSAppTransportSecurity:NSAllowsArbitraryLoads</code> to <code class="highlighter-rouge">YES</code>:</p>
+<p>The most permissive setting is to disable ATS entirely. This is done by setting <code class="language-plaintext highlighter-rouge">NSAppTransportSecurity:NSAllowsArbitraryLoads</code> to <code class="language-plaintext highlighter-rouge">YES</code>:</p>
 
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;dict&gt;</span>
 	...
 	<span class="nt">&lt;key&gt;</span>NSAppTransportSecurity<span class="nt">&lt;/key&gt;</span>
@@ -159,11 +159,10 @@ rtp('get', 'campaign',true);
 	...
 <span class="nt">&lt;/dict&gt;</span>
 <span class="nt">&lt;/plist&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
-  <p>Note: If there’s a known limited set of domains that must to be accessed without TLS, it is advised to whitelist them explicitly. <br />
+  <p>Note: If there’s a known limited set of domains that must to be accessed without TLS, it is advised to whitelist them explicitly. 
 For more information about fine-grained control of ATS see:</p>
   <ul>
     <li><a href="https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/plist/info/NSAppTransportSecurity">Cocoa Keys - App Transport Security</a></li>
@@ -181,7 +180,7 @@ For more information about fine-grained control of ATS see:</p>
 
 <p>Starting with <a href="https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc7_release_notes.html">Xcode 7</a>, bitcode is enabled by default. However, building an application with bitcode requires that all of the static libraries that are being used are also built with bitcode.</p>
 
-<p>The Widevine Classic library (<code class="highlighter-rouge">libWViPhoneAPI.a</code>) included with the Kaltura SDK is not built with bitcode; as a result, your application will need to disable bitcode in its own linker settings.</p>
+<p>The Widevine Classic library (<code class="language-plaintext highlighter-rouge">libWViPhoneAPI.a</code>) included with the Kaltura SDK is not built with bitcode; as a result, your application will need to disable bitcode in its own linker settings.</p>
 		
 </article>
 

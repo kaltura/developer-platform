@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Mar 25 09:54:25 2019</span>, By <span class="commit-author">tzubeli</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/android/security-provider-android.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Mar 25 09:54:25 2019</span>, By <span class="commit-author">tzubeli</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/android/security-provider-android.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Mon Mar 25 09:54:25 2019, By <span class="commit-author">tzubeli</span></td></tr-->
 			
@@ -137,7 +137,7 @@ rtp('get', 'campaign',true);
     		
 		<p>Google Play Services includes an always up-to-date version of the SSL library. To use it instead of the device’s default (which may be out of date and contain security issues, especially on older devices), the application has to “install” it on startup.</p>
 
-<p>Many servers have stopped accepting clients with older versions of SSL/TLS because of known vulnerabilities. Old versions of Android may therefore fail to connect to those servers (and throw an <code class="highlighter-rouge">SSLHandshakeException</code>). The installable provider is regularly updated, so it won’t have these issues.</p>
+<p>Many servers have stopped accepting clients with older versions of SSL/TLS because of known vulnerabilities. Old versions of Android may therefore fail to connect to those servers (and throw an <code class="language-plaintext highlighter-rouge">SSLHandshakeException</code>). The installable provider is regularly updated, so it won’t have these issues.</p>
       <h1 id="usage">
         
         
@@ -152,15 +152,15 @@ rtp('get', 'campaign',true);
   <li>Import <a href="https://developers.google.com/android/reference/com/google/android/gms/security/ProviderInstaller.html">com.google.android.gms.security.ProviderInstaller</a></li>
   <li>Call the installer:
     <ul>
-      <li><code class="highlighter-rouge">ProviderInstaller.installIfNeeded(context)</code> if called from a background thread</li>
-      <li><code class="highlighter-rouge">ProviderInstaller.installIfNeededAsync(context, listener)</code> if called from the UI thread</li>
+      <li><code class="language-plaintext highlighter-rouge">ProviderInstaller.installIfNeeded(context)</code> if called from a background thread</li>
+      <li><code class="language-plaintext highlighter-rouge">ProviderInstaller.installIfNeededAsync(context, listener)</code> if called from the UI thread</li>
     </ul>
   </li>
 </ul>
 
 <p>When using the async version, the app has to pass a <a href="https://developers.google.com/android/reference/com/google/android/gms/security/ProviderInstaller.ProviderInstallListener">ProviderInstallListener</a>.</p>
 
-<p>The provider is part of the “base” Google Play Services component; if the app already uses <em>any</em> Play Services component, it already has access to <code class="highlighter-rouge">ProviderInstaller</code>. If not, it should install it as explained in <a href="https://developers.google.com/android/guides/setup">the setup guide</a>.</p>
+<p>The provider is part of the “base” Google Play Services component; if the app already uses <em>any</em> Play Services component, it already has access to <code class="language-plaintext highlighter-rouge">ProviderInstaller</code>. If not, it should install it as explained in <a href="https://developers.google.com/android/guides/setup">the setup guide</a>.</p>
 		
 </article>
 

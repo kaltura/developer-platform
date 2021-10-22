@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Ads-iOS.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Ads-iOS.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Tue Aug 8 13:28:22 2017, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -158,7 +158,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>To enable Google Ads in iOS devices for the Kaltura Player, you will need to link Google to the iOS devices. To <br />
+<p>To enable Google Ads in iOS devices for the Kaltura Player, you will need to link Google to the iOS devices. To 
 When linking Google in iOS devices for the Kaltura Player, there are a number of different options, which are described below.</p>
     
       <h2 id="using-cocoapods">
@@ -171,16 +171,14 @@ When linking Google in iOS devices for the Kaltura Player, there are a number of
 
 <p>To link Google ads using Cocoapods, add these two pods to your podfile:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>pod 'GoogleAds-IMA-iOS-SDK’ , '~&gt; 3.2.1’
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'GoogleAds-IMA-iOS-SDK’ , '~&gt; 3.2.1’
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>For AdMob, ignore the line above and use the following line instead:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>pod 'GoogleAds-IMA-iOS-SDK-For-AdMob’ , '~&gt; 3.2.1’
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'GoogleAds-IMA-iOS-SDK-For-AdMob’ , '~&gt; 3.2.1’
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="linking-to-googleinteractivemediaads-sdk">
         
@@ -192,14 +190,14 @@ When linking Google in iOS devices for the Kaltura Player, there are a number of
 
 <p>To link to Google ads using the GoogleInteractiveMediaAds SDK:</p>
 <ol>
-  <li>Download <strong><code class="highlighter-rouge">GoogleMobileAds</code></strong> from: <a class="external" target="_blank" rel="nofollow" href="https://developers.google.com/admob/ios/download">Admob</a> and add it to your project</li>
-  <li>In addition to the <strong><code class="highlighter-rouge">GoogleMobileAds</code></strong> you will need to download <strong><code class="highlighter-rouge">GoogleInteractiveMediaAds</code></strong> from: <a class="external" target="_blank" rel="nofollow" href="https://developers.google.com/interactive-media-ads/docs/sdks/ios/download">IMA SDK</a>.
+  <li>Download <strong><code class="language-plaintext highlighter-rouge">GoogleMobileAds</code></strong> from: <a class="external" target="_blank" rel="nofollow" href="https://developers.google.com/admob/ios/download">Admob</a> and add it to your project</li>
+  <li>In addition to the <strong><code class="language-plaintext highlighter-rouge">GoogleMobileAds</code></strong> you will need to download <strong><code class="language-plaintext highlighter-rouge">GoogleInteractiveMediaAds</code></strong> from: <a class="external" target="_blank" rel="nofollow" href="https://developers.google.com/interactive-media-ads/docs/sdks/ios/download">IMA SDK</a>.
     <ul>
-      <li>If you are going to use <strong>Admob</strong> in addition to the <strong><code class="highlighter-rouge">IMA SDK</code></strong>, add <strong>GoogleInteractiveMediaAds-GoogleIMA3ForAdMob</strong> to your project.</li>
-      <li>If you are going to use only <strong><code class="highlighter-rouge">IMA SDK</code></strong>, add <strong>GoogleInteractiveMediaAds-GoogleIMA3</strong> to your project.</li>
+      <li>If you are going to use <strong>Admob</strong> in addition to the <strong><code class="language-plaintext highlighter-rouge">IMA SDK</code></strong>, add <strong>GoogleInteractiveMediaAds-GoogleIMA3ForAdMob</strong> to your project.</li>
+      <li>If you are going to use only <strong><code class="language-plaintext highlighter-rouge">IMA SDK</code></strong>, add <strong>GoogleInteractiveMediaAds-GoogleIMA3</strong> to your project.</li>
     </ul>
   </li>
-  <li>The following are the required frameworks for <strong><code class="highlighter-rouge">GoogleMobileAds</code></strong>:
+  <li>The following are the required frameworks for <strong><code class="language-plaintext highlighter-rouge">GoogleMobileAds</code></strong>:
     <ul>
       <li>StoreKit.framework</li>
       <li>EventKit.framework</li>
@@ -218,12 +216,11 @@ When linking Google in iOS devices for the Kaltura Player, there are a number of
         
       </h2>
 
-<p>To configure the Player to use Google ads, add the following configuration to your <code class="highlighter-rouge">KPPlayerConfig</code>:</p>
+<p>To configure the Player to use Google ads, add the following configuration to your <code class="language-plaintext highlighter-rouge">KPPlayerConfig</code>:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[config addConfigKey:@"doubleClick.plugin" withValue:@"true"];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[config addConfigKey:@"doubleClick.plugin" withValue:@"true"];
 [config addConfigKey:@"doubleClick.adTagUrl" withValue:@"your ad tag URL"];
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="listening-to-ad-events">
         
@@ -237,13 +234,12 @@ When linking Google in iOS devices for the Kaltura Player, there are a number of
 
 <p>To view list of commonly used Player ad events, click <a href="/api-docs/04_Web-Video-Player/Kaltura-Media-Player-API.html">here</a>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[self.player addKPlayerEventListener:@"adClick"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[self.player addKPlayerEventListener:@"adClick"
                              eventID:@"some_id"
                              handler:^(NSString *eventName, NSString *params) {
             						// Do your stuff here..
         }];
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>For the complete IMAWebOpenerDelegate SDK, click <a href="https://developers.google.com/interactive-media-ads/docs/sdks/ios/v3/api/protocol_i_m_a_web_opener_delegate-p#instance-methods">here</a></p>
 		
 </article>

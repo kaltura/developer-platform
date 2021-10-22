@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Jun 22 15:12:18 2020</span>, By <span class="commit-author">Avital Tzubeli</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/android/casting-android.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Jun 22 15:12:18 2020</span>, By <span class="commit-author">Avital Tzubeli</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/android/casting-android.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Jun 22 05:45:55 2020, By: Avital Tzubeli</td></tr-->
 				<!--tr><td>Last commit: Mon Jun 22 15:12:18 2020, By <span class="commit-author">Avital Tzubeli</span></td></tr-->
 			
@@ -158,8 +158,8 @@ rtp('get', 'campaign',true);
       </h2>
 
 <ul>
-  <li><code class="highlighter-rouge">Sender</code> - A Cast enabled Kaltura Player running inside of a iOS Application; the Kaltura Player requires a Sender App ID.</li>
-  <li><code class="highlighter-rouge">Receiver</code> - A Kaltura Player Receiver App that runs on the Chromecast device.</li>
+  <li><code class="language-plaintext highlighter-rouge">Sender</code> - A Cast enabled Kaltura Player running inside of a iOS Application; the Kaltura Player requires a Sender App ID.</li>
+  <li><code class="language-plaintext highlighter-rouge">Receiver</code> - A Kaltura Player Receiver App that runs on the Chromecast device.</li>
 </ul>
     
       <h3 id="getting-started">
@@ -173,16 +173,16 @@ rtp('get', 'campaign',true);
 <p>To begin casting, follow these steps:</p>
 
 <ol>
-  <li>Create the <code class="highlighter-rouge">KPPlayerConfig config</code> as follows:<br />
-     <code class="highlighter-rouge">java
+  <li>Create the <code class="language-plaintext highlighter-rouge">KPPlayerConfig config</code> as follows:
+     <code class="language-plaintext highlighter-rouge">java
      KPPlayerConfig config = new KPPlayerConfig("{your-server-id}", "{your-ui-conf-id}", "{your-pqrtner-id}").setEntryId("{your-entry_id}");
     </code></li>
-  <li>Next, add the following to your <code class="highlighter-rouge">config</code> instance:</li>
+  <li>Next, add the following to your <code class="language-plaintext highlighter-rouge">config</code> instance:</li>
 </ol>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.plugin"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.plugin"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">);</span>
 <span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.useKalturaPlayer"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">);</span> 
-<span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.applicationID"</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">app_id</span><span class="o">));</span>
+<span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.applicationID"</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">app_id</span><span class="o">));</span>
 <span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.useKalturaPlayer"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">);</span>
 <span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.receiverLogo"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">);</span>
 <span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.defaultThumbnail"</span><span class="o">,</span> <span class="s">"the thumbnail you want to use"</span><span class="o">);</span>
@@ -190,8 +190,7 @@ rtp('get', 'campaign',true);
 <span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"strings.mwe-chromecast-loading"</span><span class="o">,</span> <span class="s">"Loading to CC"</span><span class="o">);</span>  <span class="c1">// Set Loading message</span>
 <span class="n">config</span><span class="o">.</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.logoUrl"</span><span class="o">,</span> <span class="s">"Your Logo"</span><span class="o">)</span>
             
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="scanningconnecting-chromecast-devices">
         
@@ -203,10 +202,9 @@ rtp('get', 'campaign',true);
 
 <p>This version does not require device scanning and connection methods this is achieved now by Cast V3 MediaRouteButton that should be attached to the Activity</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> mMediaRouteButton = (MediaRouteButton) findViewById(R.id.media_route_button);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mMediaRouteButton = (MediaRouteButton) findViewById(R.id.media_route_button);
  CastButtonFactory.setUpMediaRouteButton(getApplicationContext(), mMediaRouteButton);
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="casting-media">
         
@@ -216,12 +214,11 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<p>To cast media, set the <code class="highlighter-rouge">mCastProvider</code> property under <code class="highlighter-rouge">PlayerViewController</code> with the <code class="highlighter-rouge">KCastProvider</code> object you created as follows:</p>
+<p>To cast media, set the <code class="language-plaintext highlighter-rouge">mCastProvider</code> property under <code class="language-plaintext highlighter-rouge">PlayerViewController</code> with the <code class="language-plaintext highlighter-rouge">KCastProvider</code> object you created as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="n">mCastProvider</span> <span class="o">=</span> <span class="o">(</span><span class="n">KCastProviderV3Impl</span><span class="o">)</span> <span class="n">KCastFactory</span><span class="o">.</span><span class="na">createCastProvider</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">app_id</span><span class="o">),</span> <span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">cast_logo_url</span><span class="o">));</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">mCastProvider</span> <span class="o">=</span> <span class="o">(</span><span class="nc">KCastProviderV3Impl</span><span class="o">)</span> <span class="nc">KCastFactory</span><span class="o">.</span><span class="na">createCastProvider</span><span class="o">(</span><span class="nc">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">getString</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">app_id</span><span class="o">),</span> <span class="n">getString</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">cast_logo_url</span><span class="o">));</span>
  <span class="n">mCastProvider</span><span class="o">.</span><span class="na">addCastStateListener</span><span class="o">(</span><span class="n">mCastStateListener</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="setting-cast-provider">
         
@@ -231,20 +228,19 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">mPlayer</span><span class="o">.</span><span class="na">setCastProvider</span><span class="o">(</span><span class="n">mCastProvider</span><span class="o">);</span>
-<span class="n">mCastProvider</span><span class="o">.</span><span class="na">setKCastProviderListener</span><span class="o">(</span><span class="k">new</span> <span class="n">KCastProvider</span><span class="o">.</span><span class="na">KCastProviderListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mPlayer</span><span class="o">.</span><span class="na">setCastProvider</span><span class="o">(</span><span class="n">mCastProvider</span><span class="o">);</span>
+<span class="n">mCastProvider</span><span class="o">.</span><span class="na">setKCastProviderListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">KCastProvider</span><span class="o">.</span><span class="na">KCastProviderListener</span><span class="o">()</span> <span class="o">{</span>
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCastMediaRemoteControlReady</span><span class="o">(</span><span class="n">KCastMediaRemoteControl</span> <span class="n">castMediaRemoteControl</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">LOGD</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"onCastMediaRemoteControlReady hasMediaSession = "</span> <span class="o">+</span> <span class="n">castMediaRemoteControl</span><span class="o">.</span><span class="na">hasMediaSession</span><span class="o">(</span><span class="kc">false</span><span class="o">));</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCastMediaRemoteControlReady</span><span class="o">(</span><span class="nc">KCastMediaRemoteControl</span> <span class="n">castMediaRemoteControl</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">LOGD</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"onCastMediaRemoteControlReady hasMediaSession = "</span> <span class="o">+</span> <span class="n">castMediaRemoteControl</span><span class="o">.</span><span class="na">hasMediaSession</span><span class="o">(</span><span class="kc">false</span><span class="o">));</span>
         <span class="o">}</span>
 
         <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCastReceiverError</span><span class="o">(</span><span class="n">String</span> <span class="n">errorMsg</span> <span class="o">,</span> <span class="kt">int</span> <span class="n">errorCode</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">LOGE</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"onCastReceiverError errorMsg = "</span> <span class="o">+</span> <span class="n">errorMsg</span> <span class="o">+</span> <span class="s">" errorCode = "</span>  <span class="o">+</span> <span class="n">errorCode</span><span class="o">);</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCastReceiverError</span><span class="o">(</span><span class="nc">String</span> <span class="n">errorMsg</span> <span class="o">,</span> <span class="kt">int</span> <span class="n">errorCode</span><span class="o">)</span> <span class="o">{</span>
+                <span class="no">LOGE</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"onCastReceiverError errorMsg = "</span> <span class="o">+</span> <span class="n">errorMsg</span> <span class="o">+</span> <span class="s">" errorCode = "</span>  <span class="o">+</span> <span class="n">errorCode</span><span class="o">);</span>
         <span class="o">}</span>
 <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="disconnecting-from-a-device">
         
@@ -258,9 +254,8 @@ rtp('get', 'campaign',true);
 
 <p>You can disconnect using the mediaRouterButton or programmatically:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">mCastProvider</span><span class="o">.</span><span class="na">disconnectFromDevcie</span><span class="o">();</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mCastProvider</span><span class="o">.</span><span class="na">disconnectFromDevcie</span><span class="o">();</span>
+</code></pre></div></div>
     
       <h3 id="using-the-media-remote-control">
         
@@ -270,30 +265,29 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>The <code class="highlighter-rouge">KCastProvider</code> includes a <code class="highlighter-rouge">mCastProvider.getCastMediaRemoteControl()</code> instance that controls the playback of the video being cast.</p>
+<p>The <code class="language-plaintext highlighter-rouge">KCastProvider</code> includes a <code class="language-plaintext highlighter-rouge">mCastProvider.getCastMediaRemoteControl()</code> instance that controls the playback of the video being cast.</p>
 
-<p>At the app level you may add listener to the <br />
-<code class="highlighter-rouge">onCastMediaRemoteControlReady</code><br />
-and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
+<p>At the app level you may add listener to the 
+<code class="language-plaintext highlighter-rouge">onCastMediaRemoteControlReady</code>
+and the <code class="language-plaintext highlighter-rouge">onCastReceiverError</code> Events.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">KCastProvider</span> <span class="o">{</span>
-    <span class="kt">void</span> <span class="nf">startReceiver</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">guestModeEnabled</span><span class="o">);</span>
-    <span class="kt">void</span> <span class="nf">startReceiver</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">KCastProvider</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">startReceiver</span><span class="o">(</span><span class="nc">Context</span> <span class="n">context</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">guestModeEnabled</span><span class="o">);</span>
+    <span class="kt">void</span> <span class="nf">startReceiver</span><span class="o">(</span><span class="nc">Context</span> <span class="n">context</span><span class="o">);</span>
     <span class="kt">void</span> <span class="nf">disconnectFromCastDevice</span><span class="o">();</span>
-    <span class="n">KCastDevice</span> <span class="nf">getSelectedCastDevice</span><span class="o">();</span>
-    <span class="kt">void</span> <span class="nf">setKCastProviderListener</span><span class="o">(</span><span class="n">KCastProviderListener</span> <span class="n">listener</span><span class="o">);</span>
-    <span class="n">KCastMediaRemoteControl</span> <span class="nf">getCastMediaRemoteControl</span><span class="o">();</span>
+    <span class="nc">KCastDevice</span> <span class="nf">getSelectedCastDevice</span><span class="o">();</span>
+    <span class="kt">void</span> <span class="nf">setKCastProviderListener</span><span class="o">(</span><span class="nc">KCastProviderListener</span> <span class="n">listener</span><span class="o">);</span>
+    <span class="nc">KCastMediaRemoteControl</span> <span class="nf">getCastMediaRemoteControl</span><span class="o">();</span>
     <span class="kt">boolean</span> <span class="nf">isRecconected</span><span class="o">();</span>
     <span class="kt">boolean</span> <span class="nf">isConnected</span><span class="o">();</span>
     <span class="kt">boolean</span> <span class="nf">isCasting</span><span class="o">();</span>
 
     <span class="kd">interface</span> <span class="nc">KCastProviderListener</span> <span class="o">{</span>
-        <span class="kt">void</span> <span class="nf">onCastMediaRemoteControlReady</span><span class="o">(</span><span class="n">KCastMediaRemoteControl</span> <span class="n">castMediaRemoteControl</span><span class="o">);</span>
-        <span class="kt">void</span> <span class="nf">onCastReceiverError</span><span class="o">(</span><span class="n">String</span> <span class="n">errorMsg</span><span class="o">,</span> <span class="kt">int</span> <span class="n">errorCode</span><span class="o">);</span>
+        <span class="kt">void</span> <span class="nf">onCastMediaRemoteControlReady</span><span class="o">(</span><span class="nc">KCastMediaRemoteControl</span> <span class="n">castMediaRemoteControl</span><span class="o">);</span>
+        <span class="kt">void</span> <span class="nf">onCastReceiverError</span><span class="o">(</span><span class="nc">String</span> <span class="n">errorMsg</span><span class="o">,</span> <span class="kt">int</span> <span class="n">errorCode</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="change-media">
         
@@ -313,9 +307,8 @@ and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
         
       </h5>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">mPlayer</span><span class="o">.</span><span class="na">changeMedia</span><span class="o">(</span><span class="s">"Entry ID"</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mPlayer</span><span class="o">.</span><span class="na">changeMedia</span><span class="o">(</span><span class="s">"Entry ID"</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h5 id="ott">
         
@@ -325,16 +318,15 @@ and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
         
       </h5>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">String</span> <span class="n">URL</span> <span class="o">=</span> <span class="s">"Your thumbnail URL"</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="no">URL</span> <span class="o">=</span> <span class="s">"Your thumbnail URL"</span><span class="o">;</span>
 <span class="c1">//if proxy data for CC has to be different than the player</span>
 <span class="n">mPlayer</span><span class="o">.</span><span class="na">setKDPAttribute</span><span class="o">(</span><span class="s">"chromecast"</span><span class="o">,</span><span class="s">"proxyData"</span><span class="o">,</span><span class="n">getChromecatProxyDataJson</span><span class="o">(</span><span class="n">entryID</span><span class="o">));</span>
 <span class="c1">//for changing the thumbnail of the minicontroller for current media id </span>
-<span class="n">mPlayer</span><span class="o">.</span><span class="na">setKDPAttribute</span><span class="o">(</span><span class="s">"chromecast"</span><span class="o">,</span><span class="s">"defaultThumbnail"</span><span class="o">,</span><span class="s">"'"</span> <span class="o">+</span> <span class="n">URL</span> <span class="o">+</span> <span class="s">"'"</span><span class="o">);</span>  
+<span class="n">mPlayer</span><span class="o">.</span><span class="na">setKDPAttribute</span><span class="o">(</span><span class="s">"chromecast"</span><span class="o">,</span><span class="s">"defaultThumbnail"</span><span class="o">,</span><span class="s">"'"</span> <span class="o">+</span> <span class="no">URL</span> <span class="o">+</span> <span class="s">"'"</span><span class="o">);</span>  
 <span class="c1">//for updating mini controller png</span>
-<span class="n">mPlayer</span><span class="o">.</span><span class="na">getConfig</span><span class="o">().</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.defaultThumbnail"</span><span class="o">,</span> <span class="n">URL</span><span class="o">);</span>
-<span class="n">mPlayer</span><span class="o">.</span><span class="na">changeMedia</span><span class="o">(</span><span class="n">proxyData</span> <span class="n">JSON</span> <span class="n">Object</span><span class="o">);</span>
-</code></pre>
-</div>
+<span class="n">mPlayer</span><span class="o">.</span><span class="na">getConfig</span><span class="o">().</span><span class="na">addConfig</span><span class="o">(</span><span class="s">"chromecast.defaultThumbnail"</span><span class="o">,</span> <span class="no">URL</span><span class="o">);</span>
+<span class="n">mPlayer</span><span class="o">.</span><span class="na">changeMedia</span><span class="o">(</span><span class="n">proxyData</span> <span class="no">JSON</span> <span class="nc">Object</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p><strong>It is required to set castProvider again in case that player activity or fragment was destroyed.</strong></p>
     
@@ -346,7 +338,7 @@ and the <code class="highlighter-rouge">onCastReceiverError</code> Events.</p>
         
       </h3>
 
-<p>A best practice sample application, which demonstrates the code that is required for a proper casting experience, can be found in this <br />
+<p>A best practice sample application, which demonstrates the code that is required for a proper casting experience, can be found in this 
 <a href="https://github.com/kaltura/player-sdk-native-android/tree/develop/KalturaDemos/CCPlayerDemo">demo Android</a>.</p>
 		
 </article>

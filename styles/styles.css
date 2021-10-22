@@ -4,12 +4,14 @@
   font-style: italic;
   font-weight: bold;
 }
+
 @font-face {
   font-family: Soho;
   src: url("/homepage/assets/fonts/Monotype - Soho Gothic Pro ExtraBold It.ttf");
   font-style: italic;
   font-weight: 800;
 }
+
 @font-face {
   font-family: Soho;
   src: url("/homepage/assets/fonts/SohoGothicPro-LightItalic.otf");
@@ -18,31 +20,35 @@
 }
 
 h1.breadcrumbs {
-    font-size: 18px;
-    margin-top: 22px;
+  font-size: 18px;
+  margin-top: 22px;
 }
-.breadcrumbs .fa-lock,
-.breadcrumbs .fa-unlock {
+
+.breadcrumbs .fa-lock, .breadcrumbs .fa-unlock {
   display: none;
 }
+
 .breadcrumbs .fa-chevron-right {
   font-size: 14px;
 }
+
 .discussion-frame {
   border: none !important;
 }
+
 .discussion .discussion-link {
   display: none;
 }
 
 .h2, h2 {
-    font-size: 26px;
+  font-size: 26px;
 }
+
 .side-menu-item.deprecated {
   color: #999;
 }
-gallery .input-group-btn .fa-times,
-side-menu .fa-times {
+
+gallery .input-group-btn .fa-times, side-menu .fa-times {
   color: #fff !important;
 }
 
@@ -53,47 +59,57 @@ pre code {
 /* .footer {
   margin-top: 50px;
 } */
+
 .collapse.in {
   display: block !important;
 }
+
 operation-documentation .input-output-box h4 {
   font-size: 21px;
 }
+
 img {
-  max-width:100%; 
+  max-width: 100%;
 }
 
 /* nav tabs header*/
+
 .nav-tabs-b {
   font-size: 1em;
   color: black;
   position: relative;
   top: -3px;
 }
-.nav-tabs-b > span > a {
+
+.nav-tabs-b>span>a {
   color: black;
   text-decoration: none;
 }
-.nav-tabs-b > span > a:hover {
+
+.nav-tabs-b>span>a:hover {
   text-decoration: none;
 }
-.nav-tabs-b > span {
+
+.nav-tabs-b>span {
   margin-right: 12px;
   padding-bottom: 12px;
 }
-.nav-tabs-b > span.active {
+
+.nav-tabs-b>span.active {
   color: #006efa;
   border-bottom: 2px solid #006efa;
 }
-.nav-tabs-b > span.active > a {
+
+.nav-tabs-b>span.active>a {
   color: #006efa;
 }
-.nav-tabs-b > span.inactive > a {
+
+.nav-tabs-b>span.inactive>a {
   color: black;
 }
 
-
 /* home */
+
 .home-container {
   padding: 10px;
 }
@@ -188,6 +204,11 @@ img {
   font-weight: bold;
 }
 
+.card-img {
+  margin-bottom: 3.1rem;
+  height: 110px;
+}
+
 .home-container .code-container .card p.card-text {
   font-size: 0.9em;
   padding: 10px 0;
@@ -207,9 +228,10 @@ img {
 }
 
 /* navbar */
+
 .navbar-header .has-search {
   display: inline-block;
-  margin-left:18px;
+  margin-left: 18px;
 }
 
 .side-menu-toggle {
@@ -220,7 +242,6 @@ img {
   .navbar-header .has-search {
     display: none;
   }
-
   .side-menu-toggle {
     display: block;
     color: #006efa;
@@ -231,8 +252,7 @@ img {
     float: left;
     padding-right: 10px;
   }
-
   .home-container .code-container img.btn-copy {
     top: 15px;
-  }  
+  }
 }

@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_TracksSelection.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_TracksSelection.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue Aug 8 13:28:22 2017, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -165,13 +165,13 @@ rtp('get', 'campaign',true);
 
 <p>To receive tracks, subscribe to the event called <a name="populateViews"><strong><em>TRACKS_AVAILABLE</em></strong>.</a> as follows:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>	<span class="c1">//Subscribe to TRACKS_AVAILABLE event.</span>
- 	<span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="c1">//Subscribe to TRACKS_AVAILABLE event.</span>
+ 	<span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
                 
                 <span class="c1">//Cast event to PlayerEvent.TracksAvailable</span>
-                <span class="n">PlayerEvent</span><span class="o">.</span><span class="na">TracksAvailable</span> <span class="n">tracksAvailable</span> <span class="o">=</span> <span class="o">(</span><span class="n">PlayerEvent</span><span class="o">.</span><span class="na">TracksAvailable</span><span class="o">)</span> <span class="n">event</span><span class="o">;</span>
+                <span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">TracksAvailable</span> <span class="n">tracksAvailable</span> <span class="o">=</span> <span class="o">(</span><span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">TracksAvailable</span><span class="o">)</span> <span class="n">event</span><span class="o">;</span>
                 
                 <span class="c1">//Get the tracks data object.</span>
                 <span class="n">tracks</span> <span class="o">=</span> <span class="n">tracksAvailable</span><span class="o">.</span><span class="na">getPKTracks</span><span class="o">();</span>
@@ -179,9 +179,8 @@ rtp('get', 'campaign',true);
                 <span class="c1">//Populate your views using tracks.</span>
              	<span class="n">populateViews</span><span class="o">(</span><span class="n">tracks</span><span class="o">);</span>   
             <span class="o">}</span>
-        <span class="o">},</span> <span class="n">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">TRACKS_AVAILABLE</span><span class="o">);</span>
-</code></pre>
-</div>
+        <span class="o">},</span> <span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">TRACKS_AVAILABLE</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h2 id="pktracks-structure">
         
@@ -274,46 +273,45 @@ rtp('get', 'campaign',true);
 
 <p>1 . First, create the xml:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>	<span class="o">&lt;</span><span class="n">LinearLayout</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="o">&lt;</span><span class="nc">LinearLayout</span>
 	<span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">"match_parent"</span>
     <span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"wrap_content"</span>
     <span class="nl">android:</span><span class="n">orientation</span><span class="o">=</span><span class="s">"vertical"</span>
 	<span class="o">&gt;</span>
-	<span class="o">&lt;</span><span class="n">Spinner</span>
+	<span class="o">&lt;</span><span class="nc">Spinner</span>
     	<span class="nl">android:</span><span class="n">id</span><span class="o">=</span><span class="s">"@+id/videoSpinner"</span>
     	<span class="nl">android:</span><span class="n">layout_width</span><span class="o">=</span><span class="s">"wrap_content"</span>
     	<span class="nl">android:</span><span class="n">layout_height</span><span class="o">=</span><span class="s">"wrap_content"</span> <span class="o">/&gt;</span>
     
-	<span class="o">&lt;/</span><span class="n">LinearLayout</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+	<span class="o">&lt;/</span><span class="nc">LinearLayout</span><span class="o">&gt;</span>
+</code></pre></div></div>
 <p>2 . Next, create a custom adapter:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrackItemAdapter</span> <span class="kd">extends</span> <span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="n">TrackItem</span><span class="o">&gt;</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrackItemAdapter</span> <span class="kd">extends</span> <span class="nc">ArrayAdapter</span><span class="o">&lt;</span><span class="nc">TrackItem</span><span class="o">&gt;</span> <span class="o">{</span>
 
-    	<span class="kd">private</span> <span class="n">Context</span> <span class="n">context</span><span class="o">;</span>
-   	 <span class="kd">private</span> <span class="n">TrackItem</span><span class="o">[]</span> <span class="n">trackItems</span><span class="o">;</span>
+    	<span class="kd">private</span> <span class="nc">Context</span> <span class="n">context</span><span class="o">;</span>
+   	 <span class="kd">private</span> <span class="nc">TrackItem</span><span class="o">[]</span> <span class="n">trackItems</span><span class="o">;</span>
 
 
-	    <span class="kd">public</span> <span class="nf">TrackItemAdapter</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="kt">int</span> <span class="n">textViewResourceId</span><span class="o">,</span> <span class="n">TrackItem</span><span class="o">[]</span> <span class="n">trackItems</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="kd">public</span> <span class="nf">TrackItemAdapter</span><span class="o">(</span><span class="nc">Context</span> <span class="n">context</span><span class="o">,</span> <span class="kt">int</span> <span class="n">textViewResourceId</span><span class="o">,</span> <span class="nc">TrackItem</span><span class="o">[]</span> <span class="n">trackItems</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">textViewResourceId</span><span class="o">,</span> <span class="n">trackItems</span><span class="o">);</span>
         <span class="k">this</span><span class="o">.</span><span class="na">context</span> <span class="o">=</span> <span class="n">context</span><span class="o">;</span>
         <span class="k">this</span><span class="o">.</span><span class="na">trackItems</span> <span class="o">=</span> <span class="n">trackItems</span><span class="o">;</span>
   	  <span class="o">}</span>
 
     	<span class="nd">@Override</span>
-    	<span class="kd">public</span> <span class="n">View</span> <span class="nf">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">TextView</span> <span class="n">label</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextView</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-        <span class="n">label</span><span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
+    	<span class="kd">public</span> <span class="nc">View</span> <span class="nf">getView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="nc">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="nc">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">TextView</span> <span class="n">label</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TextView</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+        <span class="n">label</span><span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="nc">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
         <span class="n">label</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">trackItems</span><span class="o">[</span><span class="n">position</span><span class="o">].</span><span class="na">getTrackName</span><span class="o">());</span>
         <span class="k">return</span> <span class="n">label</span><span class="o">;</span>
   	  <span class="o">}</span>
 
 	    <span class="nd">@Override</span>
-  	  <span class="kd">public</span> <span class="n">View</span> <span class="nf">getDropDownView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span>
-                                    <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">TextView</span> <span class="n">label</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextView</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-        <span class="n">label</span><span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
+  	  <span class="kd">public</span> <span class="nc">View</span> <span class="nf">getDropDownView</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="nc">View</span> <span class="n">convertView</span><span class="o">,</span>
+                                    <span class="nc">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">TextView</span> <span class="n">label</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TextView</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+        <span class="n">label</span><span class="o">.</span><span class="na">setTextColor</span><span class="o">(</span><span class="nc">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">);</span>
         <span class="n">label</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">trackItems</span><span class="o">[</span><span class="n">position</span><span class="o">].</span><span class="na">getTrackName</span><span class="o">());</span>
         <span class="k">return</span> <span class="n">label</span><span class="o">;</span>
    	 <span class="o">}</span>
@@ -323,31 +321,29 @@ rtp('get', 'campaign',true);
         <span class="k">return</span> <span class="n">trackItems</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
   	  <span class="o">}</span>
 	<span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>3 . You’ll also need to create a TrackItem, which is created based on the track data and passed into the TrackAdapter:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrackItem</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TrackItem</span> <span class="o">{</span>
 
-	<span class="kd">private</span> <span class="n">String</span> <span class="n">uniqueId</span><span class="o">;</span>
-    	<span class="kd">private</span> <span class="n">String</span> <span class="n">trackDescription</span><span class="o">;</span> 
+	<span class="kd">private</span> <span class="nc">String</span> <span class="n">uniqueId</span><span class="o">;</span>
+    	<span class="kd">private</span> <span class="nc">String</span> <span class="n">trackDescription</span><span class="o">;</span> 
     
 
-    	<span class="kd">public</span> <span class="nf">TrackItem</span><span class="o">(</span><span class="n">String</span> <span class="n">trackDescription</span><span class="o">,</span> <span class="n">String</span> <span class="n">uniqueId</span><span class="o">)</span> <span class="o">{</span>
+    	<span class="kd">public</span> <span class="nf">TrackItem</span><span class="o">(</span><span class="nc">String</span> <span class="n">trackDescription</span><span class="o">,</span> <span class="nc">String</span> <span class="n">uniqueId</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">this</span><span class="o">.</span><span class="na">trackDescription</span> <span class="o">=</span> <span class="n">trackDescription</span><span class="o">;</span>
         <span class="k">this</span><span class="o">.</span><span class="na">uniqueId</span> <span class="o">=</span> <span class="n">uniqueId</span><span class="o">;</span>
     	<span class="o">}</span>
 
-    	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getTrackName</span><span class="o">()</span> <span class="o">{</span>
+    	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">getTrackName</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">trackDescription</span><span class="o">;</span>
     	<span class="o">}</span>
 
-    	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getUniqueId</span><span class="o">()</span> <span class="o">{</span>
+    	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">getUniqueId</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">uniqueId</span><span class="o">;</span>
     	<span class="o">}</span>
 	<span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="use-case-example">
         
@@ -361,14 +357,14 @@ rtp('get', 'campaign',true);
 
 <p>This example uses VideoTracks, but in general the workflow for other track types is similar.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">populateViews</span><span class="o">(</span><span class="n">PKTracks</span> <span class="n">tracks</span><span class="o">){</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">populateViews</span><span class="o">(</span><span class="nc">PKTracks</span> <span class="n">tracks</span><span class="o">){</span>
 		<span class="n">prepareSpinner</span><span class="o">();</span>
 
 		<span class="c1">//Create TrackItems for video track.</span>
-        <span class="n">TrackItem</span><span class="o">[]</span> <span class="n">videoTrackItems</span> <span class="o">=</span> <span class="n">createVideoTrackItems</span><span class="o">(</span><span class="n">tracks</span><span class="o">.</span><span class="na">getVideoTracks</span><span class="o">());</span>
+        <span class="nc">TrackItem</span><span class="o">[]</span> <span class="n">videoTrackItems</span> <span class="o">=</span> <span class="n">createVideoTrackItems</span><span class="o">(</span><span class="n">tracks</span><span class="o">.</span><span class="na">getVideoTracks</span><span class="o">());</span>
         
         <span class="c1">//Create adapter based on the newly created trackItems.</span>
-        <span class="n">TrackItemAdapter</span> <span class="n">videoAdapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrackItemAdapter</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">your_track_item_layout</span><span class="o">,</span> <span class="n">videoTrackItems</span><span class="o">);</span>
+        <span class="nc">TrackItemAdapter</span> <span class="n">videoAdapter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TrackItemAdapter</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="no">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">your_track_item_layout</span><span class="o">,</span> <span class="n">videoTrackItems</span><span class="o">);</span>
         <span class="c1">//Apply the adapter on spinner.</span>
         <span class="n">videoSpinner</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">videoAdapter</span><span class="o">);</span>	
         <span class="o">}</span>
@@ -376,7 +372,7 @@ rtp('get', 'campaign',true);
     <span class="c1">//Just do the basic preparation stuff.</span>
 	<span class="kd">private</span> <span class="kt">void</span> <span class="nf">prepareSpinner</span><span class="o">(){</span>  
 		<span class="c1">//Get reference to the Spinner.</span>
-		<span class="n">videoSpinner</span> <span class="o">=</span> <span class="o">(</span><span class="n">Spinner</span><span class="o">)</span> <span class="k">this</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">videoSpinner</span><span class="o">);</span>
+		<span class="n">videoSpinner</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Spinner</span><span class="o">)</span> <span class="k">this</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="no">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">videoSpinner</span><span class="o">);</span>
        			
 		<span class="c1">//Set itemSelected listener (just implement AdapterView.OnItemSelectedListener in your Activity)</span>
         <span class="n">videoSpinner</span><span class="o">.</span><span class="na">setOnItemSelectedListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
@@ -386,18 +382,18 @@ rtp('get', 'campaign',true);
 	* Here we will create the TrackItem array based on videoTracks. 
 	* If you have some filter logic on the track fields, do it here.
 	*/</span>
-	<span class="kd">private</span> <span class="n">TrackItem</span><span class="o">[]</span> <span class="nf">createVideoTrackItems</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">VideoTrack</span><span class="o">&gt;</span> <span class="n">videoTracks</span><span class="o">)</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="nc">TrackItem</span><span class="o">[]</span> <span class="nf">createVideoTrackItems</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">VideoTrack</span><span class="o">&gt;</span> <span class="n">videoTracks</span><span class="o">)</span> <span class="o">{</span>
 		
 		<span class="c1">//Create TrackItem array in size of the videoTracks.</span>
-        <span class="n">TrackItem</span><span class="o">[]</span> <span class="n">trackItems</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrackItem</span><span class="o">[</span><span class="n">videoTracks</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
+        <span class="nc">TrackItem</span><span class="o">[]</span> <span class="n">trackItems</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TrackItem</span><span class="o">[</span><span class="n">videoTracks</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
         
         <span class="c1">//Iterate through the all video tracks.</span>
         <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">videoTracks</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
                	
-            <span class="n">VideoTrack</span> <span class="n">videoTrack</span> <span class="o">=</span> <span class="n">videoTracks</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="nc">VideoTrack</span> <span class="n">videoTrack</span> <span class="o">=</span> <span class="n">videoTracks</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
             
             <span class="c1">//Give trackDescription default name.</span>
-            <span class="n">String</span> <span class="n">trackDescription</span> <span class="o">=</span> <span class="s">"Auto"</span><span class="o">.</span>
+            <span class="nc">String</span> <span class="n">trackDescription</span> <span class="o">=</span> <span class="s">"Auto"</span><span class="o">.</span>
             
             <span class="c1">//Check video track isAdaptive flag.</span>
             <span class="k">if</span><span class="o">(!</span><span class="n">videoTrack</span><span class="o">.</span><span class="na">isAdaptive</span><span class="o">()){</span>
@@ -409,32 +405,30 @@ rtp('get', 'campaign',true);
             <span class="o">}</span>
             
             <span class="c1">//Create TrackItem object and place it into the array.</span>
-            <span class="n">trackItems</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TrackItem</span><span class="o">(</span><span class="n">trackDescription</span><span class="o">,</span> <span class="n">videoTrack</span><span class="o">.</span><span class="na">getUniqueId</span><span class="o">());</span>
+            <span class="n">trackItems</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TrackItem</span><span class="o">(</span><span class="n">trackDescription</span><span class="o">,</span> <span class="n">videoTrack</span><span class="o">.</span><span class="na">getUniqueId</span><span class="o">());</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">trackItems</span><span class="o">;</span>
     <span class="o">}</span>
 	
 	<span class="c1">//Helper method to build readable bitrate string.</span>
-	<span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">buildBitrateString</span><span class="o">(</span><span class="kt">long</span> <span class="n">bitrate</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">bitrate</span> <span class="o">==</span> <span class="n">Consts</span><span class="o">.</span><span class="na">NO_VALUE</span> <span class="o">?</span> <span class="s">""</span>
-                <span class="o">:</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%.2fMbit"</span><span class="o">,</span> <span class="n">bitrate</span> <span class="o">/</span> <span class="mi">1000000</span><span class="n">f</span><span class="o">);</span>
+	<span class="kd">private</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">buildBitrateString</span><span class="o">(</span><span class="kt">long</span> <span class="n">bitrate</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">bitrate</span> <span class="o">==</span> <span class="nc">Consts</span><span class="o">.</span><span class="na">NO_VALUE</span> <span class="o">?</span> <span class="s">""</span>
+                <span class="o">:</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%.2fMbit"</span><span class="o">,</span> <span class="n">bitrate</span> <span class="o">/</span> <span class="mi">1000000</span><span class="n">f</span><span class="o">);</span>
     <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>The last step is to actually change the track. Previously, you set the <code class="highlighter-rouge">onItemSelectedListener</code> to the spinner, so let’s implement that method and see how easy it is to switch between tracks.</p>
+<p>The last step is to actually change the track. Previously, you set the <code class="language-plaintext highlighter-rouge">onItemSelectedListener</code> to the spinner, so let’s implement that method and see how easy it is to switch between tracks.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>	 
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	 
 	 <span class="nd">@Override</span>
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onItemSelected</span><span class="o">(</span><span class="n">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onItemSelected</span><span class="o">(</span><span class="nc">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">,</span> <span class="nc">View</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
 			<span class="c1">//Retrieve the selected track item from the adapter.</span>
-            <span class="n">TrackItem</span> <span class="n">trackItem</span> <span class="o">=</span> <span class="o">(</span><span class="n">TrackItem</span><span class="o">)</span> <span class="n">parent</span><span class="o">.</span><span class="na">getItemAtPosition</span><span class="o">(</span><span class="n">position</span><span class="o">);</span>
+            <span class="nc">TrackItem</span> <span class="n">trackItem</span> <span class="o">=</span> <span class="o">(</span><span class="nc">TrackItem</span><span class="o">)</span> <span class="n">parent</span><span class="o">.</span><span class="na">getItemAtPosition</span><span class="o">(</span><span class="n">position</span><span class="o">);</span>
             <span class="c1">//tell to the player, to switch track based on the user selection.</span>
             <span class="n">player</span><span class="o">.</span><span class="na">changeTrack</span><span class="o">(</span><span class="n">trackItem</span><span class="o">.</span><span class="na">getUniqueId</span><span class="o">());</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>&lt;/br&gt;</p>
     

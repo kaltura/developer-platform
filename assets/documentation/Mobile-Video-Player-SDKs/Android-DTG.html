@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Android-DTG.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Android-DTG.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Sep 22 05:06:49 2016, By: Noam Tamim</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -201,24 +201,22 @@ rtp('get', 'campaign',true);
 
 <p>1) Add JitPack’s repository to the top-level build.gradle:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	allprojects {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	allprojects {
 		repositories {
 			...
 			maven { url "https://jitpack.io" }
 		}
 	}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>2) Add the dependency:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>	dependencies {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	dependencies {
 	    compile 'com.kaltura:playkit-dtg-android:v2.0.0'
 	}
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>Replace <code class="highlighter-rouge">v2.0.0</code> with the <a href="https://github.com/kaltura/playkit-dtg-android/releases">latest release</a>.</p>
+<p>Replace <code class="language-plaintext highlighter-rouge">v2.0.0</code> with the <a href="https://github.com/kaltura/playkit-dtg-android/releases">latest release</a>.</p>
 
 <p>JitPack provides more <a href="https://jitpack.io/#com.kaltura/playkit-dtg-android">options and information</a>.</p>
     
@@ -234,18 +232,16 @@ rtp('get', 'campaign',true);
 
 <p>1) Add a reference to the project in settings.gradle:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    include ':dtglib'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    include ':dtglib'
     project(':dtglib').projectDir = file('../../playkit-dtg-android/dtglib')
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>2) Add the local dependency in build.gradle:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    dependencies {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    dependencies {
         compile project(":dtglib");
     }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now when you build your own project, DTGLib gets built as well. However, this setup should only be used when you want to contribute to DTGLib development.</p>
     
@@ -259,13 +255,12 @@ rtp('get', 'campaign',true);
 
 <p>The following classes/interfaces are the public API of the library:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    com.kaltura.dtg.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    com.kaltura.dtg.
         - ContentManager
         - DownloadItem
         - DownloadState
         - DownloadStateListener
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Please see their Javadoc comments.</p>
 
@@ -279,7 +274,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p><img src="assets/uml/a513c69baa155217d317fda5d8a81255.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/a513c69baa155217d317fda5d8a81255.svg" type="image/svg+xml" class="plantuml"></object></p>
     
       <h3 id="new-download-sequence">
         
@@ -289,7 +284,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p><img src="assets/uml/1ca5340d9538ee9b39726f6686b35564.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/1ca5340d9538ee9b39726f6686b35564.svg" type="image/svg+xml" class="plantuml"></object></p>
     
       <h2 id="track-selection">
         
@@ -299,17 +294,16 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Tracks are selected, by type, using a TrackSelector object. A TrackSelector is obtained by calling <code class="highlighter-rouge">getTrackSelector()</code> on a DownloadItem.<br />
+<p>Tracks are selected, by type, using a TrackSelector object. A TrackSelector is obtained by calling <code class="language-plaintext highlighter-rouge">getTrackSelector()</code> on a DownloadItem.
 Given a TrackSelector, the application performs selection:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">&gt;</span> <span class="n">tracks</span> <span class="o">=</span> <span class="n">trackSelector</span><span class="o">.</span><span class="na">getAvailableTracks</span><span class="o">(</span><span class="n">AUDIO</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">List</span><span class="o">&lt;</span><span class="nc">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">&gt;</span> <span class="n">tracks</span> <span class="o">=</span> <span class="n">trackSelector</span><span class="o">.</span><span class="na">getAvailableTracks</span><span class="o">(</span><span class="no">AUDIO</span><span class="o">);</span>
 <span class="c1">// Application logic for track filtering.</span>
-<span class="n">trackSelector</span><span class="o">.</span><span class="na">setSelectedTracks</span><span class="o">(</span><span class="n">AUDIO</span><span class="o">,</span> <span class="n">filteredTracks</span><span class="o">)</span>
+<span class="n">trackSelector</span><span class="o">.</span><span class="na">setSelectedTracks</span><span class="o">(</span><span class="no">AUDIO</span><span class="o">,</span> <span class="n">filteredTracks</span><span class="o">)</span>
 <span class="c1">// Repeat for other track types (VIDEO, TEXT)</span>
 
 <span class="n">trackSelector</span><span class="o">.</span><span class="na">apply</span><span class="o">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="sequence-diagram">
         
@@ -319,7 +313,7 @@ Given a TrackSelector, the application performs selection:</p>
         
       </h3>
 
-<p><img src="assets/uml/9432c72479fec283443d28761ef950f1.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/9432c72479fec283443d28761ef950f1.svg" type="image/svg+xml" class="plantuml"></object></p>
     
       <h3 id="interactive-selection-before-download-is-started">
         
@@ -329,7 +323,7 @@ Given a TrackSelector, the application performs selection:</p>
         
       </h3>
 
-<p>In this scenario, the metadata for an item was downloaded, the default tracks were selected, but the download wasn’t yet started. <br />
+<p>In this scenario, the metadata for an item was downloaded, the default tracks were selected, but the download wasn’t yet started. 
 The application calls item.getTrackSelector(), makes a selection and applies it. The selected tracks are downloaded as part of the normal download.</p>
     
       <h3 id="interactive-selection-after-download-is-finished">
@@ -340,7 +334,7 @@ The application calls item.getTrackSelector(), makes a selection and applies it.
         
       </h3>
 
-<p>The entire item has downloaded. The user now decides to download additional tracks - such as another audio language. <br />
+<p>The entire item has downloaded. The user now decides to download additional tracks - such as another audio language. 
 The application calls item.getTrackSelector(), makes a selection and applies it. Then, item.startDownload() is called again, to start downloading the extra tracks.</p>
     
       <h3 id="preference-based-selection">
@@ -373,27 +367,24 @@ The application calls item.getTrackSelector(), makes a selection and applies it.
 
 <p>Select the video track with the <strong>lowest</strong> bitrate:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">List</span><span class="o">&lt;</span><span class="n">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">&gt;</span> <span class="n">videoTracks</span> <span class="o">=</span> <span class="n">trackSelector</span><span class="o">.</span><span class="na">getAvailableTracks</span><span class="o">(</span><span class="n">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">VIDEO</span><span class="o">);</span>
-    <span class="n">DownloadItem</span><span class="o">.</span><span class="na">Track</span> <span class="n">minVideo</span> <span class="o">=</span> <span class="n">Collections</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">videoTracks</span><span class="o">,</span> <span class="n">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">.</span><span class="na">bitrateComparator</span><span class="o">);</span>
-    <span class="n">trackSelector</span><span class="o">.</span><span class="na">setSelectedTracks</span><span class="o">(</span><span class="n">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">VIDEO</span><span class="o">,</span> <span class="n">Collections</span><span class="o">.</span><span class="na">singletonList</span><span class="o">(</span><span class="n">minVideo</span><span class="o">));</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">&gt;</span> <span class="n">videoTracks</span> <span class="o">=</span> <span class="n">trackSelector</span><span class="o">.</span><span class="na">getAvailableTracks</span><span class="o">(</span><span class="nc">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">VIDEO</span><span class="o">);</span>
+    <span class="nc">DownloadItem</span><span class="o">.</span><span class="na">Track</span> <span class="n">minVideo</span> <span class="o">=</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">videoTracks</span><span class="o">,</span> <span class="nc">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">.</span><span class="na">bitrateComparator</span><span class="o">);</span>
+    <span class="n">trackSelector</span><span class="o">.</span><span class="na">setSelectedTracks</span><span class="o">(</span><span class="nc">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">VIDEO</span><span class="o">,</span> <span class="nc">Collections</span><span class="o">.</span><span class="na">singletonList</span><span class="o">(</span><span class="n">minVideo</span><span class="o">));</span>
+</code></pre></div></div>
 
 <p>Select all available tracks:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="kt">void</span> <span class="nf">selectAllAvailableTracksByType</span><span class="o">(</span><span class="n">DownloadItem</span><span class="o">.</span><span class="na">TrackSelector</span> <span class="n">trackSelector</span><span class="o">,</span> <span class="n">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span> <span class="n">trackType</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">List</span><span class="o">&lt;</span><span class="n">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">&gt;</span> <span class="n">availableTracks</span> <span class="o">=</span> <span class="n">trackSelector</span><span class="o">.</span><span class="na">getAvailableTracks</span><span class="o">(</span><span class="n">trackType</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">void</span> <span class="nf">selectAllAvailableTracksByType</span><span class="o">(</span><span class="nc">DownloadItem</span><span class="o">.</span><span class="na">TrackSelector</span> <span class="n">trackSelector</span><span class="o">,</span> <span class="nc">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span> <span class="n">trackType</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">DownloadItem</span><span class="o">.</span><span class="na">Track</span><span class="o">&gt;</span> <span class="n">availableTracks</span> <span class="o">=</span> <span class="n">trackSelector</span><span class="o">.</span><span class="na">getAvailableTracks</span><span class="o">(</span><span class="n">trackType</span><span class="o">);</span>
         <span class="n">trackSelector</span><span class="o">.</span><span class="na">setSelectedTracks</span><span class="o">(</span><span class="n">trackType</span><span class="o">,</span> <span class="n">availableTracks</span><span class="o">);</span>
     <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Then, from onAvailableTracks():</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">selectAllAvailableTracksByType</span><span class="o">(</span><span class="n">trackSelector</span><span class="o">,</span> <span class="n">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">AUDIO</span><span class="o">);</span>
-    <span class="n">selectAllAvailableTracksByType</span><span class="o">(</span><span class="n">trackSelector</span><span class="o">,</span> <span class="n">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">TEXT</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">selectAllAvailableTracksByType</span><span class="o">(</span><span class="n">trackSelector</span><span class="o">,</span> <span class="nc">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">AUDIO</span><span class="o">);</span>
+    <span class="n">selectAllAvailableTracksByType</span><span class="o">(</span><span class="n">trackSelector</span><span class="o">,</span> <span class="nc">DownloadItem</span><span class="o">.</span><span class="na">TrackType</span><span class="o">.</span><span class="na">TEXT</span><span class="o">);</span>
+</code></pre></div></div>
     
       <h3 id="default-selection">
         

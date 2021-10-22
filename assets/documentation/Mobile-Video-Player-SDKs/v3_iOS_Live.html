@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jan 31 08:04:20 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_Live.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jan 31 08:04:20 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_Live.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed Jan 18 03:05:17 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue Jan 31 08:04:20 2017, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -159,7 +159,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>The duration value of the video player will show the buffer size, which you can then use to seek content backwards.<br />
+<p>The duration value of the video player will show the buffer size, which you can then use to seek content backwards.
 The value of the video player’s current time will show the relative position to the buffer; i.e., the currentTime = 0 means the left (furthest back) edge of the buffer, while currentTime = duration represents the live edge.</p>
     
       <h3 id="live-stream-without-dvr">
@@ -176,18 +176,16 @@ The value of the video player’s current time will show the relative position t
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="p">?</span><span class="o">.</span><span class="nf">seek</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CMTime</span><span class="p">(</span><span class="nv">seconds</span><span class="p">:</span> <span class="mi">999999</span><span class="p">,</span> <span class="nv">preferredTimescale</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="p">?</span><span class="o">.</span><span class="nf">seek</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CMTime</span><span class="p">(</span><span class="nv">seconds</span><span class="p">:</span> <span class="mi">999999</span><span class="p">,</span> <span class="nv">preferredTimescale</span><span class="p">:</span> <span class="mi">1</span><span class="p">))</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code>
+<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="have-questions-or-need-help">
         

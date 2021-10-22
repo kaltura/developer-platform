@@ -109,9 +109,9 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Thu Nov 12 07:19:38 2020</span>, By <span class="commit-author">Hunter Peress</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Inspiring-Examples/TikRok-FaceFilter-Social-Network.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Oct 29 11:16:37 2020, By: Hunter Peress</td></tr-->
-				<!--tr><td>Last commit: Thu Nov 12 07:19:38 2020, By <span class="commit-author">Jess Portnoy</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
@@ -134,7 +134,13 @@ rtp('get', 'campaign',true);
 				<!-- 
 				
 				<tr>
-					<td>Jess Portnoy (1 commits) (<a href="mailto:jess.portnoy@kaltura.com">jess.portnoy@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+				</tr> -->
+
+				<!-- 
+				
+				<tr>
+					<td>Jess Portnoy (2 commits) (<a href="mailto:jess.portnoy@kaltura.com">jess.portnoy@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -176,8 +182,6 @@ rtp('get', 'campaign',true);
         
         
       </h2>
-
-<iframe type="text/javascript" src='https://cdnapisec.kaltura.com/p/3033241/embedPlaykitJs/uiconf_id/46516743?iframeembed=true&entry_id=1_go6ouh1n' style="width: 560px;height: 395px" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe>
     
       <h2 id="design-choices">
         
@@ -187,7 +191,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Many shortcuts were taken in order to give you the barebones, simplest implementation of this concept aka an MVP. I chose a web front end to give a low barrier to entry across any platform. While recording does not work on all mobile browsers, the face filters do, and a more robust implementation could make use of Kaltura’s many <a href="https://developer.kaltura.com/api-docs/Client_Libraries">Client Libraries</a></p>
+<p>Many shortcuts were taken in order to give you the barebones, simplest implementation of this concept aka an MVP. I chose a web front end to give a low barrier to entry across any platform. While recording does not work on all mobile browsers, the face filters do, and a more robust implementation could make use of Kaltura’s many <a href="/api-docs/Client_Libraries">Client Libraries</a></p>
     
       <h2 id="this-is-just-a-kernel">
         
@@ -231,13 +235,12 @@ rtp('get', 'campaign',true);
   <li>
     <p>Let’s take a look at .env.template:</p>
 
-    <div class="language-ini highlighter-rouge"><pre class="highlight"><code><span class="py">ADMIN_SECRET</span><span class="p">=</span>   <span class="s">//obtain from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings</span>
+    <div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">ADMIN_SECRET</span><span class="p">=</span>   <span class="s">//obtain from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings</span>
 <span class="py">PARTNER_ID</span><span class="p">=</span>     <span class="s">//obtain from https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings</span>
 <span class="py">PLAYER_ID</span><span class="p">=</span>      <span class="s">//obtain from https://kmc.kaltura.com/index.php/kmcng/studio/v3</span>
-</code></pre>
-    </div>
+</code></pre></div>    </div>
 
-    <p>Copy  <code class="highlighter-rouge">.env.template</code> to <code class="highlighter-rouge">.env</code> and edit the values above.</p>
+    <p>Copy  <code class="language-plaintext highlighter-rouge">.env.template</code> to <code class="language-plaintext highlighter-rouge">.env</code> and edit the values above.</p>
 
     <p>We need to get your Kaltura Partner Id and API Admin Secret so let’s head over to <a href="https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings">Integration Settings tab</a></p>
 
@@ -253,17 +256,17 @@ rtp('get', 'campaign',true);
   <li>Install the components for node:</li>
 </ol>
 
-<p><code class="highlighter-rouge">npm install</code></p>
+<p><code class="language-plaintext highlighter-rouge">npm install</code></p>
 
 <ol>
   <li>
     <p><strong>Its Showtime!!</strong> run</p>
 
-    <p><code class="highlighter-rouge">npm start</code></p>
+    <p><code class="language-plaintext highlighter-rouge">npm start</code></p>
 
     <p>and head to</p>
 
-    <p><code class="highlighter-rouge">http://localhost:3000</code></p>
+    <p><code class="language-plaintext highlighter-rouge">http://localhost:3000</code></p>
   </li>
 </ol>
     
@@ -279,20 +282,19 @@ rtp('get', 'campaign',true);
 
 <p><img src="/assets/images/tikrok/SCREEN_NAME.png" alt="SCREEN_NAME" /></p>
 
-<p>The next touch point is the <code class="highlighter-rouge">router.post('/', </code>method of <code class="highlighter-rouge">routes/login.js</code></p>
+<p>The next touch point is the <code class="language-plaintext highlighter-rouge">router.post('/', </code>method of <code class="language-plaintext highlighter-rouge">routes/login.js</code></p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">adminks</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">KalturaClientFactory</span><span class="p">.</span><span class="nx">getKS</span><span class="p">(</span><span class="s1">''</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">enums</span><span class="p">.</span><span class="nx">SessionType</span><span class="p">.</span><span class="nx">ADMIN</span><span class="p">});</span>
-<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">KalturaClientFactory</span><span class="p">.</span><span class="nx">getClient</span><span class="p">(</span><span class="nx">adminks</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">getOrCreateUser</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">userId</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">userKs</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">KalturaClientFactory</span><span class="p">.</span><span class="nx">getKS</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,{</span><span class="na">privileges</span><span class="p">:</span> <span class="s1">'editadmintags:*'</span><span class="p">});</span>
-</code></pre>
-</div>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">adminks</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">KalturaClientFactory</span><span class="p">.</span><span class="nx">getKS</span><span class="p">(</span><span class="dl">''</span><span class="p">,</span> <span class="p">{</span><span class="na">type</span><span class="p">:</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">enums</span><span class="p">.</span><span class="nx">SessionType</span><span class="p">.</span><span class="nx">ADMIN</span><span class="p">});</span>
+<span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">KalturaClientFactory</span><span class="p">.</span><span class="nx">getClient</span><span class="p">(</span><span class="nx">adminks</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getOrCreateUser</span><span class="p">(</span><span class="nx">client</span><span class="p">,</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">userId</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">userKs</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">KalturaClientFactory</span><span class="p">.</span><span class="nx">getKS</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">,{</span><span class="na">privileges</span><span class="p">:</span> <span class="dl">'</span><span class="s1">editadmintags:*</span><span class="dl">'</span><span class="p">});</span>
+</code></pre></div></div>
 
-<p>Take a look at <code class="highlighter-rouge">lib/KalturaClientFactory.js</code> to see how the <a href="https://developer.kaltura.com/api-docs/VPaaS-API-Getting-Started/how-to-create-kaltura-session.html">Kaltura Session</a> is created</p>
+<p>Take a look at <code class="language-plaintext highlighter-rouge">lib/KalturaClientFactory.js</code> to see how the <a href="../../Getting-Started-Building-Video-Applications /Authenticating-and-Using-Kaltura-Sessions.html">session</a> is created</p>
 
-<p>We first create an admin session <code class="highlighter-rouge">adminks</code> which is required to create a user. Then we create a user session <code class="highlighter-rouge">userKs</code>  and store the <code class="highlighter-rouge">userKs</code> to the node session so it can be used later.</p>
+<p>We first create an admin session <code class="language-plaintext highlighter-rouge">adminks</code> which is required to create a user. Then we create a user session <code class="language-plaintext highlighter-rouge">userKs</code>  and store the <code class="language-plaintext highlighter-rouge">userKs</code> to the node session so it can be used later.</p>
 
-<p><code class="highlighter-rouge">req.session.ks = userKs;</code></p>
+<p><code class="language-plaintext highlighter-rouge">req.session.ks = userKs;</code></p>
 
 <p>And then we are redirected to the <strong><em>REALLY</em></strong> fun stuff: the face filter!</p>
     
@@ -310,7 +312,7 @@ rtp('get', 'campaign',true);
 
 <p><img src="/assets/images/tikrok/FaceFilter.png" alt="FaceFilter" /></p>
 
-<p>By itself, the face filter demo displays to a canvas element. Some of the demo’s use <code class="highlighter-rouge">&lt;divs&gt;</code> to display graphics on top of a canvas, those demos won’t work with our approach as we can only record what is actually on the canvas</p>
+<p>By itself, the face filter demo displays to a canvas element. Some of the demo’s use <code class="language-plaintext highlighter-rouge">&lt;divs&gt;</code> to display graphics on top of a canvas, those demos won’t work with our approach as we can only record what is actually on the canvas</p>
     
       <h3 id="loading-and-switching-filters">
         
@@ -322,7 +324,7 @@ rtp('get', 'campaign',true);
 
 <p>First, let’s set up the filter:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
 <span class="nc">.vidsize</span> <span class="p">{</span>
     <span class="nl">width</span><span class="p">:</span><span class="m">600px</span><span class="p">;</span>
     <span class="nl">height</span><span class="p">:</span><span class="m">600px</span><span class="p">;</span>
@@ -346,33 +348,30 @@ rtp('get', 'campaign',true);
         <span class="nt">&lt;canvas</span> <span class="na">width=</span><span class="s">"600"</span> <span class="na">height=</span><span class="s">"600"</span> <span class="na">id=</span><span class="s">'jeeFaceFilterCanvas'</span><span class="nt">&gt;&lt;/canvas&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"controls"</span> <span class="na">class=</span><span class="s">"vidsize"</span><span class="nt">&gt;&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>So <code class="highlighter-rouge">onload</code> calls the <code class="highlighter-rouge">initFilter()</code> method from the default filter at <code class="highlighter-rouge">public/filters/deform/deform.js</code> which sets up the canvas element to render the face filter over webcam video. I created a naming convention the code uses to switch filters and it is:</p>
+<p>So <code class="language-plaintext highlighter-rouge">onload</code> calls the <code class="language-plaintext highlighter-rouge">initFilter()</code> method from the default filter at <code class="language-plaintext highlighter-rouge">public/filters/deform/deform.js</code> which sets up the canvas element to render the face filter over webcam video. I created a naming convention the code uses to switch filters and it is:</p>
 
-<p><code class="highlighter-rouge">public/filters/filtername/filtername.js</code> and each filter has the same initFilter() method. When <code class="highlighter-rouge">loadFilter(filter)</code> is called it actually routes us to a completely different webpage:</p>
+<p><code class="language-plaintext highlighter-rouge">public/filters/filtername/filtername.js</code> and each filter has the same initFilter() method. When <code class="language-plaintext highlighter-rouge">loadFilter(filter)</code> is called it actually routes us to a completely different webpage:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>function loadFilter(filter) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function loadFilter(filter) {
 	window.onbeforeunload = null;
   window.location = "/record?filter="+filter
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>And the filter is loaded through a query parameter:</p>
 
-<p><code class="highlighter-rouge">&lt;script src='facefilter/filters/&lt;%=filter%&gt;/&lt;%=filter%&gt;.js'&gt;&lt;/script&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;script src='facefilter/filters/&lt;%=filter%&gt;/&lt;%=filter%&gt;.js'&gt;&lt;/script&gt;</code></p>
 
 <p>Nothing is stopping you from switching filters entirely in javascript, just some refactoring would be necessary.</p>
 
-<p>In case you are wondering about the <code class="highlighter-rouge">#loading</code> animated png…it displays by default on page load, and then is hidden by each of the four filters by calling</p>
+<p>In case you are wondering about the <code class="language-plaintext highlighter-rouge">#loading</code> animated png…it displays by default on page load, and then is hidden by each of the four filters by calling</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>  $("#loading").hide();
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  $("#loading").hide();
 } //end init_threeScene()
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>in <code class="highlighter-rouge">deform.js</code></p>
+<p>in <code class="language-plaintext highlighter-rouge">deform.js</code></p>
     
       <h3 id="setup-kaltura-express-recorder">
         
@@ -382,53 +381,51 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>In <code class="highlighter-rouge">views/record.ejs</code> we will use the <a href="https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a>, which has the option to record a canvas element and combine it with your webcam’s audio.</p>
+<p>In <code class="language-plaintext highlighter-rouge">views/record.ejs</code> we will use the <a href="/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a>, which has the option to record a canvas element and combine it with your webcam’s audio.</p>
 
-<p><strong>Note</strong>:The github for TikRok includes a forked “canvas” version of express recorder named <code class="highlighter-rouge">kaltura-canvas-express-recorder.js</code></p>
+<p><strong>Note</strong>:The github for TikRok includes a forked “canvas” version of express recorder named <code class="language-plaintext highlighter-rouge">kaltura-canvas-express-recorder.js</code></p>
 
 <ol>
-  <li><code class="highlighter-rouge">&lt;div id="controls"</code> is where the <a href="https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> controls will be injected. These elements must all have the same video size to render properly. Now to instantiate the express recorder:</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;div id="controls"</code> is where the <a href="/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> controls will be injected. These elements must all have the same video size to render properly. Now to instantiate the express recorder:</li>
 </ol>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>			 <span class="kr">const</span> <span class="nx">expressRec</span> <span class="o">=</span> <span class="nx">Kaltura</span><span class="p">.</span><span class="nx">ExpressRecorder</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'controls'</span><span class="p">,</span> <span class="p">{</span>
-            <span class="s2">"ks"</span><span class="p">:</span> <span class="s2">"&lt;%=ks%&gt;"</span><span class="p">,</span>
-            <span class="s2">"serviceUrl"</span><span class="p">:</span> <span class="s2">"https://www.kaltura.com"</span><span class="p">,</span> <span class="c1">// IE http://www.kaltura.com,</span>
-            <span class="s2">"app"</span><span class="p">:</span> <span class="s2">"APP_NAME"</span><span class="p">,</span>
-            <span class="s2">"playerUrl"</span><span class="p">:</span> <span class="s2">"https://cdnapi.kaltura.com"</span><span class="p">,</span> <span class="c1">// IE http://cdnapi.kaltura.com,</span>
-            <span class="s2">"conversionProfileId"</span><span class="p">:</span> <span class="s2">"CONVERSION_PROFILE_ID"</span><span class="p">,</span>
-            <span class="s2">"partnerId"</span><span class="p">:</span> <span class="o">&lt;%=</span><span class="nx">partnerId</span><span class="o">%&gt;</span><span class="p">,</span>
-            <span class="s2">"uiConfId"</span><span class="p">:</span> <span class="o">&lt;%=</span><span class="nx">playerId</span><span class="o">%&gt;</span><span class="p">,</span>
-            <span class="s2">"canvasId"</span><span class="p">:</span> <span class="s2">"jeeFaceFilterCanvas"</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>			 <span class="kd">const</span> <span class="nx">expressRec</span> <span class="o">=</span> <span class="nx">Kaltura</span><span class="p">.</span><span class="nx">ExpressRecorder</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="dl">'</span><span class="s1">controls</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">ks</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;%=ks%&gt;</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">serviceUrl</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://www.kaltura.com</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// IE http://www.kaltura.com,</span>
+            <span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">APP_NAME</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">playerUrl</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://cdnapi.kaltura.com</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// IE http://cdnapi.kaltura.com,</span>
+            <span class="dl">"</span><span class="s2">conversionProfileId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">CONVERSION_PROFILE_ID</span><span class="dl">"</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">partnerId</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;%=</span><span class="nx">partnerId</span><span class="o">%&gt;</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">uiConfId</span><span class="dl">"</span><span class="p">:</span> <span class="o">&lt;%=</span><span class="nx">playerId</span><span class="o">%&gt;</span><span class="p">,</span>
+            <span class="dl">"</span><span class="s2">canvasId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">jeeFaceFilterCanvas</span><span class="dl">"</span>
         <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>We have supplied all relevant id strings from node,  and we specify the canvas to record via <code class="highlighter-rouge">canvasId</code> <a href="https://developer.kaltura.com/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> has many more configuration options and event listeners.</p>
+<p>We have supplied all relevant id strings from node,  and we specify the canvas to record via <code class="language-plaintext highlighter-rouge">canvasId</code> <a href="/api-docs/Ingest_and_Upload_Media/express-recorder.html">Kaltura Express Recorder</a> has many more configuration options and event listeners.</p>
 
 <ol>
   <li>We will also use the express recorder’s event listener interface to create a better UX:</li>
 </ol>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code> 				<span class="nx">expressRec</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"recordingStarted"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 				<span class="nx">expressRec</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">recordingStarted</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
             <span class="c1">//hide the filter buttons when recording has started</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">'#filterRow'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">'#filterBtn'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#filterRow</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#filterBtn</span><span class="dl">'</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
         <span class="p">});</span>
         
-        <span class="nx">expressRec</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"recordingCancelled"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">expressRec</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">recordingCancelled</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
           	<span class="c1">//if use hits cancel button, then show the filters again</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">'#filterBtn'</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+            <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#filterBtn</span><span class="dl">'</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>   
         <span class="p">});</span>
 
-        <span class="nx">expressRec</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"mediaUploadEnded"</span><span class="p">,(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">expressRec</span><span class="p">.</span><span class="nx">instance</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">mediaUploadEnded</span><span class="dl">"</span><span class="p">,(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
            <span class="c1">//once upload is finished, then move on to gallery</span>
            <span class="nb">window</span><span class="p">.</span><span class="nx">onbeforeunload</span> <span class="o">=</span> <span class="kc">null</span>
-           <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="o">=</span><span class="s2">"/gallery"</span><span class="p">;</span>
+           <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="o">=</span><span class="dl">"</span><span class="s2">/gallery</span><span class="dl">"</span><span class="p">;</span>
         <span class="p">});</span>                  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ol>
   <li>You should see something like this:</li>
@@ -444,9 +441,9 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>We are taking a very MVP approach to displaying the gallery with a simplifying assumption: this app will be the only source of videos connected to your account. If you want more control over how to organize videos, check out <a href="https://developer.kaltura.com/api-docs/service/playlist">Playlists</a></p>
+<p>We are taking a very MVP approach to displaying the gallery with a simplifying assumption: this app will be the only source of videos connected to your account. If you want more control over how to organize videos, check out <a href="/api-docs/service/playlist">Playlists</a></p>
 
-<p>The express recorder creates a <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaMediaEntry">Kaltura Media Entry</a> for your video and associates it with your user id. Our approach will simply list all media in our account via the <a href="https://developer.kaltura.com/console/service/media/action/list">Media.list</a> API call</p>
+<p>The express recorder creates a <a href="/api-docs/General_Objects/Objects/KalturaMediaEntry">Kaltura Media Entry</a> for your video and associates it with your user id. Our approach will simply list all media in our account via the <a href="/console/service/media/action/list">Media.list</a> API call</p>
     
       <h3 id="kaltura-api-console">
         
@@ -456,16 +453,16 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>When you look at <a href="https://developer.kaltura.com/console/service/media/action/list">Media.list</a> in the console:</p>
+<p>When you look at <a href="/console/service/media/action/list">Media.list</a> in the console:</p>
 
 <p><img src="/assets/images/tikrok/MEDIALIST.png" alt="MEDIALIST" /></p>
 
 <p>On the left, we can send the request or add parameters. On the right side you can auto-generate a sample code corresponding to the request on the left from all supported languages.</p>
 
-<p>And the auto-generated code is very close to that of <code class="highlighter-rouge">gallery.js</code> :</p>
+<p>And the auto-generated code is very close to that of <code class="language-plaintext highlighter-rouge">gallery.js</code> :</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getMedia</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getMedia</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="kd">let</span> <span class="nx">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">MediaEntryFilter</span>
         <span class="nx">filter</span><span class="p">.</span><span class="nx">orderBy</span> <span class="o">=</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">enums</span><span class="p">.</span><span class="nx">MediaEntryOrderBy</span><span class="p">.</span><span class="nx">UPDATED_AT_DESC</span><span class="p">;</span>
        
@@ -479,8 +476,7 @@ rtp('get', 'campaign',true);
             <span class="p">});</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="animated-thumbnails">
         
@@ -490,7 +486,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>We are using https://github.com/kaltura/VideoThumbnailAnimator in <code class="highlighter-rouge">views/gallery.ejs</code> to provide animated thumbnails for the gallery</p>
+<p>We are using https://github.com/kaltura/VideoThumbnailAnimator in <code class="language-plaintext highlighter-rouge">views/gallery.ejs</code> to provide animated thumbnails for the gallery</p>
 
 <pre><code class="language-ejs">    &lt;div id="thumbnails"&gt;
         &lt;%- include('gallery/entries.ejs', {entries: entries}) %&gt;
@@ -517,9 +513,9 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To display a users videos, We will use <a href="https://developer.kaltura.com/console/service/media/action/list">Media.list</a> but this time we will filter by userId. You can build this query using the API Console:</p>
+<p>To display a users videos, We will use <a href="/console/service/media/action/list">Media.list</a> but this time we will filter by userId. You can build this query using the API Console:</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">MediaEntryFilter</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">MediaEntryFilter</span>
 <span class="nx">filter</span><span class="p">.</span><span class="nx">orderBy</span> <span class="o">=</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">enums</span><span class="p">.</span><span class="nx">MediaEntryOrderBy</span><span class="p">.</span><span class="nx">UPDATED_AT_DESC</span><span class="p">;</span>
 <span class="nx">filter</span><span class="p">.</span><span class="nx">userIdEqual</span> <span class="o">=</span> <span class="nx">userId</span><span class="p">;</span>
 <span class="kd">let</span> <span class="nx">pager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">kaltura</span><span class="p">.</span><span class="nx">objects</span><span class="p">.</span><span class="nx">FilterPager</span><span class="p">();</span>
@@ -529,8 +525,7 @@ rtp('get', 'campaign',true);
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">resolve</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="playing-video">
         
@@ -540,9 +535,9 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>in <code class="highlighter-rouge">views/user.ejs</code></p>
+<p>in <code class="language-plaintext highlighter-rouge">views/user.ejs</code></p>
 
-<p>We will be following the steps to set up a player from https://developer.kaltura.com/player/web/getting-started-web</p>
+<p>We will be following the steps to set up a player from /player/web/getting-started-web</p>
 
 <pre><code class="language-ejs">&lt;script type="text/javascript" 
 src="https://cdnapisec.kaltura.com/p/&lt;%=partnerId %&gt;/embedPlaykitJs/uiconf_id/&lt;%=playerId%&gt;"&gt;
@@ -563,9 +558,9 @@ src="https://cdnapisec.kaltura.com/p/&lt;%=partnerId %&gt;/embedPlaykitJs/uiconf
     &lt;/script&gt;
 </code></pre>
 
-<p>And in <code class="highlighter-rouge">routes/user/post.ejs</code> we will load the player with:</p>
+<p>And in <code class="language-plaintext highlighter-rouge">routes/user/post.ejs</code> we will load the player with:</p>
 
-<p><code class="highlighter-rouge">&lt;a href="#" onclick="player.loadMedia({entryId: '&lt;%= entry.id %&gt;'})"&gt;&lt;img src="&lt;%= entry.thumbnailUrl %&gt;"&gt;&lt;/a&gt;</code></p>
+<p><code class="language-plaintext highlighter-rouge">&lt;a href="#" onclick="player.loadMedia({entryId: '&lt;%= entry.id %&gt;'})"&gt;&lt;img src="&lt;%= entry.thumbnailUrl %&gt;"&gt;&lt;/a&gt;</code></p>
     
       <h1 id="and---thats-it">
         
@@ -614,8 +609,8 @@ src="https://cdnapisec.kaltura.com/p/&lt;%=partnerId %&gt;/embedPlaykitJs/uiconf
         
       </h1>
 
-<p>You can learn more about Kaltura and start a free trial <a href="https://corp.kaltura.com/video-paas/registration?utm_campaign=Tikrok&amp;utm_medium=affiliates&amp;utm_source=GitHub">here</a> <br />
-Contact us via Twitter <a href="https://twitter.com/Kaltura_API">@Kaltura_API</a> or email: <a href="mailto:community@kaltura.com">community@kaltura.com</a><br />
+<p>You can learn more about Kaltura and start a free trial <a href="https://corp.kaltura.com/video-paas/registration?utm_campaign=Tikrok&amp;utm_medium=affiliates&amp;utm_source=GitHub">here</a> 
+Contact us via Twitter <a href="https://twitter.com/Kaltura_API">@Kaltura_API</a> or email: <a href="mailto:community@kaltura.com">community@kaltura.com</a>
 We’d love to hear from you!</p>
     
       <h1 id="license-and-copyright-information">

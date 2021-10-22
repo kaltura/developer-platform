@@ -3966,6 +3966,11 @@ input[type=button].btn-block {
   padding: 1.25rem;
 }
 
+.card-img {
+  margin-bottom: 3rem;
+  height: 110px;
+}
+
 .card-title {
   margin-bottom: 0.75rem;
 }

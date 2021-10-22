@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jun 6 05:11:18 2017</span>, By <span class="commit-author">Ilya Ghirici</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Offline.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jun 6 05:11:18 2017</span>, By <span class="commit-author">Ilya Ghirici</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Offline.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue Jun 6 05:11:18 2017, By <span class="commit-author">Ilya Ghirici</span></td></tr-->
 			
@@ -169,40 +169,37 @@ rtp('get', 'campaign',true);
   <p><strong>Important!</strong> The context must be the Android Application context.</p>
 </blockquote>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="c1">//Create new instance of localAssetManager with default implementatoin of LocalDataStore.</span>
-  <span class="n">LocalAssetsManager</span> <span class="n">localAssetsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalAssetsManager</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//Create new instance of localAssetManager with default implementatoin of LocalDataStore.</span>
+  <span class="nc">LocalAssetsManager</span> <span class="n">localAssetsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalAssetsManager</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>Next, accept an additional parameter of type <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/LocalDataStore.java">LocalDataStore</a>.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="c1">//Create new instance of localAssetManager with custom implementatoin of LocalDataStore.</span>
-  <span class="n">LocalAssetsManager</span> <span class="n">localAssetsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalAssetsManager</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">YourLocalDataStore</span><span class="o">);</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//Create new instance of localAssetManager with custom implementatoin of LocalDataStore.</span>
+  <span class="nc">LocalAssetsManager</span> <span class="n">localAssetsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalAssetsManager</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="nc">YourLocalDataStore</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>In first constructor, we implicitly implemented the <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/LocalDataStore.java">LocalDataStore</a> interface in the DefaultLocalDataStore class (which is actually an inner class of the LocalAssetsManager). In the second constructor, you can have your own implementation of this interface. You can read more about the LocalDataStore later in this section. For now, let’s use the default constructor.</p>
 
 <p>Register the asset to the LocalAssetsManager. Note that you’ll need to be <strong><em>Online</em></strong> while doing so.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="c1">//This listener will notify you about success/fail of the registration process.</span>
-  <span class="n">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetRegistrationListener</span> <span class="n">registrationListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetRegistrationListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//This listener will notify you about success/fail of the registration process.</span>
+  <span class="nc">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetRegistrationListener</span> <span class="n">registrationListener</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetRegistrationListener</span><span class="o">()</span> <span class="o">{</span>
                     <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRegistered</span><span class="o">(</span><span class="n">String</span> <span class="n">assetPath</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset registered "</span> <span class="o">+</span> <span class="n">assetPath</span><span class="o">);</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRegistered</span><span class="o">(</span><span class="nc">String</span> <span class="n">assetPath</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="nc">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset registered "</span> <span class="o">+</span> <span class="n">assetPath</span><span class="o">);</span>
                     <span class="o">}</span>
 
                     <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailed</span><span class="o">(</span><span class="n">String</span> <span class="n">assetPath</span><span class="o">,</span> <span class="n">Exception</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset onFailed "</span> <span class="o">+</span> <span class="n">assetPath</span> <span class="o">+</span> <span class="s">" ex "</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailed</span><span class="o">(</span><span class="nc">String</span> <span class="n">assetPath</span><span class="o">,</span> <span class="nc">Exception</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="nc">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset onFailed "</span> <span class="o">+</span> <span class="n">assetPath</span> <span class="o">+</span> <span class="s">" ex "</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
                     <span class="o">}</span>
                 <span class="o">});</span>
 
   <span class="c1">//Actually register asset.</span>
   <span class="n">localAssetsManager</span><span class="o">.</span><span class="na">registerAsset</span><span class="o">(</span><span class="n">mediaSource</span><span class="o">,</span> <span class="n">yourAssetAbsolutePath</span><span class="o">,</span> <span class="n">yourAssetID</span><span class="o">,</span> <span class="n">registrationListener</span><span class="o">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>As you can see, you’ll have to pass four parameters to the registration method:</p>
 
 <ul>
@@ -214,11 +211,10 @@ rtp('get', 'campaign',true);
 
 <p>If the result is successful, you’re ready to play your media in offline; to do so, simply create a new instance of the LocalAssetsManager(or reuse the existing one), and ask it for the media source, and then pass the localAssetPath of the desired media and the assetId. The LocalAssetsManager will return the PKMediaSource, which can play the media without a network connection.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">LocalAssetsManager</span> <span class="n">localAssetsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalAssetsManager</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-  <span class="n">PKMediaSource</span> <span class="n">mediaSource</span> <span class="o">=</span> <span class="n">localAssetsManager</span><span class="o">.</span><span class="na">getLocalMediaSource</span><span class="o">(</span><span class="n">assetId</span><span class="o">,</span> <span class="n">localAssetPath</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">LocalAssetsManager</span> <span class="n">localAssetsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalAssetsManager</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+  <span class="nc">PKMediaSource</span> <span class="n">mediaSource</span> <span class="o">=</span> <span class="n">localAssetsManager</span><span class="o">.</span><span class="na">getLocalMediaSource</span><span class="o">(</span><span class="n">assetId</span><span class="o">,</span> <span class="n">localAssetPath</span><span class="o">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Next, set the mediaSource to your PKMediaEntry and pass the PlayerConfig to the player.preapre(PlayerConfig config) method.</p>
     
@@ -242,19 +238,18 @@ rtp('get', 'campaign',true);
 
 <p>To unregister the asset:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="c1">//This listener will notify you about success when the asset was unregistered.</span>
-  <span class="n">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetRemovalListener</span> <span class="n">removalListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetAssetRemovalListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//This listener will notify you about success when the asset was unregistered.</span>
+  <span class="nc">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetRemovalListener</span> <span class="n">removalListener</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetAssetRemovalListener</span><span class="o">()</span> <span class="o">{</span>
                     <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRemoved</span><span class="o">(</span><span class="n">String</span> <span class="n">assetPath</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset removed "</span> <span class="o">+</span> <span class="n">assetPath</span><span class="o">);</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onRemoved</span><span class="o">(</span><span class="nc">String</span> <span class="n">assetPath</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="nc">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset removed "</span> <span class="o">+</span> <span class="n">assetPath</span><span class="o">);</span>
                     <span class="o">}</span>
          		 <span class="o">});</span>
 
   <span class="c1">//Actually unregister asset.</span>
   <span class="n">localAssetsManager</span><span class="o">.</span><span class="na">unregisterAsset</span><span class="o">(</span><span class="n">yourAssetLocalPath</span><span class="o">,</span> <span class="n">yourAssetID</span><span class="o">,</span> <span class="n">removalListener</span><span class="o">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="checking-the-assets-drm-status">
         
@@ -266,18 +261,17 @@ rtp('get', 'campaign',true);
 
 <p>To check the asset’s DRM:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="c1">//This listener will notify you about expiration/availability time of the drm license.</span>
-  <span class="n">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetStatusListener</span> <span class="n">assetStatusListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetStatusListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//This listener will notify you about expiration/availability time of the drm license.</span>
+  <span class="nc">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetStatusListener</span> <span class="n">assetStatusListener</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">LocalAssetsManager</span><span class="o">.</span><span class="na">AssetStatusListener</span><span class="o">()</span> <span class="o">{</span>
                     <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStatus</span><span class="o">(</span><span class="n">String</span> <span class="n">localAssetPath</span><span class="o">,</span> <span class="kt">long</span> <span class="n">expiryTimeSeconds</span><span class="o">,</span> <span class="kt">long</span> <span class="n">availableTimeSeconds</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset status for "</span> <span class="o">+</span> <span class="n">assetPath</span> <span class="o">+</span> <span class="s">": expirity time in seconds "</span> <span class="o">+</span> <span class="n">expiryTimeSeconds</span> <span class="o">+</span> <span class="s">" available  time in seconds "</span> <span class="o">+</span> <span class="n">availableTimeSeconds</span><span class="o">);</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStatus</span><span class="o">(</span><span class="nc">String</span> <span class="n">localAssetPath</span><span class="o">,</span> <span class="kt">long</span> <span class="n">expiryTimeSeconds</span><span class="o">,</span> <span class="kt">long</span> <span class="n">availableTimeSeconds</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="nc">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"TAG"</span><span class="o">,</span> <span class="s">"asset status for "</span> <span class="o">+</span> <span class="n">assetPath</span> <span class="o">+</span> <span class="s">": expirity time in seconds "</span> <span class="o">+</span> <span class="n">expiryTimeSeconds</span> <span class="o">+</span> <span class="s">" available  time in seconds "</span> <span class="o">+</span> <span class="n">availableTimeSeconds</span><span class="o">);</span>
                     <span class="o">}</span>
          		 <span class="o">});</span>
 
   <span class="c1">//Actually check the asset status.</span>
   <span class="n">localAssetsManager</span><span class="o">.</span><span class="na">checkAssetStatus</span><span class="o">(</span><span class="n">yourAssetLocalPath</span><span class="o">,</span> <span class="n">yourAssetID</span><span class="o">,</span> <span class="n">assetStatusListener</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="localdatastore">
         

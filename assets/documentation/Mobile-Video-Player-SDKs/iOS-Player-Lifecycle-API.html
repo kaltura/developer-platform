@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-Player-Lifecycle-API.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-Player-Lifecycle-API.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -151,9 +151,8 @@ rtp('get', 'campaign',true);
       </h2>
 <p>After creating the Player, implement the following objective:</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithConfiguration</span><span class="p">:(</span><span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="p">)</span><span class="nv">configuration</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithConfiguration</span><span class="p">:(</span><span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="p">)</span><span class="nv">configuration</span><span class="p">;</span>
+</code></pre></div></div>
     
       <h2 id="removing-a-player-instance">
         
@@ -163,9 +162,8 @@ rtp('get', 'campaign',true);
         
       </h2>
 <p>To remove an instance, implement the following objective:</p>
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">removePlayer</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">removePlayer</span><span class="p">;</span>
+</code></pre></div></div>
     
       <h2 id="resetting-a-player-instance">
         
@@ -178,9 +176,8 @@ rtp('get', 'campaign',true);
 
 <p>Use the following objective to reset the Player instance:</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">resetPlayer</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">resetPlayer</span><span class="p">;</span>
+</code></pre></div></div>
     
       <h2 id="changing-the-configuration">
         
@@ -189,12 +186,11 @@ rtp('get', 'campaign',true);
         
         
       </h2>
-<p>To change the configuration, load a new configuration object to the old Player instance as following:   <br />
+<p>To change the configuration, load a new configuration object to the old Player instance as following: <br />
 Remember to use this <strong>ONLY if you used resetPlayer previously</strong>.</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">changeConfiguration</span><span class="p">:(</span><span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="p">)</span><span class="nv">config</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">changeConfiguration</span><span class="p">:(</span><span class="n">KPPlayerConfig</span> <span class="o">*</span><span class="p">)</span><span class="nv">config</span><span class="p">;</span>
+</code></pre></div></div>
     
       <h2 id="releasing-and-saving-a-position">
         
@@ -205,9 +201,8 @@ Remember to use this <strong>ONLY if you used resetPlayer previously</strong>.</
       </h2>
 <p>This option enables you to save the position of the Player when switching between views, since the Player will be opened again (you will need to call Resume Player when opening again - see below for details):</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">releaseAndSavePosition</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">releaseAndSavePosition</span><span class="p">;</span>
+</code></pre></div></div>
     
       <h2 id="resuming-a-player">
         
@@ -218,9 +213,8 @@ Remember to use this <strong>ONLY if you used resetPlayer previously</strong>.</
       </h2>
 <p>When a Player is released and its position saved, the following option resumes the Player:</p>
 
-<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">resumePlayer</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">resumePlayer</span><span class="p">;</span>
+</code></pre></div></div>
 		
 </article>
 

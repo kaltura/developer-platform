@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Dec 10 08:10:47 2019</span>, By <span class="commit-author">Gilad Nadav</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/android/player-events-android.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Dec 10 08:10:47 2019</span>, By <span class="commit-author">Gilad Nadav</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/android/player-events-android.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Dec 10 08:10:47 2019, By <span class="commit-author">Gilad Nadav</span></td></tr-->
 			
@@ -150,9 +150,9 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Call the following Player method, one or more times. <code class="highlighter-rouge">eventTypes</code> is the list of events that should be sent to the given listener:</p>
+<p>Call the following Player method, one or more times. <code class="language-plaintext highlighter-rouge">eventTypes</code> is the list of events that should be sent to the given listener:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">,</span> <span class="n">Enum</span><span class="o">...</span> <span class="n">eventTypes</span><span class="o">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">player</span><span class="o">.</span><span class="na">addEventListener</span><span class="o">(</span><span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">,</span> <span class="nc">Enum</span><span class="o">...</span> <span class="n">eventTypes</span><span class="o">)</span></code></pre></figure>
     
       <h4 id="example">
         
@@ -162,7 +162,7 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>   private fun addPlayerStateListener() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   private fun addPlayerStateListener() {
         player!!.addListener(this, PlayerEvent.stateChanged) { event -&gt;
             Log.d(TAG, "State changed from " + event.oldState + " to " + event.newState)
             playerState = event.newState
@@ -190,8 +190,7 @@ rtp('get', 'campaign',true);
             Log.d(TAG, "Error PlayerEvent " + event.error.message + " isFatal = " + event.error.isFatal)
         }
     }
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="removing-event-listeners-from-application-v362-and-up">
         
@@ -209,13 +208,13 @@ rtp('get', 'campaign',true);
   <li>Remove listener from specific events:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">player</span><span class="o">.</span><span class="na">removeEventListener</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">,</span> <span class="n">Enum</span><span class="o">...</span> <span class="n">events</span><span class="o">);</span> <span class="c1">// remove by event</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">player</span><span class="o">.</span><span class="na">removeEventListener</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">,</span> <span class="nc">Enum</span><span class="o">...</span> <span class="n">events</span><span class="o">);</span> <span class="c1">// remove by event</span></code></pre></figure>
 
 <ul>
   <li>Remove listener from all events:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">player</span><span class="o">.</span><span class="na">removeListener</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">);</span> <span class="c1">// remove all registered events</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">player</span><span class="o">.</span><span class="na">removeListener</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">);</span> <span class="c1">// remove all registered events</span></code></pre></figure>
     
       <h2 id="listening-to-events-from-plugins">
         
@@ -225,9 +224,9 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p><code class="highlighter-rouge">player.addEventListener()</code> is only meant to be used by applications. It does not work for plugins. Instead, plugins are given an instance of PlayKit’s MessageBus.</p>
+<p><code class="language-plaintext highlighter-rouge">player.addEventListener()</code> is only meant to be used by applications. It does not work for plugins. Instead, plugins are given an instance of PlayKit’s MessageBus.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">,</span> <span class="n">Enum</span><span class="o">...</span> <span class="n">eventTypes</span><span class="o">)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  <span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">listener</span><span class="o">,</span> <span class="nc">Enum</span><span class="o">...</span> <span class="n">eventTypes</span><span class="o">)</span></code></pre></figure>
     
       <h2 id="core-player-events">
         
@@ -328,8 +327,8 @@ rtp('get', 'campaign',true);
         
         
       </h3>
-<p>The Player can be in one of 4 playback states:<br />
-  IDLE, LOADING, READY, BUFFERING<br />
+<p>The Player can be in one of 4 playback states:
+  IDLE, LOADING, READY, BUFFERING
 The STATE_CHANGED event is fired when the player transitions between states.</p>
     
       <h3 id="subtitle-style-update">

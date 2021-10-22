@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/IntroductionV2.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/IntroductionV2.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 15 04:38:30 2017, By: Oren Me</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -301,11 +301,10 @@ rtp('get', 'campaign',true);
 
 <p>Use these commands to remove the html5 UI controls:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[config addConfigKey:@"controlBarContainer.plugin" withValue:@"false"];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[config addConfigKey:@"controlBarContainer.plugin" withValue:@"false"];
 [config addConfigKey:@"topBarContainer.plugin" withValue:@"false"];
 [config addConfigKey:@"largePlayBtn.plugin" withValue:@"false"];
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="disabling-the-html-spinner-and-controlling-it-with-a-custom-spinner">
         
@@ -321,30 +320,27 @@ rtp('get', 'campaign',true);
   <li>To disable the HTML spinner, use the disable “loadingSpinner.plugin”:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[config addConfigKey:@"loadingSpinner.plugin" withValue:@"false"];
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[config addConfigKey:@"loadingSpinner.plugin" withValue:@"false"];
+</code></pre></div></div>
 <ul>
   <li>To start a buffering event, use “onAddPlayerSpinner”:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[self.player addKPlayerEventListener:@"onAddPlayerSpinner" eventID:@"onAddPlayerSpinner" handler:^(NSString  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[self.player addKPlayerEventListener:@"onAddPlayerSpinner" eventID:@"onAddPlayerSpinner" handler:^(NSString  
  *eventName, NSString *params) {
         //your code
     }];
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li>To stop a buffering event, use “onRemovePlayerSpinner”:</li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[self.player addKPlayerEventListener:@"onRemovePlayerSpinner" eventID:@"onRemovePlayerSpinner" 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[self.player addKPlayerEventListener:@"onRemovePlayerSpinner" eventID:@"onRemovePlayerSpinner" 
  handler:^(NSString *eventName, NSString *params) {
         //your code
     }];
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="disabling-thumbnails">
         
@@ -356,12 +352,11 @@ rtp('get', 'campaign',true);
 
 <p>We can disable the loading of assets by setting uiconf:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[config addConfigKey:@"EmbedPlayer.HidePosterOnStart" withValue:@"true"];
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[config addConfigKey:@"EmbedPlayer.HidePosterOnStart" withValue:@"true"];
 [config addConfigKey:@"scrubber.sliderPreview" withValue:@"false"];
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<p>These settings will prevent loading the thumbnails assets.<br />
+<p>These settings will prevent loading the thumbnails assets.
 Set this on your own discretion, as it is dependent of application usage (weather it uses web component scrubber or not, or if it needs poster on start or not).</p>
     
       <h2 id="player-version-management">
@@ -372,7 +367,7 @@ Set this on your own discretion, as it is dependent of application usage (weathe
         
       </h2>
 
-<p>The Mobile Video Player SDKs are native iOS and Android wrapper libraries for the <a href="/api-docs/04_Web-Video-Player/Player-Configuration.html">Kaltura Web Video Player Library</a>.  <br />
+<p>The Mobile Video Player SDKs are native iOS and Android wrapper libraries for the <a href="/api-docs/04_Web-Video-Player/Player-Configuration.html">Kaltura Web Video Player Library</a>.<br />
 We recommend using the latest version of both the Kaltura Web Video Player and the native Mobile Player SDKs.</p>
 
 <ul>
@@ -534,14 +529,12 @@ We recommend using the latest version of both the Kaltura Web Video Player and t
 
 <p>In the example below, the loadingSpinner plugin has been disabled:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>// objective_c
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// objective_c
 [config addConfigKey:@"loadingSpinner.plugin" withValue:@"false"];
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>// Java
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Java
 config.addConfig("loadingSpinner.plugin", "false");
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h5 id="creating-custom-plugins">
         
@@ -613,7 +606,7 @@ config.addConfig("loadingSpinner.plugin", "false");
 
 <p>The Player-SDK must communicate with a license server in order to get the license, for both online and offline playback. The API between the SDK and the server is a simple http POST, where all required identify/authorization parameters are provided in the query string.</p>
 
-<p>The license URL is provided to the DRM client by <code class="highlighter-rouge">PlayerViewController</code>/<code class="highlighter-rouge">KPViewController</code> in online mode (when playback is started), or by <code class="highlighter-rouge">LocalAssetManager</code>/<code class="highlighter-rouge">KPLocalAssetsManager</code> in offline mode (during asset registration/refresh).</p>
+<p>The license URL is provided to the DRM client by <code class="language-plaintext highlighter-rouge">PlayerViewController</code>/<code class="language-plaintext highlighter-rouge">KPViewController</code> in online mode (when playback is started), or by <code class="language-plaintext highlighter-rouge">LocalAssetManager</code>/<code class="language-plaintext highlighter-rouge">KPLocalAssetsManager</code> in offline mode (during asset registration/refresh).</p>
 
 <p>The following are the high level sequence diagrams. Please note that they are internal to the Player-SDK, and are provided here for informational purposes only.</p>
     
@@ -625,7 +618,7 @@ config.addConfig("loadingSpinner.plugin", "false");
         
       </h4>
 
-<p><img src="assets/uml/bcface72e4179d69d514acff022dfa68.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/bcface72e4179d69d514acff022dfa68.svg" type="image/svg+xml" class="plantuml"></object></p>
     
       <h4 id="offline">
         
@@ -635,7 +628,7 @@ config.addConfig("loadingSpinner.plugin", "false");
         
       </h4>
 
-<p><img src="assets/uml/b7679828caeadd55b96e9f86411db616.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/b7679828caeadd55b96e9f86411db616.svg" type="image/svg+xml" class="plantuml"></object></p>
     
       <h3 id="offline-playback-integration">
         
@@ -706,7 +699,7 @@ config.addConfig("loadingSpinner.plugin", "false");
         
       </h5>
 
-<p>Local assets are managed in <code class="highlighter-rouge">LocalAssetsManager</code>/<code class="highlighter-rouge">KPLocalAssetsManager</code>. The following Asset Management operations are available:</p>
+<p>Local assets are managed in <code class="language-plaintext highlighter-rouge">LocalAssetsManager</code>/<code class="language-plaintext highlighter-rouge">KPLocalAssetsManager</code>. The following Asset Management operations are available:</p>
     
       <h6 id="register">
         
@@ -718,11 +711,11 @@ config.addConfig("loadingSpinner.plugin", "false");
 
 <p>The application notifies the SDK about a new downloaded asset. The SDK fetches important metadata and a DRM license, if required.</p>
 
-<p><img src="assets/uml/de89705bb31e420083ae4001f4587cdb.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/de89705bb31e420083ae4001f4587cdb.svg" type="image/svg+xml" class="plantuml"></object></p>
 
 <p>####### Local Content ID</p>
 
-<p>The <code class="highlighter-rouge">entryConfig</code> object provided must include an additional field that is not used when streaming: <code class="highlighter-rouge">localContentId</code>. This unique string is used to map registration information to playback. The same unique string must be provided for both registration and playback.</p>
+<p>The <code class="language-plaintext highlighter-rouge">entryConfig</code> object provided must include an additional field that is not used when streaming: <code class="language-plaintext highlighter-rouge">localContentId</code>. This unique string is used to map registration information to playback. The same unique string must be provided for both registration and playback.</p>
 <blockquote>
   <p>Note: localContentId must <strong>not</strong> be set for online playback.</p>
 </blockquote>
@@ -745,7 +738,7 @@ config.addConfig("loadingSpinner.plugin", "false");
         
       </h6>
 
-<p>If possible, refresh the metadata obtained in <code class="highlighter-rouge">Register</code>, including the DRM license.</p>
+<p>If possible, refresh the metadata obtained in <code class="language-plaintext highlighter-rouge">Register</code>, including the DRM license.</p>
     
       <h6 id="unregister">
         
@@ -768,15 +761,15 @@ config.addConfig("loadingSpinner.plugin", "false");
 <p>All methods share the same set of arguments:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">entry</code>: A configured <code class="highlighter-rouge">KPPlayerConfig</code> object that points at the asset, with all the parameters required for regular playback of the asset, in addition to <code class="highlighter-rouge">localContentId</code></li>
-  <li><code class="highlighter-rouge">flavor</code>: The flavor id of the downloaded file</li>
-  <li><code class="highlighter-rouge">localPath</code>: The <em>absolute</em> local path to the downloaded file</li>
+  <li><code class="language-plaintext highlighter-rouge">entry</code>: A configured <code class="language-plaintext highlighter-rouge">KPPlayerConfig</code> object that points at the asset, with all the parameters required for regular playback of the asset, in addition to <code class="language-plaintext highlighter-rouge">localContentId</code></li>
+  <li><code class="language-plaintext highlighter-rouge">flavor</code>: The flavor id of the downloaded file</li>
+  <li><code class="language-plaintext highlighter-rouge">localPath</code>: The <em>absolute</em> local path to the downloaded file</li>
 </ul>
 
 <p>Additional arguments:</p>
 
 <ul>
-  <li>Android: <code class="highlighter-rouge">Context</code>, listener</li>
+  <li>Android: <code class="language-plaintext highlighter-rouge">Context</code>, listener</li>
   <li>iOS: callback block</li>
 </ul>
     
@@ -791,8 +784,8 @@ config.addConfig("loadingSpinner.plugin", "false");
 <p>To override the default (streaming) playback URL with a downloaded file, the application provides a delegate to the Player.</p>
 
 <ul>
-  <li>Android: Set <code class="highlighter-rouge">CustomSourceURLProvider</code> in <code class="highlighter-rouge">PlayerViewController</code> to an implementation of <code class="highlighter-rouge">PlayerViewController.SourceURLProvider</code></li>
-  <li>iOS: Set <code class="highlighter-rouge">customSourceURLProvider</code> in <code class="highlighter-rouge">KPViewController</code> to an implementation of <code class="highlighter-rouge">KPSourceURLProvider</code></li>
+  <li>Android: Set <code class="language-plaintext highlighter-rouge">CustomSourceURLProvider</code> in <code class="language-plaintext highlighter-rouge">PlayerViewController</code> to an implementation of <code class="language-plaintext highlighter-rouge">PlayerViewController.SourceURLProvider</code></li>
+  <li>iOS: Set <code class="language-plaintext highlighter-rouge">customSourceURLProvider</code> in <code class="language-plaintext highlighter-rouge">KPViewController</code> to an implementation of <code class="language-plaintext highlighter-rouge">KPSourceURLProvider</code></li>
 </ul>
 
 <p>The delegate contains a single method that, given an entryId, returns an alternative (local) asset URL. If the method returns null, the Player uses the default playback URL. The method is meant to be hooked to a Download Manager’s lookup function.</p>
@@ -804,9 +797,9 @@ config.addConfig("loadingSpinner.plugin", "false");
   <li>Download files for medium quality (to save storage space), but when online, play ABR to get better quality.</li>
 </ul>
 
-<p><img src="assets/uml/c5c908266ca5de456b2b9957ed3af1d1.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/c5c908266ca5de456b2b9957ed3af1d1.svg" type="image/svg+xml" class="plantuml"></object></p>
 
-<p>As mentioned above, the <code class="highlighter-rouge">entryConfig</code> object must include the <code class="highlighter-rouge">localContentId</code> that was used during the registration of the same asset.</p>
+<p>As mentioned above, the <code class="language-plaintext highlighter-rouge">entryConfig</code> object must include the <code class="language-plaintext highlighter-rouge">localContentId</code> that was used during the registration of the same asset.</p>
     
       <h4 id="download-location-guidelines">
         
@@ -826,7 +819,7 @@ config.addConfig("loadingSpinner.plugin", "false");
         
       </h5>
 
-<p>Store the downloaded files in a directory returned by <code class="highlighter-rouge">context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)</code> (or in a subdirectory of the directory). This directory is owned by the application, is deleted on uninstall, and typically resides on a relatively large partition. In addition, starting with <code class="highlighter-rouge">KITKAT</code>, this directory does not require read/write permissions to the shared storage (<code class="highlighter-rouge">WRITE_EXTERNAL_STORAGE</code>).</p>
+<p>Store the downloaded files in a directory returned by <code class="language-plaintext highlighter-rouge">context.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS)</code> (or in a subdirectory of the directory). This directory is owned by the application, is deleted on uninstall, and typically resides on a relatively large partition. In addition, starting with <code class="language-plaintext highlighter-rouge">KITKAT</code>, this directory does not require read/write permissions to the shared storage (<code class="language-plaintext highlighter-rouge">WRITE_EXTERNAL_STORAGE</code>).</p>
     
       <h5 id="ios">
         
@@ -836,7 +829,7 @@ config.addConfig("loadingSpinner.plugin", "false");
         
       </h5>
 
-<p>As per Apple’s current recommendation, downloaded video files should be stored in a subdirectory of the application’s <em>Documents</em> directory – <code class="highlighter-rouge">[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]</code>:</p>
+<p>As per Apple’s current recommendation, downloaded video files should be stored in a subdirectory of the application’s <em>Documents</em> directory – <code class="language-plaintext highlighter-rouge">[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]</code>:</p>
 
 <blockquote>
   <p>Put user data in Documents/. User data generally includes any files you might want to expose to the user—anything you might want the user to create, import, delete or edit. For a drawing app, user data includes any graphic files the user might create. For a text editor, it includes the text files. <strong>Video and audio apps may even include files that the user has downloaded to watch or listen to later</strong>.</p>

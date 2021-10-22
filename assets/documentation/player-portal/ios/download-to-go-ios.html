@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/ios/download-to-go-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/download-to-go-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Jun 9 07:47:37 2020, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -206,14 +206,14 @@ rtp('get', 'campaign',true);
 <p><img src="/assets/images/simple-flow.svg" alt="" /></p>
 
 <div hidden="">
-<p><img src="assets/uml/0f2cd3f42ef0f55bb22f76b4f3d265d4.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/0f2cd3f42ef0f55bb22f76b4f3d265d4.svg" type="image/svg+xml" class="plantuml"></object></p>
 </div>
 
 <blockquote>
   <p>Note:</p>
   <ul>
     <li>Failed is a temp state, the delegate will notify and item has failed and content manager will remove this item. In addition, keep in mind that when receiving failed state an error will also be provided in the delegate to indicate the reason.</li>
-    <li>There is also <code class="highlighter-rouge">Removed</code> state which is not displayed here. <code class="highlighter-rouge">Removed</code> is a temporary state indicated an item was removed (can be considered as an event). You can remove an item from all states.</li>
+    <li>There is also <code class="language-plaintext highlighter-rouge">Removed</code> state which is not displayed here. <code class="language-plaintext highlighter-rouge">Removed</code> is a temporary state indicated an item was removed (can be considered as an event). You can remove an item from all states.</li>
   </ul>
 </blockquote>
     
@@ -228,7 +228,7 @@ rtp('get', 'campaign',true);
 <p><img src="/assets/images/download-sequence.svg" alt="" /></p>
 
 <div hidden="">
-<p><img src="assets/uml/87a7967a6090e77a1ac1715f9a4fdb85.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/87a7967a6090e77a1ac1715f9a4fdb85.svg" type="image/svg+xml" class="plantuml"></object></p>
 </div>
     
       <h3 id="simple-playing-sequence-using-playkit-player">
@@ -242,7 +242,7 @@ rtp('get', 'campaign',true);
 <p><img src="/assets/images/playing-sequence.svg" alt="" /></p>
 
 <div hidden="">
-<p><img src="assets/uml/4fe4e1d6d6b95b7e4ca58e967d82cfad.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
+<p><object data="/uml/4fe4e1d6d6b95b7e4ca58e967d82cfad.svg" type="image/svg+xml" class="plantuml"></object></p>
 </div>
     
       <h2 id="usage">
@@ -259,11 +259,11 @@ rtp('get', 'campaign',true);
 
 <p>The following classes/interfaces are the public API of the library:</p>
 <ul>
-  <li><code class="highlighter-rouge">ContentManager</code> - Use this class to interact with the library.</li>
-  <li><code class="highlighter-rouge">DTGContentManager</code> - This is the main API you will use to interact with the library.</li>
-  <li><code class="highlighter-rouge">ContentManagerDelegate</code> - Delegate calls available to observe.</li>
-  <li><code class="highlighter-rouge">DTGItem</code> - Represent a single download item.</li>
-  <li><code class="highlighter-rouge">DTGItemState</code> - The state of a download item.</li>
+  <li><code class="language-plaintext highlighter-rouge">ContentManager</code> - Use this class to interact with the library.</li>
+  <li><code class="language-plaintext highlighter-rouge">DTGContentManager</code> - This is the main API you will use to interact with the library.</li>
+  <li><code class="language-plaintext highlighter-rouge">ContentManagerDelegate</code> - Delegate calls available to observe.</li>
+  <li><code class="language-plaintext highlighter-rouge">DTGItem</code> - Represent a single download item.</li>
+  <li><code class="language-plaintext highlighter-rouge">DTGItemState</code> - The state of a download item.</li>
 </ul>
 
 <p>Basic Implementation:</p>
@@ -336,10 +336,10 @@ rtp('get', 'campaign',true);
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>On <code class="highlighter-rouge">AppDelegate</code>:</p>
+<p>On <code class="language-plaintext highlighter-rouge">AppDelegate</code>:</p>
 <ul>
-  <li>Make sure to call <code class="highlighter-rouge">ContentManager.shared.setup()</code></li>
-  <li>(Optional) This is a good place to call <code class="highlighter-rouge">ContentManager.shared.startItems(inStates: _)</code> to resume interrupted or in progress downloads.</li>
+  <li>Make sure to call <code class="language-plaintext highlighter-rouge">ContentManager.shared.setup()</code></li>
+  <li>(Optional) This is a good place to call <code class="language-plaintext highlighter-rouge">ContentManager.shared.startItems(inStates: _)</code> to resume interrupted or in progress downloads.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">@UIApplicationMain</span>
@@ -359,7 +359,7 @@ rtp('get', 'campaign',true);
 <span class="p">}</span></code></pre></figure>
 
 <blockquote>
-  <p>Note: Make sure to call <code class="highlighter-rouge">ContentManager.shared.stop()</code> when finished with playback.</p>
+  <p>Note: Make sure to call <code class="language-plaintext highlighter-rouge">ContentManager.shared.stop()</code> when finished with playback.</p>
 </blockquote>
 		
 </article>

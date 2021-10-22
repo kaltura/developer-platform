@@ -109,14 +109,20 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jul 30 06:50:46 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/player-portal/web/drm.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/drm.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Jul 30 02:08:55 2019, By: Avital</td></tr-->
-				<!--tr><td>Last commit: Tue Jul 30 06:50:46 2019, By <span class="commit-author">Avital</span></td></tr-->
+				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
 					<td>Avital (2 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
+				</tr> -->
+
+				<!-- 
+				
+				<tr>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -129,7 +135,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>Once the player gets an encrypted source to play, it will need to select a DRM system with which to run the source.  <br />
+		<p>Once the player gets an encrypted source to play, it will need to select a DRM system with which to run the source.<br />
 The following guide explains the default selection, and how an application can force the selection using the configuration.</p>
       <h3 id="default-selection">
         
@@ -174,7 +180,7 @@ The following guide explains the default selection, and how an application can f
 
 <p>Setting the desired DRM system is done by setting the DRM configuration. For example:</p>
 
-<p><code class="highlighter-rouge">ecmascript 6
+<p><code class="language-plaintext highlighter-rouge">ecmascript 6
 var config = {
   drm: {
     keySystem: playkit.core.DrmScheme.PLAYREADY // "com.microsoft.playready"
@@ -184,8 +190,8 @@ var config = {
 var player = playkit.core.loadPlayer(config);
 </code></p>
 
-<p><strong>Important</strong>:  <br />
-The player selects the DRM system <strong>after</strong> the <a href="https://developer.kaltura.com/player/web/player-events-web">source type selection</a>.  <br />
+<p><strong>Important</strong>:<br />
+The player selects the DRM system <strong>after</strong> the <a href="/player/web/player-events-web">source type selection</a>.<br />
 Therefore, the DRM settings may <strong>not be applied</strong> when the source type cannot be played with the configured DRM system. For example:</p>
 
 <table>

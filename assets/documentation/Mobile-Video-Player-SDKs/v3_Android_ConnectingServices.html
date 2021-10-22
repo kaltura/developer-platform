@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri May 4 05:42:39 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_ConnectingServices.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Fri May 4 05:42:39 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_ConnectingServices.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Fri May 4 05:42:39 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -184,7 +184,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The MockMediaProvider can take as an input a JSON file, or JsonObject, and entryId.<br />
+<p>The MockMediaProvider can take as an input a JSON file, or JsonObject, and entryId.
 According to the entryId, a single entry can be selected, and considered as media data.</p>
     
       <h4 id="jsonobject-input">
@@ -201,20 +201,20 @@ According to the entryId, a single entry can be selected, and considered as medi
 
 <p>1 . Manually create a JsonObject and add its properties:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">JsonObject</span> <span class="n">entries</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
-    <span class="n">JsonObject</span> <span class="n">mediaEntryJson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nc">JsonObject</span> <span class="n">entries</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
+    <span class="nc">JsonObject</span> <span class="n">mediaEntryJson</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
    <span class="n">mediaEntryJson</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"id"</span><span class="o">,</span> <span class="n">id</span><span class="o">);</span>
    <span class="n">mediaEntryJson</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
     <span class="n">mediaEntryJson</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"duration"</span><span class="o">,</span> <span class="n">duration</span><span class="o">);</span>
   <span class="n">mediaEntryJson</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"mediaType"</span><span class="o">,</span> <span class="n">type</span><span class="o">);</span>
 
-  <span class="n">JsonArray</span> <span class="n">sourcesArray</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonArray</span><span class="o">();</span>
-  <span class="n">JsonObject</span> <span class="n">sourceObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+  <span class="nc">JsonArray</span> <span class="n">sourcesArray</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonArray</span><span class="o">();</span>
+  <span class="nc">JsonObject</span> <span class="n">sourceObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
   <span class="n">sourceObject</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"id"</span><span class="o">,</span> <span class="n">id</span><span class="o">);</span>
   <span class="n">sourceObject</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"url"</span><span class="o">,</span> <span class="n">url</span><span class="o">);</span>
 
-  <span class="n">JsonArray</span> <span class="n">drm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonArray</span><span class="o">();</span>
-  <span class="n">JsonObject</span> <span class="n">drmData</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
+  <span class="nc">JsonArray</span> <span class="n">drm</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonArray</span><span class="o">();</span>
+  <span class="nc">JsonObject</span> <span class="n">drmData</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
   <span class="n">drmData</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"licenseUri"</span><span class="o">,</span> <span class="n">license</span><span class="o">);</span>
   <span class="n">drm</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">drmData</span><span class="o">);</span>
 
@@ -222,13 +222,12 @@ According to the entryId, a single entry can be selected, and considered as medi
   <span class="n">sourcesArray</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">sourceObject</span><span class="o">);</span>
   <span class="n">mediaEntryJson</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"sources"</span><span class="o">,</span>  <span class="n">sourcesArray</span><span class="o">);</span>
 
-  <span class="n">entries</span><span class="o">.</span><span class="na">add</span><span class="o">(&lt;</span><span class="n">EntryId</span><span class="o">&gt;,</span> <span class="n">mediaEntryJson</span><span class="o">);</span>
-</code></pre>
-</div>
+  <span class="n">entries</span><span class="o">.</span><span class="na">add</span><span class="o">(&lt;</span><span class="nc">EntryId</span><span class="o">&gt;,</span> <span class="n">mediaEntryJson</span><span class="o">);</span>
+</code></pre></div></div>
 
 <p>2 . Parsing a string representation of JSON data into JsonObject:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">String</span> <span class="n">entries</span> <span class="o">=</span> <span class="s">"{\n"</span> <span class="o">+</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">String</span> <span class="n">entries</span> <span class="o">=</span> <span class="s">"{\n"</span> <span class="o">+</span>
         <span class="s">"  \"mp4\": {\n"</span> <span class="o">+</span>
         <span class="s">"    \"duration\": 102000,\n"</span> <span class="o">+</span>
         <span class="s">"    \"id\": \"1_1h1vsv3z\",\n"</span> <span class="o">+</span>
@@ -258,10 +257,9 @@ According to the entryId, a single entry can be selected, and considered as medi
         <span class="s">"  }\n"</span> <span class="o">+</span>
         <span class="s">"}"</span><span class="o">;</span>
 
-<span class="n">JsonParser</span> <span class="n">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonParser</span><span class="o">();</span>
-<span class="n">JsonObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">entries</span><span class="o">).</span><span class="na">getAsJsonObject</span><span class="o">();</span>
-</code></pre>
-</div>
+<span class="nc">JsonParser</span> <span class="n">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonParser</span><span class="o">();</span>
+<span class="nc">JsonObject</span> <span class="n">jsonObject</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">entries</span><span class="o">).</span><span class="na">getAsJsonObject</span><span class="o">();</span>
+</code></pre></div></div>
     
       <h4 id="json-input-file">
         
@@ -275,51 +273,49 @@ According to the entryId, a single entry can be selected, and considered as medi
 
 <p><em>entries.json</em></p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"drm1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"drm1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0_dash"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdnapisec.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drmData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"licenseUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://udrm.kaltura.com/cenc/widevine/license?custom_data=eyJjYV9zeXN0ZW0iOiJPVlAiLCJ1c2VyX3Rva2VuIjoiZGpKOE1UZzFNVFUzTVh6NnJxM3hFYnI0aFBWU3N0ajRDaGtkT1NoVU1QYV9sTFFaNWpkSVdscWdYNld6YnJuSGZORHZ0V3hmYmExT3dJVmVjeXNIVTc3ci1VazBvWWZkaGttd0dZNWQwSmdCUGdfMkZ3Wi13cE1yRlE9PSIsImFjY291bnRfaWQiOiIxODUxNTcxIiwiY29udGVudF9pZCI6IjBfcGw1bGJmbzAiLCJmaWxlcyI6IjBfendxM2w0NHIsMF91YTYycms2cywwX290bWFxcG5mLDBfeXdrbXFua2csMV9lMHF0YWoxaiwxX2IycXp5dmE3In0%3D&amp;signature=eFrsxqplBh6b8%2BRkn4XaLsKD7Lc%3D"</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0_dash"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdnapisec.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"drmData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"licenseUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://udrm.kaltura.com/cenc/widevine/license?custom_data=eyJjYV9zeXN0ZW0iOiJPVlAiLCJ1c2VyX3Rva2VuIjoiZGpKOE1UZzFNVFUzTVh6NnJxM3hFYnI0aFBWU3N0ajRDaGtkT1NoVU1QYV9sTFFaNWpkSVdscWdYNld6YnJuSGZORHZ0V3hmYmExT3dJVmVjeXNIVTc3ci1VazBvWWZkaGttd0dZNWQwSmdCUGdfMkZ3Wi13cE1yRlE9PSIsImFjY291bnRfaWQiOiIxODUxNTcxIiwiY29udGVudF9pZCI6IjBfcGw1bGJmbzAiLCJmaWxlcyI6IjBfendxM2w0NHIsMF91YTYycms2cywwX290bWFxcG5mLDBfeXdrbXFua2csMV9lMHF0YWoxaiwxX2IycXp5dmE3In0%3D&amp;signature=eFrsxqplBh6b8%2BRkn4XaLsKD7Lc%3D"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"dash"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">102000</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_1h1vsv3z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DASH: Kaltura Video Solutions for Media Companies"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"dash"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">102000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_1h1vsv3z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DASH: Kaltura Video Solutions for Media Companies"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_1h1vsv3z_dash"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/dash+xml"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdnapisec.kaltura.com/p/2209591/sp/0/playManifest/entryId/1_1h1vsv3z/format/mpegdash/protocol/http/a.mpd"</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_1h1vsv3z_dash"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/dash+xml"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdnapisec.kaltura.com/p/2209591/sp/0/playManifest/entryId/1_1h1vsv3z/format/mpegdash/protocol/http/a.mpd"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p><em>singleEntry.json</em></p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0_dash"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdnapisec.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drmData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"licenseUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://udrm.kaltura.com/cenc/widevine/license?custom_data=eyJjYV9zeXN0ZW0iOiJPVlAiLCJ1c2VyX3Rva2VuIjoiZGpKOE1UZzFNVFUzTVh6NnJxM3hFYnI0aFBWU3N0ajRDaGtkT1NoVU1QYV9sTFFaNWpkSVdscWdYNld6YnJuSGZORHZ0V3hmYmExT3dJVmVjeXNIVTc3ci1VazBvWWZkaGttd0dZNWQwSmdCUGdfMkZ3Wi13cE1yRlE9PSIsImFjY291bnRfaWQiOiIxODUxNTcxIiwiY29udGVudF9pZCI6IjBfcGw1bGJmbzAiLCJmaWxlcyI6IjBfendxM2w0NHIsMF91YTYycms2cywwX290bWFxcG5mLDBfeXdrbXFua2csMV9lMHF0YWoxaiwxX2IycXp5dmE3In0%3D&amp;signature=eFrsxqplBh6b8%2BRkn4XaLsKD7Lc%3D"</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0_pl5lbfo0_dash"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdnapisec.kaltura.com/p/1851571/sp/185157100/playManifest/entryId/0_pl5lbfo0/flavorIds/0_ywkmqnkg/format/mpegdash/protocol/http/a.mpd"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"drmData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"licenseUri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://udrm.kaltura.com/cenc/widevine/license?custom_data=eyJjYV9zeXN0ZW0iOiJPVlAiLCJ1c2VyX3Rva2VuIjoiZGpKOE1UZzFNVFUzTVh6NnJxM3hFYnI0aFBWU3N0ajRDaGtkT1NoVU1QYV9sTFFaNWpkSVdscWdYNld6YnJuSGZORHZ0V3hmYmExT3dJVmVjeXNIVTc3ci1VazBvWWZkaGttd0dZNWQwSmdCUGdfMkZ3Wi13cE1yRlE9PSIsImFjY291bnRfaWQiOiIxODUxNTcxIiwiY29udGVudF9pZCI6IjBfcGw1bGJmbzAiLCJmaWxlcyI6IjBfendxM2w0NHIsMF91YTYycms2cywwX290bWFxcG5mLDBfeXdrbXFua2csMV9lMHF0YWoxaiwxX2IycXp5dmE3In0%3D&amp;signature=eFrsxqplBh6b8%2BRkn4XaLsKD7Lc%3D"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
     
       <h3 id="using-mockmediaprovider">
         
@@ -329,7 +325,7 @@ According to the entryId, a single entry can be selected, and considered as medi
         
       </h3>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">using</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">file</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">//</span><span class="w"> </span><span class="err">using</span><span class="w"> </span><span class="err">input</span><span class="w"> </span><span class="err">file</span><span class="w">
 </span><span class="err">MockMediaProvider</span><span class="w"> </span><span class="err">mockMediaProvider</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">MockMediaProvider(InputFile,</span><span class="w"> </span><span class="err">context,</span><span class="w"> </span><span class="err">entryId);</span><span class="w">
 </span><span class="err">OR</span><span class="w">
 </span><span class="err">//using</span><span class="w"> </span><span class="err">JsonObject</span><span class="w">
@@ -338,17 +334,16 @@ According to the entryId, a single entry can be selected, and considered as medi
 
 </span><span class="err">mockMediaProvider.load(new</span><span class="w"> </span><span class="err">OnMediaLoadCompletion()</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">@Override</span><span class="w">
-        </span><span class="err">public</span><span class="w"> </span><span class="err">void</span><span class="w"> </span><span class="err">onComplete(ResultElement&lt;PKMediaEntry&gt;</span><span class="w"> </span><span class="err">response)</span><span class="w"> </span><span class="err">{</span><span class="w">
-            </span><span class="err">if(response.isSuccess())</span><span class="w"> </span><span class="err">{</span><span class="w">
+        </span><span class="err">public</span><span class="w"> </span><span class="err">void</span><span class="w"> </span><span class="err">onComplete(ResultElement&lt;PKMediaEntry&gt;</span><span class="w"> </span><span class="err">response)</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="err">if(response.isSuccess())</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="err">//</span><span class="w"> </span><span class="err">response.getResponse()</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">contain</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">PKMediaEntry</span><span class="w"> </span><span class="err">object</span><span class="w">
             </span><span class="p">}</span><span class="w"> </span><span class="err">else</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="err">//</span><span class="w"> </span><span class="err">media</span><span class="w"> </span><span class="err">retrieval</span><span class="w"> </span><span class="err">error:</span><span class="w"> </span><span class="err">response.getError()</span><span class="w"> </span><span class="err">will</span><span class="w"> </span><span class="err">contain</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">error</span><span class="w">
             </span><span class="p">}</span><span class="w">
-        </span><span class="err">}</span><span class="w">
-</span><span class="err">});</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="err">);</span><span class="w">
 
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
     
       <h2 id="ovpmediaprovider">
         
@@ -370,13 +365,13 @@ According to the entryId, a single entry can be selected, and considered as medi
   <li>Activate the providers “load” method, passing it an OnMediaLoadCompletion callback object, in order to get the PKMediaEntry object.</li>
 </ol>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">KalturaOvpMediaProvider</span> <span class="n">mediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">KalturaOvpMediaProvider</span><span class="o">()</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">KalturaOvpMediaProvider</span> <span class="n">mediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KalturaOvpMediaProvider</span><span class="o">()</span>
                                             <span class="o">.</span><span class="na">setSessionProvider</span><span class="o">(</span><span class="n">ovpSessionProvider</span><span class="o">)</span>
-                                            <span class="o">.</span><span class="na">setEntryId</span><span class="o">(</span><span class="n">NonDRMEntryId</span><span class="o">);</span>
+                                            <span class="o">.</span><span class="na">setEntryId</span><span class="o">(</span><span class="nc">NonDRMEntryId</span><span class="o">);</span>
 
-  <span class="n">mediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="n">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
+  <span class="n">mediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="nc">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">ResultElement</span><span class="o">&lt;</span><span class="n">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nc">ResultElement</span><span class="o">&lt;</span><span class="nc">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">()){</span>
           <span class="c1">// response.getResponse() will contain the PKMediaEntry object</span>
         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
@@ -384,14 +379,13 @@ According to the entryId, a single entry can be selected, and considered as medi
         <span class="o">}</span>
     <span class="o">}</span>
   <span class="o">});</span>                                            
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong><em>Optional fields:</em></strong></p>
 <ul>
-  <li>RequestQueue requestsExecutor - Implementation of the <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/connect/RequestQueue.java">RequestQueue</a> interface.<br />
-The executor gets RequestElement items, passes them, and returns the response on the RequestElement<br />
-completion callback.<br />
+  <li>RequestQueue requestsExecutor - Implementation of the <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/connect/RequestQueue.java">RequestQueue</a> interface.
+The executor gets RequestElement items, passes them, and returns the response on the RequestElement
+completion callback.
 The executor can be a mock executor for test purposes or connect to a remote source and pass the http requests. The default provided implementation, <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/connect/APIOkRequestsExecutor.java">APIOkRequestsExecutor</a>, wraps the OKHttp3 http library for passing http requests.</li>
   <li>String uiConfId - If there is any, supply this data to provide it to the “playManifest” service over the constructed playing url.</li>
 </ul>
@@ -404,10 +398,10 @@ The executor can be a mock executor for test purposes or connect to a remote sou
         
       </h2>
 
-<p>This is a remote media provider that works on OTT Phoenix environments. Use this provider when your content is OTT.<br />
-This provider can be used also if your application is working with TVPAPI BE. The SessionProvider that<br />
-is used by the PhoenixMediaProvider should hold a valid Phoenix session token.<br />
-To make it easy, we’ve provided a SessionProvider implementation, <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/backend/phoenix/OttSessionProvider.java">OttSessionProvider</a>, that creates,<br />
+<p>This is a remote media provider that works on OTT Phoenix environments. Use this provider when your content is OTT.
+This provider can be used also if your application is working with TVPAPI BE. The SessionProvider that
+is used by the PhoenixMediaProvider should hold a valid Phoenix session token.
+To make it easy, we’ve provided a SessionProvider implementation, <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/backend/phoenix/OttSessionProvider.java">OttSessionProvider</a>, that creates,
 validates, and provides a valid Phoenix session token.</p>
 
 <p>The media provider uses the supplied media parameters, to build the relevant Phoenix API requests, execute them, parse the responses and create the PKMediaEntry object for the current play.</p>
@@ -420,15 +414,15 @@ validates, and provides a valid Phoenix session token.</p>
   <li>Activate the providers “load” method, passing it an OnMediaLoadCompletion callback object to get the PKMediaEntry object.</li>
 </ol>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PhoenixMediaProvider</span> <span class="n">mediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PhoenixMediaProvider</span><span class="o">()</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PhoenixMediaProvider</span> <span class="n">mediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PhoenixMediaProvider</span><span class="o">()</span>
                                             <span class="o">.</span><span class="na">setSessionProvider</span><span class="o">(</span><span class="n">ottSessionProvider</span><span class="o">)</span>
-                                            <span class="o">.</span><span class="na">setReferenceType</span><span class="o">(</span><span class="n">APIDefines</span><span class="o">.</span><span class="na">AssetReferenceType</span><span class="o">.</span><span class="na">Media</span><span class="o">)</span>
-                                            <span class="o">.</span><span class="na">setAssetId</span><span class="o">(</span><span class="n">MediaId</span><span class="o">)</span>
-                                            <span class="o">.</span><span class="na">setFormats</span><span class="o">(</span><span class="n">FormatHD</span><span class="o">,</span> <span class="n">FormatSD</span><span class="o">);</span>
+                                            <span class="o">.</span><span class="na">setReferenceType</span><span class="o">(</span><span class="nc">APIDefines</span><span class="o">.</span><span class="na">AssetReferenceType</span><span class="o">.</span><span class="na">Media</span><span class="o">)</span>
+                                            <span class="o">.</span><span class="na">setAssetId</span><span class="o">(</span><span class="nc">MediaId</span><span class="o">)</span>
+                                            <span class="o">.</span><span class="na">setFormats</span><span class="o">(</span><span class="nc">FormatHD</span><span class="o">,</span> <span class="nc">FormatSD</span><span class="o">);</span>
 
-<span class="n">mediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="n">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
+<span class="n">mediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="nc">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">ResultElement</span><span class="o">&lt;</span><span class="n">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nc">ResultElement</span><span class="o">&lt;</span><span class="nc">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">()){</span>
           <span class="c1">// response.getResponse() will contain the PKMediaEntry object</span>
         <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
@@ -436,14 +430,13 @@ validates, and provides a valid Phoenix session token.</p>
         <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">});</span>                                            
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong><em>Optional fields:</em></strong></p>
 <ul>
-  <li>RequestQueue requestsExecutor - Implementation of the <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/connect/RequestQueue.java">RequestQueue</a> interface.<br />
-The executor gets RequestElement items, passes them, and returns the response on the RequestElement<br />
-completion callback.<br />
+  <li>RequestQueue requestsExecutor - Implementation of the <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/connect/RequestQueue.java">RequestQueue</a> interface.
+The executor gets RequestElement items, passes them, and returns the response on the RequestElement
+completion callback.
 The executor can be a mock executor for test purposes or connect to a remote source and pass the http requests. The default provided implementation, <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/connect/APIOkRequestsExecutor.java">APIOkRequestsExecutor</a>, wraps the OKHttp3 http library for passing http requests.</li>
 </ul>
     
@@ -465,26 +458,24 @@ The executor can be a mock executor for test purposes or connect to a remote sou
 
 <p>For each source do the following:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">List</span><span class="o">&lt;</span><span class="n">PKMediaSource</span><span class="o">&gt;</span> <span class="n">mediaSourceList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-  <span class="n">PKMediaSource</span> <span class="n">pkMediaSource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKMediaSource</span><span class="o">();</span>
-  <span class="n">pkMediaSource</span><span class="o">.</span><span class="na">setId</span><span class="o">(&lt;</span><span class="n">FileId</span><span class="o">&gt;);</span>
-  <span class="n">pkMediaSource</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(&lt;</span><span class="n">Media</span> <span class="n">URL</span><span class="o">&gt;);</span>
-  <span class="n">pkMediaSource</span><span class="o">.</span><span class="na">setMediaFormat</span><span class="o">(</span><span class="n">PKMediaFormat</span><span class="o">.</span><span class="na">getMediaFormat</span><span class="o">(&lt;</span><span class="n">Media</span> <span class="n">URL</span><span class="o">));</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">List</span><span class="o">&lt;</span><span class="nc">PKMediaSource</span><span class="o">&gt;</span> <span class="n">mediaSourceList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+  <span class="nc">PKMediaSource</span> <span class="n">pkMediaSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKMediaSource</span><span class="o">();</span>
+  <span class="n">pkMediaSource</span><span class="o">.</span><span class="na">setId</span><span class="o">(&lt;</span><span class="nc">FileId</span><span class="o">&gt;);</span>
+  <span class="n">pkMediaSource</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(&lt;</span><span class="nc">Media</span> <span class="no">URL</span><span class="o">&gt;);</span>
+  <span class="n">pkMediaSource</span><span class="o">.</span><span class="na">setMediaFormat</span><span class="o">(</span><span class="nc">PKMediaFormat</span><span class="o">.</span><span class="na">getMediaFormat</span><span class="o">(&lt;</span><span class="nc">Media</span> <span class="no">URL</span><span class="o">));</span>
   
   <span class="n">mediaSourceList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">mediaSource</span><span class="o">);</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <blockquote>
   <p>Note: In case of Widevine Media, a DRM license is required.</p>
 </blockquote>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">List</span><span class="o">&lt;</span><span class="n">PKDrmParams</span><span class="o">&gt;</span> <span class="n">pkDrmDataList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-  <span class="n">PKDrmParams</span> <span class="n">pkDrmParams</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKDrmParams</span><span class="o">(</span><span class="n">licenseUrl</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">List</span><span class="o">&lt;</span><span class="nc">PKDrmParams</span><span class="o">&gt;</span> <span class="n">pkDrmDataList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+  <span class="nc">PKDrmParams</span> <span class="n">pkDrmParams</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKDrmParams</span><span class="o">(</span><span class="n">licenseUrl</span><span class="o">);</span>
   <span class="n">pkDrmDataList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pkDrmParams</span><span class="o">);</span>
   <span class="n">pkMediaSource</span><span class="o">.</span><span class="na">setDrmData</span><span class="o">(</span><span class="n">pkDrmDataList</span><span class="o">);</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="create-the-media-entry">
         
@@ -496,14 +487,13 @@ The executor can be a mock executor for test purposes or connect to a remote sou
 
 <p>For each entry, do the following:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKMediaEntry</span><span class="o">();</span>
-  <span class="n">mediaEntry</span><span class="o">.</span><span class="na">setId</span><span class="o">(&lt;</span><span class="n">MediaId</span><span class="o">&gt;)</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKMediaEntry</span><span class="o">();</span>
+  <span class="n">mediaEntry</span><span class="o">.</span><span class="na">setId</span><span class="o">(&lt;</span><span class="nc">MediaId</span><span class="o">&gt;)</span>
   <span class="n">mediaSourceList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pkMediaSource</span><span class="o">);</span>
   <span class="n">mediaEntry</span><span class="o">.</span><span class="na">setSources</span><span class="o">(</span><span class="n">mediaSourceList</span><span class="o">);</span>
   <span class="n">mediaEntry</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="n">mediaDuration</span><span class="o">);</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>When the PKMediaEntry is ready, you can begin configuring the player.</strong></p>
     
@@ -521,15 +511,14 @@ The executor can be a mock executor for test purposes or connect to a remote sou
 
 <p>The SessoinProvider provides the following:</p>
 
-<p>1 . A Base url - This is the domain name of the designated remote host.<br />
-  <em><strong>The Base url should only contain the host domain name and should not include<br />
+<p>1 . A Base url - This is the domain name of the designated remote host.
+  <em><strong>The Base url should only contain the host domain name and should not include
    a path to the services within.</strong></em></p>
 
 <p><em>Example:</em></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">OVP</span> <span class="n">base</span> <span class="nl">url:</span> <span class="nl">https:</span><span class="c1">//cdnapisec.kaltura.com/</span>
-</code></pre>
-</div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="no">OVP</span> <span class="n">base</span> <span class="nl">url:</span> <span class="nl">https:</span><span class="c1">//cdnapisec.kaltura.com/</span>
+</code></pre></div></div>
 
 <p>2 . A Session Token - This is a valid session key to work against the data source.</p>
 
@@ -559,15 +548,15 @@ The executor can be a mock executor for test purposes or connect to a remote sou
 
 <p>You can create a SessionProvider using an anonymous interface instantiation or implementing a class.</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">SessionProvider</span> <span class="n">sessionProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SessionProvider</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">SessionProvider</span> <span class="n">sessionProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SessionProvider</span><span class="o">()</span> <span class="o">{</span>
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="n">String</span> <span class="nf">baseUrl</span><span class="o">()</span> <span class="o">{</span>
+            <span class="kd">public</span> <span class="nc">String</span> <span class="nf">baseUrl</span><span class="o">()</span> <span class="o">{</span>
                 <span class="k">return</span> <span class="n">baseUrl</span><span class="o">;</span>
             <span class="o">}</span>
 
             <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getKs</span><span class="o">(</span><span class="n">OnCompletion</span><span class="o">&lt;</span><span class="n">PrimitiveResult</span><span class="o">&gt;</span> <span class="n">completion</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">completion</span><span class="o">.</span><span class="na">onComplete</span><span class="o">(</span><span class="k">new</span> <span class="n">PrimitiveResult</span><span class="o">(</span><span class="n">getKs</span><span class="o">()));</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getKs</span><span class="o">(</span><span class="nc">OnCompletion</span><span class="o">&lt;</span><span class="nc">PrimitiveResult</span><span class="o">&gt;</span> <span class="n">completion</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">completion</span><span class="o">.</span><span class="na">onComplete</span><span class="o">(</span><span class="k">new</span> <span class="nc">PrimitiveResult</span><span class="o">(</span><span class="n">getKs</span><span class="o">()));</span>
             <span class="o">}</span>
 
             <span class="nd">@Override</span>
@@ -575,8 +564,7 @@ The executor can be a mock executor for test purposes or connect to a remote sou
                 <span class="k">return</span> <span class="nf">partnerId</span><span class="o">();</span>
             <span class="o">}</span>
         <span class="o">};</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h3 id="provided-implementation">
         
@@ -603,10 +591,10 @@ The executor can be a mock executor for test purposes or connect to a remote sou
   <li>User specific session starts with the “ottUser/login” API, according to the username and password.</li>
 </ul>
 
-<p>The provider handles the refreshes of the session token when needed, before the token expires, and renews the session if it expires.<br />
+<p>The provider handles the refreshes of the session token when needed, before the token expires, and renews the session if it expires.
 Upon every session token fetching request, the session provider checks the current token validity; if the token has expired and can be renewed, the provider renews the token.</p>
 
-<p>A user session can be ended by making the session token invalid. This  means that additional requests using that token will fail.<br />
+<p>A user session can be ended by making the session token invalid. This  means that additional requests using that token will fail.
 Once a session has ended it can’t be renewed, and a new session should be started.</p>
 
 <p>To end a session, use the “ottUser/logout” API.</p>
@@ -619,32 +607,31 @@ Once a session has ended it can’t be renewed, and a new session should be star
 
 <p>To use the OttSessionProvider, implement the following:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">OttSessionProvider</span> <span class="n">ottSessionProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OttSessionProvider</span><span class="o">(</span><span class="n">PhoenixBaseUrl</span><span class="o">,</span> <span class="n">partnerId</span><span class="o">);</span>
-    <span class="n">ottSessionProvider</span><span class="o">.</span><span class="na">startSession</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">password</span><span class="o">,</span> <span class="n">udid</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnComplition</span><span class="o">&lt;</span><span class="n">PrimitiveRersult</span><span class="o">&gt;(){</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nc">OttSessionProvider</span> <span class="n">ottSessionProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OttSessionProvider</span><span class="o">(</span><span class="nc">PhoenixBaseUrl</span><span class="o">,</span> <span class="n">partnerId</span><span class="o">);</span>
+    <span class="n">ottSessionProvider</span><span class="o">.</span><span class="na">startSession</span><span class="o">(</span><span class="n">username</span><span class="o">,</span> <span class="n">password</span><span class="o">,</span> <span class="n">udid</span><span class="o">,</span> <span class="k">new</span> <span class="nc">OnComplition</span><span class="o">&lt;</span><span class="nc">PrimitiveRersult</span><span class="o">&gt;(){</span>
      <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">PrimitiveResult</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nc">PrimitiveResult</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
             <span class="k">if</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// has valid session:</span>
 
-                <span class="n">phoenixMediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PhoenixMediaProvider</span><span class="o">()</span>
+                <span class="n">phoenixMediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PhoenixMediaProvider</span><span class="o">()</span>
                               <span class="o">.</span><span class="na">setSessionProvider</span><span class="o">(</span><span class="n">ottSessionProvider</span><span class="o">)</span>
-                              <span class="o">.</span><span class="na">setReferenceType</span><span class="o">(</span><span class="n">APIDefines</span><span class="o">.</span><span class="na">AssetReferenceType</span><span class="o">.</span><span class="na">Media</span><span class="o">)</span>
-                              <span class="o">.</span><span class="na">setAssetId</span><span class="o">(</span><span class="n">ChannelId</span><span class="o">)</span>
-                              <span class="o">.</span><span class="na">setFormats</span><span class="o">(</span><span class="n">FormatHD</span><span class="o">,</span> <span class="n">FormatSD</span><span class="o">);</span>
+                              <span class="o">.</span><span class="na">setReferenceType</span><span class="o">(</span><span class="nc">APIDefines</span><span class="o">.</span><span class="na">AssetReferenceType</span><span class="o">.</span><span class="na">Media</span><span class="o">)</span>
+                              <span class="o">.</span><span class="na">setAssetId</span><span class="o">(</span><span class="nc">ChannelId</span><span class="o">)</span>
+                              <span class="o">.</span><span class="na">setFormats</span><span class="o">(</span><span class="nc">FormatHD</span><span class="o">,</span> <span class="nc">FormatSD</span><span class="o">);</span>
 
-                <span class="n">phoenixMediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="n">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
+                <span class="n">phoenixMediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="nc">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
                     <span class="nd">@Override</span>
-                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">ResultElement</span><span class="o">&lt;</span><span class="n">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nc">ResultElement</span><span class="o">&lt;</span><span class="nc">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
                       <span class="o">...</span>
                     <span class="o">}</span>
                 <span class="o">});</span>
 
             <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// error: session creation failed</span>
-              <span class="n">ErrorElement</span> <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
+              <span class="nc">ErrorElement</span> <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
             <span class="o">}</span>
         <span class="o">}</span>
     <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h4 id="ovpsessionprovider">
         
@@ -663,7 +650,7 @@ Once a session has ended it can’t be renewed, and a new session should be star
 
 <p>By default a session is valid for 24 hours. Once expired, the OvpSessionProvider will try to renew the session.</p>
 
-<p>A user session can be ended by making the session token invalid. This  means that additional requests using that token will fail.<br />
+<p>A user session can be ended by making the session token invalid. This  means that additional requests using that token will fail.
 Once a session has ended it can’t be renewed, and a new session should be started.</p>
 
 <p>To end a session, use the “session/end” API.</p>
@@ -678,30 +665,29 @@ Once a session has ended it can’t be renewed, and a new session should be star
 
 <p>To use the OvpSessionProvider, implement the following:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code>      <span class="n">OvpSessionProvider</span> <span class="n">ovpSessionProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OvpSessionProvider</span><span class="o">(</span><span class="n">OvpBaseUrl</span><span class="o">);</span>
-      <span class="n">ovpSessionProvider</span><span class="o">.</span><span class="na">startAnonymousSession</span><span class="o">(</span><span class="n">partnerId</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnComplition</span><span class="o">&lt;</span><span class="n">PrimitiveRersult</span><span class="o">&gt;(){</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nc">OvpSessionProvider</span> <span class="n">ovpSessionProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OvpSessionProvider</span><span class="o">(</span><span class="nc">OvpBaseUrl</span><span class="o">);</span>
+      <span class="n">ovpSessionProvider</span><span class="o">.</span><span class="na">startAnonymousSession</span><span class="o">(</span><span class="n">partnerId</span><span class="o">,</span> <span class="k">new</span> <span class="nc">OnComplition</span><span class="o">&lt;</span><span class="nc">PrimitiveRersult</span><span class="o">&gt;(){</span>
        <span class="nd">@Override</span>
-          <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">PrimitiveResult</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nc">PrimitiveResult</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
               <span class="k">if</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccess</span><span class="o">())</span> <span class="o">{</span> <span class="c1">// has valid session:</span>
 
-                  <span class="n">kalturaOvpMediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="n">KalturaOvpMediaProvider</span><span class="o">()</span>
+                  <span class="n">kalturaOvpMediaProvider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KalturaOvpMediaProvider</span><span class="o">()</span>
                                 <span class="o">.</span><span class="na">setSessionProvider</span><span class="o">(</span><span class="n">ovpSessionProvider</span><span class="o">)</span>
-                                <span class="o">.</span><span class="na">setEntryId</span><span class="o">(</span><span class="n">EntryId</span><span class="o">);</span>
+                                <span class="o">.</span><span class="na">setEntryId</span><span class="o">(</span><span class="nc">EntryId</span><span class="o">);</span>
 
-                  <span class="n">kalturaOvpMediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="n">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
+                  <span class="n">kalturaOvpMediaProvider</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="k">new</span> <span class="nc">OnMediaLoadCompletion</span><span class="o">()</span> <span class="o">{</span>
                       <span class="nd">@Override</span>
-                      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">ResultElement</span><span class="o">&lt;</span><span class="n">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+                      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nc">ResultElement</span><span class="o">&lt;</span><span class="nc">PKMediaEntry</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
                         <span class="o">...</span>
                       <span class="o">}</span>
                   <span class="o">});</span>
 
               <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// error: session creation failed</span>
-                <span class="n">ErrorElement</span> <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
+                <span class="nc">ErrorElement</span> <span class="n">error</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getError</span><span class="o">();</span>
               <span class="o">}</span>
           <span class="o">}</span>
       <span class="o">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
     
       <h2 id="uiconf-provider">
         
