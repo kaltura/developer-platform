@@ -36,7 +36,8 @@ window.jQuery = window.jquery;
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
-                            <a href="/Introduction_to_Kaltura_Media_Services">Get Started <img src="assets/icons/ArrowRight.svg"></a>
+                            <a href="/Introduction_to_Kaltura_Media_Services">Get Started <img 
+                                src="assets/icons/ArrowRight.svg" alt="card"></a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,7 @@ window.jQuery = window.jquery;
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
-                            <a href="/player">Start Playing<img src="assets/icons/ArrowRight.svg"></a>
+                            <a href="/player">Start Playing<img src="assets/icons/ArrowRight.svg" alt="card"></a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +67,8 @@ window.jQuery = window.jquery;
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
-                            <a href="/Real-time-Video-Meetings-Experience/Integrating-the-Embedded-Meetings-Experience-App.html">Start Meeting <img src="assets/icons/ArrowRight.svg"></a>
+                            <a href="/Real-time-Video-Meetings-Experience/Integrating-the-Embedded-Meetings-Experience-App.html">Start Meeting 
+                                <img alt="card" src="assets/icons/ArrowRight.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +83,8 @@ window.jQuery = window.jquery;
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
-                            <a href="/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.html">Start Webcasting<img src="assets/icons/ArrowRight.svg"></a>
+                            <a href="/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.html">Start Webcasting
+                                <img alt="card" src="assets/icons/ArrowRight.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +99,8 @@ window.jQuery = window.jquery;
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
-                            <a href="/Analytics-and-Reporting/Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html">Gather Data<img src="assets/icons/ArrowRight.svg"></a>
+                            <a href="/Analytics-and-Reporting/Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html">Gather Data
+                                <img alt="card" src="assets/icons/ArrowRight.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +115,8 @@ window.jQuery = window.jquery;
                             </p>
                         </div>
                         <div class="card-footer home-card-footer">
-                            <a href="/Introduction-to-Kaltura-Media-Services/Experience-Components.html">Plug and Play<img src="assets/icons/ArrowRight.svg"></a>
+                            <a href="/Introduction-to-Kaltura-Media-Services/Experience-Components.html">Plug and Play
+                                <img alt="card" src="assets/icons/ArrowRight.svg"></a>
                         </div>
                     </div>
                 </div>
@@ -135,23 +140,23 @@ window.jQuery = window.jquery;
                 <div class="code php">
                     <pre>
                         <code class="php">
-<?php
+&lt;?php
 require_once('lib/KalturaClient.php');
 
 $config = new KalturaConfiguration();
-$config->setServiceUrl('https://www.kaltura.com');
+$config-&gt;setServiceUrl('https://www.kaltura.com');
 $client = new KalturaClient($config);
 
 $entry = new KalturaMediaEntry();
-$entry->name = "My First Video";
+$entry-&gt;name = &quot;My First Video&quot;;
 
 try {
-    $result = $client->media->add($entry);
+    $result = $client-&gt;media-&gt;add($entry);
     var_dump($result);
 } catch (Exception $e) {
-    echo $e->getMessage();
+    echo $e-&gt;getMessage();
 }
-?>
+?&gt;
                         </code>
                     </pre>
                 </div>
@@ -165,12 +170,12 @@ class CodeExample {
     public static void main(String[] args) {
         Client client = CodeExample.generateKalturaClient();
         MediaEntry entry = new MediaEntry();
-        entry.setName("My First Video");
+        entry.setName(&quot;My First Video&quot;);
 
         AddMediaBuilder requestBuilder = MediaService.add(entry)
-            .setCompletion(new OnCompletion<Response<MediaEntry>>() {
+            .setCompletion(new OnCompletion&lt;Response&lt;MediaEntry&gt;&gt;() {
                 @Override
-                public void onComplete(Response<MediaEntry> result) {
+                public void onComplete(Response&lt;MediaEntry&gt; result) {
                     System.out.println(result);
                 }
             });
@@ -188,10 +193,10 @@ from KalturaClient import *
 from KalturaClient.Plugins.Core import *
 
 config = KalturaConfiguration()
-config.serviceUrl = "https://www.kaltura.com/"
+config.serviceUrl = &quot;https://www.kaltura.com/&quot;
 client = KalturaClient(config)
 entry = KalturaMediaEntry()
-entry.name = "My First Video"
+entry.name = &quot;My First Video&quot;
 
 result = client.media.add(entry)
 print(result)
@@ -207,11 +212,11 @@ config.serviceUrl = 'https://www.kaltura.com';
 const client = new kaltura.Client(config);
 
 let entry = new kaltura.objects.MediaEntry();
-entry.name = "My First Video";
+entry.name = &quot;My First Video&quot;;
 
 kaltura.services.media.add(entry)
     .execute(client)
-    .then(result => {
+    .then(result =&gt; {
         console.log(result);
     });
 
@@ -224,17 +229,16 @@ kaltura.services.media.add(entry)
                     <pre>
                         <code class="csharp">
 using Kaltura;
-
 namespace Kaltura {
     class CodeExample {
     static void Main(string[] args) {
         Client client = CodeExample.createKalturaClient();
         bool done = false;
         MediaEntry entry = new MediaEntry();
-        entry.Name = "My First Video";
+        entry.Name = &quot;My First Video&quot;;
 
-        OnCompletedHandler<MediaEntry> handler = new OnCompletedHandler<MediaEntry>(
-            (MediaEntry result, Exception e) =>
+        OnCompletedHandler&lt;MediaEntry&gt; handler = new OnCompletedHandler&lt;MediaEntry&gt;(
+            (MediaEntry result, Exception e) =&gt;
             {
                 CodeExample.PrintObject(result);
                 done = true;
@@ -258,7 +262,7 @@ config.service_url = 'https://www.kaltura.com'
 client = KalturaClient.new(config);  
 
 entry = KalturaMediaEntry.new()
-entry.name = "My First Video"
+entry.name = &quot;My First Video&quot;
 
 results = client.media_service.add(entry)
 puts results.inspect
