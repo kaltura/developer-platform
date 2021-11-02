@@ -16,27 +16,14 @@ if git log -1 --pretty=format:'%s' |grep -iq "[full build]"; then
 fi
 TARGET_API=ovp ./scripts/resources/all.sh
 TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination generated/ovp
-
+BRANCH="${GITHUB_REF##*/}"
 cd generated/ovp
-git checkout "${GITHUB_REF##*/}"
-git pull origin "${GITHUB_REF##*/}"
+git checkout $BRANCH
+git pull origin $BRANCH
 echo "Commiting OVP build"
 git add . >> /dev/null
 echo "Added everything to commit"
 git commit -a -m "Build site" >> /dev/null
 echo "Committed everything"
-git push -q -u https://$KALT_GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:${GITHUB_REF##*/} # >> /dev/null 2>&1
+git push -q -u https://$KALT_GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated HEAD:$BRANCH # >> /dev/null 2>&1
 echo "Pushed new site"
-cd ../../
-
-#echo "Building OTT Website..."
-#git clone https://github.com/kaltura/ott-developer-platform-generated generated/ott
-#rm -rf generated/ott/*
-TARGET_API=ott ./scripts/resources/all.sh
-TARGET_API=ott lucybot build --prerender --destination generated/ott
-
-#cd generated/ott
-#echo "Commiting OTT build"
-#git add . >> /dev/null
-#git commit -a -m "Build site" >> /dev/null
-#git push -q -u https://$GITHUB_ACCESS_TOKEN@github.com/kaltura/ott-developer-platform-generated HEAD:$BRANCH >> /dev/null 2>&1
