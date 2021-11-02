@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -ex
 
 git config --global user.name "Travis CI"
 git config --global user.email "jess.portnoy@kaltura.com"
@@ -10,8 +10,8 @@ echo "Building OVP Website..."
 GEN_DIR=generated/ovp
 git clone https://github.com/kaltura/developer-platform-generated "$GEN_DIR"
 cd "$GEN_DIR"
-git checkout $BRANCH
-git pull origin $BRANCH
+git checkout "$BRANCH"
+git pull origin "$BRANCH"
 cd ../..
 full_prerender=0
 if git log -1 --pretty=format:'%s' |grep -iq "[full build]"; then
