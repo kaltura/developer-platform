@@ -15,6 +15,7 @@ $(window).on('load', function() {
     $('.subnav.subnav-guides').addClass('active');
   }
 
+  /*
   $('.nav-tabs-b>span').on('click', function(evt) {
     evt.preventDefault();
     if (!$(this).hasClass('active')) {
@@ -23,7 +24,7 @@ $(window).on('load', function() {
     }
     // nav
     window.markdownNavigation($(this).attr('data-to'));
-  });
+  });*/
 
   $('.side-menu-toggle').on('click', function() {
     window.toggleSideMenu();

@@ -348,6 +348,10 @@ $('.nav-tabs-b>span').on('click', function(evt) {
     $('div.code.' + lang).show();
     // tabs
     $('div.code-container > div.nav-tabs-b > span').addClass('inactive');
+    if (!$(this).hasClass('active')) {
+      $('.nav-tabs-b>span').removeClass('active');
+      $(this).addClass('active');
+    }
     $(this).removeClass('inactive');
   });
 </script>
