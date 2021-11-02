@@ -24,7 +24,7 @@ h1.breadcrumbs {
   margin-top: 22px;
 }
 
-.breadcrumbs .fa-lock, 
+.breadcrumbs .fa-lock,
 .breadcrumbs .fa-unlock {
   display: none;
 }
@@ -41,7 +41,8 @@ h1.breadcrumbs {
   display: none;
 }
 
-.h2, h2 {
+.h2,
+h2 {
   font-size: 26px;
 }
 
@@ -49,7 +50,7 @@ h1.breadcrumbs {
   color: #999;
 }
 
-.gallery .input-group-btn .fa-times, 
+.gallery .input-group-btn .fa-times,
 side-menu .fa-times {
   color: #fff !important;
 }
@@ -157,10 +158,10 @@ img {
   color: #00e74e;
 }
 
-.code.java, 
-.code.python, 
-.code.csharp, 
-.code.javascript, 
+.code.java,
+.code.python,
+.code.csharp,
+.code.javascript,
 .code.ruby {
   display: none;
 }
