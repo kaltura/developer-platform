@@ -24,7 +24,8 @@ h1.breadcrumbs {
   margin-top: 22px;
 }
 
-.breadcrumbs .fa-lock, .breadcrumbs .fa-unlock {
+.breadcrumbs .fa-lock, 
+.breadcrumbs .fa-unlock {
   display: none;
 }
 
@@ -48,7 +49,8 @@ h1.breadcrumbs {
   color: #999;
 }
 
-gallery .input-group-btn .fa-times, side-menu .fa-times {
+.gallery .input-group-btn .fa-times, 
+side-menu .fa-times {
   color: #fff !important;
 }
 
@@ -72,41 +74,7 @@ img {
   max-width: 100%;
 }
 
-/* nav tabs header*/
 
-.nav-tabs-b {
-  font-size: 1em;
-  color: black;
-  position: relative;
-  top: -3px;
-}
-
-.nav-tabs-b > span > a {
-  color: black;
-  text-decoration: none;
-}
-
-.nav-tabs-b > span > a:hover {
-  text-decoration: none;
-}
-
-.nav-tabs-b > span {
-  margin-right: 12px;
-  padding-bottom: 12px;
-}
-
-.nav-tabs-b > span.active {
-  color: #006efa;
-  border-bottom: 2px solid #006efa;
-}
-
-.nav-tabs-b > span.active > a {
-  color: #006efa;
-}
-
-.nav-tabs-b > span.inactive > a {
-  color: black;
-}
 
 /* home */
 
@@ -152,7 +120,7 @@ img {
 }
 
 .home-container .explore-container .card {
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   padding: 20px;
   margin-bottom: 22px;
   min-height: 220px;
@@ -189,7 +157,11 @@ img {
   color: #00e74e;
 }
 
-.code.java, .code.python, .code.csharp, .code.javascript, .code.ruby {
+.code.java, 
+.code.python, 
+.code.csharp, 
+.code.javascript, 
+.code.ruby {
   display: none;
 }
 
@@ -225,6 +197,41 @@ img {
 
 .home-container .btm span.disabed {
   color: gray;
+}
+
+/* nav tabs header*/
+.nav-tabs-b {
+  font-size: 1em;
+  color: black;
+  position: relative;
+  top: -3px;
+}
+
+.nav-tabs-b > span > a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav-tabs-b > span > a:hover {
+  text-decoration: none;
+}
+
+.nav-tabs-b > span {
+  margin-right: 12px;
+  padding-bottom: 12px;
+}
+
+.nav-tabs-b > span.active {
+  color: #006efa;
+  border-bottom: 2px solid #006efa;
+}
+
+.nav-tabs-b > span.active > a {
+  color: #006efa;
+}
+
+.nav-tabs-b > span.inactive > a {
+  color: black;
 }
 
 /* navbar */
