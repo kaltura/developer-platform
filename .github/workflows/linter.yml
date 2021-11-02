@@ -55,3 +55,4 @@ jobs:
           VALIDATE_JSCPD: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CSS_FILE_NAME: .stylelintrc.json
