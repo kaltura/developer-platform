@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon May 13 08:54:42 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/autoplay-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon May 13 08:54:42 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/web/autoplay-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon May 13 08:54:42 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Mon May 13 08:54:42 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
@@ -129,7 +129,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>To have your content start playing automatically, simply set the value of <code class="language-plaintext highlighter-rouge">playback.autoplay</code> in the player configuration  accordingly.</p>
+		<p>To have your content start playing automatically, simply set the value of <code class="highlighter-rouge">playback.autoplay</code> in the player configuration  accordingly.</p>
       <h3 id="playbackautoplay">
         
         
@@ -141,7 +141,7 @@ rtp('get', 'campaign',true);
       <h5 id="type-boolean">
         
         
-          Type: <code class="language-plaintext highlighter-rouge">boolean</code> <a href="#type-boolean"></a>
+          Type: <code class="highlighter-rouge">boolean</code> <a href="#type-boolean"></a>
         
         
       </h5>
@@ -149,7 +149,7 @@ rtp('get', 'campaign',true);
       <h5 id="default-false">
         
         
-          Default: <code class="language-plaintext highlighter-rouge">false</code> <a href="#default-false"></a>
+          Default: <code class="highlighter-rouge">false</code> <a href="#default-false"></a>
         
         
       </h5>
@@ -162,7 +162,7 @@ rtp('get', 'campaign',true);
         
       </h5>
 
-<p>If set to <code class="language-plaintext highlighter-rouge">true</code>, playback will start automatically when the player receives the content. If set to <code class="language-plaintext highlighter-rouge">false</code>, a user action will be required to start playback.</p>
+<p>If set to <code class="highlighter-rouge">true</code>, playback will start automatically when the player receives the content. If set to <code class="highlighter-rouge">false</code>, a user action will be required to start playback.</p>
     
       <h4 id="example---basic-usage">
         
@@ -181,7 +181,7 @@ rtp('get', 'campaign',true);
 <span class="c1">// No additional code required - playback will begin automatically</span>
 <span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="nx">playkit</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">loadPlayer</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span></code></pre></figure>
 
-<p><strong><em>Note</em></strong>:
+<p><strong><em>Note</em></strong>:<br />
 Some developers simulate the autoplay behavior by calling the play() method right after creating the player without manipulating the player configuration. However, we strongly recommend not doing this!</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
@@ -199,7 +199,7 @@ Some developers simulate the autoplay behavior by calling the play() method righ
         
       </h4>
 
-<p>When you use the method described above, the player has no way of knowing whether the call to <code class="language-plaintext highlighter-rouge">play()</code> has been implemented via user action or via an API call. This can cause unexpected behavior in browsers that do not support autoplay.</p>
+<p>When you use the method described above, the player has no way of knowing whether the call to <code class="highlighter-rouge">play()</code> has been implemented via user action or via an API call. This can cause unexpected behavior in browsers that do not support autoplay.</p>
     
       <h3 id="what-if-the-browser-does-not-allow-autoplay">
         
@@ -219,10 +219,10 @@ Some developers simulate the autoplay behavior by calling the play() method righ
         
       </h4>
 
-<p>These restrictions apply only to automatic playback with sound, but not to automatic playback without sound.
+<p>These restrictions apply only to automatic playback with sound, but not to automatic playback without sound.<br />
 The PlayKitJS core can manage this logic on its own, and identify whether the current environment does not support autoplay with sound. In this case, the player will apply the autoplay with sound.</p>
 
-<p>To use this feature, you’ll need to set the <code class="language-plaintext highlighter-rouge">playback.allowMutedAutoPlay</code> accordingly to the desired behavior.</p>
+<p>To use this feature, you’ll need to set the <code class="highlighter-rouge">playback.allowMutedAutoPlay</code> accordingly to the desired behavior.</p>
     
       <h3 id="playbackallowmutedautoplay">
         
@@ -235,7 +235,7 @@ The PlayKitJS core can manage this logic on its own, and identify whether the cu
       <h5 id="type-boolean-1">
         
         
-          Type: <code class="language-plaintext highlighter-rouge">boolean</code> <a href="#type-boolean-1"></a>
+          Type: <code class="highlighter-rouge">boolean</code> <a href="#type-boolean-1"></a>
         
         
       </h5>
@@ -243,7 +243,7 @@ The PlayKitJS core can manage this logic on its own, and identify whether the cu
       <h5 id="default-true">
         
         
-          Default: <code class="language-plaintext highlighter-rouge">true</code> <a href="#default-true"></a>
+          Default: <code class="highlighter-rouge">true</code> <a href="#default-true"></a>
         
         
       </h5>
@@ -256,16 +256,16 @@ The PlayKitJS core can manage this logic on its own, and identify whether the cu
         
       </h5>
 
-<p>If set to <code class="language-plaintext highlighter-rouge">true</code> and the run-time browser blocks autoplay, autoplay will begin muted until any user action is executed on the player, which will then unmute playback. If set to <code class="language-plaintext highlighter-rouge">false</code> and the run-time browser blocks autoplay, playback will not start automatically.</p>
+<p>If set to <code class="highlighter-rouge">true</code> and the run-time browser blocks autoplay, autoplay will begin muted until any user action is executed on the player, which will then unmute playback. If set to <code class="highlighter-rouge">false</code> and the run-time browser blocks autoplay, playback will not start automatically.</p>
 
-<p>The following matrix summarizes the results for configuring <code class="language-plaintext highlighter-rouge">playback.allowMutedAutoPlay</code> when <code class="language-plaintext highlighter-rouge">playback.autoplay=true</code>:</p>
+<p>The following matrix summarizes the results for configuring <code class="highlighter-rouge">playback.allowMutedAutoPlay</code> when <code class="highlighter-rouge">playback.autoplay=true</code>:</p>
 
 <table>
   <thead>
     <tr>
       <th>Browser Policy</th>
-      <th><code class="language-plaintext highlighter-rouge">allowMutedAutoPlay=true</code></th>
-      <th><code class="language-plaintext highlighter-rouge">allowMutedAutoPlay=false</code></th>
+      <th><code class="highlighter-rouge">allowMutedAutoPlay=true</code></th>
+      <th><code class="highlighter-rouge">allowMutedAutoPlay=false</code></th>
     </tr>
   </thead>
   <tbody>

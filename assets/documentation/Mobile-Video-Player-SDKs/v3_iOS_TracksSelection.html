@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sun Mar 19 17:21:13 2017</span>, By <span class="commit-author">ElizaSapir</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_TracksSelection.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sun Mar 19 17:21:13 2017</span>, By <span class="commit-author">ElizaSapir</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_TracksSelection.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed Jan 18 11:49:21 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Sun Mar 19 17:21:13 2017, By <span class="commit-author">ElizaSapir</span></td></tr-->
 			
@@ -171,7 +171,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">handleTracks</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">handleTracks</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">self</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">tracksAvailable</span><span class="p">])</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">event</span> <span class="k">in</span>
         <span class="k">if</span> <span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span> <span class="o">==</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">tracksAvailable</span> <span class="p">{</span>
             <span class="k">guard</span> <span class="k">let</span> <span class="nv">tracks</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">tracks</span> <span class="k">else</span> <span class="p">{</span>
@@ -189,30 +189,32 @@ rtp('get', 'campaign',true);
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">handleTracks</span> <span class="p">{</span>
-    <span class="c1">// don't forget to use weak self to prevent retain cycles when needed</span>
-    <span class="n">__weak</span> <span class="n">__typeof</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="n">weakSelf</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">handleTracks</span> <span class="p">{</span>
+    <span class="c1">// don't forget to use weak self to prevent retain cycles when needed
+</span>    <span class="n">__weak</span> <span class="n">__typeof</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="n">weakSelf</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
     
-    <span class="c1">// add observer to tracksAvailable event</span>
-    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">tracksAvailable</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// add observer to tracksAvailable event
+</span>    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">tracksAvailable</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">tracksAvailable</span><span class="p">])</span> <span class="p">{</span>
-            <span class="c1">// Extract Audio Tracks</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">tracks</span><span class="p">.</span><span class="n">audioTracks</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Extract Audio Tracks
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">tracks</span><span class="p">.</span><span class="n">audioTracks</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">weakSelf</span><span class="p">.</span><span class="n">audioTracks</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">tracks</span><span class="p">.</span><span class="n">audioTracks</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="c1">// Extract Text Tracks</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">tracks</span><span class="p">.</span><span class="n">textTracks</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Extract Text Tracks
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">tracks</span><span class="p">.</span><span class="n">textTracks</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">weakSelf</span><span class="p">.</span><span class="n">textTracks</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">tracks</span><span class="p">.</span><span class="n">textTracks</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}];</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="select-track">
         
@@ -228,20 +230,22 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Select Track</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// Select Track</span>
 <span class="kd">func</span> <span class="nf">selectTrack</span><span class="p">(</span><span class="nv">track</span><span class="p">:</span> <span class="kt">Track</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="nf">selectTrack</span><span class="p">(</span><span class="nv">trackId</span><span class="p">:</span> <span class="n">track</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Select Track</span>
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">selectTrack</span><span class="p">:(</span><span class="n">Track</span> <span class="o">*</span><span class="p">)</span><span class="nv">track</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// Select Track
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">selectTrack</span><span class="p">:(</span><span class="n">Track</span> <span class="o">*</span><span class="p">)</span><span class="nv">track</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">selectTrackWithTrackId</span><span class="p">:</span><span class="n">track</span><span class="p">.</span><span class="n">id</span><span class="p">];</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="get-current-tracks">
         
@@ -255,18 +259,20 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get Current Audio/Text Track</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// Get Current Audio/Text Track</span>
 <span class="k">let</span> <span class="nv">currentAudioTrack</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">currentAudioTrack</span>
 <span class="k">let</span> <span class="nv">currentTextTrack</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">currentTextTrack</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get Current Audio/Text Track</span>
-<span class="n">NSString</span> <span class="o">*</span><span class="n">currentAudioTrack</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">currentAudioTrack</span><span class="p">;</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// Get Current Audio/Text Track
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">currentAudioTrack</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">currentAudioTrack</span><span class="p">;</span>
 <span class="n">NSString</span> <span class="o">*</span><span class="n">currentTextTrack</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">currentTextTrack</span><span class="p">;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="get-current-bitrate">
         
@@ -280,7 +286,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get Current Bitrate</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// Get Current Bitrate</span>
 <span class="kd">func</span> <span class="nf">currentBitrateHandler</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">self</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">playbackParamsUpdated</span><span class="p">])</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">event</span> <span class="k">in</span>
         <span class="k">if</span> <span class="nf">type</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">event</span><span class="p">)</span> <span class="o">==</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">tracksAvailable</span> <span class="p">{</span>
@@ -291,23 +297,25 @@ rtp('get', 'campaign',true);
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get Current Bitrate</span>
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">currentBitrateHandler</span> <span class="p">{</span>   
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// Get Current Bitrate
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">currentBitrateHandler</span> <span class="p">{</span>   
     <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playbackParamsUpdated</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">playbackParamsUpdated</span><span class="p">])</span> <span class="p">{</span>
-            <span class="c1">// Get Current Bitrate Value</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">currentBitrate</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Get Current Bitrate Value
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">currentBitrate</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">event</span><span class="p">.</span><span class="n">currentBitrate</span><span class="p">);</span>
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}];</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="code-sample">
         

@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Live-Video-Webcasting/Creating-and-Managing-Live-Webcasts.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Sep 26 22:21:43 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -131,7 +131,7 @@ rtp('get', 'campaign',true);
     		
 		<p>The Kaltura Webcasting suite provides a set of tools to broadcast live events on the web, including interactive video and slides-sync, in-stream audience polls, moderated Q&amp;A chat and live announcements. <a href="https://corp.kaltura.com/video-collaboration-communication/townhalls-live-webcasting/">Kaltura Webcasting</a> currently supports the following live source ingest protocols: RTMP, RTSP, SIP or WebRTC.</p>
 
-<p>The Kaltura suite of Webcasting tools can be integrated as a native component of any web application, and enhance your applications with video live-streaming and webcasting capabilities.<br />
+<p>The Kaltura suite of Webcasting tools can be integrated as a native component of any web application, and enhance your applications with video live-streaming and webcasting capabilities.  <br />
 This guide will walk you through the steps needed to set up the Webcast Launcher and embed the Kaltura livestream video player in your webpage.</p>
       <h2 id="before-you-begin">
         
@@ -155,7 +155,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 
 <p>See the https://github.com/kaltura-vpaas/embeddable_analytics project which has an entry for webcasting under the “livestream” tab</p>
 
-<p>Kaltura also has a rich Analytics API that can allow you to generate your own reports for your webcasts. You can get started with /console/service/report/action/getTable and selecting LIVE in the reportType dropdown.</p>
+<p>Kaltura also has a rich Analytics API that can allow you to generate your own reports for your webcasts. You can get started with https://developer.kaltura.com/console/service/report/action/getTable and selecting LIVE in the reportType dropdown.</p>
     
       <h2 id="creating-a-livestream-object">
         
@@ -165,9 +165,9 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h2>
 
-<p>At the basis of a Kaltura Webcast is a Live Stream (non-interactive live broadcast). To create a webcast stream you’ll first need to create a <a href="/api-docs/General_Objects/Objects/KalturaLiveStreamEntry">LiveStream</a> object, which we’ll do using the <a href="/console/service/liveStream/action/add">liveStream.add</a> action. Then we’ll add some configurations in order to turn this live stream into an interactive webcast.</p>
+<p>At the basis of a Kaltura Webcast is a Live Stream (non-interactive live broadcast). To create a webcast stream you’ll first need to create a <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaLiveStreamEntry">LiveStream</a> object, which we’ll do using the <a href="https://developer.kaltura.com/console/service/liveStream/action/add">liveStream.add</a> action. Then we’ll add some configurations in order to turn this live stream into an interactive webcast.</p>
 
-<p>We’ll be creating an object with <strong><code class="language-plaintext highlighter-rouge">sourceType</code></strong> of <code class="language-plaintext highlighter-rouge">LIVE_STREAM [32]</code> with the parameters described here:</p>
+<p>We’ll be creating an object with <strong><code class="highlighter-rouge">sourceType</code></strong> of <code class="highlighter-rouge">LIVE_STREAM [32]</code> with the parameters described here:</p>
     
       <h3 id="live-stream-parameters">
         
@@ -252,8 +252,8 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 
 <blockquote>
   <ul>
-    <li><strong>explicitLive</strong> : If set to true, only a KS with the <code class="language-plaintext highlighter-rouge">restrictexplicitliveview</code> privilege will be allowed to watch the stream before it is live (determined by the <code class="language-plaintext highlighter-rouge">isLive</code> flag). If set to false, the preview will not be available to any viewers, and <code class="language-plaintext highlighter-rouge">isLive</code> will be set automatically when the broadcast begins.</li>
-    <li><strong>conversionProfileId</strong>: Use <a href="/console/service/conversionProfile/action/list"><code class="language-plaintext highlighter-rouge">conversionProfile.list</code></a> with filter of <code class="language-plaintext highlighter-rouge">typeEqual = KalturaConversionProfileType.LIVE_STREAM[2]</code> to find the profile IDs for cloud transcoding or passthrough</li>
+    <li><strong>explicitLive</strong> : If set to true, only a KS with the <code class="highlighter-rouge">restrictexplicitliveview</code> privilege will be allowed to watch the stream before it is live (determined by the <code class="highlighter-rouge">isLive</code> flag). If set to false, the preview will not be available to any viewers, and <code class="highlighter-rouge">isLive</code> will be set automatically when the broadcast begins.</li>
+    <li><strong>conversionProfileId</strong>: Use <a href="https://developer.kaltura.com/console/service/conversionProfile/action/list"><code class="highlighter-rouge">conversionProfile.list</code></a> with filter of <code class="highlighter-rouge">typeEqual = KalturaConversionProfileType.LIVE_STREAM[2]</code> to find the profile IDs for cloud transcoding or passthrough</li>
   </ul>
 </blockquote>
     
@@ -298,7 +298,7 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
   </tbody>
 </table>
 
-<p>Finally, the API call takes the webcastEntry we just created, and the <strong><code class="language-plaintext highlighter-rouge">sourceType</code></strong> of <code class="language-plaintext highlighter-rouge">LIVE_STREAM [32]</code>, resulting in something that looks like this:</p>
+<p>Finally, the API call takes the webcastEntry we just created, and the <strong><code class="highlighter-rouge">sourceType</code></strong> of <code class="highlighter-rouge">LIVE_STREAM [32]</code>, resulting in something that looks like this:</p>
     
       <h3 id="creating-a-live-stream---python-code-example">
         
@@ -308,30 +308,31 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">live_stream_entry</span> <span class="o">=</span> <span class="n">KalturaLiveStreamEntry</span><span class="p">()</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Webcast Tutorial"</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">description</span> <span class="o">=</span> <span class="s">"This is a test webcast"</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">mediaType</span> <span class="o">=</span> <span class="n">KalturaMediaType</span><span class="p">.</span><span class="n">LIVE_STREAM_FLASH</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">dvrStatus</span> <span class="o">=</span> <span class="n">KalturaDVRStatus</span><span class="p">.</span><span class="n">ENABLED</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">dvrWindow</span> <span class="o">=</span> <span class="mi">60</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">sourceType</span> <span class="o">=</span> <span class="n">KalturaSourceType</span><span class="p">.</span><span class="n">LIVE_STREAM</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">adminTags</span> <span class="o">=</span> <span class="s">"kms-webcast-event,vpaas-webcast"</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">pushPublishEnabled</span> <span class="o">=</span> <span class="n">KalturaLivePublishStatus</span><span class="p">.</span><span class="n">DISABLED</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">live_stream_entry</span> <span class="o">=</span> <span class="n">KalturaLiveStreamEntry</span><span class="p">()</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Webcast Tutorial"</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s">"This is a test webcast"</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">mediaType</span> <span class="o">=</span> <span class="n">KalturaMediaType</span><span class="o">.</span><span class="n">LIVE_STREAM_FLASH</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">dvrStatus</span> <span class="o">=</span> <span class="n">KalturaDVRStatus</span><span class="o">.</span><span class="n">ENABLED</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">dvrWindow</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">sourceType</span> <span class="o">=</span> <span class="n">KalturaSourceType</span><span class="o">.</span><span class="n">LIVE_STREAM</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">adminTags</span> <span class="o">=</span> <span class="s">"kms-webcast-event,vpaas-webcast"</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">pushPublishEnabled</span> <span class="o">=</span> <span class="n">KalturaLivePublishStatus</span><span class="o">.</span><span class="n">DISABLED</span>
 
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">explicitLive</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="p">.</span><span class="n">TRUE_VALUE</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">recordStatus</span> <span class="o">=</span> <span class="n">KalturaRecordStatus</span><span class="p">.</span><span class="n">PER_SESSION</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">conversionProfileId</span> <span class="o">=</span> <span class="mi">0000000</span> 
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">explicitLive</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="o">.</span><span class="n">TRUE_VALUE</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">recordStatus</span> <span class="o">=</span> <span class="n">KalturaRecordStatus</span><span class="o">.</span><span class="n">PER_SESSION</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">conversionProfileId</span> <span class="o">=</span> <span class="mo">0000000</span> 
 
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">recordingOptions</span> <span class="o">=</span> <span class="n">KalturaLiveEntryRecordingOptions</span><span class="p">()</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">recordingOptions</span><span class="p">.</span><span class="n">shouldCopyEntitlement</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="p">.</span><span class="n">TRUE_VALUE</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">recordingOptions</span><span class="p">.</span><span class="n">shouldMakeHidden</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="p">.</span><span class="n">TRUE_VALUE</span>
-<span class="n">live_stream_entry</span><span class="p">.</span><span class="n">recordingOptions</span><span class="p">.</span><span class="n">shouldAutoArchive</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="p">.</span><span class="n">TRUE_VALUE</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">recordingOptions</span> <span class="o">=</span> <span class="n">KalturaLiveEntryRecordingOptions</span><span class="p">()</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">recordingOptions</span><span class="o">.</span><span class="n">shouldCopyEntitlement</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="o">.</span><span class="n">TRUE_VALUE</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">recordingOptions</span><span class="o">.</span><span class="n">shouldMakeHidden</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="o">.</span><span class="n">TRUE_VALUE</span>
+<span class="n">live_stream_entry</span><span class="o">.</span><span class="n">recordingOptions</span><span class="o">.</span><span class="n">shouldAutoArchive</span> <span class="o">=</span> <span class="n">KalturaNullableBoolean</span><span class="o">.</span><span class="n">TRUE_VALUE</span>
 
-<span class="n">source_type</span> <span class="o">=</span> <span class="n">KalturaSourceType</span><span class="p">.</span><span class="n">LIVE_STREAM</span>
+<span class="n">source_type</span> <span class="o">=</span> <span class="n">KalturaSourceType</span><span class="o">.</span><span class="n">LIVE_STREAM</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">liveStream</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">live_stream_entry</span><span class="p">,</span> <span class="n">source_type</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">liveStream</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">live_stream_entry</span><span class="p">,</span> <span class="n">source_type</span><span class="p">)</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="result">
         
@@ -343,36 +344,37 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 
 <p>The result of the above code sample is a KalturaLiveStreamEntry object that will look like this (abbreviated for brevity):</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"primaryBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmp://1_yo43efjn.p.kpublish.kaltura.com:1935/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"secondaryBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmp://1_yo43efjn.b.kpublish.kaltura.com:1935/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"primarySecuredBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmps://1_yo43efjn.p.kpublish.kaltura.com:443/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"secondarySecuredBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmps://1_yo43efjn.b.kpublish.kaltura.com:443/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"primaryRtspBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtsp://1_yo43efjn.p.s.kpublish.kaltura.com:554/kLive/1_yo43efjn_%i?t=6c1ac379"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"secondaryRtspBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtsp://1_yo43efjn.b.s.kpublish.kaltura.com:554/kLive/1_yo43efjn_%i?t=6c1ac379"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"streamName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_yo43efjn_%i"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"streamPassword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"87623ekda"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"recordStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"dvrStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"dvrWindow"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"recordingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"shouldCopyEntitlement"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"shouldMakeHidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"shouldAutoArchive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaLiveEntryRecordingOptions"</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"primaryBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmp://1_yo43efjn.p.kpublish.kaltura.com:1935/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"secondaryBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmp://1_yo43efjn.b.kpublish.kaltura.com:1935/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"primarySecuredBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmps://1_yo43efjn.p.kpublish.kaltura.com:443/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"secondarySecuredBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtmps://1_yo43efjn.b.kpublish.kaltura.com:443/kLive?t=6c1ac379"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"primaryRtspBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtsp://1_yo43efjn.p.s.kpublish.kaltura.com:554/kLive/1_yo43efjn_%i?t=6c1ac379"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"secondaryRtspBroadcastingUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rtsp://1_yo43efjn.b.s.kpublish.kaltura.com:554/kLive/1_yo43efjn_%i?t=6c1ac379"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"streamName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_yo43efjn_%i"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"streamPassword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"87623ekda"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"recordStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"dvrStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"dvrWindow"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"recordingOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"shouldCopyEntitlement"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"shouldMakeHidden"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"shouldAutoArchive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaLiveEntryRecordingOptions"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"liveStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"segmentDuration"</span><span class="p">:</span><span class="w"> </span><span class="mi">6000</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"explicitLive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"viewMode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"recordingStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"conversionProfileId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5195112</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaLiveStreamEntry"</span><span class="w">
+  </span><span class="nt">"liveStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"segmentDuration"</span><span class="p">:</span><span class="w"> </span><span class="mi">6000</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"explicitLive"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"viewMode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"recordingStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"conversionProfileId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5195112</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"..."</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaLiveStreamEntry"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
     
       <h2 id="metadata">
         
@@ -392,14 +394,15 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h3>
 
-<p>The auto-generated profiles are created with the names <code class="language-plaintext highlighter-rouge">KMS_KWEBCAST2</code> and <code class="language-plaintext highlighter-rouge">KMS_EVENTS3</code>. In order to use these profiles, you’ll need the specific instances found in your account, so we’ll use the <a href="/console/service/metadataProfile/action/list">metadataProfile.list</a> API to filter on the <strong>systemName</strong> and get the respective profile IDs.</p>
+<p>The auto-generated profiles are created with the names <code class="highlighter-rouge">KMS_KWEBCAST2</code> and <code class="highlighter-rouge">KMS_EVENTS3</code>. In order to use these profiles, you’ll need the specific instances found in your account, so we’ll use the <a href="https://developer.kaltura.com/console/service/metadataProfile/action/list">metadataProfile.list</a> API to filter on the <strong>systemName</strong> and get the respective profile IDs.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaMetadataProfileFilter</span><span class="p">()</span>
-<span class="nb">filter</span><span class="p">.</span><span class="n">systemNameEqual</span> <span class="o">=</span> <span class="s">"KMS_KWEBCAST2"</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaMetadataProfileFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">systemNameEqual</span> <span class="o">=</span> <span class="s">"KMS_KWEBCAST2"</span>
 <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">metadataProfile</span><span class="p">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">metadataProfile</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p><a href="https://knowledge.kaltura.com/help/custom-data">Learn about Kaltura Custom Metadata</a>.</p>
@@ -418,9 +421,9 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
 <p>The XML defined by the KMS_KWEBCAST2 schema contains the following fields:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">SlidesDocEntryId</code>: Representing Entry ID of the presentation slides entry (read more about <a href="/api-docs/service/documents">documents</a>)</li>
-  <li><code class="language-plaintext highlighter-rouge">IsKwebcastEntry</code> - Boolean (0/1) indicates whether this is a live stream entry of type Interactive Webcast</li>
-  <li><code class="language-plaintext highlighter-rouge">IsSelfServe</code> - Boolean (0/1) indicates whether WebRTC-based self-broadcast should be enabled inside the Webcasting Studio Application (if set to false, the webcasting app will enable the use of an external encoder).</li>
+  <li><code class="highlighter-rouge">SlidesDocEntryId</code>: Representing Entry ID of the presentation slides entry (read more about <a href="https://developer.kaltura.com/api-docs/service/documents">documents</a>)</li>
+  <li><code class="highlighter-rouge">IsKwebcastEntry</code> - Boolean (0/1) indicates whether this is a live stream entry of type Interactive Webcast</li>
+  <li><code class="highlighter-rouge">IsSelfServe</code> - Boolean (0/1) indicates whether WebRTC-based self-broadcast should be enabled inside the Webcasting Studio Application (if set to false, the webcasting app will enable the use of an external encoder).</li>
 </ul>
     
       <h4 id="kms_kwebcast2-xml-example">
@@ -431,28 +434,31 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h4>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;metadata&gt;</span>
    <span class="nt">&lt;SlidesDocEntryId&gt;</span>1_78bsdfg8<span class="nt">&lt;/SlidesDocEntryId&gt;</span>
   <span class="nt">&lt;IsKwebcastEntry&gt;</span>1<span class="nt">&lt;/IsKwebcastEntry&gt;</span>
   <span class="nt">&lt;IsSelfServe&gt;</span>1<span class="nt">&lt;/IsSelfServe&gt;</span>
 <span class="nt">&lt;/metadata&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>The custom metadata is then updated using <a href="/console/service/metadata/action/add"><code class="language-plaintext highlighter-rouge">metadata.add</code></a>:</p>
+<p>The custom metadata is then updated using <a href="https://developer.kaltura.com/console/service/metadata/action/add"><code class="highlighter-rouge">metadata.add</code></a>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">metadata_profile_id</span> <span class="o">=</span> <span class="s">"&lt;metadata profile ID retrieved above&gt;"</span>
-<span class="n">object_type</span> <span class="o">=</span> <span class="n">KalturaMetadataObjectType</span><span class="p">.</span><span class="n">ENTRY</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">metadata_profile_id</span> <span class="o">=</span> <span class="s">"&lt;metadata profile ID retrieved above&gt;"</span>
+<span class="n">object_type</span> <span class="o">=</span> <span class="n">KalturaMetadataObjectType</span><span class="o">.</span><span class="n">ENTRY</span>
 <span class="n">object_id</span> <span class="o">=</span> <span class="s">"&lt;ID of livestream entry&gt;"</span>
 <span class="n">xml_data</span> <span class="o">=</span> <span class="s">"&lt;XML string&gt;"</span>
 
-<span class="n">client</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">metadata_profile_id</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">object_id</span><span class="p">,</span> <span class="n">xml_data</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="n">client</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">metadata_profile_id</span><span class="p">,</span> <span class="n">object_type</span><span class="p">,</span> <span class="n">object_id</span><span class="p">,</span> <span class="n">xml_data</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p>That will return an object with a <code class="language-plaintext highlighter-rouge">metadataRecordId</code>, which you can use at any point for an update using <a href="/console/service/metadata/action/update"><code class="language-plaintext highlighter-rouge">metadata.update</code></a>:</p>
+<p>That will return an object with a <code class="highlighter-rouge">metadataRecordId</code>, which you can use at any point for an update using <a href="https://developer.kaltura.com/console/service/metadata/action/update"><code class="highlighter-rouge">metadata.update</code></a>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">saved_metadata</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">metadata_record_id</span><span class="p">,</span> <span class="n">xml_data</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">saved_metadata</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">metadata_record_id</span><span class="p">,</span> <span class="n">xml_data</span><span class="p">)</span>
+</code></pre>
+</div>
     
       <h4 id="kms_events3">
         
@@ -462,18 +468,19 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h4>
 
-<p>Similarly, you’ll need the ID of the metadata profile, which we’ll retrieve using its name in the <a href="/console/service/metadataProfile/action/list">metadataProfile.list</a> API:</p>
+<p>Similarly, you’ll need the ID of the metadata profile, which we’ll retrieve using its name in the <a href="https://developer.kaltura.com/console/service/metadataProfile/action/list">metadataProfile.list</a> API:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaMetadataProfileFilter</span><span class="p">()</span>
-<span class="nb">filter</span><span class="p">.</span><span class="n">systemNameEqual</span> <span class="o">=</span> <span class="s">"KMS_EVENTS3"</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaMetadataProfileFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">systemNameEqual</span> <span class="o">=</span> <span class="s">"KMS_EVENTS3"</span>
 <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="n">metadataProfile</span><span class="p">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">metadataProfile</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>This XML contains event information, such as the start and end times (in unix timestamps), the time zone, and information about the speaker - name, title, bio, etc.</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;metadata&gt;</span>
   <span class="nt">&lt;StartTime&gt;</span>1589137200<span class="nt">&lt;/StartTime&gt;</span>
   <span class="nt">&lt;EndTime&gt;</span>1589137440<span class="nt">&lt;/EndTime&gt;</span>
@@ -487,9 +494,10 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
     <span class="nt">&lt;PresenterImage&gt;</span>https://speakerheadshot.com/image.png<span class="nt">&lt;/PresenterImage&gt;</span>
   <span class="nt">&lt;/Presenter&gt;</span>
 <span class="nt">&lt;/metadata&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>Like the first schema, the XML is populated with the relevant values and added to the liveStream entry with the <a href="/console/service/metadata/action/add"><code class="language-plaintext highlighter-rouge">metadata.add</code></a> API as seen above.</p>
+<p>Like the first schema, the XML is populated with the relevant values and added to the liveStream entry with the <a href="https://developer.kaltura.com/console/service/metadata/action/add"><code class="highlighter-rouge">metadata.add</code></a> API as seen above.</p>
     
       <h2 id="the-webcasting-studio-app">
         
@@ -507,20 +515,21 @@ This guide will walk you through the steps needed to set up the Webcast Launcher
         
       </h3>
 
-<p>The admins, or person presenting, will need to download and use the Kaltura Webcasting Desktop Application. To add download links to your webpage for the Kaltura Webcasting Studio, we’ll make a call to the <a href="/console/service/uiConf/action/listTemplates">systemUIConf.listTemplates</a> API to list instances of Webcasting UI Configs and grab the first one. 
+<p>The admins, or person presenting, will need to download and use the Kaltura Webcasting Desktop Application. To add download links to your webpage for the Kaltura Webcasting Studio, we’ll make a call to the <a href="https://developer.kaltura.com/console/service/uiConf/action/listTemplates">systemUIConf.listTemplates</a> API to list instances of Webcasting UI Configs and grab the first one. <br />
 Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaUiConfFilter</span><span class="p">()</span>
-<span class="nb">filter</span><span class="p">.</span><span class="n">objTypeEqual</span> <span class="o">=</span> <span class="n">KalturaUiConfObjType</span><span class="p">.</span><span class="n">WEBCASTING</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaUiConfFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">objTypeEqual</span> <span class="o">=</span> <span class="n">KalturaUiConfObjType</span><span class="o">.</span><span class="n">WEBCASTING</span>
 <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">uiConf</span><span class="p">.</span><span class="n">listTemplates</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
-<span class="n">first</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">first</span><span class="p">.</span><span class="n">config</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">uiConf</span><span class="o">.</span><span class="n">listTemplates</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
+<span class="n">first</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">config</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
 
 <span class="n">mac_download_url</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">'osx'</span><span class="p">][</span><span class="s">'recommendedVersionUrl'</span><span class="p">]</span>
 <span class="n">win_download_url</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s">'windows'</span><span class="p">][</span><span class="s">'recommendedVersionUrl'</span><span class="p">]</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>These URLS can be embedded to the page to automatically download the recommended version of the app.</p>
     
@@ -544,7 +553,7 @@ Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
 
 <ul>
   <li><strong>KS</strong>: the Kaltura Session authentication string that should be used (see below)</li>
-  <li><strong>ks_expiry:</strong> the time that the KS will expire in format <code class="language-plaintext highlighter-rouge">YYYY-MM-DDThh:mm:ss+00:00</code></li>
+  <li><strong>ks_expiry:</strong> the time that the KS will expire in format <code class="highlighter-rouge">YYYY-MM-DDThh:mm:ss+00:00</code></li>
   <li><strong>MediaEntryId:</strong> entry ID of the livestream</li>
   <li><strong>checkForUpdates:</strong> whether the application should check for update (default: true)</li>
   <li><strong>uiConfId:</strong> The uiConfId that holds data for webcasting application version, and where it needs an update. Differs for mac and windows</li>
@@ -553,12 +562,12 @@ Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
   <li><strong>kwebcastMetadataProfileId:(optional)</strong>  ID of the metadata profile that contains webcasting information</li>
   <li><strong>appName (optional):</strong> name of the application shown on splash screen (default: “Kaltura Webcast Studio”)</li>
   <li><strong>logoUrl (optional):</strong> URL for company logo to be shown on top left of application (160 x 80 or similar ratio)</li>
-  <li><strong>fromDate (optional):</strong> start time of the event (for the progress bar in the top right) in format <code class="language-plaintext highlighter-rouge">YYYY-MM-DDThh:mm:ss+00:00</code></li>
-  <li><strong>toDate (optional):</strong> anticipated end time of the event (for the progress bar in the top right), in format <code class="language-plaintext highlighter-rouge">YYYY-MM-DDThh:mm:ss+00:00</code></li>
+  <li><strong>fromDate (optional):</strong> start time of the event (for the progress bar in the top right) in format <code class="highlighter-rouge">YYYY-MM-DDThh:mm:ss+00:00</code></li>
+  <li><strong>toDate (optional):</strong> anticipated end time of the event (for the progress bar in the top right), in format <code class="highlighter-rouge">YYYY-MM-DDThh:mm:ss+00:00</code></li>
   <li><strong>userId:</strong> username that current user is associated with</li>
-  <li><strong>QnAEnabled:</strong> whether <code class="language-plaintext highlighter-rouge">Q&amp;A</code> module is enabled (default: true)</li>
-  <li><strong>pollsEnabled:</strong> whether <code class="language-plaintext highlighter-rouge">Polls</code> module is enabled (default: true)</li>
-  <li><strong>userRole:</strong> refers to KMS roles. Should be set to <code class="language-plaintext highlighter-rouge">adminRole</code></li>
+  <li><strong>QnAEnabled:</strong> whether <code class="highlighter-rouge">Q&amp;A</code> module is enabled (default: true)</li>
+  <li><strong>pollsEnabled:</strong> whether <code class="highlighter-rouge">Polls</code> module is enabled (default: true)</li>
+  <li><strong>userRole:</strong> refers to KMS roles. Should be set to <code class="highlighter-rouge">adminRole</code></li>
   <li><strong>presentationConversionProfileId:</strong> conversion profile ID used for converting presentations (see below)</li>
   <li><strong>referer:[optional]</strong>  URL of the referring site or domain name</li>
   <li><strong>verifySSL:</strong> if set to false, the application can get to https sites with unverified certificates. Used mainly for development (default: true)</li>
@@ -576,21 +585,22 @@ Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
         
       </h4>
 
-<p>You’ll create a type USER session using the <a href="/console/service/session/action/start"><code class="language-plaintext highlighter-rouge">session.start</code></a> API, with privileges to the given entry and role of WEBCAST_PRODUCER_DEVICE_ROLE.</p>
+<p>You’ll create a type USER session using the <a href="https://developer.kaltura.com/console/service/session/action/start"><code class="highlighter-rouge">session.start</code></a> API, with privileges to the given entry and role of WEBCAST_PRODUCER_DEVICE_ROLE.</p>
 
 <p>Partner ID and Admin Secret can be found in your KMC <a href="https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings">Integration Settings</a>.</p>
 
-<p>Assuming a livestreamEntry ID of <code class="language-plaintext highlighter-rouge">1_yo43efjn</code>, Kaltura Session creation would look something like this:</p>
+<p>Assuming a livestreamEntry ID of <code class="highlighter-rouge">1_yo43efjn</code>, Kaltura Session creation would look something like this:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">secret</span> <span class="o">=</span> <span class="s">"xxxxx"</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">secret</span> <span class="o">=</span> <span class="s">"xxxxx"</span>
 <span class="n">user_id</span> <span class="o">=</span> <span class="s">"user-email-address"</span>
-<span class="n">k_type</span> <span class="o">=</span> <span class="n">KalturaSessionType</span><span class="p">.</span><span class="n">USER</span>
+<span class="n">k_type</span> <span class="o">=</span> <span class="n">KalturaSessionType</span><span class="o">.</span><span class="n">USER</span>
 <span class="n">partner_id</span> <span class="o">=</span> <span class="mi">1234567</span>
 <span class="n">expiry</span> <span class="o">=</span> <span class="mi">86400</span>
 <span class="n">privileges</span> <span class="o">=</span> <span class="s">"setrole:WEBCAST_PRODUCER_DEVICE_ROLE,sview:*,list:1_yo43efjn,download:1_yo43efjn"</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">k_type</span><span class="p">,</span> <span class="n">partner_id</span><span class="p">,</span> <span class="n">expiry</span><span class="p">,</span> <span class="n">privileges</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">k_type</span><span class="p">,</span> <span class="n">partner_id</span><span class="p">,</span> <span class="n">expiry</span><span class="p">,</span> <span class="n">privileges</span><span class="p">)</span>
+</code></pre>
+</div>
 <p>The above KS would give this user producer access to the entry within the Webcasting Studio.</p>
     
       <h4 id="player-uiconf">
@@ -601,8 +611,8 @@ Then we’ll parse it to find the recommended versions for OSX and Windows.</p>
         
       </h4>
 
-<p>Most likely you were given the correct UiConf when Webcasting was enabled on your account, but if you’re not sure which it is, you can use the <a href="/console/service/uiConf/action/list">uiConf.list</a> API to find it. 
-Just filter on <code class="language-plaintext highlighter-rouge">filter.nameLike = "MediaSpace Webcast Player"</code> and grab that ID.</p>
+<p>Most likely you were given the correct UiConf when Webcasting was enabled on your account, but if you’re not sure which it is, you can use the <a href="https://developer.kaltura.com/console/service/uiConf/action/list">uiConf.list</a> API to find it. <br />
+Just filter on <code class="highlighter-rouge">filter.nameLike = "MediaSpace Webcast Player"</code> and grab that ID.</p>
     
       <h4 id="presentation-conversion-profile-id">
         
@@ -612,17 +622,18 @@ Just filter on <code class="language-plaintext highlighter-rouge">filter.nameLik
         
       </h4>
 
-<p>This is needed in the case that a presenter chooses to upload a presentation. <em>It will not work if you don’t have a conversion profile ID.</em> 
-You can find it with the <a href="/console/service/conversionProfile/action/list">conversionProfile.list</a> API, by grabbing the first item in the results.</p>
+<p>This is needed in the case that a presenter chooses to upload a presentation. <em>It will not work if you don’t have a conversion profile ID.</em> <br />
+You can find it with the <a href="https://developer.kaltura.com/console/service/conversionProfile/action/list">conversionProfile.list</a> API, by grabbing the first item in the results.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaConversionProfileFilter</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaConversionProfileFilter</span><span class="p">()</span>
 <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">conversionProfile</span><span class="p">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">conversionProfile</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
 
-<span class="n">first</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">conversion_profile_id</span> <span class="o">=</span> <span class="n">first</span><span class="p">.</span><span class="nb">id</span>
-</code></pre></div></div>
+<span class="n">first</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">conversion_profile_id</span> <span class="o">=</span> <span class="n">first</span><span class="o">.</span><span class="nb">id</span>
+</code></pre>
+</div>
     
       <h3 id="launching-the-webcasting-studio-app">
         
@@ -636,58 +647,61 @@ You can find it with the <a href="/console/service/conversionProfile/action/list
 
 <p>You’ll first need to load the script to the application <a href="https://github.com/kaltura-vpaas/webcasting-integration/blob/master/KAppLauncher.js">launcher</a> in the header of your HTML:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"KAppLauncher.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Create the button:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
   <span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"launchProducerApp"</span><span class="nt">&gt;</span>Launch Kaltura Webcast App<span class="nt">&lt;/button&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Depending on your application, you can either create the params dictionary for the launcher object with javascript code, or pass it from the backend of your application, which is how it’s done in the <a href="https://github.com/kaltura-vpaas/webcasting-app-python">python sample</a>.</p>
 
-<p>We’ll show it here in javascript. The params object is created using the data we’ve collected above, and then the click of the <code class="language-plaintext highlighter-rouge">launchProducerApp</code> button will create a new Launcher object and start the application with all of the parameters.</p>
+<p>We’ll show it here in javascript. The params object is created using the data we’ve collected above, and then the click of the <code class="highlighter-rouge">launchProducerApp</code> button will create a new Launcher object and start the application with all of the parameters.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">launchProducerApp</span><span class="dl">"</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">launchKalturaWebcast</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"launchProducerApp"</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">launchKalturaWebcast</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">launchKalturaWebcast</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">kapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KAppLauncher</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">kapp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KAppLauncher</span><span class="p">();</span>
 
-    <span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="dl">'</span><span class="s1">ks</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">KALTURA</span> <span class="nx">SESSION</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">ks_expiry</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">EXPIRY</span> <span class="nx">DATE</span> <span class="dl">'</span><span class="s1">Y-m-d</span><span class="se">\</span><span class="s1">TH:i:sP</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">MediaEntryId</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">LIVESTEAM</span> <span class="nx">ENTRY</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">serverAddress</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">SERVICE</span> <span class="nx">URL</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">eventsMetadataProfileId</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">KMS_EVENTS3</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">kwebcastMetadataProfileId</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">KMS_KWEBCAST2</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">appName</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">APP</span> <span class="nx">NAME</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">logoUrl</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">URL</span> <span class="nx">OF</span> <span class="nx">COMPANY</span> <span class="nx">LOGO</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">fromDate</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">START</span> <span class="nx">TIME</span> <span class="dl">'</span><span class="s1">Y-m-d</span><span class="se">\</span><span class="s1">TH:i:sP</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">toDate</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">END</span> <span class="nx">TIME</span> <span class="dl">'</span><span class="s1">Y-m-d</span><span class="se">\</span><span class="s1">TH:i:sP</span><span class="dl">'</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">userId</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">USER</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">QnAEnabled</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">TRUE</span> <span class="o">/</span> <span class="nx">FALSE</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">pollsEnabled</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">TRUE</span> <span class="o">/</span> <span class="nx">FALSE</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">userRole</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="dl">"</span><span class="s2">adminRole</span><span class="dl">"</span><span class="p">,</span> 
-        <span class="dl">'</span><span class="s1">presentationConversionProfileId</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">CONVERSION</span> <span class="nx">PROFILE</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">referer</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">REFERRING</span> <span class="nx">SITE</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">debuggingMode</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span> 
-        <span class="dl">'</span><span class="s1">verifySSL</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">selfServeEnabled</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">TRUE</span> <span class="o">/</span> <span class="nx">FALSE</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">appHostUrl</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">APP</span> <span class="nx">HOST</span> <span class="nx">URL</span><span class="o">&gt;</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">instanceProfile</span><span class="dl">'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">HOSTING</span> <span class="nx">APP</span> <span class="nx">NAME</span><span class="o">&gt;</span>
+    <span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">'ks'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">KALTURA</span> <span class="nx">SESSION</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'ks_expiry'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">EXPIRY</span> <span class="nx">DATE</span> <span class="s1">'Y-m-d\TH:i:sP'</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'MediaEntryId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">LIVESTEAM</span> <span class="nx">ENTRY</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'serverAddress'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">SERVICE</span> <span class="nx">URL</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'eventsMetadataProfileId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">KMS_EVENTS3</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'kwebcastMetadataProfileId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">KMS_KWEBCAST2</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'appName'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">APP</span> <span class="nx">NAME</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'logoUrl'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">URL</span> <span class="nx">OF</span> <span class="nx">COMPANY</span> <span class="nx">LOGO</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'fromDate'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">START</span> <span class="nx">TIME</span> <span class="s1">'Y-m-d\TH:i:sP'</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'toDate'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">END</span> <span class="nx">TIME</span> <span class="s1">'Y-m-d\TH:i:sP'</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'userId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">USER</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'QnAEnabled'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">TRUE</span> <span class="o">/</span> <span class="nx">FALSE</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'pollsEnabled'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">TRUE</span> <span class="o">/</span> <span class="nx">FALSE</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'userRole'</span> <span class="o">=&gt;</span> <span class="s2">"adminRole"</span><span class="p">,</span> 
+        <span class="s1">'presentationConversionProfileId'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">CONVERSION</span> <span class="nx">PROFILE</span> <span class="nx">ID</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'referer'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">REFERRING</span> <span class="nx">SITE</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'debuggingMode'</span> <span class="o">=&gt;</span> <span class="kc">false</span><span class="p">,</span> 
+        <span class="s1">'verifySSL'</span> <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="s1">'selfServeEnabled'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">TRUE</span> <span class="o">/</span> <span class="nx">FALSE</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'appHostUrl'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">APP</span> <span class="nx">HOST</span> <span class="nx">URL</span><span class="o">&gt;</span><span class="p">,</span>
+        <span class="s1">'instanceProfile'</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">HOSTING</span> <span class="nx">APP</span> <span class="nx">NAME</span><span class="o">&gt;</span>
         <span class="p">};</span>
     
     <span class="nx">kapp</span><span class="p">.</span><span class="nx">startApp</span><span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">isSupported</span><span class="p">,</span> <span class="nx">failReason</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isSupported</span> <span class="o">&amp;&amp;</span> <span class="nx">failReason</span> <span class="o">!==</span> <span class="dl">'</span><span class="s1">browserNotAware</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">reason</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isSupported</span> <span class="o">&amp;&amp;</span> <span class="nx">failReason</span> <span class="o">!==</span> <span class="s1">'browserNotAware'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="nx">res</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">reason</span><span class="p">);</span>
         <span class="p">}</span> 
     <span class="p">},</span> <span class="mi">3000</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="viewing-the-livestream">
         
@@ -697,39 +711,42 @@ You can find it with the <a href="/console/service/conversionProfile/action/list
         
       </h2>
 
-<p>When the broadcast is live, there’s a delay of about thirty seconds before it is available to the viewer. During this time, if the liveStream’s “explicitLive” value is set to true, the preview is available to a user with a Kaltura Session that contains <code class="language-plaintext highlighter-rouge">restrictexplicitliveview</code> in the privilege string (for moderators who are involved in testing)</p>
+<p>When the broadcast is live, there’s a delay of about thirty seconds before it is available to the viewer. During this time, if the liveStream’s “explicitLive” value is set to true, the preview is available to a user with a Kaltura Session that contains <code class="highlighter-rouge">restrictexplicitliveview</code> in the privilege string (for moderators who are involved in testing)</p>
 
-<p>Do determine whether an entry is live, you can call the <a href="/console/service/liveStream/action/isLive">isLive</a> with the entry ID. 
+<p>Do determine whether an entry is live, you can call the <a href="https://developer.kaltura.com/console/service/liveStream/action/isLive">isLive</a> with the entry ID. <br />
 The Kaltura Player does this automatically for live entries, but we’ll want to determine whether to play the live entry, or whether to replace it with the recorded entry if the Live Event is already complete.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_live</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">liveStream</span><span class="p">.</span><span class="n">isLive</span><span class="p">(</span><span class="n">entry_id</span><span class="p">,</span> <span class="n">KalturaPlaybackProtocol</span><span class="p">.</span><span class="n">AUTO</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">is_live</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">liveStream</span><span class="o">.</span><span class="n">isLive</span><span class="p">(</span><span class="n">entry_id</span><span class="p">,</span> <span class="n">KalturaPlaybackProtocol</span><span class="o">.</span><span class="n">AUTO</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">is_live</span> <span class="o">==</span> <span class="bp">False</span><span class="p">):</span>
-    <span class="k">if</span> <span class="p">((</span><span class="n">livestream</span><span class="p">.</span><span class="n">redirectEntryId</span><span class="p">)</span> <span class="ow">and</span> <span class="n">livestream</span><span class="p">.</span><span class="n">redirectEntryId</span> <span class="o">!=</span> <span class="s">''</span><span class="p">):</span>
-        <span class="n">entry_id</span> <span class="o">=</span> <span class="n">livestream</span><span class="p">.</span><span class="n">redirectEntryId</span>
-    <span class="k">elif</span> <span class="p">((</span><span class="n">livestream</span><span class="p">.</span><span class="n">recordedEntryId</span><span class="p">)</span> <span class="ow">and</span> <span class="n">livestream</span><span class="p">.</span><span class="n">recordedEntryId</span> <span class="o">!=</span> <span class="s">''</span><span class="p">):</span>
-        <span class="n">entry_id</span> <span class="o">=</span> <span class="n">livestream</span><span class="p">.</span><span class="n">recordedEntryId</span>
-</code></pre></div></div>
+    <span class="k">if</span> <span class="p">((</span><span class="n">livestream</span><span class="o">.</span><span class="n">redirectEntryId</span><span class="p">)</span> <span class="ow">and</span> <span class="n">livestream</span><span class="o">.</span><span class="n">redirectEntryId</span> <span class="o">!=</span> <span class="s">''</span><span class="p">):</span>
+        <span class="n">entry_id</span> <span class="o">=</span> <span class="n">livestream</span><span class="o">.</span><span class="n">redirectEntryId</span>
+    <span class="k">elif</span> <span class="p">((</span><span class="n">livestream</span><span class="o">.</span><span class="n">recordedEntryId</span><span class="p">)</span> <span class="ow">and</span> <span class="n">livestream</span><span class="o">.</span><span class="n">recordedEntryId</span> <span class="o">!=</span> <span class="s">''</span><span class="p">):</span>
+        <span class="n">entry_id</span> <span class="o">=</span> <span class="n">livestream</span><span class="o">.</span><span class="n">recordedEntryId</span>
+</code></pre>
+</div>
 
-<p>For the case of <code class="language-plaintext highlighter-rouge">PER_SESSION</code> recording, a new recording is created for every session, which means that the <code class="language-plaintext highlighter-rouge">recordedEntryId</code> field on the livestream Entry will be reset immediately to make room for a new recordedEntry. We find the entry by using <a href="/console/service/baseEntry/action/list"><code class="language-plaintext highlighter-rouge">baseEntry.list</code></a> with the <strong>rootEntryId</strong> equal to our livestream entry:</p>
+<p>For the case of <code class="highlighter-rouge">PER_SESSION</code> recording, a new recording is created for every session, which means that the <code class="highlighter-rouge">recordedEntryId</code> field on the livestream Entry will be reset immediately to make room for a new recordedEntry. We find the entry by using <a href="https://developer.kaltura.com/console/service/baseEntry/action/list"><code class="highlighter-rouge">baseEntry.list</code></a> with the <strong>rootEntryId</strong> equal to our livestream entry:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">else</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code>    <span class="k">else</span><span class="p">:</span>
         <span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaBaseEntryFilter</span><span class="p">()</span>
-        <span class="nb">filter</span><span class="p">.</span><span class="n">rootEntryIdEqual</span> <span class="o">=</span> <span class="n">entry_id</span>
+        <span class="nb">filter</span><span class="o">.</span><span class="n">rootEntryIdEqual</span> <span class="o">=</span> <span class="n">entry_id</span>
         <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
 
-        <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">baseEntry</span><span class="p">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">objects</span><span class="p">):</span>
-            <span class="n">entry_id</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nb">id</span>
-</code></pre></div></div>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">baseEntry</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">objects</span><span class="p">):</span>
+            <span class="n">entry_id</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="nb">id</span>
+</code></pre>
+</div>
 
-<p>Now that we have an entry ID for playback, we can create a Kaltura Session for the player embed. 
-The most important part of the player KS is the privileges string, comma-separated key-value  string that contains information about the user and the app, to be used for analytics and playback permission. It needs the entry ID, the user ID, and application ID and domain. 
+<p>Now that we have an entry ID for playback, we can create a Kaltura Session for the player embed. <br />
+The most important part of the player KS is the privileges string, comma-separated key-value  string that contains information about the user and the app, to be used for analytics and playback permission. It needs the entry ID, the user ID, and application ID and domain. <br />
 The string looks something like this - using the format tool to concatenate values:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">privileges</span> <span class="o">=</span> <span class="s">"sview:{},enableentitlement,appid:{},appdomain:{},sessionkey:{}"</span> \
-  <span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">entry_id</span><span class="p">,</span> <span class="n">entry_id</span><span class="p">,</span> <span class="n">config</span><span class="p">.</span><span class="n">app_id</span><span class="p">,</span> <span class="n">config</span><span class="p">.</span><span class="n">app_domain</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
-</code></pre></div></div>
-<p>With that privilege string, we create a USER Kaltura Session using the <a href="/console/service/session/action/start"><code class="language-plaintext highlighter-rouge">session.start</code></a> API as seen above.</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">privileges</span> <span class="o">=</span> <span class="s">"sview:{},enableentitlement,appid:{},appdomain:{},sessionkey:{}"</span> \
+  <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">entry_id</span><span class="p">,</span> <span class="n">entry_id</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">app_id</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">app_domain</span><span class="p">,</span> <span class="n">user_id</span><span class="p">)</span>
+</code></pre>
+</div>
+<p>With that privilege string, we create a USER Kaltura Session using the <a href="https://developer.kaltura.com/console/service/session/action/start"><code class="highlighter-rouge">session.start</code></a> API as seen above.</p>
 
 <blockquote>
   <p>Now that we have a Kaltura Session, we can embed the player in an HTML page. We recommend using the v7 player, which is built for speed and performance. However, the functionality for powerpoint slides in the livestream is not yet supported in player v7, so if this is something that is required in your webcasting flow, see Player V2 embed below.</p>
@@ -743,60 +760,64 @@ The string looks something like this - using the format tool to concatenate valu
         
       </h3>
 
-<p>You can create a new player in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">Studio</a> and grab its ID, which is referred to as the UI Conf ID. You’ll need to edit it using the <a href="/console/service/uiConf/action/update">uiconf.update</a> API by passing the ID of the player and the confvars below:</p>
+<p>You can create a new player in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">Studio</a> and grab its ID, which is referred to as the UI Conf ID. You’ll need to edit it using the <a href="https://developer.kaltura.com/console/service/uiConf/action/update">uiconf.update</a> API by passing the ID of the player and the confvars below:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">id</span> <span class="o">=</span> <span class="s">"UI CONF ID"</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">id</span> <span class="o">=</span> <span class="s">"UI CONF ID"</span>
 <span class="n">ui_conf</span> <span class="o">=</span> <span class="n">KalturaUiConf</span><span class="p">()</span>
-<span class="n">ui_conf</span><span class="p">.</span><span class="n">confVars</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">kaltura-ovp-player</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">0.50.0-vamb.1</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">playkit-qna</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">{latest}</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">playkit-kaltura-live</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">{latest}</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">playkit-flash</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">{latest}</span><span class="se">\"</span><span class="s">}"</span>
-</code></pre></div></div>
+<span class="n">ui_conf</span><span class="o">.</span><span class="n">confVars</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">kaltura-ovp-player</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">0.50.0-vamb.1</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">playkit-qna</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">{latest}</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">playkit-kaltura-live</span><span class="se">\"</span><span class="s">: </span><span class="se">\"</span><span class="s">{latest}</span><span class="se">\"</span><span class="s">, </span><span class="se">\"</span><span class="s">playkit-flash</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">{latest}</span><span class="se">\"</span><span class="s">}"</span>
+</code></pre>
+</div>
 
 <p>Now in the HTML code, the first thing you’ll need is the script that loads the Kaltura Player, which looks like this:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://cdnapisec.kaltura.com/p//embedPlaykitJs/uiconf_id/</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdnapisec.kaltura.com/p//embedPlaykitJs/uiconf_id/"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre>
+</div>
 
 <p>The TARGET_ID is the ID of the div that will contain the player:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"kaltura_player"</span><span class="nt">&gt;&lt;/div&gt;</span>
-</code></pre></div></div>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"kaltura_player"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre>
+</div>
 
 <p>And finally, the player embed script, for which you’ll need your Partner ID, the KS we created above, the ID of the viewer, and the ID of the player:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
         <span class="kd">var</span> <span class="nx">kalturaPlayer</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
-        <span class="na">targetId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kaltura_player</span><span class="dl">"</span><span class="p">,</span>
+        <span class="na">targetId</span><span class="p">:</span> <span class="s2">"kaltura_player"</span><span class="p">,</span>
         <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">partnerId</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-            <span class="na">uiConfId</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> 
-            <span class="na">ks</span><span class="p">:</span> <span class="dl">''</span>
+            <span class="na">partnerId</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+            <span class="na">uiConfId</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> 
+            <span class="na">ks</span><span class="p">:</span> <span class="s1">''</span>
         <span class="p">},</span>
         <span class="na">playback</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">preload</span><span class="p">:</span> <span class="dl">"</span><span class="s2">auto</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">preload</span><span class="p">:</span> <span class="s2">"auto"</span><span class="p">,</span>
             <span class="na">autoplay</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">},</span>
         <span class="na">session</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">userId</span><span class="p">:</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span>
+            <span class="na">userId</span><span class="p">:</span> <span class="s1">' '</span>
         <span class="p">},</span> 
         <span class="na">ui</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">debug</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">},</span>
         <span class="na">plugins</span><span class="p">:</span> <span class="p">{</span>
-            <span class="dl">"</span><span class="s2">qna</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="na">dateFormat</span><span class="p">:</span> <span class="dl">"</span><span class="s2">mmmm do, yyyy</span><span class="dl">"</span><span class="p">,</span>
-                <span class="na">expandMode</span><span class="p">:</span> <span class="dl">"</span><span class="s2">OverTheVideo</span><span class="dl">"</span><span class="p">,</span>
+            <span class="s2">"qna"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">dateFormat</span><span class="p">:</span> <span class="s2">"mmmm do, yyyy"</span><span class="p">,</span>
+                <span class="na">expandMode</span><span class="p">:</span> <span class="s2">"OverTheVideo"</span><span class="p">,</span>
                 <span class="na">expandOnFirstPlay</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="na">userRole</span><span class="p">:</span> <span class="dl">'</span><span class="s1">unmoderatedAdminRole</span><span class="dl">'</span> 
+                <span class="na">userRole</span><span class="p">:</span> <span class="s1">'unmoderatedAdminRole'</span> 
                 <span class="p">},</span>
-            <span class="dl">"</span><span class="s2">kaltura-live</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"kaltura-live"</span><span class="p">:</span> <span class="p">{</span>
                 <span class="na">checkLiveWithKs</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
                 <span class="na">isLiveInterval</span><span class="p">:</span> <span class="mi">10</span>
                 <span class="p">}</span>
             <span class="p">}</span> 
         <span class="p">});</span>
-        <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="dl">''</span><span class="p">});</span>
+        <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="s1">''</span><span class="p">});</span>
 
     <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <p>You’ll see that we’ve included the plugins for q&amp;a, and for kaltura-live, which enables the polling to the API to check if the entry is already live.</p>
     
@@ -810,52 +831,55 @@ The string looks something like this - using the format tool to concatenate valu
 
 <p>In the HTML code, the first thing you’ll need is the script that loads the Kaltura Player, which looks like this:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://cdnapisec.kaltura.com/p/{PARTNER_ID}/sp/{PARTNER_ID}00/embedIframeJs/uiconf_id/{UICONF_ID}/partner_id/{PARTNER_ID}</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://cdnapisec.kaltura.com/p/{PARTNER_ID}/sp/{PARTNER_ID}00/embedIframeJs/uiconf_id/{UICONF_ID}/partner_id/{PARTNER_ID}"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre>
+</div>
 
 <p>The TARGET_ID is the ID of the div that will contain the player:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"kaltura_player"</span><span class="nt">&gt;&lt;/div&gt;</span>
-</code></pre></div></div>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"kaltura_player"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre>
+</div>
 
 <p>And finally, the player embed script, for which you’ll need your Partner ID, the KS we created above, the ID of the viewer, the application name, and the ID of the player:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
     <span class="nx">kWidget</span><span class="p">.</span><span class="nx">embed</span><span class="p">({</span>
-        <span class="dl">'</span><span class="s1">targetId</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">kaltura_player</span><span class="dl">'</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">wid</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">_</span><span class="dl">'</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">uiconf_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-        <span class="dl">'</span><span class="s1">flashvars</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="dl">'</span><span class="s1">ks</span><span class="dl">'</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">applicationName</span><span class="dl">'</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">disableAlerts</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">externalInterfaceDisabled</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">autoPlay</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">autoMute</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">largePlayBtn.plugin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">expandToggleBtn.plugin</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">dualScreen</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">plugin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">},</span>
-            <span class="dl">'</span><span class="s1">chapters</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">plugin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">},</span>
-            <span class="dl">'</span><span class="s1">sideBarContainer</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">plugin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">},</span>
-            <span class="dl">'</span><span class="s1">LeadWithHLSOnFlash</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">EmbedPlayer.LiveCuepoints</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">EmbedPlayer.EnableIpadNativeFullscreen</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span>
-            <span class="dl">'</span><span class="s1">qna</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span>
-              <span class="dl">'</span><span class="s1">plugin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span>
-              <span class="dl">'</span><span class="s1">moduleWidth</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">200</span><span class="dl">'</span><span class="p">,</span>
-              <span class="dl">'</span><span class="s1">containerPosition</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">right</span><span class="dl">'</span><span class="p">,</span>
-              <span class="dl">'</span><span class="s1">qnaPollingInterval</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">10000</span><span class="dl">'</span><span class="p">,</span>
-              <span class="dl">'</span><span class="s1">onPage</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">false</span><span class="dl">'</span><span class="p">,</span>
-              <span class="dl">'</span><span class="s1">userId</span><span class="dl">'</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span>
-              <span class="dl">'</span><span class="s1">userRole</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">viewerRole</span><span class="dl">'</span><span class="p">,</span>
-              <span class="dl">'</span><span class="s1">qnaTargetId</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">qnaListHolder</span><span class="dl">'</span>
+        <span class="s1">'targetId'</span><span class="p">:</span> <span class="s1">'kaltura_player'</span><span class="p">,</span>
+        <span class="s1">'wid'</span><span class="p">:</span> <span class="s1">'_'</span><span class="p">,</span>
+        <span class="s1">'uiconf_id'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+        <span class="s1">'flashvars'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'ks'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+            <span class="s1">'applicationName'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+            <span class="s1">'disableAlerts'</span><span class="p">:</span> <span class="s1">'false'</span><span class="p">,</span>
+            <span class="s1">'externalInterfaceDisabled'</span><span class="p">:</span> <span class="s1">'false'</span><span class="p">,</span>
+            <span class="s1">'autoPlay'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">,</span>
+            <span class="s1">'autoMute'</span><span class="p">:</span> <span class="s1">'false'</span><span class="p">,</span>
+            <span class="s1">'largePlayBtn.plugin'</span><span class="p">:</span> <span class="s1">'false'</span><span class="p">,</span>
+            <span class="s1">'expandToggleBtn.plugin'</span><span class="p">:</span><span class="s1">'false'</span><span class="p">,</span>
+            <span class="s1">'dualScreen'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'plugin'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">},</span>
+            <span class="s1">'chapters'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'plugin'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">},</span>
+            <span class="s1">'sideBarContainer'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'plugin'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">},</span>
+            <span class="s1">'LeadWithHLSOnFlash'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">,</span>
+            <span class="s1">'EmbedPlayer.LiveCuepoints'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">,</span>
+            <span class="s1">'EmbedPlayer.EnableIpadNativeFullscreen'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">,</span>
+            <span class="s1">'qna'</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s1">'plugin'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">,</span>
+              <span class="s1">'moduleWidth'</span><span class="p">:</span> <span class="s1">'200'</span><span class="p">,</span>
+              <span class="s1">'containerPosition'</span><span class="p">:</span> <span class="s1">'right'</span><span class="p">,</span>
+              <span class="s1">'qnaPollingInterval'</span><span class="p">:</span> <span class="s1">'10000'</span><span class="p">,</span>
+              <span class="s1">'onPage'</span><span class="p">:</span> <span class="s1">'false'</span><span class="p">,</span>
+              <span class="s1">'userId'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+              <span class="s1">'userRole'</span><span class="p">:</span> <span class="s1">'viewerRole'</span><span class="p">,</span>
+              <span class="s1">'qnaTargetId'</span><span class="p">:</span> <span class="s1">'qnaListHolder'</span>
             <span class="p">},</span>
-            <span class="dl">'</span><span class="s1">webcastPolls</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span><span class="dl">'</span><span class="s1">plugin</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">true</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">userId</span><span class="dl">'</span><span class="p">:</span> <span class="dl">''</span><span class="p">,</span> <span class="dl">'</span><span class="s1">userRole</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">viewerRole</span><span class="dl">'</span><span class="p">}</span>
+            <span class="s1">'webcastPolls'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'plugin'</span><span class="p">:</span> <span class="s1">'true'</span><span class="p">,</span> <span class="s1">'userId'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span> <span class="s1">'userRole'</span><span class="p">:</span> <span class="s1">'viewerRole'</span><span class="p">}</span>
         <span class="p">},</span>
-        <span class="dl">'</span><span class="s1">entry_id</span><span class="dl">'</span><span class="p">:</span> <span class="dl">''</span>
+        <span class="s1">'entry_id'</span><span class="p">:</span> <span class="s1">''</span>
     <span class="p">});</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
     
       <h2 id="moderator-view">
         
@@ -865,7 +889,7 @@ The string looks something like this - using the format tool to concatenate valu
         
       </h2>
 
-<p>The moderator view is the in-browser interface that allows a moderator to handle Q&amp;A and announcements for the livestream. 
+<p>The moderator view is the in-browser interface that allows a moderator to handle Q&amp;A and announcements for the livestream. <br />
 It requires the base URL and a series of query parameters, which include a Kaltura Session of privileges that are similar to the Launcher KS.</p>
     
       <h3 id="base-url">
@@ -876,8 +900,9 @@ It requires the base URL and a series of query parameters, which include a Kaltu
         
       </h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://www.kaltura.com/apps/webcast/vlatest/index.html?
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://www.kaltura.com/apps/webcast/vlatest/index.html?
+</code></pre>
+</div>
     
       <h3 id="parameters">
         
@@ -890,11 +915,11 @@ It requires the base URL and a series of query parameters, which include a Kaltu
 <ul>
   <li><strong>MediaEntryId:</strong> entry ID of the livestream</li>
   <li><strong>ks:</strong> Kaltura Session of type USER with privileges described below</li>
-  <li><strong>ks_expiry:</strong> expiration date of the KS, in format <code class="language-plaintext highlighter-rouge">Y-m-d\TH:i:sP</code></li>
+  <li><strong>ks_expiry:</strong> expiration date of the KS, in format <code class="highlighter-rouge">Y-m-d\TH:i:sP</code></li>
   <li><strong>qnaModeratorMode:</strong> (boolean) whether Q&amp;A is enabled</li>
   <li><strong>serverAddress:</strong> service URL</li>
-  <li><strong>fromDate:</strong> the start date of the livestream, in format <code class="language-plaintext highlighter-rouge">Y-m-d\TH:i:sP</code></li>
-  <li><strong>toDate:</strong> the end date of the livestream, in format <code class="language-plaintext highlighter-rouge">Y-m-d\TH:i:sP</code></li>
+  <li><strong>fromDate:</strong> the start date of the livestream, in format <code class="highlighter-rouge">Y-m-d\TH:i:sP</code></li>
+  <li><strong>toDate:</strong> the end date of the livestream, in format <code class="highlighter-rouge">Y-m-d\TH:i:sP</code></li>
 </ul>
     
       <h3 id="kaltura-session">
@@ -907,15 +932,16 @@ It requires the base URL and a series of query parameters, which include a Kaltu
 
 <p>The KS should have similar permissions as that passed to the App Launcher:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">secret</span> <span class="o">=</span> <span class="s">"xxxxx"</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">secret</span> <span class="o">=</span> <span class="s">"xxxxx"</span>
 <span class="n">user_id</span> <span class="o">=</span> <span class="s">"user-email-address"</span>
-<span class="n">k_type</span> <span class="o">=</span> <span class="n">KalturaSessionType</span><span class="p">.</span><span class="n">USER</span>
+<span class="n">k_type</span> <span class="o">=</span> <span class="n">KalturaSessionType</span><span class="o">.</span><span class="n">USER</span>
 <span class="n">partner_id</span> <span class="o">=</span> <span class="mi">1234567</span>
 <span class="n">expiry</span> <span class="o">=</span> <span class="mi">86400</span>
 <span class="n">privileges</span> <span class="o">=</span> <span class="s">"setrole:WEBCAST_PRODUCER_DEVICE_ROLE,sview:*,list:&lt;ENTRY&gt;,download:&lt;ENTRY&gt;"</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">k_type</span><span class="p">,</span> <span class="n">partner_id</span><span class="p">,</span> <span class="n">expiry</span><span class="p">,</span> <span class="n">privileges</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">k_type</span><span class="p">,</span> <span class="n">partner_id</span><span class="p">,</span> <span class="n">expiry</span><span class="p">,</span> <span class="n">privileges</span><span class="p">)</span>
+</code></pre>
+</div>
     
       <h3 id="complete-url">
         
@@ -927,8 +953,9 @@ It requires the base URL and a series of query parameters, which include a Kaltu
 
 <p>The final URL, after adding the params and URL-encoding, should look something like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://www.kaltura.com/apps/webcast/vlatest/index.html?MediaEntryId=1_1sd21wtr&amp;ks=djJ8MjM2NTQ5MXy7pYnF-OQYtGGuu0vWTDho3bNm25jOIhf_hrNJIPpdQMUPdWWt8QsCgXdnsjZ-p6l-BWsxQgtlJfblaNTIfNsTU6riE3fkKt3ubQkIxndMRinS3G8_AtW3nnUcpfTfRaSfEwXhBIVC_UfhoDyApTfr5IoOgj32CcS5uhKoXCLnHL2aB9saEKEC0XppwCkVBPPt1VTijhRCt1hC0mAq23z9&amp;ks_expiry=2020-06-21+23%3A10%3A43.378412&amp;qnaModeratorMode=True&amp;serverAddress=https%3A%2F%2Fwww.kaltura.com%2F&amp;fromDate=2020-06-20+23%3A12%3A43.378830&amp;toDate=2020-06-20+23%3A18%3A43.378845
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>https://www.kaltura.com/apps/webcast/vlatest/index.html?MediaEntryId=1_1sd21wtr&amp;ks=djJ8MjM2NTQ5MXy7pYnF-OQYtGGuu0vWTDho3bNm25jOIhf_hrNJIPpdQMUPdWWt8QsCgXdnsjZ-p6l-BWsxQgtlJfblaNTIfNsTU6riE3fkKt3ubQkIxndMRinS3G8_AtW3nnUcpfTfRaSfEwXhBIVC_UfhoDyApTfr5IoOgj32CcS5uhKoXCLnHL2aB9saEKEC0XppwCkVBPPt1VTijhRCt1hC0mAq23z9&amp;ks_expiry=2020-06-21+23%3A10%3A43.378412&amp;qnaModeratorMode=True&amp;serverAddress=https%3A%2F%2Fwww.kaltura.com%2F&amp;fromDate=2020-06-20+23%3A12%3A43.378830&amp;toDate=2020-06-20+23%3A18%3A43.378845
+</code></pre>
+</div>
     
       <h2 id="accessing-recordings">
         
@@ -938,13 +965,14 @@ It requires the base URL and a series of query parameters, which include a Kaltu
         
       </h2>
 
-<p>Assuming that recording is enabled (<code class="language-plaintext highlighter-rouge">recordStatus</code> in the livestream creation), your recordings can be found in the <a href="https://kmc.kaltura.com/index.php/kmcng/content/entries/lis">KMC</a>. You can also retrieve with the API by using the livestream Entry ID as the root entry, which will return all recordings that resulted from this entry. You’ll use the <a href="/console/service/baseEntry/action/list">baseEntry.list</a> API, and note that it requires an ADMIN type Kaltura Session:</p>
+<p>Assuming that recording is enabled (<code class="highlighter-rouge">recordStatus</code> in the livestream creation), your recordings can be found in the <a href="https://kmc.kaltura.com/index.php/kmcng/content/entries/lis">KMC</a>. You can also retrieve with the API by using the livestream Entry ID as the root entry, which will return all recordings that resulted from this entry. You’ll use the <a href="https://developer.kaltura.com/console/service/baseEntry/action/list">baseEntry.list</a> API, and note that it requires an ADMIN type Kaltura Session:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaBaseEntryFilter</span><span class="p">()</span>
-<span class="nb">filter</span><span class="p">.</span><span class="n">rootEntryIdEqual</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">ENTRY</span> <span class="n">ID</span><span class="o">&gt;</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="nb">filter</span> <span class="o">=</span> <span class="n">KalturaBaseEntryFilter</span><span class="p">()</span>
+<span class="nb">filter</span><span class="o">.</span><span class="n">rootEntryIdEqual</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">ENTRY</span> <span class="n">ID</span><span class="o">&gt;</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">baseEntry</span><span class="p">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">baseEntry</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">)</span>
+</code></pre>
+</div>
 		
 </article>
 

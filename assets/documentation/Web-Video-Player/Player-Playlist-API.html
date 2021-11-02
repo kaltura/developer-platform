@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sun Mar 26 05:29:23 2017</span>, By <span class="commit-author">AnnaAleksandrowicz</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Web-Video-Player/Player-Playlist-API.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sun Mar 26 05:29:23 2017</span>, By <span class="commit-author">AnnaAleksandrowicz</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Web-Video-Player/Player-Playlist-API.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Sun Mar 26 05:29:23 2017, By <span class="commit-author">AnnaAleksandrowicz</span></td></tr-->
 			
@@ -155,7 +155,7 @@ rtp('get', 'campaign',true);
   <li>Robust API allowing communicating with the playlist from Javascript</li>
 </ul>
 
-<p>You can create a playlist functionality on your page by calling the Kaltura list API and using the Kaltura Web Video Player <code class="language-plaintext highlighter-rouge">changeMedia</code> notification; however, using the Web Video Player’s built-in playlist plugin will shorten your time to launch, simplify the management of your code, and provide better playback control.</p>
+<p>You can create a playlist functionality on your page by calling the Kaltura list API and using the Kaltura Web Video Player <code class="highlighter-rouge">changeMedia</code> notification; however, using the Web Video Player’s built-in playlist plugin will shorten your time to launch, simplify the management of your code, and provide better playback control.</p>
       <h2 id="playlist-config-parameters">
         
         
@@ -167,13 +167,13 @@ rtp('get', 'campaign',true);
 <p>The playlist plugin exposes the following Flashvars configuration parameters to configure the behavior of the playlist:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">containerPosition</code>: Sets the playlist position to left, right, top and bottom</li>
-  <li><code class="language-plaintext highlighter-rouge">layout</code>: Sets the playlist layout to vertical or horizontal</li>
-  <li><code class="language-plaintext highlighter-rouge">autoPlay</code>: Starts playing the first clip upon load</li>
-  <li><code class="language-plaintext highlighter-rouge">autoContinue</code>: Continues to the next clip when the currently playing clip ends</li>
-  <li><code class="language-plaintext highlighter-rouge">loop</code>: Loops the playlist playback (jumps to the first clip when the last clip ends)</li>
-  <li><code class="language-plaintext highlighter-rouge">hideClipPoster</code>: Hides the clip poster when switching to another clip</li>
-  <li><code class="language-plaintext highlighter-rouge">initItemEntryId</code>: Indicates that the entryId that should be played first</li>
+  <li><code class="highlighter-rouge">containerPosition</code>: Sets the playlist position to left, right, top and bottom</li>
+  <li><code class="highlighter-rouge">layout</code>: Sets the playlist layout to vertical or horizontal</li>
+  <li><code class="highlighter-rouge">autoPlay</code>: Starts playing the first clip upon load</li>
+  <li><code class="highlighter-rouge">autoContinue</code>: Continues to the next clip when the currently playing clip ends</li>
+  <li><code class="highlighter-rouge">loop</code>: Loops the playlist playback (jumps to the first clip when the last clip ends)</li>
+  <li><code class="highlighter-rouge">hideClipPoster</code>: Hides the clip poster when switching to another clip</li>
+  <li><code class="highlighter-rouge">initItemEntryId</code>: Indicates that the entryId that should be played first</li>
 </ul>
     
       <h4 id="configure-playlist-via-player-studio-uivars">
@@ -186,10 +186,11 @@ rtp('get', 'campaign',true);
 
 <p>When configuring the playlist via the Player Studio UIVars, remember that each new line is key=value pair:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>playlistAPI.containerPosition=bottom
+<div class="highlighter-rouge"><pre class="highlight"><code>playlistAPI.containerPosition=bottom
 playlistAPI.layout=horizontal
 playlistAPI.autoContinue=true
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h4 id="configure-playlist-via-embeded-flashvars">
         
@@ -199,14 +200,15 @@ playlistAPI.autoContinue=true
         
       </h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">flashvars</span><span class="p">:</span> <span class="p">{</span>
-	<span class="dl">"</span><span class="s2">playlistAPI</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-		<span class="dl">"</span><span class="s2">containerPosition</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">bottom</span><span class="dl">"</span><span class="p">,</span>
-		<span class="dl">"</span><span class="s2">layout</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">horizontal</span><span class="dl">"</span><span class="p">,</span>
-		<span class="dl">"</span><span class="s2">autoContinue</span><span class="dl">"</span> <span class="p">:</span> <span class="kc">true</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">flashvars</span><span class="err">:</span> <span class="p">{</span>
+	<span class="s2">"playlistAPI"</span><span class="err">:</span> <span class="p">{</span>
+		<span class="s2">"containerPosition"</span> <span class="err">:</span> <span class="s2">"bottom"</span><span class="p">,</span>
+		<span class="s2">"layout"</span> <span class="err">:</span> <span class="s2">"horizontal"</span><span class="p">,</span>
+		<span class="s2">"autoContinue"</span> <span class="err">:</span> <span class="kc">true</span>
 	<span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="common-player-playlist-best-practices">
         
@@ -242,8 +244,8 @@ playlistAPI.autoContinue=true
         
       </h3>
 
-<p>You can use a custom CSS with your playlist to change playlist item CSS definitions, such as color and fonts.<br />
-This is done by setting the playlistAPI <code class="language-plaintext highlighter-rouge">iframeHTML5Css</code> property to your custom CSS file.</p>
+<p>You can use a custom CSS with your playlist to change playlist item CSS definitions, such as color and fonts.  <br />
+This is done by setting the playlistAPI <code class="highlighter-rouge">iframeHTML5Css</code> property to your custom CSS file.</p>
 
 <blockquote>
   <p>See the article on <a href="http://player.kaltura.com/modules/KalturaSupport/tests/PlaylistPagingTemplate.html">playlists with custom template and paging</a> for a well-developed example of using a custom template to customize the playlist plugin UI and behavior.</p>
@@ -263,7 +265,7 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
   <p>See the <a href="https://github.com/kaltura/mwEmbed/blob/master/modules/KalturaSupport/components/playlist/playList.tmpl.html">base playlist template on GitHub</a> for details.</p>
 </blockquote>
 
-<p>You can override this template with your own template by setting the <code class="language-plaintext highlighter-rouge">playlistAPI.templatePath</code> property to link to your custom template.</p>
+<p>You can override this template with your own template by setting the <code class="highlighter-rouge">playlistAPI.templatePath</code> property to link to your custom template.</p>
     
       <h3 id="onpage-playlist-rendered-on-the-hosting-page">
         
@@ -275,7 +277,7 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
 
 <p>You can decide to render the playlist UI on the web page in which the player is embeded.</p>
 
-<p>To render the playlist on the hosting page, provide the div element ID into which you’d like the playlist to render, by setting the <code class="language-plaintext highlighter-rouge">playlistAPI.clipListTargetId</code> property. If you don’t specify a div element ID, the playlist will default to render <strong>below</strong> the Player.</p>
+<p>To render the playlist on the hosting page, provide the div element ID into which you’d like the playlist to render, by setting the <code class="highlighter-rouge">playlistAPI.clipListTargetId</code> property. If you don’t specify a div element ID, the playlist will default to render <strong>below</strong> the Player.</p>
 
 <blockquote>
   <p>See the article on <a href="http://player.kaltura.com/modules/KalturaSupport/tests/PlaylistOnPage.qunit.html">playlists</a> for an example of rendering the playlist UI on the hosting page.</p>
@@ -286,7 +288,7 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
 <ul>
   <li>The OnPage playlist will work only when using dynamic Javascript embed, because iFrame embeds prevent access to the hosting page.</li>
   <li>You can add your own logic to the playlist div element using Javascript, for example, add an expand/collapse functionality.</li>
-  <li>You may define a custom CSS for your playlist by setting the <code class="language-plaintext highlighter-rouge">playlsitAPI.onPageCss1</code> property and link to your CSS file.</li>
+  <li>You may define a custom CSS for your playlist by setting the <code class="highlighter-rouge">playlsitAPI.onPageCss1</code> property and link to your CSS file.</li>
 </ul>
     
       <h2 id="playlist-api-properties-and-events">
@@ -316,15 +318,15 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">dataProvider</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">dataProvider</code></td>
       <td style="text-align: left">Holds all of the playlist items</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">selectedIndex</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">selectedIndex</code></td>
       <td style="text-align: left">Current clip index</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">tabBar.selectedIndex</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">tabBar.selectedIndex</code></td>
       <td style="text-align: left">Current playlist index when using multiple playlists</td>
     </tr>
   </tbody>
@@ -344,15 +346,17 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
   <li>Play the second clip of the current playlist:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">kdp</span><span class="p">.</span><span class="nx">setKDPAttribute</span><span class="p">(</span><span class="dl">"</span><span class="s2">playlistAPI.dataProvider</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">selectedIndex</span><span class="dl">"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">kdp</span><span class="p">.</span><span class="nx">setKDPAttribute</span><span class="p">(</span><span class="s2">"playlistAPI.dataProvider"</span><span class="p">,</span> <span class="s2">"selectedIndex"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+</code></pre>
+</div>
 
 <ul>
   <li>To get the currently selected clip index:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">kdp</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span> <span class="dl">"</span><span class="s2">{playlistAPI.dataProvider.selectedIndex}</span><span class="dl">"</span> <span class="p">)</span> <span class="p">);</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">kdp</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span> <span class="s2">"{playlistAPI.dataProvider.selectedIndex}"</span> <span class="p">)</span> <span class="p">);</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>See the article <a href="http://player.kaltura.com/modules/KalturaSupport/tests/PlaylistOnPage.qunit.html">Using Playlist Properties Examples</a> for more information about the Playlist API, properties, and events.</p>
@@ -375,11 +379,11 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistPlayNext</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistPlayNext</code></td>
       <td style="text-align: left">Play next clip</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistPlayPrevious</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistPlayPrevious</code></td>
       <td style="text-align: left">Play previous clip</td>
     </tr>
   </tbody>
@@ -399,15 +403,17 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
   <li>Play the next entry in the playlist:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">(</span><span class="dl">"</span><span class="s2">playlistPlayNext</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">(</span><span class="s2">"playlistPlayNext"</span><span class="p">);</span>
+</code></pre>
+</div>
 
 <ul>
   <li>Play the previous entry in the playlist:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">(</span><span class="dl">"</span><span class="s2">playlistPlayPrevious</span><span class="dl">"</span><span class="p">);</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">sendNotification</span><span class="p">(</span><span class="s2">"playlistPlayPrevious"</span><span class="p">);</span>
+</code></pre>
+</div>
     
       <h3 id="playlist-api-events-hooks">
         
@@ -426,35 +432,35 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistReady</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistReady</code></td>
       <td style="text-align: left">Playlist is ready to play</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistFirstEntry</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistFirstEntry</code></td>
       <td style="text-align: left">The first clip in the playlist starts playing</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistMiddleEntry</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistMiddleEntry</code></td>
       <td style="text-align: left">Any middle clip in the playlist starts playing</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistLastEntry</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistLastEntry</code></td>
       <td style="text-align: left">The last clip in the playlist starts playing</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistPlayNext</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistPlayNext</code></td>
       <td style="text-align: left">The next clip is requested</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistPlayPrevious</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistPlayPrevious</code></td>
       <td style="text-align: left">The previous clip is requested</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">playlistSelected</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">playlistSelected</code></td>
       <td style="text-align: left">When using multiple playlists, the user selects a specific playlist</td>
     </tr>
     <tr>
-      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">EmptyPlaylistCustomError</code></td>
+      <td style="text-align: left"><code class="highlighter-rouge">EmptyPlaylistCustomError</code></td>
       <td style="text-align: left">The playlist was loaded without entries</td>
     </tr>
   </tbody>
@@ -474,19 +480,21 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
   <li>A hook to when the next entry in the list will be played:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">kBind</span><span class="p">(</span><span class="dl">"</span><span class="s2">playlistPlayNext</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">the next entry will now play</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">kBind</span><span class="p">(</span><span class="s2">"playlistPlayNext"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"the next entry will now play"</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>Detect when a faulty playlist is loaded:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">kBind</span><span class="p">(</span><span class="dl">"</span><span class="s2">EmptyPlaylistCustomError</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">faulty playlist, let's switch playlist and/or report error</span><span class="dl">"</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">kBind</span><span class="p">(</span><span class="s2">"EmptyPlaylistCustomError"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"faulty playlist, let's switch playlist and/or report error"</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>See the article <a href="http://player.kaltura.com/modules/KalturaSupport/tests/PlaylistEvents.qunit.html">Registering to Playlist Events</a> for details.</p>
@@ -500,22 +508,23 @@ This is done by setting the playlistAPI <code class="language-plaintext highligh
         
       </h2>
 
-<p>The Kaltura backend provides the capability to  stitch manual playlists dynamically, by combining video entries into a single continuos video stream.<br />
-The Kaltura Player leverages the ability to play stitched playlists as if they were a single video entry.<br />
-This is an important capability that supports use cases of dynamic personalized video experiences.
+<p>The Kaltura backend provides the capability to  stitch manual playlists dynamically, by combining video entries into a single continuos video stream.  <br />
+The Kaltura Player leverages the ability to play stitched playlists as if they were a single video entry.  <br />
+This is an important capability that supports use cases of dynamic personalized video experiences.<br />
 To play a stitched playlist, simply pass the ID of the manual playlist you would like to stitch as the entryId parameter.</p>
 
-<p>Important note: in the case of a stitched playlist, use the <code class="language-plaintext highlighter-rouge">entry.msDuration</code> property to get the accurate milliseconds duration of the stitched playlist video instead of the <code class="language-plaintext highlighter-rouge">duration</code> property.</p>
+<p>Important note: in the case of a stitched playlist, use the <code class="highlighter-rouge">entry.msDuration</code> property to get the accurate milliseconds duration of the stitched playlist video instead of the <code class="highlighter-rouge">duration</code> property.</p>
 
-<p>For example, if the playlist ID <code class="language-plaintext highlighter-rouge">0_kh14ze3t</code> consists of six entrie, instead of loading it as a playlist player, where the end user loads each video on its own, you can stitch the videos and play them as one instead. To achieve this option, simply pass the ID of the playlist (<code class="language-plaintext highlighter-rouge">0_kh14ze3t</code>) in the entryId parameter of the embed code as follows:</p>
+<p>For example, if the playlist ID <code class="highlighter-rouge">0_kh14ze3t</code> consists of six entrie, instead of loading it as a playlist player, where the end user loads each video on its own, you can stitch the videos and play them as one instead. To achieve this option, simply pass the ID of the playlist (<code class="highlighter-rouge">0_kh14ze3t</code>) in the entryId parameter of the embed code as follows:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">kWidget</span><span class="p">.</span><span class="nx">embed</span><span class="p">({</span>
-	<span class="dl">"</span><span class="s2">targetId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">myTargetEmbedDiv</span><span class="dl">"</span><span class="p">,</span>
-	<span class="dl">"</span><span class="s2">wid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">_811441</span><span class="dl">"</span><span class="p">,</span>
-	<span class="dl">"</span><span class="s2">uiconf_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">33991361</span><span class="p">,</span>
-	<span class="dl">"</span><span class="s2">entry_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0_kh14ze3t</span><span class="dl">"</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">kWidget</span><span class="p">.</span><span class="nx">embed</span><span class="p">({</span>
+	<span class="s2">"targetId"</span><span class="p">:</span> <span class="s2">"myTargetEmbedDiv"</span><span class="p">,</span>
+	<span class="s2">"wid"</span><span class="p">:</span> <span class="s2">"_811441"</span><span class="p">,</span>
+	<span class="s2">"uiconf_id"</span><span class="p">:</span> <span class="mi">33991361</span><span class="p">,</span>
+	<span class="s2">"entry_id"</span><span class="p">:</span> <span class="s2">"0_kh14ze3t"</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 		
 </article>
 

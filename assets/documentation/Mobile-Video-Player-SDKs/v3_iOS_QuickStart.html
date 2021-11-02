@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 16 07:27:26 2017</span>, By <span class="commit-author">Gal Orlanczyk</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_QuickStart.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 16 07:27:26 2017</span>, By <span class="commit-author">Gal Orlanczyk</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_QuickStart.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Mar 2 06:37:32 2017, By: ElizaSapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 16 07:27:26 2017, By <span class="commit-author">Gal Orlanczyk</span></td></tr-->
 			
@@ -160,15 +160,15 @@ rtp('get', 'campaign',true);
 
 <ol>
   <li>
-    <p>Open Xcode and click <strong>start new Xcode Project</strong>:
+    <p>Open Xcode and click <strong>start new Xcode Project</strong>:<br />
  <img src="./v3-images/iOS/newProj.png" alt="help" /></p>
   </li>
   <li>
-    <p>Next, select <strong>Single View Application</strong> and click <strong>Next</strong>:
+    <p>Next, select <strong>Single View Application</strong> and click <strong>Next</strong>:<br />
  <img src="./v3-images/iOS/singleView.png" alt="help" /></p>
   </li>
   <li>
-    <p>In the dialog screen displayed, enter the relevant details:
+    <p>In the dialog screen displayed, enter the relevant details:<br />
  <img src="./v3-images/iOS/projDetails.png" alt="help" /></p>
   </li>
 </ol>
@@ -187,11 +187,11 @@ rtp('get', 'campaign',true);
   <p>Note: Using CocoaPods on an existing Xcode project will modify the project file, so you may want to make a backup before doing this.</p>
 </blockquote>
 
-<p>1 . In your project folder, create a plain text file called <code class="language-plaintext highlighter-rouge">Podfile</code> (no file extension).</p>
+<p>1 . In your project folder, create a plain text file called <code class="highlighter-rouge">Podfile</code> (no file extension).</p>
 
 <p>2 . Using a text editor, add the following lines of code to the Podfile and save it.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://github.com/CocoaPods/Specs.git'</span>
 
 <span class="n">use_frameworks!</span>
 
@@ -213,12 +213,14 @@ rtp('get', 'campaign',true);
         <span class="k">end</span> 
     <span class="k">end</span> 
 <span class="k">end</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>3 . Navigate to the podfile location via Terminal and type the command:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">pod</span> <span class="n">install</span>
-</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>    <span class="n">pod</span> <span class="n">install</span>
+</code></pre>
+</div>
     
       <h3 id="import-the-native-sdk">
         
@@ -228,21 +230,23 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Go to the desired file (e.g., <code class="language-plaintext highlighter-rouge">ViewController.swift</code>) and add the line below:</p>
+<p>Go to the desired file (e.g., <code class="highlighter-rouge">ViewController.swift</code>) and add the line below:</p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">PlayKit</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">PlayKit</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import "PlayKit-Swift.h"
-</span></code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import "PlayKit-Swift.h"
+</span></code></pre>
+</div>
     
       <h3 id="code-the-video-player-application">
         
@@ -253,14 +257,16 @@ rtp('get', 'campaign',true);
       </h3>
 
 <blockquote>
-  <p>Note: to change log level use <code class="language-plaintext highlighter-rouge">PlayKitManager</code> log level property.</p>
+  <p>Note: to change log level use <code class="highlighter-rouge">PlayKitManager</code> log level property.</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="p">.</span><span class="n">logLevel</span> <span class="o">=</span> <span class="n">PKLogLevelInfo</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">PlayKitManager</span><span class="p">.</span><span class="n">logLevel</span> <span class="o">=</span> <span class="n">PKLogLevelInfo</span><span class="p">;</span>
+</code></pre>
+</div>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">PlayKitManager</span><span class="o">.</span><span class="n">logLevel</span> <span class="o">=</span> <span class="o">.</span><span class="n">info</span> 
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">PlayKitManager</span><span class="o">.</span><span class="n">logLevel</span> <span class="o">=</span> <span class="o">.</span><span class="n">info</span> 
+</code></pre>
+</div>
 
 <p>You’re now ready to code the video player application using the following options.</p>
 
@@ -270,15 +276,17 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">Player</span><span class="p">?</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">Player</span><span class="p">?</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">&gt;</span> <span class="n">player</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">id</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">&gt;</span> <span class="n">player</span><span class="p">;</span>
+</code></pre>
+</div>
 
 <p><strong>Set a Player Instance via a Sample Configuration</strong></p>
 
@@ -286,7 +294,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">contentURL</span> <span class="o">=</span> <span class="s">"https://cdnapisec.kaltura.com/p/2215841/playManifest/entryId/1_w9zx2eti/format/applehttp/protocol/https/a.m3u8"</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">contentURL</span> <span class="o">=</span> <span class="s">"https://cdnapisec.kaltura.com/p/2215841/playManifest/entryId/1_w9zx2eti/format/applehttp/protocol/https/a.m3u8"</span>
 
 <span class="c1">// create media source and initialize a media entry with that source</span>
 <span class="k">let</span> <span class="nv">entryId</span> <span class="o">=</span> <span class="s">"sintel"</span>
@@ -304,35 +312,37 @@ rtp('get', 'campaign',true);
 <span class="p">}</span> <span class="k">catch</span> <span class="k">let</span> <span class="nv">e</span> <span class="p">{</span>
     <span class="c1">// error loading the player</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSURL</span> <span class="o">*</span><span class="n">contentURL</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSURL</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithString</span><span class="p">:</span><span class="s">@"https://cdnapisec.kaltura.com/p/2215841/playManifest/entryId/1_w9zx2eti/format/applehttp/protocol/https/a.m3u8"</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSURL</span> <span class="o">*</span><span class="n">contentURL</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSURL</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithString</span><span class="p">:</span><span class="s">@"https://cdnapisec.kaltura.com/p/2215841/playManifest/entryId/1_w9zx2eti/format/applehttp/protocol/https/a.m3u8"</span><span class="p">];</span>
 
-<span class="c1">// create media source and initialize a media entry with that source</span>
-<span class="n">NSString</span> <span class="o">*</span><span class="n">entryId</span> <span class="o">=</span> <span class="s">@"sintel"</span><span class="p">;</span>
+<span class="c1">// create media source and initialize a media entry with that source
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">entryId</span> <span class="o">=</span> <span class="s">@"sintel"</span><span class="p">;</span>
 <span class="n">MediaSource</span><span class="o">*</span> <span class="n">source</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MediaSource</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">:</span><span class="n">entryId</span> <span class="nf">contentUrl</span><span class="p">:</span><span class="n">contentURL</span> <span class="n">mimeType</span><span class="o">:</span><span class="nb">nil</span> <span class="n">drmData</span><span class="o">:</span><span class="nb">nil</span> <span class="n">mediaFormat</span><span class="o">:</span><span class="n">MediaFormatHls</span><span class="p">];</span>
 <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">MediaSource</span><span class="o">*&gt;*</span> <span class="n">sources</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSArray</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithObjects</span><span class="p">:</span><span class="n">source</span><span class="p">,</span> <span class="nb">nil</span><span class="p">];</span>
-<span class="c1">// setup media entry</span>
-<span class="n">MediaEntry</span> <span class="o">*</span><span class="n">mediaEntry</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MediaEntry</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">:</span><span class="n">entryId</span> <span class="nf">sources</span><span class="p">:</span><span class="n">sources</span> <span class="n">duration</span><span class="o">:-</span><span class="mi">1</span><span class="p">];</span>
+<span class="c1">// setup media entry
+</span><span class="n">MediaEntry</span> <span class="o">*</span><span class="n">mediaEntry</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MediaEntry</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">:</span><span class="n">entryId</span> <span class="nf">sources</span><span class="p">:</span><span class="n">sources</span> <span class="n">duration</span><span class="o">:-</span><span class="mi">1</span><span class="p">];</span>
 
-<span class="c1">// create media config</span>
-<span class="n">MediaConfig</span> <span class="o">*</span><span class="n">mediaConfig</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MediaConfig</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithMediaEntry</span><span class="p">:</span><span class="n">mediaEntry</span> <span class="nf">startTime</span><span class="p">:</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">];</span>
+<span class="c1">// create media config
+</span><span class="n">MediaConfig</span> <span class="o">*</span><span class="n">mediaConfig</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MediaConfig</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">initWithMediaEntry</span><span class="p">:</span><span class="n">mediaEntry</span> <span class="nf">startTime</span><span class="p">:</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">];</span>
 
-<span class="c1">// load the player</span>
-<span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+<span class="c1">// load the player
+</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
 <span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="o">=</span> <span class="p">[</span><span class="n">PlayKitManager</span><span class="p">.</span><span class="n">sharedInstance</span> <span class="nf">loadPlayerWithPluginConfig</span><span class="p">:</span><span class="nb">nil</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">prepare</span><span class="p">:</span><span class="n">mediaConfig</span><span class="p">];</span>
     <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span> <span class="nf">addSubview</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span><span class="p">];</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// error loading the player</span>
-<span class="p">}</span>
-</code></pre></div></div>
+    <span class="c1">// error loading the player
+</span><span class="p">}</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>Note: To learn more about player config creation, see the <a href="https://github.com/kaltura/DeveloperPortalDocs/blob/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_PlayerConfig.md">PlayerConfig Doc</a> article.</p>
@@ -354,15 +364,17 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">playerContainer</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">playerContainer</span><span class="p">:</span> <span class="kt">UIView</span><span class="o">!</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">weak</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">IBOutlet</span> <span class="n">UIView</span> <span class="o">*</span><span class="n">playerContainer</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">weak</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">IBOutlet</span> <span class="n">UIView</span> <span class="o">*</span><span class="n">playerContainer</span><span class="p">;</span>
+</code></pre>
+</div>
 
 <ol>
   <li>The way we recommand setting player’s view is:</li>
@@ -372,15 +384,17 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">toContainer</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">playerContainer</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">toContainer</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">playerContainer</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span> <span class="nf">addToContainer</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span><span class="p">];</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span> <span class="nf">addToContainer</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span><span class="p">];</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>Note: You can also use the player view frame if needed:</p>
@@ -390,17 +404,19 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">playerContainer</span><span class="o">.</span><span class="n">bounds</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">playerContainer</span><span class="o">.</span><span class="n">bounds</span>
 <span class="n">playerContainer</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>   
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">width</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span><span class="p">.</span><span class="n">frame</span><span class="p">.</span><span class="n">size</span><span class="p">.</span><span class="n">height</span><span class="p">);</span>   
 <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span> <span class="nf">addSubview</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span><span class="p">];</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="adding-custom-buttons-and-controls-to-the-player">
         
@@ -416,7 +432,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">playTouched</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">playTouched</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">isPlaying</span> <span class="p">{</span>
         <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span>
     <span class="p">}</span>
@@ -427,13 +443,14 @@ rtp('get', 'campaign',true);
         <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="nf">pause</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="nf">playTouched</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">sender</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">IBAction</span><span class="p">)</span><span class="nf">playTouched</span><span class="p">:(</span><span class="n">id</span><span class="p">)</span><span class="nv">sender</span> <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">isPlaying</span><span class="p">)</span> <span class="p">{</span>
         <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">play</span><span class="p">];</span>
     <span class="p">}</span>
@@ -444,10 +461,11 @@ rtp('get', 'campaign',true);
         <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">pause</span><span class="p">];</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
-  <p><a href="https://github.com/kaltura/playkit-ios-samples/tree/master/PlayKitApp/PlayKitApp">Download Full Swift Sample</a>
+  <p><a href="https://github.com/kaltura/playkit-ios-samples/tree/master/PlayKitApp/PlayKitApp">Download Full Swift Sample</a><br />
 <a href="https://github.com/kaltura/playkit-ios-samples/tree/master/PlayKitApp/ObjCSample">Download Full Obj-C Sample</a></p>
 </blockquote>
     

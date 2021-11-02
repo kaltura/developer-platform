@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Scheduling-Recorded-and-Live-Stream-Events/iCal-API-and-Calendar-Integrations.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Scheduling-Recorded-and-Live-Stream-Events/iCal-API-and-Calendar-Integrations.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -146,7 +146,7 @@ rtp('get', 'campaign',true);
     <p>As an iCal file synced form a third-party hosted Drop-Folders over FTP, SFTP or S3.</p>
   </li>
   <li>
-    <p>The iCal file format may also be ingested using the <a href="/api-docs/service/scheduleEvent/action/addFromBulkUpload"><code class="language-plaintext highlighter-rouge">scheduleEvent.addFromBulkUpload</code></a> API action.</p>
+    <p>The iCal file format may also be ingested using the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/addFromBulkUpload"><code class="highlighter-rouge">scheduleEvent.addFromBulkUpload</code></a> API action.</p>
   </li>
 </ol>
     
@@ -158,13 +158,14 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>iCal provides a standardized method for syncing calendar events from Kaltura. 
-To retrieving an iCal file format, add <code class="language-plaintext highlighter-rouge">format/ical</code> to the <a href="/api-docs/service/scheduleEvent/action/list">scheduleEvent.list</a> API action.</p>
+<p>iCal provides a standardized method for syncing calendar events from Kaltura. <br />
+To retrieving an iCal file format, add <code class="highlighter-rouge">format/ical</code> to the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/list">scheduleEvent.list</a> API action.</p>
 
 <p>For example:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/filter[resourceIdsLike]/RESOURCE-ID
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/filter[resourceIdsLike]/RESOURCE-ID
+</code></pre>
+</div>
     
       <h2 id="the-kaltura-ical-format">
         
@@ -203,7 +204,7 @@ To retrieving an iCal file format, add <code class="language-plaintext highlight
     <tr>
       <td>X-KALTURA-STATUS</td>
       <td>Status of the event in Kaltura</td>
-      <td>int (<a href="/api-docs/General_Objects/Enums/KalturaScheduleEventStatus">KalturaScheduleEventStatus</a>)</td>
+      <td>int (<a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaScheduleEventStatus">KalturaScheduleEventStatus</a>)</td>
     </tr>
     <tr>
       <td>X-KALTURA-CATEGORY-IDS</td>
@@ -282,7 +283,7 @@ To retrieving an iCal file format, add <code class="language-plaintext highlight
       </h2>
 
 <blockquote>
-  <p>To avoid returning multiple live stream endpoints in the iCal - For Live Stream Events, the iCal format will return the RTMP/RTSP endpoints and credentials as defined in the <code class="language-plaintext highlighter-rouge">templateEntryId</code>. To avoid confusion, always set the template entry id to be the same as the Live Stream Entry resource assigned to the event.</p>
+  <p>To avoid returning multiple live stream endpoints in the iCal - For Live Stream Events, the iCal format will return the RTMP/RTSP endpoints and credentials as defined in the <code class="highlighter-rouge">templateEntryId</code>. To avoid confusion, always set the template entry id to be the same as the Live Stream Entry resource assigned to the event.</p>
 </blockquote>
 		
 </article>

@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Scheduling-Recorded-and-Live-Stream-Events/Introduction-to-Scheduling-and-Managing-Resources.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Scheduling-Recorded-and-Live-Stream-Events/Introduction-to-Scheduling-and-Managing-Resources.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -132,14 +132,14 @@ rtp('get', 'campaign',true);
 		<p>The Kaltura Video Scheduling API enables Encoding and Capture devices to leverage the Kaltura platform to schedule events for devices, and to use information from those events to trigger live events, and ingest recorded content back to Kaltura with related metadata. Scheduling of events and retrieving the scheduled events calendar via the API is discussed in this article.</p>
 
 <blockquote>
-  <p>The Kaltura Scheduled Events API allows for scheduling conflicting resources and blackout dates. To get and resolve conflicting events and resources, use the <a href="/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</p>
+  <p>The Kaltura Scheduled Events API allows for scheduling conflicting resources and blackout dates. To get and resolve conflicting events and resources, use the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts"><code class="highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</p>
 </blockquote>
 
 <p>Kaltura MediaSpace and KAF (Kaltura Applications Framework) views also provide UI workflows to create, and manage scheduled events (read more about the UI in the <a href="https://knowledge.kaltura.com/kaltura-recording-scheduling-management">Scheduled Events User Manual</a>, and to get access to the scheduling module in your MediaSpace instance, contact your Kaltura representative).</p>
 
 <p>The Scheduled Events API is also exposed as a standard <a href="https://en.wikipedia.org/wiki/ICalendar">iCal format</a>. This provides backend support for calendar definition, including importing and exporting using the iCal standard. Importing into the Kaltura platform is done either though bulk-upload or drop-folders.</p>
 
-<p>The Kaltura Scheduled Events API support 3 types of Events (see <a href="/api-docs/General_Objects/Enums/KalturaScheduleEventType"><code class="language-plaintext highlighter-rouge">KalturaScheduleEventType</code></a>):</p>
+<p>The Kaltura Scheduled Events API support 3 types of Events (see <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaScheduleEventType"><code class="highlighter-rouge">KalturaScheduleEventType</code></a>):</p>
 
 <ol>
   <li><strong>Recorded Events</strong>  - Schedule the recording of an event that will be uploaded to Kaltura after the event ends.</li>
@@ -163,7 +163,7 @@ rtp('get', 'campaign',true);
       </h3>
 
 <ol>
-  <li>Create an event for a future date (<code class="language-plaintext highlighter-rouge">scheduleEvent.add</code> API action or via BulkUpload/DropFolder sync).</li>
+  <li>Create an event for a future date (<code class="highlighter-rouge">scheduleEvent.add</code> API action or via BulkUpload/DropFolder sync).</li>
   <li>Set recording / encoding device as a resource for the scheduled event</li>
   <li>Define a Kaltura Entry as template entry for the event that includes the desired metadata for the recorded or live entry resulting from the scheduled event (including any information on how to publish the entry; co-editors, description/title, etc.).</li>
 </ol>
@@ -189,7 +189,7 @@ rtp('get', 'campaign',true);
 <p>The schedule can be updated using different methods:</p>
 
 <ol>
-  <li>Making REST API calls to the <code class="language-plaintext highlighter-rouge">scheduleEvent</code>, <code class="language-plaintext highlighter-rouge">scheduleResource</code> and <code class="language-plaintext highlighter-rouge">scheduleEventResource</code> services.</li>
+  <li>Making REST API calls to the <code class="highlighter-rouge">scheduleEvent</code>, <code class="highlighter-rouge">scheduleResource</code> and <code class="highlighter-rouge">scheduleEventResource</code> services.</li>
   <li>Via an <a href="iCal-API-and-Calendar-Integrations.html">iCal file</a></li>
 </ol>
     
@@ -204,79 +204,80 @@ rtp('get', 'campaign',true);
 <p>Kaltura Event Scheduling is implemented as 3 API services:</p>
 
 <ol>
-  <li><a href="/console/service/scheduleEvent"><code class="language-plaintext highlighter-rouge">scheduleEvent</code></a> - Representing the Event being scheduled (either Live, Recorded or Blackout).</li>
-  <li><a href="/console/service/scheduleResource"><code class="language-plaintext highlighter-rouge">scheduleResource</code></a> - Representing the devices to be used during the scheduled event (Camera, Live Entry, or Location). Kaltura will log scheduling conflicts between scheduled events trying to use the same resources (resources are uniquely identified using the <code class="language-plaintext highlighter-rouge">systemName</code> field). To get conflicting events call the <a href="/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
-  <li><a href="/console/service/scheduleEventResource"><code class="language-plaintext highlighter-rouge">scheduleEventResource</code></a> - Manages the association of particular resources (Camera, Live Entry, or Location) to Scheduled Events.</li>
+  <li><a href="https://developer.kaltura.com/console/service/scheduleEvent"><code class="highlighter-rouge">scheduleEvent</code></a> - Representing the Event being scheduled (either Live, Recorded or Blackout).</li>
+  <li><a href="https://developer.kaltura.com/console/service/scheduleResource"><code class="highlighter-rouge">scheduleResource</code></a> - Representing the devices to be used during the scheduled event (Camera, Live Entry, or Location). Kaltura will log scheduling conflicts between scheduled events trying to use the same resources (resources are uniquely identified using the <code class="highlighter-rouge">systemName</code> field). To get conflicting events call the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts"><code class="highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
+  <li><a href="https://developer.kaltura.com/console/service/scheduleEventResource"><code class="highlighter-rouge">scheduleEventResource</code></a> - Manages the association of particular resources (Camera, Live Entry, or Location) to Scheduled Events.</li>
 </ol>
 
 <p>The below example shows scheduling  a live event, creating a live stream resource for the event, and associating the resource with the event:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="c1">// If you're creating a Scheduled Live Event, first create the Live Entry:</span>
-<span class="nv">$liveEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KalturaLiveStreamEntry</span><span class="p">();</span>
-<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="s1">'Test Live Entry With Cloud Transcoding'</span><span class="p">;</span>
-<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">description</span> <span class="o">=</span> <span class="s2">"Just a test live stream entry"</span><span class="p">;</span>
-<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">dvrStatus</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">dvrWindow</span> <span class="o">=</span> <span class="mi">120</span><span class="p">;</span>
-<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">explicitLive</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">// LIVE_STREAM_FLASH designates a standard web live entry acquired via an RTMP or RTSP stream</span>
-<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">mediaType</span> <span class="o">=</span> <span class="nc">KalturaMediaType</span><span class="o">::</span><span class="no">LIVE_STREAM_FLASH</span><span class="p">;</span>
-<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">recordStatus</span> <span class="o">=</span> <span class="nc">KalturaRecordStatus</span><span class="o">::</span><span class="no">PER_SESSION</span><span class="p">;</span>
-<span class="nv">$liveEntry</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="n">liveStream</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$liveEntry</span><span class="p">,</span> <span class="nc">KalturaSourceType</span><span class="o">::</span><span class="no">LIVE_STREAM</span><span class="p">);</span>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">// If you're creating a Scheduled Live Event, first create the Live Entry:
+</span><span class="nv">$liveEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KalturaLiveStreamEntry</span><span class="p">();</span>
+<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s1">'Test Live Entry With Cloud Transcoding'</span><span class="p">;</span>
+<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">description</span> <span class="o">=</span> <span class="s2">"Just a test live stream entry"</span><span class="p">;</span>
+<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">dvrStatus</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">dvrWindow</span> <span class="o">=</span> <span class="mi">120</span><span class="p">;</span>
+<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">explicitLive</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">// LIVE_STREAM_FLASH designates a standard web live entry acquired via an RTMP or RTSP stream
+</span><span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">mediaType</span> <span class="o">=</span> <span class="nx">KalturaMediaType</span><span class="o">::</span><span class="na">LIVE_STREAM_FLASH</span><span class="p">;</span>
+<span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">recordStatus</span> <span class="o">=</span> <span class="nx">KalturaRecordStatus</span><span class="o">::</span><span class="na">PER_SESSION</span><span class="p">;</span>
+<span class="nv">$liveEntry</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">liveStream</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$liveEntry</span><span class="p">,</span> <span class="nx">KalturaSourceType</span><span class="o">::</span><span class="na">LIVE_STREAM</span><span class="p">);</span>
 
-<span class="c1">// Create the Scheduled Event:</span>
-<span class="c1">// KalturaRecordScheduleEvent for a recording scheduling</span>
-<span class="c1">// KalturaLiveStreamScheduleEvent for a live broadcast scheduling</span>
-<span class="c1">// KalturaBlackoutScheduleEvent for scheduling a blackout date</span>
-<span class="nv">$scheduleEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KalturaLiveStreamScheduleEvent</span><span class="p">();</span> 
-<span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="n">summary</span> <span class="o">=</span> <span class="nv">$summary</span><span class="p">;</span> <span class="c1">//the description of the event</span>
-<span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="n">startDate</span> <span class="o">=</span> <span class="nv">$startDate</span><span class="p">;</span> <span class="c1">//unix timestamp</span>
-<span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="n">endDate</span> <span class="o">=</span> <span class="nv">$endDate</span><span class="p">;</span> <span class="c1">//unix timestamp</span>
-<span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="n">recurrenceType</span> <span class="o">=</span> <span class="nc">KalturaScheduleEventRecurrenceType</span><span class="o">::</span><span class="no">NONE</span><span class="p">;</span>
-<span class="c1">// Define a Kaltura Entry as template entry for the event that includes the desired metadata for the recorded or live entry resulting from the scheduled event (including any information on how to publish the entry; co-editors, description/title, etc.).</span>
-<span class="c1">// Note: if you're scheduling a Live Event, set the Live Stream Entry id as the template of this Scheudled Event</span>
-<span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="n">templateEntryId</span> <span class="o">=</span> <span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span> 
-<span class="c1">// $client is the preinitilized KalturaClient instance</span>
-<span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nc">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
-<span class="nv">$scheduleEvent</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="n">scheduleEvent</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$scheduleEvent</span><span class="p">);</span>
+<span class="c1">// Create the Scheduled Event:
+// KalturaRecordScheduleEvent for a recording scheduling
+// KalturaLiveStreamScheduleEvent for a live broadcast scheduling
+// KalturaBlackoutScheduleEvent for scheduling a blackout date
+</span><span class="nv">$scheduleEvent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KalturaLiveStreamScheduleEvent</span><span class="p">();</span> 
+<span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="na">summary</span> <span class="o">=</span> <span class="nv">$summary</span><span class="p">;</span> <span class="c1">//the description of the event
+</span><span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="na">startDate</span> <span class="o">=</span> <span class="nv">$startDate</span><span class="p">;</span> <span class="c1">//unix timestamp
+</span><span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="na">endDate</span> <span class="o">=</span> <span class="nv">$endDate</span><span class="p">;</span> <span class="c1">//unix timestamp
+</span><span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="na">recurrenceType</span> <span class="o">=</span> <span class="nx">KalturaScheduleEventRecurrenceType</span><span class="o">::</span><span class="na">NONE</span><span class="p">;</span>
+<span class="c1">// Define a Kaltura Entry as template entry for the event that includes the desired metadata for the recorded or live entry resulting from the scheduled event (including any information on how to publish the entry; co-editors, description/title, etc.).
+// Note: if you're scheduling a Live Event, set the Live Stream Entry id as the template of this Scheudled Event
+</span><span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="na">templateEntryId</span> <span class="o">=</span> <span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span> 
+<span class="c1">// $client is the preinitilized KalturaClient instance
+</span><span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nx">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+<span class="nv">$scheduleEvent</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="na">scheduleEvent</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$scheduleEvent</span><span class="p">);</span>
 
-<span class="c1">// Create a resource to use with this event:</span>
-<span class="c1">// KalturaCameraScheduleResource for a camera resource in a recorded event</span>
-<span class="c1">// KalturaLiveEntryScheduleResource for a Live Stream Entry in a live broadcast event</span>
-<span class="c1">// KalturaLocationScheduleResource for designating a room </span>
-<span class="c1">// multiple resources can be assigned to a single event (e.g. a room + camera + live entry)</span>
-<span class="nv">$scheduleResource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KalturaLiveEntryScheduleResource</span><span class="p">();</span>
-<span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="nv">$resourceName</span><span class="p">;</span> <span class="c1">// a name to call your resource</span>
-<span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="n">systemName</span> <span class="o">=</span> <span class="nv">$systemName</span><span class="p">;</span> <span class="c1">// a unique identified to identify your resource</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$resourceType</span> <span class="o">==</span> <span class="s1">'KalturaLiveEntryScheduleResource'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="n">entryId</span> <span class="o">=</span> <span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+<span class="c1">// Create a resource to use with this event:
+// KalturaCameraScheduleResource for a camera resource in a recorded event
+// KalturaLiveEntryScheduleResource for a Live Stream Entry in a live broadcast event
+// KalturaLocationScheduleResource for designating a room 
+// multiple resources can be assigned to a single event (e.g. a room + camera + live entry)
+</span><span class="nv">$scheduleResource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KalturaLiveEntryScheduleResource</span><span class="p">();</span>
+<span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="nv">$resourceName</span><span class="p">;</span> <span class="c1">// a name to call your resource
+</span><span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="na">systemName</span> <span class="o">=</span> <span class="nv">$systemName</span><span class="p">;</span> <span class="c1">// a unique identified to identify your resource
+</span><span class="k">if</span> <span class="p">(</span><span class="nv">$resourceType</span> <span class="o">==</span> <span class="s1">'KalturaLiveEntryScheduleResource'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="na">entryId</span> <span class="o">=</span> <span class="nv">$liveEntry</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nc">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
-<span class="nv">$scheduleResource</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="n">scheduleResource</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$scheduleResource</span><span class="p">);</span>
+<span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nx">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+<span class="nv">$scheduleResource</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="na">scheduleResource</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$scheduleResource</span><span class="p">);</span>
 
-<span class="c1">// Assign the resource to the Event. </span>
-<span class="c1">// Kaltura will not error or alert if the resource is already been assigned to an event at the same time. </span>
-<span class="c1">// To get the conflicting events call the scheduleEvent.getConflicts action.:</span>
-<span class="nv">$scheduleEventResource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">KalturaScheduleEventResource</span><span class="p">();</span>
-<span class="nv">$scheduleEventResource</span><span class="o">-&gt;</span><span class="n">eventId</span> <span class="o">=</span> <span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
-<span class="nv">$scheduleEventResource</span><span class="o">-&gt;</span><span class="n">resourceId</span> <span class="o">=</span> <span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
-<span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nc">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
-<span class="nv">$scheduleEventResource</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="n">scheduleEventResource</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$scheduleEventResource</span><span class="p">);</span>
+<span class="c1">// Assign the resource to the Event. 
+// Kaltura will not error or alert if the resource is already been assigned to an event at the same time. 
+// To get the conflicting events call the scheduleEvent.getConflicts action.:
+</span><span class="nv">$scheduleEventResource</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KalturaScheduleEventResource</span><span class="p">();</span>
+<span class="nv">$scheduleEventResource</span><span class="o">-&gt;</span><span class="na">eventId</span> <span class="o">=</span> <span class="nv">$scheduleEvent</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+<span class="nv">$scheduleEventResource</span><span class="o">-&gt;</span><span class="na">resourceId</span> <span class="o">=</span> <span class="nv">$scheduleResource</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+<span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nx">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+<span class="nv">$scheduleEventResource</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="na">scheduleEventResource</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$scheduleEventResource</span><span class="p">);</span>
 
-<span class="c1">// To test for scheduling conflicts before assigning an existing resource to a new event, </span>
-<span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nc">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
-<span class="nv">$filter</span><span class="o">-&gt;</span><span class="n">systemNameEqual</span> <span class="o">=</span> <span class="nv">$yourResourceSystemName</span><span class="p">;</span>
-<span class="nv">$scheduledResource</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="n">scheduleResource</span><span class="o">-&gt;</span><span class="nf">listAction</span><span class="p">(</span><span class="nv">$filter</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-<span class="nv">$resourceIds</span> <span class="o">=</span> <span class="nv">$scheduledResource</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
-<span class="nv">$scheduleEventConflictType</span> <span class="o">=</span> <span class="nc">KalturaScheduleEventConflictType</span><span class="o">::</span><span class="no">BOTH</span><span class="p">;</span>
-<span class="nv">$testForSchedulingConflicts</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="n">scheduleEvent</span><span class="o">-&gt;</span><span class="nf">getConflicts</span><span class="p">(</span><span class="nv">$resourceIds</span><span class="p">,</span> <span class="nv">$scheduledEvent</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nv">$scheduleEventConflictType</span><span class="p">);</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$testForSchedulingConflicts</span><span class="o">-&gt;</span><span class="n">totalCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">// It is safe to assign the resource to the event, no scheduling conflicts found.</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="c1">// Conflicts detected, this resource is already scheduled at this time. </span>
-    <span class="c1">//Please resolve conflicts before assigning it to another event at the same time.</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<span class="c1">// To test for scheduling conflicts before assigning an existing resource to a new event, 
+</span><span class="nv">$schedulePlugin</span> <span class="o">=</span> <span class="nx">KalturaScheduleClientPlugin</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+<span class="nv">$filter</span><span class="o">-&gt;</span><span class="na">systemNameEqual</span> <span class="o">=</span> <span class="nv">$yourResourceSystemName</span><span class="p">;</span>
+<span class="nv">$scheduledResource</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="na">scheduleResource</span><span class="o">-&gt;</span><span class="na">listAction</span><span class="p">(</span><span class="nv">$filter</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="nv">$resourceIds</span> <span class="o">=</span> <span class="nv">$scheduledResource</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+<span class="nv">$scheduleEventConflictType</span> <span class="o">=</span> <span class="nx">KalturaScheduleEventConflictType</span><span class="o">::</span><span class="na">BOTH</span><span class="p">;</span>
+<span class="nv">$testForSchedulingConflicts</span> <span class="o">=</span> <span class="nv">$schedulePlugin</span><span class="o">-&gt;</span><span class="na">scheduleEvent</span><span class="o">-&gt;</span><span class="na">getConflicts</span><span class="p">(</span><span class="nv">$resourceIds</span><span class="p">,</span> <span class="nv">$scheduledEvent</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="nv">$scheduleEventConflictType</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$testForSchedulingConflicts</span><span class="o">-&gt;</span><span class="na">totalCount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+	<span class="c1">// It is safe to assign the resource to the event, no scheduling conflicts found.
+</span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Conflicts detected, this resource is already scheduled at this time. 
+</span>    <span class="c1">//Please resolve conflicts before assigning it to another event at the same time.
+</span><span class="p">}</span>
+</code></pre>
+</div>
     
       <h3 id="publishing-permissions">
         
@@ -290,13 +291,13 @@ rtp('get', 'campaign',true);
 
 <p>To learn about App Tokens read the <a href="../Getting-Started-Building-Video-Applications /Application-Tokens.html">Application Tokens</a> guide</p>
 
-<p>To ensure that your device has the appropriate access, pass the following privilege: <code class="language-plaintext highlighter-rouge">setrole:CAPTURE_DEVICE_ROLE</code> in the <code class="language-plaintext highlighter-rouge">privileges</code> field.</p>
+<p>To ensure that your device has the appropriate access, pass the following privilege: <code class="highlighter-rouge">setrole:CAPTURE_DEVICE_ROLE</code> in the <code class="highlighter-rouge">privileges</code> field.</p>
 
 <blockquote>
   <p>Note: While it is possible for the device to use an API admin secret to upload all recordings as an administrator, this will create a security risk and is discouraged. If anyone unauthorized will gain access to that device and to your API admin secret, they will have access to your Kaltura account.</p>
 </blockquote>
 
-<p>After you’ve created an App Token for the device, configure the <code class="language-plaintext highlighter-rouge">id</code> and the <code class="language-plaintext highlighter-rouge">token</code> fields of the created app-token on the device.</p>
+<p>After you’ve created an App Token for the device, configure the <code class="highlighter-rouge">id</code> and the <code class="highlighter-rouge">token</code> fields of the created app-token on the device.</p>
 
 <p>To generate the upload session from the device, follow these steps:</p>
 
@@ -313,38 +314,41 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>All Kaltura list actions, including <a href="/api-docs/Integration_Scheduling_and_Hooks/Scheduling_Triggers_using_iCal/scheduleEvent/scheduleEvent_list">scheduleEvent.list</a>, accept the <a href="/api-docs/General_Objects/Filters/KalturaFilterPager">KalturaFilterPager</a>.</p>
+<p>All Kaltura list actions, including <a href="https://developer.kaltura.com/api-docs/Integration_Scheduling_and_Hooks/Scheduling_Triggers_using_iCal/scheduleEvent/scheduleEvent_list">scheduleEvent.list</a>, accept the <a href="https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaFilterPager">KalturaFilterPager</a>.</p>
 
 <blockquote>
-  <p>By default, the Kaltura pager returns 30 results. Use the <code class="language-plaintext highlighter-rouge">pageIndex</code> to loop through result pages, or <code class="language-plaintext highlighter-rouge">pageSize</code> to increase the amount of results returned per call. Note that the maximum is 500 results per call (“page”).</p>
+  <p>By default, the Kaltura pager returns 30 results. Use the <code class="highlighter-rouge">pageIndex</code> to loop through result pages, or <code class="highlighter-rouge">pageSize</code> to increase the amount of results returned per call. Note that the maximum is 500 results per call (“page”).</p>
 </blockquote>
 
-<p>The maximum number of returned results is 10,000 total (across all pages in the given filter). To retrieve more than 10,000 results, you will need to use a filter instead of pager. For example using the date filter in a loop: <a href="/api-docs/General_Objects/Filters/KalturaAccessControlBaseFilter">createdAtGreaterThanOrEqual</a>.</p>
+<p>The maximum number of returned results is 10,000 total (across all pages in the given filter). To retrieve more than 10,000 results, you will need to use a filter instead of pager. For example using the date filter in a loop: <a href="https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaAccessControlBaseFilter">createdAtGreaterThanOrEqual</a>.</p>
 
-<p>The results can be filtered on any of the filter parameters. For the list of available filter parameters see: <a href="/api-docs/General_Objects/Filters/KalturaScheduleEventFilter">KalturaScheduleEventFilter</a>.  More than one filter can be applied to each request.</p>
+<p>The results can be filtered on any of the filter parameters. For the list of available filter parameters see: <a href="https://developer.kaltura.com/api-docs/General_Objects/Filters/KalturaScheduleEventFilter">KalturaScheduleEventFilter</a>.  More than one filter can be applied to each request.</p>
 
 <p>For example:</p>
 
 <ul>
-  <li>To retrieve events for a specific resource use the  <code class="language-plaintext highlighter-rouge">filter[resourceIdsLike]</code> filter parameter (replace RESOURCE-ID with the ID of the resource to get events for):</li>
+  <li>To retrieve events for a specific resource use the  <code class="highlighter-rouge">filter[resourceIdsLike]</code> filter parameter (replace RESOURCE-ID with the ID of the resource to get events for):</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/filter[resourceIdsLike]/RESOURCE-ID
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/filter[resourceIdsLike]/RESOURCE-ID
+</code></pre>
+</div>
 
 <ul>
-  <li>To get the next 30 events from now, set <code class="language-plaintext highlighter-rouge">startDateGreaterThanOrEqual</code> to 0 (now):</li>
+  <li>To get the next 30 events from now, set <code class="highlighter-rouge">startDateGreaterThanOrEqual</code> to 0 (now):</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/filter[objectType]/KalturaScheduleEventBaseFilter/filter[startDateGreaterThanOrEqual]/0
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/filter[objectType]/KalturaScheduleEventBaseFilter/filter[startDateGreaterThanOrEqual]/0
+</code></pre>
+</div>
 
 <ul>
-  <li>To page through the results, and increase the page size to 500 results per page, set the <code class="language-plaintext highlighter-rouge">pager</code> object’s <code class="language-plaintext highlighter-rouge">pageSize</code> and <code class="language-plaintext highlighter-rouge">pageIndex</code> parameters:</li>
+  <li>To page through the results, and increase the page size to 500 results per page, set the <code class="highlighter-rouge">pager</code> object’s <code class="highlighter-rouge">pageSize</code> and <code class="highlighter-rouge">pageIndex</code> parameters:</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/pager[pageSize]/500/pager[pageIndex]/2
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>http://www.kaltura.com/api_v3/service/schedule_scheduleevent/action/list/format/ical/filter[objectType]/KalturaScheduleEventFilter/pager[pageSize]/500/pager[pageIndex]/2
+</code></pre>
+</div>
     
       <h4 id="relative-time-filters">
         
@@ -354,16 +358,16 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<p>Time attributes support both absolute and relative times. 
+<p>Time attributes support both absolute and relative times. <br />
 The time is measured in seconds since 1970, also known as a UNIX timestamp; however, if you specify a time that is smaller than 1980 (in seconds since 1970), e.g., 0, 60, or -60, Kaltura will calculate the past value as a relative time, for example:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">0</code> = now.</li>
-  <li><code class="language-plaintext highlighter-rouge">60</code> = now + 60 seconds – which is 60 seconds from now.</li>
-  <li><code class="language-plaintext highlighter-rouge">-60</code> = now - 60 seconds – which is 60 seconds ago.</li>
+  <li><code class="highlighter-rouge">0</code> = now.</li>
+  <li><code class="highlighter-rouge">60</code> = now + 60 seconds – which is 60 seconds from now.</li>
+  <li><code class="highlighter-rouge">-60</code> = now - 60 seconds – which is 60 seconds ago.</li>
 </ul>
 
-<p>For example, passing <code class="language-plaintext highlighter-rouge">filter[startDateGreaterThanOrEqual]=0</code> will return all the events that start now or in the future.</p>
+<p>For example, passing <code class="highlighter-rouge">filter[startDateGreaterThanOrEqual]=0</code> will return all the events that start now or in the future.</p>
     
       <h2 id="configuring-resources-in-kaltura">
         
@@ -373,8 +377,8 @@ The time is measured in seconds since 1970, also known as a UNIX timestamp; howe
         
       </h2>
 
-<p>Capture devices as well as rooms and Live Stream entries can be mapped to resource objects in Kaltura. This is similar to booking a conference room using a calendar application. 
-Multiple resources can be defined for an event. Resources can be added using the API (e.g. automatic creation of a matching resource by the device itself) or bulk uploaded in advance using the CSV format (see <a href="/api-docs/service/scheduleResource/action/addFromBulkUpload">scheduleResource.addFromBulkUpload</a>).</p>
+<p>Capture devices as well as rooms and Live Stream entries can be mapped to resource objects in Kaltura. This is similar to booking a conference room using a calendar application. <br />
+Multiple resources can be defined for an event. Resources can be added using the API (e.g. automatic creation of a matching resource by the device itself) or bulk uploaded in advance using the CSV format (see <a href="https://developer.kaltura.com/api-docs/service/scheduleResource/action/addFromBulkUpload">scheduleResource.addFromBulkUpload</a>).</p>
 
 <p>Kaltura’s Bulk Upload CSV format supports mixed orders, and not all fields are required; the fields are defined by the user using an asterisk at the beginning of the line.</p>
     
@@ -396,7 +400,7 @@ Multiple resources can be defined for an event. Resources can be added using the
   <tbody>
     <tr>
       <td>action</td>
-      <td>Default to add (<code class="language-plaintext highlighter-rouge">1</code>).  One of the options defined by <a href="/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a></td>
+      <td>Default to add (<code class="highlighter-rouge">1</code>).  One of the options defined by <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a></td>
     </tr>
     <tr>
       <td>resourceId</td>
@@ -408,7 +412,7 @@ Multiple resources can be defined for an event. Resources can be added using the
     </tr>
     <tr>
       <td>type</td>
-      <td>Required with no default. Either <code class="language-plaintext highlighter-rouge">location</code>, <code class="language-plaintext highlighter-rouge">camera</code> or <code class="language-plaintext highlighter-rouge">live_entry</code></td>
+      <td>Required with no default. Either <code class="highlighter-rouge">location</code>, <code class="highlighter-rouge">camera</code> or <code class="highlighter-rouge">live_entry</code></td>
     </tr>
     <tr>
       <td>systemName</td>
@@ -424,7 +428,7 @@ Multiple resources can be defined for an event. Resources can be added using the
     </tr>
     <tr>
       <td>parentType</td>
-      <td>Optional. Required with no default.  Either <code class="language-plaintext highlighter-rouge">location</code>, <code class="language-plaintext highlighter-rouge">camera</code> or <code class="language-plaintext highlighter-rouge">live_entry</code></td>
+      <td>Optional. Required with no default.  Either <code class="highlighter-rouge">location</code>, <code class="highlighter-rouge">camera</code> or <code class="highlighter-rouge">live_entry</code></td>
     </tr>
     <tr>
       <td>parentSystemName</td>
@@ -437,22 +441,23 @@ Multiple resources can be defined for an event. Resources can be added using the
   <p>Note that resources can have a hierarchy (e.g., a room with cameras), which is defined using the parent type and name.</p>
 </blockquote>
 
-<p>The possible values for the action column (the first column in the example above) are listed in <a href="/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a>. The common actions are:</p>
+<p>The possible values for the action column (the first column in the example above) are listed in <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaBulkUploadAction">KalturaBulkUploadAction</a>. The common actions are:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">1</code> (Default) - adds a new resource</li>
-  <li><code class="language-plaintext highlighter-rouge">2</code> - updates an existing resource by the provided <code class="language-plaintext highlighter-rouge">resourceId</code> or unique <code class="language-plaintext highlighter-rouge">systemName</code></li>
-  <li><code class="language-plaintext highlighter-rouge">3</code> - deletes an existing resource by the provided <code class="language-plaintext highlighter-rouge">resourceId</code> or unique <code class="language-plaintext highlighter-rouge">systemName</code></li>
-  <li><code class="language-plaintext highlighter-rouge">6</code> - updates an existing resource by the provided <code class="language-plaintext highlighter-rouge">resourceId</code> or unique <code class="language-plaintext highlighter-rouge">systemName</code>, if no such resource exists, add as a new resource</li>
+  <li><code class="highlighter-rouge">1</code> (Default) - adds a new resource</li>
+  <li><code class="highlighter-rouge">2</code> - updates an existing resource by the provided <code class="highlighter-rouge">resourceId</code> or unique <code class="highlighter-rouge">systemName</code></li>
+  <li><code class="highlighter-rouge">3</code> - deletes an existing resource by the provided <code class="highlighter-rouge">resourceId</code> or unique <code class="highlighter-rouge">systemName</code></li>
+  <li><code class="highlighter-rouge">6</code> - updates an existing resource by the provided <code class="highlighter-rouge">resourceId</code> or unique <code class="highlighter-rouge">systemName</code>, if no such resource exists, add as a new resource</li>
 </ul>
 
 <p>For example:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*action,resourceId,name,type,systemName,description,tags,parentType,parentSystemName
+<div class="highlighter-rouge"><pre class="highlight"><code>*action,resourceId,name,type,systemName,description,tags,parentType,parentSystemName
 1,,my resource name,camera,my-camera1,my example camera,"tag1,tag2",location,my-parent1
 3,33
 2,34,new awesome resource name,live_entry,my-live-stream,my example live stream entry resource,"tag1,tag2"
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="notable-considerations-when-scheduling-events">
         
@@ -463,8 +468,8 @@ Multiple resources can be defined for an event. Resources can be added using the
       </h2>
 
 <ul>
-  <li>Conflicting events: At present, Kaltura does not prevent conflicting events. The user will need to ensure that there is no resource conflict when scheduling the event. Devices should be able to handle resource conflicts and ensure operations in such case. To retrieve and handle conflicting events call the <a href="/api-docs/service/scheduleEvent/action/getConflicts"><code class="language-plaintext highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
-  <li>Recurring events: When retrieving a recurring event via the API, both the series and the breakdown of each occurrence will be provided. Devices can filter based on  <a href="/api-docs/General_Objects/Enums/KalturaScheduleEventRecurrenceType">KalturaScheduleEventRecurrenceType</a> to receive only the series (<code class="language-plaintext highlighter-rouge">RECURRING</code>) or single events (<code class="language-plaintext highlighter-rouge">RECURRENCE</code>), or to receive single events and breakdown of series. The choice between the options depends on the capability of the device.</li>
+  <li>Conflicting events: At present, Kaltura does not prevent conflicting events. The user will need to ensure that there is no resource conflict when scheduling the event. Devices should be able to handle resource conflicts and ensure operations in such case. To retrieve and handle conflicting events call the <a href="https://developer.kaltura.com/api-docs/service/scheduleEvent/action/getConflicts"><code class="highlighter-rouge">scheduleEvent.getConflicts</code></a> action.</li>
+  <li>Recurring events: When retrieving a recurring event via the API, both the series and the breakdown of each occurrence will be provided. Devices can filter based on  <a href="https://developer.kaltura.com/api-docs/General_Objects/Enums/KalturaScheduleEventRecurrenceType">KalturaScheduleEventRecurrenceType</a> to receive only the series (<code class="highlighter-rouge">RECURRING</code>) or single events (<code class="highlighter-rouge">RECURRENCE</code>), or to receive single events and breakdown of series. The choice between the options depends on the capability of the device.</li>
   <li>There’s only one schedule per Kaltura account managed. Multiple scheduling systems will need to be merged into one Kaltura schedule.</li>
 </ul>
 		

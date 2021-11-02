@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Analytics-and-Reporting/Enriching_Player_Analytics_with_Custom_Event_Data.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -137,7 +137,7 @@ rtp('get', 'campaign',true);
         
       </h1>
 
-<p>While Kaltura <a href="Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md">collects</a> most of the highly requested and common analytics data points, sometimes you may require information that is not already collected. Kaltura provides a convenient way for you to collect any kind of data you want with the <code class="language-plaintext highlighter-rouge">customVar</code> feature.</p>
+<p>While Kaltura <a href="Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md">collects</a> most of the highly requested and common analytics data points, sometimes you may require information that is not already collected. Kaltura provides a convenient way for you to collect any kind of data you want with the <code class="highlighter-rouge">customVar</code> feature.</p>
     
       <h2 id="configuring-the-player">
         
@@ -147,7 +147,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Kaltura players accept a <code class="language-plaintext highlighter-rouge">customVar</code> argument through the <a href="https://github.com/kaltura/playkit-js-kava">KAVA</a> analytics framework. These are named <code class="language-plaintext highlighter-rouge">customVar1</code>, <code class="language-plaintext highlighter-rouge">customVar2</code> and <code class="language-plaintext highlighter-rouge">customVar3</code>.</p>
+<p>Kaltura players accept a <code class="highlighter-rouge">customVar</code> argument through the <a href="https://github.com/kaltura/playkit-js-kava">KAVA</a> analytics framework. These are named <code class="highlighter-rouge">customVar1</code>, <code class="highlighter-rouge">customVar2</code> and <code class="highlighter-rouge">customVar3</code>.</p>
     
       <h3 id="configuring-javascript-player">
         
@@ -157,25 +157,26 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>First check in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">KMC</a> to make sure the KAVA plugin is enabled on your <a href="/player/web/getting-started-web">player</a>: it is enabled by default.</p>
+<p>First check in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">KMC</a> to make sure the KAVA plugin is enabled on your <a href="https://developer.kaltura.com/player/web/getting-started-web">player</a>: it is enabled by default.</p>
 
 <p><img src="/assets/images/kmc_kava.png" alt="kmc_kava" style="zoom:65%;" /></p>
 
 <p>Next configure the player to accept customVar1 via KAVA:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
-                <span class="na">targetId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kaltura-player</span><span class="dl">"</span><span class="p">,</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>     <span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
+                <span class="na">targetId</span><span class="p">:</span> <span class="s2">"kaltura-player"</span><span class="p">,</span>
                 <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
                     <span class="na">partnerId</span><span class="p">:</span> <span class="mi">12345</span><span class="p">,</span>
                     <span class="na">uiConfId</span><span class="p">:</span> <span class="mi">678910</span>
                 <span class="p">},</span>
                 <span class="na">plugins</span><span class="p">:</span> <span class="p">{</span>
                     <span class="na">kava</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="na">customVar1</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span>
+                        <span class="na">customVar1</span><span class="p">:</span> <span class="s2">"hello"</span>
                     <span class="p">}</span>
                 <span class="p">}</span>
             <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="configuring-ios-player">
         
@@ -185,12 +186,13 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>If you refer to the <a href="/player/ios/analytics-plugins-ios">iOS analytics</a> documentation, you will notice the <code class="language-plaintext highlighter-rouge">createKavaConfig</code> method below accepts <code class="language-plaintext highlighter-rouge">customVar[123]</code></p>
+<p>If you refer to the <a href="https://developer.kaltura.com/player/ios/analytics-plugins-ios">iOS analytics</a> documentation, you will notice the <code class="highlighter-rouge">createKavaConfig</code> method below accepts <code class="highlighter-rouge">customVar[123]</code></p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">createKavaConfig</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">KavaPluginConfig</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">createKavaConfig</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">KavaPluginConfig</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kt">KavaPluginConfig</span><span class="p">(</span><span class="nv">partnerId</span><span class="p">:</span> <span class="kt">PARTNER_ID</span><span class="p">,</span> <span class="nv">entryId</span><span class="p">:</span> <span class="n">entryId</span><span class="p">,</span> <span class="nv">ks</span><span class="p">:</span> <span class="n">ks</span><span class="p">,</span> <span class="nv">playbackContext</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">referrer</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">applicationVersion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">playlistId</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar1</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar2</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar3</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="configuring-android-player">
         
@@ -200,9 +202,9 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Refer to the <a href="/player/android/getting-started-android">android player setup page</a> which also links to the <a href="https://github.com/kaltura/playkit-android-kava">Android KAVA demo</a></p>
+<p>Refer to the <a href="https://developer.kaltura.com/player/android/getting-started-android">android player setup page</a> which also links to the <a href="https://github.com/kaltura/playkit-android-kava">Android KAVA demo</a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>            //Set your configurations.
+<div class="highlighter-rouge"><pre class="highlight"><code>            //Set your configurations.
             KavaAnalyticsConfig kavaConfig = new KavaAnalyticsConfig()
                     .setPartnerId(123456) //Your partnerId. Mandatory field!
                     .setBaseUrl("yourBaseUrl")
@@ -211,7 +213,8 @@ rtp('get', 'campaign',true);
                     .setCustomVar1("customVar1")
                     .setCustomVar2("customVar2")
                     .setCustomVar3("customVar3");
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="querying-analytics-for-customvar">
         
@@ -221,7 +224,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Now that you have supplied <code class="language-plaintext highlighter-rouge">customVar</code> to your player, and users are interacting with your players, you will want to see how your <code class="language-plaintext highlighter-rouge">customVar</code> data is performing.</p>
+<p>Now that you have supplied <code class="highlighter-rouge">customVar</code> to your player, and users are interacting with your players, you will want to see how your <code class="highlighter-rouge">customVar</code> data is performing.</p>
 
 <p>Using the <a href="Intro-to-Kaltura-Video-Analytics-and-Best-Practices.md">analytics API</a>  you will be able to create different kinds of reports for your customVar.</p>
     
@@ -233,22 +236,23 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Using the <a href="/console/service/report/action/getTable">report.getTable</a> API call, as shown below, a <code class="language-plaintext highlighter-rouge">reportType</code> of <code class="language-plaintext highlighter-rouge">TOP_CONTENT</code> is produced and it allows you to filter by string via the <code class="language-plaintext highlighter-rouge">customVar1In</code> field of <code class="language-plaintext highlighter-rouge">reportInputFilter</code></p>
+<p>Using the <a href="https://developer.kaltura.com/console/service/report/action/getTable">report.getTable</a> API call, as shown below, a <code class="highlighter-rouge">reportType</code> of <code class="highlighter-rouge">TOP_CONTENT</code> is produced and it allows you to filter by string via the <code class="highlighter-rouge">customVar1In</code> field of <code class="highlighter-rouge">reportInputFilter</code></p>
 
 <p><img src="/assets/images/customVar_topContent.png" alt="customVar_topContent" style="zoom:40%;" /></p>
 
 <p>Which will return a tab-delimited report like:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object_id,entry_name,count_plays,sum_time_viewed,avg_time_viewed,count_loads,load_play_ratio,avg_view_drop_off,unique_known_users"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_z81cf9,TAKE2_EDIT,6,1,1,9,1,1,1;
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object_id,entry_name,count_plays,sum_time_viewed,avg_time_viewed,count_loads,load_play_ratio,avg_view_drop_off,unique_known_users"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_z81cf9,TAKE2_EDIT,6,1,1,9,1,1,1;
            1_em9nua,inside    ,1,0,0,1,1,0,1;"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaReportTable"</span><span class="w">
+  </span><span class="nt">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaReportTable"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
-<p>As you can see, a <code class="language-plaintext highlighter-rouge">;</code> delimited list of all the entryIds that matched “hello” were returned in the <code class="language-plaintext highlighter-rouge">data</code> object.</p>
+<p>As you can see, a <code class="highlighter-rouge">;</code> delimited list of all the entryIds that matched “hello” were returned in the <code class="highlighter-rouge">data</code> object.</p>
     
       <h3 id="custom_var-report">
         
@@ -258,22 +262,23 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>If you wanted to query all of the customVar data for your account, this is also possible using a <code class="language-plaintext highlighter-rouge">reportType</code> of <code class="language-plaintext highlighter-rouge">TOP_CUSTOM_VAR1</code>, <code class="language-plaintext highlighter-rouge">TOP_CUSTOM_VAR2</code>, or <code class="language-plaintext highlighter-rouge">TOP_CUSTOM_VAR3</code></p>
+<p>If you wanted to query all of the customVar data for your account, this is also possible using a <code class="highlighter-rouge">reportType</code> of <code class="highlighter-rouge">TOP_CUSTOM_VAR1</code>, <code class="highlighter-rouge">TOP_CUSTOM_VAR2</code>, or <code class="highlighter-rouge">TOP_CUSTOM_VAR3</code></p>
 
 <p><img src="/assets/images/TOP_CUSTOMVAR_REPORT.png" alt="TOP_CUSTOMVAR_REPORT" style="zoom:40%;" /></p>
 
 <p>Which returns the following result:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_var1,count_plays,sum_time_viewed,avg_time_viewed,count_loads,load_play_ratio,avg_view_drop_off"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello,6,0.533,0.088888,9,1,0.6;                				
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_var1,count_plays,sum_time_viewed,avg_time_viewed,count_loads,load_play_ratio,avg_view_drop_off"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello,6,0.533,0.088888,9,1,0.6;                				
   	       world,1,0.066,0.066666,1,1,0.5;"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaReportTable"</span><span class="w">
+  </span><span class="nt">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaReportTable"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
-<p>As you see the <strong>“hello”</strong> and <strong>“world”</strong> are the two <code class="language-plaintext highlighter-rouge">customVar1</code> that have been used with this account during the specified time period.</p>
+<p>As you see the <strong>“hello”</strong> and <strong>“world”</strong> are the two <code class="highlighter-rouge">customVar1</code> that have been used with this account during the specified time period.</p>
 		
 </article>
 

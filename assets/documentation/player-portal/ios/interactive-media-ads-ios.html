@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon May 13 10:31:51 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/interactive-media-ads-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon May 13 10:31:51 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/ios/interactive-media-ads-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Mon May 13 10:31:51 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
@@ -149,7 +149,7 @@ rtp('get', 'campaign',true);
       </h2>
 
 <ol>
-  <li>There is currently an open issue with IMA SDK where removing the player view before destroying the ads manager will cause an error on the next ad playback. To fix the issue all you have to do is call the <code class="language-plaintext highlighter-rouge">player.destroy()</code> before <code class="language-plaintext highlighter-rouge">player.removeFromSuperview()</code></li>
+  <li>There is currently an open issue with IMA SDK where removing the player view before destroying the ads manager will cause an error on the next ad playback. To fix the issue all you have to do is call the <code class="highlighter-rouge">player.destroy()</code> before <code class="highlighter-rouge">player.removeFromSuperview()</code></li>
 </ol>
 
 <p>If you get below error:</p>
@@ -162,11 +162,11 @@ rtp('get', 'campaign',true);
 <span class="n">player</span><span class="o">.</span><span class="nf">removeFromSuperview</span><span class="p">()</span></code></pre></figure>
 
 <ol>
-  <li>When not including ads, the PlayerEvent observed events start occurring after calling prepare().
+  <li>When not including ads, the PlayerEvent observed events start occurring after calling prepare().<br />
 When including ads, none of the PlayerAd events occur after calling prepare().</li>
 </ol>
 
-<p>To resolve this issue and get <code class="language-plaintext highlighter-rouge">autoPlay</code> with ads please make sure to call play() before those events start occurring.</p>
+<p>To resolve this issue and get <code class="highlighter-rouge">autoPlay</code> with ads please make sure to call play() before those events start occurring.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Firstly call prepare</span>
 <span class="n">player</span><span class="o">.</span><span class="nf">prepare</span><span class="p">()</span>
@@ -219,7 +219,7 @@ When including ads, none of the PlayerAd events occur after calling prepare().</
         
       </h2>
 
-<p>To configure the player to use IMA Plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">PlayerConfig</code> file as follows:</p>
+<p>To configure the player to use IMA Plugin, add the following configuration to your <code class="highlighter-rouge">PlayerConfig</code> file as follows:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">adsConfig</span> <span class="o">=</span> <span class="kt">IMAConfig</span><span class="p">()</span>
 <span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">adTagUrl</span><span class="p">:</span> <span class="s">"your ad tag url"</span><span class="p">)</span>
@@ -240,7 +240,7 @@ When including ads, none of the PlayerAd events occur after calling prepare().</
   <li>Via Safari</li>
 </ul>
 
-<p>By default, the plugin will open pages using Safari. To update the plugin to use an in-app browser, you’ll need to set the <code class="language-plaintext highlighter-rouge">webOpenerPresentingController</code> value in the AdsConfig object as follows:</p>
+<p>By default, the plugin will open pages using Safari. To update the plugin to use an in-app browser, you’ll need to set the <code class="highlighter-rouge">webOpenerPresentingController</code> value in the AdsConfig object as follows:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">webOpenerPresentingController</span><span class="p">:</span> <span class="n">webOpenerPresentingController</span><span class="p">)</span></code></pre></figure>
     

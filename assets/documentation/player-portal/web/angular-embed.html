@@ -109,16 +109,10 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/angular-embed.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Aug 26 09:22:04 2019</span>, By <span class="commit-author">tzubeli</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/web/angular-embed.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Aug 8 00:30:26 2019, By: tzubeli</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Mon Aug 26 09:22:04 2019, By <span class="commit-author">tzubeli</span></td></tr-->
 			
-				<!-- 
-				
-				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
-				</tr> -->
-
 				<!-- 
 				
 				<tr>
@@ -137,7 +131,7 @@ rtp('get', 'campaign',true);
     		
 		<p>If you’ve tried embedding the Kaltura Player in your Angular app, you may have come across <a href="https://github.com/angular/angular/issues/4903">the issue</a> where Angular deletes javascript <strong>script</strong> tags. In the embed examples below, we add the player to the Typescript project dynamically, or by creating the embed script <em>after</em> the component has been created or initialize, as described in <a href="https://stackoverflow.com/questions/35570746/angular2-including-thirdparty-js-scripts-in-component0">this workaround</a>.</p>
 
-<p>If you are not looking for angular solutions, check out the Player embed-types <a href="/player/web/embed-types-web/">here</a>.</p>
+<p>If you are not looking for angular solutions, check out the Player embed-types <a href="https://developer.kaltura.com/player/web/embed-types-web/">here</a>.</p>
       <h2 id="dynamic-embed">
         
         
@@ -148,39 +142,39 @@ rtp('get', 'campaign',true);
 
 <p>The best way to embed the player with Angular is dynamically, which allows you to generate the embed call only after all the component properties have been initialized.</p>
 
-<p>We do this by putting the embed code in the <code class="language-plaintext highlighter-rouge">ngOnInit</code> function, an angular lifecycle function, within the Video Components class.</p>
+<p>We do this by putting the embed code in the <code class="highlighter-rouge">ngOnInit</code> function, an angular lifecycle function, within the Video Components class.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">export</span> <span class="kd">class</span> <span class="nx">DynamicEmbedComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DynamicEmbedComponent</span> <span class="kr">implements</span> <span class="nx">OnInit</span> <span class="p">{</span>
 
-  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+  <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
 
   <span class="nx">ngOnInit</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">{</span>
-      <span class="kd">const</span> <span class="nx">kalturaPlayer</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
-        <span class="na">targetId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">player-placeholder-dynamic</span><span class="dl">'</span><span class="p">,</span>
+      <span class="kr">const</span> <span class="nx">kalturaPlayer</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">({</span>
+        <span class="na">targetId</span><span class="p">:</span> <span class="s1">'player-placeholder-dynamic'</span><span class="p">,</span>
         <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
-          <span class="na">partnerId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PARTNER_ID</span><span class="dl">'</span><span class="p">,</span>
-          <span class="na">uiConfId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">UI__CONF</span><span class="dl">'</span>
+          <span class="na">partnerId</span><span class="p">:</span> <span class="s1">'PARTNER_ID'</span><span class="p">,</span>
+          <span class="na">uiConfId</span><span class="p">:</span> <span class="s1">'UI__CONF'</span>
         <span class="p">},</span>
         <span class="na">playback</span><span class="p">:</span> <span class="p">{</span>
           <span class="na">autoplay</span><span class="p">:</span> <span class="kc">true</span>
         <span class="p">}</span>
       <span class="p">});</span>
-      <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ENTRY_ID</span><span class="dl">'</span><span class="p">});</span>
+      <span class="nx">kalturaPlayer</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">({</span><span class="na">entryId</span><span class="p">:</span> <span class="s1">'ENTRY_ID'</span><span class="p">});</span>
     <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Notice that in this scenario, the static script that <em>loads</em> the player should be in the <code class="language-plaintext highlighter-rouge">index.html</code> header:</p>
+<p>Notice that in this scenario, the static script that <em>loads</em> the player should be in the <code class="highlighter-rouge">index.html</code> header:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">//cdnapisec.kaltura.com/p/PARTNER_ID/embedPlaykitJs/uiconf_id/UI_CONF</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/javascript"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnapisec.kaltura.com/p/PARTNER_ID/embedPlaykitJs/uiconf_id/UI_CONF"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
 
 <p>Be sure to fill in the missing information needed in the player script:</p>
 <ul>
   <li><strong>partner_id</strong>:found in the <a href="https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings">KMC Integration Settings</a></li>
-  <li><strong>uiConf_id</strong> or player ID, found in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v2">KMC studio</a> or, if you’re using the API, by calling <a href="/console/service/uiConf/action/list">uiConf.list</a> to see a full list of existing players.</li>
+  <li><strong>uiConf_id</strong> or player ID, found in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v2">KMC studio</a> or, if you’re using the API, by calling <a href="https://developer.kaltura.com/console/service/uiConf/action/list">uiConf.list</a> to see a full list of existing players.</li>
   <li><strong>player_placeholder</strong> that corresponds to the div in the HTML code</li>
   <li><strong>entry_id</strong> of the video that you wish to show in the player.</li>
 </ul>
@@ -193,17 +187,17 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The auto embed is the simplest way to embed a player, is what would be generated in the KMC under <strong>share and embed</strong>. For this scenario we create the script dynamically, this time inside the <code class="language-plaintext highlighter-rouge">ngAfterViewInit</code> function, another lifecycle hook that is called after Angular has fully initialized a component’s view, preventing the script from being deleted during initialization.</p>
+<p>The auto embed is the simplest way to embed a player, is what would be generated in the KMC under <strong>share and embed</strong>. For this scenario we create the script dynamically, this time inside the <code class="highlighter-rouge">ngAfterViewInit</code> function, another lifecycle hook that is called after Angular has fully initialized a component’s view, preventing the script from being deleted during initialization.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">VideoComponent</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(@</span><span class="nd">Inject</span><span class="p">(</span><span class="nx">DOCUMENT</span><span class="p">)</span> <span class="kr">private</span> <span class="nb">document</span><span class="p">:</span> <span class="nx">Document</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">elementRef</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">@</span><span class="nx">Injectable</span><span class="p">()</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">VideoComponent</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="err">@</span><span class="nx">Inject</span><span class="p">(</span><span class="nx">DOCUMENT</span><span class="p">)</span> <span class="kr">private</span> <span class="nb">document</span><span class="err">:</span> <span class="nx">Document</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">elementRef</span><span class="err">:</span> <span class="nx">ElementRef</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">}</span>
 
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">s</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">text/javascript</span><span class="dl">'</span><span class="p">;</span>
-    <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://cdnapisec.kaltura.com/p/PARTNER_ID/embedPlaykitJs/uiconf_id/UI_CONF?autoembed=true&amp;targetId=PLAYER_PLACEHOLDER&amp;entry_id=ENTRY_ID&amp;config[playback]={</span><span class="se">\</span><span class="s1">"autoplay</span><span class="se">\</span><span class="s1">":true}</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="p">;</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'https://cdnapisec.kaltura.com/p/PARTNER_ID/embedPlaykitJs/uiconf_id/UI_CONF?autoembed=true&amp;targetId=PLAYER_PLACEHOLDER&amp;entry_id=ENTRY_ID&amp;config[playback]={\"autoplay\":true}'</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">elementRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
@@ -218,19 +212,19 @@ rtp('get', 'campaign',true);
 
 <p>The iframe embed is good for sites that with stringent page security requirements that don’t allow third-party JavaScript to be embedded in their pages.</p>
 
-<p>Here we create the iFrame inside the <code class="language-plaintext highlighter-rouge">ngAfterViewInit</code> function as we did in the auto-embed.</p>
+<p>Here we create the iFrame inside the <code class="highlighter-rouge">ngAfterViewInit</code> function as we did in the auto-embed.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">@</span><span class="nd">Injectable</span><span class="p">()</span>
-<span class="k">export</span> <span class="kd">class</span> <span class="nx">IframeEmbedComponent</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(@</span><span class="nd">Inject</span><span class="p">(</span><span class="nx">DOCUMENT</span><span class="p">)</span> <span class="kr">private</span> <span class="nb">document</span><span class="p">:</span> <span class="nx">Document</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">elementRef</span><span class="p">:</span> <span class="nx">ElementRef</span><span class="p">)</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">@</span><span class="nx">Injectable</span><span class="p">()</span>
+<span class="kr">export</span> <span class="kr">class</span> <span class="nx">IframeEmbedComponent</span> <span class="p">{</span>
+  <span class="nx">constructor</span><span class="p">(</span><span class="err">@</span><span class="nx">Inject</span><span class="p">(</span><span class="nx">DOCUMENT</span><span class="p">)</span> <span class="kr">private</span> <span class="nb">document</span><span class="err">:</span> <span class="nx">Document</span><span class="p">,</span> <span class="kr">private</span> <span class="nx">elementRef</span><span class="err">:</span> <span class="nx">ElementRef</span><span class="p">)</span> <span class="p">{</span>
   <span class="p">}</span>
 
   <span class="nx">ngAfterViewInit</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">iframe</span><span class="dl">'</span><span class="p">);</span>
-    <span class="nx">s</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">640px</span><span class="dl">'</span><span class="p">;</span>
-    <span class="nx">s</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">360px</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'iframe'</span><span class="p">);</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="s1">'640px'</span><span class="p">;</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="s1">'360px'</span><span class="p">;</span>
     <span class="nx">s</span><span class="p">.</span><span class="nx">allowFullscreen</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-    <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">//cdnapisec.kaltura.com/p/PARTNER_ID/embedPlaykitJs/uiconf_id/UI_CONF?iframeembed=true&amp;targetId=PLAYER_PLACEHOLDER_IFRAME&amp;entry_id=ENTRY_ID&amp;config[playback]={</span><span class="se">\</span><span class="s1">"autoplay</span><span class="se">\</span><span class="s1">":true}</span><span class="dl">'</span><span class="p">;</span>
+    <span class="nx">s</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'//cdnapisec.kaltura.com/p/PARTNER_ID/embedPlaykitJs/uiconf_id/UI_CONF?iframeembed=true&amp;targetId=PLAYER_PLACEHOLDER_IFRAME&amp;entry_id=ENTRY_ID&amp;config[playback]={\"autoplay\":true}'</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">elementRef</span><span class="p">.</span><span class="nx">nativeElement</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">s</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>

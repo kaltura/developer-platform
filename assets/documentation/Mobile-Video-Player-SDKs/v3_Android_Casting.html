@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Casting.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_Android_Casting.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -170,32 +170,34 @@ rtp('get', 'campaign',true);
 
 <p><strong>TVPAPI Environment</strong></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">TVPAPICastBuilder</span> <span class="n">tvpapiCastBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TVPAPICastBuilder</span><span class="o">()</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">TVPAPICastBuilder</span> <span class="n">tvpapiCastBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TVPAPICastBuilder</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setFormat</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setInitObject</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setMwEmbedUrl</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setPartnerId</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setUiConfId</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setMediaEntryId</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">setStreamType</span><span class="o">(</span><span class="nc">StreamType</span><span class="o">.</span><span class="na">VOD</span><span class="o">);</span>
+                <span class="o">.</span><span class="na">setStreamType</span><span class="o">(</span><span class="n">StreamType</span><span class="o">.</span><span class="na">VOD</span><span class="o">);</span>
                 
-  <span class="nc">MediaInfo</span> <span class="n">mediaInfo</span> <span class="o">=</span> <span class="n">tvpapiCastBuilder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
+  <span class="n">MediaInfo</span> <span class="n">mediaInfo</span> <span class="o">=</span> <span class="n">tvpapiCastBuilder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
   <span class="n">remoteMediaClient</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">mediaInfo</span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><strong>OVP Envrionment</strong></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">OVPCastBuilder</span> <span class="n">ovpCastBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">OVPCastBuilder</span><span class="o">()</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="n">OVPCastBuilder</span> <span class="n">ovpCastBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OVPCastBuilder</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setKs</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setMwEmbedUrl</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setPartnerId</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setUiConfId</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">setMediaEntryId</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">setStreamType</span><span class="o">(</span><span class="nc">StreamType</span><span class="o">.</span><span class="na">VOD</span><span class="o">);</span>
+                <span class="o">.</span><span class="na">setStreamType</span><span class="o">(</span><span class="n">StreamType</span><span class="o">.</span><span class="na">VOD</span><span class="o">);</span>
                 
-  <span class="nc">MediaInfo</span> <span class="n">mediaInfo</span> <span class="o">=</span> <span class="n">ovpCastBuilder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
+  <span class="n">MediaInfo</span> <span class="n">mediaInfo</span> <span class="o">=</span> <span class="n">ovpCastBuilder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
   <span class="n">remoteMediaClient</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">mediaInfo</span><span class="o">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="optional-casting-configuration">
         
@@ -207,21 +209,22 @@ rtp('get', 'campaign',true);
 
 <p>The following configurations are optional for casting:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// MediaMetadata</span>
-  <span class="nc">MediaMetadata</span> <span class="n">mediaMetadata</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MediaMetadata</span><span class="o">(</span><span class="nc">MediaMetadata</span><span class="o">.</span><span class="na">MEDIA_TYPE_MOVIE</span><span class="o">);</span>
-  <span class="n">mediaMetadata</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="nc">MediaMetadata</span><span class="o">.</span><span class="na">KEY_TITLE</span><span class="o">,</span> <span class="n">title</span><span class="o">);</span>
-  <span class="n">mediaMetadata</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="nc">MediaMetadata</span><span class="o">.</span><span class="na">KEY_SUBTITLE</span><span class="o">,</span> <span class="n">subTitle</span><span class="o">);</span>
-  <span class="n">mediaMetadata</span><span class="o">.</span><span class="na">addImage</span><span class="o">(</span><span class="k">new</span> <span class="nc">WebImage</span><span class="o">(</span><span class="n">uri</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">));</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>  <span class="c1">// MediaMetadata</span>
+  <span class="n">MediaMetadata</span> <span class="n">mediaMetadata</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MediaMetadata</span><span class="o">(</span><span class="n">MediaMetadata</span><span class="o">.</span><span class="na">MEDIA_TYPE_MOVIE</span><span class="o">);</span>
+  <span class="n">mediaMetadata</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">MediaMetadata</span><span class="o">.</span><span class="na">KEY_TITLE</span><span class="o">,</span> <span class="n">title</span><span class="o">);</span>
+  <span class="n">mediaMetadata</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">MediaMetadata</span><span class="o">.</span><span class="na">KEY_SUBTITLE</span><span class="o">,</span> <span class="n">subTitle</span><span class="o">);</span>
+  <span class="n">mediaMetadata</span><span class="o">.</span><span class="na">addImage</span><span class="o">(</span><span class="k">new</span> <span class="n">WebImage</span><span class="o">(</span><span class="n">uri</span><span class="o">,</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">));</span>
   <span class="n">castBuilder</span><span class="o">.</span><span class="na">setMetadata</span><span class="o">(</span><span class="n">mediaMetadata</span><span class="o">);</span>
 
   <span class="c1">// AdTagUrl</span>
   <span class="n">castBuilder</span><span class="o">.</span><span class="na">setAdTagUrl</span><span class="o">();</span>
 
   <span class="c1">// TextTrackStyle</span>
-  <span class="nc">TextTrackStyle</span> <span class="n">textTrackStyle</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TextTrackStyle</span><span class="o">();</span>
+  <span class="n">TextTrackStyle</span> <span class="n">textTrackStyle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TextTrackStyle</span><span class="o">();</span>
   <span class="n">castBuilder</span><span class="o">.</span><span class="na">setTextTrackStyle</span><span class="o">(</span><span class="n">textTrackStyle</span><span class="o">);</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="live-vs-vod">
         

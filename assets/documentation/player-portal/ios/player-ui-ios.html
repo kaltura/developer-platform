@@ -109,20 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/player-ui-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jul 30 07:41:42 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/ios/player-ui-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Jul 30 07:41:42 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
 					<td>Avital (3 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
-				</tr> -->
-
-				<!-- 
-				
-				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!-- 
@@ -141,10 +135,10 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>The Kaltura Player does not inherently include a UI, but this guide will walk you through an example of how to add play/pause buttons and a scrubber to your player. 
-At this point you should have a Kaltura Player embedded in your application and showing your entry, as seen in <a href="/player/web/getting-started-web">this guide</a>.</p>
+		<p>The Kaltura Player does not inherently include a UI, but this guide will walk you through an example of how to add play/pause buttons and a scrubber to your player. <br />
+At this point you should have a Kaltura Player embedded in your application and showing your entry, as seen in <a href="https://developer.kaltura.com/player/web/getting-started-web">this guide</a>.</p>
 
-<p>We will start by adding button images of your choice to the Assets catalogue of your project. Then, in the storyboard, create a play/pause button, a slider (scrubber), a current position label, and a (remaining) duration label. For the play/pause button, in the Attributes Inspector, click the dropdown for Title and select Attributed. Under Image, type in the name of the play button file (it should have autocomplete for existing files). 
+<p>We will start by adding button images of your choice to the Assets catalogue of your project. Then, in the storyboard, create a play/pause button, a slider (scrubber), a current position label, and a (remaining) duration label. For the play/pause button, in the Attributes Inspector, click the dropdown for Title and select Attributed. Under Image, type in the name of the play button file (it should have autocomplete for existing files). <br />
 Lastly, create the outlets for all your new objects in the Controller:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">playPauseButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span>
@@ -184,11 +178,11 @@ Lastly, create the outlets for all your new objects in the Controller:</p>
 
 <p>What this does is listen for a change to the state, and based on whether the player is currently idle, paused, or playing, the picture of the play/pause button is changed accordingly.</p>
 
-<p>At the beginning of the <code class="language-plaintext highlighter-rouge">viewDidLoad</code> function, set the state to idle.</p>
+<p>At the beginning of the <code class="highlighter-rouge">viewDidLoad</code> function, set the state to idle.</p>
 
-<p><code class="language-plaintext highlighter-rouge">self.state = .idle</code></p>
+<p><code class="highlighter-rouge">self.state = .idle</code></p>
 
-<p>On the playPauseButton, add a new IBAction for a “Touch Up Inside” event and link it to a new <code class="language-plaintext highlighter-rouge">playerTouched</code> function that calls play/pause on the player when the button is touched. Available Basic Player actions can be found <a href="https://kaltura.github.io/playkit/api/ios/core/Protocols/BasicPlayer.html">here</a></p>
+<p>On the playPauseButton, add a new IBAction for a “Touch Up Inside” event and link it to a new <code class="highlighter-rouge">playerTouched</code> function that calls play/pause on the player when the button is touched. Available Basic Player actions can be found <a href="https://kaltura.github.io/playkit/api/ios/core/Protocols/BasicPlayer.html">here</a></p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">playTouched</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">player</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">player</span> <span class="k">else</span> <span class="p">{</span>
@@ -217,7 +211,7 @@ Lastly, create the outlets for all your new objects in the Controller:</p>
         
       </h3>
 
-<p>The slider is made up of a few components: the playhead, the current time stamp, and the duration of the entry. All of this configuration happens in the <code class="language-plaintext highlighter-rouge">setupPlayer</code> function. Firstly, a formatter for displaying the number of seconds as <code class="language-plaintext highlighter-rouge">HH:MM:SS</code></p>
+<p>The slider is made up of a few components: the playhead, the current time stamp, and the duration of the entry. All of this configuration happens in the <code class="highlighter-rouge">setupPlayer</code> function. Firstly, a formatter for displaying the number of seconds as <code class="highlighter-rouge">HH:MM:SS</code></p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">let</span> <span class="nv">formatter</span> <span class="o">=</span> <span class="kt">DateComponentsFormatter</span><span class="p">()</span>
 <span class="n">formatter</span><span class="o">.</span><span class="n">allowedUnits</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="o">.</span><span class="n">second</span><span class="p">]</span>
@@ -239,7 +233,7 @@ Lastly, create the outlets for all your new objects in the Controller:</p>
     <span class="k">self</span><span class="o">.</span><span class="n">positionLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="nf">format</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
 <span class="p">})</span></code></pre></figure>
 
-<p>The second observer waits for Player event <code class="language-plaintext highlighter-rouge">durationChanged</code> which happens when the media loads and the duration of the video is known. This happens once per playback. It then sets the maximum value of the slider playhead, and the text of the duration label.</p>
+<p>The second observer waits for Player event <code class="highlighter-rouge">durationChanged</code> which happens when the media loads and the duration of the video is known. This happens once per playback. It then sets the maximum value of the slider playhead, and the text of the duration label.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="p">?</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">durationChanged</span><span class="p">],</span> <span class="nv">block</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">e</span> <span class="o">=</span> <span class="n">event</span> <span class="k">as?</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="kt">DurationChanged</span><span class="p">,</span> <span class="k">let</span> <span class="nv">d</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">duration</span> <span class="k">as?</span> <span class="kt">TimeInterval</span> <span class="p">{</span>
@@ -266,7 +260,7 @@ Lastly, create the outlets for all your new objects in the Controller:</p>
     <span class="p">}</span>
 <span class="p">})</span></code></pre></figure>
 
-<p>Lastly, in the Storyboard, set a new referencing action on the Playhead Slider for the “Value Changed” event. Call it <code class="language-plaintext highlighter-rouge">playheadValueChanged</code>. Add it after the <code class="language-plaintext highlighter-rouge">playTouched</code> function. It should set the current time position according to the value of the palyhead, and change the State to paused in the case of moving the slider back after the video has ended.</p>
+<p>Lastly, in the Storyboard, set a new referencing action on the Playhead Slider for the “Value Changed” event. Call it <code class="highlighter-rouge">playheadValueChanged</code>. Add it after the <code class="highlighter-rouge">playTouched</code> function. It should set the current time position according to the value of the palyhead, and change the State to paused in the case of moving the slider back after the video has ended.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">playheadValueChanged</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">guard</span> <span class="k">let</span> <span class="nv">player</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">player</span> <span class="k">else</span> <span class="p">{</span>
@@ -287,9 +281,9 @@ Lastly, create the outlets for all your new objects in the Controller:</p>
 <span class="kd">import</span> <span class="kt">PlayKitUtils</span>
 <span class="kd">import</span> <span class="kt">PlayKitProviders</span>
 
-<span class="kd">fileprivate</span> <span class="k">let</span> <span class="nv">SERVER_BASE_URL</span> <span class="o">=</span> <span class="s">"https://cdnapisec.kaltura.com"</span>
-<span class="kd">fileprivate</span> <span class="k">let</span> <span class="nv">PARTNER_ID</span> <span class="o">=</span> <span class="mi">1424501</span>
-<span class="kd">fileprivate</span> <span class="k">let</span> <span class="nv">ENTRY_ID</span> <span class="o">=</span> <span class="s">"1_djnefl4e"</span>
+<span class="n">fileprivate</span> <span class="k">let</span> <span class="nv">SERVER_BASE_URL</span> <span class="o">=</span> <span class="s">"https://cdnapisec.kaltura.com"</span>
+<span class="n">fileprivate</span> <span class="k">let</span> <span class="nv">PARTNER_ID</span> <span class="o">=</span> <span class="mi">1424501</span>
+<span class="n">fileprivate</span> <span class="k">let</span> <span class="nv">ENTRY_ID</span> <span class="o">=</span> <span class="s">"1_djnefl4e"</span>
 
 <span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 

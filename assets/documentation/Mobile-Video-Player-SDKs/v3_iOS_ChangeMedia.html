@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sun Mar 19 08:12:56 2017</span>, By <span class="commit-author">Gal Orlanczyk</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_ChangeMedia.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sun Mar 19 08:12:56 2017</span>, By <span class="commit-author">Gal Orlanczyk</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_ChangeMedia.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Mar 19 08:12:56 2017, By: Gal Orlanczyk</td></tr-->
 				<!--tr><td>Last commit: Sun Mar 19 08:12:56 2017, By <span class="commit-author">Gal Orlanczyk</span></td></tr-->
 			
@@ -139,7 +139,7 @@ rtp('get', 'campaign',true);
 
 <p>This document describes the steps required to change media.</p>
 
-<p>When it is needed to change media we have to destroy the player and recreate it. 
+<p>When it is needed to change media we have to destroy the player and recreate it. <br />
 The important things to make sure is when adding the player back to the view hierarchy we need to provide is with a frame and when removing the player we need to make sure to call destroy + removing player view.</p>
 
 <p>When creating the player:</p>
@@ -148,18 +148,20 @@ The important things to make sure is when adding the player back to the view hie
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// playerContainer is the view holding the player view</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// playerContainer is the view holding the player view</span>
 <span class="k">self</span><span class="o">.</span><span class="n">playerContainer</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
 <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="k">self</span><span class="o">.</span><span class="n">playerContainer</span><span class="o">.</span><span class="n">bounds</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// playerContainer is the view holding the player view</span>
-<span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span> <span class="nf">addSubview</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// playerContainer is the view holding the player view
+</span><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span> <span class="nf">addSubview</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span><span class="p">];</span>
 <span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">playerContainer</span><span class="p">.</span><span class="n">bounds</span><span class="p">;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>When destroying the player:</p>
 
@@ -167,20 +169,22 @@ The important things to make sure is when adding the player back to the view hie
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">removeFromSuperview</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">removeFromSuperview</span><span class="p">()</span>
 <span class="k">self</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="nf">destroy</span><span class="p">()</span>
 <span class="k">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="c1">// now you can create the player again with your own method.</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span> <span class="nf">removeFromSuperview</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span><span class="p">.</span><span class="n">view</span> <span class="nf">removeFromSuperview</span><span class="p">];</span>
 <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">destroy</span><span class="p">];</span>
 <span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
-<span class="c1">// now you can create the player again with your own method.</span>
-</code></pre></div></div>
+<span class="c1">// now you can create the player again with your own method.
+</span></code></pre>
+</div>
     
       <h2 id="code-sample">
         

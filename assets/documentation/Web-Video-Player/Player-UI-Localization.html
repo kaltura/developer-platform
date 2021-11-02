@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Web-Video-Player/Player-UI-Localization.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Web-Video-Player/Player-UI-Localization.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -135,7 +135,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>The Kaltura Web Video Player supports localization for most languages by specifying the language-corresponding locale key. <br />
+		<p>The Kaltura Web Video Player supports localization for most languages by specifying the language-corresponding locale key.   <br />
 See this article for a <em>complete listing of supported locale keys</em>.</p>
 
 <p>Setting a locale key translates all UI labels, messages and tool tips to the required language.</p>
@@ -153,7 +153,7 @@ See this article for a <em>complete listing of supported locale keys</em>.</p>
 
 <p>By default, all Players revert to English unless the locale is defined otherwise.</p>
 
-<p>You can define the required locale using the Flashvar <code class="language-plaintext highlighter-rouge">localizationCode</code>. This can be set in the Player Studio UIVars section or on the page using embed Flashvars.</p>
+<p>You can define the required locale using the Flashvar <code class="highlighter-rouge">localizationCode</code>. This can be set in the Player Studio UIVars section or on the page using embed Flashvars.</p>
 
 <p>For example:</p>
 
@@ -161,37 +161,41 @@ See this article for a <em>complete listing of supported locale keys</em>.</p>
   <li>Setting the locale to German via Player Studio UIVars:</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>localizationCode=de
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>localizationCode=de
+</code></pre>
+</div>
 
 <ul>
   <li>Setting the locale to German (“de”) via embed Flashvars:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">flashvars</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> 
-    <span class="dl">'</span><span class="s1">localizationCode</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">de</span><span class="dl">'</span> 
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s1">'flashvars'</span><span class="err">:</span> <span class="p">{</span> 
+    <span class="s1">'localizationCode'</span><span class="err">:</span><span class="s1">'de'</span> 
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>You can also have the Player set the locale automatically according to the locale provided by the web browser. This locale will be the same locale defined in the end user’s operating system.</p>
 
-<p>To have the locale set automatically by setting <code class="language-plaintext highlighter-rouge">localizationCode</code> to <code class="language-plaintext highlighter-rouge">auto</code>, use one of the following options:</p>
+<p>To have the locale set automatically by setting <code class="highlighter-rouge">localizationCode</code> to <code class="highlighter-rouge">auto</code>, use one of the following options:</p>
 
 <ul>
   <li>Browser-based automatic locale via Player Studio UIVars:</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>localizationCode=auto
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>localizationCode=auto
+</code></pre>
+</div>
 
 <ul>
   <li>Browser-based automatic locale via embed Flashvars:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">flashvars</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> 
-    <span class="dl">'</span><span class="s1">localizationCode</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">auto</span><span class="dl">'</span> 
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s1">'flashvars'</span><span class="err">:</span> <span class="p">{</span> 
+    <span class="s1">'localizationCode'</span><span class="err">:</span><span class="s1">'auto'</span> 
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="custom-localized-strings">
         
@@ -201,7 +205,7 @@ See this article for a <em>complete listing of supported locale keys</em>.</p>
         
       </h2>
 
-<p>You can add missing strings or change existing strings for any locale using the <code class="language-plaintext highlighter-rouge">strings</code> plugin. The strings plugin defines keys and values for all Player labels and tool-tips.</p>
+<p>You can add missing strings or change existing strings for any locale using the <code class="highlighter-rouge">strings</code> plugin. The strings plugin defines keys and values for all Player labels and tool-tips.</p>
 
 <blockquote>
   <p>Read this article for <a href="http://player.kaltura.com/modules/KalturaSupport/tests/StringsLocale.html">a complete list of available strings keys and default English values</a>.</p>
@@ -213,9 +217,10 @@ See this article for a <em>complete listing of supported locale keys</em>.</p>
   <li>Custom localized strings via Player Studio <strong>Strings</strong> (each line is a UIVar key=value pair):</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mwe-embedplayer-play_clip=Click%20to%20play
+<div class="highlighter-rouge"><pre class="highlight"><code>mwe-embedplayer-play_clip=Click%20to%20play
 es.mwe-embedplayer-play_clip=Reproducir%20clip
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>Note: When using the Strings section in the Player Studio, you only need to specify the language code for languages other than English.</p>
@@ -225,17 +230,18 @@ es.mwe-embedplayer-play_clip=Reproducir%20clip
   <li>Custom localized strings via embed Flashvars:</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">'</span><span class="s1">flashvars</span><span class="dl">'</span><span class="p">:</span> <span class="p">{</span> 
-    <span class="dl">"</span><span class="s2">strings</span><span class="dl">"</span><span class="p">:{</span> 
-        <span class="dl">"</span><span class="s2">en</span><span class="dl">"</span><span class="p">:{</span> 
-            <span class="dl">"</span><span class="s2">mwe-embedplayer-play_clip</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Click to play</span><span class="dl">"</span><span class="p">,</span> 
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="s1">'flashvars'</span><span class="err">:</span> <span class="p">{</span> 
+    <span class="s2">"strings"</span><span class="err">:</span><span class="p">{</span> 
+        <span class="s2">"en"</span><span class="err">:</span><span class="p">{</span> 
+            <span class="s2">"mwe-embedplayer-play_clip"</span><span class="err">:</span> <span class="s2">"Click to play"</span><span class="p">,</span> 
 		<span class="p">},</span> 
-        <span class="dl">"</span><span class="s2">es</span><span class="dl">"</span><span class="p">:{</span> 
-            <span class="dl">"</span><span class="s2">mwe-embedplayer-play_clip</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Reproducir clip</span><span class="dl">"</span><span class="p">,</span> 
+        <span class="s2">"es"</span><span class="err">:</span><span class="p">{</span> 
+            <span class="s2">"mwe-embedplayer-play_clip"</span><span class="err">:</span> <span class="s2">"Reproducir clip"</span><span class="p">,</span> 
         <span class="p">}</span> 
     <span class="p">}</span> 
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 		
 </article>
 

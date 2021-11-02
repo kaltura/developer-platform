@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/AndroidChromeCast.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Aug 8 13:28:22 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/AndroidChromeCast.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Jul 26 13:55:43 2016, By: Nissim Pardo</td></tr-->
 				<!--tr><td>Last commit: Tue Aug 8 13:28:22 2017, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -182,8 +182,8 @@ rtp('get', 'campaign',true);
       </h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Sender</code> - A Cast enabled Kaltura Player running inside of a iOS Application; the Kaltura Player requires a Sender App ID.</li>
-  <li><code class="language-plaintext highlighter-rouge">Receiver</code> - A Kaltura Player Receiver App that runs on the Chromecast device.</li>
+  <li><code class="highlighter-rouge">Sender</code> - A Cast enabled Kaltura Player running inside of a iOS Application; the Kaltura Player requires a Sender App ID.</li>
+  <li><code class="highlighter-rouge">Receiver</code> - A Kaltura Player Receiver App that runs on the Chromecast device.</li>
 </ul>
     
       <h3 id="getting-started">
@@ -197,16 +197,17 @@ rtp('get', 'campaign',true);
 <p>To begin casting, follow these steps:</p>
 
 <ol>
-  <li>Create the <code class="language-plaintext highlighter-rouge">KPPlayerConfig config</code> as follows:
-     <code class="language-plaintext highlighter-rouge">
+  <li>Create the <code class="highlighter-rouge">KPPlayerConfig config</code> as follows:<br />
+     <code class="highlighter-rouge">
      KPPlayerConfig config = new KPPlayerConfig("{your-server-id}", "{your-ui-conf-id}", "{your-pqrtner-id}").setEntryId("{your-entry_id}");
     </code></li>
-  <li>Next, add the following to your <code class="language-plaintext highlighter-rouge">config</code> instance:</li>
+  <li>Next, add the following to your <code class="highlighter-rouge">config</code> instance:</li>
 </ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          config.addConfig("chromecast.plugin", "true");
+<div class="highlighter-rouge"><pre class="highlight"><code>          config.addConfig("chromecast.plugin", "true");
 config.addConfig("chromecast.useKalturaPlayer", "true");             
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h4 id="scanning-for-devices">
         
@@ -218,7 +219,7 @@ config.addConfig("chromecast.useKalturaPlayer", "true");
 
 <p>To scan for devices, use the following:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mCastProvider = KCastFactory.createCastProvider();
+<div class="highlighter-rouge"><pre class="highlight"><code>mCastProvider = KCastFactory.createCastProvider();
 mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener() {
             @Override
             public void onCastMediaRemoteControlReady(KCastMediaRemoteControl castMediaRemoteControl) {
@@ -258,7 +259,8 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
         mCastProvider.startScan(getApplicationContext(), "C43947A1");
        
         
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h4 id="connecting-to-devices">
         
@@ -270,7 +272,7 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
 
 <p>After selecting a detected device, connect to the device by calling the following:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void presentCCDevices() {
+<div class="highlighter-rouge"><pre class="highlight"><code>private void presentCCDevices() {
         final ArrayList&lt;KCastDevice&gt; devices = mCastProvider.getDevices();
         final String[] items = new String[devices.size()];
         for (int i = 0; i &lt; items.length; i++   ) {
@@ -288,7 +290,8 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
         alert.show();
 
     }
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h4 id="casting-media">
         
@@ -298,10 +301,11 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
         
       </h4>
 
-<p>To cast media, set the <code class="language-plaintext highlighter-rouge">mCastProvider</code> property under <code class="language-plaintext highlighter-rouge">PlayerViewController</code> with the <code class="language-plaintext highlighter-rouge">KCastProvider</code> object you created as follows:</p>
+<p>To cast media, set the <code class="highlighter-rouge">mCastProvider</code> property under <code class="highlighter-rouge">PlayerViewController</code> with the <code class="highlighter-rouge">KCastProvider</code> object you created as follows:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mPlayer.setCastProvider(mCastProvider);
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>mPlayer.setCastProvider(mCastProvider);
+</code></pre>
+</div>
     
       <h4 id="disconnecting-from-a-device">
         
@@ -313,8 +317,9 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
 
 <p>To disconnect from a device use the following:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mCastProvider.disconnectFromDevcie();
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>mCastProvider.disconnectFromDevcie();
+</code></pre>
+</div>
     
       <h3 id="using-the-media-remote-control">
         
@@ -324,11 +329,11 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
         
       </h3>
 
-<p>The <code class="language-plaintext highlighter-rouge">KCastProvider</code> includes a <code class="language-plaintext highlighter-rouge">KCastMediaRemoteControl</code> instance that controls the playback of the video being cast; using the  <code class="language-plaintext highlighter-rouge">KCastMediaRemoteControlDelegate</code> will provide you with the playback callbacks while casting.</p>
+<p>The <code class="highlighter-rouge">KCastProvider</code> includes a <code class="highlighter-rouge">KCastMediaRemoteControl</code> instance that controls the playback of the video being cast; using the  <code class="highlighter-rouge">KCastMediaRemoteControlDelegate</code> will provide you with the playback callbacks while casting.</p>
 
 <p>For example:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// To play the media
+<div class="highlighter-rouge"><pre class="highlight"><code>// To play the media
 mCastProvider.getCastMediaRemoteControl().play();
 
 mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener() {
@@ -346,7 +351,8 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
                     }
                 });
             }
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="demo-application">
         
@@ -356,10 +362,10 @@ mCastProvider.setKCastProviderListener(new KCastProvider.KCastProviderListener()
         
       </h3>
 
-<p>A best practice sample application, which demonstrates the code that is required for a proper casting experience, can be found in this 
+<p>A best practice sample application, which demonstrates the code that is required for a proper casting experience, can be found in this <br />
 <a href="https://github.com/kaltura/player-sdk-native-android/tree/develop/KalturaDemos/CCPlayerDemo">demo Android</a>.</p>
 
-<p>You may also find a reference in:
+<p>You may also find a reference in:<br />
 <a href="https://github.com/kaltura/player-sdk-demo-ios/tree/master/ovp/CCDemo">demo iOS</a>.</p>
 
 <p>This repository contains several basic best practice applications that use the Kaltura iOS Player SDK.</p>

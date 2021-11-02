@@ -109,20 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/casting-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jun 23 08:17:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/ios/casting-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Jun 22 05:45:55 2020, By: Avital Tzubeli</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Jun 23 08:17:37 2020, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
 					<td>Avital Tzubeli (3 commits) (<a href="mailto:avital.tzubeli@kaltura.com">avital.tzubeli@kaltura.com</a>)</td>
-				</tr> -->
-
-				<!-- 
-				
-				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!-- 
@@ -155,13 +149,13 @@ rtp('get', 'campaign',true);
   <tbody>
     <tr>
       <td style="text-align: center"><img src="/assets/images/airPlay.png" alt="help" /></td>
-      <td style="text-align: center"><a href="/player/ios/casting-ios#airplay">AirPlay</a></td>
+      <td style="text-align: center"><a href="https://developer.kaltura.com/player/ios/casting-ios#airplay">AirPlay</a></td>
       <td style="text-align: center"><a href="">x</a></td>
       <td> </td>
     </tr>
     <tr>
       <td style="text-align: center"><img src="/assets/images/chromecast.png" alt="help" /></td>
-      <td style="text-align: center"><a href="/player/ios/casting-ios#google-cast">Google Cast</a></td>
+      <td style="text-align: center"><a href="https://developer.kaltura.com/player/ios/casting-ios#google-cast">Google Cast</a></td>
       <td style="text-align: center"><a href="https://github.com/kaltura/playkit-ios-samples/tree/master/ChromecastSample">Cast basic sample</a></td>
       <td> </td>
     </tr>
@@ -192,19 +186,21 @@ rtp('get', 'campaign',true);
 
     <p><img src="/assets/images/EnableAirPlay.png" alt="AirPlay Functionality" /></p>
   </li>
-  <li>Import MediaPlayer, create an <code class="language-plaintext highlighter-rouge">MPVolumeView</code>, and then add it to your view as follows:</li>
+  <li>Import MediaPlayer, create an <code class="highlighter-rouge">MPVolumeView</code>, and then add it to your view as follows:</li>
 </ol>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">airPlayBtn</span> <span class="o">=</span> <span class="kt">MPVolumeView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">44</span><span class="p">))</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">airPlayBtn</span> <span class="o">=</span> <span class="kt">MPVolumeView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">44</span><span class="p">))</span>
 <span class="n">airPlayBtn</span><span class="o">.</span><span class="n">showsVolumeSlider</span> <span class="o">=</span> <span class="kc">false</span>
 <span class="n">container</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">airPlayBtn</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><strong>Optional:</strong> Customize the image of the AirPlay button as follows:</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">airPlayBtn</span><span class="o">.</span><span class="nf">setRouteButtonImage</span><span class="p">(</span><span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"name"</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="kt">UIControlState</span><span class="o">.</span><span class="n">normal</span><span class="p">)</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">airPlayBtn</span><span class="o">.</span><span class="nf">setRouteButtonImage</span><span class="p">(</span><span class="kt">UIImage</span><span class="p">(</span><span class="nv">named</span><span class="p">:</span> <span class="s">"name"</span><span class="p">),</span> <span class="nv">for</span><span class="p">:</span> <span class="kt">UIControlState</span><span class="o">.</span><span class="n">normal</span><span class="p">)</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="adding-support-for-google-cast-on-ios-devices">
         
@@ -226,8 +222,9 @@ rtp('get', 'campaign',true);
 
 <p>Add the following to your pod file:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pod</span> <span class="s2">"PlayKit/GoogleCastAddon"</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/kaltura/playkit-ios.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="no">PLAYKIT_TAG</span><span class="o">.</span>
-</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">pod</span> <span class="s2">"PlayKit/GoogleCastAddon"</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/kaltura/playkit-ios.git'</span><span class="p">,</span> <span class="ss">:tag</span> <span class="o">=&gt;</span> <span class="no">PLAYKIT_TAG</span><span class="o">.</span>
+</code></pre>
+</div>
     
       <h3 id="import-the-required-files">
         
@@ -239,11 +236,12 @@ rtp('get', 'campaign',true);
 
 <p>Next, import the following:</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">GoogleCast</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">GoogleCast</span>
 <span class="kd">import</span> <span class="kt">PlayKit</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>For example, to reach the GCKGoogleCastContext you’ll need the <code class="language-plaintext highlighter-rouge">import GoogleCast</code>. To reach OVP/OTT-CastBuilder you’ll need <code class="language-plaintext highlighter-rouge">import PlayKit</code>.</p>
+<p>For example, to reach the GCKGoogleCastContext you’ll need the <code class="highlighter-rouge">import GoogleCast</code>. To reach OVP/OTT-CastBuilder you’ll need <code class="highlighter-rouge">import PlayKit</code>.</p>
     
       <h3 id="casting">
         
@@ -253,7 +251,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>To begin casting, you’ll need to create a <code class="language-plaintext highlighter-rouge">GCKMediaInformation</code> by using a CastBuilder: either <code class="language-plaintext highlighter-rouge">OVPCastBuilder</code> or <code class="language-plaintext highlighter-rouge">TVPAPICastBuilder</code>.</p>
+<p>To begin casting, you’ll need to create a <code class="highlighter-rouge">GCKMediaInformation</code> by using a CastBuilder: either <code class="highlighter-rouge">OVPCastBuilder</code> or <code class="highlighter-rouge">TVPAPICastBuilder</code>.</p>
     
       <h4 id="example-of-casting-using-ovpcastbuilder">
         
@@ -263,7 +261,7 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
 	<span class="k">var</span> <span class="nv">media</span><span class="p">:</span> <span class="kt">GCKMediaInformation</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
 	<span class="n">media</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">OVPCastBuilder</span><span class="p">()</span>
                     <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">ks</span><span class="p">:</span> <span class="n">ks</span><span class="p">)</span>
@@ -280,7 +278,8 @@ rtp('get', 'campaign',true);
 	<span class="p">}</span><span class="k">catch</span><span class="p">{</span>
             <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 	<span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h4 id="example-of-casting-using-tvpapicastbuilder">
         
@@ -290,7 +289,7 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">do</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code>	<span class="k">do</span> <span class="p">{</span>
 	<span class="k">var</span> <span class="nv">media</span><span class="p">:</span> <span class="kt">GCKMediaInformation</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
  	<span class="n">media</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">TVPAPICastBuilder</span><span class="p">()</span>
                     <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">contentId</span><span class="p">:</span> <span class="n">entryId</span><span class="p">)</span>
@@ -307,7 +306,8 @@ rtp('get', 'campaign',true);
 	<span class="p">}</span><span class="k">catch</span><span class="p">{</span>
             <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
 	<span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="loading-media">
         
@@ -317,9 +317,9 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Next, use the <code class="language-plaintext highlighter-rouge">loadmedia</code> to load the required media:</p>
+<p>Next, use the <code class="highlighter-rouge">loadmedia</code> to load the required media:</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">mediaInformation</span><span class="p">:</span><span class="kt">GCKMediaInformation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">mediaInformation</span><span class="p">:</span><span class="kt">GCKMediaInformation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">session</span> <span class="o">=</span>  <span class="kt">GCKCastContext</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="n">sessionManager</span><span class="o">.</span><span class="n">currentCastSession</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">currentSession</span> <span class="o">=</span> <span class="n">session</span><span class="p">,</span>  
     	<span class="k">let</span> <span class="nv">remoteMediaClient</span> <span class="o">=</span> <span class="n">currentSession</span><span class="o">.</span><span class="n">remoteMediaClient</span> <span class="p">{</span>
@@ -327,7 +327,8 @@ rtp('get', 'campaign',true);
         <span class="p">}</span>
  	<span class="p">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="custom-data">
         
@@ -339,7 +340,7 @@ rtp('get', 'campaign',true);
 
 <p>To add custom data:</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">customData</span><span class="p">(</span><span class="nv">mediaMetaData</span><span class="p">:</span> <span class="kt">MediaMetadataData</span><span class="p">?)</span> <span class="o">-&gt;</span>  <span class="kt">GCKMediaMetadata</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">customData</span><span class="p">(</span><span class="nv">mediaMetaData</span><span class="p">:</span> <span class="kt">MediaMetadataData</span><span class="p">?)</span> <span class="o">-&gt;</span>  <span class="kt">GCKMediaMetadata</span> <span class="p">{</span>
         
         <span class="k">let</span> <span class="nv">metaData</span> <span class="o">=</span> <span class="kt">GCKMediaMetadata</span><span class="p">(</span><span class="nv">metadataType</span><span class="p">:</span> <span class="kt">GCKMediaMetadataType</span><span class="o">.</span><span class="n">movie</span><span class="p">)</span>
         <span class="k">if</span> <span class="k">let</span> <span class="nv">title</span> <span class="o">=</span> <span class="n">mediaMetaData</span><span class="p">?</span><span class="o">.</span><span class="n">title</span> <span class="p">{</span>
@@ -372,7 +373,8 @@ rtp('get', 'campaign',true);
         
    	 <span class="p">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="adding-support-for-advertisements-on-cast-media">
         
@@ -388,19 +390,20 @@ rtp('get', 'campaign',true);
   <li>Add an ad tag URL to the cast builder as follows:</li>
 </ol>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">media</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">OVPCastBuilder</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">media</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">OVPCastBuilder</span><span class="p">()</span>
 <span class="o">...</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">adTagURL</span><span class="p">:</span> <span class="n">gcAddonData</span><span class="o">.</span><span class="n">params</span><span class="p">?</span><span class="o">.</span><span class="n">adTagURL</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="o">.</span><span class="nf">build</span><span class="p">()</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ol>
   <li>Next, set the adInfoParserDelegate in the remoteMediaClient to AdInfoParser (a class from the PlayKit) as follows:</li>
 </ol>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">mediaInformation</span><span class="p">:</span><span class="kt">GCKMediaInformation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">load</span><span class="p">(</span><span class="nv">mediaInformation</span><span class="p">:</span><span class="kt">GCKMediaInformation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">session</span> <span class="o">=</span>  <span class="kt">GCKCastContext</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="n">sessionManager</span><span class="o">.</span><span class="n">currentCastSession</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">currentSession</span> <span class="o">=</span> <span class="n">session</span><span class="p">,</span>  <span class="k">let</span> <span class="nv">remoteMediaClient</span> <span class="o">=</span> <span class="n">currentSession</span><span class="o">.</span><span class="n">remoteMediaClient</span> <span class="p">{</span>
         <span class="n">remoteMediaClient</span><span class="o">.</span><span class="nf">loadMedia</span><span class="p">(</span><span class="n">mediaInformation</span><span class="p">,</span> <span class="nv">autoplay</span><span class="p">:</span> <span class="kc">true</span><span class="p">)</span>
@@ -408,7 +411,8 @@ rtp('get', 'campaign',true);
         <span class="n">remoteMediaClient</span><span class="o">.</span><span class="n">adInfoParserDelegate</span> <span class="o">=</span> <span class="kt">AdInfoParser</span><span class="o">.</span><span class="n">shared</span>
     <span class="p">}</span>
     <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="have-questions-or-need-help">
         

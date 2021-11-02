@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Jun 12 10:01:54 2017</span>, By <span class="commit-author">ElizaSapir</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_Ads.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Jun 12 10:01:54 2017</span>, By <span class="commit-author">ElizaSapir</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_Ads.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed Jan 18 17:07:35 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Mon Jun 12 10:01:54 2017, By <span class="commit-author">ElizaSapir</span></td></tr-->
 			
@@ -174,8 +174,9 @@ rtp('get', 'campaign',true);
 
 <p>To enable the IMA Plugin on iOS devices for the Kaltura Video Player, add the following line to your Podfile:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pod</span> <span class="s1">'PlayKit/IMAPlugin'</span>
-</code></pre></div></div>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">pod</span> <span class="s1">'PlayKit/IMAPlugin'</span>
+</code></pre>
+</div>
     
       <h2 id="control-ad-play">
         
@@ -191,20 +192,22 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">playerShouldPlayAd</span><span class="p">(</span><span class="n">_</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">Player</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">playerShouldPlayAd</span><span class="p">(</span><span class="n">_</span> <span class="nv">player</span><span class="p">:</span> <span class="kt">Player</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">true</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">playerShouldPlayAd</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">player</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">playerShouldPlayAd</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n">Player</span><span class="o">&gt;</span><span class="p">)</span><span class="nv">player</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="register-the-ima-plugin">
         
@@ -220,15 +223,17 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">PlayKitManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerPlugin</span><span class="p">(</span><span class="kt">IMAPlugin</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">PlayKitManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">registerPlugin</span><span class="p">(</span><span class="kt">IMAPlugin</span><span class="o">.</span><span class="k">self</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">PlayKitManager</span><span class="p">.</span><span class="n">sharedInstance</span> <span class="nf">registerPlugin</span><span class="p">:</span> <span class="n">IMAPlugin</span><span class="p">.</span><span class="n">self</span><span class="p">];</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">PlayKitManager</span><span class="p">.</span><span class="n">sharedInstance</span> <span class="nf">registerPlugin</span><span class="p">:</span> <span class="n">IMAPlugin</span><span class="p">.</span><span class="n">self</span><span class="p">];</span>
+</code></pre>
+</div>
     
       <h2 id="configure-the-kaltura-video-player-to-use-the-ima-plugin">
         
@@ -238,25 +243,27 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>To configure the player to use IMA Plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">PlayerConfig</code> file as follows:</p>
+<p>To configure the player to use IMA Plugin, add the following configuration to your <code class="highlighter-rouge">PlayerConfig</code> file as follows:</p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">adsConfig</span> <span class="o">=</span> <span class="kt">AdsConfig</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">adsConfig</span> <span class="o">=</span> <span class="kt">AdsConfig</span><span class="p">()</span>
 <span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">adTagUrl</span><span class="p">:</span> <span class="err">'</span><span class="n">your</span> <span class="n">ad</span> <span class="n">tag</span> <span class="n">url</span><span class="err">'</span><span class="p">)</span>
 <span class="n">playerConfig</span><span class="o">.</span><span class="n">plugins</span><span class="p">[</span><span class="kt">IMAPlugin</span><span class="o">.</span><span class="n">pluginName</span><span class="p">]</span> <span class="o">=</span> <span class="n">adsConfig</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">AdsConfig</span> <span class="o">*</span><span class="n">adsConfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">AdsConfig</span> <span class="nf">new</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">AdsConfig</span> <span class="o">*</span><span class="n">adsConfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">AdsConfig</span> <span class="nf">new</span><span class="p">];</span>
 <span class="n">adsConfig</span><span class="p">.</span><span class="n">adTagUrl</span> <span class="o">=</span> <span class="s">@"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&amp;iu=/3274935/preroll&amp;impl=s&amp;gdfp_req=1&amp;env=vp&amp;output=xml_vast2&amp;unviewed_position_start=1&amp;url=[referrer_url]&amp;description_url=[description_url]&amp;correlator=[timestamp]"</span><span class="p">;</span>
 <span class="p">[</span><span class="n">config</span> <span class="nf">setPlugins</span><span class="p">:</span> <span class="p">@{</span><span class="n">IMAPlugin</span><span class="p">.</span><span class="n">pluginName</span><span class="o">:</span> <span class="n">adsConfig</span><span class="p">}];</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="configure-clickthroughs">
         
@@ -273,21 +280,23 @@ rtp('get', 'campaign',true);
   <li>Via Safari</li>
 </ul>
 
-<p>By default, the plugin will open pages using Safari. To update the plugin to use an in-app browser, you’ll need to set the <code class="language-plaintext highlighter-rouge">webOpenerPresentingController</code> value in the AdsConfig object as follows:</p>
+<p>By default, the plugin will open pages using Safari. To update the plugin to use an in-app browser, you’ll need to set the <code class="highlighter-rouge">webOpenerPresentingController</code> value in the AdsConfig object as follows:</p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">webOpenerPresentingController</span><span class="p">:</span> <span class="n">webOpenerPresentingController</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">webOpenerPresentingController</span><span class="p">:</span> <span class="n">webOpenerPresentingController</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">webOpenerPresentingController</span> <span class="o">=</span> <span class="n">webOpenerPresentingController</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">webOpenerPresentingController</span> <span class="o">=</span> <span class="n">webOpenerPresentingController</span><span class="p">;</span>
+</code></pre>
+</div>
     
       <h2 id="add-companion-ads">
         
@@ -308,15 +317,17 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">companionView</span><span class="p">:</span> <span class="n">companionView</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">companionView</span><span class="p">:</span> <span class="n">companionView</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">companionView</span> <span class="o">=</span> <span class="n">companionView</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">companionView</span> <span class="o">=</span> <span class="n">companionView</span><span class="p">;</span>
+</code></pre>
+</div>
     
       <h2 id="specify-the-desired-bitrate-and-video-formats">
         
@@ -332,17 +343,19 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">videoMimeTypes</span><span class="p">:</span> <span class="p">[</span><span class="s">"video/mp4"</span><span class="p">,</span> <span class="s">"application/x-mpegURL"</span><span class="p">])</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">videoMimeTypes</span><span class="p">:</span> <span class="p">[</span><span class="s">"video/mp4"</span><span class="p">,</span> <span class="s">"application/x-mpegURL"</span><span class="p">])</span>
 <span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">videoBitrate</span><span class="p">:</span> <span class="mi">1024</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">videoMimeTypes</span> <span class="o">=</span> <span class="p">@[</span><span class="s">@"video/mp4"</span><span class="p">,</span> <span class="s">@"application/x-mpegURL"</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">videoMimeTypes</span> <span class="o">=</span> <span class="p">@[</span><span class="s">@"video/mp4"</span><span class="p">,</span> <span class="s">@"application/x-mpegURL"</span><span class="p">];</span>
 <span class="n">adsConfig</span><span class="p">.</span><span class="n">videoBitrate</span> <span class="o">=</span> <span class="mi">1024</span><span class="p">;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="specify-the-localized-ad-language">
         
@@ -360,15 +373,17 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="s">"en"</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">language</span><span class="p">:</span> <span class="s">"en"</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">language</span> <span class="o">=</span> <span class="s">@"en"</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">adsConfig</span><span class="p">.</span><span class="n">language</span> <span class="o">=</span> <span class="s">@"en"</span><span class="p">;</span>
+</code></pre>
+</div>
     
       <h2 id="listen-to-ad-events">
         
@@ -384,7 +399,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PKEvent</span><span class="o">.</span><span class="k">Type</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">AdEvents</span><span class="o">.</span><span class="n">adDidRequestPause</span><span class="p">,</span> <span class="kt">AdEvents</span><span class="o">.</span><span class="n">adDidRequestResume</span><span class="p">]</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PKEvent</span><span class="o">.</span><span class="k">Type</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">AdEvents</span><span class="o">.</span><span class="n">adDidRequestPause</span><span class="p">,</span> <span class="kt">AdEvents</span><span class="o">.</span><span class="n">adDidRequestResume</span><span class="p">]</span>
 
 <span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="n">events</span><span class="p">)</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
     <span class="k">if</span> <span class="n">event</span> <span class="k">is</span> <span class="kt">AdEvents</span><span class="o">.</span><span class="n">adDidRequestResume</span> <span class="p">{</span>
@@ -393,22 +408,24 @@ rtp('get', 'campaign',true);
         <span class="c1">// handle adDidRequestPause</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">events</span> <span class="o">=</span> <span class="p">@[</span><span class="n">AdEvents</span><span class="p">.</span><span class="n">adDidRequestPause</span><span class="p">,</span> <span class="n">AdEvents</span><span class="p">.</span><span class="n">adDidRequestResume</span><span class="p">];</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">events</span> <span class="o">=</span> <span class="p">@[</span><span class="n">AdEvents</span><span class="p">.</span><span class="n">adDidRequestPause</span><span class="p">,</span> <span class="n">AdEvents</span><span class="p">.</span><span class="n">adDidRequestResume</span><span class="p">];</span>
         
 <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:</span> <span class="n">events</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span> <span class="n">AdEvents</span><span class="p">.</span><span class="n">adDidRequestResume</span><span class="p">])</span> <span class="p">{</span>
-        <span class="c1">// handle adDidRequestResume</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span> <span class="n">AdEvents</span><span class="p">.</span><span class="n">adDidRequestPause</span><span class="p">])</span> <span class="p">{</span>
-        <span class="c1">// handle adDidRequestPause</span>
-    <span class="p">}</span>
+        <span class="c1">// handle adDidRequestResume
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">([</span><span class="n">event</span> <span class="nf">isKindOfClass</span><span class="p">:</span> <span class="n">AdEvents</span><span class="p">.</span><span class="n">adDidRequestPause</span><span class="p">])</span> <span class="p">{</span>
+        <span class="c1">// handle adDidRequestPause
+</span>    <span class="p">}</span>
 <span class="p">}];</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="ad-info-event">
         
@@ -424,7 +441,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">AdEvent</span><span class="o">.</span><span class="n">adStarted</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">AdEvent</span><span class="o">.</span><span class="n">adStarted</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">info</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">adInfo</span> <span class="p">{</span>
         <span class="c1">// use ad info</span>
         <span class="k">switch</span> <span class="n">info</span><span class="o">.</span><span class="n">positionType</span> <span class="p">{</span>
@@ -434,30 +451,32 @@ rtp('get', 'campaign',true);
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span> <span class="n">self</span> <span class="nf">events</span><span class="p">:</span> <span class="p">@[</span><span class="n">AdEvent</span><span class="p">.</span><span class="n">adStarted</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span> <span class="n">self</span> <span class="nf">events</span><span class="p">:</span> <span class="p">@[</span><span class="n">AdEvent</span><span class="p">.</span><span class="n">adStarted</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">PKAdInfo</span> <span class="o">*</span><span class="n">info</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">adInfo</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">info</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// use ad info</span>
-        <span class="k">switch</span> <span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">positionType</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// use ad info
+</span>        <span class="k">switch</span> <span class="p">(</span><span class="n">info</span><span class="p">.</span><span class="n">positionType</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">case</span> <span class="n">AdPositionTypePreRoll</span><span class="p">:</span>
-                <span class="c1">// handle pre roll</span>
-                <span class="k">break</span><span class="p">;</span>
+                <span class="c1">// handle pre roll
+</span>                <span class="k">break</span><span class="p">;</span>
             <span class="k">case</span> <span class="n">AdPositionTypeMidRoll</span><span class="p">:</span>
-                <span class="c1">// handle mid roll</span>
-                <span class="k">break</span><span class="p">;</span>
+                <span class="c1">// handle mid roll
+</span>                <span class="k">break</span><span class="p">;</span>
             <span class="k">case</span> <span class="n">AdPositionTypePostRoll</span><span class="p">:</span>
-                <span class="c1">// handle post roll</span>
-                <span class="k">break</span><span class="p">;</span>
+                <span class="c1">// handle post roll
+</span>                <span class="k">break</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}];</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="ad-cue-points-event">
         
@@ -473,29 +492,31 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">AdEvent</span><span class="o">.</span><span class="n">adCuePointsUpdate</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">AdEvent</span><span class="o">.</span><span class="n">adCuePointsUpdate</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">adCuePoints</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">adCuePoints</span> <span class="p">{</span>
         <span class="c1">// use ad cue points</span>
         <span class="k">if</span> <span class="n">adCuePoints</span><span class="o">.</span><span class="n">hasPreRoll</span> <span class="o">||</span> <span class="n">adCuePoints</span><span class="o">.</span><span class="n">hasMidRoll</span> <span class="o">||</span> <span class="n">adCuePoints</span><span class="o">.</span><span class="n">hasPostRoll</span> <span class="p">{</span>
             <span class="c1">// do your stuff</span>
     <span class="p">}</span>
 <span class="p">})</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span> <span class="n">self</span> <span class="nf">events</span><span class="p">:</span> <span class="p">@[</span><span class="n">AdEvent</span><span class="p">.</span><span class="n">adCuePointsUpdate</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span> <span class="n">self</span> <span class="nf">events</span><span class="p">:</span> <span class="p">@[</span><span class="n">AdEvent</span><span class="p">.</span><span class="n">adCuePointsUpdate</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">PKAdCuePoints</span> <span class="o">*</span><span class="n">adCuePoints</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">adCuePoints</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">adCuePoints</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// use ad cue points</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">adCuePoints</span><span class="p">.</span><span class="n">hasPreRoll</span> <span class="o">||</span> <span class="n">adCuePoints</span><span class="p">.</span><span class="n">hasMidRoll</span> <span class="o">||</span> <span class="n">adCuePoints</span><span class="p">.</span><span class="n">hasPostRoll</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// do your stuff</span>
-        <span class="p">}</span>
+        <span class="c1">// use ad cue points
+</span>        <span class="k">if</span> <span class="p">(</span><span class="n">adCuePoints</span><span class="p">.</span><span class="n">hasPreRoll</span> <span class="o">||</span> <span class="n">adCuePoints</span><span class="p">.</span><span class="n">hasMidRoll</span> <span class="o">||</span> <span class="n">adCuePoints</span><span class="p">.</span><span class="n">hasPostRoll</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// do your stuff
+</span>        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}];</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="common-issues">
         
@@ -507,16 +528,18 @@ rtp('get', 'campaign',true);
 
 <p>If you get below error:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error Domain=com.kaltura.playkit.error.ima Code=1005 "Ads cannot be requested because the ad container is not attached to the view hierarchy." UserInfo={errorType=1, NSLocalizedDescription=Ads cannot be requested because the ad container is not attached to the view hierarchy.}
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>Error Domain=com.kaltura.playkit.error.ima Code=1005 "Ads cannot be requested because the ad container is not attached to the view hierarchy." UserInfo={errorType=1, NSLocalizedDescription=Ads cannot be requested because the ad container is not attached to the view hierarchy.}
+</code></pre>
+</div>
 
 <p>Please make sure that the order of removing player on your side is:</p>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Firstly call destroy</span>
-<span class="p">[</span><span class="n">_kPlayer</span> <span class="nf">destroy</span><span class="p">];</span>
-<span class="c1">// Only then</span>
-<span class="p">[</span><span class="n">_kPlayer</span><span class="p">.</span><span class="n">view</span> <span class="nf">removeFromSuperview</span><span class="p">];</span>
-</code></pre></div></div>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// Firstly call destroy
+</span><span class="p">[</span><span class="n">_kPlayer</span> <span class="nf">destroy</span><span class="p">];</span>
+<span class="c1">// Only then
+</span><span class="p">[</span><span class="n">_kPlayer</span><span class="p">.</span><span class="n">view</span> <span class="nf">removeFromSuperview</span><span class="p">];</span>
+</code></pre>
+</div>
     
       <h2 id="have-questions-or-need-help">
         

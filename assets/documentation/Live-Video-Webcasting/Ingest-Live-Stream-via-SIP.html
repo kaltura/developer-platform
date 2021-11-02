@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Live-Video-Webcasting/Ingest-Live-Stream-via-SIP.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Live-Video-Webcasting/Ingest-Live-Stream-via-SIP.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Sep 26 22:21:43 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (4 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -138,15 +138,16 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Using the <a href="/console/service/permission/action/list">permission.list</a> API Call here are the parameters needed:</p>
+<p>Using the <a href="https://developer.kaltura.com/console/service/permission/action/list">permission.list</a> API Call here are the parameters needed:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://www.kaltura.com/api_v3/service/permission/action/list <span class="se">\</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl -X POST https://www.kaltura.com/api_v3/service/permission/action/list <span class="se">\</span>
 
-  <span class="nt">-d</span> <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="s2">"filter[statusEqual]=1"</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="s2">"filter[nameEqual]=FEATURE_SIP"</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="s2">"filter[objectType]=KalturaPermissionFilter"</span>
-</code></pre></div></div>
+  -d <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
+  -d <span class="s2">"filter[statusEqual]=1"</span> <span class="se">\</span>
+  -d <span class="s2">"filter[nameEqual]=FEATURE_SIP"</span> <span class="se">\</span>
+  -d <span class="s2">"filter[objectType]=KalturaPermissionFilter"</span>
+</code></pre>
+</div>
 
 <p>In the response - Check if “totalCount”: 1,–&gt; if it’s 1, than SIP is enabled on this account. If not, go to admin console, configure this account, and add “Kaltura Live - Self Serve enabled”</p>
     
@@ -158,13 +159,14 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p><a href="/console/service/liveStream/action/get">liveStream.get</a></p>
+<p><a href="https://developer.kaltura.com/console/service/liveStream/action/get">liveStream.get</a></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://www.kaltura.com/api_v3/service/livestream/action/get <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"entryId=[YOUR_ENTRY_ID]"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"version=-1"</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl -X POST https://www.kaltura.com/api_v3/service/livestream/action/get <span class="se">\</span>
+    -d <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
+    -d <span class="s2">"entryId=[YOUR_ENTRY_ID]"</span> <span class="se">\</span>
+    -d <span class="s2">"version=-1"</span>
+</code></pre>
+</div>
 
 <p>In the response - Check if “sipToken”: null or empty, –&gt; that means you don’t yet have a token</p>
     
@@ -176,15 +178,16 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p><a href="/console/service/pexip/action/generateSipUrl">pexip.generateSipUrl</a></p>
+<p><a href="https://developer.kaltura.com/console/service/pexip/action/generateSipUrl">pexip.generateSipUrl</a></p>
 
 <p>Based on the result of previous step, if the entry already has a sipToken, and you wish to regenerate a new one – make sure to pass true in the regenerate param below. If the entry does not yet have a sipToken, pass false in regenerate below.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://www.kaltura.com/api_v3/service/sip_pexip/action/generateSipUrl <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"entryId=[YOUR_ENTRY_ID]"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"regenerate=true"</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl -X POST https://www.kaltura.com/api_v3/service/sip_pexip/action/generateSipUrl <span class="se">\</span>
+    -d <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
+    -d <span class="s2">"entryId=[YOUR_ENTRY_ID]"</span> <span class="se">\</span>
+    -d <span class="s2">"regenerate=true"</span>
+</code></pre>
+</div>
 		
 </article>
 

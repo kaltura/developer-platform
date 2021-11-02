@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sun Apr 26 05:03:52 2020</span>, By <span class="commit-author">Nilit Danan</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/player-events-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sun Apr 26 05:03:52 2020</span>, By <span class="commit-author">Nilit Danan</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/ios/player-events-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Sun Apr 26 05:03:52 2020, By <span class="commit-author">Nilit Danan</span></td></tr-->
 			
@@ -159,7 +159,7 @@ rtp('get', 'campaign',true);
 <p>The code below will add an observer to a list of various events.</p>
 
 <blockquote>
-  <p>Reminder to use <code class="language-plaintext highlighter-rouge">weak self</code> when needed in order to prevent retain cycles</p>
+  <p>Reminder to use <code class="highlighter-rouge">weak self</code> when needed in order to prevent retain cycles</p>
 </blockquote>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">playing</span><span class="p">,</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">durationChanged</span><span class="p">,</span> <span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">stateChanged</span><span class="p">])</span> <span class="p">{</span> <span class="p">[</span><span class="k">weak</span> <span class="k">self</span><span class="p">]</span> <span class="n">event</span> <span class="k">in</span>
@@ -192,7 +192,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Plugins can’t call <code class="language-plaintext highlighter-rouge">addObserver</code> on the player; instead, an identical function exists on the <code class="language-plaintext highlighter-rouge">MessageBus</code> object that is passed to the plugin.</p>
+<p>Plugins can’t call <code class="highlighter-rouge">addObserver</code> on the player; instead, an identical function exists on the <code class="highlighter-rouge">MessageBus</code> object that is passed to the plugin.</p>
     
       <h2 id="core-player-events">
         
@@ -287,7 +287,7 @@ rtp('get', 'campaign',true);
 
 <p>The Player can be in one of 4 playback states:</p>
 
-<p><code class="language-plaintext highlighter-rouge">idle</code>, <code class="language-plaintext highlighter-rouge">buffering</code>, <code class="language-plaintext highlighter-rouge">ready</code>, <code class="language-plaintext highlighter-rouge">ended</code>, <code class="language-plaintext highlighter-rouge">error</code></p>
+<p><code class="highlighter-rouge">idle</code>, <code class="highlighter-rouge">buffering</code>, <code class="highlighter-rouge">ready</code>, <code class="highlighter-rouge">ended</code>, <code class="highlighter-rouge">error</code></p>
     
       <h3 id="stalled">
         

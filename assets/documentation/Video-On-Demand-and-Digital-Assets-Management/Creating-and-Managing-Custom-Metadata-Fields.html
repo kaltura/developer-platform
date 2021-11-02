@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Creating-and-Managing-Custom-Metadata-Fields.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Video-On-Demand-and-Digital-Assets-Management/Creating-and-Managing-Custom-Metadata-Fields.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -145,7 +145,7 @@ rtp('get', 'campaign',true);
       </h4>
 
 <ol>
-  <li>/workflows/Enrich_and_Organize_Metadata/Working_with_metadata</li>
+  <li>https://developer.kaltura.com/workflows/Enrich_and_Organize_Metadata/Working_with_metadata</li>
   <li>https://knowledge.kaltura.com/help/custom-data</li>
   <li>https://learning.kaltura.com/media/How+to+reate+and+pply+a+ustom+Metadata+Schema/1_8gofc71k</li>
   <li>https://knowledge.kaltura.com/help/how-to-add-a-kaltura-custom-metadata-schema-profile</li>
@@ -161,29 +161,31 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p><a href="/console/service/metadataProfile/action/add">metadataProfile.add</a>: manages schema profiles per account</p>
+<p><a href="https://developer.kaltura.com/console/service/metadataProfile/action/add">metadataProfile.add</a>: manages schema profiles per account</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">metadataProfile</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">metadataProfile</span><span class="p">,</span><span class="nx">xsdData</span><span class="p">,</span><span class="nx">viewsData</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">metadataProfile</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">metadataProfile</span><span class="p">,</span><span class="nx">xsdData</span><span class="p">,</span><span class="nx">viewsData</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code class="language-plaintext highlighter-rouge">xsdData</code> is the XSD Schema file defining the metadata fields to create, here is an <a href="https://github.com/kaltura/Kaltura-Paid-Content-Gallery-With-PayPal-Sample-App/blob/master/AccountWizard/paypalSchema.sdx">example</a></p>
+<p><code class="highlighter-rouge">xsdData</code> is the XSD Schema file defining the metadata fields to create, here is an <a href="https://github.com/kaltura/Kaltura-Paid-Content-Gallery-With-PayPal-Sample-App/blob/master/AccountWizard/paypalSchema.sdx">example</a></p>
 
-<p><code class="language-plaintext highlighter-rouge">viewsData</code> is a custom definition of KMC UI elements for the newly created fields (if left empty, will use default)</p>
+<p><code class="highlighter-rouge">viewsData</code> is a custom definition of KMC UI elements for the newly created fields (if left empty, will use default)</p>
 
 <p>The Profile is then parsed, indexed and used to build the new fields on the selected object</p>
 
-<p><a href="/console/service/metadata/action/add">metadata.add</a>: manages metadata xml per object per profile</p>
+<p><a href="https://developer.kaltura.com/console/service/metadata/action/add">metadata.add</a>: manages metadata xml per object per profile</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">metadata</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">profileId</span><span class="p">,</span><span class="nx">KalturaMetadataObjectType</span><span class="p">,</span><span class="nx">objectId</span><span class="p">,</span> <span class="nx">xml</span><span class="p">)</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">metadata</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">profileId</span><span class="p">,</span><span class="nx">KalturaMetadataObjectType</span><span class="p">,</span><span class="nx">objectId</span><span class="p">,</span> <span class="nx">xml</span><span class="p">)</span>
+</code></pre>
+</div>
 
-<p><code class="language-plaintext highlighter-rouge">profileId</code>–to which metadata profile this relates</p>
+<p><code class="highlighter-rouge">profileId</code>–to which metadata profile this relates</p>
 
-<p><code class="language-plaintext highlighter-rouge">KalturaMetadataObjectType</code> – see dropdown at <a href="/console/service/metadata/action/add">metadata.add</a></p>
+<p><code class="highlighter-rouge">KalturaMetadataObjectType</code> – see dropdown at <a href="https://developer.kaltura.com/console/service/metadata/action/add">metadata.add</a></p>
 
-<p><code class="language-plaintext highlighter-rouge">objectId</code> –the id of the object to add values to</p>
+<p><code class="highlighter-rouge">objectId</code> –the id of the object to add values to</p>
 
-<p><code class="language-plaintext highlighter-rouge">xml</code> –the actual metadata XML (xml must abide the schema/profile XSD and fields order is crucial)</p>
+<p><code class="highlighter-rouge">xml</code> –the actual metadata XML (xml must abide the schema/profile XSD and fields order is crucial)</p>
 
 <p>The xml is then parsed and indexed on the specified object, and is now ready for search/update</p>
     
@@ -195,7 +197,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The Metadata schema is case sensitive. <code class="language-plaintext highlighter-rouge">&lt;price&gt;&lt;/price&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;Price&gt;&lt;/Price&gt;</code> are different</p>
+<p>The Metadata schema is case sensitive. <code class="highlighter-rouge">&lt;price&gt;&lt;/price&gt;</code> and <code class="highlighter-rouge">&lt;Price&gt;&lt;/Price&gt;</code> are different</p>
 
 <p>Order matters. Make sure to have Metadata XML fields submitted in the same order they appear in the Schema XSD.</p>
 
@@ -209,54 +211,56 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="c1">//Get the schema XSD:</span>
-<span class="nv">$metadataPlugin</span> <span class="o">=</span> <span class="nc">KalturaMetadataClientPlugin</span><span class="o">::</span><span class="nf">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="c1">//Get the schema XSD:
+</span><span class="nv">$metadataPlugin</span> <span class="o">=</span> <span class="nx">KalturaMetadataClientPlugin</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$client</span><span class="p">);</span>
 
-<span class="c1">//returns a URL</span>
-<span class="c1">//or can also use: $metadataPlugin-&gt;metadataProfile-&gt;get($metadataProfileId)-&gt;xsd</span>
-<span class="nv">$schemaUrl</span> <span class="o">=</span> <span class="nv">$metadataPlugin</span><span class="o">-&gt;</span><span class="n">metadataProfile</span><span class="o">-&gt;</span><span class="nf">serve</span><span class="p">(</span><span class="nv">$metadataProfileId</span><span class="p">);</span>
+<span class="c1">//returns a URL
+//or can also use: $metadataPlugin-&gt;metadataProfile-&gt;get($metadataProfileId)-&gt;xsd
+</span><span class="nv">$schemaUrl</span> <span class="o">=</span> <span class="nv">$metadataPlugin</span><span class="o">-&gt;</span><span class="na">metadataProfile</span><span class="o">-&gt;</span><span class="na">serve</span><span class="p">(</span><span class="nv">$metadataProfileId</span><span class="p">);</span>
 
-<span class="c1">//download the XSD file from Kaltura</span>
-<span class="nv">$schemaXSDFile</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$schemaUrl</span><span class="p">);</span>
+<span class="c1">//download the XSD file from Kaltura
+</span><span class="nv">$schemaXSDFile</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$schemaUrl</span><span class="p">);</span>
 
-<span class="c1">//Build a &lt;metadata&gt; template:</span>
-<span class="nv">$schema</span> <span class="o">=</span> <span class="nf">newDOMDocument</span><span class="p">();</span>
+<span class="c1">//Build a &lt;metadata&gt; template:
+</span><span class="nv">$schema</span> <span class="o">=</span> <span class="nx">newDOMDocument</span><span class="p">();</span>
 
-<span class="c1">//load and parse the XSD as an XML</span>
-<span class="nv">$schema</span><span class="o">-&gt;</span><span class="nf">loadXML</span><span class="p">(</span><span class="nv">$schemaXSDFile</span><span class="p">);</span>
+<span class="c1">//load and parse the XSD as an XML
+</span><span class="nv">$schema</span><span class="o">-&gt;</span><span class="na">loadXML</span><span class="p">(</span><span class="nv">$schemaXSDFile</span><span class="p">);</span>
 
-<span class="c1">//get all elements of the XSD</span>
-<span class="nv">$fieldsList</span> <span class="o">=</span> <span class="nv">$schema</span><span class="o">-&gt;</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="s1">'element'</span><span class="p">);</span>
+<span class="c1">//get all elements of the XSD
+</span><span class="nv">$fieldsList</span> <span class="o">=</span> <span class="nv">$schema</span><span class="o">-&gt;</span><span class="na">getElementsByTagName</span><span class="p">(</span><span class="s1">'element'</span><span class="p">);</span>
 
-<span class="c1">//Kaltura metadata XML is always wrapped in &lt;metadata&gt;</span>
-<span class="nv">$metadataTemplate</span> <span class="o">=</span> <span class="s1">'&lt;metadata&gt;'</span><span class="p">;</span>
+<span class="c1">//Kaltura metadata XML is always wrapped in &lt;metadata&gt;
+</span><span class="nv">$metadataTemplate</span> <span class="o">=</span> <span class="s1">'&lt;metadata&gt;'</span><span class="p">;</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$fieldsList</span> <span class="k">as</span> <span class="nv">$element</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$element</span><span class="o">-&gt;</span><span class="nf">hasAttribute</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span>
-        <span class="k">continue</span><span class="p">;</span>  <span class="c1">//valid fields will always have name</span>
-    <span class="nv">$key</span> <span class="o">=</span> <span class="nv">$element</span><span class="o">-&gt;</span><span class="nf">getAttribute</span><span class="p">(</span><span class="s1">'name'</span><span class="p">);</span> <span class="c1">//systemName is the element’s name, not key nor id</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$key</span> <span class="o">!=</span> <span class="s1">'metadata'</span><span class="p">)</span> <span class="c1">//exclude the parent node ‘metadata’ as we’re manually creating it</span>
-        <span class="nv">$metadataTemplate</span> <span class="mf">.</span><span class="o">=</span> <span class="s1">'&lt;'</span> <span class="mf">.</span> <span class="nv">$key</span> <span class="mf">.</span> <span class="s1">'&gt;'</span> <span class="mf">.</span> <span class="s1">'&lt;/'</span> <span class="mf">.</span> <span class="nv">$key</span> <span class="mf">.</span> <span class="s1">'&gt;'</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$element</span><span class="o">-&gt;</span><span class="na">hasAttribute</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>  <span class="c1">//valid fields will always have name
+</span>    <span class="nv">$key</span> <span class="o">=</span> <span class="nv">$element</span><span class="o">-&gt;</span><span class="na">getAttribute</span><span class="p">(</span><span class="s1">'name'</span><span class="p">);</span> <span class="c1">//systemName is the element’s name, not key nor id
+</span>    <span class="k">if</span> <span class="p">(</span><span class="nv">$key</span> <span class="o">!=</span> <span class="s1">'metadata'</span><span class="p">)</span> <span class="c1">//exclude the parent node ‘metadata’ as we’re manually creating it
+</span>        <span class="nv">$metadataTemplate</span> <span class="o">.=</span> <span class="s1">'&lt;'</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">'&gt;'</span> <span class="o">.</span> <span class="s1">'&lt;/'</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">'&gt;'</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nv">$metadataTemplate</span> <span class="mf">.</span><span class="o">=</span> <span class="s1">'&lt;/metadata&gt;'</span><span class="p">;</span> <span class="c1">//Manipulatethetemplateaddingyourfieldsvalues:</span>
-<span class="nv">$metadataXml</span> <span class="o">=</span> <span class="nb">simplexml_load_string</span><span class="p">(</span><span class="nv">$metadataTemplate</span><span class="p">);</span>
-<span class="nv">$metadataXml</span><span class="o">-&gt;</span><span class="nc">Price</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">;</span> <span class="c1">//field ’ssystemName= value;</span>
+<span class="nv">$metadataTemplate</span> <span class="o">.=</span> <span class="s1">'&lt;/metadata&gt;'</span><span class="p">;</span> <span class="c1">//Manipulatethetemplateaddingyourfieldsvalues:
+</span><span class="nv">$metadataXml</span> <span class="o">=</span> <span class="nb">simplexml_load_string</span><span class="p">(</span><span class="nv">$metadataTemplate</span><span class="p">);</span>
+<span class="nv">$metadataXml</span><span class="o">-&gt;</span><span class="na">Price</span> <span class="o">=</span> <span class="mf">2.3</span><span class="p">;</span> <span class="c1">//field ’ssystemName= value;
+</span>
+<span class="c1">//what object will we set metadata for?
+</span><span class="nv">$objectType</span><span class="o">=</span><span class="nx">KalturaMetadataObjectType</span><span class="o">::</span><span class="na">ENTRY</span><span class="p">;</span>
 
-<span class="c1">//what object will we set metadata for?</span>
-<span class="nv">$objectType</span><span class="o">=</span><span class="nc">KalturaMetadataObjectType</span><span class="o">::</span><span class="no">ENTRY</span><span class="p">;</span>
-
-<span class="c1">//the id of the object you wish to update</span>
-<span class="nv">$objectId</span><span class="o">=</span><span class="s1">'0_3242sdf'</span><span class="p">;</span>
-<span class="nv">$metadataPlugin</span><span class="o">-&gt;</span><span class="n">metadata</span><span class="o">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="nv">$mProfileId</span><span class="p">,</span> <span class="nv">$objectType</span><span class="p">,</span> <span class="nv">$objectId</span><span class="p">,</span> <span class="nv">$metadataXml</span><span class="o">-&gt;</span><span class="nf">asXML</span><span class="p">())</span>
-</code></pre></div></div>
+<span class="c1">//the id of the object you wish to update
+</span><span class="nv">$objectId</span><span class="o">=</span><span class="s1">'0_3242sdf'</span><span class="p">;</span>
+<span class="nv">$metadataPlugin</span><span class="o">-&gt;</span><span class="na">metadata</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span><span class="nv">$mProfileId</span><span class="p">,</span> <span class="nv">$objectType</span><span class="p">,</span> <span class="nv">$objectId</span><span class="p">,</span> <span class="nv">$metadataXml</span><span class="o">-&gt;</span><span class="na">asXML</span><span class="p">())</span>
+</code></pre>
+</div>
 
 <p>An example metadata string may look like:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;metadata&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;metadata&gt;</span>
 	<span class="nt">&lt;field1&gt;</span>value<span class="nt">&lt;/field1&gt;</span>
 	<span class="nt">&lt;field2&gt;</span>value<span class="nt">&lt;/field2&gt;</span>
 <span class="nt">&lt;/metadata&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="object-search-by-metadata-fields-values">
         
@@ -266,13 +270,13 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Search objects via metadata using the <a href="/console/service/media/action/list">list action</a></p>
+<p>Search objects via metadata using the <a href="https://developer.kaltura.com/console/service/media/action/list">list action</a></p>
 
 <p>In the filter parameter, set advancedSearch to KalturaMetadataSearchItem</p>
 
 <p><img src="/assets/images/metadatasearch.png" alt="metadatasearch" style="zoom:30%;" /></p>
 
-<p>Use <a href="/console/service/metadataProfile/action/listFields">metadataProfile.listFields</a> to get all searchable <code class="language-plaintext highlighter-rouge">xPath</code> fields</p>
+<p>Use <a href="https://developer.kaltura.com/console/service/metadataProfile/action/listFields">metadataProfile.listFields</a> to get all searchable <code class="highlighter-rouge">xPath</code> fields</p>
 		
 </article>
 

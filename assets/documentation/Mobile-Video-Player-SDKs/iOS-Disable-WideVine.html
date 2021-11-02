@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-Disable-WideVine.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/iOS-Disable-WideVine.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Sat Jan 14 11:07:27 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -152,8 +152,8 @@ rtp('get', 'campaign',true);
 <p>This article details the process of disabling Widevine on iOS:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">Core</code> - Contains all source files, <strong>including</strong> Widevine-related files.</li>
-  <li><code class="language-plaintext highlighter-rouge">Widevine</code> - Contains the Widevine library and a preprocessor macro WIDEVINE_ENABLED=1.</li>
+  <li><code class="highlighter-rouge">Core</code> - Contains all source files, <strong>including</strong> Widevine-related files.</li>
+  <li><code class="highlighter-rouge">Widevine</code> - Contains the Widevine library and a preprocessor macro WIDEVINE_ENABLED=1.</li>
 </ul>
       <h2 id="how-to-use">
         
@@ -175,8 +175,9 @@ rtp('get', 'campaign',true);
 
 <p>To use the entire SDK, the client app must use the following:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'KalturaPlayerSDK'
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>pod 'KalturaPlayerSDK'
+</code></pre>
+</div>
     
       <h3 id="exclude-widevine">
         
@@ -188,8 +189,9 @@ rtp('get', 'campaign',true);
 
 <p>To exclude Widevine, only include the subspec Core:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pod 'KalturaPlayerSDK/Core'
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>pod 'KalturaPlayerSDK/Core'
+</code></pre>
+</div>
 		
 </article>
 

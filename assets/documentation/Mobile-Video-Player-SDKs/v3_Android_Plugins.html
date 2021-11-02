@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_Android_Plugins.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_Android_Plugins.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Jan 30 07:36:11 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -162,16 +162,16 @@ rtp('get', 'campaign',true);
 
 <p>1 . Add a factory function - this enables the Kaltura Video Player to create a new instance of the Analytics Plugin and register the new plugin.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Factory</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Factory</span><span class="o">()</span> 
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Factory</span> <span class="n">factory</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Factory</span><span class="o">()</span> 
 <span class="o">{</span>
 	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> 
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> 
 	<span class="o">{</span>
 		<span class="k">return</span> <span class="s">"NameOfPlugin"</span><span class="o">;</span>
 	<span class="o">}</span>
 
 	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="nc">PKPlugin</span> <span class="nf">newInstance</span><span class="o">()</span> 
+	<span class="kd">public</span> <span class="n">PKPlugin</span> <span class="nf">newInstance</span><span class="o">()</span> 
 	<span class="o">{</span>
 		<span class="k">return</span> <span class="k">new</span> <span class="nf">GenericAnalyticsPlugin</span><span class="o">();</span> <span class="c1">//Name of the plugin class</span>
 	<span class="o">}</span>
@@ -181,13 +181,13 @@ rtp('get', 'campaign',true);
 
 <p>3 . Add a listener to the relevant events by calling the following function - all of the relevant events will follow the listener:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="n">hereComesTheEventListener</span><span class="o">,</span> <span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">PLAY</span><span class="o">,</span> <span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">PAUSE</span><span class="o">,</span> <span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">ENDED</span><span class="o">,</span>  <span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">ERROR</span><span class="o">,</span> <span class="nc">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">LOADED_METADATA</span><span class="o">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">messageBus</span><span class="o">.</span><span class="na">listen</span><span class="o">(</span><span class="n">hereComesTheEventListener</span><span class="o">,</span> <span class="n">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">PLAY</span><span class="o">,</span> <span class="n">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">PAUSE</span><span class="o">,</span> <span class="n">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">ENDED</span><span class="o">,</span>  <span class="n">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">ERROR</span><span class="o">,</span> <span class="n">PlayerEvent</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">LOADED_METADATA</span><span class="o">);</span></code></pre></figure>
 
 <p>4 . Add a send analytics event method and call it from the event listener.</p>
 
 <p>5 . If you want to report events to the application, you can use LogEvent in the following way:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">messageBus</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="nc">LogEvent</span><span class="o">(</span><span class="no">TAG</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="o">((</span><span class="nc">PlayerEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">messageBus</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="n">LogEvent</span><span class="o">(</span><span class="n">TAG</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="o">((</span><span class="n">PlayerEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span></code></pre></figure>
 
 <p>6 . The methods onDestroy, onUpdateConfig, onUpdateMedia, onApplicationPaused, and onApplicationResumed help you manage the life cycle of your Analytics Plugin, including initiating end events, handling background tasks, and keeping the plugin flow in accordance with the Video Player life cycle.</p>
     
@@ -201,7 +201,7 @@ rtp('get', 'campaign',true);
 
 <p>Next, you’ll need to enable the Analytics Plugin by registering it inside the application as follows:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nc">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="nc">GenericAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">PlayKitManager</span><span class="o">.</span><span class="na">registerPlugins</span><span class="o">(</span><span class="n">GenericAnalyticsPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">);</span></code></pre></figure>
     
       <h2 id="configure-the-plugin-configuration-object-for-the-analytics-plugin">
         
@@ -211,11 +211,11 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>To configure the Analytics Plugin, add the following configuration to your <code class="language-plaintext highlighter-rouge">pluginConfig</code> file as follows:</p>
+<p>To configure the Analytics Plugin, add the following configuration to your <code class="highlighter-rouge">pluginConfig</code> file as follows:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureGenericAnalyticsPlugin</span><span class="o">(</span><span class="nc">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> 
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="kt">void</span> <span class="nf">configureGenericAnalyticsPlugin</span><span class="o">(</span><span class="n">PlayerConfig</span> <span class="n">pluginConfig</span><span class="o">)</span> 
 <span class="o">{</span>
-	<span class="nc">JsonObject</span> <span class="n">genericConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JsonObject</span><span class="o">();</span>
+	<span class="n">JsonObject</span> <span class="n">genericConfigEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JsonObject</span><span class="o">();</span>
 	<span class="n">genericConfigEntry</span><span class="o">.</span><span class="na">addProperty</span><span class="o">(</span><span class="s">"NameOfThe Configuration"</span><span class="o">,</span> <span class="n">value</span> <span class="n">of</span> <span class="n">the</span> <span class="n">configuration</span><span class="o">);</span>
 <span class="o">}</span></code></pre></figure>
     
@@ -229,8 +229,8 @@ rtp('get', 'campaign',true);
 
 <p>For the Analytics Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nc">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PlayerConfig</span><span class="o">();</span>
-<span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">PlayerConfig</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PlayerConfig</span><span class="o">();</span>
+<span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">plugins</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
 <span class="n">plugins</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="s">"NameOfPlugin"</span> <span class="o">,</span> <span class="n">genericConfigEntry</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span> </code></pre></figure>
     
       <h2 id="messagebus-supported-events">
@@ -243,48 +243,48 @@ rtp('get', 'campaign',true);
 
 <p>The MessageBus supports the following events:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nc">PlayerEvents</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">PlayerEvents</span>
 <span class="o">{</span>
- <span class="kd">public</span> <span class="kd">enum</span> <span class="nc">Type</span> <span class="o">{</span>
-         <span class="no">STATE_CHANGED</span><span class="o">,</span> <span class="c1">//IDLE, LOADING, READY, BUFFERING;</span>
-         <span class="no">CAN_PLAY</span><span class="o">,</span>   <span class="c1">// Sent when enough data is available that the media can be played, at least for a couple of frames. This  corresponds to the HAVE_ENOUGH_DATA readyState.</span>
-        <span class="no">DURATION_CHANGE</span><span class="o">,</span>   <span class="c1">//  The metadata has loaded or changed, indicating a change in duration of the media. This is sent, for   example, when the media has loaded enough that the duration is known.</span>
-        <span class="no">ENDED</span><span class="o">,</span>   <span class="c1">//  Sent when playback completes.</span>
-        <span class="no">ERROR</span><span class="o">,</span>   <span class="c1">//  Sent when an error occurs. The element's error attribute contains more information. See Error handling for details.</span>
-        <span class="no">LOADED_METADATA</span><span class="o">,</span>   <span class="c1">//  The media's metadata has finished loading; all attributes now contain as much useful information as  they're going to.</span>
-        <span class="no">PAUSE</span><span class="o">,</span>   <span class="c1">//  Sent when playback is paused.</span>
-        <span class="no">PLAY</span><span class="o">,</span>   <span class="c1">//  Sent when playback of the media starts after having been paused; that is, when playback is resumed after a prior  pause event.</span>
-        <span class="no">PLAYING</span><span class="o">,</span>   <span class="c1">//  Sent when the media begins to play (either for the first time, after having been paused, or after ending and then  restarting).</span>
-        <span class="no">SEEKED</span><span class="o">,</span>   <span class="c1">//  Sent when a seek operation completes.</span>
-        <span class="no">SEEKING</span><span class="o">,</span>   <span class="c1">//  Sent when a seek operation begins.</span>
-        <span class="no">TRACKS_AVAILABLE</span><span class="o">,</span> <span class="c1">// Sent when track info is available.</span>
-        <span class="no">REPLAY</span><span class="o">,</span> <span class="c1">//Sent when replay happened.</span>
-        <span class="no">PLAYBACK_PARAMS</span><span class="o">,</span> <span class="c1">// Sent event that notify about changes in the playback parameters. When bitrate of the video or audio track  changes or new media loaded. Holds the PlaybackParamsInfo.java object with relevant data.</span>
-        <span class="no">VOLUME_CHANGED</span> <span class="c1">// Sent when volume is changed.</span>
+ <span class="kd">public</span> <span class="kd">enum</span> <span class="n">Type</span> <span class="o">{</span>
+         <span class="n">STATE_CHANGED</span><span class="o">,</span> <span class="c1">//IDLE, LOADING, READY, BUFFERING;</span>
+         <span class="n">CAN_PLAY</span><span class="o">,</span>   <span class="c1">// Sent when enough data is available that the media can be played, at least for a couple of frames. This  corresponds to the HAVE_ENOUGH_DATA readyState.</span>
+        <span class="n">DURATION_CHANGE</span><span class="o">,</span>   <span class="c1">//  The metadata has loaded or changed, indicating a change in duration of the media. This is sent, for   example, when the media has loaded enough that the duration is known.</span>
+        <span class="n">ENDED</span><span class="o">,</span>   <span class="c1">//  Sent when playback completes.</span>
+        <span class="n">ERROR</span><span class="o">,</span>   <span class="c1">//  Sent when an error occurs. The element's error attribute contains more information. See Error handling for details.</span>
+        <span class="n">LOADED_METADATA</span><span class="o">,</span>   <span class="c1">//  The media's metadata has finished loading; all attributes now contain as much useful information as  they're going to.</span>
+        <span class="n">PAUSE</span><span class="o">,</span>   <span class="c1">//  Sent when playback is paused.</span>
+        <span class="n">PLAY</span><span class="o">,</span>   <span class="c1">//  Sent when playback of the media starts after having been paused; that is, when playback is resumed after a prior  pause event.</span>
+        <span class="n">PLAYING</span><span class="o">,</span>   <span class="c1">//  Sent when the media begins to play (either for the first time, after having been paused, or after ending and then  restarting).</span>
+        <span class="n">SEEKED</span><span class="o">,</span>   <span class="c1">//  Sent when a seek operation completes.</span>
+        <span class="n">SEEKING</span><span class="o">,</span>   <span class="c1">//  Sent when a seek operation begins.</span>
+        <span class="n">TRACKS_AVAILABLE</span><span class="o">,</span> <span class="c1">// Sent when track info is available.</span>
+        <span class="n">REPLAY</span><span class="o">,</span> <span class="c1">//Sent when replay happened.</span>
+        <span class="n">PLAYBACK_PARAMS</span><span class="o">,</span> <span class="c1">// Sent event that notify about changes in the playback parameters. When bitrate of the video or audio track  changes or new media loaded. Holds the PlaybackParamsInfo.java object with relevant data.</span>
+        <span class="n">VOLUME_CHANGED</span> <span class="c1">// Sent when volume is changed.</span>
 <span class="o">}</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nc">AdEvents</span><span class="o">{</span>
-<span class="kd">public</span> <span class="kd">enum</span> <span class="nc">Type</span> <span class="o">{</span>
-        <span class="no">STARTED</span><span class="o">,</span>
-        <span class="no">PAUSED</span><span class="o">,</span>
-        <span class="no">RESUMED</span><span class="o">,</span>
-        <span class="no">COMPLETED</span><span class="o">,</span>
-        <span class="no">FIRST_QUARTILE</span><span class="o">,</span>
-        <span class="no">MIDPOINT</span><span class="o">,</span>
-        <span class="no">THIRD_QUARTILE</span><span class="o">,</span>
-        <span class="no">SKIPPED</span><span class="o">(),</span>
-        <span class="no">CLICKED</span><span class="o">,</span>
-        <span class="no">TAPPED</span><span class="o">,</span>
-        <span class="no">ICON_TAPPED</span><span class="o">,</span>
-        <span class="no">AD_BREAK_READY</span><span class="o">,</span>
-        <span class="no">AD_PROGRESS</span><span class="o">,</span>
-        <span class="no">AD_BREAK_STARTED</span><span class="o">,</span>
-        <span class="no">AD_BREAK_ENDED</span><span class="o">,</span>
-        <span class="no">CUEPOINTS_CHANGED</span><span class="o">,</span>
-        <span class="no">LOADED</span><span class="o">,</span>
-        <span class="no">CONTENT_PAUSE_REQUESTED</span><span class="o">,</span>
-        <span class="no">CONTENT_RESUME_REQUESTED</span><span class="o">,</span>
-        <span class="no">ALL_ADS_COMPLETED</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">AdEvents</span><span class="o">{</span>
+<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Type</span> <span class="o">{</span>
+        <span class="n">STARTED</span><span class="o">,</span>
+        <span class="n">PAUSED</span><span class="o">,</span>
+        <span class="n">RESUMED</span><span class="o">,</span>
+        <span class="n">COMPLETED</span><span class="o">,</span>
+        <span class="n">FIRST_QUARTILE</span><span class="o">,</span>
+        <span class="n">MIDPOINT</span><span class="o">,</span>
+        <span class="n">THIRD_QUARTILE</span><span class="o">,</span>
+        <span class="n">SKIPPED</span><span class="o">(),</span>
+        <span class="n">CLICKED</span><span class="o">,</span>
+        <span class="n">TAPPED</span><span class="o">,</span>
+        <span class="n">ICON_TAPPED</span><span class="o">,</span>
+        <span class="n">AD_BREAK_READY</span><span class="o">,</span>
+        <span class="n">AD_PROGRESS</span><span class="o">,</span>
+        <span class="n">AD_BREAK_STARTED</span><span class="o">,</span>
+        <span class="n">AD_BREAK_ENDED</span><span class="o">,</span>
+        <span class="n">CUEPOINTS_CHANGED</span><span class="o">,</span>
+        <span class="n">LOADED</span><span class="o">,</span>
+        <span class="n">CONTENT_PAUSE_REQUESTED</span><span class="o">,</span>
+        <span class="n">CONTENT_RESUME_REQUESTED</span><span class="o">,</span>
+        <span class="n">ALL_ADS_COMPLETED</span>
 <span class="o">}</span></code></pre></figure>
     
       <h2 id="adding-new-events-using-the-messagebus">
@@ -297,23 +297,23 @@ rtp('get', 'campaign',true);
 
 <p>If you have new events you need to report, you can add new events by implementing the following steps:</p>
 
-<p>1 . Add a new class for your event.
+<p>1 . Add a new class for your event.<br />
 2 . Implement the PKEvent in this class according the following implementation example:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NewAnalyticsEvent</span> <span class="kd">implements</span> <span class="nc">PKEvent</span> 
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NewAnalyticsEvent</span> <span class="kd">implements</span> <span class="n">PKEvent</span> 
 <span class="o">{</span>
-	<span class="kd">public</span> <span class="kd">final</span> <span class="nc">NewAnalyticsEvent</span><span class="o">.</span><span class="na">EventType</span> <span class="n">type</span><span class="o">;</span>
-	<span class="kd">public</span> <span class="kd">enum</span> <span class="nc">EventType</span>
-    	<span class="o">{</span><span class="nc">Concurrency</span><span class="o">}</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="n">NewAnalyticsEvent</span><span class="o">.</span><span class="na">EventType</span> <span class="n">type</span><span class="o">;</span>
+	<span class="kd">public</span> <span class="kd">enum</span> <span class="n">EventType</span>
+    	<span class="o">{</span><span class="n">Concurrency</span><span class="o">}</span>
 
-    	<span class="kd">public</span> <span class="nf">NewAnalyticsEvent</span><span class="o">(</span><span class="nc">NewAnalyticsEvent</span><span class="o">.</span><span class="na">EventType</span> <span class="n">type</span><span class="o">)</span> 
+    	<span class="kd">public</span> <span class="nf">NewAnalyticsEvent</span><span class="o">(</span><span class="n">NewAnalyticsEvent</span><span class="o">.</span><span class="na">EventType</span> <span class="n">type</span><span class="o">)</span> 
 	<span class="o">{</span>
         	<span class="k">this</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="n">type</span><span class="o">;</span>
     	<span class="o">}</span>
 
 
     	<span class="nd">@Override</span>
-    	<span class="kd">public</span> <span class="nc">Enum</span> <span class="nf">eventType</span><span class="o">()</span> <span class="o">{</span>
+    	<span class="kd">public</span> <span class="n">Enum</span> <span class="nf">eventType</span><span class="o">()</span> <span class="o">{</span>
          	<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">type</span><span class="o">;</span>
      	<span class="o">}</span>
 
@@ -321,7 +321,7 @@ rtp('get', 'campaign',true);
 
 <p>3 . Use the Messagebus to post your new event:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">messageBus</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="nc">NewAnalyticsEvent</span><span class="o">(</span><span class="no">TAG</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="o">((</span><span class="nc">NewAnalyticsEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">messageBus</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="k">new</span> <span class="n">NewAnalyticsEvent</span><span class="o">(</span><span class="n">TAG</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="o">((</span><span class="n">NewAnalyticsEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">.</span><span class="na">toString</span><span class="o">()));</span></code></pre></figure>
     
       <h2 id="code-examples">
         
@@ -339,23 +339,23 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">mEventListener</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span> <span class="n">mEventListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKEvent</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
 <span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="nc">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="k">instanceof</span> <span class="nc">PlayerEvent</span><span class="o">)</span> <span class="o">{</span>
-	<span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(((</span><span class="nc">PlayerEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//using the built in kaltura player logger</span>
-	<span class="k">switch</span> <span class="o">(((</span><span class="nc">PlayerEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">)</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">PKEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="k">instanceof</span> <span class="n">PlayerEvent</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(((</span><span class="n">PlayerEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span> <span class="c1">//using the built in kaltura player logger</span>
+	<span class="k">switch</span> <span class="o">(((</span><span class="n">PlayerEvent</span><span class="o">)</span> <span class="n">event</span><span class="o">).</span><span class="na">type</span><span class="o">)</span> <span class="o">{</span>
 	    <span class="k">case</span> <span class="nl">ENDED:</span>
-		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="nc">PhoenixActionType</span><span class="o">.</span><span class="na">FINISH</span><span class="o">);</span>
+		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="n">PhoenixActionType</span><span class="o">.</span><span class="na">FINISH</span><span class="o">);</span>
 		<span class="k">break</span><span class="o">;</span>
 	    <span class="k">case</span> <span class="nl">ERROR:</span>
-		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="nc">PhoenixActionType</span><span class="o">.</span><span class="na">ERROR</span><span class="o">);</span>
+		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="n">PhoenixActionType</span><span class="o">.</span><span class="na">ERROR</span><span class="o">);</span>
 		<span class="k">break</span><span class="o">;</span>
 	    <span class="k">case</span> <span class="nl">LOADED_METADATA:</span>
-		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="nc">PhoenixActionType</span><span class="o">.</span><span class="na">LOAD</span><span class="o">);</span>
+		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="n">PhoenixActionType</span><span class="o">.</span><span class="na">LOAD</span><span class="o">);</span>
 		<span class="k">break</span><span class="o">;</span>
 	    <span class="k">case</span> <span class="nl">PAUSE:</span>
-		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="nc">PhoenixActionType</span><span class="o">.</span><span class="na">PAUSE</span><span class="o">);</span>
+		<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="n">PhoenixActionType</span><span class="o">.</span><span class="na">PAUSE</span><span class="o">);</span>
 		<span class="k">break</span><span class="o">;</span>
 	    <span class="k">case</span> <span class="nl">PLAY:</span>
 		<span class="k">if</span> <span class="o">(!</span><span class="n">intervalOn</span><span class="o">){</span>
@@ -364,9 +364,9 @@ rtp('get', 'campaign',true);
 		<span class="o">}</span>
 		<span class="k">if</span> <span class="o">(</span><span class="n">isFirstPlay</span><span class="o">)</span> <span class="o">{</span>
 		    <span class="n">isFirstPlay</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
-		    <span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="nc">PhoenixActionType</span><span class="o">.</span><span class="na">FIRST_PLAY</span><span class="o">);</span>
+		    <span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="n">PhoenixActionType</span><span class="o">.</span><span class="na">FIRST_PLAY</span><span class="o">);</span>
 		<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-		    <span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="nc">PhoenixActionType</span><span class="o">.</span><span class="na">PLAY</span><span class="o">);</span>
+		    <span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="n">PhoenixActionType</span><span class="o">.</span><span class="na">PLAY</span><span class="o">);</span>
 		<span class="o">}</span>
 		<span class="k">break</span><span class="o">;</span>
 	    <span class="k">default</span><span class="o">:</span>
@@ -388,7 +388,7 @@ rtp('get', 'campaign',true);
 <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> 
 <span class="o">{</span>
 	<span class="n">log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">"onDestroy"</span><span class="o">);</span>
-	<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="nc">PhoenixActionType</span><span class="o">.</span><span class="na">STOP</span><span class="o">);</span>
+	<span class="n">sendAnalyticsEvent</span><span class="o">(</span><span class="n">PhoenixActionType</span><span class="o">.</span><span class="na">STOP</span><span class="o">);</span>
 <span class="o">}</span></code></pre></figure>
     
       <h3 id="onapplicationpaused">
@@ -429,8 +429,8 @@ rtp('get', 'campaign',true);
 
 <p>For the Youbora Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nc">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">pluginsConfig</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
-<span class="n">pluginsConfig</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="nc">YouboraPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">converterYoubora</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span> </code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">PlayerConfig</span><span class="o">.</span><span class="na">Plugins</span> <span class="n">pluginsConfig</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">plugins</span><span class="o">;</span>
+<span class="n">pluginsConfig</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="n">YouboraPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">converterYoubora</span><span class="o">.</span><span class="na">toJson</span><span class="o">());</span> </code></pre></figure>
     
       <h2 id="setting-the-plugin-configuration-to-the-ima-plugin">
         
@@ -442,13 +442,13 @@ rtp('get', 'campaign',true);
 
 <p>For the IMA Plugin to start loading, you’ll need to set the plugin configuration you created as follows:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nc">String</span> <span class="n">adTagUrl</span> <span class="o">=</span> <span class="s">"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&amp;iu=/124319096/external/single_ad_samples&amp;ciu_szs=300x250&amp;impl=s&amp;gdfp_req=1&amp;env=vp&amp;output=vast&amp;unviewed_position_start=1&amp;cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&amp;correlator="</span><span class="o">;</span>
-<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">videoMimeTypes</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
-<span class="n">videoMimeTypes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="nc">MimeTypes</span><span class="o">.</span><span class="na">APPLICATION_MP4</span><span class="o">);</span>
-<span class="nc">IMAConfig</span> <span class="n">adsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IMAConfig</span><span class="o">(</span><span class="s">"en"</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> 
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">adTagUrl</span> <span class="o">=</span> <span class="s">"https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&amp;iu=/124319096/external/single_ad_samples&amp;ciu_szs=300x250&amp;impl=s&amp;gdfp_req=1&amp;env=vp&amp;output=vast&amp;unviewed_position_start=1&amp;cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&amp;correlator="</span><span class="o">;</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">videoMimeTypes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">videoMimeTypes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">MimeTypes</span><span class="o">.</span><span class="na">APPLICATION_MP4</span><span class="o">);</span>
+<span class="n">IMAConfig</span> <span class="n">adsConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IMAConfig</span><span class="o">(</span><span class="s">"en"</span><span class="o">,</span> <span class="kc">false</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">,</span> 
 <span class="n">videoMimeTypes</span><span class="o">,</span> <span class="n">adTagUrl</span><span class="o">,</span> <span class="kc">true</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
     
-<span class="n">pluginsConfig</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="nc">IMAPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span><span class="n">adsConfig</span><span class="o">.</span><span class="na">toJSONObject</span><span class="o">());</span></code></pre></figure>
+<span class="n">pluginsConfig</span><span class="o">.</span><span class="na">setPluginConfig</span><span class="o">(</span><span class="n">IMAPlugin</span><span class="o">.</span><span class="na">factory</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span><span class="n">adsConfig</span><span class="o">.</span><span class="na">toJSONObject</span><span class="o">());</span></code></pre></figure>
     
       <h2 id="have-questions-or-need-help">
         

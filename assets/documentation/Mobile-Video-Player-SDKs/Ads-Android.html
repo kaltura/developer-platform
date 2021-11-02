@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Ads-Android.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/Ads-Android.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Sat Jan 14 11:07:27 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -149,15 +149,16 @@ rtp('get', 'campaign',true);
     		
 		<p><a href="https://github.com/kaltura/player-sdk-native-ios"><img src="https://img.shields.io/badge/Android-Supported-green.svg" alt="Android" /></a></p>
 
-<p>To configure the Player to use Google ads in Android devices, add the following to your <code class="language-plaintext highlighter-rouge">KPPlayerConfig</code>:</p>
+<p>To configure the Player to use Google ads in Android devices, add the following to your <code class="highlighter-rouge">KPPlayerConfig</code>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>config.addConfig("doubleClick.plugin", "true");
+<div class="highlighter-rouge"><pre class="highlight"><code>config.addConfig("doubleClick.plugin", "true");
 config.addConfig("doubleClick.adTagUrl", "your ad tag URL");
 
 #Ability to Force IMA SDK to use HLS format to play AD with preferred bitrate (MBit)
 config.setAdMimeType(KMediaFormat.hls_clear.mimeType);
 config.setAdPreferredBitrate(1000000);
-</code></pre></div></div>
+</code></pre>
+</div>
       <h2 id="listening-to-ad-events">
         
         
@@ -170,13 +171,14 @@ config.setAdPreferredBitrate(1000000);
 
 <p>See this page for a <a href="https://github.com/kaltura/DeveloperPortalDocs/blob/master/documentation/04_Web-Video-Player/Kaltura-Media-Player-API.md">list of commonly used Player ad events</a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mPlayer.addKPlayerEventListener("adClick", "some_id", new PlayerViewController.EventListener() {
+<div class="highlighter-rouge"><pre class="highlight"><code>mPlayer.addKPlayerEventListener("adClick", "some_id", new PlayerViewController.EventListener() {
                 @Override
                 public void handler(String eventName, String params) {
                     // Do your stuff here..
                 }
             });
-</code></pre></div></div>
+</code></pre>
+</div>
 		
 </article>
 

@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri Oct 15 21:06:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Implementing-Playlists.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Video-On-Demand-and-Digital-Assets-Management/Implementing-Playlists.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Fri Oct 15 21:06:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -133,7 +133,7 @@ rtp('get', 'campaign',true);
 
 <p>Manual playlists allow you to select a static list of items, while Rule-based playlists are dynamic and automatically updated based on what’s currently available in your media library and what rules define the playlist.</p>
 
-<p>The <a href="/api-docs/service/playlist">playlist API</a> has actions to add,delete, update and retrieve playlists.</p>
+<p>The <a href="https://developer.kaltura.com/api-docs/service/playlist">playlist API</a> has actions to add,delete, update and retrieve playlists.</p>
       <h2 id="playing-playlists">
         
         
@@ -142,7 +142,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>For a detailed overview of how to playback playlists refer to <a href="/player/web/playlist-web">web player playlist guide</a> or the <a href="/player/android/playlist-android">android playlist guide</a></p>
+<p>For a detailed overview of how to playback playlists refer to <a href="https://developer.kaltura.com/player/web/playlist-web">web player playlist guide</a> or the <a href="https://developer.kaltura.com/player/android/playlist-android">android playlist guide</a></p>
     
       <h2 id="using-api-to-create-playlists">
         
@@ -152,7 +152,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Start with <a href="/api-docs/service/playlist/action/add">playlist.add</a></p>
+<p>Start with <a href="https://developer.kaltura.com/api-docs/service/playlist/action/add">playlist.add</a></p>
     
       <h3 id="creating-manual-playlists">
         
@@ -176,7 +176,7 @@ rtp('get', 'campaign',true);
 
 <p>For a DYNAMIC list, you will need to supply xml for your playlistContent. For example, the XML for the  “most popular videos” dynamic playlist that comes by default with all new <a href="https://kmc.kaltura.com/index.php/kmcng/content/entries/list">KMC</a> accounts is:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;playlist&gt;</span>
    <span class="nt">&lt;total_results&gt;</span>50<span class="nt">&lt;/total_results&gt;</span>
    <span class="nt">&lt;filters&gt;</span>
@@ -189,9 +189,10 @@ rtp('get', 'campaign',true);
    <span class="nt">&lt;/filters&gt;</span>
 <span class="nt">&lt;/playlist&gt;</span>
   
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>This was obtained from the <code class="language-plaintext highlighter-rouge">playlistContent</code> field returned by calling <a href="/api-docs/service/playlist/action/get">playlist.get</a> using the playlist entryId obtained from the KMC or via <a href="/api-docs/service/playlist/action/list">playlist.list</a></p>
+<p>This was obtained from the <code class="highlighter-rouge">playlistContent</code> field returned by calling <a href="https://developer.kaltura.com/api-docs/service/playlist/action/get">playlist.get</a> using the playlist entryId obtained from the KMC or via <a href="https://developer.kaltura.com/api-docs/service/playlist/action/list">playlist.list</a></p>
     
       <h3 id="creating-mrss-playlists">
         
@@ -201,7 +202,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Select EXTERNAL for <code class="language-plaintext highlighter-rouge">playlistType</code> and supply a URL to a <a href="https://gist.github.com/hunterpp/5ce83229864065620c9145bbb8e3ce3b">valid mrss file</a></p>
+<p>Select EXTERNAL for <code class="highlighter-rouge">playlistType</code> and supply a URL to a <a href="https://gist.github.com/hunterpp/5ce83229864065620c9145bbb8e3ce3b">valid mrss file</a></p>
     
       <h2 id="stitched-playlist-playback">
         
@@ -211,7 +212,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Refer to <a href="/Streaming-and-Publishing/Play-Manifests-HLS-and-DASH-Streaming.html">Play-Manifests,-HLS-and-DASH-Streaming</a> for stitched playback of playlists.</p>
+<p>Refer to <a href="../Streaming-and-Publishing/Play-Manifests,-HLS-and-DASH-Streaming.html">Play-Manifests,-HLS-and-DASH-Streaming</a> for stitched playback of playlists.</p>
     
       <h2 id="playlist-analytics">
         
@@ -221,11 +222,11 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>A playlist is child of <a href="/api-docs/General_Objects/Objects/KalturaPlaylist">BaseEntry</a> and its <code class="language-plaintext highlighter-rouge">entryId</code> can be used to retrieve analytics, see  <a href="/Analytics-and-Reporting/Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html">Intro-to-Kaltura-Video-Analytics-and-Best-Practices</a></p>
+<p>A playlist is child of <a href="https://developer.kaltura.com/api-docs/General_Objects/Objects/KalturaPlaylist">BaseEntry</a> and its <code class="highlighter-rouge">entryId</code> can be used to retrieve analytics, see  <a href="../Analytics-and-Reporting /Intro-to-Kaltura-Video-Analytics-and-Best-Practices.html">Intro-to-Kaltura-Video-Analytics-and-Best-Practices</a></p>
 
 <p>You can also refer to this <a href="https://knowledge.kaltura.com/help/playlist-analytics">guide</a> for accessing playlist analytics from the KMC.</p>
 
-<p>Finally, you can use a playlist’s <code class="language-plaintext highlighter-rouge">entryId</code> to call <a href="/Analytics-and-Reporting/Embedded-Analytics-Component.html">Embedded-Analytics-Reports</a> to mimic the experience from the guide above.</p>
+<p>Finally, you can use a playlist’s <code class="highlighter-rouge">entryId</code> to call <a href="../Analytics-and-Reporting /Embedded-Analytics-Reports.md">Embedded-Analytics-Reports</a> to mimic the experience from the guide above.</p>
 		
 </article>
 

@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Dec 10 17:25:35 2019</span>, By <span class="commit-author">Gilad Nadav</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/android/player-config-android.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Dec 10 17:25:35 2019</span>, By <span class="commit-author">Gilad Nadav</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/android/player-config-android.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Dec 10 17:25:35 2019, By <span class="commit-author">Gilad Nadav</span></td></tr-->
 			
@@ -150,7 +150,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>The PKMediaEntry contains information regarding the media that will be played. With this information, the Kaltura Mobile Video Player
+<p>The PKMediaEntry contains information regarding the media that will be played. With this information, the Kaltura Mobile Video Player<br />
 prepares the source that will play the media, decides which type of player is required to play the media, and more.</p>
     
       <h3 id="methods-for-creating-the-pkmediaentry">
@@ -198,8 +198,9 @@ prepares the source that will play the media, decides which type of player is re
 
 <p><a href="https://github.com/kaltura/kaltura-player-android-samples/tree/master/OVPSamples/BasicSetupp">OVP media provider</a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>For OTT environments, use "PhoenixMediaProvider".
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>For OTT environments, use "PhoenixMediaProvider".
+</code></pre>
+</div>
     
       <h4 id="example-2">
         
@@ -211,8 +212,9 @@ prepares the source that will play the media, decides which type of player is re
 
 <p><a href="https://github.com/kaltura/kaltura-player-android-samples/tree/master/OTTSamples/BasicSetup">Phoenix media provider</a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>To use this method, you'll need to do the following:
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>To use this method, you'll need to do the following:
+</code></pre>
+</div>
 
 <p>a) Create an instance of one of the above mentioned providers.</p>
 
@@ -240,14 +242,14 @@ prepares the source that will play the media, decides which type of player is re
 
 <ul>
   <li>
-    <p>Building the <code class="language-plaintext highlighter-rouge">PKMediaEntry</code>  manually is more relevant for customers which do not use Kaltura BE to store their content.</p>
+    <p>Building the <code class="highlighter-rouge">PKMediaEntry</code>  manually is more relevant for customers which do not use Kaltura BE to store their content.</p>
   </li>
   <li>
-    <p>Once content is stored in Kaltura’s BE you can use our <code class="language-plaintext highlighter-rouge">Media Providers</code> to fetch the PKMediaEntry</p>
+    <p>Once content is stored in Kaltura’s BE you can use our <code class="highlighter-rouge">Media Providers</code> to fetch the PKMediaEntry</p>
   </li>
 </ul>
 
-<p>The <code class="language-plaintext highlighter-rouge">PKMediaEntry</code> holds information gathered from the OVP/Phoenix media providers. This information is used by the player and plugins like manifest url, DRM data, media duration and the type of the media.</p>
+<p>The <code class="highlighter-rouge">PKMediaEntry</code> holds information gathered from the OVP/Phoenix media providers. This information is used by the player and plugins like manifest url, DRM data, media duration and the type of the media.</p>
 
 <p>This object usually will be created using one of the media providers in case Kaltura’s BE is used for hosting your media files.</p>
 
@@ -265,11 +267,12 @@ prepares the source that will play the media, decides which type of player is re
 
 <p>The PKMediaEntry can be created with builder style instantiation, chain setters as follows:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKMediaEntry</span><span class="o">().</span><span class="na">setId</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getId</span><span class="o">())</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PKMediaEntry</span> <span class="n">mediaEntry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKMediaEntry</span><span class="o">().</span><span class="na">setId</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getId</span><span class="o">())</span>
                                             <span class="o">.</span><span class="na">setSources</span><span class="o">(</span><span class="n">sourcesList</span><span class="o">)</span>
                                             <span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getDuration</span><span class="o">())</span>
-                                            <span class="o">.</span><span class="na">setMediaType</span><span class="o">(</span><span class="nc">MediaTypeConverter</span><span class="o">.</span><span class="na">toMediaEntryType</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getType</span><span class="o">()));</span>
-</code></pre></div></div>
+                                            <span class="o">.</span><span class="na">setMediaType</span><span class="o">(</span><span class="n">MediaTypeConverter</span><span class="o">.</span><span class="na">toMediaEntryType</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getType</span><span class="o">()));</span>
+</code></pre>
+</div>
 
 <p>To learn more, see <a href="https://github.com/kaltura/playkit-android/blob/develop/playkit/src/main/java/com/kaltura/playkit/PKMediaEntry.java">PKMediaEntry</a>.</p>
     
@@ -295,21 +298,22 @@ prepares the source that will play the media, decides which type of player is re
 
 <p>PKMediaSource can be created with builder-like coding, by chaining setters:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">PKMediaSource</span> <span class="n">pkMediaSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PKMediaSource</span><span class="o">().</span><span class="na">setId</span><span class="o">(</span><span class="n">sourceId</span><span class="o">)</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">PKMediaSource</span> <span class="n">pkMediaSource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PKMediaSource</span><span class="o">().</span><span class="na">setId</span><span class="o">(</span><span class="n">sourceId</span><span class="o">)</span>
 <span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="n">sourceUrl</span><span class="o">)</span>
 <span class="o">.</span><span class="na">setDrmData</span><span class="o">(</span><span class="n">dramDataList</span><span class="o">);</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>
-    <p><strong><em>In OTT environments:</em></strong>
-Each source represents one MediaFile (Media or AssetInfo contains list of MediaFile items. Each file represents a different format. HD, SD Download…)
-Each file can point to a different video, like Trailer MediaFile and HD media file.
+    <p><strong><em>In OTT environments:</em></strong><br />
+Each source represents one MediaFile (Media or AssetInfo contains list of MediaFile items. Each file represents a different format. HD, SD Download…)<br />
+Each file can point to a different video, like Trailer MediaFile and HD media file.<br />
 When playing on OTT environments, specific “format” (MediaFile), should be configured.</p>
   </li>
   <li>
-    <p><strong><em>In OVP environments:</em></strong>
+    <p><strong><em>In OVP environments:</em></strong><br />
 PKMediaSource items are created according to several criteria:</p>
     <ul>
       <li>Supported video format: url [.mp4], mpdash [.mpd], applehttp [.m3u8]</li>
@@ -341,7 +345,7 @@ PKMediaSource items are created according to several criteria:</p>
         
       </h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   private PKMediaEntry createMediaEntry() {
+<div class="highlighter-rouge"><pre class="highlight"><code>   private PKMediaEntry createMediaEntry() {
         //Create media entry.
         PKMediaEntry mediaEntry = new PKMediaEntry();
 
@@ -391,7 +395,8 @@ PKMediaSource items are created according to several criteria:</p>
 
         return Collections.singletonList(mediaSource);
     }
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="sample">
         

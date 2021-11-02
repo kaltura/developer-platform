@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sun Feb 5 07:52:41 2017</span>, By <span class="commit-author">AnnaAleksandrowicz</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_Offline.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sun Feb 5 07:52:41 2017</span>, By <span class="commit-author">AnnaAleksandrowicz</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_Offline.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed Jan 18 11:49:21 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Sun Feb 5 07:52:41 2017, By <span class="commit-author">AnnaAleksandrowicz</span></td></tr-->
 			
@@ -193,17 +193,17 @@ rtp('get', 'campaign',true);
 
 <p>When using AVAssetDownloadTask, an application has to create an AVURLAsset and link it to a download task. In addition, if the asset is protected with FairPlay DRM, a delegate on the asset must be set.</p>
 
-<p>Before starting to download, the application should have a ready-to-use MediaEntry object, containing one or more <code class="language-plaintext highlighter-rouge">MediaSource</code>s.</p>
+<p>Before starting to download, the application should have a ready-to-use MediaEntry object, containing one or more <code class="highlighter-rouge">MediaSource</code>s.</p>
 
-<p>The application should then call <code class="language-plaintext highlighter-rouge">prepareForDownload(of mediaEntry: MediaEntry)</code> - which will pick the most suitable source for the download and return two values:</p>
+<p>The application should then call <code class="highlighter-rouge">prepareForDownload(of mediaEntry: MediaEntry)</code> - which will pick the most suitable source for the download and return two values:</p>
 <ul>
-  <li>A downloadable <code class="language-plaintext highlighter-rouge">AVURLAsset</code>, configured with FairPlay if required</li>
-  <li>The original <code class="language-plaintext highlighter-rouge">MediaSource</code> from which the <code class="language-plaintext highlighter-rouge">AVURLAsset</code> was built.</li>
+  <li>A downloadable <code class="highlighter-rouge">AVURLAsset</code>, configured with FairPlay if required</li>
+  <li>The original <code class="highlighter-rouge">MediaSource</code> from which the <code class="highlighter-rouge">AVURLAsset</code> was built.</li>
 </ul>
 
 <p>At this point, the application can start downloading the asset (typically mp4 or HLS).</p>
 
-<p><object data="/uml/964d7d743a970ea5423706a0b95a6635.svg" type="image/svg+xml" class="plantuml"></object></p>
+<p><img src="assets/uml/964d7d743a970ea5423706a0b95a6635.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
 
 <p>For correct usage of this mechanism, please see <a href="https://developer.apple.com/library/content/documentation/AudioVideo/Conceptual/MediaPlaybackGuide/Contents/Resources/en.lproj/HTTPLiveStreaming/HTTPLiveStreaming.html">Apple’s guide</a> and a <a href="https://developer.apple.com/library/content/samplecode/HLSCatalog/Introduction/Intro.html">sample application</a>.</p>
     
@@ -215,11 +215,11 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>When the asset isn’t downloadable by AVAssetDownloadTask (or if AVAssetDownloadTask is not available), the download will be done either with a 3rd party tool or by using a <a href="https://developer.apple.com/reference/foundation/urlsessiondownloadtask">URLSessionDownloadTask</a>.  In these cases, there’s no “preparation” step; instead, the application calls <code class="language-plaintext highlighter-rouge">getPreferredDownloadableMediaSource(for mediaEntry: MediaEntry)</code> to pick the best source. It then downloads the source, and at the end calls <code class="language-plaintext highlighter-rouge">assetDownloadFinished(mediaSource: MediaSource, location: URL)</code>.</p>
+<p>When the asset isn’t downloadable by AVAssetDownloadTask (or if AVAssetDownloadTask is not available), the download will be done either with a 3rd party tool or by using a <a href="https://developer.apple.com/reference/foundation/urlsessiondownloadtask">URLSessionDownloadTask</a>.  In these cases, there’s no “preparation” step; instead, the application calls <code class="highlighter-rouge">getPreferredDownloadableMediaSource(for mediaEntry: MediaEntry)</code> to pick the best source. It then downloads the source, and at the end calls <code class="highlighter-rouge">assetDownloadFinished(mediaSource: MediaSource, location: URL)</code>.</p>
 
 <p>This case also applies to <em>Widevine Classic</em> assets.</p>
 
-<p><object data="/uml/55debeca875ccc0c93aaeb89dff72762.svg" type="image/svg+xml" class="plantuml"></object></p>
+<p><img src="assets/uml/55debeca875ccc0c93aaeb89dff72762.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
     
       <h2 id="playback">
         
@@ -229,9 +229,9 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>To play a downloaded asset, the application needs to wrap the asset with a MediaEntry object. <code class="language-plaintext highlighter-rouge">LocalAssetsManager</code> provides <code class="language-plaintext highlighter-rouge">createLocalMediaEntry(for assetId: String, localURL: URL)</code>. This function returns a suitable <code class="language-plaintext highlighter-rouge">MediaEntry</code>.</p>
+<p>To play a downloaded asset, the application needs to wrap the asset with a MediaEntry object. <code class="highlighter-rouge">LocalAssetsManager</code> provides <code class="highlighter-rouge">createLocalMediaEntry(for assetId: String, localURL: URL)</code>. This function returns a suitable <code class="highlighter-rouge">MediaEntry</code>.</p>
 
-<p><object data="/uml/6bf3c5bec6723bd675bda2d13e11368f.svg" type="image/svg+xml" class="plantuml"></object></p>
+<p><img src="assets/uml/6bf3c5bec6723bd675bda2d13e11368f.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
     
       <h2 id="localdatastore">
         
@@ -243,9 +243,9 @@ rtp('get', 'campaign',true);
 
 <p>The constructor of LocalAssetsManager takes an optional <a href="https://kaltura.github.io/playkit/api/ios/Protocols/LocalDataStore.html">LocalDataStore</a>. This object is <strong>require</strong> if the application downloads or plays DRM-protected content. The protocol has 3 functions:</p>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">save(key: String, value: Data)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">load(key: String) -&gt; Data</code></li>
-  <li><code class="language-plaintext highlighter-rouge">remove(key: String)</code></li>
+  <li><code class="highlighter-rouge">save(key: String, value: Data)</code></li>
+  <li><code class="highlighter-rouge">load(key: String) -&gt; Data</code></li>
+  <li><code class="highlighter-rouge">remove(key: String)</code></li>
 </ul>
 
 <p>A simple implementation is provided in <a href="https://kaltura.github.io/playkit/api/ios/Classes/DefaultLocalDataStore.html">DefaultLocalDataStore</a>, but if the application has an existing persistent storage facility (such as a CoreData/SQLite db), it might be good idea to provide a different implementation.</p>

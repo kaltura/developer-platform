@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri Oct 15 21:06:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Enrichment-Services.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Video-On-Demand-and-Digital-Assets-Management/Enrichment-Services.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Sep 26 22:21:43 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Fri Oct 15 21:06:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (4 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -141,49 +141,52 @@ rtp('get', 'campaign',true);
 
 <p>This example will show you how to initiate a machine based caption request:</p>
 
-<p>The main API call will be <a href="/console/service/entryVendorTask/action/add">entryVendorTask.add</a></p>
+<p>The main API call will be <a href="https://developer.kaltura.com/console/service/entryVendorTask/action/add">entryVendorTask.add</a></p>
 
 <p>You will need to collect some necessary information to submit to the above call.</p>
 
-<p>First, you will need to get a reachProfileId from <a href="/api-docs/service/reachProfile/action/list">reachProfile.list</a> it will be the <code class="language-plaintext highlighter-rouge">id</code> field:</p>
+<p>First, you will need to get a reachProfileId from <a href="https://developer.kaltura.com/api-docs/service/reachProfile/action/list">reachProfile.list</a> it will be the <code class="highlighter-rouge">id</code> field:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">80801</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VPaaS Developer Account Trial Profile"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"partnerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1600381665</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1626968708</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-</span></code></pre></div></div>
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">80801</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VPaaS Developer Account Trial Profile"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"partnerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1600381665</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1626968708</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>Next you will need a <code class="language-plaintext highlighter-rouge">catalogItemId</code> this is supplied from <a href="/console/service/vendorCatalogItem/action/list">vendorCatalogItem.list</a> this will be the <code class="language-plaintext highlighter-rouge">id</code> field from a request:</p>
+<p>Next you will need a <code class="highlighter-rouge">catalogItemId</code> this is supplied from <a href="https://developer.kaltura.com/console/service/vendorCatalogItem/action/list">vendorCatalogItem.list</a> this will be the <code class="highlighter-rouge">id</code> field from a request:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="nl">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">  </span><span class="s2">"objects"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"enableSpeakerId"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"fixedPriceAddons"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">852</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"vendorPartnerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2413722</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verbit-ASR-English-unlimited"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"systemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verbit-ASR-English-unlimited"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1531737157</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624879011</span><span class="p">,</span><span class="w">
-</span></code></pre></div></div>
+      </span><span class="nt">"enableSpeakerId"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"fixedPriceAddons"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">852</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"vendorPartnerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2413722</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verbit-ASR-English-unlimited"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"systemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verbit-ASR-English-unlimited"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1531737157</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1624879011</span><span class="p">,</span><span class="w">
+</span></code></pre>
+</div>
 
-<p>Using the <code class="language-plaintext highlighter-rouge">KalturaCatalogItemAdvancedFilter</code> in a <a href="/console/service/vendorCatalogItem/action/list">vendorCatalogItem.list</a> query will allow you to programmatically refine the <code class="language-plaintext highlighter-rouge">vendorCatalogItem</code> by such services as MACHINE vs. HUMAN, <code class="language-plaintext highlighter-rouge">sourceLanguage</code> <code class="language-plaintext highlighter-rouge">sourceFeature</code> <code class="language-plaintext highlighter-rouge">turnAroundTime</code> and more:</p>
+<p>Using the <code class="highlighter-rouge">KalturaCatalogItemAdvancedFilter</code> in a <a href="https://developer.kaltura.com/console/service/vendorCatalogItem/action/list">vendorCatalogItem.list</a> query will allow you to programmatically refine the <code class="highlighter-rouge">vendorCatalogItem</code> by such services as MACHINE vs. HUMAN, <code class="highlighter-rouge">sourceLanguage</code> <code class="highlighter-rouge">sourceFeature</code> <code class="highlighter-rouge">turnAroundTime</code> and more:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://www.kaltura.com/api_v3/service/reach_vendorcatalogitem/action/list <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"filter[advancedSearch][objectType]=KalturaCatalogItemAdvancedFilter"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"filter[advancedSearch][serviceTypeEqual]=2"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"filter[advancedSearch][serviceFeatureEqual]=1"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"filter[advancedSearch][sourceLanguageEqual]=English"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"filter[serviceTypeEqual]=2"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"filter[objectType]=KalturaVendorCaptionsCatalogItemFilter"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"filter[sourceLanguageEqual]=English"</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl -X POST https://www.kaltura.com/api_v3/service/reach_vendorcatalogitem/action/list <span class="se">\</span>
+    -d <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
+    -d <span class="s2">"filter[advancedSearch][objectType]=KalturaCatalogItemAdvancedFilter"</span> <span class="se">\</span>
+    -d <span class="s2">"filter[advancedSearch][serviceTypeEqual]=2"</span> <span class="se">\</span>
+    -d <span class="s2">"filter[advancedSearch][serviceFeatureEqual]=1"</span> <span class="se">\</span>
+    -d <span class="s2">"filter[advancedSearch][sourceLanguageEqual]=English"</span> <span class="se">\</span>
+    -d <span class="s2">"filter[serviceTypeEqual]=2"</span> <span class="se">\</span>
+    -d <span class="s2">"filter[objectType]=KalturaVendorCaptionsCatalogItemFilter"</span> <span class="se">\</span>
+    -d <span class="s2">"filter[sourceLanguageEqual]=English"</span>
+</code></pre>
+</div>
       <h2 id="building-a-query">
         
         
@@ -192,20 +195,21 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Now you have all the requirements to build an enrichment query using <a href="/console/service/entryVendorTask/action/add">entryVendorTask.add</a> the final necessary parameter will be an <code class="language-plaintext highlighter-rouge">entryId</code> for the piece of content that you want to perform enrichment services on:</p>
+<p>Now you have all the requirements to build an enrichment query using <a href="https://developer.kaltura.com/console/service/entryVendorTask/action/add">entryVendorTask.add</a> the final necessary parameter will be an <code class="highlighter-rouge">entryId</code> for the piece of content that you want to perform enrichment services on:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-X</span> POST https://www.kaltura.com/api_v3/service/reach_entryvendortask/action/add <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"entryVendorTask[reachProfileId]=80801"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"entryVendorTask[catalogItemId]=802"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"entryVendorTask[entryId]=12345"</span> <span class="se">\</span>
-    <span class="nt">-d</span> <span class="s2">"entryVendorTask[objectType]=KalturaEntryVendorTask"</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl -X POST https://www.kaltura.com/api_v3/service/reach_entryvendortask/action/add <span class="se">\</span>
+    -d <span class="s2">"ks=</span><span class="nv">$KALTURA_SESSION</span><span class="s2">"</span> <span class="se">\</span>
+    -d <span class="s2">"entryVendorTask[reachProfileId]=80801"</span> <span class="se">\</span>
+    -d <span class="s2">"entryVendorTask[catalogItemId]=802"</span> <span class="se">\</span>
+    -d <span class="s2">"entryVendorTask[entryId]=12345"</span> <span class="se">\</span>
+    -d <span class="s2">"entryVendorTask[objectType]=KalturaEntryVendorTask"</span>
+</code></pre>
+</div>
 
-<p>While the task is being completed, you may want to see a list of all of your tasks via: <a href="/console/service/entryVendorTask/action/list">entryVendorTask.list</a></p>
+<p>While the task is being completed, you may want to see a list of all of your tasks via: <a href="https://developer.kaltura.com/console/service/entryVendorTask/action/list">entryVendorTask.list</a></p>
 
-<p>For a full list of API calls related to the creation/modification and user experience flow for entryVendorTask refer to 
-/console/service/entryVendorTask</p>
+<p>For a full list of API calls related to the creation/modification and user experience flow for entryVendorTask refer to <br />
+https://developer.kaltura.com/console/service/entryVendorTask</p>
     
       <h2 id="see-also">
         
@@ -215,11 +219,11 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p><a href="/console/service/entryVendorTask">entryVendorTask</a></p>
+<p>https://developer.kaltura.com/console/service/entryVendorTask</p>
 
-<p><a href="/api-docs/service/vendorCatalogItem">vendorCatalogItem</a></p>
+<p>https://developer.kaltura.com/api-docs/service/vendorCatalogItem</p>
 
-<p><a href="/api-docs/service/reachProfile">reachProfile</a></p>
+<p>https://developer.kaltura.com/api-docs/service/reachProfile</p>
 		
 </article>
 

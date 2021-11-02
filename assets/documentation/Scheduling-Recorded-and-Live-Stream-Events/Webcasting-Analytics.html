@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Scheduling-Recorded-and-Live-Stream-Events/Webcasting-Analytics.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Scheduling-Recorded-and-Live-Stream-Events/Webcasting-Analytics.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -129,15 +129,15 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>Analytics for the livestream event can be retrieved via the <a href="/console/service/report/">reporting</a> API. The API actions are split between <code class="language-plaintext highlighter-rouge">getTable</code>, <code class="language-plaintext highlighter-rouge">getGraph</code>, <code class="language-plaintext highlighter-rouge">getTotal</code>, etc - depending on the format in which you’d like to receive the data.</p>
+		<p>Analytics for the livestream event can be retrieved via the <a href="https://developer.kaltura.com/console/service/report/">reporting</a> API. The API actions are split between <code class="highlighter-rouge">getTable</code>, <code class="highlighter-rouge">getGraph</code>, <code class="highlighter-rouge">getTotal</code>, etc - depending on the format in which you’d like to receive the data.</p>
 
 <p>There is also a webcasting module that is part of  <a href="../Analytics-and-Reporting /Embedded-Analytics-Reports.md">Embedded Analytics Reports</a></p>
 
-<p>In this guide, the types of reports will be demonstrated using the <a href="/console/service/report/action/getTable">report.getTable</a> to make it easy to view results.</p>
+<p>In this guide, the types of reports will be demonstrated using the <a href="https://developer.kaltura.com/console/service/report/action/getTable">report.getTable</a> to make it easy to view results.</p>
 
-<p>If you scroll through the <code class="language-plaintext highlighter-rouge">reportType</code> field, you’ll see that Realtime reports are those with REALTIME in the name, from 10001, to 10013.</p>
+<p>If you scroll through the <code class="highlighter-rouge">reportType</code> field, you’ll see that Realtime reports are those with REALTIME in the name, from 10001, to 10013.</p>
 
-<p>For an understanding of the reporting API, try the TOP_CONTENT report first. 
+<p>For an understanding of the reporting API, try the TOP_CONTENT report first. <br />
 Note that reports always need a fromDay and toDay in the filter, as well as a pager.</p>
       <h2 id="top-content">
         
@@ -149,13 +149,14 @@ Note that reports always need a fromDay and toDay in the filter, as well as a pa
 
 <p>A basic Top Content overview might look something like this:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="p">.</span><span class="n">TOP_CONTENT</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="o">.</span><span class="n">TOP_CONTENT</span>
 <span class="n">report_input_filter</span> <span class="o">=</span> <span class="n">KalturaReportInputFilter</span><span class="p">()</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200212"</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200514"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200212"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200514"</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">report</span><span class="p">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span><span class="err">`</span>
-</code></pre></div></div>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span><span class="err">`</span>
+</code></pre>
+</div>
 
 <p>If you’re using python, a print function for the results can be found <a href="https://github.com/kaltura-vpaas/webcasting-app-python/blob/master/print-analytics.py">here</a></p>
     
@@ -169,22 +170,24 @@ Note that reports always need a fromDay and toDay in the filter, as well as a pa
 
 <p>This is an overview on user engagement, best retrieved in small time frames with an interval of ten seconds, like so:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="p">.</span><span class="n">USERS_OVERVIEW_REALTIME</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="o">.</span><span class="n">USERS_OVERVIEW_REALTIME</span>
 <span class="n">report_input_filter</span> <span class="o">=</span> <span class="n">KalturaReportInputFilter</span><span class="p">()</span>
 <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200623"</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200624"</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">KalturaReportInterval</span><span class="p">.</span><span class="n">TEN_SECONDS</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200623"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200624"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">KalturaReportInterval</span><span class="o">.</span><span class="n">TEN_SECONDS</span>
 
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">report</span><span class="p">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">,</span> <span class="n">order</span><span class="p">)</span>
 <span class="n">printTable</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="s">"USERS OVERVIEW REALTIME"</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The result header will look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|date_id|view_unique_audience|view_unique_engaged_users|views|avg_view_engagement|
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>|date_id|view_unique_audience|view_unique_engaged_users|views|avg_view_engagement|
+</code></pre>
+</div>
     
       <h2 id="platforms-realtime">
         
@@ -194,24 +197,26 @@ Note that reports always need a fromDay and toDay in the filter, as well as a pa
         
       </h2>
 
-<p>The platforms report is a breakdown on which devices viewers are using to watch the livestream. You can even add <code class="language-plaintext highlighter-rouge">object_ids</code> to filter by entry ID.</p>
+<p>The platforms report is a breakdown on which devices viewers are using to watch the livestream. You can even add <code class="highlighter-rouge">object_ids</code> to filter by entry ID.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="p">.</span><span class="n">PLATFORMS_REALTIME</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="o">.</span><span class="n">PLATFORMS_REALTIME</span>
 <span class="n">report_input_filter</span> <span class="o">=</span> <span class="n">KalturaReportInputFilter</span><span class="p">()</span>
 <span class="n">response_options</span> <span class="o">=</span> <span class="n">KalturaReportResponseOptions</span><span class="p">()</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200620"</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200624"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200620"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200624"</span>
 <span class="n">object_ids</span> <span class="o">=</span> <span class="s">"&lt;ENTRY&gt;"</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">report</span><span class="p">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">object_ids</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">,</span> <span class="n">order</span><span class="p">,</span> <span class="n">object_ids</span><span class="p">)</span>
 <span class="n">printTable</span><span class="p">(</span><span class="nb">vars</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="s">"PLATFORMS REALTIME"</span><span class="p">)</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The result header will look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------+----------------------+---------------+
+<div class="highlighter-rouge"><pre class="highlight"><code>+----------+----------------------+---------------+
 |  device  | view_unique_audience | sum_view_time |
 +----------+----------------------+---------------+
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="breakdown-per-user">
         
@@ -223,20 +228,22 @@ Note that reports always need a fromDay and toDay in the filter, as well as a pa
 
 <p>The breakdown per user report shows the sum time viewed by user and how much buffering they encountered</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="p">.</span><span class="n">ENTRY_LEVEL_USERS_DISCOVERY_REALTIME</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">report_type</span> <span class="o">=</span> <span class="n">KalturaReportType</span><span class="o">.</span><span class="n">ENTRY_LEVEL_USERS_DISCOVERY_REALTIME</span>
 <span class="n">report_input_filter</span> <span class="o">=</span> <span class="n">KalturaReportInputFilter</span><span class="p">()</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200610"</span>
-<span class="n">report_input_filter</span><span class="p">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200630"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">fromDay</span> <span class="o">=</span> <span class="s">"20200610"</span>
+<span class="n">report_input_filter</span><span class="o">.</span><span class="n">toDay</span> <span class="o">=</span> <span class="s">"20200630"</span>
 <span class="n">pager</span> <span class="o">=</span> <span class="n">KalturaFilterPager</span><span class="p">()</span>
 <span class="n">response_options</span> <span class="o">=</span> <span class="n">KalturaReportResponseOptions</span><span class="p">()</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">report</span><span class="p">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">report</span><span class="o">.</span><span class="n">getTable</span><span class="p">(</span><span class="n">report_type</span><span class="p">,</span> <span class="n">report_input_filter</span><span class="p">,</span> <span class="n">pager</span><span class="p">)</span>
+</code></pre>
+</div>
 
 <p>The result header will look like this:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>|user_id|user_name|sum_view_time_live|sum_view_time_dvr|sum_view_time|avg_view_buffering | avg_view_engagement|view_buffer_time_ratio|
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>|user_id|user_name|sum_view_time_live|sum_view_time_dvr|sum_view_time|avg_view_buffering | avg_view_engagement|view_buffer_time_ratio|
+</code></pre>
+</div>
 		
 </article>
 

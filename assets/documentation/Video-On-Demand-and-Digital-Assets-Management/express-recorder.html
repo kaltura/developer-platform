@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Sep 27 05:03:14 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/express-recorder.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Sep 27 05:03:14 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Video-On-Demand-and-Digital-Assets-Management/express-recorder.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Sep 20 21:08:31 2021, By: Hunterpp</td></tr-->
 				<!--tr><td>Last commit: Mon Sep 27 05:03:14 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
@@ -144,7 +144,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>In order to use the Recorder, you’ll need a Kaltura Partner ID and Admin Secret, which can be found in the <a href="https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings">Integration Settings</a> of your KMC. You’ll also need a <code class="language-plaintext highlighter-rouge">UI Conf ID</code>, which is basically the ID of the video player you wish to use, found in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">Player Studio</a>.</p>
+<p>In order to use the Recorder, you’ll need a Kaltura Partner ID and Admin Secret, which can be found in the <a href="https://kmc.kaltura.com/index.php/kmcng/settings/integrationSettings">Integration Settings</a> of your KMC. You’ll also need a <code class="highlighter-rouge">UI Conf ID</code>, which is basically the ID of the video player you wish to use, found in the <a href="https://kmc.kaltura.com/index.php/kmcng/studio/v3">Player Studio</a>.</p>
     
       <h2 id="embedding-the-recorder">
         
@@ -160,17 +160,19 @@ rtp('get', 'campaign',true);
   <li>The script that loads the recorder:</li>
 </ol>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://www.kaltura.com/apps/expressrecorder/latest/express-recorder.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://www.kaltura.com/apps/expressrecorder/latest/express-recorder.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre>
+</div>
 
 <ol>
   <li>The div that holds the recorder, where you can edit your preferred size and name the div as you wish:</li>
 </ol>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"recorder"</span> <span class="na">style=</span><span class="s">"width: 560px; height: 316px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
-</code></pre></div></div>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"recorder"</span> <span class="na">style=</span><span class="s">"width: 560px; height: 316px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre>
+</div>
 <ol>
-  <li>The script that contains the “props” or values that are being passed to the recorder. Make sure that the ID matches the ID of the div in #2 (i.e. <code class="language-plaintext highlighter-rouge">recorder</code>).</li>
+  <li>The script that contains the “props” or values that are being passed to the recorder. Make sure that the ID matches the ID of the div in #2 (i.e. <code class="highlighter-rouge">recorder</code>).</li>
 </ol>
 
 <script type="text/javascript">
@@ -325,7 +327,7 @@ rtp('get', 'campaign',true);
 
 <p>You’ll need to create a listener for the specific event type you’re interested in:</p>
 
-<p><code class="language-plaintext highlighter-rouge">const component = Kaltura.ExpressRecorder.create('parent_div_id', {...}); component.instance.addEventListener(eventType, callback);</code></p>
+<p><code class="highlighter-rouge">const component = Kaltura.ExpressRecorder.create('parent_div_id', {...}); component.instance.addEventListener(eventType, callback);</code></p>
     
       <h2 id="methods">
         
@@ -338,13 +340,13 @@ rtp('get', 'campaign',true);
 <p>These are actions that can be performed on the recorder component:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">startRecording()</code> clears existing recording if exists and starts the recording - countdown.</li>
-  <li><code class="language-plaintext highlighter-rouge">stopRecording()</code> stops an ongoing recording.</li>
-  <li><code class="language-plaintext highlighter-rouge">saveCopy()</code> after recording exists, saves a local copy of the recorded media.</li>
-  <li><code class="language-plaintext highlighter-rouge">upload()</code> uploads the latest recording to Kaltura.</li>
-  <li><code class="language-plaintext highlighter-rouge">cancelUpload()</code> cancels an ongoing upload.</li>
-  <li><code class="language-plaintext highlighter-rouge">addEventListener(type: string, listener: (event: ExpressRecorderEvent) =&gt; void)</code> allows listening to recorder events.</li>
-  <li><code class="language-plaintext highlighter-rouge">removeEventListener(type: string, callback: (event: ExpressRecorderEvent) =&gt; void)</code> stops listening to recorder events.</li>
+  <li><code class="highlighter-rouge">startRecording()</code> clears existing recording if exists and starts the recording - countdown.</li>
+  <li><code class="highlighter-rouge">stopRecording()</code> stops an ongoing recording.</li>
+  <li><code class="highlighter-rouge">saveCopy()</code> after recording exists, saves a local copy of the recorded media.</li>
+  <li><code class="highlighter-rouge">upload()</code> uploads the latest recording to Kaltura.</li>
+  <li><code class="highlighter-rouge">cancelUpload()</code> cancels an ongoing upload.</li>
+  <li><code class="highlighter-rouge">addEventListener(type: string, listener: (event: ExpressRecorderEvent) =&gt; void)</code> allows listening to recorder events.</li>
+  <li><code class="highlighter-rouge">removeEventListener(type: string, callback: (event: ExpressRecorderEvent) =&gt; void)</code> stops listening to recorder events.</li>
 </ul>
 		
 </article>

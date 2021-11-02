@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/SEO-Syndication-and-Distribution/Working-With-Distribution-Connectors.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/SEO-Syndication-and-Distribution/Working-With-Distribution-Connectors.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Sep 26 22:21:43 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (3 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -131,76 +131,77 @@ rtp('get', 'campaign',true);
     		
 		<p>Kaltura has a <a href="https://knowledge.kaltura.com/help/content-distribution-and-syndication#content-syndication">rich system</a> for integrating with many social networks. The Kaltura API is also capable of extracting data from or editing the distribution system.</p>
 
-<p>As an example, if one of your entries <code class="language-plaintext highlighter-rouge">entryId</code> is already distributed to Youtube and you want to retrieve the id of the content on the Youtube, the following example illustrates how:</p>
+<p>As an example, if one of your entries <code class="highlighter-rouge">entryId</code> is already distributed to Youtube and you want to retrieve the id of the content on the Youtube, the following example illustrates how:</p>
 
-<p>First query <a href="/console/service/distributionProfile/action/list">distributionProfile.list</a> to find the <code class="language-plaintext highlighter-rouge">id</code> of the Youtube distribution profile. Provide this <code class="language-plaintext highlighter-rouge">id</code> to the <code class="language-plaintext highlighter-rouge">distributionProfileIdEqual</code> and filter as well by <code class="language-plaintext highlighter-rouge">entryIdEqual</code>. The result will look like this:</p>
+<p>First query <a href="https://developer.kaltura.com/console/service/distributionProfile/action/list">distributionProfile.list</a> to find the <code class="highlighter-rouge">id</code> of the Youtube distribution profile. Provide this <code class="highlighter-rouge">id</code> to the <code class="highlighter-rouge">distributionProfileIdEqual</code> and filter as well by <code class="highlighter-rouge">entryIdEqual</code>. The result will look like this:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"objects"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="s2">"objects"</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100417113</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1625373489</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1625374788</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"submittedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1625374788</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"entryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_3w9gfolz"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"partnerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3465853</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"distributionProfileId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2917543</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sunStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"thumbAssetIds"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"flavorAssetIds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_uneafeix"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"assetIds"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sunrise"</span><span class="p">:</span><span class="w"> </span><span class="mi">1623029234</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"remoteId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XEwe-9kODZM"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"validationErrors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-      </span><span class="nl">"hasSubmitResultsLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"hasSubmitSentDataLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"hasUpdateResultsLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"hasUpdateSentDataLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"hasDeleteResultsLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"hasDeleteSentDataLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaEntryDistribution"</span><span class="w">
+      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">100417113</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1625373489</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1625374788</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"submittedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1625374788</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"entryId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_3w9gfolz"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"partnerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3465853</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"distributionProfileId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2917543</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sunStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"thumbAssetIds"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"flavorAssetIds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1_uneafeix"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"assetIds"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sunrise"</span><span class="p">:</span><span class="w"> </span><span class="mi">1623029234</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"remoteId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XEwe-9kODZM"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"validationErrors"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nt">"hasSubmitResultsLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"hasSubmitSentDataLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"hasUpdateResultsLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"hasUpdateSentDataLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"hasDeleteResultsLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"hasDeleteSentDataLog"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KalturaEntryDistribution"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
-<p>The <code class="language-plaintext highlighter-rouge">remoteId</code> field will be the Youtube id of the video that has been distributed. Using the youtube convention</p>
+<p>The <code class="highlighter-rouge">remoteId</code> field will be the Youtube id of the video that has been distributed. Using the youtube convention</p>
 
-<p><code class="language-plaintext highlighter-rouge">https://www.youtube.com/watch?v=&lt;entryId&gt;</code></p>
+<p><code class="highlighter-rouge">https://www.youtube.com/watch?v=&lt;entryId&gt;</code></p>
 
-<p>you can subsitute the <code class="language-plaintext highlighter-rouge">remoteId</code> and the video will be playable.</p>
+<p>you can subsitute the <code class="highlighter-rouge">remoteId</code> and the video will be playable.</p>
 
 <p>There are many ways to access the distribution api. Refer to these resources for a complete list:</p>
 
-<p>/console/service/entryDistribution</p>
+<p>https://developer.kaltura.com/console/service/entryDistribution</p>
 
 <ul>
-  <li><a href="/console/service/entryDistribution/action/add">entryDistribution.add</a></li>
-  <li><a href="/console/service/entryDistribution/action/delete">entryDistribution.delete</a></li>
-  <li><a href="/console/service/entryDistribution/action/get">entryDistribution.get</a></li>
-  <li><a href="/console/service/entryDistribution/action/list">entryDistribution.list</a></li>
-  <li><a href="/console/service/entryDistribution/action/retrySubmit">entryDistribution.retrySubmit</a></li>
-  <li><a href="/console/service/entryDistribution/action/serveReturnedData">entryDistribution.serveReturnedData</a></li>
-  <li><a href="/console/service/entryDistribution/action/serveSentData">entryDistribution.serveSentData</a></li>
-  <li><a href="/console/service/entryDistribution/action/submitAdd">entryDistribution.submitAdd</a></li>
-  <li><a href="/console/service/entryDistribution/action/submitDelete">entryDistribution.submitDelete</a></li>
-  <li><a href="/console/service/entryDistribution/action/submitFetchReport">entryDistribution.submitFetchReport</a></li>
-  <li><a href="/console/service/entryDistribution/action/submitUpdate">entryDistribution.submitUpdate</a></li>
-  <li><a href="/console/service/entryDistribution/action/update">entryDistribution.update</a></li>
-  <li><a href="/console/service/entryDistribution/action/validate">entryDistribution.validate</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/add">entryDistribution.add</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/delete">entryDistribution.delete</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/get">entryDistribution.get</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/list">entryDistribution.list</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/retrySubmit">entryDistribution.retrySubmit</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/serveReturnedData">entryDistribution.serveReturnedData</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/serveSentData">entryDistribution.serveSentData</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitAdd">entryDistribution.submitAdd</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitDelete">entryDistribution.submitDelete</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitFetchReport">entryDistribution.submitFetchReport</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/submitUpdate">entryDistribution.submitUpdate</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/update">entryDistribution.update</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/entryDistribution/action/validate">entryDistribution.validate</a></li>
 </ul>
 
-<p>/console/service/distributionProfile</p>
+<p>https://developer.kaltura.com/console/service/distributionProfile</p>
 
 <ul>
-  <li><a href="/console/service/distributionProfile/action/add">distributionProfile.add</a></li>
-  <li><a href="/console/service/distributionProfile/action/delete">distributionProfile.delete</a></li>
-  <li><a href="/console/service/distributionProfile/action/get">distributionProfile.get</a></li>
-  <li><a href="/console/service/distributionProfile/action/list">distributionProfile.list</a></li>
-  <li><a href="/console/service/distributionProfile/action/listByPartner">distributionProfile.listByPartner</a></li>
-  <li><a href="/console/service/distributionProfile/action/update">distributionProfile.update</a></li>
-  <li><a href="/console/service/distributionProfile/action/updateStatus">distributionProfile.updateStatus</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/add">distributionProfile.add</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/delete">distributionProfile.delete</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/get">distributionProfile.get</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/list">distributionProfile.list</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/listByPartner">distributionProfile.listByPartner</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/update">distributionProfile.update</a></li>
+  <li><a href="https://developer.kaltura.com/console/service/distributionProfile/action/updateStatus">distributionProfile.updateStatus</a></li>
 </ul>
 
-<p>/console/service/distributionProvider</p>
+<p>https://developer.kaltura.com/console/service/distributionProvider</p>
 		
 </article>
 

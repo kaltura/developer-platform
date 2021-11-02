@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Analytics-and-Reporting/Common-Analytics-Reports.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Analytics-and-Reporting/Common-Analytics-Reports.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -129,11 +129,11 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>So you want basic insights on how much engagement your entries have been drawing in the last month, like how many times the video has been loaded and then actually played, and when users are likely to drop-off. In the example below, we set the <code class="language-plaintext highlighter-rouge">reportType</code> to Top Content (1), the date range to the entire month of October, and a page size of 20. The result contains a list of entries and their statistics.</p>
+		<p>So you want basic insights on how much engagement your entries have been drawing in the last month, like how many times the video has been loaded and then actually played, and when users are likely to drop-off. In the example below, we set the <code class="highlighter-rouge">reportType</code> to Top Content (1), the date range to the entire month of October, and a page size of 20. The result contains a list of entries and their statistics.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
               </ul>
             </div>
           <div class="highlight example python">
@@ -147,24 +147,6 @@ pager.pageSize = 20
 
 result = client.report.getTable(reportType, reportInputFilter, pager)
 </code></pre>
-          </div>
-          <div class="highlight example java">
-            <pre><code class="java" data-lang="java">ReportType reportType = ReportType.TOP_CONTENT.getValue();
-ReportInputFilter reportInputFilter = new ReportInputFilter();
-
-reportInputFilter.setFromDay(&quot;20181001&quot;);
-reportInputFilter.setToDay(&quot;20181031&quot;);
-FilterPager pager = new FilterPager();
-pager.setPageIndex(1);
-pager.setPageSize(20);
-
-GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager)
-    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
-        @Override
-        public void onComplete(Response&lt;ReportTable&gt; result) {
-            System.out.println(result);
-        }
-});</code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$reportType = KalturaReportType::TOP_CONTENT;
@@ -193,6 +175,24 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order)
     console.log(result);
 });</code></pre>
           </div>
+          <div class="highlight example java">
+            <pre><code class="java" data-lang="java">ReportType reportType = ReportType.TOP_CONTENT.getValue();
+ReportInputFilter reportInputFilter = new ReportInputFilter();
+
+reportInputFilter.setFromDay(&quot;20181001&quot;);
+reportInputFilter.setToDay(&quot;20181031&quot;);
+FilterPager pager = new FilterPager();
+pager.setPageIndex(1);
+pager.setPageSize(20);
+
+GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager)
+    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
+        @Override
+        public void onComplete(Response&lt;ReportTable&gt; result) {
+            System.out.println(result);
+        }
+});</code></pre>
+          </div>
 </div>
 <p> </p>
 
@@ -200,19 +200,15 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order)
 
 <figure class="highlight"><pre><code class="language-csv" data-lang="csv">object_id,entry_name,count_plays,sum_time_viewed,avg_time_viewed,count_loads,load_play_ratio,avg_view_drop_off</code></pre></figure>
 
-<p>Maybe you only want insights for a particular <em>channel</em> in your media. In this case you’d set <code class="language-plaintext highlighter-rouge">categories</code> on the filter to the <em>full name</em> of your category, which can be found in the KMC by hovering over the category name, OR by calling <code class="language-plaintext highlighter-rouge">category.get</code> action with the category ID. The full name of the category usually includes its parent directories.</p>
+<p>Maybe you only want insights for a particular <em>channel</em> in your media. In this case you’d set <code class="highlighter-rouge">categories</code> on the filter to the <em>full name</em> of your category, which can be found in the KMC by hovering over the category name, OR by calling <code class="highlighter-rouge">category.get</code> action with the category ID. The full name of the category usually includes its parent directories.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
               </ul>
             </div>
           <div class="highlight example python">
             <pre><code class="python" data-lang="python">reportInputFilter.categories = &quot;Mediaspace&gt;site&gt;channels&gt;podcasts&quot;
-</code></pre>
-          </div>
-          <div class="highlight example java">
-            <pre><code class="java" data-lang="java">reportInputFilter.setCategories(&quot;Mediaspace&gt;site&gt;channels&gt;podcasts&quot;);
 </code></pre>
           </div>
           <div class="highlight example php">
@@ -221,14 +217,18 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order)
           <div class="highlight example node">
             <pre><code class="node" data-lang="node">reportInputFilter.categories = &quot;Mediaspace&gt;site&gt;channels&gt;podcasts&quot;;</code></pre>
           </div>
+          <div class="highlight example java">
+            <pre><code class="java" data-lang="java">reportInputFilter.setCategories(&quot;Mediaspace&gt;site&gt;channels&gt;podcasts&quot;);
+</code></pre>
+          </div>
 </div>
 <p> </p>
 
-<p>If you set <code class="language-plaintext highlighter-rouge">objectIds</code> as one of the entries from the results, change the reportType to User Engagement (11), and set the filter to an End User filter, you’d get specific user engagement stats on that entry:</p>
+<p>If you set <code class="highlighter-rouge">objectIds</code> as one of the entries from the results, change the reportType to User Engagement (11), and set the filter to an End User filter, you’d get specific user engagement stats on that entry:</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
               </ul>
             </div>
           <div class="highlight example python">
@@ -244,25 +244,6 @@ objectIds = &quot;1_qwerty&quot;
 
 result = client.report.getTable(reportType, reportInputFilter, pager, objectIds)
 </code></pre>
-          </div>
-          <div class="highlight example java">
-            <pre><code class="java" data-lang="java">ReportType reportType = ReportType.USER_ENGAGEMENT.getValue();
-ReportInputFilter reportInputFilter = new EndUserReportInputFilter();
-reportInputFilter.setCategories(&quot;Mediaspace&gt;site&gt;channels&gt;podcasts&quot;);
-reportInputFilter.setFromDay(&quot;20181001&quot;);
-reportInputFilter.setToDay(&quot;20181031&quot;);
-FilterPager pager = new FilterPager();
-pager.setPageIndex(1);
-pager.setPageSize(20);
-String objectIds = &quot;1_qwerty&quot;;
-
-GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager)
-    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
-        @Override
-        public void onComplete(Response&lt;ReportTable&gt; result) {
-            System.out.println(result);
-        }
-    });</code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$reportType = KalturaReportType::USER_ENGAGEMENT;
@@ -295,6 +276,25 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order, ob
     console.log(result);
 });</code></pre>
           </div>
+          <div class="highlight example java">
+            <pre><code class="java" data-lang="java">ReportType reportType = ReportType.USER_ENGAGEMENT.getValue();
+ReportInputFilter reportInputFilter = new EndUserReportInputFilter();
+reportInputFilter.setCategories(&quot;Mediaspace&gt;site&gt;channels&gt;podcasts&quot;);
+reportInputFilter.setFromDay(&quot;20181001&quot;);
+reportInputFilter.setToDay(&quot;20181031&quot;);
+FilterPager pager = new FilterPager();
+pager.setPageIndex(1);
+pager.setPageSize(20);
+String objectIds = &quot;1_qwerty&quot;;
+
+GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager)
+    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
+        @Override
+        public void onComplete(Response&lt;ReportTable&gt; result) {
+            System.out.println(result);
+        }
+    });</code></pre>
+          </div>
 </div>
 <p> </p>
 
@@ -309,11 +309,11 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order, ob
         
       </h2>
 
-<p>Perhaps you’re interested in which employees at the company have contributed the most videos. In the example below, we set the <code class="language-plaintext highlighter-rouge">reportType</code> to Top Contributors (5) and order by the total count.</p>
+<p>Perhaps you’re interested in which employees at the company have contributed the most videos. In the example below, we set the <code class="highlighter-rouge">reportType</code> to Top Contributors (5) and order by the total count.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
               </ul>
             </div>
           <div class="highlight example python">
@@ -328,24 +328,6 @@ order = &quot;count_total&quot;
 
 result = client.report.getTable(reportType, reportInputFilter, pager, order)
 </code></pre>
-          </div>
-          <div class="highlight example java">
-            <pre><code class="java" data-lang="java">ReportType reportType = ReportType.TOP_CONTRIBUTORS.getValue();
-ReportInputFilter reportInputFilter = new ReportInputFilter();
-reportInputFilter.setFromDay(&quot;20181001&quot;);
-reportInputFilter.setToDay(&quot;20181031&quot;);
-FilterPager pager = new FilterPager();
-pager.setPageIndex(1);
-pager.setPageSize(20);
-String order = &quot;count_plays&quot;;
-
-GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager, objectIds)
-    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
-        @Override
-        public void onComplete(Response&lt;ReportTable&gt; result) {
-            System.out.println(result);
-        }
-});</code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$reportType = KalturaReportType::TOP_CONTRIBUTORS;
@@ -375,6 +357,24 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order)
     console.log(result);
 });</code></pre>
           </div>
+          <div class="highlight example java">
+            <pre><code class="java" data-lang="java">ReportType reportType = ReportType.TOP_CONTRIBUTORS.getValue();
+ReportInputFilter reportInputFilter = new ReportInputFilter();
+reportInputFilter.setFromDay(&quot;20181001&quot;);
+reportInputFilter.setToDay(&quot;20181031&quot;);
+FilterPager pager = new FilterPager();
+pager.setPageIndex(1);
+pager.setPageSize(20);
+String order = &quot;count_plays&quot;;
+
+GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager, objectIds)
+    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
+        @Override
+        public void onComplete(Response&lt;ReportTable&gt; result) {
+            System.out.println(result);
+        }
+});</code></pre>
+          </div>
 </div>
 <p> </p>
 
@@ -382,11 +382,11 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order)
 
 <figure class="highlight"><pre><code class="language-csv" data-lang="csv">object_id,name,count_total,count_video,count_audio,count_image,count_mix</code></pre></figure>
 
-<p>You can also get engagement insights by <strong>geographic region</strong>, by changing the <code class="language-plaintext highlighter-rouge">reportType</code> to Map Overlay (4). Setting the <code class="language-plaintext highlighter-rouge">objectIds</code> to one of the regions from the results will break down those insights by city.</p>
+<p>You can also get engagement insights by <strong>geographic region</strong>, by changing the <code class="highlighter-rouge">reportType</code> to Map Overlay (4). Setting the <code class="highlighter-rouge">objectIds</code> to one of the regions from the results will break down those insights by city.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
               </ul>
             </div>
           <div class="highlight example python">
@@ -402,25 +402,6 @@ objectIds = &quot;Germany&quot;
 
 result = client.report.getTable(reportType, reportInputFilter, pager, order, objectIds)
 </code></pre>
-          </div>
-          <div class="highlight example java">
-            <pre><code class="java" data-lang="java">ReportType reportType = ReportType. MAP_OVERLAY.getValue();
-ReportInputFilter reportInputFilter = new ReportInputFilter();
-reportInputFilter.setFromDay(&quot;20181001&quot;);
-reportInputFilter.setToDay(&quot;20181031&quot;);
-FilterPager pager = new FilterPager();
-pager.setPageIndex(1);
-pager.setPageSize(20);
-String order = &quot;count_plays&quot;;
-String objectIds = &quot;Germany&quot;;
-
-GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager, order, objectIds)
-    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
-        @Override
-        public void onComplete(Response&lt;ReportTable&gt; result) {
-            System.out.println(result);
-        }
-});   </code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$reportType = KalturaReportType::MAP_OVERLAY;
@@ -453,13 +434,32 @@ kaltura.services.report.getTable(reportType, reportInputFilter, pager, order, ob
     console.log(result);
 });</code></pre>
           </div>
+          <div class="highlight example java">
+            <pre><code class="java" data-lang="java">ReportType reportType = ReportType. MAP_OVERLAY.getValue();
+ReportInputFilter reportInputFilter = new ReportInputFilter();
+reportInputFilter.setFromDay(&quot;20181001&quot;);
+reportInputFilter.setToDay(&quot;20181031&quot;);
+FilterPager pager = new FilterPager();
+pager.setPageIndex(1);
+pager.setPageSize(20);
+String order = &quot;count_plays&quot;;
+String objectIds = &quot;Germany&quot;;
+
+GetTableReportBuilder requestBuilder = ReportService.getTable(reportType, reportInputFilter, pager, order, objectIds)
+    .setCompletion(new OnCompletion&lt;Response&lt;ReportTable&gt;&gt;() {
+        @Override
+        public void onComplete(Response&lt;ReportTable&gt; result) {
+            System.out.println(result);
+        }
+});   </code></pre>
+          </div>
 </div>
 
 <p>Result header:</p>
 
 <figure class="highlight"><pre><code class="language-csv" data-lang="csv">object_id,location_name,count_plays,count_plays_25,count_plays_50,count_plays_75,count_plays_100,play_through_ratio</code></pre></figure>
 
-<p>As you can see, there are many ways to customize your report based on your business use cases. You can easily try them out using our <a href="/console/service/report/action/getTable">Interactive Console</a> or see what they look like in the <a href="https://kmc.kaltura.com/index.php/kmc/kmc4#analytics\|contentDashboard">KMC</a>.</p>
+<p>As you can see, there are many ways to customize your report based on your business use cases. You can easily try them out using our <a href="https://developer.kaltura.com/console/service/report/action/getTable">Interactive Console</a> or see what they look like in the <a href="https://kmc.kaltura.com/index.php/kmc/kmc4#analytics\|contentDashboard">KMC</a>.</p>
 		
 </article>
 

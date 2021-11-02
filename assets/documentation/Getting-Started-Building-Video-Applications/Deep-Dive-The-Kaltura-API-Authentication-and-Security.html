@@ -108,7 +108,7 @@
       <li>Privileges (edit, download, sview, etc.)</li>
     </ul>
   </li>
-  <li>Compile all fields and URL encode the parameters as a query string, e.g., <code class="language-plaintext highlighter-rouge">_u=userId&amp;_e=12345678&amp;_t=2&amp;Privileges=sview:1_0xada32as;edit:</code></li>
+  <li>Compile all fields and URL encode the parameters as a query string, e.g., <code class="highlighter-rouge">_u=userId&amp;_e=12345678&amp;_t=2&amp;Privileges=sview:1_0xada32as;edit:</code></li>
   <li>Prepend 16 random binary bytes to the fields.</li>
   <li>Prepend the binary SHA1 hash of the string (20 string).</li>
   <li>Encrypt the string with the SHA1 hash of the account’s API secret using AES128/CBC/Zero bytes padding.</li>
@@ -137,7 +137,7 @@
 <blockquote>
   <p>Note: This method is should be preferred in most cases because a) It is easier to remember a user name and password, b) users can be limited to specific roles and permissions (e.g. enabling only upload), and c) users can be deleted, passwords changed or demoted in permissions, while the secret keys can’t be modified easily.</p>
   <ul>
-    <li><strong>Using an Application Token - </strong>This method is described in full in <a href="/Getting-Started-Building-Video-Applications/Application-Tokens.html">Application-Tokens</a></li>
+    <li><strong>Using an Application Token - </strong>This method is described in full in <a href="Application-Tokens.html">this article</a></li>
   </ul>
 </blockquote>
 
@@ -179,7 +179,7 @@
 <p>Examples:</p>
 
 <ul>
-  <li>A <code class="language-plaintext highlighter-rouge">media.list</code> call:</li>
+  <li>A <code class="highlighter-rouge">media.list</code> call:</li>
   <li>With a <em>user</em> session – lists videos owned by the user specified in the KS</li>
   <li>With an <em>admin</em> session – lists all entries in the account that match your filter criteria. The list is not filtered for a specific user (unless you specifically filter by <em>userId</em>).</li>
   <li>An <em>update</em> call: If the user specified in a user session is not the owner of content item, the user does not have permission to update the item. You can override this restriction by specifying special session privileges.</li>
@@ -208,12 +208,12 @@
 
 <p>Session privileges allows applications to limit the user to perform only specific actions. The privileges in the KS, in general, do not block actions but instead limit some actions to a smaller scope.</p>
 
-<p>For example, passing the <code class="language-plaintext highlighter-rouge">sview:{entry ID}</code> enables the KS to be usable for playing a specific entry. Any attempt to use that specific KS to play another entry ID will fail, as long as the entry is protected with KS-restriction access control.</p>
+<p>For example, passing the <code class="highlighter-rouge">sview:{entry ID}</code> enables the KS to be usable for playing a specific entry. Any attempt to use that specific KS to play another entry ID will fail, as long as the entry is protected with KS-restriction access control.</p>
 
 <p>To verify that the KS passed to the player cannot be used for any update actions, you can either:</p>
 
 <ul>
-  <li>Add a <code class="language-plaintext highlighter-rouge">setrole:PLAYBACK\_BASE\_ROLE</code> privilege to it, so that it will not be allowed to perform any action other than a white-list of actions needed for the player (such as baseEntry.get, flavorAsset.list etc.).</li>
+  <li>Add a <code class="highlighter-rouge">setrole:PLAYBACK\_BASE\_ROLE</code> privilege to it, so that it will not be allowed to perform any action other than a white-list of actions needed for the player (such as baseEntry.get, flavorAsset.list etc.).</li>
 </ul>
 
 <p>or</p>
@@ -233,7 +233,7 @@
 
 <p>The key-value pair format is the key followed by the value, separated by a colon: <em>key:value</em></p>
 
-<p>Multiple key-value pairs are separated by commas with no spaces: <em>key:1_value,key:0_value</em>
+<p>Multiple key-value pairs are separated by commas with no spaces: <em>key:1_value,key:0_value</em><br />
 Multiple parameters in a single value are separated by a slash: <em>key:1_value/0_value,key2:another_value</em></p>
 
 <p>Some privileges support a wildcard (<em>) value (for example, </em>edit:**). A wildcard permits the action for any object.</p>
@@ -385,23 +385,26 @@ Multiple parameters in a single value are separated by a slash: <em>key:1_value/
   <p>Important! Never use a KalturaSessionType ADMIN in a KS generated for end users.</p>
 </blockquote>
 
-<p><strong>Allow access to a specific entry ID (limitation is set via the Access Control)</strong><br />
+<p><strong>Allow access to a specific entry ID (limitation is set via the Access Control)</strong>  <br />
 Example: Allow access to entry id 0_iuasd7 (this <a href="http://blog.kaltura.org/create-ks-protected-videos-with-free-preview">blog post</a> shows an example of a use case.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ks = $client-&gt;session-&gt;start ( $userSecret, "myUser", KalturaSessionType::USER, $partnerID , null, "sview:0_iuasd7"
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code> $ks = $client-&gt;session-&gt;start ( $userSecret, "myUser", KalturaSessionType::USER, $partnerID , null, "sview:0_iuasd7"
+</code></pre>
+</div>
 
-<p><strong>Limit the number of actions for a KS</strong><br />
+<p><strong>Limit the number of actions for a KS</strong>  <br />
 Example: Limit the number of actions to four:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ks = $client-&gt;session-&gt;start ( $userSecret, "myUser", KalturaSessionType::USER, $partnerID , null, "actionslimit:4
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ks = $client-&gt;session-&gt;start ( $userSecret, "myUser", KalturaSessionType::USER, $partnerID , null, "actionslimit:4
+</code></pre>
+</div>
 
-<p><strong>Set the role on the KS</strong><br />
+<p><strong>Set the role on the KS</strong>  <br />
 Example: Set the role id 2345 on a KS:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ks = $client-&gt;session-&gt;start ( $userSecret, "myUser", KalturaSessionType::USER, $partnerID , null, "setrole:2345")
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code> $ks = $client-&gt;session-&gt;start ( $userSecret, "myUser", KalturaSessionType::USER, $partnerID , null, "setrole:2345")
+</code></pre>
+</div>
 
 <h2 id="secured-delivery">Secured Delivery</h2>
 
@@ -512,7 +515,7 @@ Example: Set the role id 2345 on a KS:</p>
 
 <h3 id="use-widget-ks-for-anonymous-public-content-playback">Use Widget KS for Anonymous Public Content Playback</h3>
 
-<p>The <code class="language-plaintext highlighter-rouge">session.startWidgetSession</code> provides an anonymous simple and light KS generation mechanism that does not require a secret. This type of session can be used to perform READ operations only and only on content that is defined as publicly available with no Access Control or special permissions.</p>
+<p>The <code class="highlighter-rouge">session.startWidgetSession</code> provides an anonymous simple and light KS generation mechanism that does not require a secret. This type of session can be used to perform READ operations only and only on content that is defined as publicly available with no Access Control or special permissions.</p>
 
 <p>The Widget KS is perfect for cases where public content needs to be accessed freely and without secured authentication. </p>
 

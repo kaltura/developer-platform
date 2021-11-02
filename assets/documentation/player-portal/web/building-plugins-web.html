@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon Jun 22 15:12:18 2020</span>, By <span class="commit-author">Avital Tzubeli</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/building-plugins-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Jun 22 15:12:18 2020</span>, By <span class="commit-author">Avital Tzubeli</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/web/building-plugins-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Jun 22 06:10:47 2020, By: Avital Tzubeli</td></tr-->
 				<!--tr><td>Last commit: Mon Jun 22 15:12:18 2020, By <span class="commit-author">Avital Tzubeli</span></td></tr-->
 			
@@ -142,11 +142,11 @@ rtp('get', 'campaign',true);
 <p>The player core library exposes two main utilities:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">BasePlugin</code> - The class that your plugin will inherit from.</li>
-  <li><code class="language-plaintext highlighter-rouge">registerPlugin</code> - The static player method that will register your plugin in the player registry.</li>
+  <li><code class="highlighter-rouge">BasePlugin</code> - The class that your plugin will inherit from.</li>
+  <li><code class="highlighter-rouge">registerPlugin</code> - The static player method that will register your plugin in the player registry.</li>
 </ul>
 
-<p>Lets take a look at the <code class="language-plaintext highlighter-rouge">BasePlugin</code> API.</p>
+<p>Lets take a look at the <code class="highlighter-rouge">BasePlugin</code> API.</p>
       <h2 id="base-plugin-api">
         
         
@@ -160,7 +160,7 @@ rtp('get', 'campaign',true);
       <h4 id="constructorname-player-config">
         
         
-          <code class="language-plaintext highlighter-rouge">constructor(name, player, config)</code> <a href="#constructorname-player-config"></a>
+          <code class="highlighter-rouge">constructor(name, player, config)</code> <a href="#constructorname-player-config"></a>
         
         
       </h4>
@@ -178,18 +178,18 @@ rtp('get', 'campaign',true);
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">name</code></td>
-      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
       <td>Plugin name</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">player</code></td>
-      <td><code class="language-plaintext highlighter-rouge">playkit.core.Player</code></td>
+      <td><code class="highlighter-rouge">player</code></td>
+      <td><code class="highlighter-rouge">playkit.core.Player</code></td>
       <td>Player instance</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">config</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Object</code></td>
+      <td><code class="highlighter-rouge">config</code></td>
+      <td><code class="highlighter-rouge">Object</code></td>
       <td>Plugin config</td>
     </tr>
   </tbody>
@@ -210,52 +210,52 @@ rtp('get', 'campaign',true);
       <h4 id="config">
         
         
-          <code class="language-plaintext highlighter-rouge">config</code> <a href="#config"></a>
+          <code class="highlighter-rouge">config</code> <a href="#config"></a>
         
         
       </h4>
 
-  <p>Type: <code class="language-plaintext highlighter-rouge">Object</code> - The runtime plugin config.</p>
+  <p>Type: <code class="highlighter-rouge">Object</code> - The runtime plugin config.</p>
     
       <h4 id="player">
         
         
-          <code class="language-plaintext highlighter-rouge">player</code> <a href="#player"></a>
+          <code class="highlighter-rouge">player</code> <a href="#player"></a>
         
         
       </h4>
 
-  <p>Type: <code class="language-plaintext highlighter-rouge">playkit.core.Player</code> - The player instance.</p>
+  <p>Type: <code class="highlighter-rouge">playkit.core.Player</code> - The player instance.</p>
     
       <h4 id="name">
         
         
-          <code class="language-plaintext highlighter-rouge">name</code> <a href="#name"></a>
+          <code class="highlighter-rouge">name</code> <a href="#name"></a>
         
         
       </h4>
 
-  <p>Type: <code class="language-plaintext highlighter-rouge">string</code> - The plugin registry name.</p>
+  <p>Type: <code class="highlighter-rouge">string</code> - The plugin registry name.</p>
     
       <h4 id="logger">
         
         
-          <code class="language-plaintext highlighter-rouge">logger</code> <a href="#logger"></a>
+          <code class="highlighter-rouge">logger</code> <a href="#logger"></a>
         
         
       </h4>
 
-  <p>Type: <code class="language-plaintext highlighter-rouge">playkit.core.Logger</code> - The logger of the plugin.</p>
+  <p>Type: <code class="highlighter-rouge">playkit.core.Logger</code> - The logger of the plugin.</p>
     
       <h4 id="eventmanager">
         
         
-          <code class="language-plaintext highlighter-rouge">eventManager</code> <a href="#eventmanager"></a>
+          <code class="highlighter-rouge">eventManager</code> <a href="#eventmanager"></a>
         
         
       </h4>
 
-  <p>Type: <code class="language-plaintext highlighter-rouge">playkit.core.EventManager</code> - The plugin event manager.</p>
+  <p>Type: <code class="highlighter-rouge">playkit.core.EventManager</code> - The plugin event manager.</p>
 </blockquote>
 
 <p>#</p>
@@ -273,12 +273,12 @@ rtp('get', 'campaign',true);
       <h4 id="static-defaultconfig">
         
         
-          <code class="language-plaintext highlighter-rouge">(static) defaultConfig</code> <a href="#static-defaultconfig"></a>
+          <code class="highlighter-rouge">(static) defaultConfig</code> <a href="#static-defaultconfig"></a>
         
         
       </h4>
 
-  <p>Type: <code class="language-plaintext highlighter-rouge">Object</code> - The default plugin config.</p>
+  <p>Type: <code class="highlighter-rouge">Object</code> - The default plugin config.</p>
 </blockquote>
 
 <p>#</p>
@@ -296,7 +296,7 @@ rtp('get', 'campaign',true);
       <h4 id="getconfigattr">
         
         
-          <code class="language-plaintext highlighter-rouge">getConfig(attr)</code> <a href="#getconfigattr"></a>
+          <code class="highlighter-rouge">getConfig(attr)</code> <a href="#getconfigattr"></a>
         
         
       </h4>
@@ -314,21 +314,21 @@ rtp('get', 'campaign',true);
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">attr</code></td>
-      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td><code class="highlighter-rouge">attr</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
       <td>config key (optional)</td>
     </tr>
   </tbody>
 </table>
 
-<p>Returns: <code class="language-plaintext highlighter-rouge">any</code> - If an attribute is provided, returns the value of the config attribute. If not, returns the plugin config.</p>
+<p>Returns: <code class="highlighter-rouge">any</code> - If an attribute is provided, returns the value of the config attribute. If not, returns the plugin config.</p>
 
 <blockquote>
     
       <h4 id="updateconfigupdate">
         
         
-          <code class="language-plaintext highlighter-rouge">updateConfig(update)</code> <a href="#updateconfigupdate"></a>
+          <code class="highlighter-rouge">updateConfig(update)</code> <a href="#updateconfigupdate"></a>
         
         
       </h4>
@@ -346,26 +346,26 @@ rtp('get', 'campaign',true);
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">update</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Object</code></td>
+      <td><code class="highlighter-rouge">update</code></td>
+      <td><code class="highlighter-rouge">Object</code></td>
       <td>New full or partial config</td>
     </tr>
   </tbody>
 </table>
 
-<p>Returns: <code class="language-plaintext highlighter-rouge">void</code> - Merges the update config with the existing config.</p>
+<p>Returns: <code class="highlighter-rouge">void</code> - Merges the update config with the existing config.</p>
 
 <blockquote>
     
       <h4 id="getname">
         
         
-          <code class="language-plaintext highlighter-rouge">getName()</code> <a href="#getname"></a>
+          <code class="highlighter-rouge">getName()</code> <a href="#getname"></a>
         
         
       </h4>
 
-  <p>Returns: <code class="language-plaintext highlighter-rouge">string</code> - The plugin name.</p>
+  <p>Returns: <code class="highlighter-rouge">string</code> - The plugin name.</p>
 </blockquote>
 
 <blockquote>
@@ -373,7 +373,7 @@ rtp('get', 'campaign',true);
       <h4 id="dispatcheventname-payload">
         
         
-          <code class="language-plaintext highlighter-rouge">dispatchEvent(name, payload)</code> <a href="#dispatcheventname-payload"></a>
+          <code class="highlighter-rouge">dispatchEvent(name, payload)</code> <a href="#dispatcheventname-payload"></a>
         
         
       </h4>
@@ -391,19 +391,19 @@ rtp('get', 'campaign',true);
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">name</code></td>
-      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td><code class="highlighter-rouge">name</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
       <td>The event name</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">payload</code></td>
-      <td><code class="language-plaintext highlighter-rouge">Object</code></td>
+      <td><code class="highlighter-rouge">payload</code></td>
+      <td><code class="highlighter-rouge">Object</code></td>
       <td>The event payload object</td>
     </tr>
   </tbody>
 </table>
 
-<p>Returns: <code class="language-plaintext highlighter-rouge">void</code> - Dispatches an event from the player.</p>
+<p>Returns: <code class="highlighter-rouge">void</code> - Dispatches an event from the player.</p>
 
 <p>#</p>
     
@@ -420,7 +420,7 @@ rtp('get', 'campaign',true);
       <h4 id="static-isvalidplayer">
         
         
-          <code class="language-plaintext highlighter-rouge">(static) isValid(player)</code> <a href="#static-isvalidplayer"></a>
+          <code class="highlighter-rouge">(static) isValid(player)</code> <a href="#static-isvalidplayer"></a>
         
         
       </h4>
@@ -438,42 +438,44 @@ rtp('get', 'campaign',true);
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">player</code></td>
-      <td><code class="language-plaintext highlighter-rouge">playkit.core.Player</code></td>
+      <td><code class="highlighter-rouge">player</code></td>
+      <td><code class="highlighter-rouge">playkit.core.Player</code></td>
       <td>Player instance</td>
     </tr>
   </tbody>
 </table>
 
-<p>Returns: <code class="language-plaintext highlighter-rouge">boolean</code> - Whether the plugin is valid or not.</p>
+<p>Returns: <code class="highlighter-rouge">boolean</code> - Whether the plugin is valid or not.</p>
 
 <p>You can help the player instance API with your decision logic. For example, if you want to enable your plugin on a Chrome browser only, you can simply implement the following:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Plain JavaScript</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// Plain JavaScript</span>
 <span class="nx">MyPlugin</span><span class="p">.</span><span class="nx">isValid</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">player</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">Chrome</span><span class="dl">'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">player</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">'Chrome'</span><span class="p">;</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ES6</span>
-<span class="kd">class</span> <span class="nx">MyPlugin</span> <span class="kd">extends</span> <span class="nx">BasePlugin</span> <span class="p">{</span>
-  <span class="kd">static</span> <span class="nx">isValid</span><span class="p">(</span><span class="nx">player</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">player</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">Chrome</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// ES6</span>
+<span class="kr">class</span> <span class="nx">MyPlugin</span> <span class="kr">extends</span> <span class="nx">BasePlugin</span> <span class="p">{</span>
+  <span class="kr">static</span> <span class="nx">isValid</span><span class="p">(</span><span class="nx">player</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">player</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">browser</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="s1">'Chrome'</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
     
       <h4 id="destroy">
         
         
-          <code class="language-plaintext highlighter-rouge">destroy()</code> <a href="#destroy"></a>
+          <code class="highlighter-rouge">destroy()</code> <a href="#destroy"></a>
         
         
       </h4>
 
-  <p>Returns: <code class="language-plaintext highlighter-rouge">void</code> - Runs the plugin destroy logic.</p>
+  <p>Returns: <code class="highlighter-rouge">void</code> - Runs the plugin destroy logic.</p>
 </blockquote>
 
 <p>The player will call this method before destroying itself.</p>
@@ -483,19 +485,19 @@ rtp('get', 'campaign',true);
       <h4 id="reset">
         
         
-          <code class="language-plaintext highlighter-rouge">reset()</code> <a href="#reset"></a>
+          <code class="highlighter-rouge">reset()</code> <a href="#reset"></a>
         
         
       </h4>
 
-  <p>Returns: <code class="language-plaintext highlighter-rouge">void</code> - Runs the plugin reset logic.</p>
+  <p>Returns: <code class="highlighter-rouge">void</code> - Runs the plugin reset logic.</p>
 </blockquote>
 
 <p>The player will call this method before changing media.</p>
 
 <p>#</p>
 
-<p>Now, lets take a look at the <code class="language-plaintext highlighter-rouge">registerPlugin</code> API.</p>
+<p>Now, lets take a look at the <code class="highlighter-rouge">registerPlugin</code> API.</p>
     
       <h2 id="register-plugin-api">
         
@@ -510,7 +512,7 @@ rtp('get', 'campaign',true);
       <h4 id="registerpluginpluginname-pluginclass">
         
         
-          <code class="language-plaintext highlighter-rouge">registerPlugin(pluginName, pluginClass)</code> <a href="#registerpluginpluginname-pluginclass"></a>
+          <code class="highlighter-rouge">registerPlugin(pluginName, pluginClass)</code> <a href="#registerpluginpluginname-pluginclass"></a>
         
         
       </h4>
@@ -528,13 +530,13 @@ rtp('get', 'campaign',true);
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">pluginName</code></td>
-      <td><code class="language-plaintext highlighter-rouge">string</code></td>
+      <td><code class="highlighter-rouge">pluginName</code></td>
+      <td><code class="highlighter-rouge">string</code></td>
       <td>The plugin name</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">pluginClass</code></td>
-      <td><code class="language-plaintext highlighter-rouge">playkit.core.BasePlugin</code></td>
+      <td><code class="highlighter-rouge">pluginClass</code></td>
+      <td><code class="highlighter-rouge">playkit.core.BasePlugin</code></td>
       <td>The plugin class</td>
     </tr>
   </tbody>
@@ -553,7 +555,7 @@ rtp('get', 'campaign',true);
 <p>We’ll use both Vanilla JavaScript &amp; ES6 examples.</p>
 
 <blockquote>
-  <p>Note: If you’re using ES6 already, you can use that syntax with your transpiler/language of choice (<code class="language-plaintext highlighter-rouge">Babel</code>, <code class="language-plaintext highlighter-rouge">TypeScript</code>, <code class="language-plaintext highlighter-rouge">Flow</code>, etc).</p>
+  <p>Note: If you’re using ES6 already, you can use that syntax with your transpiler/language of choice (<code class="highlighter-rouge">Babel</code>, <code class="highlighter-rouge">TypeScript</code>, <code class="highlighter-rouge">Flow</code>, etc).</p>
 </blockquote>
     
       <h2 id="step-1-import-the-player-library">
@@ -566,7 +568,7 @@ rtp('get', 'campaign',true);
 
 <p>1 . In your <strong><em>index.html</em></strong> file, include a path to the player script:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
@@ -574,11 +576,12 @@ rtp('get', 'campaign',true);
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"PATH/TO/PLAYER/LIB/FILENAME.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>2 . Create a new file called <strong><code class="language-plaintext highlighter-rouge">my-plugin.js</code></strong> and include it in your <code class="language-plaintext highlighter-rouge">index.html</code>:</p>
+<p>2 . Create a new file called <strong><code class="highlighter-rouge">my-plugin.js</code></strong> and include it in your <code class="highlighter-rouge">index.html</code>:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
@@ -589,7 +592,8 @@ rtp('get', 'campaign',true);
 <span class="nt">&lt;body&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="step-2-create-your-plugin-class">
         
@@ -599,7 +603,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>1 . In <strong><code class="language-plaintext highlighter-rouge">my-plugin.js</code></strong>, define the plugin class:</p>
+<p>1 . In <strong><code class="highlighter-rouge">my-plugin.js</code></strong>, define the plugin class:</p>
     
       <h3 id="plain-javascript">
         
@@ -609,8 +613,9 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{};</span>
-</code></pre></div></div>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{};</span>
+</code></pre>
+</div>
     
       <h3 id="es6">
         
@@ -620,12 +625,13 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyPlugin</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">MyPlugin</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>2 . Next, and add the code that will inherit from <code class="language-plaintext highlighter-rouge">BasePlugin</code>:</p>
+<p>2 . Next, and add the code that will inherit from <code class="highlighter-rouge">BasePlugin</code>:</p>
     
       <h3 id="plain-javascript-1">
         
@@ -635,14 +641,15 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
 <span class="p">};</span>
 
 <span class="nx">MyPlugin</span><span class="p">.</span><span class="nx">createPlugin</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span><span class="p">.</span><span class="nx">createPlugin</span><span class="p">;</span>
 
 <span class="nx">MyPlugin</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span><span class="p">();</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="es6-1">
         
@@ -652,22 +659,23 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyPlugin</span> <span class="kd">extends</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">MyPlugin</span> <span class="k">extends</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="step-3-override-the-baseplugin-methods">
         
         
-          Step 3: Override the <code class="language-plaintext highlighter-rouge">BasePlugin</code> Methods <a href="#step-3-override-the-baseplugin-methods"></a>
+          Step 3: Override the <code class="highlighter-rouge">BasePlugin</code> Methods <a href="#step-3-override-the-baseplugin-methods"></a>
         
         
       </h2>
 
-<p>In <strong><code class="language-plaintext highlighter-rouge">my-plugin.js</code></strong>, add the necessary methods and properties to override as explained above:</p>
+<p>In <strong><code class="highlighter-rouge">my-plugin.js</code></strong>, add the necessary methods and properties to override as explained above:</p>
     
       <h3 id="plain-javascript-2">
         
@@ -677,7 +685,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
 <span class="p">};</span>
 
@@ -692,7 +700,8 @@ rtp('get', 'campaign',true);
 <span class="nx">MyPlugin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">destroy</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
 
 <span class="nx">MyPlugin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{};</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="es6-2">
         
@@ -702,7 +711,7 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyPlugin</span> <span class="kd">extends</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">MyPlugin</span> <span class="k">extends</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span> <span class="p">{</span>
   <span class="k">static</span> <span class="nx">defaultConfig</span> <span class="o">=</span> <span class="p">{};</span>
 
   <span class="k">static</span> <span class="nx">isValid</span><span class="p">(</span><span class="nx">player</span><span class="p">)</span> <span class="p">{}</span>
@@ -715,7 +724,8 @@ rtp('get', 'campaign',true);
 
   <span class="nx">reset</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="step-4-fill-in-simple-implementations">
         
@@ -735,9 +745,9 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">MyPlugin</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello from </span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> plugin constructor!</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">'Hello from '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">' plugin constructor!'</span><span class="p">);</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">myValue</span><span class="p">];</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">_addBindings</span><span class="p">();</span>
 <span class="p">};</span>
@@ -755,12 +765,12 @@ rtp('get', 'campaign',true);
 <span class="p">};</span>
 
 <span class="nx">MyPlugin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">destroy</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Empty collection</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">'Empty collection'</span><span class="p">);</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span> <span class="o">=</span> <span class="p">[];</span>
 <span class="p">};</span>
 
 <span class="nx">MyPlugin</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Reset collection</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">'Reset collection'</span><span class="p">);</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">myValue</span><span class="p">];</span>
 <span class="p">};</span>
 
@@ -769,13 +779,14 @@ rtp('get', 'campaign',true);
     <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">,</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">SEEKED</span><span class="p">,</span>
     <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> Added to my collection</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">+</span> <span class="s1">' Added to my collection'</span><span class="p">);</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="dl">'</span><span class="s1">collectionUpdate</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">collection</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span><span class="p">});</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="s1">'collectionUpdate'</span><span class="p">,</span> <span class="p">{</span><span class="na">collection</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span><span class="p">});</span>
     <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
   <span class="p">);</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="es6-3">
         
@@ -785,43 +796,44 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MyPlugin</span> <span class="kd">extends</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><pre class="highlight"><code><span class="kr">class</span> <span class="nx">MyPlugin</span> <span class="k">extends</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">BasePlugin</span> <span class="p">{</span>
   <span class="nx">_myCollection</span><span class="p">;</span>
 
   <span class="k">static</span> <span class="nx">defaultConfig</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">myValue</span><span class="p">:</span> <span class="mi">1</span>
   <span class="p">};</span>
 
-  <span class="k">static</span> <span class="nx">isValid</span><span class="p">(</span><span class="nx">player</span><span class="p">):</span> <span class="nx">boolean</span> <span class="p">{</span>
+  <span class="k">static</span> <span class="nx">isValid</span><span class="p">(</span><span class="nx">player</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
   <span class="p">}</span>
 
   <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">player</span><span class="p">,</span> <span class="nx">config</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Hello from </span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> plugin constructor!</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">'Hello from '</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">' plugin constructor!'</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">myValue</span><span class="p">];</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_addBindings</span><span class="p">();</span>
   <span class="p">}</span>
 
   <span class="nx">destroy</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Empty collection</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">'Empty collection'</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span> <span class="o">=</span> <span class="p">[];</span>
   <span class="p">}</span>
 
   <span class="nx">reset</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="dl">'</span><span class="s1">Reset collection</span><span class="dl">'</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="s1">'Reset collection'</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span> <span class="o">=</span> <span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">myValue</span><span class="p">];</span>
   <span class="p">}</span>
 
   <span class="nx">_addBindings</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">eventManager</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">SEEKED</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> Added to my collection</span><span class="dl">'</span><span class="p">);</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">currentTime</span> <span class="o">+</span> <span class="s1">' Added to my collection'</span><span class="p">);</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">player</span><span class="p">.</span><span class="nx">currentTime</span><span class="p">);</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="dl">'</span><span class="s1">collectionUpdate</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">collection</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span><span class="p">});</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">dispatchEvent</span><span class="p">(</span><span class="s1">'collectionUpdate'</span><span class="p">,</span> <span class="p">{</span><span class="na">collection</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_myCollection</span><span class="p">});</span>
     <span class="p">});</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="step-5-register-your-plugin">
         
@@ -831,9 +843,9 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>Use the factory <code class="language-plaintext highlighter-rouge">registerPlugin</code> method to register your plugin in the player framework:</p>
+<p>Use the factory <code class="highlighter-rouge">registerPlugin</code> method to register your plugin in the player framework:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
@@ -843,11 +855,12 @@ rtp('get', 'campaign',true);
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-	<span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">registerPlugin</span><span class="p">(</span><span class="dl">"</span><span class="s2">myPlugin</span><span class="dl">"</span><span class="p">,</span> <span class="nx">MyPlugin</span><span class="p">);</span>
+	<span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">registerPlugin</span><span class="p">(</span><span class="s2">"myPlugin"</span><span class="p">,</span> <span class="nx">MyPlugin</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="step-6-configure-your-plugin">
         
@@ -861,29 +874,31 @@ rtp('get', 'campaign',true);
 
 <p>Include the new plugin name and plugin configuration in the player configuration. For example:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">plugins</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">myPlugin</span><span class="p">:</span> <span class="p">{</span>
       <span class="na">myValue</span><span class="p">:</span> <span class="mi">10</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Let’s expand our test page and add a placeholder div to the player:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"player-div"</span> <span class="na">style=</span><span class="s">"width: 360px; height: 640px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
-</code></pre></div></div>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"player-div"</span> <span class="na">style=</span><span class="s">"width: 360px; height: 640px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre>
+</div>
 
 <p>A basic player configuration:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">log</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">level</span><span class="p">:</span> <span class="dl">'</span><span class="s1">DEBUG</span><span class="dl">'</span>
+    <span class="na">level</span><span class="p">:</span> <span class="s1">'DEBUG'</span>
   <span class="p">},</span>
-  <span class="na">targetId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">player-div</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">targetId</span><span class="p">:</span> <span class="s1">'player-div'</span><span class="p">,</span>
   <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">partnerId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_PARTNER_ID</span><span class="dl">'</span>
+    <span class="na">partnerId</span><span class="p">:</span> <span class="s1">'YOUR_PARTNER_ID'</span>
   <span class="p">},</span>
   <span class="na">plugins</span><span class="p">:</span> <span class="p">{</span>
     <span class="na">myPlugin</span><span class="p">:</span> <span class="p">{</span>
@@ -891,20 +906,22 @@ rtp('get', 'campaign',true);
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>And setup code:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mediaInfo</span> <span class="o">=</span> <span class="p">{</span><span class="na">entryId</span><span class="p">:</span> <span class="dl">'</span><span class="s1">YOUR_ENTRY_ID</span><span class="dl">'</span><span class="p">};</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">mediaInfo</span> <span class="o">=</span> <span class="p">{</span><span class="na">entryId</span><span class="p">:</span> <span class="s1">'YOUR_ENTRY_ID'</span><span class="p">};</span>
 <span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 <span class="nx">player</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">(</span><span class="nx">mediaInfo</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">player</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Plug everything together and you’ll get:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
@@ -914,15 +931,15 @@ rtp('get', 'campaign',true);
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-<span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">registerPlugin</span><span class="p">(</span><span class="dl">"</span><span class="s2">myPlugin</span><span class="dl">"</span><span class="p">,</span> <span class="nx">MyPlugin</span><span class="p">);</span>
+<span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">registerPlugin</span><span class="p">(</span><span class="s2">"myPlugin"</span><span class="p">,</span> <span class="nx">MyPlugin</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">log</span><span class="p">:{</span>
-      <span class="na">level</span><span class="p">:</span> <span class="dl">'</span><span class="s1">DEBUG</span><span class="dl">'</span>
+      <span class="na">level</span><span class="p">:</span> <span class="s1">'DEBUG'</span>
     <span class="p">},</span>
-    <span class="na">targetId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">player-div</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">targetId</span><span class="p">:</span> <span class="s2">"player-div"</span><span class="p">,</span>
     <span class="na">provider</span><span class="p">:</span> <span class="p">{</span>
-        <span class="na">partnerId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_PARTNER_ID</span><span class="dl">"</span>
+        <span class="na">partnerId</span><span class="p">:</span> <span class="s2">"YOUR_PARTNER_ID"</span>
     <span class="p">},</span>
     <span class="na">plugins</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">myPlugin</span><span class="p">:</span> <span class="p">{</span>
@@ -931,7 +948,7 @@ rtp('get', 'campaign',true);
     <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="kd">var</span> <span class="nx">mediaInfo</span> <span class="o">=</span> <span class="p">{</span><span class="na">entryId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YOUR_ENTRY_ID</span><span class="dl">"</span><span class="p">};</span>
+<span class="kd">var</span> <span class="nx">mediaInfo</span> <span class="o">=</span> <span class="p">{</span><span class="na">entryId</span><span class="p">:</span> <span class="s2">"YOUR_ENTRY_ID"</span><span class="p">};</span>
 <span class="kd">var</span> <span class="nx">player</span> <span class="o">=</span> <span class="nx">KalturaPlayer</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="nx">config</span><span class="p">);</span>
 <span class="nx">player</span><span class="p">.</span><span class="nx">loadMedia</span><span class="p">(</span><span class="nx">mediaInfo</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="nx">player</span><span class="p">.</span><span class="nx">play</span><span class="p">();</span>
@@ -939,7 +956,8 @@ rtp('get', 'campaign',true);
 <span class="nt">&lt;/script&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><strong>That’s it! the player starts to play and your plugin is activated.</strong></p>
     
@@ -951,8 +969,8 @@ rtp('get', 'campaign',true);
         
       </h1>
 
-<p>An advanced plugin is one that is built as a self project and handles a version, tests, documentation, dev scripts and so on.
-All of the options described above can be achieved by using the <code class="language-plaintext highlighter-rouge">PlayKit JS Plugin Generator</code> tool.
+<p>An advanced plugin is one that is built as a self project and handles a version, tests, documentation, dev scripts and so on.<br />
+All of the options described above can be achieved by using the <code class="highlighter-rouge">PlayKit JS Plugin Generator</code> tool.<br />
 <br />Read <a href="https://github.com/kaltura/playkit-js-plugin-generator">here</a> to learn more.</p>
 		
 </article>

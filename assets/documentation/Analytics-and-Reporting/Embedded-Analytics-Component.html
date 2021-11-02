@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Analytics-and-Reporting/Embedded-Analytics-Component.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Sep 28 06:22:06 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Analytics-and-Reporting/Embedded-Analytics-Component.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Sep 28 06:22:06 2021, By: Hunterpp</td></tr-->
 				<!--tr><td>Last commit: Tue Sep 28 06:22:06 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
@@ -179,10 +179,11 @@ rtp('get', 'campaign',true);
         
       </h1>
 
-<p>While this example is built in node.js, 99% of the code is in html/javascript and can be easily ported to any language of your choice. Be sure to pay careful attention to the <code class="language-plaintext highlighter-rouge">privileges</code> field supplied to the kaltura session in <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/routes/index.js">routes/index.js</a></p>
+<p>While this example is built in node.js, 99% of the code is in html/javascript and can be easily ported to any language of your choice. Be sure to pay careful attention to the <code class="highlighter-rouge">privileges</code> field supplied to the kaltura session in <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/routes/index.js">routes/index.js</a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> var privileges = 'appid:'+appName+'-'+appDomain+',setrole:KMC_ANALYTICS_ROLE';
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code> var privileges = 'appid:'+appName+'-'+appDomain+',setrole:KMC_ANALYTICS_ROLE';
+</code></pre>
+</div>
     
       <h2 id="minimal-example">
         
@@ -192,16 +193,17 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/minimal.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/minimal.ejs">Source Code</a> |
+<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/minimal.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/minimal.ejs">Source Code</a> |<br />
 | ———————————————————— | ———————————————————— |</p>
 
-<p>This minimal example is the quickest way to integrate the analytics widget into your application. By default, the last 30 days are displayed by calling the <code class="language-plaintext highlighter-rouge">updateFilters</code> API call after the <code class="language-plaintext highlighter-rouge">analyticsInitComplete</code> event is fired by the host:</p>
+<p>This minimal example is the quickest way to integrate the analytics widget into your application. By default, the last 30 days are displayed by calling the <code class="highlighter-rouge">updateFilters</code> API call after the <code class="highlighter-rouge">analyticsInitComplete</code> event is fired by the host:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          case 'analyticsInitComplete':
+<div class="highlighter-rouge"><pre class="highlight"><code>          case 'analyticsInitComplete':
             sendMessage({ messageType: 'navigate', payload: { url: '/audience/engagement' } });
             sendMessage({ messageType: 'updateFilters', payload: { queryParams: { dateBy: 'last30days' } } });
             break;
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="single-content-entry-example">
         
@@ -211,18 +213,19 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/singleEntry.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/singleEntry.ejs">Source Code</a> |
+<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/singleEntry.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/singleEntry.ejs">Source Code</a> |<br />
 | ———————————————————— | ———————————————————— |</p>
 
 <p>The analytics widget is built to drill down to specific content entries. This example gets analytics for a single video entry:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          case 'analyticsInitComplete':
+<div class="highlighter-rouge"><pre class="highlight"><code>          case 'analyticsInitComplete':
             sendMessage({ messageType: 'navigate', payload: { url: '/entry/&lt;%=process.env.ENTRY_ID%&gt;' } });
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>where <code class="language-plaintext highlighter-rouge">process.env.ENTRY_ID</code> is an entryId you will supply in .env</p>
+<p>where <code class="highlighter-rouge">process.env.ENTRY_ID</code> is an entryId you will supply in .env</p>
 
-<p>The following detail screens are available and can be supplied to the <code class="language-plaintext highlighter-rouge">url</code> field of <code class="language-plaintext highlighter-rouge">payload</code> as shown above</p>
+<p>The following detail screens are available and can be supplied to the <code class="highlighter-rouge">url</code> field of <code class="highlighter-rouge">payload</code> as shown above</p>
 
 <table>
   <thead>
@@ -251,13 +254,14 @@ rtp('get', 'campaign',true);
   </tbody>
 </table>
 
-<p>The <code class="language-plaintext highlighter-rouge">navigateBack</code> event is used to specify the url the user is sent to when the widget’s back button is pressed</p>
+<p>The <code class="highlighter-rouge">navigateBack</code> event is used to specify the url the user is sent to when the widget’s back button is pressed</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          case 'navigateBack':
+<div class="highlighter-rouge"><pre class="highlight"><code>          case 'navigateBack':
             //handle this as needed in your deployment
             window.location="/";
             break;
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="single-view-example">
         
@@ -267,36 +271,39 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/singleView.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/singleView.ejs">Source Code</a> |
+<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/singleView.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/singleView.ejs">Source Code</a> |<br />
 | ———————————————————— | ———————————————————— |</p>
 
 <p>It is possible to provide only a specific view from the full menu. First, the menu is hidden:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;script&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>  &lt;script&gt;
     var config = {
   		...
       menuConfig: {
         showMenu: false
       },
     };
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>Next when <code class="language-plaintext highlighter-rouge">analyticsInitComplete</code> the url of <code class="language-plaintext highlighter-rouge">audience/engagement</code> is supplied as the <code class="language-plaintext highlighter-rouge">payload</code> for the <code class="language-plaintext highlighter-rouge">navigate</code> message.</p>
+<p>Next when <code class="highlighter-rouge">analyticsInitComplete</code> the url of <code class="highlighter-rouge">audience/engagement</code> is supplied as the <code class="highlighter-rouge">payload</code> for the <code class="highlighter-rouge">navigate</code> message.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> case 'analyticsInitComplete':
+<div class="highlighter-rouge"><pre class="highlight"><code> case 'analyticsInitComplete':
             sendMessage({ messageType: 'navigate', payload: { url: 'audience/engagement' } });
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Here is the full list of view urls that are available, these map exactly to the main menu from the first example and they can also be found if you inspect the <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/singleView.ejs#L52">menusConfig</a> object in a javascript debugger:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>								audience/engagement
+<div class="highlighter-rouge"><pre class="highlight"><code>								audience/engagement
                 audience/content-interactions
                 audience/technology
                 audience/geo-location
                 bandwidth/publisher
                 bandwidth/end-user
                 live
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="customize-the-ui">
         
@@ -306,19 +313,20 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/selective.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/selective.ejs">Source Code</a> |
+<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/selective.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/selective.ejs">Source Code</a> |<br />
 | ———————————————————— | ———————————————————— |</p>
 
 <p>More control over the UI is also available over nearly any element in the widget. Simply set a value from the <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/singleView.ejs#L52">viewsConfig</a> to null and it will not be displayed. The full viewsConfig is listed <a href="https://github.com/kaltura-vpaas/embeddable_analytics#viewsConfig-Object">below</a></p>
 
-<p>The view for this example will be <code class="language-plaintext highlighter-rouge">/audience/engagement</code></p>
+<p>The view for this example will be <code class="highlighter-rouge">/audience/engagement</code></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sendMessage({ messageType: 'navigate', payload: { url: '/audience/engagement' } });
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>sendMessage({ messageType: 'navigate', payload: { url: '/audience/engagement' } });
+</code></pre>
+</div>
 
-<p>And if you refer to the <code class="language-plaintext highlighter-rouge">engagement </code>key of <code class="language-plaintext highlighter-rouge">audience</code> in the <code class="language-plaintext highlighter-rouge">viewsConfig</code> object:</p>
+<p>And if you refer to the <code class="highlighter-rouge">engagement </code>key of <code class="highlighter-rouge">audience</code> in the <code class="highlighter-rouge">viewsConfig</code> object:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    "audience": {
+<div class="highlighter-rouge"><pre class="highlight"><code>    "audience": {
         "engagement": {
             "export": {},
             "refineFilter": {
@@ -337,11 +345,12 @@ rtp('get', 'campaign',true);
             "impressions": {},
             "syndication": {}
         },
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>You will see a complete list of all the elements to be displayed. The goal is to only show the <code class="language-plaintext highlighter-rouge">syndication</code> element, which is displayed as Top Domains in the widget. All of the views except for <code class="language-plaintext highlighter-rouge">syndication</code> are set to null and therefore they will be hidden:</p>
+<p>You will see a complete list of all the elements to be displayed. The goal is to only show the <code class="highlighter-rouge">syndication</code> element, which is displayed as Top Domains in the widget. All of the views except for <code class="highlighter-rouge">syndication</code> are set to null and therefore they will be hidden:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>				case 'analyticsInit':
+<div class="highlighter-rouge"><pre class="highlight"><code>				case 'analyticsInit':
             var menusConfig = postMessageData.payload.menuConfig;
             var viewsConfig = postMessageData.payload.viewsConfig;
           
@@ -354,7 +363,8 @@ rtp('get', 'campaign',true);
             viewsConfig.audience.engagement.export = null;
 
             sendMessage({ messageType: 'init', payload: { ...config, viewsConfig } })
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Using this pattern, you can customize the elements of the widget to achieve a custom view with only the elements you want.</p>
     
@@ -366,7 +376,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/indexCustom.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/indexCustom.ejs">Source Code</a> |
+<p>| <a href="https://kaltura-embeddable-analytics.herokuapp.com/indexCustom.ejs">Live Demo</a> | <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/indexCustom.ejs">Source Code</a> |<br />
 | ———————————————————— | ———————————————————— |</p>
 
 <p>This example shows how to programmatically build a menu dynamically from the viewsConfig object, and may serve as inspiration for building your own menu system.</p>
@@ -381,7 +391,7 @@ rtp('get', 'campaign',true);
 
 <p>The <a href="https://github.com/kaltura-vpaas/embeddable_analytics/blob/main/views/singleView.ejs#L52">viewsConfig</a> object contains a master list of all the elements the widget will display. It can be found by inspecting via javascript debugger and is customizable as shown in the examples above. Here is printout of the object:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[
+<div class="highlighter-rouge"><pre class="highlight"><code>[
     "audience": {
         "engagement": {
             "export": {},
@@ -548,7 +558,8 @@ rtp('get', 'campaign',true);
         }
     }
 ]
-</code></pre></div></div>
+</code></pre>
+</div>
 		
 </article>
 

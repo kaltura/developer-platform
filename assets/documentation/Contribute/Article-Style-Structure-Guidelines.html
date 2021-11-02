@@ -109,20 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Oct 12 20:07:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Contribute/Article-Style-Structure-Guidelines.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon May 13 08:01:37 2019</span>, By <span class="commit-author">tzubeli</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Contribute/Article-Style-Structure-Guidelines.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
-				<!--tr><td>Last commit: Tue Oct 12 20:07:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Mon May 13 08:01:37 2019, By <span class="commit-author">tzubeli</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
 					<td>AnnaAleksandrowicz (2 commits) (<a href="mailto:Anna.Aleksandrowicz@kaltura.com">Anna.Aleksandrowicz@kaltura.com</a>)</td>
-				</tr> -->
-
-				<!-- 
-				
-				<tr>
-					<td>Hunterpp (1 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!-- 
@@ -153,7 +147,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>The Kaltura VPaaS Developer Site uses <a href="http://jekyllrb.com/">Jekyll engine</a> and markdown syntax as the basis of the articles.
+		<p>The Kaltura VPaaS Developer Site uses <a href="http://jekyllrb.com/">Jekyll engine</a> and markdown syntax as the basis of the articles.<br />
 To learn about Markdown basics and how to use the format, please read: <a href="https://help.github.com/articles/markdown-basics">GitHub markdown basics</a>.</p>
 
 <blockquote>
@@ -169,6 +163,30 @@ To learn about Markdown basics and how to use the format, please read: <a href="
 <p>{% onebox http://www.kaltura.com/tiny/nex76 %}</p>
 
 <p><strong>Will be rendered as:</strong></p>
+
+<div>
+<div class="video-player-wrapper">
+<div id="dummy" class="video-margin"></div>
+<div id="kaltura_player_1_h9zbypqv_26657121" class="video-player"></div>
+</div>
+<script src="https://cdnapisec.kaltura.com/p/1829791/sp/182979100/embedIframeJs/uiconf_id/26657121/partner_id/1829791"></script>
+<script>
+function embedVideo() {
+if (!window.kWidget) return setTimeout(embedVideo, 100);
+window.kWidget.embed({
+"targetId": "kaltura_player_1_h9zbypqv_26657121",
+"wid": "_1829791",
+"uiconf_id": 26657121,
+"flashvars": {
+"streamerType": "auto",
+},
+"cache_st": 1450868353,
+"entry_id": "1_h9zbypqv"
+});
+}
+embedVideo();
+</script>
+</div>
     
       <h2 id="adding-youtube-videos">
         
@@ -187,12 +205,12 @@ To learn about Markdown basics and how to use the format, please read: <a href="
         
       </h2>
 
-<p>{% highlight c %}
-int hello_world(char *world)<br />
-{<br />
-	printf(“Hello %s\n”, world);<br />
-	return(0);
-}<br />
+<p>{% highlight c %}<br />
+int hello_world(char *world)  <br />
+{  <br />
+	printf(“Hello %s\n”, world);  <br />
+	return(0);<br />
+}  <br />
 {% endhighlight %}</p>
 
 <p><strong>Will render as:</strong></p>
@@ -218,11 +236,15 @@ int hello_world(char *world)<br />
 <p><strong>Will render as:</strong></p>
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="c">C</a></li><li class="code-tab"><a href="#" class="a_button" target="ruby">Ruby</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="ruby">Ruby</a></li><li class="code-tab"><a href="#" class="a_button" target="c">C</a></li>
               </ul>
             </div>
           <div class="highlight example python">
             <pre><code class="python" data-lang="python">print &quot;Hello World&quot;
+</code></pre>
+          </div>
+          <div class="highlight example ruby">
+            <pre><code class="ruby" data-lang="ruby">puts &quot;Hello World&quot;
 </code></pre>
           </div>
           <div class="highlight example c">
@@ -231,10 +253,6 @@ int hello_world(char *world)<br />
 	printf(&quot;Hello %s\n&quot;, world);
 	return(0);
 }
-</code></pre>
-          </div>
-          <div class="highlight example ruby">
-            <pre><code class="ruby" data-lang="ruby">puts &quot;Hello World&quot;
 </code></pre>
           </div>
 </div>
@@ -249,19 +267,20 @@ int hello_world(char *world)<br />
         
       </h2>
 
-<p>Markdown tables can become messy. Please write clean tables so it will be simple for contributors after you to edit and enhance your work.<br />
+<p>Markdown tables can become messy. Please write clean tables so it will be simple for contributors after you to edit and enhance your work.  <br />
 The clean way to add Markdown tables is as follows:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  
+<div class="highlighter-rouge"><pre class="highlight"><code>  
 | HCell        | Header Cell Middle | HCell Align-Right |
 |:------------ |:------------------:|------------------:|
 | 1 line body  | text               | more txt          |
 | 2 line body  | some text          | other txt         |
   
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>Note the use of spaces at the end of cells to ensure a clean alignment in edit view. <br />
-Always specify the alignment indicator (with <code class="language-plaintext highlighter-rouge">:</code>) to clearly indicate the alignment of the text. <br />
+<p>Note the use of spaces at the end of cells to ensure a clean alignment in edit view.   <br />
+Always specify the alignment indicator (with <code class="highlighter-rouge">:</code>) to clearly indicate the alignment of the text.   <br />
 Be certain to ensure that there is a an empty line above and below each table.</p>
 
 <p>The table above, will be generated as:</p>
@@ -298,7 +317,7 @@ Be certain to ensure that there is a an empty line above and below each table.</
         
       </h2>
 
-<p>Use the standard Markdown notation for images (<code class="language-plaintext highlighter-rouge">![Alt Text](url)</code>).<br />
+<p>Use the standard Markdown notation for images (<code class="highlighter-rouge">![Alt Text](url)</code>).  <br />
 Please always ensure that a descriptive Alt text is specified on your image to ensure compatibility with screen readers and better search indexing.</p>
     
       <h3 id="adding-an-image-folder">
@@ -325,13 +344,13 @@ Please always ensure that a descriptive Alt text is specified on your image to e
       </h2>
 <p>{% plantuml %}</p>
 
-<p>participant App
+<p>participant App<br />
 participant “Kaltura Player” as KP</p>
 
-<p>App-&gt;KP: setCustomURLProvider(localURLProvider)
-App-&gt;KP: setConfig(entryConfig)
-App-&gt;KP: play()
-KP-&gt;localURLProvider: getURL(entryId)
+<p>App-&gt;KP: setCustomURLProvider(localURLProvider)<br />
+App-&gt;KP: setConfig(entryConfig)<br />
+App-&gt;KP: play()<br />
+KP-&gt;localURLProvider: getURL(entryId)<br />
 localURLProvider–&gt;KP: localPath</p>
 
 <p>note over KP: Plays the downloaded file</p>
@@ -339,7 +358,7 @@ localURLProvider–&gt;KP: localPath</p>
 <p>{% endplantuml %}</p>
 
 <p><strong>Will render as:</strong></p>
-<p><object data="/uml/c36124909720e7f8adfaaa48113b5bc5.svg" type="image/svg+xml" class="plantuml"></object></p>
+<p><img src="assets/uml/c36124909720e7f8adfaaa48113b5bc5.svg" alt="PlantUML SVG diagram" class="plantuml" /></p>
     
       <h2 id="note-about-links-to-external-sites">
         
@@ -348,7 +367,7 @@ localURLProvider–&gt;KP: localPath</p>
         
         
       </h2>
-<p>The VPaaS website will automatically detect if links are using the same domain or a different one.<br />
+<p>The VPaaS website will automatically detect if links are using the same domain or a different one.  <br />
 Links that are directed to external domains will automatically be appended with `target=”_blank”’ and will be opened in a new tab.</p>
 
 <p>A nifty tool to help you to see how your markdown looks as you create it: <a href="http://dillinger.io">dillinger.io</a></p>
@@ -383,7 +402,7 @@ Links that are directed to external domains will automatically be appended with 
 
 <ul>
   <li>Include code snippets where relevant.</li>
-  <li>Create Interactive Code Workflows where possible (/workflows).</li>
+  <li>Create Interactive Code Workflows where possible (https://developer.kaltura.com/workflows).</li>
   <li>Reference API end-points where applicable, and make sure to explain these API end-points and their respective request and response fields and formats.</li>
   <li>Reference relevant github repositories where applicable.</li>
   <li>Clearly explain the required workflows, and ensure they achieve a final and complete end-result.</li>
@@ -404,7 +423,7 @@ Links that are directed to external domains will automatically be appended with 
   <li>When naming your files, please use the same convention as the other documents on this repository:</li>
   <li>Lower case</li>
   <li>Spaces converted to dash</li>
-  <li>Filename always ends with <code class="language-plaintext highlighter-rouge">.md</code> as the file extension</li>
+  <li>Filename always ends with <code class="highlighter-rouge">.md</code> as the file extension</li>
   <li>The filename should always reflect the title of the article (i.e. H1 == filename)</li>
   <li>Follow the guidelines for article header notation as per below</li>
 </ul>
@@ -419,8 +438,8 @@ Links that are directed to external domains will automatically be appended with 
 <p>At the top of every markdown file, you will find the notation as follows. This designates the type of page and its location in the website menu.</p>
 
 <figure class="highlight"><pre><code class="language-markdown" data-lang="markdown"><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">page</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">VPaaS Website Sample Article</span>
+<span class="s">layout</span><span class="pi">:</span> <span class="s">page</span>
+<span class="s">title</span><span class="pi">:</span> <span class="s">VPaaS Website Sample Article</span>
 <span class="nn">---</span></code></pre></figure>
     
       <h3 id="the-document-metadata-fields-are">
@@ -432,8 +451,8 @@ Links that are directed to external domains will automatically be appended with 
       </h3>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">layout:</code> for documents, this should always be set to <code class="language-plaintext highlighter-rouge">page</code></li>
-  <li><code class="language-plaintext highlighter-rouge">title:</code> this is the title of the page (correlates to <code class="language-plaintext highlighter-rouge">&lt;title&gt;&lt;/title&gt;</code> tag in HTML)</li>
+  <li><code class="highlighter-rouge">layout:</code> for documents, this should always be set to <code class="highlighter-rouge">page</code></li>
+  <li><code class="highlighter-rouge">title:</code> this is the title of the page (correlates to <code class="highlighter-rouge">&lt;title&gt;&lt;/title&gt;</code> tag in HTML)</li>
 </ul>
 		
 </article>

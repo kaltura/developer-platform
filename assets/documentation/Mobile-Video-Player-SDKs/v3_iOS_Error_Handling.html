@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_Error_Handling.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_Error_Handling.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Feb 23 06:50:54 2017, By: Gal Orlanczyk</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -151,7 +151,7 @@ rtp('get', 'campaign',true);
 
 <p>The SDK provides error handling using observation.</p>
 
-<p>Errors from the observation comes as <code class="language-plaintext highlighter-rouge">NSError</code> object that includes: domain, error code, description and userInfo with extra information about the error like root error for example.</p>
+<p>Errors from the observation comes as <code class="highlighter-rouge">NSError</code> object that includes: domain, error code, description and userInfo with extra information about the error like root error for example.</p>
     
       <h2 id="error-domains-and-codes">
         
@@ -161,12 +161,12 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>All error domains are centralized at <code class="language-plaintext highlighter-rouge">PKErrorDomain</code> for easy access, for example: <code class="language-plaintext highlighter-rouge">PKErrorDomain.Player</code> get the player error domain.</p>
+<p>All error domains are centralized at <code class="highlighter-rouge">PKErrorDomain</code> for easy access, for example: <code class="highlighter-rouge">PKErrorDomain.Player</code> get the player error domain.</p>
     
       <h3 id="player---playererror">
         
         
-          Player - (<code class="language-plaintext highlighter-rouge">PlayerError</code>) <a href="#player---playererror"></a>
+          Player - (<code class="highlighter-rouge">PlayerError</code>) <a href="#player---playererror"></a>
         
         
       </h3>
@@ -174,13 +174,13 @@ rtp('get', 'campaign',true);
 <p>Player errors:</p>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">failedToLoadAssetFromKeys</code>, code: 7000.&lt;/br&gt;userInfo holds the root error if exists. Sent when asset was trying to load and one of the required keys (playable for example) couldn’t load.</li>
-  <li><code class="language-plaintext highlighter-rouge">assetNotPlayable</code>, code: 7001.&lt;/br&gt;Sent when the asset already loaded his required keys but isn’t playable.</li>
-  <li><code class="language-plaintext highlighter-rouge">playerItemFailed</code>, code: 7002.&lt;/br&gt;userInfo holds the root error if exists. Sent when player failed to play to the end time.</li>
+  <li><code class="highlighter-rouge">failedToLoadAssetFromKeys</code>, code: 7000.&lt;/br&gt;userInfo holds the root error if exists. Sent when asset was trying to load and one of the required keys (playable for example) couldn’t load.</li>
+  <li><code class="highlighter-rouge">assetNotPlayable</code>, code: 7001.&lt;/br&gt;Sent when the asset already loaded his required keys but isn’t playable.</li>
+  <li><code class="highlighter-rouge">playerItemFailed</code>, code: 7002.&lt;/br&gt;userInfo holds the root error if exists. Sent when player failed to play to the end time.</li>
 </ol>
 
-<p><code class="language-plaintext highlighter-rouge">PlayerErrorLog</code> - These are non-fatal errors produced by <code class="language-plaintext highlighter-rouge">AVPlayer</code>, could be useful for debug purposes or analytics.
-code: 7100, wraps <code class="language-plaintext highlighter-rouge">AVPlayerItemErrorLogEvent</code> which contains all error log events.&lt;/br&gt;userInfo holds the root error code and root domain of the original error. Sent when the player received an error log event.</p>
+<p><code class="highlighter-rouge">PlayerErrorLog</code> - These are non-fatal errors produced by <code class="highlighter-rouge">AVPlayer</code>, could be useful for debug purposes or analytics.<br />
+code: 7100, wraps <code class="highlighter-rouge">AVPlayerItemErrorLogEvent</code> which contains all error log events.&lt;/br&gt;userInfo holds the root error code and root domain of the original error. Sent when the player received an error log event.</p>
     
       <h3 id="plugins">
         
@@ -193,7 +193,7 @@ code: 7100, wraps <code class="language-plaintext highlighter-rouge">AVPlayerIte
       <h4 id="plugins-general-pkpluginerror">
         
         
-          Plugins General (<code class="language-plaintext highlighter-rouge">PKPluginError</code>) <a href="#plugins-general-pkpluginerror"></a>
+          Plugins General (<code class="highlighter-rouge">PKPluginError</code>) <a href="#plugins-general-pkpluginerror"></a>
         
         
       </h4>
@@ -201,42 +201,42 @@ code: 7100, wraps <code class="language-plaintext highlighter-rouge">AVPlayerIte
 <p>For plugins we have 2 general errors:</p>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">failedToCreatePlugin</code>, code: 2000.&lt;/br&gt;Sent when failed to create the plugin.</li>
-  <li><code class="language-plaintext highlighter-rouge">missingPluginConfig</code>, code: 2001.&lt;/br&gt;userInfo holds the plugin name. Sent when the plugin is missing his config.</li>
+  <li><code class="highlighter-rouge">failedToCreatePlugin</code>, code: 2000.&lt;/br&gt;Sent when failed to create the plugin.</li>
+  <li><code class="highlighter-rouge">missingPluginConfig</code>, code: 2001.&lt;/br&gt;userInfo holds the plugin name. Sent when the plugin is missing his config.</li>
 </ol>
     
       <h4 id="analytics-plugins---analyticserror">
         
         
-          Analytics Plugins - (<code class="language-plaintext highlighter-rouge">AnalyticsError</code>) <a href="#analytics-plugins---analyticserror"></a>
+          Analytics Plugins - (<code class="highlighter-rouge">AnalyticsError</code>) <a href="#analytics-plugins---analyticserror"></a>
         
         
       </h4>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">missingMediaEntry</code>, code: 2100.&lt;/br&gt;Sent when failed to send analytics event because media entry is missing.</li>
-  <li><code class="language-plaintext highlighter-rouge">missingInitObject</code>, code: 2101.&lt;/br&gt;userInfo holds the plugin name. Sent when failed to send analytics event because initObj is missing.</li>
+  <li><code class="highlighter-rouge">missingMediaEntry</code>, code: 2100.&lt;/br&gt;Sent when failed to send analytics event because media entry is missing.</li>
+  <li><code class="highlighter-rouge">missingInitObject</code>, code: 2101.&lt;/br&gt;userInfo holds the plugin name. Sent when failed to send analytics event because initObj is missing.</li>
 </ol>
     
       <h4 id="youbora---youborapluginerror">
         
         
-          Youbora - (<code class="language-plaintext highlighter-rouge">YouboraPluginError</code>) <a href="#youbora---youborapluginerror"></a>
+          Youbora - (<code class="highlighter-rouge">YouboraPluginError</code>) <a href="#youbora---youborapluginerror"></a>
         
         
       </h4>
 
-<p>Youbora has only one error, <code class="language-plaintext highlighter-rouge">failedToSetupYouboraManager</code>, code: 2200.&lt;/br&gt;Sent when failed to setup Youbora manager, can happen when config is wrong or media entry is missing.</p>
+<p>Youbora has only one error, <code class="highlighter-rouge">failedToSetupYouboraManager</code>, code: 2200.&lt;/br&gt;Sent when failed to setup Youbora manager, can happen when config is wrong or media entry is missing.</p>
     
       <h4 id="ima---imapluginerror">
         
         
-          IMA - (<code class="language-plaintext highlighter-rouge">IMAPluginError</code>) <a href="#ima---imapluginerror"></a>
+          IMA - (<code class="highlighter-rouge">IMAPluginError</code>) <a href="#ima---imapluginerror"></a>
         
         
       </h4>
 
-<p>IMA errors codes (see <code class="language-plaintext highlighter-rouge">IMAErrorCode</code> for all codes) and descriptions are the same as the original error. 
+<p>IMA errors codes (see <code class="highlighter-rouge">IMAErrorCode</code> for all codes) and descriptions are the same as the original error. <br />
 In addition, the userInfo holds the the error type from IMA error types.</p>
     
       <h3 id="drm">
@@ -250,7 +250,7 @@ In addition, the userInfo holds the the error type from IMA error types.</p>
       <h4 id="widevine-classic-widevineclasserror">
         
         
-          Widevine Classic (<code class="language-plaintext highlighter-rouge">WidevineClassError</code>) <a href="#widevine-classic-widevineclasserror"></a>
+          Widevine Classic (<code class="highlighter-rouge">WidevineClassError</code>) <a href="#widevine-classic-widevineclasserror"></a>
         
         
       </h4>
@@ -258,8 +258,8 @@ In addition, the userInfo holds the the error type from IMA error types.</p>
 <p>Widevine classic has 2 errors:</p>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">invalidDRMData</code>, code: 6200.&lt;/br&gt;Sent when we could not extract the license URI from the DRM data.</li>
-  <li><code class="language-plaintext highlighter-rouge">missingWidevineFile</code>, code: 6201.&lt;/br&gt;Sent when registering local asset fails because widevine file not found.</li>
+  <li><code class="highlighter-rouge">invalidDRMData</code>, code: 6200.&lt;/br&gt;Sent when we could not extract the license URI from the DRM data.</li>
+  <li><code class="highlighter-rouge">missingWidevineFile</code>, code: 6201.&lt;/br&gt;Sent when registering local asset fails because widevine file not found.</li>
 </ol>
     
       <h2 id="usage">
@@ -270,13 +270,13 @@ In addition, the userInfo holds the the error type from IMA error types.</p>
         
       </h2>
 
-<p>Loading a <code class="language-plaintext highlighter-rouge">Player</code> object can fail and we want to make sure you have the ability to handle such cases:</p>
+<p>Loading a <code class="highlighter-rouge">Player</code> object can fail and we want to make sure you have the ability to handle such cases:</p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">do</span> <span class="p">{</span>
     <span class="n">player</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">PlayKitManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">loadPlayer</span><span class="p">(</span><span class="nv">pluginConfig</span><span class="p">:</span> <span class="n">pluginConfig</span><span class="p">)</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="k">let</span> <span class="nv">e</span> <span class="p">{</span>
     <span class="c1">// handle error</span>
@@ -286,58 +286,62 @@ In addition, the userInfo holds the the error type from IMA error types.</p>
         <span class="c1">// handle missing plugin config</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
 <span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="o">=</span> <span class="p">[</span><span class="n">PlayKitManager</span><span class="p">.</span><span class="n">sharedInstance</span> <span class="nf">loadPlayerWithPluginConfig</span><span class="p">:</span> <span class="n">pluginConfig</span> <span class="nf">error</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// handle error</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">code</span> <span class="o">==</span> <span class="n">PKErrorCode</span><span class="p">.</span><span class="n">FailedToCreatePlugin</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// handle failed to create plugin</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">code</span> <span class="o">==</span> <span class="n">PKErrorCode</span><span class="p">.</span><span class="n">MissingPluginConfig</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// handle missing plugin config</span>
-    <span class="p">}</span>
+    <span class="c1">// handle error
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">code</span> <span class="o">==</span> <span class="n">PKErrorCode</span><span class="p">.</span><span class="n">FailedToCreatePlugin</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// handle failed to create plugin
+</span>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">.</span><span class="n">code</span> <span class="o">==</span> <span class="n">PKErrorCode</span><span class="p">.</span><span class="n">MissingPluginConfig</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// handle missing plugin config
+</span>    <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>In order to observe errors we use the following types:</p>
 
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">PlayerEvent.error</code> - represent player related errors.</li>
-  <li><code class="language-plaintext highlighter-rouge">PlayerEvent.pluginError</code> - represent plugin related errors.</li>
-  <li><code class="language-plaintext highlighter-rouge">PlayerEvent.errorLog</code> - represents player error logs (non-fatal errors)</li>
-  <li><code class="language-plaintext highlighter-rouge">AdEvent.error</code> - represents ads error</li>
+  <li><code class="highlighter-rouge">PlayerEvent.error</code> - represent player related errors.</li>
+  <li><code class="highlighter-rouge">PlayerEvent.pluginError</code> - represent plugin related errors.</li>
+  <li><code class="highlighter-rouge">PlayerEvent.errorLog</code> - represents player error logs (non-fatal errors)</li>
+  <li><code class="highlighter-rouge">AdEvent.error</code> - represents ads error</li>
 </ol>
 
-<p>For example observing <code class="language-plaintext highlighter-rouge">PlayerEvent.error</code>:</p>
+<p>For example observing <code class="highlighter-rouge">PlayerEvent.error</code>:</p>
 
 <blockquote>
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">error</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">error</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
     <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">error</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="kt">PKErrorCode</span><span class="o">.</span><span class="n">assetNotPlayable</span> <span class="p">{</span>
         <span class="c1">// handle error</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">error</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">kPlayer</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">error</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">error</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">&amp;&amp;</span> <span class="n">error</span><span class="p">.</span><span class="n">code</span> <span class="o">==</span> <span class="n">PKErrorCode</span><span class="p">.</span><span class="n">AssetNotPlayable</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// handle error</span>
-    <span class="p">}</span>
+        <span class="c1">// handle error
+</span>    <span class="p">}</span>
 <span class="p">}];</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 		
 </article>
 

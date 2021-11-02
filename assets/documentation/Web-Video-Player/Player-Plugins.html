@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Web-Video-Player/Player-Plugins.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Web-Video-Player/Player-Plugins.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -190,13 +190,13 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>When your plugin code and optional CSS files are ready, you will need to prepare the plugin for deployment. We recommend that you <a class="external" target="_blank" rel="nofollow" href="https://developers.google.com/speed/docs/insights/">minimize your Javascript and CSS files</a> for faster load time. 
+<p>When your plugin code and optional CSS files are ready, you will need to prepare the plugin for deployment. We recommend that you <a class="external" target="_blank" rel="nofollow" href="https://developers.google.com/speed/docs/insights/">minimize your Javascript and CSS files</a> for faster load time. <br />
 When you deploy the Player plugin files on a server so that they are accessible to the Player, consider the following:</p>
 
 <ol>
   <li>Host the external files on a dedicated server, preferably a CDN for best performance, and ensure your server has <a class="external" target="_blank" rel="nofollow" href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS headers</a> enabling loading assets from other domains.</li>
   <li>Make sure you set the correct relative links or full paths in your Flashvars settings.</li>
-  <li>Verify that your assets can be loaded from both http and https, and when directing the Player to load the assets, use a protocol agnostic URL notation (<code class="language-plaintext highlighter-rouge">://</code> instead of <code class="language-plaintext highlighter-rouge">http://</code>). Also make sure that your server has a valid SSL certificate.</li>
+  <li>Verify that your assets can be loaded from both http and https, and when directing the Player to load the assets, use a protocol agnostic URL notation (<code class="highlighter-rouge">://</code> instead of <code class="highlighter-rouge">http://</code>). Also make sure that your server has a valid SSL certificate.</li>
   <li>If you need to load more than one icon, consider using an icon font.</li>
   <li>If you need to load more than one image, use <a class="external" target="_blank" rel="nofollow" href="https://css-tricks.com/css-sprites/">CSS sprite sheets</a>.</li>
 </ol>
@@ -211,7 +211,7 @@ When you deploy the Player plugin files on a server so that they are accessible 
 
 <p>The Kaltura Player uses jQuery, which means that you can use jQuery statements in your code without worrying about loading the jQuery library yourself.</p>
 
-<p>The Player also includes the MediaWiki library, which can be referenced anywhere in the code by using the mw global variable.  <br />
+<p>The Player also includes the MediaWiki library, which can be referenced anywhere in the code by using the mw global variable.    <br />
 The MediaWiki library provides utility functions to detect browsers and devices, time manipulation, formatters, and additional utilities.</p>
 
 <blockquote>
@@ -236,25 +236,26 @@ The MediaWiki library provides utility functions to detect browsers and devices,
 
 <p>To load the plugin code in the Kaltura Player, host the plugin files in a server that will be accessible to the Player, and reference the plugin in the embed code Flashvars (or in the Player UIConf using Studio) as follows:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">kWidget</span><span class="p">.</span><span class="nx">embed</span><span class="p">({</span>
-        <span class="dl">"</span><span class="s2">targetId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kaltura_player</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">wid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">_27017</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">uiconf_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">29667911</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">flashvars</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">kWidget</span><span class="p">.</span><span class="nx">embed</span><span class="p">({</span>
+        <span class="s2">"targetId"</span><span class="p">:</span> <span class="s2">"kaltura_player"</span><span class="p">,</span>
+        <span class="s2">"wid"</span><span class="p">:</span> <span class="s2">"_27017"</span><span class="p">,</span>
+        <span class="s2">"uiconf_id"</span><span class="p">:</span> <span class="mi">29667911</span><span class="p">,</span>
+        <span class="s2">"flashvars"</span><span class="p">:</span> <span class="p">{</span>
             <span class="c1">//This line adds your custom plugin</span>
-            <span class="dl">"</span><span class="s2">myCustomPluginName</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"myCustomPluginName"</span><span class="p">:</span> <span class="p">{</span>
                 <span class="c1">//This line turn on the plugin</span>
-                <span class="dl">'</span><span class="s1">plugin</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s1">'plugin'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
                 <span class="c1">//This line sets the plugin file path</span>
-                <span class="dl">"</span><span class="s2">iframeHTML5Js</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">myCustomPluginName.js</span><span class="dl">"</span>
+                <span class="s2">"iframeHTML5Js"</span> <span class="p">:</span> <span class="s2">"myCustomPluginName.js"</span>
             <span class="p">},</span>
         <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">entry_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1_1611vudr</span><span class="dl">"</span>
+        <span class="s2">"entry_id"</span><span class="p">:</span> <span class="s2">"1_1611vudr"</span>
     <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
-  <p><strong>Note:</strong> The plugin name as defined in your code is used as a key for the Flashvars config parameters definitions. 
+  <p><strong>Note:</strong> The plugin name as defined in your code is used as a key for the Flashvars config parameters definitions. <br />
 You must also set the “plugin” property to true and provide a relative or full link to your Javascript file holding the plugin code using the “iframeHTML5Js” property.</p>
 </blockquote>
     
@@ -272,12 +273,13 @@ You must also set the “plugin” property to true and provide a relative or fu
 
 <p>Use the Player’s plugin manager to register your plugin and to define your plugin name (always use camelCase naming and remember not to use spaces or underscores) and base class:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">myCustomPluginName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'myCustomPluginName'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="c1">// plugin code</span>
     <span class="p">}));</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="plugin-base-inheritance">
         
@@ -290,9 +292,9 @@ You must also set the “plugin” property to true and provide a relative or fu
 <p>The second parameter passed to the plugin manager is the plugin code that should extend one of the Player base plugin classes:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">mw.KBaseComponent</code>: The most commonly used class base, this class base includes of all the required function for a visual / non-visual plugin</li>
-  <li><code class="language-plaintext highlighter-rouge">mw.KBaseScreen</code>: Extends the mw.KBaseComponent class and provides the ability to manage screen overlays above the Player using templates</li>
-  <li><code class="language-plaintext highlighter-rouge">mw.KBaseMediaList</code>: Extends the mw.KBaseComponent class and provides functionality for creating and playing lists of video content</li>
+  <li><code class="highlighter-rouge">mw.KBaseComponent</code>: The most commonly used class base, this class base includes of all the required function for a visual / non-visual plugin</li>
+  <li><code class="highlighter-rouge">mw.KBaseScreen</code>: Extends the mw.KBaseComponent class and provides the ability to manage screen overlays above the Player using templates</li>
+  <li><code class="highlighter-rouge">mw.KBaseMediaList</code>: Extends the mw.KBaseComponent class and provides functionality for creating and playing lists of video content</li>
 </ul>
 
 <p>Most often mw.KBaseComponent will be the best choice of base class to start your plugin from. The examples below will focus mainly on these common scenarios.</p>
@@ -305,33 +307,34 @@ You must also set the “plugin” property to true and provide a relative or fu
         
       </h3>
 
-<p>To define public properties for your plugin that can be changed using embed code Flashvars or via Player Studio UIVars, you will need to define a <code class="language-plaintext highlighter-rouge">defaultConfig</code> JSON object in your plugin code.</p>
+<p>To define public properties for your plugin that can be changed using embed code Flashvars or via Player Studio UIVars, you will need to define a <code class="highlighter-rouge">defaultConfig</code> JSON object in your plugin code.</p>
 
 <p>For each property you should specify a default value:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">myCustomPluginName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'myCustomPluginName'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="c1">// public properties</span>
         <span class="na">defaultConfig</span><span class="p">:</span> <span class="p">{</span>
 	        <span class="c1">// the container for the button</span>
-            <span class="na">parent</span><span class="p">:</span> <span class="dl">"</span><span class="s2">controlsContainer</span><span class="dl">"</span><span class="p">,</span>    
+            <span class="na">parent</span><span class="p">:</span> <span class="s2">"controlsContainer"</span><span class="p">,</span>    
             <span class="c1">// the display order ( based on layout )</span>
             <span class="na">order</span><span class="p">:</span> <span class="mi">81</span><span class="p">,</span>                      
             <span class="c1">// the display importance, determines when the item is removed from DOM</span>
-            <span class="na">displayImportance</span><span class="p">:</span> <span class="dl">'</span><span class="s1">low</span><span class="dl">'</span><span class="p">,</span>       
+            <span class="na">displayImportance</span><span class="p">:</span> <span class="s1">'low'</span><span class="p">,</span>       
             <span class="c1">// the alignment of the button</span>
-            <span class="na">align</span><span class="p">:</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">,</span>                 
+            <span class="na">align</span><span class="p">:</span> <span class="s2">"right"</span><span class="p">,</span>                 
             <span class="c1">// custom property and custom value</span>
-            <span class="na">myProp</span><span class="p">:</span> <span class="dl">"</span><span class="s2">myValue</span><span class="dl">"</span>               
+            <span class="na">myProp</span><span class="p">:</span> <span class="s2">"myValue"</span>               
         <span class="p">}</span>
         
         <span class="c1">// The rest of your plugin code comes here...</span>
     <span class="p">}));</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>In this example, the <code class="language-plaintext highlighter-rouge">parent</code>, <code class="language-plaintext highlighter-rouge">order</code>, <code class="language-plaintext highlighter-rouge">displayImportance</code> and align properties are <code class="language-plaintext highlighter-rouge">KBaseComponent</code> properties that control plugin rendering and handled in the <code class="language-plaintext highlighter-rouge">mw.KBaseComponent</code> class. 
-<code class="language-plaintext highlighter-rouge">myProp</code> is a new property defined by this plugin.</p>
+<p>In this example, the <code class="highlighter-rouge">parent</code>, <code class="highlighter-rouge">order</code>, <code class="highlighter-rouge">displayImportance</code> and align properties are <code class="highlighter-rouge">KBaseComponent</code> properties that control plugin rendering and handled in the <code class="highlighter-rouge">mw.KBaseComponent</code> class. <br />
+<code class="highlighter-rouge">myProp</code> is a new property defined by this plugin.</p>
     
       <h4 id="accessing-plugin-properties-in-the-plugin-code">
         
@@ -340,11 +343,12 @@ You must also set the “plugin” property to true and provide a relative or fu
         
         
       </h4>
-<p>Within your plugin code, you can get the property value using the <code class="language-plaintext highlighter-rouge">getConfig</code> method:</p>
+<p>Within your plugin code, you can get the property value using the <code class="highlighter-rouge">getConfig</code> method:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//will log the value of myProp ("myValue")</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getConfig</span><span class="p">(</span><span class="dl">"</span><span class="s2">myProp</span><span class="dl">"</span><span class="p">));</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">//will log the value of myProp ("myValue")</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getConfig</span><span class="p">(</span><span class="s2">"myProp"</span><span class="p">));</span>
+</code></pre>
+</div>
     
       <h3 id="reference-the-player-element-inside-the-plugin-code">
         
@@ -354,13 +358,14 @@ You must also set the “plugin” property to true and provide a relative or fu
         
       </h3>
 
-<p>Throughout your custom plugin code, you have direct access to the Player by using the <code class="language-plaintext highlighter-rouge">getPlayer</code> method which returns the <code class="language-plaintext highlighter-rouge">embedPlayer</code> object. 
+<p>Throughout your custom plugin code, you have direct access to the Player by using the <code class="highlighter-rouge">getPlayer</code> method which returns the <code class="highlighter-rouge">embedPlayer</code> object. <br />
 This object exposes all of the Player methods and properties (not just the public ones exposed by the Player API).</p>
 
 <p>For example, to get a reference to the native video element of the current Player you can use:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">getPlayerElement</span><span class="p">();</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">getPlayerElement</span><span class="p">();</span>
+</code></pre>
+</div>
     
       <h2 id="the-player-plugin-life-cycle">
         
@@ -383,15 +388,16 @@ This object exposes all of the Player methods and properties (not just the publi
 
 <p>For example, if you want your plugin to load only on mobile devices:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">myCustomPluginName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'myCustomPluginName'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="na">isSafeEnviornment</span><span class="p">:</span><span class="kd">function</span><span class="p">(){</span>
             <span class="c1">// load the plugin only on mobile devices:</span>
             <span class="k">return</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">isMobileDevice</span><span class="p">();</span>     
         <span class="p">}</span>
     <span class="p">}));</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="setup-method">
         
@@ -401,11 +407,11 @@ This object exposes all of the Player methods and properties (not just the publi
         
       </h3>
 
-<p>The setup method is the first method that is called when the plugin loads. You do not need to call it yourself, you simply need to define it.
+<p>The setup method is the first method that is called when the plugin loads. You do not need to call it yourself, you simply need to define it.<br />
 This is essentially the entry point for the plugin code, and is the place to write your initialization code and add event bindings if needed:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">myCustomPluginName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'myCustomPluginName'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="na">setup</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
             <span class="c1">// initialization code goes here.</span>
             <span class="c1">// call a method for event bindings:</span>
@@ -413,7 +419,8 @@ This is essentially the entry point for the plugin code, and is the place to wri
         <span class="p">}</span>
     <span class="p">}));</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="event-bindings">
         
@@ -425,26 +432,27 @@ This is essentially the entry point for the plugin code, and is the place to wri
 
 <p>Your plugin can register to any event triggered by the Player. Register to events using the <strong>bind</strong> method.</p>
 
-<p>Syntax:  <code class="language-plaintext highlighter-rouge">this.bind(eventName, callback, once);</code>
+<p>Syntax:  <code class="highlighter-rouge">this.bind(eventName, callback, once);</code><br />
 Where eventName is the name of the event to register to, callback is the callback function to execute, and once, when set to true, binds to this event only once.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">myCustomPluginName</span><span class="dl">'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">mw</span><span class="p">.</span><span class="nx">kalturaPluginWrapper</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">mw</span><span class="p">.</span><span class="nx">PluginManager</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'myCustomPluginName'</span><span class="p">,</span> <span class="nx">mw</span><span class="p">.</span><span class="nx">KBaseComponent</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
         <span class="na">setup</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
             <span class="c1">// initialization code goes here.</span>
             <span class="c1">// call a method for event bindings:</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">addBindings</span><span class="p">();</span>             
         <span class="p">},</span>
         <span class="na">addBindings</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">playerReady</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-                <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">player is ready</span><span class="dl">"</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'playerReady'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s2">"player is ready"</span><span class="p">);</span>
             <span class="p">});</span>
         <span class="p">}</span>
     <span class="p">}));</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>Unregistering events is done by the unbind method, which accepts the event name and removes the listener: <code class="language-plaintext highlighter-rouge">this.unbind('playerReady');</code></p>
+<p>Unregistering events is done by the unbind method, which accepts the event name and removes the listener: <code class="highlighter-rouge">this.unbind('playerReady');</code></p>
     
       <h4 id="namespaces">
         
@@ -454,17 +462,18 @@ Where eventName is the name of the event to register to, callback is the callbac
         
       </h4>
 
-<p>When you bind events within your plugin, the plugin name is used as a namespace for the event registration automatically. <br />
+<p>When you bind events within your plugin, the plugin name is used as a namespace for the event registration automatically.   <br />
 This allows isolation between multiple plugins that register to the same events. Learn more about event name spacing here.</p>
 
 <p>Using the unbind method does the same and unbinds the event with the specific plugin namespace only.</p>
 
-<p>You can also unbind all of the plugin events by not sending an event parameter to the unbind method. This will cause the unbinding of all of the plugin name space events.
+<p>You can also unbind all of the plugin events by not sending an event parameter to the unbind method. This will cause the unbinding of all of the plugin name space events.<br />
 This type of global unbinding should be used when destroying the plugin.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// remove all of the plugin event listeners using the plugin name space:</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// remove all of the plugin event listeners using the plugin name space:</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">unbind</span><span class="p">();</span> 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="getcomponent-and-parent-method">
         
@@ -474,9 +483,9 @@ This type of global unbinding should be used when destroying the plugin.</p>
         
       </h3>
 
-<p>If your component has a visual representation, you will need to define the <code class="language-plaintext highlighter-rouge">getComponent</code> method. This method should return a jQuery DOM element that is rendered in the Player interface.</p>
+<p>If your component has a visual representation, you will need to define the <code class="highlighter-rouge">getComponent</code> method. This method should return a jQuery DOM element that is rendered in the Player interface.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">parent</code> container in which your component is rendered is defined by the <code class="language-plaintext highlighter-rouge">parent</code> property, and can be overridden in the embed Flashvars or Studio UIVars definitions.</p>
+<p>The <code class="highlighter-rouge">parent</code> container in which your component is rendered is defined by the <code class="highlighter-rouge">parent</code> property, and can be overridden in the embed Flashvars or Studio UIVars definitions.</p>
     
       <h4 id="optional-parents">
         
@@ -488,28 +497,29 @@ This type of global unbinding should be used when destroying the plugin.</p>
 <p>There are are three optional parents:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">controlsContainer</code>: Renders the component in the Player bottom control bar</li>
-  <li><code class="language-plaintext highlighter-rouge">topBarContainer</code>: Renders the component in the Player top control bar</li>
-  <li><code class="language-plaintext highlighter-rouge">videoHolder</code>: Renders the component over the video itself</li>
+  <li><code class="highlighter-rouge">controlsContainer</code>: Renders the component in the Player bottom control bar</li>
+  <li><code class="highlighter-rouge">topBarContainer</code>: Renders the component in the Player top control bar</li>
+  <li><code class="highlighter-rouge">videoHolder</code>: Renders the component over the video itself</li>
 </ul>
 
-<p>Your <code class="language-plaintext highlighter-rouge">getComponent</code> method is the place to define your component look-and-feel as well as its actions.</p>
+<p>Your <code class="highlighter-rouge">getComponent</code> method is the place to define your component look-and-feel as well as its actions.</p>
 
-<p>The returned jQuery object should be created only once (single tone); therefore, the best practice is to save it as a plugin property commonly named <code class="language-plaintext highlighter-rouge">$el</code>:</p>
+<p>The returned jQuery object should be created only once (single tone); therefore, the best practice is to save it as a plugin property commonly named <code class="highlighter-rouge">$el</code>:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">getComponent</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getComponent</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
     <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">$el</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">$el</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span> <span class="dl">'</span><span class="s1">&lt;button /&gt;</span><span class="dl">'</span> <span class="p">)</span>
-            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span> <span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Play</span><span class="dl">'</span> <span class="p">)</span>
-            <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span> <span class="dl">'</span><span class="s1">btn icon-play</span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCssClass</span><span class="p">()</span> <span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">$el</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span> <span class="s1">'&lt;button /&gt;'</span> <span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span> <span class="s1">'title'</span><span class="p">,</span> <span class="s1">'Play'</span> <span class="p">)</span>
+            <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span> <span class="s1">'btn icon-play'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCssClass</span><span class="p">()</span> <span class="p">)</span>
             <span class="p">.</span><span class="nx">click</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
                 <span class="nx">_this</span><span class="p">.</span><span class="nx">togglePlayback</span><span class="p">();</span>
             <span class="p">});</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$el</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="getcssclass">
         
@@ -519,10 +529,10 @@ This type of global unbinding should be used when destroying the plugin.</p>
         
       </h3>
 
-<p>As you can see in the example above, when defining your plugin DOM element CSS classes, you should use the  <code class="language-plaintext highlighter-rouge">this.getCssClass()</code> method. <br />
-This method adds some css classes to handle alignment (as defined in the <code class="language-plaintext highlighter-rouge">align</code> Flashvar property), display importance and more.</p>
+<p>As you can see in the example above, when defining your plugin DOM element CSS classes, you should use the  <code class="highlighter-rouge">this.getCssClass()</code> method.   <br />
+This method adds some css classes to handle alignment (as defined in the <code class="highlighter-rouge">align</code> Flashvar property), display importance and more.</p>
 
-<p>Another class name that will be added by this method is a class named by your component name. You can use this class name to add plugin-specific CSS rules in your plugin custom CSS file. In our example, your component will get the <code class="language-plaintext highlighter-rouge">myCustomPluginName</code> class name.</p>
+<p>Another class name that will be added by this method is a class named by your component name. You can use this class name to add plugin-specific CSS rules in your plugin custom CSS file. In our example, your component will get the <code class="highlighter-rouge">myCustomPluginName</code> class name.</p>
     
       <h3 id="onenable--ondisable">
         
@@ -532,14 +542,14 @@ This method adds some css classes to handle alignment (as defined in the <code c
         
       </h3>
 
-<p>During video playback, you may want to disable your plugin in some scenarios, for example, when loading data or when an ad is playing.
-You can “announce” your plugin as disabled or enabled by calling <code class="language-plaintext highlighter-rouge">this.onDisable()</code> and <code class="language-plaintext highlighter-rouge">this.onEnable()</code> accordingly.</p>
+<p>During video playback, you may want to disable your plugin in some scenarios, for example, when loading data or when an ad is playing.<br />
+You can “announce” your plugin as disabled or enabled by calling <code class="highlighter-rouge">this.onDisable()</code> and <code class="highlighter-rouge">this.onEnable()</code> accordingly.</p>
 
-<p>Disabling the plugin adds the “disabled” class to the plugin element and sets its <code class="language-plaintext highlighter-rouge">isDisabled</code> property to <code class="language-plaintext highlighter-rouge">true</code>. Enabling it removes the class and sets <code class="language-plaintext highlighter-rouge">isDisabled</code> to <code class="language-plaintext highlighter-rouge">false</code>.</p>
+<p>Disabling the plugin adds the “disabled” class to the plugin element and sets its <code class="highlighter-rouge">isDisabled</code> property to <code class="highlighter-rouge">true</code>. Enabling it removes the class and sets <code class="highlighter-rouge">isDisabled</code> to <code class="highlighter-rouge">false</code>.</p>
 
-<p>Note that calling the <code class="language-plaintext highlighter-rouge">onDisable</code> method does not disable the plugin; it simply adds the disabled class and sets the <code class="language-plaintext highlighter-rouge">isDisabled</code> property to <code class="language-plaintext highlighter-rouge">true</code>. It is up to you, therefore, to add logic to your code and disable any functionality when the <code class="language-plaintext highlighter-rouge">isDisabled</code> property is <code class="language-plaintext highlighter-rouge">true</code>.</p>
+<p>Note that calling the <code class="highlighter-rouge">onDisable</code> method does not disable the plugin; it simply adds the disabled class and sets the <code class="highlighter-rouge">isDisabled</code> property to <code class="highlighter-rouge">true</code>. It is up to you, therefore, to add logic to your code and disable any functionality when the <code class="highlighter-rouge">isDisabled</code> property is <code class="highlighter-rouge">true</code>.</p>
 
-<p>A simple <code class="language-plaintext highlighter-rouge">if (!this.isDisabled)</code> conditional statement before any functionality should provide a proper disabled state. 
+<p>A simple <code class="highlighter-rouge">if (!this.isDisabled)</code> conditional statement before any functionality should provide a proper disabled state. <br />
 You can also override your plugin disabled CSS class rules using a plugin custom CSS as explained below.</p>
     
       <h3 id="show--hide">
@@ -550,7 +560,7 @@ You can also override your plugin disabled CSS class rules using a plugin custom
         
       </h3>
 
-<p>In some cases you may want to  hide your component element completely during playback. In this case, use <code class="language-plaintext highlighter-rouge">this.hide()</code> to hide the component and <code class="language-plaintext highlighter-rouge">this.show()</code> to show it again.</p>
+<p>In some cases you may want to  hide your component element completely during playback. In this case, use <code class="highlighter-rouge">this.hide()</code> to hide the component and <code class="highlighter-rouge">this.show()</code> to show it again.</p>
     
       <h3 id="accessing-the-player-interface">
         
@@ -563,18 +573,19 @@ You can also override your plugin disabled CSS class rules using a plugin custom
 <p>In order to access the Player controls and interface, you can use jQuery class selectors. The Player also provides methods to access its main DOM elements:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">getInterface()</code>: Returns a jQuery object representing the entire Player interface</li>
-  <li><code class="language-plaintext highlighter-rouge">getVideoHolder()</code>: Returns a jQuery object representing the video holder DIV containing the video display and all elements displayed over the video</li>
-  <li><code class="language-plaintext highlighter-rouge">getVideoDisplay()</code>: Returns a jQuery object representing the DIV holding the video object</li>
-  <li><code class="language-plaintext highlighter-rouge">getControlBarContainer()</code>: Returns a jQuery object representing the bottom control bar holding the Player controls</li>
-  <li><code class="language-plaintext highlighter-rouge">getTopBarContainer()</code>: Returns a jQuery object representing the top control bar</li>
-  <li><code class="language-plaintext highlighter-rouge">getPlayerPoster()</code>: Returns a jQuery object representing the video poster image</li>
+  <li><code class="highlighter-rouge">getInterface()</code>: Returns a jQuery object representing the entire Player interface</li>
+  <li><code class="highlighter-rouge">getVideoHolder()</code>: Returns a jQuery object representing the video holder DIV containing the video display and all elements displayed over the video</li>
+  <li><code class="highlighter-rouge">getVideoDisplay()</code>: Returns a jQuery object representing the DIV holding the video object</li>
+  <li><code class="highlighter-rouge">getControlBarContainer()</code>: Returns a jQuery object representing the bottom control bar holding the Player controls</li>
+  <li><code class="highlighter-rouge">getTopBarContainer()</code>: Returns a jQuery object representing the top control bar</li>
+  <li><code class="highlighter-rouge">getPlayerPoster()</code>: Returns a jQuery object representing the video poster image</li>
 </ul>
 
 <p>For example, to select all of the buttons in the bottom control bar, use:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">getControlBarContainer</span><span class="p">().</span><span class="nx">find</span><span class="p">(</span><span class="dl">'</span><span class="s1">.btn</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">getControlBarContainer</span><span class="p">().</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.btn'</span><span class="p">);</span>
+</code></pre>
+</div>
     
       <h3 id="determining-player-state-and-ads-playback">
         
@@ -587,10 +598,10 @@ You can also override your plugin disabled CSS class rules using a plugin custom
 <p>In many cases you would like to know the Player’s current state, i.e., is it playing or paused, is an ad currently playing, etc. Determining the state of the Player can be done in the following ways:</p>
 
 <ul>
-  <li>Events registration: Register to Player events such as the <code class="language-plaintext highlighter-rouge">playerStateChange</code> event. For more information, see the Events section in the <a href="/api-docs/Web-Video-Player/Kaltura-Media-Player-API.html">Player API guide</a>.</li>
-  <li>Check Player properties, for example: <code class="language-plaintext highlighter-rouge">this.getPlayer().paused</code>.</li>
+  <li>Events registration: Register to Player events such as the <code class="highlighter-rouge">playerStateChange</code> event. For more information, see the Events section in the <a href="/api-docs/Web-Video-Player/Kaltura-Media-Player-API.html">Player API guide</a>.</li>
+  <li>Check Player properties, for example: <code class="highlighter-rouge">this.getPlayer().paused</code>.</li>
   <li>Examine the Player state classes. For more information see the Player state CSS classes in the <a href="/api-docs/Web-Video-Player/Player-Customization.html">Player customization article</a>.</li>
-  <li>To determine if an ad is currently playing use: <code class="language-plaintext highlighter-rouge">this.getPlayer().isInSequence()</code>. <code class="language-plaintext highlighter-rouge">true</code> indicates an ad is currently playing.</li>
+  <li>To determine if an ad is currently playing use: <code class="highlighter-rouge">this.getPlayer().isInSequence()</code>. <code class="highlighter-rouge">true</code> indicates an ad is currently playing.</li>
 </ul>
     
       <h4 id="example-disable-your-plugin-during-ad-playback">
@@ -601,16 +612,17 @@ You can also override your plugin disabled CSS class rules using a plugin custom
         
       </h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">addBindings</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">addBindings</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">AdSupport_StartAdPlayback</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'AdSupport_StartAdPlayback'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="nx">_this</span><span class="p">.</span><span class="nx">onDisable</span><span class="p">();</span>
     <span class="p">});</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">AdSupport_EndAdPlayback</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'AdSupport_EndAdPlayback'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="nx">_this</span><span class="p">.</span><span class="nx">onEnable</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="calling-player-methods-using-the-player-api">
         
@@ -620,9 +632,9 @@ You can also override your plugin disabled CSS class rules using a plugin custom
         
       </h3>
 
-<p>While you may call the Player methods directly from your plugin, it is better the use the Player API for this purpose. <br />
-The Player API makes sure your command is executed seamlessly across multiple playback engines and handles possible errors.<br />
-To call a Player method using the API, use the <code class="language-plaintext highlighter-rouge">sendNotification</code> method. For more information, see the [Player API guide]/api-docs/Web-Video-Player/Kaltura-Media-Player-API.html).</p>
+<p>While you may call the Player methods directly from your plugin, it is better the use the Player API for this purpose.   <br />
+The Player API makes sure your command is executed seamlessly across multiple playback engines and handles possible errors.  <br />
+To call a Player method using the API, use the <code class="highlighter-rouge">sendNotification</code> method. For more information, see the [Player API guide]/api-docs/Web-Video-Player/Kaltura-Media-Player-API.html).</p>
     
       <h4 id="example-switching-the-currently-playing-media">
         
@@ -632,8 +644,9 @@ To call a Player method using the API, use the <code class="language-plaintext h
         
       </h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">sendNotification</span><span class="p">(</span><span class="dl">"</span><span class="s2">changeMedia</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="dl">"</span><span class="s2">entryId</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">0_wm82kqmm</span><span class="dl">"</span> <span class="p">});</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">sendNotification</span><span class="p">(</span><span class="s2">"changeMedia"</span><span class="p">,</span> <span class="p">{</span> <span class="s2">"entryId"</span> <span class="p">:</span> <span class="s2">"0_wm82kqmm"</span> <span class="p">});</span>
+</code></pre>
+</div>
     
       <h3 id="event-dispatching">
         
@@ -643,13 +656,14 @@ To call a Player method using the API, use the <code class="language-plaintext h
         
       </h3>
 
-<p>You may want to dispatch events from your plugin to be used by other plugins or as an external API for other developers.<br />
-Plugins dispatch events use the Player <code class="language-plaintext highlighter-rouge">triggerHelper</code> method. Try to use descriptive event names for ease of use.</p>
+<p>You may want to dispatch events from your plugin to be used by other plugins or as an external API for other developers.  <br />
+Plugins dispatch events use the Player <code class="highlighter-rouge">triggerHelper</code> method. Try to use descriptive event names for ease of use.</p>
 
 <p>You may also pass additional parameters with your event by passing a parameters array as a second argument to the triggerHelper method:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">triggerHelper</span><span class="p">(</span><span class="dl">'</span><span class="s1">myCustomEventName</span><span class="dl">'</span><span class="p">,</span> <span class="p">[</span><span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">,</span> <span class="nx">param3</span><span class="p">]);</span>
-</code></pre></div></div>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">triggerHelper</span><span class="p">(</span><span class="s1">'myCustomEventName'</span><span class="p">,</span> <span class="p">[</span><span class="nx">param1</span><span class="p">,</span> <span class="nx">param2</span><span class="p">,</span> <span class="nx">param3</span><span class="p">]);</span>
+</code></pre>
+</div>
     
       <h4 id="example-dispatch-a-custom-event-upon-button-click">
         
@@ -659,23 +673,24 @@ Plugins dispatch events use the Player <code class="language-plaintext highlight
         
       </h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">getComponent</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getComponent</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
     <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">$el</span> <span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">$el</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span> <span class="dl">'</span><span class="s1">&lt;button /&gt;</span><span class="dl">'</span> <span class="p">)</span>
-            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span> <span class="dl">'</span><span class="s1">title</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Click Me!</span><span class="dl">'</span> <span class="p">)</span>
-            <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span> <span class="dl">'</span><span class="s1">btn icon-myicon</span><span class="dl">'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCssClass</span><span class="p">()</span> <span class="p">)</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">$el</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span> <span class="s1">'&lt;button /&gt;'</span> <span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span> <span class="s1">'title'</span><span class="p">,</span> <span class="s1">'Click Me!'</span> <span class="p">)</span>
+            <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span> <span class="s1">'btn icon-myicon'</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCssClass</span><span class="p">()</span> <span class="p">)</span>
             <span class="p">.</span><span class="nx">click</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
                 <span class="nx">_this</span><span class="p">.</span><span class="nx">fireMyCustomEvent</span><span class="p">();</span>
             <span class="p">});</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">$el</span><span class="p">;</span>
 <span class="p">},</span>
-<span class="nx">fireMyCustomEvent</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="nx">fireMyCustomEvent</span><span class="err">:</span> <span class="kd">function</span><span class="p">(){</span>
 	<span class="c1">// dispatch the 'myCustomEventName' event</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">triggerHelper</span><span class="p">(</span><span class="dl">'</span><span class="s1">myCustomEventName</span><span class="dl">'</span><span class="p">);</span> 
+    <span class="k">this</span><span class="p">.</span><span class="nx">getPlayer</span><span class="p">().</span><span class="nx">triggerHelper</span><span class="p">(</span><span class="s1">'myCustomEventName'</span><span class="p">);</span> 
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="destroying-the-plugin">
         
@@ -685,11 +700,11 @@ Plugins dispatch events use the Player <code class="language-plaintext highlight
         
       </h3>
 
-<p>While the destroy method is not called automatically by the Player, it is highly advised to define it for cases where you need to perform any cleanup.<br />
+<p>While the destroy method is not called automatically by the Player, it is highly advised to define it for cases where you need to perform any cleanup.  <br />
 Call the destroy function when you no longer want your plugin to perform any logic or when you want to remove it from the Player DOM.</p>
 
 <blockquote>
-  <p><strong>NOTE:</strong> You must call <code class="language-plaintext highlighter-rouge">this._super()</code> in your destroy function in order to invoke the destroy function in your parent class which unbinds and removes your plugin from the DOM.</p>
+  <p><strong>NOTE:</strong> You must call <code class="highlighter-rouge">this._super()</code> in your destroy function in order to invoke the destroy function in your parent class which unbinds and removes your plugin from the DOM.</p>
 </blockquote>
     
       <h4 id="example-destroying-the-plugin-when-the-entry-is-switched">
@@ -700,17 +715,18 @@ Call the destroy function when you no longer want your plugin to perform any log
         
       </h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">addBindings</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">addBindings</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="dl">'</span><span class="s1">onChangeMedia</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">'onChangeMedia'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="nx">_this</span><span class="p">.</span><span class="nx">destroy</span><span class="p">();</span>
     <span class="p">});</span>
 <span class="p">},</span>
-<span class="nx">destroy</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+<span class="nx">destroy</span><span class="err">:</span> <span class="kd">function</span><span class="p">(){</span>
     <span class="c1">// plugin cleanup code here...</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="custom-plugin-css">
         
@@ -725,29 +741,30 @@ Call the destroy function when you no longer want your plugin to perform any log
 <p>Important considerations:</p>
 
 <ul>
-  <li>You can also use this file to override other Player CSS classes. Use the <code class="language-plaintext highlighter-rouge">!important</code> directive to make sure these rules are overridden.</li>
+  <li>You can also use this file to override other Player CSS classes. Use the <code class="highlighter-rouge">!important</code> directive to make sure these rules are overridden.</li>
   <li>If you need to use external assets such as images and fonts, reference them in your CSS using relative links, and use CSS sprite sheets where applicable.</li>
   <li>You may also consider using CSS Data URIs to include inline images and icons or icon fonts for multiple vector icons. To learn more about icon fonts click <a class="external" target="_blank" rel="nofollow" href="http://www.w3schools.com/icons/">here</a>.</li>
 </ul>
 
-<p>To define a custom CSS file, use the <code class="language-plaintext highlighter-rouge">iframeHTML5Css</code> property in your custom plugin parameters:</p>
+<p>To define a custom CSS file, use the <code class="highlighter-rouge">iframeHTML5Css</code> property in your custom plugin parameters:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">kWidget</span><span class="p">.</span><span class="nx">embed</span><span class="p">({</span>
-        <span class="dl">"</span><span class="s2">targetId</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">kaltura_player</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">wid</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">_27017</span><span class="dl">"</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">uiconf_id</span><span class="dl">"</span><span class="p">:</span> <span class="mi">29667911</span><span class="p">,</span>
-        <span class="dl">"</span><span class="s2">flashvars</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">kWidget</span><span class="p">.</span><span class="nx">embed</span><span class="p">({</span>
+        <span class="s2">"targetId"</span><span class="p">:</span> <span class="s2">"kaltura_player"</span><span class="p">,</span>
+        <span class="s2">"wid"</span><span class="p">:</span> <span class="s2">"_27017"</span><span class="p">,</span>
+        <span class="s2">"uiconf_id"</span><span class="p">:</span> <span class="mi">29667911</span><span class="p">,</span>
+        <span class="s2">"flashvars"</span><span class="p">:</span> <span class="p">{</span>
             <span class="c1">//This line adds your custom plugin:</span>
-            <span class="dl">"</span><span class="s2">myCustomPluginName</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
-                <span class="dl">'</span><span class="s1">plugin</span><span class="dl">'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="dl">"</span><span class="s2">iframeHTML5Js</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">myCustomPluginName.js</span><span class="dl">"</span><span class="p">,</span>
+            <span class="s2">"myCustomPluginName"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">'plugin'</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="s2">"iframeHTML5Js"</span> <span class="p">:</span> <span class="s2">"myCustomPluginName.js"</span><span class="p">,</span>
                 <span class="c1">//This line sets the plugin custom CSS file path:</span>
-                <span class="dl">"</span><span class="s2">iframeHTML5Css</span><span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">myCustomCSS.css</span><span class="dl">"</span>
+                <span class="s2">"iframeHTML5Css"</span> <span class="p">:</span> <span class="s2">"myCustomCSS.css"</span>
             <span class="p">},</span>
         <span class="p">},</span>
-        <span class="dl">"</span><span class="s2">entry_id</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1_1611vudr</span><span class="dl">"</span>
+        <span class="s2">"entry_id"</span><span class="p">:</span> <span class="s2">"1_1611vudr"</span>
     <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <blockquote>
   <p><strong>Note:</strong> The link to your CSS file can be relative or absolute.</p>

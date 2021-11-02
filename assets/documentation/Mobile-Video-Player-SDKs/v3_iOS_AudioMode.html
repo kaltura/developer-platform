@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jan 31 08:04:20 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_AudioMode.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jan 31 08:04:20 2017</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_AudioMode.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jan 29 17:25:28 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue Jan 31 08:04:20 2017, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -157,7 +157,7 @@ rtp('get', 'campaign',true);
   <li>Change the actual category value to AVAudioSessionCategoryPlayback as follows:</li>
 </ol>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">audioSessionInitialCategory</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">var</span> <span class="nv">audioSessionInitialCategory</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>
 
 <span class="c1">//-----</span>
 
@@ -167,17 +167,19 @@ rtp('get', 'campaign',true);
 <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
     <span class="n">audioSessionInitialCategory</span> <span class="o">=</span> <span class="kc">nil</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><strong>Note:</strong> When the video is finished, you may return the initial category value as follows:</p>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">audioSessionInitialCategory</span> <span class="p">{</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">audioSessionInitialCategory</span> <span class="p">{</span>
    <span class="k">do</span> <span class="p">{</span>
         <span class="k">try</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span><span class="o">.</span><span class="nf">setCategory</span><span class="p">(</span><span class="n">audioSessionInitialCategory</span><span class="o">!</span><span class="p">)</span>
    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
    <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="have-questions-or-need-help">
         

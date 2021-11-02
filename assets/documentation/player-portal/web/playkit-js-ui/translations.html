@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jul 30 02:08:55 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/playkit-js-ui/translations.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jul 30 02:08:55 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/web/playkit-js-ui/translations.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Jul 30 02:08:55 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Jul 30 02:08:55 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
@@ -129,7 +129,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>The UI locale can be customized by adding translations to the dictionary object.<br />
+		<p>The UI locale can be customized by adding translations to the dictionary object.  <br />
 Dictionaries can be added via the config object and the UI language, and can be set via the locale config.</p>
       <h2 id="defining-a-new-language">
         
@@ -145,97 +145,98 @@ Dictionaries can be added via the config object and the UI language, and can be 
 
 <p>A sample English dictionary looks like this:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"controls"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"play"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pause"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pause"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"share"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Share"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Language"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fullscreen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fullscreen"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"rewind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rewind"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"vrStereo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vrStereo"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"live"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Live"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"unmute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unmute"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prev"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"startOver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Start over"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"pictureInPicture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Picture in picture"</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"controls"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"play"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pause"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pause"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"share"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Share"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Language"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"fullscreen"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fullscreen"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"rewind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rewind"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"vrStereo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vrStereo"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"live"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Live"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"unmute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unmute"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prev"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"startOver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Start over"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pictureInPicture"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Picture in picture"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"unmute"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"unmute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unmute"</span><span class="w">
+  </span><span class="nt">"unmute"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"unmute"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unmute"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"copy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copy"</span><span class="w">
+  </span><span class="nt">"copy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copy"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quality"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"speed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speed"</span><span class="w">
+  </span><span class="nt">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Settings"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quality"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"speed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speed"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Language"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audio"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"captions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Captions"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"advanced_captions_settings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced captions settings"</span><span class="w">
+  </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Language"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audio"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"captions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Captions"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"advanced_captions_settings"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced captions settings"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Share"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"embed_options"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Embed Options"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"start_video_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Start video at"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Share on Email"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"embed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get embed code"</span><span class="w">
+  </span><span class="nt">"share"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Share"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"embed_options"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Embed Options"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"start_video_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Start video at"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Share on Email"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"embed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Get embed code"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"overlay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Close"</span><span class="w">
+  </span><span class="nt">"overlay"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Close"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"default_error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"default_session_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Session ID"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"retry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retry"</span><span class="w">
+  </span><span class="nt">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"default_error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Something went wrong"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"default_session_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Session ID"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"retry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retry"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"ads"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"ad_notice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advertisement"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"learn_more"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Learn more"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"skip_ad"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skip ad"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"skip_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skip in"</span><span class="w">
+  </span><span class="nt">"ads"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"ad_notice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advertisement"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"learn_more"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Learn more"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"skip_ad"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skip ad"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"skip_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Skip in"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"cvaa"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced captions settings"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"sample_caption_tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"set_custom_caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set custom caption"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"edit_caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Edit caption"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"size_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Size"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"font_color_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font color"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"font_family_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font family"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"font_style_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font style"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"font_opacity_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font opacity"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"background_color_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Background color"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"background_opacity_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Background opacity"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"apply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apply"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"caption_preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is your caption preview"</span><span class="w">
+  </span><span class="nt">"cvaa"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Advanced captions settings"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sample_caption_tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"set_custom_caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set custom caption"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"edit_caption"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Edit caption"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"size_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Size"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"font_color_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font color"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"font_family_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font family"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"font_style_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font style"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"font_opacity_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Font opacity"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"background_color_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Background color"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"background_opacity_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Background opacity"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"apply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apply"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"caption_preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"This is your caption preview"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"cast"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"play_on_tv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play on TV"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"disconnect_from_tv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Disconnect from TV"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"connecting_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connecting to"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"connected_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connected to"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"playing_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Playing on"</span><span class="w">
+  </span><span class="nt">"cast"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"play_on_tv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play on TV"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"disconnect_from_tv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Disconnect from TV"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"connecting_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connecting to"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"connected_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Connected to"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"playing_on"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Playing on"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"playlist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Previous"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"up_next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Up Next"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cancel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cancel"</span><span class="w">
+  </span><span class="nt">"playlist"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"prev"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Previous"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"up_next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Up Next"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cancel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cancel"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"pictureInPicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"overlay_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Playing in Picture In Picture mode"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"overlay_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play Here"</span><span class="w">
+  </span><span class="nt">"pictureInPicture"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"overlay_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Playing in Picture In Picture mode"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"overlay_button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play Here"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <p>The default locale is English.</p>
 

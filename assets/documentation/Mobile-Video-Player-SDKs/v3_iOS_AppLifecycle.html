@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_AppLifecycle.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_AppLifecycle.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed Jan 18 11:49:21 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -193,7 +193,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">AVFoundation</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">import</span> <span class="kt">AVFoundation</span>
 <span class="kd">import</span> <span class="kt">AudioToolbox</span>
 
 <span class="k">let</span> <span class="nv">audioSession</span> <span class="o">=</span> <span class="kt">AVAudioSession</span><span class="o">.</span><span class="nf">sharedInstance</span><span class="p">()</span>
@@ -209,12 +209,13 @@ rtp('get', 'campaign',true);
 <span class="p">}</span> <span class="k">catch</span> <span class="k">let</span> <span class="nv">error</span> <span class="k">as</span> <span class="kt">NSError</span> <span class="p">{</span>
     <span class="c1">// handle the error condition</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#import &lt;AVFoundation/AVFoundation.h&gt;
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import &lt;AVFoundation/AVFoundation.h&gt;
 #import &lt;AudioToolbox/AudioToolbox.h&gt;
 </span> 
 <span class="n">AVAudioSession</span> <span class="o">*</span><span class="n">audioSession</span> <span class="o">=</span> <span class="p">[</span><span class="n">AVAudioSession</span> <span class="nf">sharedInstance</span><span class="p">];</span>
@@ -226,7 +227,8 @@ rtp('get', 'campaign',true);
 <span class="n">NSError</span> <span class="o">*</span><span class="n">activationError</span> <span class="o">=</span> <span class="nb">nil</span><span class="p">;</span>
 <span class="n">success</span> <span class="o">=</span> <span class="p">[</span><span class="n">audioSession</span> <span class="nf">setActive</span><span class="p">:</span><span class="nb">YES</span> <span class="nf">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">activationError</span><span class="p">];</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">success</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* handle the error condition */</span> <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p><strong>Special considerations for video media</strong>. If the current item is displaying video, playback of the player is automatically paused when the application is sent to the background. To prevent this pause from occurring, you’ll need to set the player of an AVPlayerLayer to <em>nil</em>.</p>
 
@@ -234,7 +236,7 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Remove the AVPlayerLayer from its associated AVPlayer once the app is in the background.</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// Remove the AVPlayerLayer from its associated AVPlayer once the app is in the background.</span>
 <span class="kd">func</span> <span class="nf">applicationDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">let</span> <span class="nv">playerView</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">Get</span> <span class="n">your</span> <span class="n">player</span> <span class="n">view</span><span class="err">#</span><span class="o">&gt;</span>
     <span class="n">playerView</span><span class="o">.</span><span class="n">playerLayer</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="kc">nil</span>
@@ -245,23 +247,25 @@ rtp('get', 'campaign',true);
     <span class="k">let</span> <span class="nv">playerView</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="kt">Get</span> <span class="n">your</span> <span class="n">player</span> <span class="n">view</span><span class="err">#</span><span class="o">&gt;</span>
     <span class="n">playerView</span><span class="o">.</span><span class="n">playerLayer</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="n">player</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Remove the AVPlayerLayer from its associated AVPlayer once the app is in the background.</span>
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidEnterBackground</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// Remove the AVPlayerLayer from its associated AVPlayer once the app is in the background.
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidEnterBackground</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="p">{</span>
   <span class="n">MyPlayerLayerView</span> <span class="o">*</span><span class="n">playerView</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="n">Get</span> <span class="n">your</span> <span class="n">player</span> <span class="n">view</span><span class="err">#</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="p">[[</span><span class="n">playerView</span> <span class="nf">playerLayer</span><span class="p">]</span> <span class="nf">setPlayer</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span> <span class="c1">// remove the player</span>
-<span class="p">}</span>
+  <span class="p">[[</span><span class="n">playerView</span> <span class="nf">playerLayer</span><span class="p">]</span> <span class="nf">setPlayer</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span> <span class="c1">// remove the player
+</span><span class="p">}</span>
  
-<span class="c1">// Restore the AVPlayer when the app is active again.</span>
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidBecomeActive</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="p">{</span>
+<span class="c1">// Restore the AVPlayer when the app is active again.
+</span><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidBecomeActive</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="p">{</span>
   <span class="n">MyPlayerLayerView</span> <span class="o">*</span><span class="n">playerView</span> <span class="o">=</span> <span class="o">&lt;</span><span class="err">#</span><span class="n">Get</span> <span class="n">your</span> <span class="n">player</span> <span class="n">view</span><span class="err">#</span><span class="o">&gt;</span><span class="p">;</span>
-  <span class="p">[[</span><span class="n">playerView</span> <span class="nf">playerLayer</span><span class="p">]</span> <span class="nf">setPlayer</span><span class="p">:</span><span class="n">_player</span><span class="p">];</span> <span class="c1">// restore the player</span>
-<span class="p">}</span>
-</code></pre></div></div>
+  <span class="p">[[</span><span class="n">playerView</span> <span class="nf">playerLayer</span><span class="p">]</span> <span class="nf">setPlayer</span><span class="p">:</span><span class="n">_player</span><span class="p">];</span> <span class="c1">// restore the player
+</span><span class="p">}</span>
+</code></pre>
+</div>
 
 <blockquote>
   <p>Note: For more information about playing media while the application runs in the background see the <a href="https://developer.apple.com/library/content/qa/qa1668/_index.html">Apple Developer Site</a>.</p>
@@ -275,9 +279,9 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>Connectivity changes are observed internally to provide better handling when no network connection is available.
-Whenever network reachability changes, an error event will be sent with an NSError inside.
-The player begins listening to changes when starting to load the asset, and stops when the player is deinitialized.
+<p>Connectivity changes are observed internally to provide better handling when no network connection is available.<br />
+Whenever network reachability changes, an error event will be sent with an NSError inside.<br />
+The player begins listening to changes when starting to load the asset, and stops when the player is deinitialized.<br />
 If more than one player is used, the network reachability notifications will stop only after all of the players are deinitialized.</p>
 
 <p>To observe errors (not just reachability), add an observer for error type and use the error accessor on the event.</p>
@@ -285,18 +289,20 @@ If more than one player is used, the network reachability notifications will sto
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">error</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">player</span><span class="o">.</span><span class="nf">addObserver</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt">PlayerEvent</span><span class="o">.</span><span class="n">error</span><span class="p">])</span> <span class="p">{</span> <span class="n">event</span> <span class="k">in</span>
     <span class="k">let</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">error</span> <span class="c1">// on unreachable event receive NSError with relevant data</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">error</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">player</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span> <span class="nf">events</span><span class="p">:@[</span><span class="n">PlayerEvent</span><span class="p">.</span><span class="n">error</span><span class="p">]</span> <span class="n">block</span><span class="o">:^</span><span class="p">(</span><span class="n">PKEvent</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">NSError</span> <span class="o">*</span><span class="n">error</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="n">error</span><span class="p">;</span>
 <span class="p">}];</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="have-questions-or-need-help">
         

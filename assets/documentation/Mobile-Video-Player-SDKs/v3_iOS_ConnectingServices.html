@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Wed Feb 15 12:07:48 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/v3_iOS_ConnectingServices.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Wed Feb 15 12:07:48 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/v3_iOS_ConnectingServices.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed Jan 18 17:18:18 2017, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Wed Feb 15 12:07:48 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -176,22 +176,23 @@ rtp('get', 'campaign',true);
 
 <p>The input of the MockMediaProvider is JSON, for example:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-	</span><span class="nl">"entryId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-		</span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w">
-		</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entryId"</span><span class="p">,</span><span class="w">
-		</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo1"</span><span class="p">,</span><span class="w">
-		</span><span class="nl">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nt">"entryId"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">60000</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entryId"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"demo1"</span><span class="p">,</span><span class="w">
+		</span><span class="nt">"sources"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
 			</span><span class="p">{</span><span class="w">
-				</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m001s001"</span><span class="p">,</span><span class="w">
-				</span><span class="nl">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/dash+xml"</span><span class="p">,</span><span class="w">
-				</span><span class="nl">"url"</span><span class="p">:</span><span class="w"> 	</span><span class="s2">"http://cfvod.kaltura.com/dasha/p/1851571/sp/185157100/serveFlavor/entryId/0_pl5lbfo0/v/2/flavorId/0_,zwq3l44r,otmaqpnf,ywkmqnkg,/forceproxy/true/name/a.mp4.urlset/manifest.mpd"</span><span class="w">
+				</span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"m001s001"</span><span class="p">,</span><span class="w">
+				</span><span class="nt">"mimeType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/dash+xml"</span><span class="p">,</span><span class="w">
+				</span><span class="nt">"url"</span><span class="p">:</span><span class="w"> 	</span><span class="s2">"http://cfvod.kaltura.com/dasha/p/1851571/sp/185157100/serveFlavor/entryId/0_pl5lbfo0/v/2/flavorId/0_,zwq3l44r,otmaqpnf,ywkmqnkg,/forceproxy/true/name/a.mp4.urlset/manifest.mpd"</span><span class="w">
 			</span><span class="p">}</span><span class="w">
 		</span><span class="p">]</span><span class="w">
 	</span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div></div>
+</span></code></pre>
+</div>
 
 <p>To initialize the mockMediaProvider use:</p>
 
@@ -199,18 +200,20 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">mediaProvider1</span> <span class="p">:</span> <span class="kt">MediaEntryProvider</span> <span class="o">=</span> <span class="kt">MockMediaEntryProvider</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">mediaProvider1</span> <span class="p">:</span> <span class="kt">MediaEntryProvider</span> <span class="o">=</span> <span class="kt">MockMediaEntryProvider</span><span class="p">()</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">content</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">fileContent</span><span class="p">)</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"entryId"</span><span class="p">)</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="ottmediaprovider">
         
@@ -233,20 +236,22 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">provider</span> <span class="o">=</span> <span class="kt">OTTMediaProvider</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">provider</span> <span class="o">=</span> <span class="kt">OTTMediaProvider</span><span class="p">()</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">sessionProvider</span><span class="p">:</span> <span class="n">sessionProvider</span><span class="p">)</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">mediaId</span><span class="p">:</span> <span class="n">mediaID</span><span class="p">)</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">AssetType</span><span class="o">.</span><span class="n">media</span><span class="p">)</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">formats</span><span class="p">:</span> <span class="p">[</span><span class="s">"Mobile_Devices_Main_HD"</span><span class="p">])</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="ovpmediaprovider">
         
@@ -268,18 +273,20 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">provider</span> <span class="o">=</span> <span class="kt">OVPMediaProvider</span><span class="p">()</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">provider</span> <span class="o">=</span> <span class="kt">OVPMediaProvider</span><span class="p">()</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">sessionProvider</span><span class="p">:</span> <span class="n">sessionProvider</span><span class="p">)</span>
 <span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">entryId</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="n">entryID</span><span class="p">)</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="loading-media">
         
@@ -295,21 +302,23 @@ rtp('get', 'campaign',true);
   <p>swift</p>
 </blockquote>
 
-<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">provider</span><span class="o">.</span><span class="n">loadMedia</span> <span class="p">{</span> <span class="p">(</span><span class="nv">r</span><span class="p">:</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">MediaEntry</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="n">provider</span><span class="o">.</span><span class="n">loadMedia</span> <span class="p">{</span> <span class="p">(</span><span class="nv">r</span><span class="p">:</span><span class="kt">Result</span><span class="o">&lt;</span><span class="kt">MediaEntry</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">in</span>
 	<span class="k">if</span> <span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">error</span> <span class="o">!=</span> <span class="kc">nil</span><span class="p">){</span>
 		<span class="nf">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">error</span><span class="p">)</span>
 	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
 		<span class="nf">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
         <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 <blockquote>
   <p>objc</p>
 </blockquote>
 
-<div class="language-objc highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h2 id="have-questions-or-need-help">
         

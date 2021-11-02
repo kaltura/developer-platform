@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/iOS-Headphones-Plugin-out-Support.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Sat Jan 14 11:07:27 2017</span>, By <span class="commit-author">Oren Me</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/iOS-Headphones-Plugin-out-Support.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Thu Aug 11 10:39:28 2016, By: Eliza Sapir</td></tr-->
 				<!--tr><td>Last commit: Sat Jan 14 11:07:27 2017, By <span class="commit-author">Oren Me</span></td></tr-->
 			
@@ -153,14 +153,15 @@ rtp('get', 'campaign',true);
 
 <p>These steps should be implemented on the application side.</p>
 
-<div class="language-objective_c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NSNotificationCenter</span> <span class="o">*</span><span class="n">nc</span> <span class="p">[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">];</span>
+<div class="language-objective_c highlighter-rouge"><pre class="highlight"><code><span class="n">NSNotificationCenter</span> <span class="o">*</span><span class="n">nc</span> <span class="p">[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">];</span>
 <span class="p">[</span><span class="n">nc</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span>
-       <span class="nl">selector:</span><span class="k">@selector</span><span class="p">(</span><span class="nf">routeChanged</span><span class="p">:)</span>
+       <span class="nf">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">routeChanged</span><span class="o">:</span><span class="p">)</span>
            <span class="n">name</span><span class="o">:</span><span class="n">AVAudioSessionRouteChangeNotification</span>
          <span class="n">object</span><span class="o">:</span><span class="nb">nil</span><span class="p">];</span>         
-</code></pre></div></div>
+</code></pre>
+</div>
 
-<p>This code was taken from:
+<p>This code was taken from:<br />
 <a href="https://developer.apple.com/library/ios/documentation/Audio/Conceptual/AudioSessionProgrammingGuide/HandlingAudioHardwareRouteChanges/HandlingAudioHardwareRouteChanges.html">Responding to Audio Hardware Route Changes</a>.</p>
 
 <p>Use the <a href="https://github.com/kaltura/player-sdk-native-ios/blob/master/KALTURAPlayerSDK/KPController.h">KPController</a> instance under ‘KPViewController’ to control your playback.</p>

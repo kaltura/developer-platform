@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/web/player-states-web.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue Jun 9 07:47:37 2020</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/web/player-states-web.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Wed May 1 14:04:39 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Tue Jun 9 07:47:37 2020, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -135,7 +135,7 @@ rtp('get', 'campaign',true);
 
             <div class="post-content">
     		
-		<p>The player supports life cycle states (or statuses), which are based on HTML5 video events (such as <code class="language-plaintext highlighter-rouge">waiting</code> or <code class="language-plaintext highlighter-rouge">playing</code>). Whenever a state change occurs, the player will fire a related event in response.</p>
+		<p>The player supports life cycle states (or statuses), which are based on HTML5 video events (such as <code class="highlighter-rouge">waiting</code> or <code class="highlighter-rouge">playing</code>). Whenever a state change occurs, the player will fire a related event in response.</p>
       <h2 id="registering-to-state-changes">
         
         
@@ -144,7 +144,7 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>When a player changes its state, it fires a <code class="language-plaintext highlighter-rouge">PlayerStateChanged</code> event. The event data contains the player’s old state as well as the new state. By registering to state changes and listening events, you can manage dependent logic accordingly (this applies mostly to UI changes).</p>
+<p>When a player changes its state, it fires a <code class="highlighter-rouge">PlayerStateChanged</code> event. The event data contains the player’s old state as well as the new state. By registering to state changes and listening events, you can manage dependent logic accordingly (this applies mostly to UI changes).</p>
 
 <p>The state’s you register to listen to include the state class, the state type, and transitions between states. These next section provide additional details.</p>
     
@@ -156,8 +156,8 @@ rtp('get', 'campaign',true);
         
       </h2>
 
-<p>In the <code class="language-plaintext highlighter-rouge">PlayerStateChanged</code> event, the player exposes both its old state and its new state.
-To learn more about what you can do with these states, refer to the detailed <code class="language-plaintext highlighter-rouge">State</code> class API <del>here</del>.</p>
+<p>In the <code class="highlighter-rouge">PlayerStateChanged</code> event, the player exposes both its old state and its new state.<br />
+To learn more about what you can do with these states, refer to the detailed <code class="highlighter-rouge">State</code> class API <del>here</del>.</p>
     
       <h2 id="available-state-types">
         
@@ -171,8 +171,9 @@ To learn more about what you can do with these states, refer to the detailed <co
 
 <p>Here’s an example how you can access a player state type:</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">);</span> <span class="c1">// 'playing'</span>
-</code></pre></div></div>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">PLAYING</span><span class="p">);</span> <span class="c1">// 'playing'</span>
+</code></pre>
+</div>
     
       <h2 id="transitioning-between-states">
         
@@ -182,7 +183,7 @@ To learn more about what you can do with these states, refer to the detailed <co
         
       </h2>
 
-<p>When the player moves from one state to another, this is defined as a <strong>transition</strong>. For example, if the player’s current state is <code class="language-plaintext highlighter-rouge">PLAYING</code> and the video element triggers a <code class="language-plaintext highlighter-rouge">pause</code> event, the player will change its state to <code class="language-plaintext highlighter-rouge">PAUSED</code>.</p>
+<p>When the player moves from one state to another, this is defined as a <strong>transition</strong>. For example, if the player’s current state is <code class="highlighter-rouge">PLAYING</code> and the video element triggers a <code class="highlighter-rouge">pause</code> event, the player will change its state to <code class="highlighter-rouge">PAUSED</code>.</p>
     
       <h2 id="player-state-machine">
         
@@ -192,7 +193,7 @@ To learn more about what you can do with these states, refer to the detailed <co
         
       </h2>
 
-<p>This figure illustrates the functionality of the player state machine:
+<p>This figure illustrates the functionality of the player state machine:<br />
 <img src="/assets/images/player-state-machine.jpg" alt="player-state-machine" /></p>
 
 <p>The code snippets below show examples of how a state change appears in the player code:</p>
@@ -205,11 +206,12 @@ To learn more about what you can do with these states, refer to the detailed <co
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">newState</span><span class="p">;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">New state type is: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">newState</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">newState</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'New state type is: '</span> <span class="o">+</span> <span class="nx">newState</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="getting-the-previous-state">
         
@@ -219,12 +221,13 @@ To learn more about what you can do with these states, refer to the detailed <co
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">oldState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">oldState</span><span class="p">;</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Previous state type is: </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">oldState</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">The player was in the previous state </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">oldState</span><span class="p">.</span><span class="nx">duration</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> millis</span><span class="dl">'</span><span class="p">);</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">oldState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">oldState</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Previous state type is: '</span> <span class="o">+</span> <span class="nx">oldState</span><span class="p">.</span><span class="nx">type</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'The player was in the previous state '</span> <span class="o">+</span> <span class="nx">oldState</span><span class="p">.</span><span class="nx">duration</span> <span class="o">+</span> <span class="s1">' millis'</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="buffer-start">
         
@@ -234,13 +237,14 @@ To learn more about what you can do with these states, refer to the detailed <co
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">newState</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">newState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">newState</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">newState</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">player</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">BUFFERING</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Buffer start - show spinner</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="buffer-end">
         
@@ -250,13 +254,14 @@ To learn more about what you can do with these states, refer to the detailed <co
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">oldState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">oldState</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">oldState</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">.</span><span class="nx">oldState</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">oldState</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">player</span><span class="p">.</span><span class="nx">State</span><span class="p">.</span><span class="nx">BUFFERING</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Buffer end - hide spinner</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="buffer-underflow">
         
@@ -266,14 +271,15 @@ To learn more about what you can do with these states, refer to the detailed <co
         
       </h3>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">State</span> <span class="o">=</span> <span class="nx">player</span><span class="p">.</span><span class="nx">State</span><span class="p">;</span>
-  <span class="kd">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">player</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">Event</span><span class="p">.</span><span class="nx">PLAYER_STATE_CHANGED</span><span class="p">,</span> <span class="nx">event</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">State</span> <span class="o">=</span> <span class="nx">player</span><span class="p">.</span><span class="nx">State</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">payload</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">oldState</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">State</span><span class="p">.</span><span class="nx">PLAYING</span> <span class="o">&amp;&amp;</span> <span class="nx">payload</span><span class="p">.</span><span class="nx">newState</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="nx">State</span><span class="p">.</span><span class="nx">BUFFERING</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Buffer underflow</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 		
 </article>
 

@@ -109,14 +109,14 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Fri Oct 15 21:06:35 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Video-On-Demand-and-Digital-Assets-Management/Upload-and-Import-Video-Files-via-API.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon Sep 27 05:27:36 2021</span>, By <span class="commit-author">Hunterpp</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Video-On-Demand-and-Digital-Assets-Management/Upload-and-Import-Video-Files-via-API.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Mon Sep 20 21:08:31 2021, By: Hunterpp</td></tr-->
-				<!--tr><td>Last commit: Fri Oct 15 21:06:35 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
+				<!--tr><td>Last commit: Mon Sep 27 05:27:36 2021, By <span class="commit-author">Hunterpp</span></td></tr-->
 			
 				<!-- 
 				
 				<tr>
-					<td>Hunterpp (4 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
+					<td>Hunterpp (2 commits) (<a href="mailto:hunter.peress@kaltura.com">hunter.peress@kaltura.com</a>)</td>
 				</tr> -->
 
 				<!--  -->
@@ -137,18 +137,18 @@ rtp('get', 'campaign',true);
         
       </h3>
 
-<p>The Kaltura VPaaS offers many ways for ingesting content; a file upload API, bulk files import using CSV or XML, MRSS ingest services, and various widgets you can integrate into your workflows or sites, to allow user contributions and build custom upload interfaces.
+<p>The Kaltura VPaaS offers many ways for ingesting content; a file upload API, bulk files import using CSV or XML, MRSS ingest services, and various widgets you can integrate into your workflows or sites, to allow user contributions and build custom upload interfaces.<br />
 Find the suitable ingestion methodologies for your workflow below:</p>
 
 <ul>
-  <li><a href="/workflows/Ingest_and_Upload_Media">File Upload and Import REST APIs</a>
+  <li><a href="https://developer.kaltura.com/workflows/Ingest_and_Upload_Media">File Upload and Import REST APIs</a>
     <ul>
       <li><a href="https://github.com/kaltura/chunked-file-upload-jquery">Web Upload in JavaScript/jQuery (with chunked parallel pause-resume support)</a></li>
       <li><a href="https://github.com/kaltura/Sample-Kaltura-Chunked-Upload-Java">Upload in Java</a></li>
     </ul>
   </li>
-  <li><a href="/Video-On-Demand-and-Digital-Assets-Management/Import-Video-Files-via-Bulk-Upload.html">Import via Bulk Upload</a></li>
-  <li><a href="/workflows/Live_Stream_and_Broadcast">Live Streaming and Webcam Recording</a></li>
+  <li><a href="/api-docs/Ingest_and_Upload_Media/Bulk-Content-Ingestion.html">Bulk Upload XML and CSV formats</a></li>
+  <li><a href="https://developer.kaltura.com/workflows/Live_Stream_and_Broadcast">Live Streaming and Webcam Recording</a></li>
   <li><a href="https://knowledge.kaltura.com/node/737">Drop Folders and Aspera</a></li>
 </ul>
     
@@ -164,27 +164,16 @@ Find the suitable ingestion methodologies for your workflow below:</p>
 
 <p><strong>Step 1: Create an Upload Token</strong></p>
 
-<p>You’ll use <a href="/console/service/uploadToken/action/add"><code class="language-plaintext highlighter-rouge">uploadToken.add</code></a> to create an uploadToken for your new video.</p>
+<p>You’ll use <a href="https://developer.kaltura.com/console/service/uploadToken/action/add"><code class="highlighter-rouge">uploadToken.add</code></a> to create an uploadToken for your new video.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
               </ul>
             </div>
           <div class="highlight example python">
             <pre><code class="python" data-lang="python">upload_token = KalturaUploadToken()
 token = client.uploadToken.add(upload_token);</code></pre>
-          </div>
-          <div class="highlight example java">
-            <pre><code class="java" data-lang="java">UploadToken uploadToken = new UploadToken();
-
-AddUploadTokenBuilder requestBuilder = UploadTokenService.add(uploadToken)
-.setCompletion(new OnCompletion&lt;Response&lt;UploadToken&gt;&gt;() {
-    @Override
-    public void onComplete(Response&lt;UploadToken&gt; token) {
-        System.out.println(token);
-    }
-});</code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$uploadToken = new KalturaUploadToken();
@@ -198,6 +187,17 @@ kaltura.services.uploadToken.add(uploadToken)
 .execute(client)
 .then(token =&gt; {
     console.log(token);
+});</code></pre>
+          </div>
+          <div class="highlight example java">
+            <pre><code class="java" data-lang="java">UploadToken uploadToken = new UploadToken();
+
+AddUploadTokenBuilder requestBuilder = UploadTokenService.add(uploadToken)
+.setCompletion(new OnCompletion&lt;Response&lt;UploadToken&gt;&gt;() {
+    @Override
+    public void onComplete(Response&lt;UploadToken&gt; token) {
+        System.out.println(token);
+    }
 });</code></pre>
           </div>
 </div>
@@ -231,11 +231,11 @@ kaltura.services.uploadToken.add(uploadToken)
 
 <p><strong>Step 2: Upload the File Data</strong></p>
 
-<p>We’ll call <a href="/console/service/uploadToken/action/upload"><code class="language-plaintext highlighter-rouge">uploadToken.upload</code></a> to upload a new video file using the newly created token. If you don’t have a video file handy, you can right-click <a href="http://cfvod.kaltura.com/pd/p/811441/sp/81144100/serveFlavor/entryId/1_2bjlk7qb/v/2/flavorId/1_d1ft34uv/fileName/Kaltura_Logo_Animation.flv/name/a.flv">this link</a> to save a sample video of Kaltura’s logo. In the case of large files, <code class="language-plaintext highlighter-rouge">resume</code> should be set to <code class="language-plaintext highlighter-rouge">true</code> and <code class="language-plaintext highlighter-rouge">finalChunk</code> is set to <code class="language-plaintext highlighter-rouge">false</code> until the final chunk. <code class="language-plaintext highlighter-rouge">resumeAt</code> determines at which byte to chunk the next fragment.</p>
+<p>We’ll call <a href="https://developer.kaltura.com/console/service/uploadToken/action/upload"><code class="highlighter-rouge">uploadToken.upload</code></a> to upload a new video file using the newly created token. If you don’t have a video file handy, you can right-click <a href="http://cfvod.kaltura.com/pd/p/811441/sp/81144100/serveFlavor/entryId/1_2bjlk7qb/v/2/flavorId/1_d1ft34uv/fileName/Kaltura_Logo_Animation.flv/name/a.flv">this link</a> to save a sample video of Kaltura’s logo. In the case of large files, <code class="highlighter-rouge">resume</code> should be set to <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">finalChunk</code> is set to <code class="highlighter-rouge">false</code> until the final chunk. <code class="highlighter-rouge">resumeAt</code> determines at which byte to chunk the next fragment.</p>
 
 <div class="code-examples">            <div class="the_buttons examples">
               <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
               </ul>
             </div>
           <div class="highlight example python">
@@ -245,29 +245,6 @@ resume = False
 final_chunk = True	
 resume_at = 0
 result = client.uploadToken.upload(upload_token_id, file_data, resume, final_chunk, resume_at)</code></pre>
-          </div>
-          <div class="highlight example java">
-            <pre><code class="java" data-lang="java">UploadToken uploadToken = new UploadToken();
-
-AddUploadTokenBuilder requestBuilder = UploadTokenService.add(uploadToken)
-.setCompletion(new OnCompletion&lt;Response&lt;UploadToken&gt;&gt;() {
-    @Override
-    public void onComplete(Response&lt;UploadToken&gt; token) {
-        String uploadTokenId = token.id;
-		File fileData = new FileInputStream(&quot;/path/to/file&quot;);
-		boolean resume = false;
-		boolean finalChunk = true;
-		int resumeAt = -1;
-
-		UploadUploadTokenBuilder requestBuilder = UploadTokenService.upload(uploadTokenId, fileData, resume, finalChunk, resumeAt)
-	    .setCompletion(new OnCompletion&lt;Response&lt;UploadToken&gt;&gt;() {
-	        @Override
-	        public void onComplete(Response&lt;UploadToken&gt; result) {
-	            System.out.println(result);
-	        }
-	    });
-    }
-});</code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$uploadTokenId = $token-&gt;id;
@@ -297,25 +274,6 @@ kaltura.services.uploadToken.add(uploadToken)
 	});
 });</code></pre>
           </div>
-</div>
-<p> </p>
-
-<p><strong>Step 3: Creating the Kaltura Media Entry</strong></p>
-
-<p>Here’s where you’ll set your video’s name and description use <a href="/console/service/media/action/add"><code class="language-plaintext highlighter-rouge">media.add</code></a> to create the entry.</p>
-
-<div class="code-examples">            <div class="the_buttons examples">
-              <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
-              </ul>
-            </div>
-          <div class="highlight example python">
-            <pre><code class="python" data-lang="python">media_entry = KalturaMediaEntry()
-media_entry.name = &quot;Kaltura Logo&quot;
-media_entry.description = &quot;sample video of kaltura logo&quot;
-media_entry.mediaType = KalturaMediaType.VIDEO
-entry = client.media.add(media_entry)</code></pre>
-          </div>
           <div class="highlight example java">
             <pre><code class="java" data-lang="java">UploadToken uploadToken = new UploadToken();
 
@@ -333,18 +291,30 @@ AddUploadTokenBuilder requestBuilder = UploadTokenService.add(uploadToken)
 	    .setCompletion(new OnCompletion&lt;Response&lt;UploadToken&gt;&gt;() {
 	        @Override
 	        public void onComplete(Response&lt;UploadToken&gt; result) {
-	            MediaEntry mediaEntry = new MediaEntry();
-	            AddMediaBuilder requestBuilder = MediaService.add(mediaEntry)
-    			.setCompletion(new OnCompletion&lt;Response&lt;MediaEntry&gt;&gt;() {
-	        		@Override
-	        		public void onComplete(Response&lt;MediaEntry&gt; entry) {
-	            		System.out.println(entry);
-	        		}
-    			});
-    		}
+	            System.out.println(result);
+	        }
 	    });
     }
 });</code></pre>
+          </div>
+</div>
+<p> </p>
+
+<p><strong>Step 3: Creating the Kaltura Media Entry</strong></p>
+
+<p>Here’s where you’ll set your video’s name and description use <a href="https://developer.kaltura.com/console/service/media/action/add"><code class="highlighter-rouge">media.add</code></a> to create the entry.</p>
+
+<div class="code-examples">            <div class="the_buttons examples">
+              <ul class="code-tab">
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
+              </ul>
+            </div>
+          <div class="highlight example python">
+            <pre><code class="python" data-lang="python">media_entry = KalturaMediaEntry()
+media_entry.name = &quot;Kaltura Logo&quot;
+media_entry.description = &quot;sample video of kaltura logo&quot;
+media_entry.mediaType = KalturaMediaType.VIDEO
+entry = client.media.add(media_entry)</code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$mediaEntry = new KalturaMediaEntry();
@@ -382,27 +352,6 @@ kaltura.services.uploadToken.add(uploadToken)
 	});
 });</code></pre>
           </div>
-</div>
-<p> </p>
-
-<p>The Kaltura Entry is a logical object that package all of the related assets to the uploaded file. The Media Entry represents Media assets (such as Image, Audio, or Video assets) and references all of the metadata, caption assets, transcoded renditions (flavors), thumbnails, access control rules, entitled users or any other related asset that is a part of that particular media item.</p>
-
-<p><strong>Step 4: Attach the Video</strong></p>
-
-<p>Now that you have your entry, you need to associate it with the uploaded video token using <a href="/console/service/media/action/addContent"><code class="language-plaintext highlighter-rouge">media.addContent</code></a>.</p>
-
-<div class="code-examples">            <div class="the_buttons examples">
-              <ul class="code-tab">
-                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li>
-              </ul>
-            </div>
-          <div class="highlight example python">
-            <pre><code class="python" data-lang="python">entry_id = entry.id
-resource = KalturaUploadedFileTokenResource()
-resource.token = upload_token_id
-
-result = client.media.addContent(entry_id, resource)</code></pre>
-          </div>
           <div class="highlight example java">
             <pre><code class="java" data-lang="java">UploadToken uploadToken = new UploadToken();
 
@@ -422,25 +371,37 @@ AddUploadTokenBuilder requestBuilder = UploadTokenService.add(uploadToken)
 	        public void onComplete(Response&lt;UploadToken&gt; result) {
 	            MediaEntry mediaEntry = new MediaEntry();
 	            AddMediaBuilder requestBuilder = MediaService.add(mediaEntry)
-			    .setCompletion(new OnCompletion&lt;Response&lt;MediaEntry&gt;&gt;() {
-			        @Override
-			        public void onComplete(Response&lt;MediaEntry&gt; entry) {
-			            String entryId = entry.id;
-						UploadedFileTokenResource resource = new UploadedFileTokenResource();
-
-						AddContentMediaBuilder requestBuilder = MediaService.addContent(entryId, resource)
-    					.setCompletion(new OnCompletion&lt;Response&lt;MediaEntry&gt;&gt;() {
-					        @Override
-					        public void onComplete(Response&lt;MediaEntry&gt; result) {
-					            System.out.println(result);
-					        }
-    					});
-        			}
+    			.setCompletion(new OnCompletion&lt;Response&lt;MediaEntry&gt;&gt;() {
+	        		@Override
+	        		public void onComplete(Response&lt;MediaEntry&gt; entry) {
+	            		System.out.println(entry);
+	        		}
     			});
-        	}
-    	});
+    		}
+	    });
     }
 });</code></pre>
+          </div>
+</div>
+<p> </p>
+
+<p>The Kaltura Entry is a logical object that package all of the related assets to the uploaded file. The Media Entry represents Media assets (such as Image, Audio, or Video assets) and references all of the metadata, caption assets, transcoded renditions (flavors), thumbnails, access control rules, entitled users or any other related asset that is a part of that particular media item.</p>
+
+<p><strong>Step 4: Attach the Video</strong></p>
+
+<p>Now that you have your entry, you need to associate it with the uploaded video token using <a href="https://developer.kaltura.com/console/service/media/action/addContent"><code class="highlighter-rouge">media.addContent</code></a>.</p>
+
+<div class="code-examples">            <div class="the_buttons examples">
+              <ul class="code-tab">
+                <li class="code-tab"><a href="#" class="a_button" target="python">Python</a></li><li class="code-tab"><a href="#" class="a_button" target="php">Php</a></li><li class="code-tab"><a href="#" class="a_button" target="node">Node</a></li><li class="code-tab"><a href="#" class="a_button" target="java">Java</a></li>
+              </ul>
+            </div>
+          <div class="highlight example python">
+            <pre><code class="python" data-lang="python">entry_id = entry.id
+resource = KalturaUploadedFileTokenResource()
+resource.token = upload_token_id
+
+result = client.media.addContent(entry_id, resource)</code></pre>
           </div>
           <div class="highlight example php">
             <pre><code class="php" data-lang="php">$entryId = $entry-&gt;id;
@@ -485,6 +446,45 @@ kaltura.services.uploadToken.add(uploadToken)
 	});
 });</code></pre>
           </div>
+          <div class="highlight example java">
+            <pre><code class="java" data-lang="java">UploadToken uploadToken = new UploadToken();
+
+AddUploadTokenBuilder requestBuilder = UploadTokenService.add(uploadToken)
+.setCompletion(new OnCompletion&lt;Response&lt;UploadToken&gt;&gt;() {
+    @Override
+    public void onComplete(Response&lt;UploadToken&gt; token) {
+        String uploadTokenId = token.id;
+		File fileData = new FileInputStream(&quot;/path/to/file&quot;);
+		boolean resume = false;
+		boolean finalChunk = true;
+		int resumeAt = -1;
+
+		UploadUploadTokenBuilder requestBuilder = UploadTokenService.upload(uploadTokenId, fileData, resume, finalChunk, resumeAt)
+	    .setCompletion(new OnCompletion&lt;Response&lt;UploadToken&gt;&gt;() {
+	        @Override
+	        public void onComplete(Response&lt;UploadToken&gt; result) {
+	            MediaEntry mediaEntry = new MediaEntry();
+	            AddMediaBuilder requestBuilder = MediaService.add(mediaEntry)
+			    .setCompletion(new OnCompletion&lt;Response&lt;MediaEntry&gt;&gt;() {
+			        @Override
+			        public void onComplete(Response&lt;MediaEntry&gt; entry) {
+			            String entryId = entry.id;
+						UploadedFileTokenResource resource = new UploadedFileTokenResource();
+
+						AddContentMediaBuilder requestBuilder = MediaService.addContent(entryId, resource)
+    					.setCompletion(new OnCompletion&lt;Response&lt;MediaEntry&gt;&gt;() {
+					        @Override
+					        public void onComplete(Response&lt;MediaEntry&gt; result) {
+					            System.out.println(result);
+					        }
+    					});
+        			}
+    			});
+        	}
+    	});
+    }
+});</code></pre>
+          </div>
 </div>
 <p> </p>
 
@@ -498,7 +498,7 @@ kaltura.services.uploadToken.add(uploadToken)
         
       </h2>
 
-<p>To enable more advanced content ingestion options, the provided CSV/XML samples can be extended to include multiple/custom metadata items, account specific settings, update action and advanced content ingestion options (for example, ingestion of multiple transcoding flavors, multiple thumbnails etc.) Each item element within the XML, and each line in the CSV, represent a single entry created in the publisher account. Each entry will be populated with the metadata listed in its item element and the content referenced from it. When submitted, the bulk upload XML/CSV is validated on the Kaltura server. The validation includes an inspection of the XML structure, and verification of elements’ structure and order compliance with Kaltura’s bulk upload XSD (XML schema). For more information see <a href="/Video-On-Demand-and-Digital-Assets-Management/Import-Video-Files-via-Bulk-Upload.html">Import via Bulk Upload</a></p>
+<p>To enable more advanced content ingestion options, the provided CSV/XML samples can be extended to include multiple/custom metadata items, account specific settings, update action and advanced content ingestion options (for example, ingestion of multiple transcoding flavors, multiple thumbnails etc.) Each item element within the XML, and each line in the CSV, represent a single entry created in the publisher account. Each entry will be populated with the metadata listed in its item element and the content referenced from it. When submitted, the bulk upload XML/CSV is validated on the Kaltura server. The validation includes an inspection of the XML structure, and verification of elements’ structure and order compliance with Kaltura’s bulk upload XSD (XML schema). For more information see <a href="http://knowledge.kaltura.com/faq/what-bulk-upload-and-ftp-content-ingestion" target="_blank" title="What is bulk and FTP upload">Bulk Upload and FTP Upload</a>.</p>
 
 <p>To ingest a media file bundled with Metadata:</p>
 

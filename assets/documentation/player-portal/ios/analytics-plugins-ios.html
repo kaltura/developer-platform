@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Mon May 13 10:31:51 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/player-portal/ios/analytics-plugins-ios.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Mon May 13 10:31:51 2019</span>, By <span class="commit-author">Avital</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/player-portal/ios/analytics-plugins-ios.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Tue Mar 19 11:23:35 2019, By: Avital</td></tr-->
 				<!--tr><td>Last commit: Mon May 13 10:31:51 2019, By <span class="commit-author">Avital</span></td></tr-->
 			
@@ -150,7 +150,7 @@ rtp('get', 'campaign',true);
     <span class="k">return</span> <span class="kt">KavaPluginConfig</span><span class="p">(</span><span class="nv">partnerId</span><span class="p">:</span> <span class="kt">PARTNER_ID</span><span class="p">,</span> <span class="nv">entryId</span><span class="p">:</span> <span class="n">entryId</span><span class="p">,</span> <span class="nv">ks</span><span class="p">:</span> <span class="n">ks</span><span class="p">,</span> <span class="nv">playbackContext</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">referrer</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">applicationVersion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">playlistId</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar1</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar2</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">customVar3</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Add that plugin to the player in the <code class="language-plaintext highlighter-rouge">loadMedia</code> function by calling <code class="language-plaintext highlighter-rouge">player.updatePluginConfig</code>. This should be included before the <code class="language-plaintext highlighter-rouge">player.prepare</code>.</p>
+<p>Add that plugin to the player in the <code class="highlighter-rouge">loadMedia</code> function by calling <code class="highlighter-rouge">player.updatePluginConfig</code>. This should be included before the <code class="highlighter-rouge">player.prepare</code>.</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">player</span><span class="o">.</span><span class="nf">updatePluginConfig</span><span class="p">(</span><span class="nv">pluginName</span><span class="p">:</span> <span class="kt">KavaPlugin</span><span class="o">.</span><span class="n">pluginName</span><span class="p">,</span> <span class="nv">config</span><span class="p">:</span> <span class="k">self</span><span class="o">.</span><span class="nf">createKavaConfig</span><span class="p">())</span></code></pre></figure>
 
@@ -160,7 +160,7 @@ rtp('get', 'campaign',true);
     <span class="k">return</span> <span class="kt">PluginConfig</span><span class="p">(</span><span class="nv">config</span><span class="p">:</span> <span class="p">[</span><span class="kt">KavaPlugin</span><span class="o">.</span><span class="nv">pluginName</span><span class="p">:</span> <span class="nf">createKavaConfig</span><span class="p">()])</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Lastly, we’ll pass that function instead of <code class="language-plaintext highlighter-rouge">nil</code> to the loadPlayer call in <code class="language-plaintext highlighter-rouge">viewDidLoad</code>:</p>
+<p>Lastly, we’ll pass that function instead of <code class="highlighter-rouge">nil</code> to the loadPlayer call in <code class="highlighter-rouge">viewDidLoad</code>:</p>
 
 <figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">self</span><span class="o">.</span><span class="n">player</span> <span class="o">=</span> <span class="k">try!</span> <span class="kt">PlayKitManager</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">loadPlayer</span><span class="p">(</span><span class="nv">pluginConfig</span><span class="p">:</span> <span class="nf">createPluginConfig</span><span class="p">())</span></code></pre></figure>
 

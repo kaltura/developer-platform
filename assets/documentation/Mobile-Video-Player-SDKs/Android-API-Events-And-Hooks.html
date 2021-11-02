@@ -109,7 +109,7 @@ rtp('get', 'campaign',true);
 			
 			
 			<div class="lastcommittable">
-				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura-vpaas/developer-platform-docs/tree/master/documentation/Mobile-Video-Player-SDKs/Android-API-Events-And-Hooks.md" target="_blank">Contribute to this page</a>
+				<span>Updated: Tue May 1 10:44:05 2018</span>, By <span class="commit-author">Jess Portnoy</span> <a class="editgithub" href="https://github.com/kaltura/developer-platform-docs/tree/dev/documentation/Mobile-Video-Player-SDKs/Android-API-Events-And-Hooks.md" target="_blank">Contribute to this page</a>
 				<!--tr><td>Created on: Sun Jul 24 11:34:21 2016, By: Jess Portnoy</td></tr-->
 				<!--tr><td>Last commit: Tue May 1 10:44:05 2018, By <span class="commit-author">Jess Portnoy</span></td></tr-->
 			
@@ -168,7 +168,7 @@ rtp('get', 'campaign',true);
         
       </h4>
 
-<p>The SDK offers the ability to perform Player operations using the KMediaControl API.
+<p>The SDK offers the ability to perform Player operations using the KMediaControl API.<br />
 This API enables you to send the following operations:</p>
 
 <table>
@@ -249,8 +249,8 @@ This API enables you to send the following operations:</p>
 
 <p>For each native component listener, add one of the operations above.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="nc">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
        <span class="k">if</span> <span class="o">(</span><span class="n">mPlayPauseButton</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"Play"</span><span class="o">))</span> <span class="o">{</span>
            <span class="n">mPlayPauseButton</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Pause"</span><span class="o">);</span>
            <span class="n">getPlayer</span><span class="o">().</span><span class="na">getMediaControl</span><span class="o">().</span><span class="na">start</span><span class="o">();</span>
@@ -260,7 +260,8 @@ This API enables you to send the following operations:</p>
        <span class="o">}</span>    
     <span class="o">}</span> 
     
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>Example: Seek</li>
@@ -268,17 +269,18 @@ This API enables you to send the following operations:</p>
 
 <p>For each native component listener, add one of the operations above.</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="nc">View</span> <span class="n">view</span><span class="o">){</span>                               
-           <span class="n">mPlayer</span><span class="o">.</span><span class="na">getMediaControl</span><span class="o">().</span><span class="na">seek</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="k">new</span> <span class="nc">KMediaControl</span><span class="o">.</span><span class="na">SeekCallback</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">){</span>                               
+           <span class="n">mPlayer</span><span class="o">.</span><span class="na">getMediaControl</span><span class="o">().</span><span class="na">seek</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="k">new</span> <span class="n">KMediaControl</span><span class="o">.</span><span class="na">SeekCallback</span><span class="o">()</span> <span class="o">{</span>
               <span class="nd">@Override</span>
               <span class="kd">public</span> <span class="kt">void</span> <span class="nf">seeked</span><span class="o">(</span><span class="kt">long</span> <span class="n">milliSeconds</span><span class="o">)</span> <span class="o">{</span>
-                 <span class="nc">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"Do your code here"</span><span class="o">);</span>                     
+                 <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"Do your code here"</span><span class="o">);</span>                     
               <span class="o">}</span>
          <span class="o">});</span>
     <span class="o">}</span> 
     
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="player-states-event-listeners">
         
@@ -337,34 +339,35 @@ This API enables you to send the following operations:</p>
         
       </h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Need to call to the same API with null as parameter
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>    Need to call to the same API with null as parameter
+</code></pre>
+</div>
 
 <p>###Implementation Example:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerStateChanged</span><span class="o">(</span><span class="nc">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="nc">KPlayerState</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="nc">KPlayerState</span><span class="o">.</span><span class="na">PAUSED</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerStateChanged</span><span class="o">(</span><span class="n">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="n">KPlayerState</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">KPlayerState</span><span class="o">.</span><span class="na">PAUSED</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">mPlayPauseButton</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Play"</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="nc">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)</span> <span class="o">{</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">mPlayPauseButton</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"Pause"</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerError</span><span class="o">(</span><span class="nc">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="nc">KPError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
-        <span class="no">LOGD</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"onKPlayerError Error Received:"</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="na">getErrorMsg</span><span class="o">());</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerError</span><span class="o">(</span><span class="n">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="n">KPError</span> <span class="n">error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">LOGD</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"onKPlayerError Error Received:"</span> <span class="o">+</span> <span class="n">error</span><span class="o">.</span><span class="na">getErrorMsg</span><span class="o">());</span>
     <span class="o">}</span>
 
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerFullScreenToggeled</span><span class="o">(</span><span class="nc">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isFullscreen</span><span class="o">)</span> <span class="o">{</span>
-        <span class="no">LOGD</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"onKPlayerFullScreenToggeled isFullscreen "</span> <span class="o">+</span> <span class="n">isFullscreen</span><span class="o">);</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerFullScreenToggeled</span><span class="o">(</span><span class="n">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isFullscreen</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">LOGD</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"onKPlayerFullScreenToggeled isFullscreen "</span> <span class="o">+</span> <span class="n">isFullscreen</span><span class="o">);</span>
    <span class="o">}</span>
 
 
     <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerPlayheadUpdate</span><span class="o">(</span><span class="nc">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="kt">long</span> <span class="n">currentTime</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerPlayheadUpdate</span><span class="o">(</span><span class="n">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="kt">long</span> <span class="n">currentTime</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">long</span> <span class="n">currentSeconds</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">currentTime</span> <span class="o">/</span> <span class="mi">1000</span><span class="o">);</span>
         <span class="kt">long</span> <span class="n">totalSeconds</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="o">(</span><span class="n">playerViewController</span><span class="o">.</span><span class="na">getDurationSec</span><span class="o">());</span>
 
@@ -372,15 +375,16 @@ This API enables you to send the following operations:</p>
         <span class="k">if</span> <span class="o">(</span><span class="n">totalSeconds</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">percentage</span> <span class="o">=</span> <span class="o">(((</span><span class="kt">double</span><span class="o">)</span> <span class="n">currentSeconds</span><span class="o">)</span> <span class="o">/</span> <span class="n">totalSeconds</span><span class="o">)</span> <span class="o">*</span> <span class="mi">100</span><span class="o">;</span>
         <span class="o">}</span>
-        <span class="no">LOGD</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"onKPlayerPlayheadUpdate "</span> <span class="o">+</span>  <span class="n">currentSeconds</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="n">totalSeconds</span> <span class="o">+</span> <span class="s">" =&gt; "</span> <span class="o">+</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">percentage</span> <span class="o">+</span> <span class="s">"%"</span><span class="o">);</span>
+        <span class="n">LOGD</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"onKPlayerPlayheadUpdate "</span> <span class="o">+</span>  <span class="n">currentSeconds</span> <span class="o">+</span> <span class="s">"/"</span> <span class="o">+</span> <span class="n">totalSeconds</span> <span class="o">+</span> <span class="s">" =&gt; "</span> <span class="o">+</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">percentage</span> <span class="o">+</span> <span class="s">"%"</span><span class="o">);</span>
         <span class="n">mSeekBar</span><span class="o">.</span><span class="na">setProgress</span><span class="o">((</span><span class="kt">int</span><span class="o">)</span><span class="n">percentage</span><span class="o">);</span>
     <span class="o">}</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>The Kaltura Player supports the following states, to which the developer can listen to and react to changes in the state:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- LOADED
+<div class="highlighter-rouge"><pre class="highlight"><code>- LOADED
 - READY
 - PLAYING
 - PAUSED
@@ -388,21 +392,23 @@ This API enables you to send the following operations:</p>
 - SEEKED
 - ENDED
 - UNKNOWN
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <ul>
   <li>Example: Listening to state change events</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerStateChanged</span><span class="o">(</span><span class="nc">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="nc">KPlayerState</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="nc">KPlayerState</span><span class="o">.</span><span class="na">PAUSED</span> <span class="o">&amp;&amp;</span> <span class="n">playerViewController</span><span class="o">.</span><span class="na">getCurrentPlaybackTime</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-            <span class="nc">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"In Pause state"</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="nc">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)</span> <span class="o">{</span>
-           <span class="nc">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"In playng state"</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onKPlayerStateChanged</span><span class="o">(</span><span class="n">PlayerViewController</span> <span class="n">playerViewController</span><span class="o">,</span> <span class="n">KPlayerState</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">KPlayerState</span><span class="o">.</span><span class="na">PAUSED</span> <span class="o">&amp;&amp;</span> <span class="n">playerViewController</span><span class="o">.</span><span class="na">getCurrentPlaybackTime</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"In Pause state"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">state</span> <span class="o">==</span> <span class="n">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)</span> <span class="o">{</span>
+           <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"In playng state"</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="waiting-for-a-ready-event">
         
@@ -418,16 +424,17 @@ This API enables you to send the following operations:</p>
   <li>Example: Listening to ready state events</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">mPlayer</span><span class="o">.</span><span class="na">registerReadyEvent</span><span class="o">(</span><span class="k">new</span> <span class="nc">PlayerViewController</span><span class="o">.</span><span class="na">ReadyEventListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="n">mPlayer</span><span class="o">.</span><span class="na">registerReadyEvent</span><span class="o">(</span><span class="k">new</span> <span class="n">PlayerViewController</span><span class="o">.</span><span class="na">ReadyEventListener</span><span class="o">()</span> <span class="o">{</span>
       <span class="nd">@Override</span>
       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handler</span><span class="o">()</span> <span class="o">{</span>
-           <span class="nc">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"PLAYER READY"</span><span class="o">);</span>
+           <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"PLAYER READY"</span><span class="o">);</span>
            <span class="n">mPlayer</span><span class="o">.</span><span class="na">getMediaControl</span><span class="o">().</span><span class="na">start</span><span class="o">();</span>
                                 <span class="o">}</span>
        <span class="o">});</span>
        
        
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="enabledisable-configuration-on-runtime">
         
@@ -437,7 +444,7 @@ This API enables you to send the following operations:</p>
         
       </h3>
 
-<p>In some cases, the application will want to add or remove configuration attributes according to states or events that are received.
+<p>In some cases, the application will want to add or remove configuration attributes according to states or events that are received.<br />
 The Player provides an API for enabling and disabling these settings, the setKDPAttribute, which receives three parameters:</p>
 
 <ul>
@@ -449,19 +456,20 @@ The Player provides an API for enabling and disabling these settings, the setKDP
   <li>Example: Adding a closed caption plugin</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="nc">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)){</span>
-   <span class="nc">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"Playing state"</span><span class="o">);</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)){</span>
+   <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"Playing state"</span><span class="o">);</span>
    <span class="n">mPlayer</span><span class="o">.</span><span class="na">setKDPAttribute</span><span class="o">(</span><span class="s">"closedCaptions"</span><span class="o">,</span><span class="s">"displayCaptions"</span><span class="o">,</span> <span class="s">"'"</span> <span class="o">+</span> <span class="s">"true"</span> <span class="o">+</span> <span class="s">"'"</span><span class="o">);</span>
   <span class="o">}</span>
   
-  <span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="nc">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)){</span>
-   <span class="nc">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"Playing state"</span><span class="o">);</span>
+  <span class="k">if</span> <span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">KPlayerState</span><span class="o">.</span><span class="na">PLAYING</span><span class="o">)){</span>
+   <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"Playing state"</span><span class="o">);</span>
    <span class="n">mPlayer</span><span class="o">.</span><span class="na">setStringKDPAttribute</span><span class="o">(</span><span class="s">"closedCaptions"</span><span class="o">,</span><span class="s">"displayCaptions"</span><span class="o">,</span><span class="s">"true"</span><span class="o">);</span>
   <span class="o">}</span>
 
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="player-event-listeners">
         
@@ -479,14 +487,15 @@ The Player provides an API for enabling and disabling these settings, the setKDP
   <li>Example: Listening to a show play controls event</li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">mPlayerView</span><span class="o">.</span><span class="na">addKPlayerEventListener</span><span class="o">(</span><span class="s">"showPlayerControls"</span><span class="o">,</span> <span class="s">"showPlayerControls"</span><span class="o">,</span> <span class="k">new</span> <span class="nc">PlayerViewController</span><span class="o">.</span><span class="na">EventListener</span><span class="o">()</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="n">mPlayerView</span><span class="o">.</span><span class="na">addKPlayerEventListener</span><span class="o">(</span><span class="s">"showPlayerControls"</span><span class="o">,</span> <span class="s">"showPlayerControls"</span><span class="o">,</span> <span class="k">new</span> <span class="n">PlayerViewController</span><span class="o">.</span><span class="na">EventListener</span><span class="o">()</span> <span class="o">{</span>
        <span class="nd">@Override</span>
-       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handler</span><span class="o">(</span><span class="nc">String</span> <span class="n">eventName</span><span class="o">,</span> <span class="nc">String</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
-       <span class="nc">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="no">TAG</span><span class="o">,</span> <span class="s">"on showPlayerControls received"</span><span class="o">);</span>
+       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handler</span><span class="o">(</span><span class="n">String</span> <span class="n">eventName</span><span class="o">,</span> <span class="n">String</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+       <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="n">TAG</span><span class="o">,</span> <span class="s">"on showPlayerControls received"</span><span class="o">);</span>
 <span class="o">}</span>
 <span class="o">});</span>
 
-</code></pre></div></div>
+</code></pre>
+</div>
     
       <h3 id="sending-event-notifications">
         
@@ -512,19 +521,22 @@ The Player provides an API for enabling and disabling these settings, the setKDP
 
 <p><strong>Notification without parameters:</strong></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getPlayer</span><span class="o">().</span><span class="na">sendNotification</span><span class="o">(</span><span class="s">"doPause"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-</code></pre></div></div>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">getPlayer</span><span class="o">().</span><span class="na">sendNotification</span><span class="o">(</span><span class="s">"doPause"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</code></pre>
+</div>
 
 <p><strong>Notification with a string parameter:</strong></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getPlayer</span><span class="o">().</span><span class="na">sendNotification</span><span class="o">(</span><span class="s">"doSeek"</span><span class="o">,</span> <span class="nc">Double</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">seconds</span><span class="o">));</span>
-</code></pre></div></div>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">getPlayer</span><span class="o">().</span><span class="na">sendNotification</span><span class="o">(</span><span class="s">"doSeek"</span><span class="o">,</span> <span class="n">Double</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">seconds</span><span class="o">));</span>
+</code></pre>
+</div>
 
 <p><strong>Notification with a JSON parameter:</strong></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">entry</span> <span class="o">=</span> <span class="s">"'{\"entryId\":\""</span> <span class="o">+</span> <span class="n">entryId</span> <span class="o">+</span> <span class="s">"}'"</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">String</span> <span class="n">entry</span> <span class="o">=</span> <span class="s">"'{\"entryId\":\""</span> <span class="o">+</span> <span class="n">entryId</span> <span class="o">+</span> <span class="s">"}'"</span><span class="o">;</span>
 <span class="n">getPlayer</span><span class="o">().</span><span class="na">sendNotification</span><span class="o">(</span><span class="s">"changeMedia"</span><span class="o">,</span> <span class="n">entry</span><span class="o">);</span> 
-</code></pre></div></div>
+</code></pre>
+</div>
 		
 </article>
 
