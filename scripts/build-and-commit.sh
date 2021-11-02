@@ -7,10 +7,12 @@ git config --global user.email "jess.portnoy@kaltura.com"
 mkdir ./markdown/generated
 
 echo "Building OVP Website..."
-git clone https://github.com/kaltura/developer-platform-generated generated/ovp
-cd generated/ovp
+GEN_DIR=generated/ovp
+git clone https://github.com/kaltura/developer-platform-generated "$GEN_DIR"
+cd "$GEN_DIR"
 git checkout $BRANCH
 git pull origin $BRANCH
+cd ../..
 full_prerender=0
 if git log -1 --pretty=format:'%s' |grep -iq "[full build]"; then
   rm -rf generated/ovp/*
@@ -18,7 +20,7 @@ if git log -1 --pretty=format:'%s' |grep -iq "[full build]"; then
   echo "Full build requested. All docs will be rendered anew."
 fi
 TARGET_API=ovp ./scripts/resources/all.sh
-TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination .
+TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination "$GEN_DIR"
 BRANCH="${GITHUB_REF##*/}"
 echo "Commiting OVP build"
 git add . >> /dev/null
