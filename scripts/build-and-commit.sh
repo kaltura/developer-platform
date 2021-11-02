@@ -22,6 +22,7 @@ if git log -1 --pretty=format:'%s' |grep -iq "[full build]"; then
 fi
 TARGET_API=ovp ./scripts/resources/all.sh
 TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination "$GEN_DIR"
+cd "$GEN_DIR"
 echo "Commiting OVP build"
 git add . >> /dev/null
 echo "Added everything to commit"
