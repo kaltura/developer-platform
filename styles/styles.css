@@ -81,68 +81,33 @@ img {
   top: -3px;
 }
 
-.nav-tabs-b>span>a {
+.nav-tabs-b > span > a {
   color: black;
   text-decoration: none;
 }
 
-.nav-tabs-b>span>a:hover {
+.nav-tabs-b > span > a:hover {
   text-decoration: none;
 }
 
-.nav-tabs-b>span {
+.nav-tabs-b > span {
   margin-right: 12px;
   padding-bottom: 12px;
 }
 
-.nav-tabs-b>span.active {
+.nav-tabs-b > span.active {
   color: #006efa;
   border-bottom: 2px solid #006efa;
 }
 
-.nav-tabs-b>span.active>a {
+.nav-tabs-b > span.active > a {
   color: #006efa;
 }
 
-.nav-tabs-b>span.inactive>a {
+.nav-tabs-b > span.inactive > a {
   color: black;
 }
 
-/* code tabs */
-
-.code-tabs {
-  font-size: 1em;
-  color: black;
-  position: relative;
-  top: -3px;
-}
-
-.code-tabs>span>a {
-  color: black;
-  text-decoration: none;
-}
-
-.code-tabs>span>a:hover {
-  text-decoration: none;
-}
-
-.code-tabs>span {
-  margin-right: 12px;
-  padding-bottom: 12px;
-}
-
-.code-tabs>span.active {
-  color: #006efa;
-  border-bottom: 2px solid #006efa;
-}
-
-.code-tabs>span.active>a {
-  color: #006efa;
-}
-
-.code-tabs>span.inactive>a {
-  color: black;
-}
 /* home */
 
 .home-container {
@@ -298,4 +263,40 @@ img {
 
 .btn-copy:active {
   filter: invert(100%);
+}
+
+/* code tabs */
+
+.code-tabs {
+  font-size: 1em;
+  color: black;
+  position: relative;
+  top: -3px;
+}
+
+.code-tabs > span > a {
+  color: black;
+  text-decoration: none;
+}
+
+.code-tabs > span > a:hover {
+  text-decoration: none;
+}
+
+.code-tabs > span {
+  margin-right: 12px;
+  padding-bottom: 12px;
+}
+
+.code-tabs > span.active {
+  color: #006efa;
+  border-bottom: 2px solid #006efa;
+}
+
+.code-tabs > span.active > a {
+  color: #006efa;
+}
+
+.code-tabs > span.inactive > a {
+  color: black;
 }
