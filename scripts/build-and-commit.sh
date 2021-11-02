@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e
 
 git config --global user.name "Travis CI"
@@ -17,8 +18,8 @@ TARGET_API=ovp ./scripts/resources/all.sh
 TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination generated/ovp
 
 cd generated/ovp
-git checkout ${GITHUB_REF##*/}
-git pull origin ${GITHUB_REF##*/}
+git checkout "${GITHUB_REF##*/}"
+git pull origin "${GITHUB_REF##*/}"
 echo "Commiting OVP build"
 git add . >> /dev/null
 echo "Added everything to commit"
