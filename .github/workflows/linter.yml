@@ -53,7 +53,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_PHP_PHPCS: false
           VALIDATE_JSCPD: false
-	  FILTER_REGEX_EXCLUDE: *.html
+	  VALIDATE_HTML: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CSS_FILE_NAME: .stylelintrc.json
