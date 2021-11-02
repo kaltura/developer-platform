@@ -247,9 +247,11 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  
   .navbar-header .has-search {
     display: none;
   }
+
   .side-menu-toggle {
     display: block;
     color: #006efa;
@@ -260,6 +262,7 @@ img {
     float: left;
     padding-right: 10px;
   }
+
   .home-container .code-container img.btn-copy {
     top: 15px;
   }
