@@ -8,6 +8,7 @@ mkdir ./markdown/generated
 
 echo "Building OVP Website..."
 GEN_DIR=generated/ovp
+BRANCH="${GITHUB_REF##*/}"
 git clone https://github.com/kaltura/developer-platform-generated "$GEN_DIR"
 cd "$GEN_DIR"
 git checkout "$BRANCH"
@@ -21,11 +22,10 @@ if git log -1 --pretty=format:'%s' |grep -iq "[full build]"; then
 fi
 TARGET_API=ovp ./scripts/resources/all.sh
 TARGET_API=ovp FULL_PRERENDER=$full_prerender lucybot build --prerender --destination "$GEN_DIR"
-BRANCH="${GITHUB_REF##*/}"
 echo "Commiting OVP build"
 git add . >> /dev/null
 echo "Added everything to commit"
 git commit -a -m "Build site" >> /dev/null
 echo "Committed everything"
-git push -q -u https://$KALT_GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated "HEAD:$BRANCH" # >> /dev/null 2>&1
+git push -q -u "https://$KALT_GITHUB_ACCESS_TOKEN@github.com/kaltura/developer-platform-generated" "HEAD:$BRANCH" # >> /dev/null 2>&1
 echo "Pushed new site"
