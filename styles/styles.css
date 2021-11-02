@@ -296,6 +296,6 @@ img {
   margin-top: 20px;
 }
 
-.btn-copy:focus {
+.btn-copy:active {
   filter: invert(100%);
 }
