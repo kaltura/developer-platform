@@ -1,9 +1,4 @@
 node_modules/
 markdown/generated/
 generated/
-assets/markdown/generated/*
-assets/markdown/generated/syndication.md
-assets/markdown/generated/dropFolderXmlBulkUpload.dropFolderXml.md
-assets/markdown/generated/cuePoint.ingestAPI.md
-assets/markdown/generated/bulkUploadXml.bulkUploadXML.md
-assets/markdown/generated/bulkUploadXml.bulkUploadResultXML.md
+assets/markdown/generated
