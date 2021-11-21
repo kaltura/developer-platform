@@ -1,0 +1,34 @@
+<div class="home-container">
+    <div class="row">
+        <div class="col col-sm-8 title-container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Customizable video player for all your video needs</h5>
+                    Adaptive, Lightweight, and Seamless.
+                    No matter which platform you're using   
+                </div>
+            </div>
+        </div>
+        <div class="col col-sm-4 diagram">
+            <img src="assets/images/interactive-video.png" alt="diagram">
+        </div>
+    </div>
+    <div class="explore-container">
+        <div class="hero-player" id="hero-player" style="aspect-ratio: 16/9; max-height: 20vw;"></div>
+        <script>var heroPlayer = KalturaPlayer.setup({
+                targetId: "hero-player",
+                provider: {
+                    partnerId: 2421271,
+                    uiConfId: 43006971
+                },
+                playback: {
+                    preload: 'auto',
+                    autoplay: true,
+                    loop: true
+                }
+            });
+            heroPlayer.loadMedia({ entryId: '1_23yaxsca' });
+            heroPlayer.play();
+        </script>
+    </div>
+</div>
