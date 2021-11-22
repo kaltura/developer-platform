@@ -10,7 +10,7 @@ const STATIC_DIR = __dirname + '/generated/' + TARGET_API;
 const DEFAULT_INDEX = fs.readFileSync(path.join(STATIC_DIR, 'default_index.html'), 'utf8');
 const BASE_PATH = process.env.BASE_PATH || '';
 
-let App = Express();
+const App = Express();
 App.use(require('compression')());
 if (process.env.ENABLE_CROSS_ORIGIN) {
   App.use(function(req, res, next) {
@@ -44,14 +44,14 @@ App.get('/player', (req, res) => {
   });
 })
 App.get('/vpaas_for_devs', (req, res) => {
-  res.render('marketing-index', {utm_source: req.query.utm_source,utm_campaign:req.query.utm_campaign, utm_medium:req.query.utm_medium}, (err, html) => {
+  res.render('marketing-index', {utm_source: req.query.utm_source, utm_campaign: req.query.utm_campaign, utm_medium: req.query.utm_medium}, (err, html) => {
     if (err) res.status(500).send(err.toString());
     res.send(html);
   });
 })
 
 if (!process.env.DEVELOPMENT || process.env.USE_CACHE) {
-  let cache = function(age) {
+  const cache = function(age) {
     age = age || 'med';
     if (age === 'short') age = 60 * 60;
     if (age === 'med')   age = 60 * 60 * 24;
@@ -108,7 +108,7 @@ App.use(BASE_PATH + '/github', require('./routes/github.js'));
 
 App.get('*', (req, res) => {
   if (req.originalUrl.endsWith('.html/')) {
-    let newUrl = req.protocol + '://' + req.get('host') + req.originalUrl.replace(/\/$/, '');
+    const newUrl = req.protocol + '://' + req.get('host') + req.originalUrl.replace(/\/$/, '');
     return res.redirect(301, newUrl);
   }
   res.set('Content-Type', 'text/html');
@@ -117,24 +117,24 @@ App.get('*', (req, res) => {
 
 if (process.env.DEVELOPMENT || process.env.NO_SSL) {
   console.log('----DEVELOPMENT ENVIRONMENT----');
-  let port = process.env.KALTURA_RECIPES_PORT || 3000;
+  const port = process.env.KALTURA_RECIPES_PORT || 3000;
   console.log('listening on port ' + port);
   App.listen(port);
 } else {
-  let port = process.env.KALTURA_RECIPES_PORT || 443
-  let sslOptions = {
+  const port = process.env.KALTURA_RECIPES_PORT || 443
+  const sslOptions = {
     key: fs.readFileSync('/etc/ssl/certs/kaltura.org.key'),
     cert: fs.readFileSync('/etc/ssl/certs/kaltura.org.crt'),
     ca: fs.readFileSync('/etc/ssl/certs/ca-kaltura.org.crt'),
     requestCert: true,
     rejectUnauthorized: false
   };
-  let secureServer = https.createServer(sslOptions, App).listen(port, function(){
-    console.log("Secure Express server listening on port "+port);
+  const secureServer = https.createServer(sslOptions, App).listen(port, function(){
+    console.log('Secure Express server listening on port ' + port);
   });
   // Redirect from http port 80 to https
   http.createServer(function (req, res) {
-    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.writeHead(301, { 'Location': 'https://' + req.headers['host'] + req.url });
     res.end();
   }).listen(80);
 }
@@ -143,5 +143,3 @@ App.use((err, req, res, next) => {
   console.error(err);
   next();
 })
-
-
