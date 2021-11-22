@@ -29,6 +29,7 @@ routes:
 
   /api-docs:
     title: Kaltura API Documentation
+    ui: documentation
     for: kaltura
     navigation: operationNavigation
     meta:
@@ -37,6 +38,7 @@ routes:
 
   /samples:
     title: Kaltura API Documentation
+    ui: documentation
     navigation: sampleNavigation
     meta:
       title: "Kaltura VPaaS API Documentation"
