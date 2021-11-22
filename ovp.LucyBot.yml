@@ -44,7 +44,6 @@ routes:
       title: "Kaltura VPaaS API Documentation"
       description: "Full documentation for the Kaltura VPaaS API"
 
-
   /console:
     ui: console
     for: kaltura
@@ -71,24 +70,15 @@ routes:
       title: "Kaltura API Workflows"
       description: "Learn how to work with the Kaltura API using interactive workflows"
 
-  /player/web: 
+  /playerhome: 
     title: Kaltura Web Player Documentation
     documentation: documentation
-    navigation: webNavigation
-
-  /player/ios:
-    title: Kaltura iOS Player Documentation
-    documentation: documentation
-    navigation: iosNavigation
-
-  /player/android: 
-    title: Kaltura Android Player Documentation
-    documentation: documentation
-    navigation: androidNavigation
+    navigation: playerNavigation
 
   /new-workflow:
     ui: workflow
     for: kaltura
+
   /preview-workflow:
     ui: workflow
     for: kaltura
@@ -137,6 +127,7 @@ sampleNavigation:
     markdownURL: /assets/documentation/samples.html
     icon: Homepage
     discussionURL: null
+
 
 operationNavigation: []
 
@@ -488,85 +479,89 @@ workflowNavigation:
     icon: assets/img/icons/contact.png
     isContact: true
 
-webNavigation: 
-  - title: "Getting Started"
-    markdownURL: /assets/documentation/player-portal/web/getting-started-web.html
-    path: "/getting-started-web"
-
-  - title: "Player Embed Types"
-    markdownURL: /assets/documentation/player-portal/web/embed-types-web.html
-    path: "/embed-types-web"
-
-  - title: "Embed for Angular"
-    markdownURL: /assets/documentation/player-portal/web/angular-embed.html
-    path: "/angular-embed-web"
-
-  - title: "Player Setup"
-    markdownURL: /assets/documentation/player-portal/web/player-setup-web.html
-    path: "/player-setup-web"
-
-  - title: "Player Configuration"
-    markdownURL: /assets/documentation/player-portal/web/configuration-web.html
-    path: "/configuration-web"
-
-  - title: "Managing Playlists"
-    markdownURL: /assets/documentation/player-portal/web/playlist-web.html
-    path: "/playlist-web"
-
-  - title: "Player CSS"
-    markdownURL: /assets/documentation/player-portal/web/player-css-web.html
-    path: "/player-css-web"
-
-  - title: "User Preferences"
-    markdownURL: /assets/documentation/player-portal/web/user-preferences-web.html
-    path: "/user-preferences-web"
-
-  - title: "Keyboard Shortcuts"
-    markdownURL: /assets/documentation/player-portal/web/keyboard-shortcuts-web.html
-    path: "/keyboard-shortcuts-web"
-
-  - title: "Player Events"
-    markdownURL: /assets/documentation/player-portal/web/player-events-web.html
-    path: "/player-events-web"
-
-  - title: "Managing Tracks"
-    markdownURL: /assets/documentation/player-portal/web/managing-tracks-web.html
-    path: "/managing-tracks-web"
-
-  - title: "Autoplay"
-    markdownURL: /assets/documentation/player-portal/web/autoplay-web.html
-    path: "/autoplay-web"
-
-  - title: "Player States"
-    markdownURL: /assets/documentation/player-portal/web/player-states-web.html
-    path: "/player-states-web"
-
-  - title: "Player API"
-    markdownURL: /assets/documentation/player-portal/web/api-web.html
-    path: "/api-web" 
-
-  - title: "Player Plugins"
-    markdownURL: /assets/documentation/player-portal/web/building-plugins-web.html
-    path: "/plugins-web" 
-
-  - title: "Handling Player Errors"
-    markdownURL: /assets/documentation/player-portal/web/errors-web.html
-    path: "/errors-web"
-
-  - title: "Debugging"
-    markdownURL: /assets/documentation/player-portal/web/debugging-web.html
-    path: "/debugging-web"
-
-  - title: "Source Selection"
-    markdownURL: /assets/documentation/player-portal/web/source-selection-web.html
-    path: "/source-selection-web"
-
-  - title: "Coding Guidelines"
-    markdownURL: /assets/documentation/player-portal/web/coding-guidelines-web.html
-    path: "/coding-guidelines-web"
-
-  - title: "Player UI"
-    children:
+playerNavigation:
+  - title: "Kaltura Player SDK's"
+    markdownURL: /assets/documentation/player.html
+       
+  - title: "Web Player"
+    path: "/player/web"
+    children: 
+      - title: "Getting Started"
+        markdownURL: /assets/documentation/player-portal/web/getting-started-web.html
+        path: "/getting-started-web"
+    
+      - title: "Player Embed Types"
+        markdownURL: /assets/documentation/player-portal/web/embed-types-web.html
+        path: "/embed-types-web"
+    
+      - title: "Embed for Angular"
+        markdownURL: /assets/documentation/player-portal/web/angular-embed.html
+        path: "/angular-embed-web"
+    
+      - title: "Player Setup"
+        markdownURL: /assets/documentation/player-portal/web/player-setup-web.html
+        path: "/player-setup-web"
+    
+      - title: "Player Configuration"
+        markdownURL: /assets/documentation/player-portal/web/configuration-web.html
+        path: "/configuration-web"
+    
+      - title: "Managing Playlists"
+        markdownURL: /assets/documentation/player-portal/web/playlist-web.html
+        path: "/playlist-web"
+    
+      - title: "Player CSS"
+        markdownURL: /assets/documentation/player-portal/web/player-css-web.html
+        path: "/player-css-web"
+    
+      - title: "User Preferences"
+        markdownURL: /assets/documentation/player-portal/web/user-preferences-web.html
+        path: "/user-preferences-web"
+    
+      - title: "Keyboard Shortcuts"
+        markdownURL: /assets/documentation/player-portal/web/keyboard-shortcuts-web.html
+        path: "/keyboard-shortcuts-web"
+    
+      - title: "Player Events"
+        markdownURL: /assets/documentation/player-portal/web/player-events-web.html
+        path: "/player-events-web"
+    
+      - title: "Managing Tracks"
+        markdownURL: /assets/documentation/player-portal/web/managing-tracks-web.html
+        path: "/managing-tracks-web"
+    
+      - title: "Autoplay"
+        markdownURL: /assets/documentation/player-portal/web/autoplay-web.html
+        path: "/autoplay-web"
+    
+      - title: "Player States"
+        markdownURL: /assets/documentation/player-portal/web/player-states-web.html
+        path: "/player-states-web"
+    
+      - title: "Player API"
+        markdownURL: /assets/documentation/player-portal/web/api-web.html
+        path: "/api-web" 
+    
+      - title: "Player Plugins"
+        markdownURL: /assets/documentation/player-portal/web/building-plugins-web.html
+        path: "/plugins-web" 
+    
+      - title: "Handling Player Errors"
+        markdownURL: /assets/documentation/player-portal/web/errors-web.html
+        path: "/errors-web"
+    
+      - title: "Debugging"
+        markdownURL: /assets/documentation/player-portal/web/debugging-web.html
+        path: "/debugging-web"
+    
+      - title: "Source Selection"
+        markdownURL: /assets/documentation/player-portal/web/source-selection-web.html
+        path: "/source-selection-web"
+    
+      - title: "Coding Guidelines"
+        markdownURL: /assets/documentation/player-portal/web/coding-guidelines-web.html
+        path: "/coding-guidelines-web"
+    
       - title: "Player UI Configuration"
         markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/ui-configuration.html
         path: "/ui/ui-configuration"
@@ -591,104 +586,109 @@ webNavigation:
         markdownURL: /assets/documentation/player-portal/web/playkit-js-ui/captions-menu.html
         path: "/ui/captions-menu"
 
-iosNavigation:
-  - title: "Getting Started with the Player SDK"
-    markdownURL: /assets/documentation/player-portal/ios/getting-started-ios.html
-    path: "/getting-started-ios"
-
-  - title: "Supported Devices"
-    markdownURL: /assets/documentation/player-portal/ios/supported-devices-ios.html
-    path: "/supported-devices-ios"
-
-  - title: "Player Events"
-    markdownURL: /assets/documentation/player-portal/ios/player-events-ios.html
-    path: "/player-events-ios"
-
-  - title: "Track Selection"
-    markdownURL: /assets/documentation/player-portal/ios/track-selection-ios.html
-    path: "/track-selection-ios"
-
-  - title: "Analytics Plugins"
-    markdownURL: /assets/documentation/player-portal/ios/analytics-plugins-ios.html
-    path: "/analytics-plugins-ios"
-
-  - title: "Interactive Media Ads"
-    markdownURL: /assets/documentation/player-portal/ios/interactive-media-ads-ios.html
-    path: "/interactive-media-ads-ios"
-
-  - title: "Live Streaming"
-    markdownURL: /assets/documentation/player-portal/ios/live-streaming-ios.html
-    path: "/live-streaming-ios"
-
-  - title: "Background Play"
-    markdownURL: /assets/documentation/player-portal/ios/background-play-ios.html
-    path: "/background-play-ios"
-
-  - title: "Download-to-go"
-    markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
-    path: "/download-to-go-ios"
-
-  - title: "Casting for iOS"
-    markdownURL: /assets/documentation/player-portal/ios/casting-ios.html
-    path: "/casting-ios"   
-
-  - title: "Offline Assets"
-    markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
-    path: "/offline-assets-ios"
-
-  - title: "VR/360 Video"
-    markdownURL: /assets/documentation/player-portal/ios/vr-360-ios.html
-    path: "/vr-360-ios"
-
-  - title: "Kaltura Session Authentication"
-    markdownURL: /assets/documentation/player-portal/ios/kaltura-session-authentication-ios.html
-    path: "/kaltura-session-authentication-ios"
-
-  - title: "Player UI Tutorial"
-    markdownURL: /assets/documentation/player-portal/ios/player-ui-ios.html
-    path: "/player-ui-ios"
-
-  - title: "Audio Mode"
-    markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
-    path: "/audio-mode-ios"
-
-androidNavigation:
-  - title: "Getting Started with the Player SDK"
-    markdownURL: /assets/documentation/player-portal/android/getting-started-android.html
-    path: "/getting-started-android" 
-
-  - title: "Player Events"
-    markdownURL: /assets/documentation/player-portal/android/player-events-android.html
-    path: "/player-events-android"  
-
-  - title: "Player Settings"
-    markdownURL: /assets/documentation/player-portal/android/player-settings-android.html
-    path: "/player-settings-android" 
-
-  - title: "Player Configuration"
-    markdownURL: /assets/documentation/player-portal/android/player-config-android.html
-    path: "/player-config-android" 
-
-  - title: "Security Provider"
-    markdownURL: /assets/documentation/player-portal/android/security-provider-android.html
-    path: "/security-provider-android" 
-
-  - title: "Download-to-go"
-    markdownURL: /assets/documentation/player-portal/android/download-to-go-android.html
-    path: "/download-to-go-android" 
-
-  - title: "Casting for Android"
-    markdownURL: /assets/documentation/player-portal/android/casting-android.html
-    path: "/casting-android" 
-
-  - title: "DRM Schemes"
-    markdownURL: /assets/documentation/player-portal/android/drm-android.html
-    path: "/drm-android" 
-
-  - title: "Ad Plugins"
-    markdownURL: /assets/documentation/player-portal/android/ads-android.html
-    path: "/ads-android"    
+  - title: "iOS Player"
+    path: /player/ios
+    children: 
+      - title: "Getting Started with the Player SDK"
+        markdownURL: /assets/documentation/player-portal/ios/getting-started-ios.html
+        path: "/getting-started-ios"
     
-  - title: "Playlist Configuration"
-    markdownURL: /assets/documentation/player-portal/android/playlist-android.html
-    path: "/playlist-android"
+      - title: "Supported Devices"
+        markdownURL: /assets/documentation/player-portal/ios/supported-devices-ios.html
+        path: "/supported-devices-ios"
+    
+      - title: "Player Events"
+        markdownURL: /assets/documentation/player-portal/ios/player-events-ios.html
+        path: "/player-events-ios"
+    
+      - title: "Track Selection"
+        markdownURL: /assets/documentation/player-portal/ios/track-selection-ios.html
+        path: "/track-selection-ios"
+    
+      - title: "Analytics Plugins"
+        markdownURL: /assets/documentation/player-portal/ios/analytics-plugins-ios.html
+        path: "/analytics-plugins-ios"
+    
+      - title: "Interactive Media Ads"
+        markdownURL: /assets/documentation/player-portal/ios/interactive-media-ads-ios.html
+        path: "/interactive-media-ads-ios"
+    
+      - title: "Live Streaming"
+        markdownURL: /assets/documentation/player-portal/ios/live-streaming-ios.html
+        path: "/live-streaming-ios"
+    
+      - title: "Background Play"
+        markdownURL: /assets/documentation/player-portal/ios/background-play-ios.html
+        path: "/background-play-ios"
+    
+      - title: "Download-to-go"
+        markdownURL: /assets/documentation/player-portal/ios/download-to-go-ios.html
+        path: "/download-to-go-ios"
+    
+      - title: "Casting for iOS"
+        markdownURL: /assets/documentation/player-portal/ios/casting-ios.html
+        path: "/casting-ios"   
+    
+      - title: "Offline Assets"
+        markdownURL: /assets/documentation/player-portal/ios/offline-assets-ios.html
+        path: "/offline-assets-ios"
+    
+      - title: "VR/360 Video"
+        markdownURL: /assets/documentation/player-portal/ios/vr-360-ios.html
+        path: "/vr-360-ios"
+    
+      - title: "Kaltura Session Authentication"
+        markdownURL: /assets/documentation/player-portal/ios/kaltura-session-authentication-ios.html
+        path: "/kaltura-session-authentication-ios"
+    
+      - title: "Player UI Tutorial"
+        markdownURL: /assets/documentation/player-portal/ios/player-ui-ios.html
+        path: "/player-ui-ios"
+    
+      - title: "Audio Mode"
+        markdownURL: /assets/documentation/player-portal/ios/audio-mode-ios.html
+        path: "/audio-mode-ios"
+
+  - title: "Android Player"
+    path: /player/android
+    children: 
+      - title: "Getting Started with the Player SDK"
+        markdownURL: /assets/documentation/player-portal/android/getting-started-android.html
+        path: "/getting-started-android" 
+    
+      - title: "Player Events"
+        markdownURL: /assets/documentation/player-portal/android/player-events-android.html
+        path: "/player-events-android"  
+    
+      - title: "Player Settings"
+        markdownURL: /assets/documentation/player-portal/android/player-settings-android.html
+        path: "/player-settings-android" 
+    
+      - title: "Player Configuration"
+        markdownURL: /assets/documentation/player-portal/android/player-config-android.html
+        path: "/player-config-android" 
+    
+      - title: "Security Provider"
+        markdownURL: /assets/documentation/player-portal/android/security-provider-android.html
+        path: "/security-provider-android" 
+    
+      - title: "Download-to-go"
+        markdownURL: /assets/documentation/player-portal/android/download-to-go-android.html
+        path: "/download-to-go-android" 
+    
+      - title: "Casting for Android"
+        markdownURL: /assets/documentation/player-portal/android/casting-android.html
+        path: "/casting-android" 
+    
+      - title: "DRM Schemes"
+        markdownURL: /assets/documentation/player-portal/android/drm-android.html
+        path: "/drm-android" 
+    
+      - title: "Ad Plugins"
+        markdownURL: /assets/documentation/player-portal/android/ads-android.html
+        path: "/ads-android"    
+        
+      - title: "Playlist Configuration"
+        markdownURL: /assets/documentation/player-portal/android/playlist-android.html
+        path: "/playlist-android"
+    

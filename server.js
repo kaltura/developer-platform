@@ -87,14 +87,6 @@ v4Redirects.forEach(redirect => {
   })
 })
 
-App.get('/api-docs', (req, res) => {
-  let url = req.protocol + '://' + req.get('host') + '/api-docs/Overview';
-  if (Object.keys(req.query).length) {
-    url += '?' + qs.stringify(req.query);
-  }
-  res.redirect(url);
-})
-
 if (BASE_PATH) {
   App.use(BASE_PATH, Express.static(STATIC_DIR));
 } else {
