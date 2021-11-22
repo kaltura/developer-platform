@@ -1,22 +1,21 @@
-"use strict";
+'use strict';
 
-var Express = require('express');
-var http = require('http');
-var https = require('https');
-var path = require('path');
-var fs = require('fs');
-var qs = require('querystring');
+const Express = require('express');
+const http = require('http');
+const https = require('https');
+const path = require('path');
+const fs = require('fs');
 const TARGET_API = process.env.TARGET_API || 'ovp';
 const STATIC_DIR = __dirname + '/generated/' + TARGET_API;
 const DEFAULT_INDEX = fs.readFileSync(path.join(STATIC_DIR, 'default_index.html'), 'utf8');
 const BASE_PATH = process.env.BASE_PATH || '';
 
-var App = Express();
+let App = Express();
 App.use(require('compression')());
 if (process.env.ENABLE_CROSS_ORIGIN) {
   App.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
 }
@@ -52,7 +51,7 @@ App.get('/vpaas_for_devs', (req, res) => {
 })
 
 if (!process.env.DEVELOPMENT || process.env.USE_CACHE) {
-  var cache = function(age) {
+  let cache = function(age) {
     age = age || 'med';
     if (age === 'short') age = 60 * 60;
     if (age === 'med')   age = 60 * 60 * 24;
@@ -72,14 +71,14 @@ if (!process.env.DEVELOPMENT || process.env.USE_CACHE) {
   App.use(BASE_PATH + '/swagger.json',   cache('med'));
 }
 
-var recipeRedirects = require('./recipe-redirects');
+const recipeRedirects = require('./recipe-redirects');
 App.use(BASE_PATH + '/recipes/:recipe/embed', (req, res, next) => {
-  var redirect = recipeRedirects[req.params.recipe];
+  let redirect = recipeRedirects[req.params.recipe];
   if (!redirect) return next();
   res.redirect(redirect.redirect + '?embed=true');
 });
 
-var v4Redirects = require('./v4-redirects');
+const v4Redirects = require('./v4-redirects');
 v4Redirects.forEach(redirect => {
   App.get(redirect.from, (req, res, next) => {
     if (req.originalUrl !== redirect.from) return next();
@@ -118,19 +117,19 @@ App.get('*', (req, res) => {
 
 if (process.env.DEVELOPMENT || process.env.NO_SSL) {
   console.log('----DEVELOPMENT ENVIRONMENT----');
-  var port = process.env.KALTURA_RECIPES_PORT || 3000;
+  let port = process.env.KALTURA_RECIPES_PORT || 3000;
   console.log('listening on port ' + port);
   App.listen(port);
 } else {
-  var port = process.env.KALTURA_RECIPES_PORT || 443
-  var sslOptions = {
+  let port = process.env.KALTURA_RECIPES_PORT || 443
+  let sslOptions = {
     key: fs.readFileSync('/etc/ssl/certs/kaltura.org.key'),
     cert: fs.readFileSync('/etc/ssl/certs/kaltura.org.crt'),
     ca: fs.readFileSync('/etc/ssl/certs/ca-kaltura.org.crt'),
     requestCert: true,
     rejectUnauthorized: false
   };
-  var secureServer = https.createServer(sslOptions, App).listen(port, function(){
+  let secureServer = https.createServer(sslOptions, App).listen(port, function(){
     console.log("Secure Express server listening on port "+port);
   });
   // Redirect from http port 80 to https
