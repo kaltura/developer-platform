@@ -53,13 +53,6 @@ client libraries as packages that can be installed via the respective package ma
 * [Swift](http://cocoapods.org/pods/KalturaClient) `pod "KalturaClient"`
 * [Java](https://mvnrepository.com/artifact/com.kaltura/kalturaApiClient) (via Maven)
 
-```xml
-<dependency>
-  <groupId>com.kaltura</groupId>
-  <artifactId>kalturaApiClient</artifactId>
-  <version>17.16.0</version>
-</dependency>
-```
 <% } else if (target === 'ott') { -%>
 
 ## Install Via Package Managers
