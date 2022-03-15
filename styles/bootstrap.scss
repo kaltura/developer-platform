@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
 @import url('https://fonts.googleapis.com/css?family=Lato');
 $gray-base: #000;
@@ -143,8 +144,8 @@ $container-lg: $container-large-desktop;
 $navbar-height: 45px;
 $navbar-margin-bottom: $line-height-computed;
 $navbar-border-radius: $border-radius-base;
-$navbar-padding-horizontal: ($grid-gutter-width / 2);
-$navbar-padding-vertical: (($navbar-height - $line-height-computed) / 2);
+$navbar-padding-horizontal: math.div($grid-gutter-width, 2);
+$navbar-padding-vertical: math.div($navbar-height - $line-height-computed, 2);
 $navbar-collapse-max-height: 3000px;
 $navbar-default-color: #fff;
 $navbar-default-bg: #fff;
