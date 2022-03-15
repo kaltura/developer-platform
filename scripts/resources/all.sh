@@ -1,4 +1,5 @@
-set -e
+#!/bin/bash
+set -ex
 mkdir -p ./markdown/generated
 mkdir -p ./assets/markdown/generated
 node ./scripts/resources/client_libraries.js

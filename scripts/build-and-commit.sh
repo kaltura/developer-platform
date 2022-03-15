@@ -1,4 +1,5 @@
-set -e
+#!/bin/bash
+set -ex
 
 git config --global user.name "Travis CI"
 git config --global user.email "jess.portnoy@kaltura.com"
