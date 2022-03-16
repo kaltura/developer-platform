@@ -28,7 +28,6 @@ jobs:
         path: lb
     - run: cd lb && git fetch --all && git tag && git checkout v4.8.13 && npm install -g
     - run: npm install
-    - run: npm i sass -g
     - run: ./scripts/build-and-commit.sh
     env:
       CI: true
