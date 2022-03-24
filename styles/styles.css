@@ -19,6 +19,46 @@
   font-weight: 300;
 }
 
+@font-face {
+  font-family: CentraOne;
+  src: url('/assets/fonts/Centra1/CentraNo1-Book.woff');
+}
+
+@font-face {
+  font-family: CentraOne;
+  src: url('/assets/fonts/Centra1/CentraNo1-Bold.woff');
+  font-style: bold;
+}
+
+@font-face {
+  font-family: CentraOne;
+  src: url('/assets/fonts/Centra1/CentraNo1-BookItalic.woff');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url('/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
+
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url('/assets/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf');
+  font-style: bold;
+}
+
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url('/assets/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf');
+  font-style: italic;
+}
+
+
+* {
+ font-size: 100%;
+ font-family: Source_Sans_Pro;
+}
+
 h1.breadcrumbs {
   font-size: 18px;
   margin-top: 22px;
