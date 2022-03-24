@@ -68,7 +68,7 @@ body.spaced-for-kaltura-nav {
 }
 #KalturaNav.navbar ul.nav li.navbar-link > a {
   font-weight: bold;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-size: 16px;
 }
 #KalturaNav.navbar ul.nav li.navbar-link > a.btn {
