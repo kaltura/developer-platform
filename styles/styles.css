@@ -1,4 +1,38 @@
 @font-face {
+  font-family: CentraOne;
+  src: url('/assets/fonts/Centra1/CentraNo1-Book.woff');
+}
+
+@font-face {
+  font-family: CentraOne;
+  src: url('/assets/fonts/Centra1/CentraNo1-Bold.woff');
+  font-style: bold;
+}
+
+@font-face {
+  font-family: CentraOne;
+  src: url('/assets/fonts/Centra1/CentraNo1-BookItalic.woff');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url('/assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+}
+
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url('/assets/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf');
+  font-style: bold;
+}
+
+@font-face {
+  font-family: Source_Sans_Pro;
+  src: url('/assets/fonts/Source_Sans_Pro/SourceSansPro-Italic.ttf');
+  font-style: italic;
+}
+
+@font-face {
   font-family: Soho;
   src: url("/homepage/assets/fonts/Monotype - Soho Gothic Pro Bold Italic.ttf");
   font-style: italic;
@@ -53,11 +87,19 @@
   font-style: italic;
 }
 
+html {
+  font-family: Source_Sans_Pro;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
 
 * {
  font-size: 100%;
  font-family: Source_Sans_Pro;
 }
+
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
 
 h1.breadcrumbs {
   font-size: 18px;
@@ -346,4 +388,26 @@ img {
 
 .code-tabs > span.inactive > a {
   color: black;
+}
+
+.code-details .btn-default {
+    color: #006EFA;
+    border: 1px solid #006EFA;
+}
+
+.code-details .btn-default:hover {
+    background-color: #006EFA;
+    color: #fff;
+}
+
+.code-box .nav-link.active {
+    background-color: #006EFA;
+    color: rgb(232, 230, 227);
+}
+.hljs {
+    display: block ;
+    overflow-x: auto;
+    background: none !important;
+    color: black !important;
+    padding: 0.5em;
 }

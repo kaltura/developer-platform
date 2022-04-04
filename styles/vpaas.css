@@ -12,7 +12,7 @@ sitemap: false
   margin-bottom: 0px;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -92,7 +92,7 @@ sitemap: false
   background-color: white;
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   letter-spacing: 0.05em;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, .4);
@@ -137,7 +137,7 @@ sitemap: false
   padding-top: 22px;
   -webkit-transition: color 300ms ease;
   transition: color 300ms ease;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .nav-sign-up {
@@ -169,7 +169,7 @@ sitemap: false
 }
 
 .nav-links.first-nav-link {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .nav-links.sign-in {
@@ -193,7 +193,7 @@ sitemap: false
   border-bottom: 4px none black;
   -webkit-transition: color 300ms ease;
   transition: color 300ms ease;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: white;
   font-size: 13px;
   line-height: 20px;
@@ -259,7 +259,7 @@ sitemap: false
 }
 
 .summary-heading {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #575756;
   font-size: 17px;
   line-height: 28px;
@@ -291,7 +291,7 @@ sitemap: false
   background-color: #f7f7f7;
   -webkit-transition: border 200ms ease-in, background-color 200ms ease;
   transition: border 200ms ease-in, background-color 200ms ease;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 /*
@@ -358,14 +358,14 @@ sitemap: false
 .tabs-headings {
   padding-left: 0px;
   border-bottom: 1px none black;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: white;
   font-size: 15px;
   letter-spacing: 0.5px;
 }
 
 .tabs-descriptions {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #ccc;
   font-size: 13px;
   line-height: 18px;
@@ -444,7 +444,7 @@ sitemap: false
 .section-headings {
   margin-top: 0px;
   margin-bottom: 65px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
   text-align: center;
 }
@@ -463,8 +463,8 @@ sitemap: false
   display: inline;
   margin-top: 6px;
   padding-top: 0px;
-  font-family: proxima-nova, sans-serif;
-  color: #188093;
+  font-family: Source_Sans_Pro;
+  color: #006efa;
   font-weight: 700;
   letter-spacing: 0.1px;
   text-decoration: none;
@@ -485,14 +485,14 @@ sitemap: false
 .event-heading {
   margin-bottom: 4px;
   border-bottom: 1px none black;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: white;
   text-align: right;
 }
 
 .event-description {
   margin-top: 5px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #ccc;
   text-align: right;
 }
@@ -530,7 +530,7 @@ sitemap: false
 
 .blog-headings {
   margin-top: 0px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -546,14 +546,14 @@ sitemap: false
 
 .news-item-description {
   display: inline;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .readmore-text-link {
   display: block;
   margin-top: 6px;
   padding-top: 0px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   font-weight: 700;
   letter-spacing: 0.1px;
@@ -573,7 +573,7 @@ sitemap: false
   display: inline-block;
   padding: 15px;
   background-color: rgba(51, 51, 51, 0.92);
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #e7e7e7;
   font-weight: 300;
   letter-spacing: 1.1px;
@@ -583,7 +583,7 @@ sitemap: false
 .header-body {
   padding: 15px;
   background-color: rgba(51, 51, 51, 0.72);
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #e7e7e7;
   letter-spacing: 0.3px;
   margin-bottom: 100px;
@@ -591,16 +591,16 @@ sitemap: false
 }
 
 .summary-description {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #575756;
 }
 
 .case-study-description {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .event-date {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #f7a600;
   font-style: italic;
   text-align: right;
@@ -722,7 +722,7 @@ h4.sidenav-headings.grp-heading {
   background-color: transparent;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #505050;
   font-weight: 400;
   letter-spacing: 0.6px;
@@ -733,7 +733,7 @@ h4.sidenav-headings.grp-heading {
   padding-left: 15px;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #505050;
   font-weight: 400;
   letter-spacing: 0.6px;
@@ -760,7 +760,7 @@ h4.sidenav-headings.grp-heading {
   background-color: transparent;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #505050;
   font-weight: 400;
   letter-spacing: 0.6px;
@@ -777,7 +777,7 @@ h4.sidenav-headings.grp-heading {
   background-color: transparent;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #505050;
   font-weight: 400;
   letter-spacing: 0.6px;
@@ -797,7 +797,7 @@ h4.sidenav-headings.grp-heading {
   background-color: transparent;
   -webkit-transition: color 200ms ease-in-out;
   transition: color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #F7A600;
   font-weight: 400;
   letter-spacing: 0.6px;
@@ -832,7 +832,7 @@ h4.sidenav-headings.grp-heading {
 .post-header h1, .post-header h2, .post-header h3, .post-header h4  {
   display: inline-block;
   float: none;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
   letter-spacing: 0.4px;
   margin-bottom: 22px;
@@ -883,7 +883,7 @@ thead tr th {
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
   display: inline-block;
   float: none;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
   letter-spacing: 0.4px;
   margin-bottom: 22px;
@@ -986,7 +986,7 @@ thead tr th {
 
 .post-content p {
   margin-bottom: 5px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #575756;
   letter-spacing: 0.2px;
   line-height: 1.8em;
@@ -1001,7 +1001,7 @@ thead tr th {
 }
 
 .post-content li {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #575756;
   letter-spacing: 0.2px;
   line-height: 1.8em;
@@ -1040,6 +1040,7 @@ pre {
  white-space: -pre-wrap;      /* Opera 4-6 */
  white-space: -o-pre-wrap;    /* Opera 7 */
  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ display: flex;
 }
 
 .video-player-wrapper {
@@ -1092,7 +1093,7 @@ td {
   transition: opacity 300ms ease, background-color 300ms ease-in, -webkit-transform 200ms ease-in;
   transition: opacity 300ms ease, transform 200ms ease-in, background-color 300ms ease-in;
   transition: opacity 300ms ease, transform 200ms ease-in, background-color 300ms ease-in, -webkit-transform 200ms ease-in;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: white;
   letter-spacing: 0.2px;
 }
@@ -1109,13 +1110,13 @@ td {
 }
 
 .form-labels {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
 }
 
 .form-fields {
   margin-bottom: 29px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 13px;
 }
 
@@ -1155,7 +1156,7 @@ td {
   margin-bottom: 0px;
   margin-left: 75px;
   float: none;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #969696;
 }
 
@@ -1175,7 +1176,7 @@ td {
 .contributor-thumbs-heading {
   display: inline-block;
   float: right;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #969696;
   font-weight: 400;
 }
@@ -1184,7 +1185,7 @@ td {
   display: inline-block;
   margin-left: 63px;
   float: right;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   letter-spacing: 0.4px;
 }
@@ -1192,7 +1193,7 @@ td {
 .editgithub {
     color: #fff;
     text-decoration: none;
-    background-color: #579fcc;
+    background-color: #006EFA;
     padding: 1px 4px 1px 3px;
     border-radius: 4px;
     margin-left: 10px;
@@ -1216,7 +1217,7 @@ td {
 .page-contents-text {
   display: inline-block;
   background-color: transparent;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .contents-body {
@@ -1237,7 +1238,7 @@ td {
   border-style: none none solid;
   border-width: 1px;
   border-color: #000 #000 #ccc;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   font-weight: 700;
   text-align: center;
@@ -1250,7 +1251,7 @@ td {
   margin-bottom: 8px;
   -webkit-transition: color 300ms ease-in;
   transition: color 300ms ease-in;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   letter-spacing: 0.4px;
   text-decoration: none;
@@ -1274,7 +1275,7 @@ td {
   display: inline-block;
   padding-top: 22px;
   float: right;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .search-btn.fa.fa-search.fa-lg {
@@ -1340,11 +1341,11 @@ td {
 
 .nav-dropdown {
   padding-top: 22px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .nav-dropdown.w--open {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .nav-dropdown-list.w--open {
@@ -1356,7 +1357,7 @@ td {
 .dropdown-link {
   -webkit-transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 .dropdown-link:hover {
@@ -1391,14 +1392,14 @@ td {
 }
 
 .kstart-header {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   font-size: 47px;
   font-weight: 400;
 }
 
 .kstart-caption {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   line-height: 24px;
 }
 
@@ -1414,7 +1415,7 @@ td {
 
 .kstart-program-headers {
   margin-bottom: 25px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   font-weight: 400;
   text-align: center;
@@ -1426,7 +1427,7 @@ td {
   max-height: 90px;
   padding: 30px;
   border-bottom: 1px dotted #ccc;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
   text-align: center;
 }
@@ -1453,7 +1454,7 @@ td {
 }
 
 .kstart-faq-description {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   line-height: 23px;
 }
 
@@ -1464,7 +1465,7 @@ td {
 
 .blog-headings {
   margin-top: 0px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 22px;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -1490,7 +1491,7 @@ td {
 .form-label-light {
   margin-top: 25px;
   margin-bottom: 10px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #fff;
   font-weight: 400;
 }
@@ -1514,7 +1515,7 @@ td {
 
 .kstart-qualification-text {
   padding: 10px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 18px;
   line-height: 33px;
   text-align: center;
@@ -1559,7 +1560,7 @@ td {
 
 .input-light {
   background-color: #e7e7e7;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #333;
 }
 
@@ -1611,7 +1612,7 @@ td {
 }
 
 .radio-label {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   font-weight: 400;
 }
@@ -1619,7 +1620,7 @@ td {
 .radio-description {
   margin-top: 10px;
   margin-bottom: 30px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
 }
 
 ._2nd-radio-field {
@@ -1652,7 +1653,7 @@ td {
 }
 
 #payment-fields h3 {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
   font-size: 22px;
   margin-bottom: 30px;
@@ -1660,7 +1661,7 @@ td {
 }
 
 .add-payment-method-form-view .field-name {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
 }
 
@@ -1741,7 +1742,7 @@ td {
   padding: 15px;
   border: 1px solid #ddc380;
   background-color: #fcf1d5;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #5f5f5f;
 }
 
@@ -1751,12 +1752,12 @@ td {
 
 .terms-checkbox {
   margin-top: 34px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   letter-spacing: 0.2px;
 }
 
 .terms-link {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   text-decoration: none;
 }
@@ -1766,7 +1767,7 @@ td {
 }
 
 .signup-body {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   text-align: left;
   letter-spacing: 0.2px;
   line-height: 1.9em;
@@ -1789,7 +1790,7 @@ td {
   margin-right: auto;
   margin-bottom: 22px;
   margin-left: auto;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #f7a600;
   font-size: 38px;
   font-weight: 300;
@@ -1830,7 +1831,7 @@ td {
   padding-top: 9px;
   padding-bottom: 9px;
   background-color: transparent;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #fff;
   font-weight: 300;
   text-align: center;
@@ -1839,7 +1840,7 @@ td {
 
 .pricing-subheading {
     margin-bottom: 13px;
-    font-family: proxima-nova, sans-serif;
+    font-family: Source_Sans_Pro;
     color: #ccc;
     font-size: 18px;
     text-align: center;
@@ -1880,7 +1881,7 @@ td {
 
 .pricing-details-heading {
   margin-bottom: 56px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 30px;
   font-weight: 300;
   text-align: center;
@@ -1890,7 +1891,7 @@ td {
 
 .pricing-details-description {
   margin-bottom: 50px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #969696;
   font-style: italic;
   text-align: center;
@@ -1955,7 +1956,7 @@ td {
 }
 
 .success-caption {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   text-align: center;
 }
 
@@ -1963,25 +1964,25 @@ td {
   width: 15%;
   margin-top: 22px;
   background-color: #188093;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   text-align: center;
 }
 
 .billable-item {
   margin-bottom: 0px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   letter-spacing: 0.2px;
 }
 
 .billable-description {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #969696;
   letter-spacing: 0.2px;
 }
 
 .billable-pricing {
   padding-left: 108px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   letter-spacing: 0.2px;
 }
@@ -1990,7 +1991,7 @@ td {
   padding-right: 60px;
   padding-left: 60px;
   background-color: #f7a600;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   letter-spacing: 0.2px;
 }
 
@@ -2003,7 +2004,7 @@ td {
 }
 
 .get-you-started-div a {
-   font-family: proxima-nova, sans-serif;
+   font-family: Source_Sans_Pro;
    color: #188093;
    font-size: 14px;
 }
@@ -2030,7 +2031,7 @@ td {
 
 .vpaas-includes-li {
   margin-bottom: 24px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   letter-spacing: 0.2px;
 }
 
@@ -2054,7 +2055,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 
 
 .success-caption {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   text-align: center;
 }
 
@@ -2062,7 +2063,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   width: 15%;
   margin-top: 22px;
   background-color: #188093;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   text-align: center;
 }
 
@@ -2081,7 +2082,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 
 .case-study-template-li-bullets {
     margin-bottom: 15px;
-    font-family: proxima-nova, sans-serif;
+    font-family: Source_Sans_Pro;
     line-height: 23px;
     letter-spacing: 0.2px;
 }
@@ -2098,7 +2099,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 }
 
 .thank-you-h3, .thank-you-h3 a {
-  font-family: proxima-nova, sans-serif !important;
+  font-family: Source_Sans_Pro !important;
   font-size: 32px !important;
   font-weight: 400 !important;
   letter-spacing: 0.4px !important;
@@ -2122,7 +2123,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 }
 
 .thank-you-p {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   line-height: 23px;
   letter-spacing: 0.2px;
 }
@@ -2137,7 +2138,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 
 .thank-you-li-bullets {
     margin-bottom: 0;
-    font-family: proxima-nova, sans-serif;
+    font-family: Source_Sans_Pro;
     line-height: 23px;
     letter-spacing: 0.2px;
 }
@@ -2223,7 +2224,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   text-align: center;
   letter-spacing: 0.2px;
 }
@@ -2254,7 +2255,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   margin-bottom: 15px;
   padding-bottom: 15px;
   border-bottom: 1px dashed #ccc;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 700;
   letter-spacing: 0.3px;
 }
@@ -2366,7 +2367,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   -webkit-order: -1;
   -ms-flex-order: -1;
   order: -1;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-weight: 400;
   letter-spacing: 0.7px;
 }
@@ -2406,7 +2407,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   display: inline-block;
   padding-right: 0px;
   float: none;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   line-height: 22px;
 }
 
@@ -2419,7 +2420,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   margin-bottom: 34px;
   padding-right: 34px;
   border-left-color: #f7a600;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #969696;
   font-size: 16px;
   line-height: 23px;
@@ -2433,12 +2434,12 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 }
 
 .case-study-template-li {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   line-height: 35px;
 }
 
 .case-study-template-heading {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   font-weight: 400;
   letter-spacing: 0.7px;
@@ -2466,7 +2467,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 }
 
 .about-vpaas-text-block {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 16px;
   line-height: 24px;
   text-align: center;
@@ -2486,7 +2487,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 
 .home-sign-up-cta {
   display: inline-block;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #fff;
   font-size: 26px;
   font-weight: 400;
@@ -2506,7 +2507,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 .intpartner-heading {
   display: block;
   float: none;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #333;
   font-weight: 400;
   text-align: right;
@@ -2525,7 +2526,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   transition: -webkit-transform 200ms ease-in-out;
   transition: transform 200ms ease-in-out;
   transition: transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   letter-spacing: 0.4px;
 }
 
@@ -2544,14 +2545,14 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 .intpartners-h3 {
   margin-top: 0px;
   margin-bottom: 15px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #188093;
   font-weight: 400;
   letter-spacing: 0.4px;
 }
 
 .intpartners-body {
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   line-height: 25px;
   letter-spacing: 0.2px;
 }
@@ -2581,7 +2582,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   background-color: #f2f2f2;
   -webkit-transition: border 200ms ease-in-out, background-color 200ms ease-in-out;
   transition: border 200ms ease-in-out, background-color 200ms ease-in-out;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -2601,7 +2602,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
   min-height: 300px;
   padding-top: 70px;
   padding-bottom: 70px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   color: #fff;
   line-height: 25px;
   letter-spacing: 0.2px;
@@ -2627,7 +2628,7 @@ a[ id="case_study_link" ]:target ~ #case_study_section {
 
 .intpartners-slide-quote {
   margin-top: 40px;
-  font-family: proxima-nova, sans-serif;
+  font-family: Source_Sans_Pro;
   line-height: 25px;
   letter-spacing: 0.2px;
 }
@@ -3356,7 +3357,7 @@ blockquote.recipes-ref-list ul li {
     margin: 15px auto;
     border: 1px solid #ccc;
     background-color: #e7e7e7;
-    font-family: proxima-nova, sans-serif;
+    font-family: Source_Sans_Pro;
     color: #188093;
   }
 
@@ -3632,14 +3633,20 @@ ul.code-tab li {float: left;}
 /* Style the links inside the list items */
 ul.code-tab li a {
     display: inline-block;
-    color: black;
+    color: #006efa;
     text-align: center;
     padding: 4px 10px;
     text-decoration: none;
     transition: 0.3s;
     font-size: 17px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-right: 4px;
+}
+
+a.a_button.active {
+    background-color: #006efa;
+    color: #fff;
+    border-radius: 5px;
 }
 
 /* Change background color of links on hover */
