@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - dev
 
 jobs:
   build:
@@ -12,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -20,15 +21,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Setup SSH
-      uses: MrSquaare/ssh-setup-action@v1
+    - name: Checkout private tools
+      uses: actions/checkout@v2
       with:
-        host: github.com
-        private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          #repository: kaltura/documentation-generator 
-          #token: ${{ secrets.LB_GITHUB_ACCESS_TOKEN }} 
-          #path: lb
-    - run: git clone git@github.com:kaltura/documentation-generator lb
+        repository: kaltura/documentation-generator 
+        token: ${{ secrets.KALT_GITHUB_ACCESS_TOKEN }} 
+        path: lb
     - run: cd lb && git fetch --all && git tag && git checkout master && npm install -g
     - run: npm install
     - run: ./scripts/build-and-commit.sh
