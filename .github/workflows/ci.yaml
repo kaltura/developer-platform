@@ -20,12 +20,16 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Checkout private tools
-      uses: actions/checkout@v2
+    - name: Setup SSH
+      uses: MrSquaare/ssh-setup-action@v1
       with:
-        repository: LucyBot-Inc/documentation-generator 
-        token: ${{ secrets.LB_GITHUB_ACCESS_TOKEN }} 
-        path: lb
+        host: github.com
+        private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          #repository: kaltura/documentation-generator 
+          #token: ${{ secrets.LB_GITHUB_ACCESS_TOKEN }} 
+          #path: lb
+    - name: Clone repository
+    - run: git clone git@github.com:kaltura/documentation-generator lb
     - run: cd lb && git fetch --all && git tag && git checkout master && npm install -g
     - run: npm install
     - run: ./scripts/build-and-commit.sh
