@@ -28,7 +28,6 @@ jobs:
           #repository: kaltura/documentation-generator 
           #token: ${{ secrets.LB_GITHUB_ACCESS_TOKEN }} 
           #path: lb
-    - name: Clone repository
     - run: git clone git@github.com:kaltura/documentation-generator lb
     - run: cd lb && git fetch --all && git tag && git checkout master && npm install -g
     - run: npm install
