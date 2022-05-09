@@ -6,7 +6,7 @@ $config = new KalturaConfiguration(<%- codegen.constant(answers.partnerId) %>);
 $config->setServiceUrl('https://www.kaltura.com');
 $client = new KalturaClient($config);
 <% if (!noSession) { -%>
-$ks = $client.generateSessionV2(
+$ks = $client->generateSessionV2(
     <%- codegen.constant(answers.secret) %>, 
     <%- codegen.constant(answers.userId) %>, 
     <%- answers.sessionType === 0 ? 'KalturaSessionType::USER' : 'KalturaSessionType::ADMIN' %>, 
