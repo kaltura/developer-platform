@@ -9,7 +9,7 @@ config = KalturaConfiguration(<%- answers.partnerId %>)
 config.serviceUrl = "https://www.kaltura.com/"
 client = KalturaClient(config)
 <% if (!noSession) { -%>
-ks = client.session.start(
+ks = client.generateSessionV2(
       <%- codegen.constant(answers.secret) %>,
       <%- codegen.constant(answers.userId) %>,
       <%- answers.sessionType === 0 ? 'KalturaSessionType.USER' : 'KalturaSessionType.ADMIN' %>,
