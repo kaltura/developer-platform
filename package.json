@@ -28,7 +28,7 @@
     "bootstrap": "^3.4.1",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "js-yaml": "^3.13.1",
     "jsonwebtoken": "^8.5.1",
     "kaltura": "file:lib/ott",
