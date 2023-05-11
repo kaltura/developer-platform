@@ -6,8 +6,11 @@ const https = require('https');
 const path = require('path');
 const fs = require('fs');
 const TARGET_API = process.env.TARGET_API || 'ovp';
-const STATIC_DIR = __dirname + '/generated/' + TARGET_API;
-const DEFAULT_INDEX = fs.readFileSync(path.join(STATIC_DIR, 'default_index.html'), 'utf8');
+
+const STATIC_DIR = path.join(__dirname + '/generated/' + TARGET_API);
+const defIndexFile = path.join(STATIC_DIR, 'default_index.html');
+const DEFAULT_INDEX = fs.existsSync(defIndexFile) ? fs.readFileSync(defIndexFile, 'utf8') : null;
+
 const BASE_PATH = process.env.BASE_PATH || '';
 
 const App = Express();
@@ -100,13 +103,20 @@ App.use(GH_PAGES_BASE, (req, res, next) => {
 App.use(BASE_PATH + '/quiz', require('./routes/quiz'))
 App.use(BASE_PATH + '/discussion', require('./routes/discussion'));
 if (process.env.TARGET_API === 'ott') {
+  if (process.env.ENABLE_HOMEPAGE !== 'true') {
   App.use(BASE_PATH + '/auth', require('./routes/ott-auth.js'));
+  }
 } else {
   App.use(BASE_PATH + '/auth', require('./routes/partner-auth.js'));
 }
 App.use(BASE_PATH + '/github', require('./routes/github.js'));
 
 App.get('*', (req, res) => {
+  if (!DEFAULT_INDEX) {
+    // local
+    return res.send(`missed ${STATIC_DIR} folder`);
+  }
+
   if (req.originalUrl.endsWith('.html/')) {
     const newUrl = req.protocol + '://' + req.get('host') + req.originalUrl.replace(/\/$/, '');
     return res.redirect(301, newUrl);
