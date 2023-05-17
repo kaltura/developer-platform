@@ -100,6 +100,7 @@ App.use(GH_PAGES_BASE, (req, res, next) => {
   res.redirect(req.originalUrl.substring(GH_PAGES_BASE.length));
 })
 
+App.use(BASE_PATH + '/api-diff', require('./routes/api-diff'));
 App.use(BASE_PATH + '/quiz', require('./routes/quiz'))
 App.use(BASE_PATH + '/discussion', require('./routes/discussion'));
 if (process.env.TARGET_API === 'ott') {

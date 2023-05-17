@@ -1,0 +1,84 @@
+mixin version_list(uid, selectedInd)
+  if selectedInd < 0
+    - selectedInd+= apiVersions.length;
+
+  select(id=uid)
+    each apiVersion, index in (apiVersions || [])
+      option(selected=(index == selectedInd))= apiVersion
+
+mixin collapse(uid, label)
+  .collapse-diff
+    label.collapse-diff__label(for=uid) #{label}
+    input.collapse-diff__check(id=uid, type="checkbox")
+    .collapse-diff__content
+      if block
+        block
+
+doctype html
+html
+  head
+    include ./head
+  body
+    include ./navbar
+
+    h3.section-title API Version Diff Tool
+
+    .container-fluid
+      p
+        | Choose a source version: 
+        +version_list("versionSource", -2)
+
+      p
+        | Choose a destination version: 
+        +version_list("versionDest", -1)
+
+      button(type="button", onclick="getJsons()") Submit
+
+      hr
+
+      +collapse('gitLikeStyle', 'GitHub Style')
+        p
+          select#gitLikeSelect(onchange="getGitLikeComparison(this.value)")
+            option(value="line-by-line") Line by Line
+            option(value="side-by-side") Side by Side
+
+        #gitLikeResult
+
+      hr
+
+      +collapse('objectCompareStyle', 'Oject Comparison')
+        p
+          select#objectCompareSelect(onchange="getObjectComparison(this.value)")
+            option(value="visual") Visual
+            option(value="annotated") Annotated
+
+        #objectCompareResult
+
+    //-
+    script(src="https://cdn.jsdelivr.net/npm/jsondiffpatch/dist/jsondiffpatch.umd.min.js", defer)
+    link(
+      rel="stylesheet",
+      href="https://cdn.jsdelivr.net/npm/jsondiffpatch@0.4.1/dist/formatters-styles/html.css"
+      type="text/css"
+      media="screen"
+    )
+    link(
+      rel="stylesheet",
+      href="https://cdn.jsdelivr.net/npm/jsondiffpatch@0.4.1/dist/formatters-styles/annotated.css"
+      type="text/css"
+      media="screen"
+      )
+
+    //-
+    script(src="https://cdn.jsdelivr.net/npm/diff@5.1.0/dist/diff.min.js", defer)
+    script(src="https://cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/js/diff2html.min.js", defer)
+    link(
+      rel="stylesheet",
+      href="https://cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/css/diff2html.min.css"
+      type="text/css"
+      media="screen"
+    )
+
+    script(src='/homepage/views/api-diff.js', defer)
+    script.
+      console.log('end');

@@ -1,0 +1,18 @@
+.collapse-diff {
+  &__label {
+    display: block;
+    background-color: lightgray;
+    border-radius: .25rem;
+    padding: .5rem;
+    cursor: pointer; 
+  }
+
+  &__check,
+  &__content {
+    display: none;
+  }
+
+  &__check:checked + &__content {
+    display: initial;
+  }
+}
