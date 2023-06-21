@@ -3,8 +3,8 @@
   "icon": "columns",
   "sortOrder": 550,
   "tags": [
-    "youtube", 
-    "externalMedia", 
+    "youtube",
+    "externalMedia",
     "ingestion"
   ],
   "keywords": [],
@@ -12,11 +12,10 @@
 }
 -->
 
-# Upload YouTube videos 
+# Upload YouTube videos
 
 
 ## Add a YouTube Video Entry
-
 This workflow will guide you on how to use the [externalMedia](https://developer.kaltura.com/api-docs/service/externalMedia) service to manage YouTube hosted videos as native Kaltura videos that benefit from the same workflows, experience and analytics available for Kaltura hosted video entries.	
 
 To add a YouTube hosted video as a Kaltura media, you will need the YouTube video ID:
