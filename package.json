@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha",
     "build-homepage": "sass --no-source-map ./homepage/styles/styles.scss ./homepage/assets/styles.css && sass --no-source-map ./homepage/styles/footer.scss ./styles/footer.css",
-    "watch": "run-when-changed --watch './homepage/styles/*' --exec 'npm run build-homepage'"
+    "watch": "run-when-changed --watch './homepage/styles/*' --exec 'npm run build-homepage'",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "watch": {
     "build-homepage": {
@@ -33,10 +35,12 @@
     "jsonwebtoken": "^8.5.1",
     "kaltura": "file:lib/ott",
     "kaltura-client": "^18.1.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "querystring": "^0.2.0",
     "request": "^2.88.0",
     "node-sass": "^4.14.1",
-    "swiftype": "^0.4.0"
-  }
+    "swiftype": "^0.4.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
