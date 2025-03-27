@@ -7,6 +7,18 @@ link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.
 link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-dune-dark.min.css")
 script(async src="https://www.googletagmanager.com/gtag/js?id=UA-68472312-3")
 script.
+  (function() {
+    var zi = document.createElement('script');
+    zi.type = 'text/javascript';
+    zi.async = true;
+    zi.referrerPolicy = 'unsafe-url';
+    zi.src = 'https://ws.zoominfo.com/pixel/62deaa3ca807b3008e29742d';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(zi, s);
+  })();
+noscript
+  img(src="https://ws.zoominfo.com/pixel/62deaa3ca807b3008e29742d" width="1" height="1" style="display: none;" alt="websights")
+script.
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
