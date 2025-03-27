@@ -34,7 +34,7 @@ if (TARGET === 'ott'){
 var clientMD = '';
 var idx=0;
 for (var cl in CLIENT_LANGS){
-	var link = baserepo_url + cl +'.tar.gz'
+	var link = baserepo_url + version + "/" + cl +'.tar.gz'
 	    let offset = idx * -71;
 	    clientMD += `<a class="client-lib-link ${CLIENT_LANGS[cl]}" data-language="${CLIENT_LANGS[cl]}" href="${link}" style="background-position: ${offset}px"></a>`;
 	    idx++;
