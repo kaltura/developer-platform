@@ -1,6 +1,6 @@
 var fs = require('fs');
 var ejs = require('ejs');
-var version = 'v19.3.0';
+var version = 'latest';
 const MARKDOWN_DIR = __dirname + '/../../markdown';
 const TARGET = process.env.TARGET_API || 'ovp';
 const CLIENT_LANGS = {
@@ -11,7 +11,7 @@ const CLIENT_LANGS = {
   'Csharp': 'csharp',
   'Ruby': 'ruby',
   'Python': 'python',
-  'NodeJS': 'nodejs',
+  'NodeJS': 'node',
   'AJAX': 'ajax',
   'CLI': 'cli',
   'Android': 'android',
@@ -29,12 +29,12 @@ if (TARGET === 'ott'){
 	if(process.env.OVP_API_VERSION) {
 		version = process.env.OVP_API_VERSION;
 	}
-	baserepo_url='https://github.com/kaltura/KalturaGeneratedAPIClients';
+	baserepo_url='https://static.kaltura.com/web-clients/';
 }
 var clientMD = '';
 var idx=0;
 for (var cl in CLIENT_LANGS){
-	var link = baserepo_url + cl+'/archive/'+ version+'.tar.gz'
+	var link = baserepo_url + cl +'.tar.gz'
 	    let offset = idx * -71;
 	    clientMD += `<a class="client-lib-link ${CLIENT_LANGS[cl]}" data-language="${CLIENT_LANGS[cl]}" href="${link}" style="background-position: ${offset}px"></a>`;
 	    idx++;
